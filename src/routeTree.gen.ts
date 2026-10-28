@@ -10,43 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiWuwaResonatorsRouteImport } from './routes/api/wuwa-resonators'
+import { Route as panelAdminIndexRouteImport } from './routes/(panel)/admin/index'
+import { Route as panelAdminResonatorSlugRouteImport } from './routes/(panel)/admin/resonator.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiWuwaResonatorsRoute = ApiWuwaResonatorsRouteImport.update({
-  id: '/api/wuwa-resonators',
-  path: '/api/wuwa-resonators',
+const panelAdminIndexRoute = panelAdminIndexRouteImport.update({
+  id: '/(panel)/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const panelAdminResonatorSlugRoute = panelAdminResonatorSlugRouteImport.update({
+  id: '/(panel)/admin/resonator/$slug',
+  path: '/admin/resonator/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/api/wuwa-resonators': typeof ApiWuwaResonatorsRoute
+  '/admin/': typeof panelAdminIndexRoute
+  '/admin/resonator/$slug': typeof panelAdminResonatorSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/api/wuwa-resonators': typeof ApiWuwaResonatorsRoute
+  '/admin': typeof panelAdminIndexRoute
+  '/admin/resonator/$slug': typeof panelAdminResonatorSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/api/wuwa-resonators': typeof ApiWuwaResonatorsRoute
+  '/(panel)/admin/': typeof panelAdminIndexRoute
+  '/(panel)/admin/resonator/$slug': typeof panelAdminResonatorSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/wuwa-resonators'
+  fullPaths: '/' | '/admin/' | '/admin/resonator/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/wuwa-resonators'
-  id: '__root__' | '/' | '/api/wuwa-resonators'
+  to: '/' | '/admin' | '/admin/resonator/$slug'
+  id: '__root__' | '/' | '/(panel)/admin/' | '/(panel)/admin/resonator/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ApiWuwaResonatorsRoute: typeof ApiWuwaResonatorsRoute
+  panelAdminIndexRoute: typeof panelAdminIndexRoute
+  panelAdminResonatorSlugRoute: typeof panelAdminResonatorSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,11 +68,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/wuwa-resonators': {
-      id: '/api/wuwa-resonators'
-      path: '/api/wuwa-resonators'
-      fullPath: '/api/wuwa-resonators'
-      preLoaderRoute: typeof ApiWuwaResonatorsRouteImport
+    '/(panel)/admin/': {
+      id: '/(panel)/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof panelAdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(panel)/admin/resonator/$slug': {
+      id: '/(panel)/admin/resonator/$slug'
+      path: '/admin/resonator/$slug'
+      fullPath: '/admin/resonator/$slug'
+      preLoaderRoute: typeof panelAdminResonatorSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -70,7 +87,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ApiWuwaResonatorsRoute: ApiWuwaResonatorsRoute,
+  panelAdminIndexRoute: panelAdminIndexRoute,
+  panelAdminResonatorSlugRoute: panelAdminResonatorSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
