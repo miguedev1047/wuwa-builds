@@ -25,22 +25,21 @@ contracts only. It does not prescribe page layout, visual design, or styling.
 
 ## Architecture Decisions
 
-- The editor operates on a UI-independent `BuildDraft`, never directly on a
-  Prydwen resonator/weapon/echo object or a Drizzle row.
+- The editor operates on a UI-independent `BuildDraft`, never directly on an
+  Encore game-data object or a Drizzle row.
 - Define one versioned `BuildPayload` document. The Local Storage draft and D1
   row both contain this payload; their metadata wrappers can differ.
 - A build stores stable catalog references and user choices, not copied catalog
   records. `resonatorSlug` remains row/draft metadata; weapons and echoes are
   referenced by IDs or slugs.
-- Catalog records are resolved from the shared `wuwa/queries` data at runtime.
+- Catalog records are resolved from the shared `encore/queries` data at runtime.
   Catalog refreshes may change displayed metadata without rewriting builds.
 - Calculate stats in a pure client-side function using the build payload and
   resolved catalog data. Do not persist `totalStats` as authoritative state.
 - Local Storage is the durable local draft adapter. D1 remains the cloud source
   of truth for saved builds; Local Storage alone does not sync across devices.
-- Keep `documentVersion`, Local Storage schema/key version, and
-  `WUWA_DATA_VERSION` independent: they version the build payload shape, local
-  draft representation, and immutable game catalogs respectively.
+- Keep `documentVersion` and the Local Storage schema/key version independent:
+  they version the build payload shape and the local draft representation.
 
 ## Initial Build Payload V1
 
@@ -198,7 +197,7 @@ Remove the old Zustand/TRPC responsibilities rather than porting them:
 - Each editable control maps to one documented schema field. Calculated output
   is read-only derived data from the client calculation function.
 - Saved-build routes use `buildId`; resonator-group routes use `resonatorSlug`.
-- Reuse `src/modules/wuwa/queries` for game data. Do not duplicate those
+- Reuse `src/modules/encore/queries` for game data. Do not duplicate those
   queryOptions in the builder module.
 - This plan intentionally does not specify layout, visual components, styling,
   animations, or responsive design.
@@ -227,4 +226,4 @@ Remove the old Zustand/TRPC responsibilities rather than porting them:
 
 Update `AGENTS.md` when implementation lands: TanStack DB drafts are scoped by
 user and local storage schema version; saved builds use user/build identity and
-`documentVersion`; `WUWA_DATA_VERSION` applies only to immutable catalog caches.
+`documentVersion`; catalog freshness is TTL-based.

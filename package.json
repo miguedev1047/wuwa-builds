@@ -10,8 +10,6 @@
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
     "check": "prettier --check \"**/*.{ts,tsx,js,jsx}\"",
-    "scrape": "bun src/modules/wuwa/cli/scrape.ts",
-    "scrape:catalogs": "bun src/modules/wuwa/cli/scrape-catalogs.ts",
     "deploy": "bun run build && wrangler deploy",
     "cf-typegen": "wrangler types",
     "typecheck": "tsc --noEmit"

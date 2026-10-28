@@ -23,8 +23,8 @@ available). No auth, CORS enabled.
 - **Server**: 5-minute in-memory dedupe per isolate + 6-hour Cloudflare edge
   cache (`cf.cacheTtl`, `cacheEverything`).
 - **Client**: shared query options use `staleTime: 6h`, `gcTime: 24h`.
-- Do **not** use `WUWA_DATA_VERSION` here: that version belongs to the bundled
-  Prydwen JSON. Encore data changes with game patches, not deploys.
+- Encore data is not versioned by a deploy-time hash; freshness is TTL-based
+  and changes with game patches.
 
 ## Lean mapping
 

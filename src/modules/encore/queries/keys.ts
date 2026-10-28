@@ -1,8 +1,8 @@
 /**
  * Query keys for Encore game data.
  *
- * `WUWA_DATA_VERSION` is intentionally absent: Encore data is not part of the
- * deployed JSON bundle, and its freshness is controlled by the API cache TTL.
+ * Keys are not tied to a deploy-time data version: Encore freshness is
+ * controlled by the API cache TTL.
  */
 export const encoreKeys = {
   all: ["encore"] as const,
