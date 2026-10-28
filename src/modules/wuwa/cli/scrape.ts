@@ -86,7 +86,7 @@ async function main(): Promise<void> {
 
   console.log(`\nData directory: ${report.directory}`)
   console.log(
-    `Scraped ${report.scraped}, cached ${report.cached}, failed ${report.failed.length}`
+    `Scraped ${report.scraped}, unchanged ${report.unchanged}, cached ${report.cached}, failed ${report.failed.length}`
   )
 
   if (report.failed.length > 0) {

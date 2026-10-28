@@ -32,10 +32,15 @@ import-protection de TanStack Start impide que acabe en el bundle del cliente.
 
 ## Datos
 
-Se escriben en `src/data/wuwa-resonators` (ignorado por git):
+Se escriben en `src/data/wuwa-resonators` y **se versionan en git** (se refrescan
+a mano ~1 vez al mes):
 
 - `<slug>.json` por personaje (perfil, builds, stats, sinergias, ...).
 - `index.json` con el roster y sus tiers.
+
+Para no ensuciar el diff, el scraper compara el JSON nuevo con el guardado
+ignorando `fetchedAt` y **no reescribe el archivo si no cambió nada real**: el
+commit mensual solo muestra los personajes que Prydwen tocó.
 
 La ruta se puede sobreescribir con `WUWA_RESONATORS_DIR` o con `--out` en el CLI.
 

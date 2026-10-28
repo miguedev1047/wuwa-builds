@@ -360,7 +360,7 @@ export type ScrapeEvent =
       slug: string
       done: number
       total: number
-      status: "scraped" | "cached" | "failed"
+      status: "scraped" | "unchanged" | "cached" | "failed"
       error?: string
     }
   | { kind: "index"; count: number }
@@ -368,6 +368,7 @@ export type ScrapeEvent =
 export interface ScrapeReport {
   total: number
   scraped: number
+  unchanged: number
   cached: number
   failed: { slug: string; error: string }[]
   indexCount: number
@@ -378,4 +379,16 @@ const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
 export function isResonatorSlug(value: string): boolean {
   return SLUG_PATTERN.test(value)
+}
+
+/**
+ * True when a freshly scraped resonator is identical to the stored one.
+ * `fetchedAt` is ignored so a monthly refresh only rewrites what actually
+ * changed and the commit diff stays readable.
+ */
+export function isSameResonatorContent(a: Resonator, b: Resonator): boolean {
+  return (
+    JSON.stringify({ ...a, fetchedAt: null }) ===
+    JSON.stringify({ ...b, fetchedAt: null })
+  )
 }

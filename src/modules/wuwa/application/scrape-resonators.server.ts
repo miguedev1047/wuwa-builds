@@ -6,6 +6,7 @@ import type {
   ScrapeOptions,
   ScrapeReport,
 } from "../domain/resonator"
+import { isSameResonatorContent } from "../domain/resonator"
 import { readCharacterCards } from "../infrastructure/prydwen/characters-page.server"
 import { parseCharacterPage } from "../infrastructure/prydwen/flight.server"
 import { fetchPageWithRetry } from "../infrastructure/prydwen/http.server"
@@ -78,6 +79,7 @@ export async function scrapeResonators(
   const report: ScrapeReport = {
     total: targets.length,
     scraped: 0,
+    unchanged: 0,
     cached: 0,
     failed,
     indexCount: 0,
@@ -115,15 +117,29 @@ export async function scrapeResonators(
             ratings.set(rating.slug, rating)
           }
 
-          await store.writeResonator(toResonator(page.payload, url))
-          report.scraped++
-          hooks.onProgress?.({
-            kind: "character",
-            slug: card.slug,
-            done: position,
-            total: targets.length,
-            status: "scraped",
-          })
+          const resonator = toResonator(page.payload, url)
+          const stored = await store.readResonator(card.slug)
+
+          if (stored && isSameResonatorContent(stored, resonator)) {
+            report.unchanged++
+            hooks.onProgress?.({
+              kind: "character",
+              slug: card.slug,
+              done: position,
+              total: targets.length,
+              status: "unchanged",
+            })
+          } else {
+            await store.writeResonator(resonator)
+            report.scraped++
+            hooks.onProgress?.({
+              kind: "character",
+              slug: card.slug,
+              done: position,
+              total: targets.length,
+              status: "scraped",
+            })
+          }
         } catch (error) {
           const message = error instanceof Error ? error.message : String(error)
           failed.push({ slug: card.slug, error: message })
