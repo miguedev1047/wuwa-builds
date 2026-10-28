@@ -10,21 +10,31 @@ import babel from "@rolldown/plugin-babel"
 import tailwindcss from "@tailwindcss/vite"
 
 /**
- * Resonator dataset version: hash of the scraped `index.json`.
+ * Dataset version: hash of the scraped JSON that the runtime serves.
  *
  * It changes with every deployed scrape, so query keys (and a future persistent
  * cache such as TanStack DB / SQLite) invalidate on their own. It is computed
  * at build time; after re-scraping, restart the dev server.
  */
+const DATA_FILES = [
+  "./src/data/wuwa-resonators/index.json",
+  "./src/data/wuwa-catalogs/weapons.json",
+  "./src/data/wuwa-catalogs/echoes.json",
+  "./src/data/wuwa-catalogs/echo-sets.json",
+]
+
 function readDataVersion(): string {
-  try {
-    const index = readFileSync(
-      new URL("./src/data/wuwa-resonators/index.json", import.meta.url)
-    )
-    return createHash("sha256").update(index).digest("hex").slice(0, 12)
-  } catch {
-    return "dev"
+  const hash = createHash("sha256")
+
+  for (const file of DATA_FILES) {
+    try {
+      hash.update(readFileSync(new URL(file, import.meta.url)))
+    } catch {
+      // Missing files are ignored; the version still changes when they appear.
+    }
   }
+
+  return hash.digest("hex").slice(0, 12)
 }
 
 const config = defineConfig({

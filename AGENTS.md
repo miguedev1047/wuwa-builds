@@ -5,7 +5,8 @@ in sync when conventions change.
 
 ## Project
 
-Wuthering Waves build generator. Content-first React app
+Wuthering Waves build generator. Content-first React app with scraped Prydwen
+data stored as JSON and served through TanStack Start server functions.
 
 ## Stack
 
@@ -27,10 +28,11 @@ Wuthering Waves build generator. Content-first React app
 | `bun run lint`             | ESLint                                    |
 | `bun run format` / `check` | Prettier write/check                      |
 | `bun run scrape`           | Refresh resonator JSON (development only) |
+| `bun run scrape:catalogs`  | Refresh weapon/echo catalogs (dev only)   |
 
 ## Architecture
 
-ModD split ules follow a light DDunder `src/modules/<domain>`:
+Modules follow a light DDD split under `src/modules/<domain>`:
 
 - `domain/`: pure types and rules. No I/O.
 - `application/`: use cases and input schemas.
@@ -49,20 +51,24 @@ Rules:
 
 ## Data pipeline (wuwa)
 
-- JSON lives in `src/data/wuwa-resonators|other-folder` and is committed to git.
+- JSON lives in `src/data/wuwa-resonators` (characters) and
+  `src/data/wuwa-catalogs` (weapons, echoes, echo sets), and is committed to
+  git.
 - Scraping is manual (~monthly) and development-only. It uses `curl` because
   Cloudflare blocks Node's `fetch` (TLS fingerprint).
 - The scraper skips files whose content did not change (it ignores
   `fetchedAt`), so monthly commits only contain real changes.
 - Runtime reads are bundled at build time with `import.meta.glob`, because
   workerd has no `node:fs`. Re-scraping requires a rebuild/redeploy.
-- `WUWA_RESONATORS_DIR` and `--out` only change where the scraper writes.
+- `WUWA_RESONATORS_DIR`, `WUWA_CATALOGS_DIR`, and `--out` only change where the
+  scraper writes.
 
 Refresh flow:
 
 ```bash
 bun run scrape --force
-git add src/data && git commit -m "chore(wuwa): refresh resonator data"
+bun run scrape:catalogs
+git add src/data && git commit -m "chore(wuwa): refresh game data"
 bun run typecheck && bun run build
 ```
 
@@ -71,8 +77,9 @@ bun run typecheck && bun run build
 - `src/lib/query.tsx` uses `staleTime: "static"`: data is immutable until the
   next deploy.
 - Query keys must include `WUWA_DATA_VERSION` (see
-  `src/modules/wuwa/queries/keys.ts`), a build-time hash of `index.json`.
-  When data changes, keys change and every cache is invalidated.
+  `src/modules/wuwa/queries/keys.ts`), a build-time hash of the scraped JSON
+  (resonator index + catalogs). When data changes, keys change and every cache
+  is invalidated.
 - If a query ever needs freshness (for example the builder), override
   `staleTime` in that query's options instead of changing the global default.
 - Any future persistence (TanStack DB, SQLite, IndexedDB) must be namespaced
@@ -82,8 +89,9 @@ bun run typecheck && bun run build
 
 - SSR runs in workerd: no `node:fs` and no `node:child_process`. Do not import
   Node built-ins in code reachable from the runtime path.
-- The data chunk is ~0.9 MiB gzip; the whole upload is ~1.1 MiB compressed.
-  Check before deploying with `bunx wrangler deploy --dry-run`.
+- The data chunk is ~0.9 MiB gzip; the whole upload is ~1.1 MiB compressed
+  (+~33 KB gzip when the catalog server functions are used). Check before
+  deploying with `bunx wrangler deploy --dry-run`.
 - `wrangler.jsonc` uses `main: "@tanstack/react-start/server-entry"` and
   `compatibility_flags: ["nodejs_compat"]`.
 - The scraper never runs in the Worker, not even in dev.
@@ -106,5 +114,5 @@ bun run typecheck && bun run build
 - Some resonators have `stats: null` because Prydwen has no stats table for
   them yet.
 - Data freshness depends on the manual monthly scrape; the UI does not refetch.
-- Weapons and echoes catalogs are not scraped yet; they are one request each
-  (the full catalog ships in the list page payload).
+- Catalogs are exposed through `server/catalogs.ts` (list, and detail by ID or
+  slug) but are not used by any screen yet.

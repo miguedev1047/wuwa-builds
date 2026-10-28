@@ -1,0 +1,5700 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/echoes",
+  "fetchedAt": "2026-10-28T15:11:40.392Z",
+  "count": 187,
+  "items": [
+    {
+      "Name": "Abyssal Gladius",
+      "Slug": "abyssal-gladius",
+      "ID": "320000260",
+      "Echo_skill": "Transform into Abyssal Gladius and attack enemies in front of you with the sword, dealing {0} Glacio DMG.\\n\\nHold the Echo Skill to maintain the Echo form for a while to slash enemies and cast a ranged attack forward, dealing {0} and {1} Glacio DMG respectively.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        12,
+        14,
+        22
+      ],
+      "Skill_1": [
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%",
+        "447%"
+      ],
+      "Skill_3": [
+        "208.60%",
+        "521.50%"
+      ],
+      "Skill_4": [
+        "238.40%",
+        "596%"
+      ],
+      "Skill_5": [
+        "268.20%",
+        "670.50%"
+      ]
+    },
+    {
+      "Name": "Abyssal Mercator",
+      "Slug": "abyssal-mercator",
+      "ID": "320000270",
+      "Echo_skill": "Transform into Abyssal Mercator and summon 3 Ice Spikes to attack enemies, each dealing {0} Glacio DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        10,
+        11
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "59.59%"
+      ],
+      "Skill_3": [
+        "69.52%"
+      ],
+      "Skill_4": [
+        "79.46%"
+      ],
+      "Skill_5": [
+        "89.39%"
+      ]
+    },
+    {
+      "Name": "Abyssal Patricius",
+      "Slug": "abyssal-patricius",
+      "ID": "320000250",
+      "Echo_skill": "Transform into Abyssal Patricius and charge forward to attack enemies, dealing {0} Glacio DMG.\\n\\nThe Resonator with this Echo equipped in the main slot gains 12.00% Glacio DMG Bonus.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        10,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%"
+      ],
+      "Skill_3": [
+        "208.60%"
+      ],
+      "Skill_4": [
+        "238.40%"
+      ],
+      "Skill_5": [
+        "268.20%"
+      ]
+    },
+    {
+      "Name": "Aero Drake",
+      "Slug": "aero-drake",
+      "ID": "6000101",
+      "Echo_skill": "Summon an Aero Drake to attack enemies, dealing {0} Aero DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        14,
+        15,
+        16
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Aero Predator",
+      "Slug": "aero-predator",
+      "ID": "310000050",
+      "Echo_skill": "Summon an Aero Predator that throws a dart forward. The dart will bounce between enemies up to three times, dealing {0} Aero DMG each time it hits. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        3,
+        4
+      ],
+      "Skill_1": [
+        "18%",
+        "8"
+      ],
+      "Skill_2": [
+        "20.70%",
+        "8"
+      ],
+      "Skill_3": [
+        "23.40%",
+        "8"
+      ],
+      "Skill_4": [
+        "26.10%",
+        "8"
+      ],
+      "Skill_5": [
+        "28.80%",
+        "8"
+      ]
+    },
+    {
+      "Name": "Aero Prism",
+      "Slug": "aero-prism",
+      "ID": "6000095",
+      "Echo_skill": "Summon an Aero Prism to attack enemies, dealing {0} Aero DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        11,
+        14
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "12.84%"
+      ],
+      "Skill_3": [
+        "14.98%"
+      ],
+      "Skill_4": [
+        "17.12%"
+      ],
+      "Skill_5": [
+        "19.26%"
+      ]
+    },
+    {
+      "Name": "Aureate Picket",
+      "Slug": "aureate-picket",
+      "ID": "6000205",
+      "Echo_skill": "Use Echo Skill to transform into an Aureate Picket, immediately recover {0} HP times plus an additional instance of 24 points of HP, then bash into enemies and deal {1} Aero DMG.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        33,
+        35
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "0.37%",
+        "102.60%"
+      ],
+      "Skill_3": [
+        "0.43%",
+        "119.70%"
+      ],
+      "Skill_4": [
+        "0.49%",
+        "136.80%"
+      ],
+      "Skill_5": [
+        "0.55%",
+        "153.90%"
+      ]
+    },
+    {
+      "Name": "Autopuppet Scout",
+      "Slug": "autopuppet-scout",
+      "ID": "320000180",
+      "Echo_skill": "Transform into Autopuppet Scout, dealing {0} Glacio DMG to the surroundings, and generate up to <b>3</b> Ice Walls to block off the enemies. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        5,
+        1
+      ],
+      "Skill_1": [
+        "170%",
+        "25"
+      ],
+      "Skill_2": [
+        "195.5%",
+        "25"
+      ],
+      "Skill_3": [
+        "221%",
+        "25"
+      ],
+      "Skill_4": [
+        "246.5%",
+        "25"
+      ],
+      "Skill_5": [
+        "272%",
+        "25"
+      ]
+    },
+    {
+      "Name": "Baby Viridblaze Saurian",
+      "Slug": "baby-viridblaze-saurian",
+      "ID": "310000210",
+      "Echo_skill": "Transform into Baby Viridblaze Saurian to rest in place, and slowly restore HP. \\n\\nCD: <b>2s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        9,
+        3,
+        2
+      ],
+      "Skill_1": [
+        "8"
+      ],
+      "Skill_2": [
+        "8"
+      ],
+      "Skill_3": [
+        "8"
+      ],
+      "Skill_4": [
+        "8"
+      ],
+      "Skill_5": [
+        "8"
+      ]
+    },
+    {
+      "Name": "Bell-Borne Geochelone",
+      "Slug": "bell-borne-geochelone",
+      "ID": "340000020",
+      "Echo_skill": "Activate the protection of Bell-Borne Geochelone. Deal Glacio DMG based on {0} of the current character's DEF to nearby enemies, and obtain a Bell-Borne Shield that lasts for <b>15s</b> The Bell-Borne Shield provides <b>50.00%</b> DMG Reduction and <b>10.00%</b> DMG Boost for the current team members, and disappears after the current character is hit for <b>3</b> times.\\n\\nCD: <b>20s</b>",
+      "Rarity": 3,
+      "Sonata_Group": [
+        8,
+        7
+      ],
+      "Skill_1": [
+        "109.20%",
+        "15",
+        "50%",
+        "10%",
+        "3",
+        "25"
+      ],
+      "Skill_2": [
+        "104.88%",
+        "15",
+        "50%",
+        "10%",
+        "3",
+        "25"
+      ],
+      "Skill_3": [
+        "118.56%",
+        "15",
+        "50%",
+        "10%",
+        "3",
+        "25"
+      ],
+      "Skill_4": [
+        "132.24%",
+        "15",
+        "50%",
+        "10%",
+        "3",
+        "25"
+      ],
+      "Skill_5": [
+        "145.92%",
+        "15",
+        "50%",
+        "10%",
+        "3",
+        "25"
+      ]
+    },
+    {
+      "Name": "Bloomburst Puppet",
+      "Slug": "bloomburst-puppet",
+      "ID": "6000222",
+      "Echo_skill": "Summon a Bloomburst Puppet to startle the target, dealing 1 instance of {0} Glacio DMG, followed by 2 instances of {1} Glacio DMG and 1 instance of {2}  Glacio DMG.\\n\\n\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        36
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "17.28%",
+        "8.64%",
+        "51.84%"
+      ],
+      "Skill_3": [
+        "20.16%",
+        "10.08%",
+        "60.48%"
+      ],
+      "Skill_4": [
+        "23.04%",
+        "11.52%",
+        "69.12%"
+      ],
+      "Skill_5": [
+        "25.92%",
+        "12.96%",
+        "77.76%"
+      ]
+    },
+    {
+      "Name": "Calamity Effigy",
+      "Slug": "calamity-effigy",
+      "ID": "6000221",
+      "Echo_skill": "Transform into Calamity Effigy to deal {0} Aero DMG.\\n\\n\nThe Resonator with this Echo equipped in the main slot gains 10.00% Aero DMG Bonus, and additionally gains 10.00% Aero DMG Bonus for 15s when inflicting Tune Strain - Shifting on the target.\\n\\n\nCD: 25s",
+      "Rarity": 2,
+      "Sonata_Group": [
+        33,
+        34
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "270%"
+      ],
+      "Skill_3": [
+        "315%"
+      ],
+      "Skill_4": [
+        "360%"
+      ],
+      "Skill_5": [
+        "405%"
+      ]
+    },
+    {
+      "Name": "Calcified Junrock",
+      "Slug": "calcified-junrock",
+      "ID": "6000094",
+      "Echo_skill": "Summon a Calcified Junrock that restores HP for nearby Resonators in the team by {0} of their Max HP, up to 5 times.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        13,
+        14,
+        19
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "1.68%"
+      ],
+      "Skill_3": [
+        "1.96%"
+      ],
+      "Skill_4": [
+        "2.24%"
+      ],
+      "Skill_5": [
+        "2.52%"
+      ]
+    },
+    {
+      "Name": "Capitaneus",
+      "Slug": "capitaneus",
+      "ID": "6000104",
+      "Echo_skill": "Summon a Capitaneus to jump up and smash enemies, dealing {0} Spectro DMG. This attack generates 4 extra Merciless Judgements, each dealing {1} Spectro DMG. The Resonator with this Echo equipped in their main slot gains 12.00% Spectro DMG Bonus and 12.00% Heavy Attack DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        11,
+        15,
+        17,
+        16
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "79.20%",
+        "39.60%"
+      ],
+      "Skill_3": [
+        "92.40%",
+        "46.20%"
+      ],
+      "Skill_4": [
+        "105.60%",
+        "52.80%"
+      ],
+      "Skill_5": [
+        "118.80%",
+        "59.40%"
+      ]
+    },
+    {
+      "Name": "Carapace",
+      "Slug": "carapace",
+      "ID": "320000130",
+      "Echo_skill": "Transform into Carapace to perform a spinning attack that deals {0} Aero DMG, followed by a slash that deals {1} Aero DMG. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        8,
+        4
+      ],
+      "Skill_1": [
+        "70.00%",
+        "105.00%",
+        "15"
+      ],
+      "Skill_2": [
+        "80.50%",
+        "120.75%",
+        "15"
+      ],
+      "Skill_3": [
+        "91.00%",
+        "136.50%",
+        "15"
+      ],
+      "Skill_4": [
+        "101.50%",
+        "152.25%",
+        "15"
+      ],
+      "Skill_5": [
+        "112.00%",
+        "168.00%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Chasm Guardian",
+      "Slug": "chasm-guardian",
+      "ID": "320000070",
+      "Echo_skill": "Transform into Chasm Guardian to perform a Leap Strike that deals {0} Havoc DMG on hit. Current character loses <b>10.00%</b> HP after the hit lands. Periodically restore current character's HP after 5s for up to <b>10.00%</b> of their Max HP.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        9,
+        7
+      ],
+      "Skill_1": [
+        "171%",
+        "10%",
+        "5",
+        "10%",
+        "15"
+      ],
+      "Skill_2": [
+        "196.65%",
+        "10%",
+        "5",
+        "10%",
+        "15"
+      ],
+      "Skill_3": [
+        "222.30%",
+        "10%",
+        "5",
+        "10%",
+        "15"
+      ],
+      "Skill_4": [
+        "247.95%",
+        "10%",
+        "5",
+        "10%",
+        "15"
+      ],
+      "Skill_5": [
+        "273.60%",
+        "10%",
+        "5",
+        "10%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Chest Mimic",
+      "Slug": "chest-mimic",
+      "ID": "310000480",
+      "Echo_skill": "Summon a Chest Mimic to attack enemies with 3 consecutive strikes, each dealing {0} Spectro DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        10,
+        12,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "42.79%"
+      ],
+      "Skill_3": [
+        "49.92%"
+      ],
+      "Skill_4": [
+        "57.06%"
+      ],
+      "Skill_5": [
+        "64.19%"
+      ]
+    },
+    {
+      "Name": "Chirpuff",
+      "Slug": "chirpuff",
+      "ID": "310000130",
+      "Echo_skill": "Summon a Chirpuff that self-inflates and blasts a powerful gust of wind forward <b>3</b> times. Each blast inflicts {0} Aero DMG and pushes enemies backwards. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        6,
+        4
+      ],
+      "Skill_1": [
+        "3",
+        "24%",
+        "8"
+      ],
+      "Skill_2": [
+        "3",
+        "27.60%",
+        "8"
+      ],
+      "Skill_3": [
+        "3",
+        "31.20%",
+        "8"
+      ],
+      "Skill_4": [
+        "3",
+        "34.80%",
+        "8"
+      ],
+      "Skill_5": [
+        "3",
+        "38.40%",
+        "8"
+      ]
+    },
+    {
+      "Name": "Chop Chop",
+      "Slug": "chop-chop",
+      "ID": "320000280",
+      "Echo_skill": "Summon a Chop Chop to perform a series of consecutive attacks. The first 6 strikes each deal {0} Fusion DMG and finishing strike deals {1} Fusion DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        13,
+        14,
+        18
+      ],
+      "Skill_1": [
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "12.84%",
+        "51.36%"
+      ],
+      "Skill_3": [
+        "14.98%",
+        "59.92%"
+      ],
+      "Skill_4": [
+        "17.12%",
+        "68.48%"
+      ],
+      "Skill_5": [
+        "19.26%",
+        "77.04%"
+      ]
+    },
+    {
+      "Name": "Chop Chop: Headless",
+      "Slug": "chop-chop-headless",
+      "ID": "310000400",
+      "Echo_skill": "Summon a Chop Chop: Headless to attack enemies, dealing {0} Fusion DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        11,
+        14
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Chop Chop: Leftless",
+      "Slug": "chop-chop-leftless",
+      "ID": "310000410",
+      "Echo_skill": "Summon a Chop Chop: Leftless to attack enemies, dealing {0} Spectro DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        10,
+        14
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Chop Chop: Rightless",
+      "Slug": "chop-chop-rightless",
+      "ID": "310000420",
+      "Echo_skill": "Summon a Chop Chop: Rightless to attack enemies, dealing {0} Havoc DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        10,
+        14
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Clang Bang",
+      "Slug": "clang-bang",
+      "ID": "6000051",
+      "Echo_skill": "Summon a Clang Bang that follows the enemy and eventually self-combusts, dealing {0} Glacio DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        1,
+        5
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "23.00%+46"
+      ],
+      "Skill_3": [
+        "26.00%+52"
+      ],
+      "Skill_4": [
+        "29.00%+58"
+      ],
+      "Skill_5": [
+        "32.00%+64"
+      ]
+    },
+    {
+      "Name": "Corrosaurus",
+      "Slug": "corrosaurus",
+      "ID": "6000120",
+      "Echo_skill": "Summon a Corrosaurus to attack enemies, dealing {0} Fusion DMG. The Resonator with this Echo equipped in the main slot gains 12.00% Fusion DMG Bonus and 20.00% Echo Skill DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        16,
+        21
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "182.40%"
+      ],
+      "Skill_3": [
+        "212.80%"
+      ],
+      "Skill_4": [
+        "243.20%"
+      ],
+      "Skill_5": [
+        "273.60%"
+      ]
+    },
+    {
+      "Name": "Crownless",
+      "Slug": "crownless",
+      "ID": "340000010",
+      "Echo_skill": "Transform into Crownless and perform up to <b>4</b> consecutive attacks. The first <b>2</b> attacks deal {0} Havoc DMG each, the 3rd attack deals {1} Havoc DMG <b>2</b> times, and the 4th attack deals {2} Havoc DMG <b>3</b> times. After the transformation, increase current character's Havoc DMG by <b>12.00%</b> and Resonance Skill DMG by <b>12.00%</b> for <b>15s</b>.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        6
+      ],
+      "Skill_1": [
+        "83.80%",
+        "62.85%",
+        "41.90%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "96.37%",
+        "72.28%",
+        "48.19%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "108.94%",
+        "81.71%",
+        "54.47%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "121.51%",
+        "91.13%",
+        "60.76%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "134.08%",
+        "100.56%",
+        "67.04%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "Cruisewing",
+      "Slug": "cruisewing",
+      "ID": "310000180",
+      "Echo_skill": "Summon a Cruisewing that restores HP for all current team characters by {0} of their Max HPs plus an additional <b>80</b> points of HP, up to <b>4</b> times. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        7,
+        8,
+        5
+      ],
+      "Skill_1": [
+        "1%",
+        "80",
+        "8"
+      ],
+      "Skill_2": [
+        "1.20%",
+        "80",
+        "8"
+      ],
+      "Skill_3": [
+        "1.40%",
+        "80",
+        "8"
+      ],
+      "Skill_4": [
+        "1.60%",
+        "80",
+        "8"
+      ],
+      "Skill_5": [
+        "1.80%",
+        "80",
+        "8"
+      ]
+    },
+    {
+      "Name": "Cuddle Wuddle",
+      "Slug": "cuddle-wuddle",
+      "ID": "320000300",
+      "Echo_skill": "Transform into Cuddle Wuddle and attack enemies with 4 strikes dealing {0} Physical DMG and 1 strike dealing {1} Physical DMG. \\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        10,
+        12
+      ],
+      "Skill_1": [
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "31.32%",
+        "83.52%"
+      ],
+      "Skill_3": [
+        "36.54%",
+        "97.44%"
+      ],
+      "Skill_4": [
+        "41.76%",
+        "111.36%"
+      ],
+      "Skill_5": [
+        "46.98%",
+        "125.28%"
+      ]
+    },
+    {
+      "Name": "Cyan-Feathered Heron",
+      "Slug": "cyan-feathered-heron",
+      "ID": "320000030",
+      "Echo_skill": "Transform into Cyan-Feathered Heron and charge at the enemies, dealing {0} Aero DMG; This Echo Skill interrupts enemy Special Skills upon dealing damage.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        4,
+        5
+      ],
+      "Skill_1": [
+        "148%",
+        "15"
+      ],
+      "Skill_2": [
+        "170.2%",
+        "15"
+      ],
+      "Skill_3": [
+        "192.4%",
+        "15"
+      ],
+      "Skill_4": [
+        "214.6%",
+        "15"
+      ],
+      "Skill_5": [
+        "236.8%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Devotee's Flesh",
+      "Slug": "devotee-s-flesh",
+      "ID": "6000110",
+      "Echo_skill": "Summon a Devotee's Flesh to attack enemies, dealing {0} Aero DMG 3 times.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        15,
+        16,
+        17
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "28.80%"
+      ],
+      "Skill_3": [
+        "33.60%"
+      ],
+      "Skill_4": [
+        "38.40%"
+      ],
+      "Skill_5": [
+        "43.20%"
+      ]
+    },
+    {
+      "Name": "Diamondclaw",
+      "Slug": "diamondclaw",
+      "ID": "310000260",
+      "Echo_skill": "Transform into Crystal Scorpion and enter a Parry State. Counterattack when the Parry State is over, dealing {0} Physical DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        8,
+        9
+      ],
+      "Skill_1": [
+        "30.00%+60",
+        "8"
+      ],
+      "Skill_2": [
+        "34.50%+69",
+        "8"
+      ],
+      "Skill_3": [
+        "39.00%+78",
+        "8"
+      ],
+      "Skill_4": [
+        "43.50%+87",
+        "8"
+      ],
+      "Skill_5": [
+        "48.00%+96",
+        "8"
+      ]
+    },
+    {
+      "Name": "Diggy Duggy",
+      "Slug": "diggy-duggy",
+      "ID": "310000470",
+      "Echo_skill": "ransform into Diggy Duggy and jump up into the air to smash onto enemies, dealing {0} Physical DMG\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        11,
+        14
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%"
+      ],
+      "Skill_3": [
+        "208.60%"
+      ],
+      "Skill_4": [
+        "238.40%"
+      ],
+      "Skill_5": [
+        "268.20%"
+      ]
+    },
+    {
+      "Name": "Diurnus Knight",
+      "Slug": "diurnus-knight",
+      "ID": "320000230",
+      "Echo_skill": "Transform into Diurnus Knight and charge forward to attack enemies with the sword, dealing {0} Spectro DMG. DMG dealt to enemies inflicted by Spectro Frazzle is increased by 100.00%.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        11,
+        14
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%"
+      ],
+      "Skill_3": [
+        "208.60%"
+      ],
+      "Skill_4": [
+        "238.40%"
+      ],
+      "Skill_5": [
+        "268.20%"
+      ]
+    },
+    {
+      "Name": "Dragon of Dirge",
+      "Slug": "dragon-of-dirge",
+      "ID": "330000130",
+      "Echo_skill": "Transform into Dragon of Dirge and summon a Grief Rift lasting for 5s. Periodically deal {0} Fusion DMG to enemies within the area of effect.\\n\\nThe Resonator with this Echo equipped in the main slot gains 12.00% Fusion DMG Bonus and 12.00% Basic Attack DMG Bonus.\\n\\nCD: <b>25s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        14
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "24.54%"
+      ],
+      "Skill_3": [
+        "28.63%"
+      ],
+      "Skill_4": [
+        "32.72%"
+      ],
+      "Skill_5": [
+        "36.81%"
+      ]
+    },
+    {
+      "Name": "Dreamless",
+      "Slug": "dreamless",
+      "ID": "340000070",
+      "Echo_skill": "Transform into Dreamless and perform <b>6</b> consecutive attacks. The first <b>5</b> attacks deal {0} Havoc DMG each, and the last attack deal {1} Havoc DMG. The DMG of this Echo Skill is increased by <b>50%</b> during the first <b>5s</b> after Rover-Havoc casts Resonance Liberation.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 3,
+      "Sonata_Group": [
+        6
+      ],
+      "Skill_1": [
+        "33.80%",
+        "169.00%",
+        "41.90%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "38.87%",
+        "194.35%",
+        "48.19%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "43.94%",
+        "219.70%",
+        "54.47%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "49.01%",
+        "245.05%",
+        "60.76%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "54.08%",
+        "270.40%",
+        "67.04%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "Dwarf Cassowary",
+      "Slug": "dwarf-cassowary",
+      "ID": "6000055",
+      "Echo_skill": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {0} Physical DMG 3 time(s). \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        4,
+        7
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "27.6%"
+      ],
+      "Skill_3": [
+        "31.2%"
+      ],
+      "Skill_4": [
+        "34.8%"
+      ],
+      "Skill_5": [
+        "38.4%"
+      ]
+    },
+    {
+      "Name": "Electro Drake",
+      "Slug": "electro-drake",
+      "ID": "6000102",
+      "Echo_skill": "Summon an Electro Drake to attack enemies, dealing {0} Electro DMG 3 times.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        12,
+        15,
+        16
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "28.80%"
+      ],
+      "Skill_3": [
+        "33.60%"
+      ],
+      "Skill_4": [
+        "38.40%"
+      ],
+      "Skill_5": [
+        "43.20%"
+      ]
+    },
+    {
+      "Name": "Electro Predator",
+      "Slug": "electro-predator",
+      "ID": "310000030",
+      "Echo_skill": "Summon an Electro Predator to shoot the enemy <b>5</b>times. The first <b>4</b> shots deals {0} Electro DMG, and the last deals {1} Electro DMG. \\n\\nCD: <b>8s</b>",
+      "Rarity": 0,
+      "Sonata_Group": [
+        2,
+        3
+      ],
+      "Skill_1": [
+        "10.80%",
+        "28.80%",
+        "8"
+      ],
+      "Skill_2": [
+        "12.42%",
+        "33.12%",
+        "8"
+      ],
+      "Skill_3": [
+        "14.04%",
+        "37.44%",
+        "8"
+      ],
+      "Skill_4": [
+        "15.66%",
+        "41.76%",
+        "8"
+      ],
+      "Skill_5": [
+        "17.28%",
+        "46.08%",
+        "8"
+      ]
+    },
+    {
+      "Name": "Excarat",
+      "Slug": "excarat",
+      "ID": "310000200",
+      "Echo_skill": "Transform into an Excarat and tunnel underground to advance. In this state, you have the ability to change your direction and are immune to damage. \\n\\nCD: <b>2s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        1,
+        6
+      ],
+      "Skill_1": [
+        "8"
+      ],
+      "Skill_2": [
+        "8"
+      ],
+      "Skill_3": [
+        "8"
+      ],
+      "Skill_4": [
+        "8"
+      ],
+      "Skill_5": [
+        "8"
+      ]
+    },
+    {
+      "Name": "Fae Ignis",
+      "Slug": "fae-ignis",
+      "ID": "310000430",
+      "Echo_skill": "Summon a Fae Ignis to attack enemies, dealing {0} Havoc DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        11,
+        12,
+        18
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Fallacy of No Return",
+      "Slug": "fallacy-of-no-return",
+      "ID": "6000060",
+      "Echo_skill": "Activate the Echo Skill to summon a fraction of the Fallacy of No Return's power and deal a blast to the surrounding area, inflicting Spectro DMG equal to {0} of max HP, after which the Resonator gains 10% bonus Energy Regen and all team members 10% bonus ATK for 20s.\\n\\nHold Echo Skill to unleash a series of flurry assaults at the cost of STA, each dealing Spectro DMG equal to {1} of max HP; Release to end the assail in a powerful blow, dealing Spectro DMG equal to {2} of max HP.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        7
+      ],
+      "Skill_1": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "11.4%",
+        "1.14%",
+        "14.25%"
+      ],
+      "Skill_3": [
+        "12.88%",
+        "1.29%",
+        "16.11%"
+      ],
+      "Skill_4": [
+        "14.37%",
+        "1.44%",
+        "17.97%"
+      ],
+      "Skill_5": [
+        "15.86%",
+        "1.58%",
+        "19.82%"
+      ]
+    },
+    {
+      "Name": "Feilian Beringal",
+      "Slug": "feilian-beringal",
+      "ID": "330000050",
+      "Echo_skill": "Transform into Feilian Beringal to perform a powerful kick. If the kick lands on an enemy, immediately perform a follow-up strike. The kick deals {0} Aero DMG, and the follow-up strike deals {1} Aero DMG. After the follow-up strike hits, the current character's Aero DMG increases by <b>12.00%</b>, and the Heavy Attack DMG increases by <b>12.00%</b> for <b>15s</b>.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        4
+      ],
+      "Skill_1": [
+        "144.90%",
+        "177.10%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "166.64%",
+        "203.67%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "188.37%",
+        "230.23%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "210.11%",
+        "256.80%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "231.84%",
+        "283.36%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "Fission Junrock",
+      "Slug": "fission-junrock",
+      "ID": "310000020",
+      "Echo_skill": "Summon a Fission Junrock. Generate a Resonance Effect that restores <b>2%</b> HP for friendly units each time. If not in combat, you can pick up minerals or plants nearby.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        8,
+        3,
+        7
+      ],
+      "Skill_1": [
+        "2%",
+        "15"
+      ],
+      "Skill_2": [
+        "2%",
+        "15"
+      ],
+      "Skill_3": [
+        "2%",
+        "15"
+      ],
+      "Skill_4": [
+        "2%",
+        "15"
+      ],
+      "Skill_5": [
+        "2%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Flautist",
+      "Slug": "flautist",
+      "ID": "320000040",
+      "Echo_skill": "Transform into Flautist, continuously emitting Electro lasers, dealing {0} Electro DMG for a total of <b>10</b> times. Gain <b>1</b> Concerto Energy every time a hit lands.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        9,
+        3
+      ],
+      "Skill_1": [
+        "33.3%",
+        "1",
+        "15"
+      ],
+      "Skill_2": [
+        "38.3%",
+        "1",
+        "15"
+      ],
+      "Skill_3": [
+        "43.2%",
+        "1",
+        "15"
+      ],
+      "Skill_4": [
+        "48.2%",
+        "1",
+        "15"
+      ],
+      "Skill_5": [
+        "53.2%",
+        "1",
+        "15"
+      ]
+    },
+    {
+      "Name": "Flora Drone",
+      "Slug": "flora-drone",
+      "ID": "6000175",
+      "Echo_skill": "Summon a Flora Drone, dealing {0} Aero DMG to enemies and healing Resonators within range by {1} of their Max HP plus an additional 160 HP.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        24,
+        25,
+        28,
+        29
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "43.2%",
+        "2.4%"
+      ],
+      "Skill_3": [
+        "50.4%",
+        "2.8%"
+      ],
+      "Skill_4": [
+        "57.6%",
+        "3.2%"
+      ],
+      "Skill_5": [
+        "64.8%",
+        "3.6%"
+      ]
+    },
+    {
+      "Name": "Flora Reindeer",
+      "Slug": "flora-reindeer",
+      "ID": "6000181",
+      "Echo_skill": "Summon a Flora Reindeer to attack enemies within a large range, dealing {0} Aero DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        25,
+        29
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "128.4%"
+      ],
+      "Skill_3": [
+        "149.8%"
+      ],
+      "Skill_4": [
+        "171.2%"
+      ],
+      "Skill_5": [
+        "192.6%"
+      ]
+    },
+    {
+      "Name": "Fog Lionarch",
+      "Slug": "fog-lionarch",
+      "ID": "6000215",
+      "Echo_skill": "Use Echo Skill to summon Fog Lionarch to spit fire toward enemies, dealing 7 stages of {0} Fusion DMG.\\n\\nCD: 20s",
+      "Rarity": 1,
+      "Sonata_Group": [
+        32,
+        33,
+        34
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "22.62%"
+      ],
+      "Skill_3": [
+        "26.39%"
+      ],
+      "Skill_4": [
+        "30.16%"
+      ],
+      "Skill_5": [
+        "33.93%"
+      ]
+    },
+    {
+      "Name": "Fog Lionarch: Body",
+      "Slug": "fog-lionarch-body",
+      "ID": "6000212",
+      "Echo_skill": "Use Echo Skill to summon Fog Lionarch: Body to ram into enemies, dealing {0} Fusion DMG.\\n\\nCD: 15s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        32,
+        36
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "128.40%"
+      ],
+      "Skill_3": [
+        "149.80%"
+      ],
+      "Skill_4": [
+        "171.20%"
+      ],
+      "Skill_5": [
+        "192.60%"
+      ]
+    },
+    {
+      "Name": "Fog Lionarch: Head",
+      "Slug": "fog-lionarch-head",
+      "ID": "6000213",
+      "Echo_skill": "Use Echo Skill to summon Fog Lionarch: Head to dart toward enemies, dealing 86.40% Fusion DMG.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        32,
+        36
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Forbidden Bastion",
+      "Slug": "forbidden-bastion",
+      "ID": "6000216",
+      "Echo_skill": "Use Echo Skill to summon Forbidden Bastion to bash over enemies, dealing {0} Glacio DMG.\\n\\nResonators with this Echo equipped in the main slot gain 10% Healing Bonus.\\n\\nCD: 20s",
+      "Rarity": 1,
+      "Sonata_Group": [
+        32,
+        33,
+        34
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "158.40%"
+      ],
+      "Skill_3": [
+        "184.80%"
+      ],
+      "Skill_4": [
+        "211.20%"
+      ],
+      "Skill_5": [
+        "237.60%"
+      ]
+    },
+    {
+      "Name": "Formrender",
+      "Slug": "formrender",
+      "ID": "6000223",
+      "Echo_skill": "Use Echo Skill to summon a Formrender, dealing {0} Fusion DMG.\\n\\n\nThe Resonator with this Echo equipped in the main slot gains 10.00% Energy Regen.\\n\\n\nCD: 20s",
+      "Rarity": 1,
+      "Sonata_Group": [
+        36,
+        37
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "182.40%"
+      ],
+      "Skill_3": [
+        "212.80%"
+      ],
+      "Skill_4": [
+        "243.20%"
+      ],
+      "Skill_5": [
+        "273.60%"
+      ]
+    },
+    {
+      "Name": "Frostbite Coleoid",
+      "Slug": "frostbite-coleoid",
+      "ID": "6000187",
+      "Echo_skill": "Summon a Frostbite Coleoid to punch enemies, dealing {0} Glacio DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        23,
+        30
+      ],
+      "Skill_1": [],
+      "Skill_2": [
+        "128.4%"
+      ],
+      "Skill_3": [
+        "149.8%"
+      ],
+      "Skill_4": [
+        "171.2%"
+      ],
+      "Skill_5": [
+        "192.6%"
+      ]
+    },
+    {
+      "Name": "Frostscourge Stalker",
+      "Slug": "frostscourge-stalker",
+      "ID": "310000390",
+      "Echo_skill": "Summon a Frostscourge Stalker to attack enemies, dealing {0} Glacio DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        11,
+        12
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Fusion Drake",
+      "Slug": "fusion-drake",
+      "ID": "6000107",
+      "Echo_skill": "Summon a Fusion Drake to attack enemies, dealing {0} Fusion DMG 3 times.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        16,
+        17
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "17.28%"
+      ],
+      "Skill_3": [
+        "20.16%"
+      ],
+      "Skill_4": [
+        "23.04%"
+      ],
+      "Skill_5": [
+        "25.92%"
+      ]
+    },
+    {
+      "Name": "Fusion Dreamane",
+      "Slug": "fusion-dreamane",
+      "ID": "310000280",
+      "Echo_skill": "Summon a Fusion Dreadmane that fiercely strikes the enemy, dealing {0} Fusion DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        7,
+        2
+      ],
+      "Skill_1": [
+        "20%+40",
+        "8"
+      ],
+      "Skill_2": [
+        "23%+46",
+        "8"
+      ],
+      "Skill_3": [
+        "26%+52",
+        "8"
+      ],
+      "Skill_4": [
+        "29%+58",
+        "8"
+      ],
+      "Skill_5": [
+        "32%+64",
+        "8"
+      ]
+    },
+    {
+      "Name": "Fusion Prism",
+      "Slug": "fusion-prism",
+      "ID": "310000150",
+      "Echo_skill": "Summon a Fusion Prism to fire a crystal shard, dealing {0} Fusion DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        1,
+        9,
+        2
+      ],
+      "Skill_1": [
+        "20%+40",
+        "8"
+      ],
+      "Skill_2": [
+        "23%+46",
+        "8"
+      ],
+      "Skill_3": [
+        "26%+52",
+        "8"
+      ],
+      "Skill_4": [
+        "29%+58",
+        "8"
+      ],
+      "Skill_5": [
+        "32%+64",
+        "8"
+      ]
+    },
+    {
+      "Name": "Fusion Warrior",
+      "Slug": "fusion-warrior",
+      "ID": "310000060",
+      "Echo_skill": "Transform into Fusion Warrior to perform a Counterattack. If the Counterattack is successful, the cooldown time of this skill will be reduced by <b>70.00%</b>, and {1} Fusion DMG will be dealt. \\n\\nCD: <b>15s</b>",
+      "Rarity": 0,
+      "Sonata_Group": [
+        4,
+        3,
+        2
+      ],
+      "Skill_1": [
+        "70%",
+        "180%",
+        "15"
+      ],
+      "Skill_2": [
+        "70%",
+        "207%",
+        "15"
+      ],
+      "Skill_3": [
+        "70%",
+        "234%",
+        "15"
+      ],
+      "Skill_4": [
+        "70%",
+        "261%",
+        "15"
+      ],
+      "Skill_5": [
+        "70%",
+        "288%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Galescourge Stalker",
+      "Slug": "galescourge-stalker",
+      "ID": "310000370",
+      "Echo_skill": "Summon a Galescourge Stalker that restores nearby party members' HP by {0} of their Max HP, up to 3 times.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        10,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "1.80%"
+      ],
+      "Skill_3": [
+        "2.10%"
+      ],
+      "Skill_4": [
+        "2.40%"
+      ],
+      "Skill_5": [
+        "2.70%"
+      ]
+    },
+    {
+      "Name": "Geospider S4",
+      "Slug": "geospider-s4",
+      "ID": "6000177",
+      "Echo_skill": "Summon a Geospider S4 to attack enemies, dealing an instance of {0} Spectro DMG and an instance of {1} Spectro DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        23,
+        24,
+        26
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "34.56%",
+        "51.84%"
+      ],
+      "Skill_3": [
+        "40.32%",
+        "60.48%"
+      ],
+      "Skill_4": [
+        "46.08%",
+        "69.12%"
+      ],
+      "Skill_5": [
+        "51.84%",
+        "77.76%"
+      ]
+    },
+    {
+      "Name": "Glacio Drake",
+      "Slug": "glacio-drake",
+      "ID": "6000103",
+      "Echo_skill": "Summon a Glacio Drake to attack enemies, dealing {0} Glacio DMG 5 times.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        15,
+        17
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "17.28%"
+      ],
+      "Skill_3": [
+        "20.16%"
+      ],
+      "Skill_4": [
+        "23.04%"
+      ],
+      "Skill_5": [
+        "25.92%"
+      ]
+    },
+    {
+      "Name": "Glacio Dreadmane",
+      "Slug": "glacio-dreadmane",
+      "ID": "6000056",
+      "Echo_skill": "Lacerate enemies as a Glacio Dreadmane, dealing {0} Glacio DMG on each hit. Equipped with 2 charges and can be cast mid-air. Glacio Dreadmane deals 20% more DMG while in mid-air and generates 6 Icicles upon landing, each dealing {1} Glacio DMG. \\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        1,
+        8
+      ],
+      "Skill_1": [
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "154.1%",
+        "23%"
+      ],
+      "Skill_3": [
+        "174.2%",
+        "26%"
+      ],
+      "Skill_4": [
+        "194.3%",
+        "29%"
+      ],
+      "Skill_5": [
+        "214.4%",
+        "32%"
+      ]
+    },
+    {
+      "Name": "Glacio Predator",
+      "Slug": "glacio-predator",
+      "ID": "310000040",
+      "Echo_skill": "Summon a Glacio Predator that throws an ice spear, dealing {0} Glacio DMG on hit. Deal {1} Glacio DMG up to <b>10</b> times during the charging time, and {2} Glacio DMG when the spear explodes. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        5,
+        1
+      ],
+      "Skill_1": [
+        "28.8%",
+        "2.88%",
+        "14.40%",
+        "8"
+      ],
+      "Skill_2": [
+        "33.12%",
+        "3.31%",
+        "16.56%",
+        "8"
+      ],
+      "Skill_3": [
+        "37.44%",
+        "3.74%",
+        "18.72%",
+        "8"
+      ],
+      "Skill_4": [
+        "41.76%",
+        "4.18%",
+        "20.88%",
+        "8"
+      ],
+      "Skill_5": [
+        "46.08%",
+        "4.61%",
+        "23.04%",
+        "8"
+      ]
+    },
+    {
+      "Name": "Glacio Prism",
+      "Slug": "glacio-prism",
+      "ID": "310000140",
+      "Echo_skill": "Summon a Glacio Prism that continuously fires three crystal shards, each dealing {0} Glacio DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        6,
+        8,
+        1
+      ],
+      "Skill_1": [
+        "24.00%",
+        "8"
+      ],
+      "Skill_2": [
+        "27.60%",
+        "8"
+      ],
+      "Skill_3": [
+        "31.20%",
+        "8"
+      ],
+      "Skill_4": [
+        "34.80%",
+        "8"
+      ],
+      "Skill_5": [
+        "38.40%",
+        "8"
+      ]
+    },
+    {
+      "Name": "Glommoth",
+      "Slug": "glommoth",
+      "ID": "6000195",
+      "Echo_skill": "Summon a Glommoth to stomp enemies, dealing {0} Glacio DMG.\\n\\nCasting Outro Skill within 15s after summoning Glommoth grants 12.00% Glacio DMG Bonus to the incoming Resonator for 15s.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        26,
+        30
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "182.40%"
+      ],
+      "Skill_3": [
+        "212.80%"
+      ],
+      "Skill_4": [
+        "243.20%"
+      ],
+      "Skill_5": [
+        "273.60%"
+      ]
+    },
+    {
+      "Name": "Golden Junrock",
+      "Slug": "golden-junrock",
+      "ID": "6000093",
+      "Echo_skill": "Summon a Golden Junrock that charges forward, dealing {0} Spectro DMG to enemies in its path.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        10,
+        11,
+        20
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Gulpuff",
+      "Slug": "gulpuff",
+      "ID": "310000120",
+      "Echo_skill": "Summon a Gulpuff that blows bubbles <b>5</b> times, each time dealing {0} Glacio DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        5,
+        1
+      ],
+      "Skill_1": [
+        "5",
+        "14.40%",
+        "8"
+      ],
+      "Skill_2": [
+        "5",
+        "16.56%",
+        "8"
+      ],
+      "Skill_3": [
+        "5",
+        "18.72%",
+        "8"
+      ],
+      "Skill_4": [
+        "5",
+        "20.88%",
+        "8"
+      ],
+      "Skill_5": [
+        "5",
+        "23.04%",
+        "8"
+      ]
+    },
+    {
+      "Name": "Havoc Drake",
+      "Slug": "havoc-drake",
+      "ID": "6000109",
+      "Echo_skill": "Summon a Havoc Drake to attack enemies, dealing {0} Havoc DMG 3 times.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        16,
+        17,
+        22
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Havoc Dreadmane",
+      "Slug": "havoc-dreadmane",
+      "ID": "320000100",
+      "Echo_skill": "Transform into Havoc Dreadmane to perform tail strikes up to <b>2</b> times. Each strike deals {0} Havoc DMG. An additional strike will be performed on hit, dealing {1} Havoc DMG. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        2,
+        6
+      ],
+      "Skill_1": [
+        "72.90%",
+        "48.60%",
+        "25"
+      ],
+      "Skill_2": [
+        "83.84%",
+        "55.89%",
+        "25"
+      ],
+      "Skill_3": [
+        "94.77%",
+        "63.18%",
+        "25"
+      ],
+      "Skill_4": [
+        "105.71%",
+        "70.47%",
+        "25"
+      ],
+      "Skill_5": [
+        "116.64%",
+        "77.76%",
+        "25"
+      ]
+    },
+    {
+      "Name": "Havoc Prism",
+      "Slug": "havoc-prism",
+      "ID": "310000170",
+      "Echo_skill": "Summon a Havoc Prism to fire five crystal shards, each dealing {0} Havoc DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        3,
+        5,
+        6
+      ],
+      "Skill_1": [
+        "14.40%",
+        "8"
+      ],
+      "Skill_2": [
+        "16.56%",
+        "8"
+      ],
+      "Skill_3": [
+        "18.72%",
+        "8"
+      ],
+      "Skill_4": [
+        "20.88%",
+        "8"
+      ],
+      "Skill_5": [
+        "23.04%",
+        "8"
+      ]
+    },
+    {
+      "Name": "Havoc Warrior",
+      "Slug": "havoc-warrior",
+      "ID": "310000070",
+      "Echo_skill": "Transform into Havoc Warrior to attack up to <b>3</b> times, dealing {0} Havoc DMG each time.\\n\\nCD: <b>15s</b>",
+      "Rarity": 0,
+      "Sonata_Group": [
+        5,
+        6
+      ],
+      "Skill_1": [
+        "107.33%",
+        "15"
+      ],
+      "Skill_2": [
+        "123.43%",
+        "15"
+      ],
+      "Skill_3": [
+        "139.53%",
+        "15"
+      ],
+      "Skill_4": [
+        "155.63%",
+        "15"
+      ],
+      "Skill_5": [
+        "171.73%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Hecate",
+      "Slug": "hecate",
+      "ID": "340000100",
+      "Echo_skill": "Summon 3 twirling Crescent Servants around you. Crescent Servants attack enemies with their spinning blades, dealing {0} Havoc DMG. Triggering a Counterattack with the Echo attacks extends the Crescent Servants’ duration.\\n\\nThe Resonator with this Echo equipped in the main slot has their Coordinated Attack DMG increased by 40.00%.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 3,
+      "Sonata_Group": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "30.40%"
+      ],
+      "Skill_3": [
+        "35.46%"
+      ],
+      "Skill_4": [
+        "40.53%"
+      ],
+      "Skill_5": [
+        "45.59%"
+      ]
+    },
+    {
+      "Name": "Hoartoise",
+      "Slug": "hoartoise",
+      "ID": "310000270",
+      "Echo_skill": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state. \\n\\nCD: <b>2s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        5,
+        1
+      ],
+      "Skill_1": [
+        "8"
+      ],
+      "Skill_2": [
+        "8"
+      ],
+      "Skill_3": [
+        "8"
+      ],
+      "Skill_4": [
+        "8"
+      ],
+      "Skill_5": [
+        "8"
+      ]
+    },
+    {
+      "Name": "Hocus Pocus",
+      "Slug": "hocus-pocus",
+      "ID": "310000450",
+      "Echo_skill": "Summon a Hocus Pocus to attack enemies with 3 consecutive strikes, each dealing {0} Havoc DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        10,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "28.80%"
+      ],
+      "Skill_3": [
+        "33.60%"
+      ],
+      "Skill_4": [
+        "38.40%"
+      ],
+      "Skill_5": [
+        "43.20%"
+      ]
+    },
+    {
+      "Name": "Hoochief",
+      "Slug": "hoochief",
+      "ID": "320000110",
+      "Echo_skill": "Use the Echo skill, transform into Hoochief Cyclone and attack with a palm, causing {0} Aero DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        7,
+        4
+      ],
+      "Skill_1": [
+        "149%",
+        "15"
+      ],
+      "Skill_2": [
+        "178.8%",
+        "15"
+      ],
+      "Skill_3": [
+        "208.6%",
+        "15"
+      ],
+      "Skill_4": [
+        "238.4%",
+        "15"
+      ],
+      "Skill_5": [
+        "268.2%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Hooscamp",
+      "Slug": "hooscamp",
+      "ID": "310000250",
+      "Echo_skill": "Transform into Hooscamp Flinger and pounce at the enemies, dealing {0} Aero DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        9,
+        4
+      ],
+      "Skill_1": [
+        "30%+60",
+        "8"
+      ],
+      "Skill_2": [
+        "34.50%+69",
+        "8"
+      ],
+      "Skill_3": [
+        "39.00%+78",
+        "8"
+      ],
+      "Skill_4": [
+        "43.50%+87",
+        "8"
+      ],
+      "Skill_5": [
+        "48.00%+96",
+        "8"
+      ]
+    },
+    {
+      "Name": "Hurriclaw",
+      "Slug": "hurriclaw",
+      "ID": "6000097",
+      "Echo_skill": "Transform into Hurriclaw and charge forward, dealing {0} Aero DMG upon hit plus {0} Aero DMG with a sweep attack. Hold the Echo Skill to continue charging forward. Use Echo Skill again while charging to perform a sweep attack.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        14,
+        15,
+        19
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "104.40%"
+      ],
+      "Skill_3": [
+        "121.80%"
+      ],
+      "Skill_4": [
+        "139.20%"
+      ],
+      "Skill_5": [
+        "156.60%"
+      ]
+    },
+    {
+      "Name": "Hyvatia",
+      "Slug": "hyvatia",
+      "ID": "6000189",
+      "Echo_skill": "Summon Hyvatia in mid-air to fire lasers at enemies, dealing {0} Spectro DMG 10 times.\\n\\nCasting Outro Skill within 15s after summoning Hyvatia grants 10.00% All-Attribute DMG Bonus to the Intro Skill of the incoming Resonator for 15s.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        24,
+        25
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "18.24%"
+      ],
+      "Skill_3": [
+        "21.28%"
+      ],
+      "Skill_4": [
+        "24.32%"
+      ],
+      "Skill_5": [
+        "27.36%"
+      ]
+    },
+    {
+      "Name": "Iceglint Dancer",
+      "Slug": "iceglint-dancer",
+      "ID": "6000196",
+      "Echo_skill": "Transform into an Iceglint Dancer to attack enemies, dealing {0} Glacio DMG.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        26,
+        29,
+        30
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "136.80%"
+      ],
+      "Skill_3": [
+        "159.60%"
+      ],
+      "Skill_4": [
+        "182.40%"
+      ],
+      "Skill_5": [
+        "205.20%"
+      ]
+    },
+    {
+      "Name": "Impermanence Heron",
+      "Slug": "impermanence-heron",
+      "ID": "330000030",
+      "Echo_skill": "Transform into Impermanence Heron to fly up and smack down, dealing {0} Havoc DMG. Long press to stay as Impermanence Heron Heron and continuously spit flames, each attack dealing {1} Havoc DMG. Once the initial attack lands on any enemy, the current character regains <b>10</b> Resonance Energy. If the current character uses their Outro Skill within the next <b>15s</b>, the next character’s damage dealt will be boosted by <b>12%</b> for <b>15s</b>.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        8
+      ],
+      "Skill_1": [
+        "194.10%",
+        "34.83%",
+        "25"
+      ],
+      "Skill_2": [
+        "223.22%",
+        "40.05%",
+        "25"
+      ],
+      "Skill_3": [
+        "252.33%",
+        "45.28%",
+        "25"
+      ],
+      "Skill_4": [
+        "281.45%",
+        "50.50%",
+        "25"
+      ],
+      "Skill_5": [
+        "310.56%",
+        "55.73%",
+        "25"
+      ]
+    },
+    {
+      "Name": "Inferno Rider",
+      "Slug": "inferno-rider",
+      "ID": "330000020",
+      "Echo_skill": "Transform into Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing {0}, {1}, and {2} Fusion DMG respectively. After the final hit, increase the current character’s Fusion DMG by <b>12.00%</b> and Basic Attack DMG by <b>12.00%</b> for <b>15s</b>. Long press the Echo Skill to transform into Inferno Rider and enter the Riding Mode. When exiting the Riding Mode, deal {2} Fusion DMG to enemies in front.\\n\\nCD: <b>20s</b>",
+      "Rarity": 2,
+      "Sonata_Group": [
+        2
+      ],
+      "Skill_1": [
+        "151.50%",
+        "176.75%",
+        "176.75%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "174.23%",
+        "203.26%",
+        "203.26%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "196.95%",
+        "229.78%",
+        "229.78%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "219.68%",
+        "256.29%",
+        "256.29%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "242.40%",
+        "282.80%",
+        "282.80%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "Ironhoof",
+      "Slug": "ironhoof",
+      "ID": "6000183",
+      "Echo_skill": "Transform into an Ironhoof to charge at enemies, dealing {0} Fusion DMG. At the end of the charge, unleash a goring attack that deals {1} Fusion DMG 3 times and {2} Fusion DMG once.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        24,
+        29,
+        30
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "35.76%",
+        "8.94%",
+        "116.22%"
+      ],
+      "Skill_3": [
+        "41.72%",
+        "10.43%",
+        "135.59%"
+      ],
+      "Skill_4": [
+        "47.68%",
+        "11.92%",
+        "154.96%"
+      ],
+      "Skill_5": [
+        "53.64%",
+        "13.41%",
+        "174.33%"
+      ]
+    },
+    {
+      "Name": "Jade Nether Serpent",
+      "Slug": "jade-nether-serpent",
+      "ID": "6000219",
+      "Echo_skill": "Summon a Jade Nether Serpent that bombards the target with fireballs, dealing {0} Fusion DMG 5 times, then {1} Fusion DMG once.\\n\\n\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        36
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "8.64%",
+        "43.20%"
+      ],
+      "Skill_3": [
+        "10.08%",
+        "50.40%"
+      ],
+      "Skill_4": [
+        "11.52%",
+        "57.60%"
+      ],
+      "Skill_5": [
+        "12.96%",
+        "64.80%"
+      ]
+    },
+    {
+      "Name": "Jué",
+      "Slug": "ju",
+      "ID": "6000059",
+      "Echo_skill": "Summon Jué to the aid. Jué soars through the air, dealing {0} Spectro DMG, and summons thunderbolts that strike nearby enemies up to <b>5</b> times, each hit dealing {1} Spectro DMG. Jué then spirals downward, attacking surrounding enemies twice, each hit dealing {0} Spectro DMG. Casting this Echo Skill grants the Resonator a Blessing of Time effect that lasts <b>15s</b>, during when:\\n\\n- The Resonator gains <b>16%</b> Resonance Skill DMG Bonus.\\n\\n- When the Resonator's Resonance Skill hits the target, inflict {3} Spectro DMG 1 time per second for 15s, considered as the Resonator's Resonance Skill DMG. \\n\\nCD: <b>20s</b>.",
+      "Rarity": 3,
+      "Sonata_Group": [
+        5
+      ],
+      "Skill_1": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "34.96%",
+        "13.98%",
+        "46%",
+        "11.5%"
+      ],
+      "Skill_3": [
+        "39.52%",
+        "15.81%",
+        "52%",
+        "13%"
+      ],
+      "Skill_4": [
+        "44.08%",
+        "17.63%",
+        "58%",
+        "14.5%"
+      ],
+      "Skill_5": [
+        "48.64%",
+        "19.46%",
+        "64%",
+        "16%"
+      ]
+    },
+    {
+      "Name": "Kerasaur",
+      "Slug": "kerasaur",
+      "ID": "6000112",
+      "Echo_skill": "Transform into Kerasaur to leap into the air and slam down, dealing {0} Aero DMG. Shortly after hitting the target, cast Echo Skill again to charge at the target, dealing {0} Aero DMG. The Resonator with this Echo equipped in the main slot gains 12.00% Aero DMG Bonus and 12.00% Resonance Liberation DMG Bonus.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        16,
+        17,
+        21
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%"
+      ],
+      "Skill_3": [
+        "208.60%"
+      ],
+      "Skill_4": [
+        "238.40%"
+      ],
+      "Skill_5": [
+        "268.20%"
+      ]
+    },
+    {
+      "Name": "Kernel Puppet: Anger",
+      "Slug": "kernel-puppet-anger",
+      "ID": "6000207",
+      "Echo_skill": "Use Echo Skill to summon Kernel Puppet: Worry to attack enemies, dealing {0} Fusion DMG.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        33,
+        37
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Kernel Puppet: Fright",
+      "Slug": "kernel-puppet-fright",
+      "ID": "6000211",
+      "Echo_skill": "Use Echo Skill to summon Kernel Puppet: Fright to attack enemies, dealing an instance of {0} Havoc DMG and an instance of {1} Havoc DMG.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        34,
+        37
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "34.56%",
+        "51.84%"
+      ],
+      "Skill_3": [
+        "40.32%",
+        "60.48%"
+      ],
+      "Skill_4": [
+        "46.08%",
+        "69.12%"
+      ],
+      "Skill_5": [
+        "51.84%",
+        "77.76%"
+      ]
+    },
+    {
+      "Name": "Kernel Puppet: Grief",
+      "Slug": "kernel-puppet-grief",
+      "ID": "6000210",
+      "Echo_skill": "Use Echo Skill to summon Kernel Puppet: Grief to attack enemies, dealing {0} Spectro DMG.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        34,
+        37
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Kernel Puppet: Joy",
+      "Slug": "kernel-puppet-joy",
+      "ID": "6000206",
+      "Echo_skill": "Use Echo Skill to summon Kernel Puppet: Joy to attack enemies, dealing {0} Physical DMG.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        32,
+        36
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Kernel Puppet: Reflection",
+      "Slug": "kernel-puppet-reflection",
+      "ID": "6000209",
+      "Echo_skill": "Use Echo Skill to summon Kernel Puppet: Reflection to attack enemies, dealing {0} Electro DMG.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        33,
+        37
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "43.20%"
+      ],
+      "Skill_3": [
+        "50.40%"
+      ],
+      "Skill_4": [
+        "57.60%"
+      ],
+      "Skill_5": [
+        "64.80%"
+      ]
+    },
+    {
+      "Name": "Kernel Puppet: Worry",
+      "Slug": "kernel-puppet-worry",
+      "ID": "6000208",
+      "Echo_skill": "Use Echo Skill to summon Kernel Puppet: Worry to attack enemies, dealing {0} Glacio DMG.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        33,
+        35
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "43.20%"
+      ],
+      "Skill_3": [
+        "50.40%"
+      ],
+      "Skill_4": [
+        "57.60%"
+      ],
+      "Skill_5": [
+        "64.80%"
+      ]
+    },
+    {
+      "Name": "Kronablight",
+      "Slug": "kronablight",
+      "ID": "6000193",
+      "Echo_skill": "Transform into a Kronablight, soar into the air, and dive to deal {0} Electro DMG to the enemies.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        26,
+        27
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%"
+      ],
+      "Skill_3": [
+        "208.60%"
+      ],
+      "Skill_4": [
+        "238.40%"
+      ],
+      "Skill_5": [
+        "268.20%"
+      ]
+    },
+    {
+      "Name": "La Guardia",
+      "Slug": "la-guardia",
+      "ID": "6000098",
+      "Echo_skill": "Transform into La Guardia and attack nearby targets, dealing {0} Physical DMG. Hold the Echo Skill to maintain the Echo form for a while to slash enemies and cast a ranged attack forward. The slash deals {0} Physical DMG, and the ranged attack deals {1} Physical DMG up to 15 times.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        12,
+        15,
+        16
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%",
+        "11.92%"
+      ],
+      "Skill_3": [
+        "208.60%",
+        "13.90%"
+      ],
+      "Skill_4": [
+        "238.40%",
+        "15.89%"
+      ],
+      "Skill_5": [
+        "268.20%",
+        "17.87%"
+      ]
+    },
+    {
+      "Name": "Lady of the Sea",
+      "Slug": "lady-of-the-sea",
+      "ID": "6000160",
+      "Echo_skill": "Summon a Tidestorm to deal {0} Aero DMG ten times and {1} Aero DMG one time to enemies. The Resonator with this Echo equipped in the main slot gains 12.00% Aero DMG Bonus and 12.00% Resonance Liberation DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        19
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "9.12%",
+        "109.44%"
+      ],
+      "Skill_3": [
+        "10.64%",
+        "127.68%"
+      ],
+      "Skill_4": [
+        "12.16%",
+        "145.92%"
+      ],
+      "Skill_5": [
+        "13.68%",
+        "164.16%"
+      ]
+    },
+    {
+      "Name": "Lampylumen Myriad",
+      "Slug": "lampylumen-myriad",
+      "ID": "330000040",
+      "Echo_skill": "Transform into Lampylumen Myriad. Perform up to 3 consecutive attacks. Unleash a freezing shock by performing consecutive forward strikes, with the initial two strikes inflicting {0} and {1} Glacio DMG respectively, and the final strike dealing {2} Glacio DMG. Enemies will be frozen on hit. Each shock increases the current character’s Glacio DMG by <b>4.00%</b> and Resonance Skill DMG dealt by <b>4.00%</b> for <b>15s</b>, stacking up to <b>3</b> times.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        1
+      ],
+      "Skill_1": [
+        "125.10%",
+        "125.10%",
+        "166.80%",
+        "4%",
+        "4%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "143.87%",
+        "143.87%",
+        "191.82%",
+        "4%",
+        "4%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "162.63%",
+        "162.63%",
+        "216.84%",
+        "4%",
+        "4%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "181.40%",
+        "181.40%",
+        "241.86%",
+        "4%",
+        "4%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "200.16%",
+        "200.16%",
+        "266.88%",
+        "4%",
+        "4%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "Lava Larva",
+      "Slug": "lava-larva",
+      "ID": "6000054",
+      "Echo_skill": "Summon a Lava Larva that continuously attacks enemies, dealing {0} Fusion DMG with each hit. The Lava Larva disappears when the summoner is switched out or moves too far away. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        9,
+        2
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "27.6%"
+      ],
+      "Skill_3": [
+        "31.2%"
+      ],
+      "Skill_4": [
+        "34.8%"
+      ],
+      "Skill_5": [
+        "38.4%"
+      ]
+    },
+    {
+      "Name": "Lightcrusher",
+      "Slug": "lightcrusher",
+      "ID": "6000058",
+      "Echo_skill": "Lunge forward as a Lightcrusher, dealing {0} Spectro DMG. Generate 6 Ablucence on hit. Each Ablucence explosion deals {1} Spectro DMG. Hold the Echo Skill to stay in the Lightcrusher form, which allows you to leap up and pounce forward in the air for a short distance. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        5
+      ],
+      "Skill_1": [
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "97.29%",
+        "10.81%"
+      ],
+      "Skill_3": [
+        "109.98%",
+        "12.22%"
+      ],
+      "Skill_4": [
+        "122.67%",
+        "13.63%"
+      ],
+      "Skill_5": [
+        "135.36%",
+        "15.04%"
+      ]
+    },
+    {
+      "Name": "Lioness of Glory",
+      "Slug": "lioness-of-glory",
+      "ID": "6000114",
+      "Echo_skill": "Summon the Halberd of Glory to crush an area, dealing {0} Fusion DMG to nearby targets, and then blast off after a short delay, dealing {1} Fusion DMG. The Resonator with this Echo equipped in the main slot gains 12.00% Fusion DMG Bonus and 12.00% Resonance Liberation DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        16
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "54.72%",
+        "127.68%"
+      ],
+      "Skill_3": [
+        "63.84%",
+        "148.96%"
+      ],
+      "Skill_4": [
+        "72.96%",
+        "170.24%"
+      ],
+      "Skill_5": [
+        "82.08%",
+        "191.52%"
+      ]
+    },
+    {
+      "Name": "Lorelei",
+      "Slug": "lorelei",
+      "ID": "330000110",
+      "Echo_skill": "Transform into Lorelei and attack surrounding enemies, dealing {0} Havoc DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Havoc DMG Bonus and 12.00% Basic Attack DMG Bonus.\\n\\nCD: <b>25s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        12
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "270%"
+      ],
+      "Skill_3": [
+        "315%"
+      ],
+      "Skill_4": [
+        "360%"
+      ],
+      "Skill_5": [
+        "405%"
+      ]
+    },
+    {
+      "Name": "Lottie Lost",
+      "Slug": "lottie-lost",
+      "ID": "310000460",
+      "Echo_skill": "Summon a Lottie Lost to attack enemies, dealing {0} Spectro DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        10,
+        14
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Lumiscale Construct",
+      "Slug": "lumiscale-construct",
+      "ID": "6000057",
+      "Echo_skill": "Transform into a Lumiscale Construct and enter a Parry Stance. If you are not attacked during the Parry Stance, slash to deal {0} Glacio DMG when the stance finishes. If attacked, counterattack instantly, dealing {1} Glacio DMG. When hit with a Special Skill attack while in the Parry Stance, break the Special Skill and counterattack, dealing {1} Glacio DMG. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        3,
+        1
+      ],
+      "Skill_1": [
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "397.9%",
+        "596.85%"
+      ],
+      "Skill_3": [
+        "449.8%",
+        "674.7%"
+      ],
+      "Skill_4": [
+        "501.7%",
+        "752.55%"
+      ],
+      "Skill_5": [
+        "553.6% ",
+        "830.4%"
+      ]
+    },
+    {
+      "Name": "Mech Abomination",
+      "Slug": "mech-abomination",
+      "ID": "340000060",
+      "Echo_skill": "Strike the enemies in front, dealing {0} Electro DMG. Summon Mech Waste to attack enemies. Mech Waste deals {1} Electro DMG on-hit and explode after a while to deal {2} Electro DMG. After casting this Echo Skill, increase current character's ATK by <b>12.00%</b> for <b>15s</b>. Damage dealt by Mech Waste is considered Outro Skill DMG.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        9
+      ],
+      "Skill_1": [
+        "30.40%",
+        "200%",
+        "100%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "34.96%",
+        "230%",
+        "115%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "39.52%",
+        "260",
+        "130%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "44.08%",
+        "290%",
+        "145%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "48.64%",
+        "320%",
+        "160%",
+        "12%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "Mining Drone",
+      "Slug": "mining-drone",
+      "ID": "6000176",
+      "Echo_skill": "Transform into a Mining Drone to attack enemies, dealing {0} Havoc DMG twice.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        23,
+        25,
+        28,
+        29
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "68.4%"
+      ],
+      "Skill_3": [
+        "79.8%"
+      ],
+      "Skill_4": [
+        "91.2%"
+      ],
+      "Skill_5": [
+        "102.6%"
+      ]
+    },
+    {
+      "Name": "Mining Reindeer",
+      "Slug": "mining-reindeer",
+      "ID": "6000182",
+      "Echo_skill": "Summon a Mining Reindeer to launch a charged attack at enemies, dealing {0} Electro DMG.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        24,
+        29
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "158.4%"
+      ],
+      "Skill_3": [
+        "184.8%"
+      ],
+      "Skill_4": [
+        "211.2%"
+      ],
+      "Skill_5": [
+        "237.6%"
+      ]
+    },
+    {
+      "Name": "Mourning Aix",
+      "Slug": "mourning-aix",
+      "ID": "330000060",
+      "Echo_skill": "Transform into Mourning Aix and perform 2 consecutive claw attacks, each attack dealing {0} and {1} Spectro DMG respectively. After the transformation, increase current character's Spectro DMG by <b>12.00%</b> and Resonance Liberation DMG by <b>12.00%</b> for <b>15s</b>.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        5
+      ],
+      "Skill_1": [
+        "98.40%",
+        "147.60%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "113.16%",
+        "169.74%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "127.92%",
+        "191.88%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "142.68%",
+        "214.02%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "157.44%",
+        "236.16%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "Myriad Snare: Rustfire Chassis",
+      "Slug": "myriad-snare-rustfire-chassis",
+      "ID": "6000217",
+      "Echo_skill": "Summon Myriad Snare: Rustfire Chassis, dealing Fusion DMG equal to {0} of the Max HP on initial impact. During its duration, it repeatedly crushes enemies along its path up to 19 times, dealing Fusion DMG equal to {1} of the Max HP each time.\\n\\nResonators with this Echo equipped in the main slot gain 12.00% Fusion DMG Bonus and 12.00% Heavy Attack DMG Bonus.\\n\\nCD: 20s",
+      "Rarity": 2,
+      "Sonata_Group": [
+        33,
+        34
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "6.80%",
+        "0.24%"
+      ],
+      "Skill_3": [
+        "7.93%",
+        "0.29%"
+      ],
+      "Skill_4": [
+        "9.07%",
+        "0.33%"
+      ],
+      "Skill_5": [
+        "10.20%",
+        "0.37%"
+      ]
+    },
+    {
+      "Name": "Nameless Explorer",
+      "Slug": "nameless-explorer",
+      "ID": "6000192",
+      "Echo_skill": "Summon Nameless Explorer to attack enemies along its path, dealing {0} Aero DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Aero DMG Bonus and 20.00% Echo Skill DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        28,
+        29
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "182.40%"
+      ],
+      "Skill_3": [
+        "212.80%"
+      ],
+      "Skill_4": [
+        "243.20%"
+      ],
+      "Skill_5": [
+        "273.60%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Aero Predator",
+      "Slug": "nightmare-aero-predator",
+      "ID": "6000164",
+      "Echo_skill": "Summon an Aero Predator that throws a dart forward. The dart will bounce between enemies up to three times, dealing {0} Aero DMG each time it hits.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        19
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "20.70%"
+      ],
+      "Skill_3": [
+        "23.40%"
+      ],
+      "Skill_4": [
+        "26.10%"
+      ],
+      "Skill_5": [
+        "28.80%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Baby Roseshroom",
+      "Slug": "nightmare-baby-roseshroom",
+      "ID": "6000170",
+      "Echo_skill": "Summon a Baby Roseshroom that fires a laser, dealing {0} Havoc DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        21
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "23.00%+46"
+      ],
+      "Skill_3": [
+        "26.00%+52"
+      ],
+      "Skill_4": [
+        "29.00%+58"
+      ],
+      "Skill_5": [
+        "32.00%+64"
+      ]
+    },
+    {
+      "Name": "Nightmare: Baby Viridblaze Saurian",
+      "Slug": "nightmare-baby-viridblaze-saurian",
+      "ID": "6000169",
+      "Echo_skill": "Transform into Baby Viridblaze Saurian to rest in place, and slowly restore HP.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        21
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        " "
+      ],
+      "Skill_3": [
+        " "
+      ],
+      "Skill_4": [
+        " "
+      ],
+      "Skill_5": [
+        " "
+      ]
+    },
+    {
+      "Name": "Nightmare: Chirpuff",
+      "Slug": "nightmare-chirpuff",
+      "ID": "6000166",
+      "Echo_skill": "Summon a Chirpuff that self-inflates and blasts a powerful gust of wind forward 3 times. Each blast inflicts {0} Aero DMG and pushes enemies backwards. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        20
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "27.60%"
+      ],
+      "Skill_3": [
+        "31.20%"
+      ],
+      "Skill_4": [
+        "34.80%"
+      ],
+      "Skill_5": [
+        "38.40%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Crownless",
+      "Slug": "nightmare-crownless",
+      "ID": "330000180",
+      "Echo_skill": "Transform into Nightmare: Crownless and attack enemies in front, dealing {0} Havoc DMG. The Resonator with this Echo equipped in their main slot gains 12.00% Havoc DMG Bonus and 12.00% Basic Attack DMG Bonus.\\n\\nThis skill has 3 initial charges, replenished once every 12s, max 3 charges. When Nightmare: Crownless hits a target, DMG dealt by this skill is increased by 20.00%. This effect lasts for 2s and does not stack.\\n\\nCD: <b>12s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        6
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "176.40%"
+      ],
+      "Skill_3": [
+        "205.80%"
+      ],
+      "Skill_4": [
+        "235.20%"
+      ],
+      "Skill_5": [
+        "264.6%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Cyan-Feathered Heron",
+      "Slug": "nightmare-cyan-feathered-heron",
+      "ID": "6000162",
+      "Echo_skill": "Transform into Cyan-Feathered Heron and charge at the enemies, dealing {0} Aero DMG; This Echo Skill interrupts enemy Special Skills upon dealing damage.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        20
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "170.20%"
+      ],
+      "Skill_3": [
+        "192.40%"
+      ],
+      "Skill_4": [
+        "214.60%"
+      ],
+      "Skill_5": [
+        "236.80%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Dwarf Cassowary",
+      "Slug": "nightmare-dwarf-cassowary",
+      "ID": "6000172",
+      "Echo_skill": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {0} Physical DMG 3 time(s).\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        22
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "27.60%"
+      ],
+      "Skill_3": [
+        "31.20%"
+      ],
+      "Skill_4": [
+        "34.80%"
+      ],
+      "Skill_5": [
+        "38.40%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Electro Predator",
+      "Slug": "nightmare-electro-predator",
+      "ID": "6000163",
+      "Echo_skill": "Summon an Electro Predator to shoot the enemy 5 times. The first 4 shots deals {0} Electro DMG, and the last deals {1} Electro DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        19
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "12.42%",
+        "33.12%"
+      ],
+      "Skill_3": [
+        "14.04%",
+        "37.44%"
+      ],
+      "Skill_4": [
+        "15.66%",
+        "41.76%"
+      ],
+      "Skill_5": [
+        "17.28%",
+        "46.08%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Feilian Beringal",
+      "Slug": "nightmare-feilian-beringal",
+      "ID": "330000140",
+      "Echo_skill": "Summon a Nightmare: Feilian Beringal to attack enemies, dealing {0} Aero DMG. The remaining Whirlwind Beam will continuously attack surrounding enemies up to 5 times, each dealing {1} Aero DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Aero DMG Bonus and 12.00% Heavy Attack DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        4
+      ],
+      "Skill_1": [
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "109.44%",
+        "14.59%"
+      ],
+      "Skill_3": [
+        "127.68%",
+        "17.02%"
+      ],
+      "Skill_4": [
+        "145.92%",
+        "19.46%"
+      ],
+      "Skill_5": [
+        "164.16%",
+        "21.89%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Glacio Predator",
+      "Slug": "nightmare-glacio-predator",
+      "ID": "6000118",
+      "Echo_skill": "Summon a Glacio Predator that throws an ice spear, dealing {0} Glacio DMG on hit. Deal {1} Glacio DMG up to 10 times during the charging time, and {2} Glacio DMG when the spear explodes.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        18
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "33.12%",
+        "3.31%",
+        "16.56%"
+      ],
+      "Skill_3": [
+        "37.44%",
+        "3.74%",
+        "18.72%"
+      ],
+      "Skill_4": [
+        "41.76%",
+        "4.18%",
+        "20.88%"
+      ],
+      "Skill_5": [
+        "46.08%",
+        "4.61%",
+        "23.04%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Gulpuff",
+      "Slug": "nightmare-gulpuff",
+      "ID": "6000165",
+      "Echo_skill": "Summon a Gulpuff that blows bubbles 5 times, each time dealing {0} Glacio DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        20
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "16.56%"
+      ],
+      "Skill_3": [
+        "18.72%"
+      ],
+      "Skill_4": [
+        "20.88%"
+      ],
+      "Skill_5": [
+        "23.04%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Havoc Warrior",
+      "Slug": "nightmare-havoc-warrior",
+      "ID": "6000117",
+      "Echo_skill": "Transform into Havoc Warrior to attack up to 3 times, dealing {0} Havoc DMG each time.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        18
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "123.43%"
+      ],
+      "Skill_3": [
+        "139.53%"
+      ],
+      "Skill_4": [
+        "155.63%"
+      ],
+      "Skill_5": [
+        "171.73%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Hecate",
+      "Slug": "nightmare-hecate",
+      "ID": "6000115",
+      "Echo_skill": "Transform into Nightmare: Hecate. Leap up and smash down, dealing 3 stages of damage, each dealing Havoc DMG equal to {0} of her ATK. The Resonator with the Echo equipped in the main slot gains 12.00% Havoc DMG Bonus and 20.00% Echo Skill DMG Bonus.\\n\\nCD: <b>25s</b>.",
+      "Rarity": 3,
+      "Sonata_Group": [
+        18
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "101.59%"
+      ],
+      "Skill_3": [
+        "118.52%"
+      ],
+      "Skill_4": [
+        "135.46%"
+      ],
+      "Skill_5": [
+        "152.39%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Impermanence Heron",
+      "Slug": "nightmare-impermanence-heron",
+      "ID": "330000150",
+      "Echo_skill": "Transform into Nightmare: Impermanence Heron and deliver up to 10 consecutive strikes to surrounding enemies, each dealing {0} Havoc DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Havoc DMG Bonus and 12.00% Heavy Attack DMG Bonus.\\n\\nCD: <b>25s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        12
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "27%"
+      ],
+      "Skill_3": [
+        "31.50%"
+      ],
+      "Skill_4": [
+        "36%"
+      ],
+      "Skill_5": [
+        "40.50%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Inferno Rider",
+      "Slug": "nightmare-inferno-rider",
+      "ID": "330000190",
+      "Echo_skill": "Transform into Nightmare: Inferno Rider and jump to attack enemies in front, dealing {0} Fusion DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Fusion DMG Bonus and 12.00% Resonance Skill DMG Bonus.\\n\\nHold Echol Skill to transform into Nightmare: Inferno Rider and enter Riding Mode. When exiting Riding Mode, deal {1} Fusion DMG to enemies in front.\\n\\nCD: <b>25s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        2
+      ],
+      "Skill_1": [
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "270%",
+        "189%"
+      ],
+      "Skill_3": [
+        "315%",
+        "220.50%"
+      ],
+      "Skill_4": [
+        "360%",
+        "252%"
+      ],
+      "Skill_5": [
+        "405%",
+        "283.50%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Kelpie",
+      "Slug": "nightmare-kelpie",
+      "ID": "6000113",
+      "Echo_skill": "Transform into Nightmare: Kelpie to attack nearby targets, dealing {0} Glacio DMG. The Resonator with this Echo equipped in the main slot gains 12.00% Glacio DMG Bonus and 12.00% Aero DMG Bonus. Switching out the Resonator with Outro Skill summons Nightmares: Kelpie to deal 405.00% Aero DMG.\\n\\nCD: <b>25s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        15,
+        17
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "270%"
+      ],
+      "Skill_3": [
+        "315%"
+      ],
+      "Skill_4": [
+        "360%"
+      ],
+      "Skill_5": [
+        "405%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Lampylumen Myriad",
+      "Slug": "nightmare-lampylumen-myriad",
+      "ID": "6000105",
+      "Echo_skill": "Summon a Nightmare: Lampylumen Myriad and attack nearby enemies, dealing {0} Glacio DMG. The Resonator with this Echo equipped in their main slot gains 12.00% Glacio DMG Bonus and has their Coordinated Attack DMG increased by 30.00%.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        10,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "182.40%"
+      ],
+      "Skill_3": [
+        "212.80%"
+      ],
+      "Skill_4": [
+        "243.20%"
+      ],
+      "Skill_5": [
+        "273.60%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Mourning Aix",
+      "Slug": "nightmare-mourning-aix",
+      "ID": "330000200",
+      "Echo_skill": "Summon a Nightmare: Mourning Aix to attack surrounding enemies, dealing {0} Spectro DMG. DMG dealt to enemies inflicted by Spectro Frazzle is increased by 100.00%.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Spectro DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        11
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "182.40%"
+      ],
+      "Skill_3": [
+        "212.80%"
+      ],
+      "Skill_4": [
+        "243.20%"
+      ],
+      "Skill_5": [
+        "273.60%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Roseshroom",
+      "Slug": "nightmare-roseshroom",
+      "ID": "6000173",
+      "Echo_skill": "Summon a Roseshroom that fires a laser, dealing {0} Havoc DMG up to 3 times.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        22
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "41.02%"
+      ],
+      "Skill_3": [
+        "46.37%"
+      ],
+      "Skill_4": [
+        "51.72%"
+      ],
+      "Skill_5": [
+        "57.07%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Tambourinist",
+      "Slug": "nightmare-tambourinist",
+      "ID": "6000119",
+      "Echo_skill": "Summon a Tambourinist that plays out Melodies of Annihilation. Any Resonator on the team gains the following effect for 10s upon obtaining a Melody of Annihilation: When the Resonator hits a target, the Tambourinist deals {0} Havoc DMG to the target, up to 10 times.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        18
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "10.35%"
+      ],
+      "Skill_3": [
+        "11.70%"
+      ],
+      "Skill_4": [
+        "13.05%"
+      ],
+      "Skill_5": [
+        "14.40%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Tempest Mephis",
+      "Slug": "nightmare-tempest-mephis",
+      "ID": "330000170",
+      "Echo_skill": "Transform into Nightmare: Tempest Mephis and attack surrounding enemies, dealing {0} Electro DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Electro DMG Bonus and 12.00% Resonance Skill DMG Bonus.\\n\\nCD: <b>25s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        3,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "270%"
+      ],
+      "Skill_3": [
+        "315%"
+      ],
+      "Skill_4": [
+        "360%"
+      ],
+      "Skill_5": [
+        "405%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Thundering Mephis",
+      "Slug": "nightmare-thundering-mephis",
+      "ID": "330000160",
+      "Echo_skill": "Transform into Nightmare: Thundering Mephis and attack enemies in front, dealing {0} Electro DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Electro DMG Bonus and 12.00% Resonance Liberation DMG Bonus\\n\\nCD: <b>25s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        3
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "270%"
+      ],
+      "Skill_3": [
+        "315%"
+      ],
+      "Skill_4": [
+        "360%"
+      ],
+      "Skill_5": [
+        "405%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Tick Tack",
+      "Slug": "nightmare-tick-tack",
+      "ID": "6000171",
+      "Echo_skill": "Summon a Tick Tack that charges and bites the enemy. The charge from Tick Tack will deal {0} Havoc DMG to the enemy, and the bite will deal {1} Havoc DMG to the enemy. Reduces enemy Vibration Strength by up to 5% during 5s. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        22
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "49.22%",
+        "73.83%"
+      ],
+      "Skill_3": [
+        "55.64%",
+        "83.46%"
+      ],
+      "Skill_4": [
+        "62.06%",
+        "93.09%"
+      ],
+      "Skill_5": [
+        "68.48%",
+        "102.72%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Violet-Feathered Heron",
+      "Slug": "nightmare-violet-feathered-heron",
+      "ID": "6000161",
+      "Echo_skill": "Transform into Violet-Feathered Heron and enter a Parry Stance. Counterattack when the Parry stance is over, dealing {0} Electro DMG. If attacked during Parry Stance, you can counterattack in advance and additionally recover 5 Concerto Energy.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        19
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "207%"
+      ],
+      "Skill_3": [
+        "234%"
+      ],
+      "Skill_4": [
+        "261%"
+      ],
+      "Skill_5": [
+        "288%"
+      ]
+    },
+    {
+      "Name": "Nightmare: Viridblaze Saurian",
+      "Slug": "nightmare-viridblaze-saurian",
+      "ID": "6000168",
+      "Echo_skill": "Summon a Viridblaze Saurian to continuously spit fire, dealing {0} Fusion DMG 10 times. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        21
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "12.3%"
+      ],
+      "Skill_3": [
+        "13.91%"
+      ],
+      "Skill_4": [
+        "15.51%"
+      ],
+      "Skill_5": [
+        "17.12%"
+      ]
+    },
+    {
+      "Name": "Nimbus Wraith",
+      "Slug": "nimbus-wraith",
+      "ID": "310000440",
+      "Echo_skill": "Summon a Nimbus Wraith that restores the active Resonator's HP by {0} of their Max HP, up to 4 times.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        12,
+        13,
+        21
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "1.80%"
+      ],
+      "Skill_3": [
+        "2.10%"
+      ],
+      "Skill_4": [
+        "2.40%"
+      ],
+      "Skill_5": [
+        "2.70%"
+      ]
+    },
+    {
+      "Name": "Nocturnus Knight",
+      "Slug": "nocturnus-knight",
+      "ID": "320000240",
+      "Echo_skill": "Transform into Nocturnus Knight and strike enemies in front of you from the air, dealing {0} Havoc DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        12,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%"
+      ],
+      "Skill_3": [
+        "208.60%"
+      ],
+      "Skill_4": [
+        "238.40%"
+      ],
+      "Skill_5": [
+        "268.20%"
+      ]
+    },
+    {
+      "Name": "Pilgrim's Shell",
+      "Slug": "pilgrim-s-shell",
+      "ID": "6000111",
+      "Echo_skill": "Transform into a Pilgrim's Shell to attack nearby enemies, dealing {0} Aero DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        16,
+        17
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%"
+      ],
+      "Skill_3": [
+        "208.60%"
+      ],
+      "Skill_4": [
+        "238.40%"
+      ],
+      "Skill_5": [
+        "268.20%"
+      ]
+    },
+    {
+      "Name": "Porcelain Picket",
+      "Slug": "porcelain-picket",
+      "ID": "6000203",
+      "Echo_skill": "Use Echo Skill to summon a Porcelain Picket to slash forward, dealing 2 instances of {0} Aero DMG and 7 instances of {1} Aero DMG to enemies along the path.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        34,
+        35
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "12.96%",
+        "8.64%"
+      ],
+      "Skill_3": [
+        "15.12%",
+        "10.08%"
+      ],
+      "Skill_4": [
+        "17.28%",
+        "11.52%"
+      ],
+      "Skill_5": [
+        "19.44%",
+        "12.96%"
+      ]
+    },
+    {
+      "Name": "Questless Knight",
+      "Slug": "questless-knight",
+      "ID": "320000220",
+      "Echo_skill": "Transform into Questless Knight and smash the surrounding enemies, dealing {0} Electro DMG.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        10,
+        12
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "208.80%"
+      ],
+      "Skill_3": [
+        "243.60%"
+      ],
+      "Skill_4": [
+        "278.40%"
+      ],
+      "Skill_5": [
+        "313.20%"
+      ]
+    },
+    {
+      "Name": "Rage Against the Statue",
+      "Slug": "rage-against-the-statue",
+      "ID": "6000096",
+      "Echo_skill": "Transform into Rage Against the Statue to attack enemies, dealing {0} Spectro DMG. Hold the Echo Skill to maintain the Echo form and charge towards enemies, dealing {1} Spectro DMG.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        11,
+        15,
+        20
+      ],
+      "Skill_1": [
+        "0",
+        "0"
+      ],
+      "Skill_2": [
+        "208.80%",
+        "313.20%"
+      ],
+      "Skill_3": [
+        "243.60%",
+        "365.40%"
+      ],
+      "Skill_4": [
+        "278.40%",
+        "417.60%"
+      ],
+      "Skill_5": [
+        "313.20%",
+        "469.80%"
+      ]
+    },
+    {
+      "Name": "Reactor Husk",
+      "Slug": "reactor-husk",
+      "ID": "6000190",
+      "Echo_skill": "Transform into Reactor Husk, jumping into the air and unleashing a heavy slash that deals {0} Fusion DMG to enemies.\\n\\nThe Resonator with this Echo equipped in their main slot gain 10.00% Energy Regen.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        23,
+        27
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "234%"
+      ],
+      "Skill_3": [
+        "273%"
+      ],
+      "Skill_4": [
+        "312%"
+      ],
+      "Skill_5": [
+        "351%"
+      ]
+    },
+    {
+      "Name": "Reminiscence - Nightmare: Adam Smasher",
+      "Slug": "reminiscence-nightmare-adam-smasher",
+      "ID": "6000201",
+      "Echo_skill": "Cast Echo Skill to deal 16 instances of Physical DMG equal to {0}  of ATK to enemies within range.\\n\\nWhen Lucy or Rebecca has this Echo equipped in the main slot, their Crit. Rate is increased by 15% and they unlock special Echo Skills.\\n\\n\\n\\nIf equipped by Lucy:\\n\\n- Press the Echo Skill button to deal Spectro DMG equal to {1} of ATK to nearby enemies.\\n\\n- Hold the Echo Skill button to deal Spectro DMG equal to {1} of ATK to nearby enemies and enter a special moving state, increasing Lucy's movement speed while slowing nearby enemies.\\n\\n\\n\\nIf equipped by Rebecca:\\n\\n- Cast Echo Skill to fire missiles, dealing 16 instances of Electro DMG equal to {2} of ATK to enemies.\\n\\nCD: 20s",
+      "Rarity": 2,
+      "Sonata_Group": [
+        31
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "6.84%",
+        "182.40%",
+        "11.40%"
+      ],
+      "Skill_3": [
+        "7.98%",
+        "212.80%",
+        "13.30%"
+      ],
+      "Skill_4": [
+        "9.12%",
+        "243.20%",
+        "15.20%"
+      ],
+      "Skill_5": [
+        "10.26%",
+        "273.60%",
+        "17.10%"
+      ]
+    },
+    {
+      "Name": "Reminiscence: Denia",
+      "Slug": "reminiscence-denia",
+      "ID": "6000200",
+      "Echo_skill": "Summon \"Trickster\" to deal {0} Fusion DMG to enemies. Within the next 15s, casting Outro Skill grants the incoming Resonator 12.00% Fusion DMG Bonus for 15s.\\n\\nCD: 20s",
+      "Rarity": 3,
+      "Sonata_Group": [
+        27
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "182.40%"
+      ],
+      "Skill_3": [
+        "212.80%"
+      ],
+      "Skill_4": [
+        "243.20%"
+      ],
+      "Skill_5": [
+        "273.60%"
+      ]
+    },
+    {
+      "Name": "Reminiscence: Fenrico",
+      "Slug": "reminiscence-fenrico",
+      "ID": "6000116",
+      "Echo_skill": "Summon the Talons of Decree to attack nearby enemies, dealing {0} Aero DMG. The Resonator with this Echo equipped in their main slot gains 12.00% Aero DMG Bonus and 12.00% Heavy Attack DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        18,
+        20
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "182.40%"
+      ],
+      "Skill_3": [
+        "212.80%"
+      ],
+      "Skill_4": [
+        "243.20%"
+      ],
+      "Skill_5": [
+        "273.60%"
+      ]
+    },
+    {
+      "Name": "Reminiscence: Fleurdelys",
+      "Slug": "reminiscence-fleurdelys",
+      "ID": "6000106",
+      "Echo_skill": "Summon the Windcleaver to attack the target, dealing {0} Aero DMG 8 times and {1} Aero DMG once. The Resonator with this Echo equipped in their main slot gains 10.00% Aero DMG Bonus. If this Resonator is Rover: Aero or Cartethyia, grant another 10.00% Aero DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 3,
+      "Sonata_Group": [
+        15,
+        17
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "18.24%",
+        "91.20%"
+      ],
+      "Skill_3": [
+        "21.28%",
+        "106.40%"
+      ],
+      "Skill_4": [
+        "24.32%",
+        "121.60%"
+      ],
+      "Skill_5": [
+        "27.36%",
+        "136.80%"
+      ]
+    },
+    {
+      "Name": "Reminiscence: Kronaclaw",
+      "Slug": "reminiscence-kronaclaw",
+      "ID": "6000194",
+      "Echo_skill": "Transform into a Kronaclaw and soar into the air to deal {0} Aero DMG up to 8 times and {1} Aero DMG 2 times, then dive to deal {2} Aero DMG 1 time.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        26,
+        27
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "5.36%",
+        "16.09%",
+        "103.70%"
+      ],
+      "Skill_3": [
+        "6.25%",
+        "18.77%",
+        "120.98%"
+      ],
+      "Skill_4": [
+        "7.15%",
+        "21.45%",
+        "138.27%"
+      ],
+      "Skill_5": [
+        "8.04%",
+        "24.13%",
+        "155.55%"
+      ]
+    },
+    {
+      "Name": "Reminiscence: Suhsin the Inevitable",
+      "Slug": "reminiscence-suhsin-the-inevitable",
+      "ID": "6000225",
+      "Echo_skill": "Cast Echo Skill to deal 4 instances of {0} Electro DMG and 1 instance of {1} Electro DMG.\\n\\n\nWhen equipped by Hsin, the Echo Skill instead deals 5 instances of {2} Electro DMG and 1 instance of {3} Electro DMG to targets within a larger range.\\n\\n\nThe Resonator with this Echo equipped in their main slot gains 10.00% Electro DMG Bonus. Inflicting Electro Flare, gaining Unison, or triggering Unison Response grants the Resonator an extra 10.00% Electro DMG Bonus for 30s.\\n\\n\nCD: 20s",
+      "Rarity": 3,
+      "Sonata_Group": [
+        35,
+        36
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "18.24%",
+        "109.44%",
+        "5.47%",
+        "155.04%"
+      ],
+      "Skill_3": [
+        "21.28%",
+        "127.68%",
+        "6.38%",
+        "180.88%"
+      ],
+      "Skill_4": [
+        "24.32%",
+        "145.92%",
+        "7.29%",
+        "206.72%"
+      ],
+      "Skill_5": [
+        "27.36%",
+        "164.16%",
+        "8.20%",
+        "232.56%"
+      ]
+    },
+    {
+      "Name": "Reminiscence: Threnodian - Leviathan",
+      "Slug": "reminiscence-threnodian-leviathan",
+      "ID": "6000167",
+      "Echo_skill": "Summon a Collapsing Horizon, dealing two instances of {0} Havoc DMG to the nearby enemies and obtaining the Core of Collapse for 15s. While it lasts, Core of Collapse deals 24.57% Havoc DMG when the active Resonator in the team deals damage. This effect can be triggered once every 0.5s, up to 8. Enemies with Havoc Bane take 100% more DMG from this effect. The Resonator with this Echo equipped in the main slot gains 12% Havoc DMG Bonus and 12% Resonance Liberation DMG Bonus.\\n\\nCD: <b>25s</b>.",
+      "Rarity": 3,
+      "Sonata_Group": [
+        21,
+        22
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "87.36%"
+      ],
+      "Skill_3": [
+        "101.92%"
+      ],
+      "Skill_4": [
+        "116.48%"
+      ],
+      "Skill_5": [
+        "131.04%"
+      ]
+    },
+    {
+      "Name": "Reminiscence: Threnodian - Voidborne Construct",
+      "Slug": "reminiscence-threnodian-voidborne-construct",
+      "ID": "6000199",
+      "Echo_skill": "Summon Aleph-1's Creation to deal {0} Glacio DMG 5 times and {1} Glacio DMG 1 time to enemies.\\n\\nThe Resonator with this Echo equipped in the main slot gains 12.00% Glacio DMG Bonus and 12.00% Resonance Liberation DMG Bonus.\\n\\nCD: 20s",
+      "Rarity": 3,
+      "Sonata_Group": [
+        30
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "14.59%",
+        "109.44%"
+      ],
+      "Skill_3": [
+        "17.02%",
+        "127.68%"
+      ],
+      "Skill_4": [
+        "19.45%",
+        "145.92%"
+      ],
+      "Skill_5": [
+        "21.88%",
+        "164.16%"
+      ]
+    },
+    {
+      "Name": "Rocksteady Guardian",
+      "Slug": "rocksteady-guardian",
+      "ID": "320000060",
+      "Echo_skill": "Transform into Rocksteady Guardian and enter a Parry State. Upon being attacked, deal Spectro DMG equal to {0} of the current character's Max HP, and perform a follow-up attack that deals Spectro DMG equal to {1} of the current character's Max HP. Use the Echo skill again to exit the transformation.\\n\\nIf the attack received is a Special Skill attack, interrupt the enemy's Special Skill and perform a two-stage follow-up attack, each inflicting Spectro DMG equal to {2} of the current character's max HP. These follow-up attacks simultaneously launch three ground-breaking waves, each inflicting Spectro DMG equal to {3} of the current character's Max HP. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        7,
+        5
+      ],
+      "Skill_1": [
+        "5.18%",
+        "5.18%",
+        "3.45%",
+        "2.87%",
+        "15"
+      ],
+      "Skill_2": [
+        "5.96%",
+        "5.96%",
+        "3.97%",
+        "3.30%",
+        "15"
+      ],
+      "Skill_3": [
+        "6.73%",
+        "6.73%",
+        "4.49%",
+        "3.73%",
+        "15"
+      ],
+      "Skill_4": [
+        "7.51%",
+        "7.51%",
+        "5.00%",
+        "4.16%",
+        "15"
+      ],
+      "Skill_5": [
+        "8.29%",
+        "8.29%",
+        "5.52%",
+        "4.59%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Roseshroom",
+      "Slug": "roseshroom",
+      "ID": "320000090",
+      "Echo_skill": "Summon a Roseshroom that fires a laser, dealing {1} Havoc DMG up to <b>3</b> times. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        1,
+        6
+      ],
+      "Skill_1": [
+        "3",
+        "35.67%",
+        "15"
+      ],
+      "Skill_2": [
+        "3",
+        "41.02%",
+        "15"
+      ],
+      "Skill_3": [
+        "3",
+        "46.37%",
+        "15"
+      ],
+      "Skill_4": [
+        "3",
+        "51.72%",
+        "15"
+      ],
+      "Skill_5": [
+        "3",
+        "57.07%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Sabercat Prowler",
+      "Slug": "sabercat-prowler",
+      "ID": "6000186",
+      "Echo_skill": "Summon a Sabercat Prowler to fire beams at enemies, dealing {0} Havoc DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        23,
+        24,
+        28
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "128.4%"
+      ],
+      "Skill_3": [
+        "149.8%"
+      ],
+      "Skill_4": [
+        "171.2%"
+      ],
+      "Skill_5": [
+        "192.6%"
+      ]
+    },
+    {
+      "Name": "Sabercat Reaver",
+      "Slug": "sabercat-reaver",
+      "ID": "6000185",
+      "Echo_skill": "Summon a Sabercat Reaver to attack enemies, dealing {0} Fusion DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        23,
+        24,
+        28
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "128.4%"
+      ],
+      "Skill_3": [
+        "149.8%"
+      ],
+      "Skill_4": [
+        "171.2%"
+      ],
+      "Skill_5": [
+        "192.6%"
+      ]
+    },
+    {
+      "Name": "Sabyr Boar",
+      "Slug": "sabyr-boar",
+      "ID": "310000190",
+      "Echo_skill": "Summon a Sabyr Boar to headbutt the enemy into the air, dealing {0} Physical DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        8,
+        4,
+        1
+      ],
+      "Skill_1": [
+        "20.00%+40",
+        "8"
+      ],
+      "Skill_2": [
+        "23.00%+46",
+        "8"
+      ],
+      "Skill_3": [
+        "26.00%+52",
+        "8"
+      ],
+      "Skill_4": [
+        "29.00%+58",
+        "8"
+      ],
+      "Skill_5": [
+        "32.00%+64",
+        "8"
+      ]
+    },
+    {
+      "Name": "Sacerdos",
+      "Slug": "sacerdos",
+      "ID": "6000100",
+      "Echo_skill": "Summon a Sacerdos to attack enemies, dealing {0} Aero DMG 2 times.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        15,
+        17,
+        16
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "43.20%"
+      ],
+      "Skill_3": [
+        "50.40%"
+      ],
+      "Skill_4": [
+        "57.60%"
+      ],
+      "Skill_5": [
+        "64.80%"
+      ]
+    },
+    {
+      "Name": "Sagittario",
+      "Slug": "sagittario",
+      "ID": "6000099",
+      "Echo_skill": "Transform into Sagittario to move a certain distance and perform a ranged attack, dealing {0} Spectro DMG. Getting attacked while moving in the Sagittario form triggers form triggers a damage avoiding enhanced Dodge Counter, dealing {0} Spectro DMG once and {1} Spectro DMG 5 times.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        11,
+        15,
+        16
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.80%",
+        "35.76%"
+      ],
+      "Skill_3": [
+        "208.60%",
+        "41.72%"
+      ],
+      "Skill_4": [
+        "238.40%",
+        "47.68%"
+      ],
+      "Skill_5": [
+        "268.20%",
+        "53.64%"
+      ]
+    },
+    {
+      "Name": "Sentry Construct",
+      "Slug": "sentry-construct",
+      "ID": "330000120",
+      "Echo_skill": "Transform into Sentry Construct and attack enemies in front, dealing {0} Glacio DMG. Each time the Resonator with this Echo casts Resonance Liberation, it charges the Strike Capacitor. Once Strike Capacitor is at max level, the Echo Skill cooldown will be reset.\\n\\nUse Echo Skill to transform into Sentry Construct and dive into enemies from the air, dealing {0} Glacio DMG and freezing the target.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Glacio DMG Bonus and 12.00% Resonance Skill DMG Bonus.\\n\\nCD: <b>25s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        10
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "270%"
+      ],
+      "Skill_3": [
+        "315%"
+      ],
+      "Skill_4": [
+        "360%"
+      ],
+      "Skill_5": [
+        "405%"
+      ]
+    },
+    {
+      "Name": "Shadow Stepper",
+      "Slug": "shadow-stepper",
+      "ID": "6000197",
+      "Echo_skill": "Summon a Shadow Stepper to attack enemies, dealing {0} Havoc DMG.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        26,
+        27,
+        30
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Sigillum",
+      "Slug": "sigillum",
+      "ID": "6000191",
+      "Echo_skill": "Summon Sigillum to unleash two attacks, dealing {0} and {1} Fusion DMG respectively.\\n\\nWhen equipped in the main slot by Aemeath, it grants 25.00% Resonance Liberation DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 3,
+      "Sonata_Group": [
+        26
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "45.60%",
+        "136.80%"
+      ],
+      "Skill_3": [
+        "53.20%",
+        "159.60%"
+      ],
+      "Skill_4": [
+        "60.80%",
+        "182.40%"
+      ],
+      "Skill_5": [
+        "68.40%",
+        "205.20%"
+      ]
+    },
+    {
+      "Name": "Skywatch Lancer",
+      "Slug": "skywatch-lancer",
+      "ID": "6000220",
+      "Echo_skill": "Summon a Skywatch Lancer to attack the target, dealing {0} Aero DMG 6 times.\\n\\n\nCD: 15s",
+      "Rarity": 1,
+      "Sonata_Group": [
+        35,
+        37
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "21.39%"
+      ],
+      "Skill_3": [
+        "24.96%"
+      ],
+      "Skill_4": [
+        "28.52%"
+      ],
+      "Skill_5": [
+        "32.09%"
+      ]
+    },
+    {
+      "Name": "Smiter",
+      "Slug": "smiter",
+      "ID": "6000202",
+      "Echo_skill": "Use Echo Skill to summon a Smiter to jab at enemies, dealing 7 instances of {0} Spectro DMG, and finish with an uppercut, dealing {1} Spectro DMG.\\n\\nCD: 15s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        32
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "12.84%",
+        "38.52%"
+      ],
+      "Skill_3": [
+        "14.98%",
+        "44.94%"
+      ],
+      "Skill_4": [
+        "17.12%",
+        "51.36%"
+      ],
+      "Skill_5": [
+        "19.26%",
+        "57.78%"
+      ]
+    },
+    {
+      "Name": "Smolder",
+      "Slug": "smolder",
+      "ID": "6000214",
+      "Echo_skill": "Use Echo Skill to summon Smolder to hurl fireballs toward enemies, dealing {0} Fusion DMG. If the fireball hits the ground, it explodes to deal {0} Fusion DMG to all enemies within the range.\\n\\nCD: 15s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        32
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "128.40%"
+      ],
+      "Skill_3": [
+        "149.80%"
+      ],
+      "Skill_4": [
+        "171.20%"
+      ],
+      "Skill_5": [
+        "192.60%"
+      ]
+    },
+    {
+      "Name": "Snip Snap",
+      "Slug": "snip-snap",
+      "ID": "310000080",
+      "Echo_skill": "Summon a Snip Snap that throws fireballs at the enemy, dealing {0} Fusion DMG on-hit. \\n\\nCD: <b>8s</b>",
+      "Rarity": 0,
+      "Sonata_Group": [
+        9,
+        7,
+        2
+      ],
+      "Skill_1": [
+        "20%+40",
+        "8"
+      ],
+      "Skill_2": [
+        "23%+46",
+        "8"
+      ],
+      "Skill_3": [
+        "26%+52",
+        "8"
+      ],
+      "Skill_4": [
+        "29%+58",
+        "8"
+      ],
+      "Skill_5": [
+        "32%+64",
+        "8"
+      ]
+    },
+    {
+      "Name": "Soulfrayer",
+      "Slug": "soulfrayer",
+      "ID": "6000224",
+      "Echo_skill": "Use Echo Skill to summon a Soulfrayer, dealing {0} Electro DMG 3 times.\\n\\n\nCasting Outro Skill within 15s after summoning Soulfrayer grants 12.00% Electro DMG Bonus to the incoming Resonator for 15s.\\n\\n\nCD: 20s",
+      "Rarity": 1,
+      "Sonata_Group": [
+        35,
+        36
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "60.79%"
+      ],
+      "Skill_3": [
+        "70.92%"
+      ],
+      "Skill_4": [
+        "81.05%"
+      ],
+      "Skill_5": [
+        "91.18%"
+      ]
+    },
+    {
+      "Name": "Spacetrek Explorer",
+      "Slug": "spacetrek-explorer",
+      "ID": "6000184",
+      "Echo_skill": "Summon a Spacetrek Explorer to grant nearby active Resonators in the team a Shield equal to 10% of the summoner's Max HP for 4s.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        23,
+        27,
+        28
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "0"
+      ],
+      "Skill_3": [
+        "0"
+      ],
+      "Skill_4": [
+        "0"
+      ],
+      "Skill_5": [
+        "0"
+      ]
+    },
+    {
+      "Name": "Spearback",
+      "Slug": "spearback",
+      "ID": "320000120",
+      "Echo_skill": "Summon a Spearback to perform 5 consecutive attacks. The first <b>4</b> attacks deal {0} Physical DMG, and the last deals {1} Physical DMG. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        9,
+        8
+      ],
+      "Skill_1": [
+        "18.73%",
+        "32.10%",
+        "15"
+      ],
+      "Skill_2": [
+        "21.53%",
+        "36.92%",
+        "15"
+      ],
+      "Skill_3": [
+        "24.34%",
+        "41.73%",
+        "15"
+      ],
+      "Skill_4": [
+        "27.15%",
+        "46.55%",
+        "15"
+      ],
+      "Skill_5": [
+        "29.96%",
+        "51.36%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Spectro Drake",
+      "Slug": "spectro-drake",
+      "ID": "6000108",
+      "Echo_skill": "Summon a Spectro Drake to attack enemies, dealing {0} Spectro DMG 3 times.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        16,
+        17
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "28.80%"
+      ],
+      "Skill_3": [
+        "33.60%"
+      ],
+      "Skill_4": [
+        "38.40%"
+      ],
+      "Skill_5": [
+        "43.20%"
+      ]
+    },
+    {
+      "Name": "Spectro Prism",
+      "Slug": "spectro-prism",
+      "ID": "310000160",
+      "Echo_skill": "Summon a Spectro Prism to emit a laser that hits the enemy up to <b>8</b> times, dealing {1} Spectro DMG each time. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        2,
+        3,
+        5
+      ],
+      "Skill_1": [
+        "8",
+        "9.00%",
+        "8"
+      ],
+      "Skill_2": [
+        "8",
+        "10.35%",
+        "8"
+      ],
+      "Skill_3": [
+        "8",
+        "11.70%",
+        "8"
+      ],
+      "Skill_4": [
+        "8",
+        "13.05%",
+        "8"
+      ],
+      "Skill_5": [
+        "8",
+        "14.40%",
+        "8"
+      ]
+    },
+    {
+      "Name": "Stone Picket",
+      "Slug": "stone-picket",
+      "ID": "6000204",
+      "Echo_skill": "Use Echo Skill to summon a Stone Picket, dealing {0} Aero DMG.\\n\\nCD: 8s",
+      "Rarity": 0,
+      "Sonata_Group": [
+        34,
+        35
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "86.40%"
+      ],
+      "Skill_3": [
+        "100.80%"
+      ],
+      "Skill_4": [
+        "115.20%"
+      ],
+      "Skill_5": [
+        "129.60%"
+      ]
+    },
+    {
+      "Name": "Stonewall Bracer",
+      "Slug": "stonewall-bracer",
+      "ID": "320000010",
+      "Echo_skill": "Transform into Stonewall Bracer and charge forward, dealing {0} Physical DMG on-hit, then smash to deal {1} Physical DMG, and gain a shield of <b>10.00%</b> of current character's Max HP. Use the Echo skill again to exit the transformation state.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        7,
+        8
+      ],
+      "Skill_1": [
+        "70.40%",
+        "105.60%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "80.96%",
+        "121.44%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "91.52%",
+        "137.28%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "102.08%",
+        "153.12%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "112.64%",
+        "168.96%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "Tambourinist",
+      "Slug": "tambourinist",
+      "ID": "320000050",
+      "Echo_skill": "Summon a Tambourinist that periodically emits Melodies of Annihilation. Friendly units hit with Melodies of Annihilation deal an extra Havoc DMG of {0} with their attacks, up to <b>10</b> times. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        1,
+        6
+      ],
+      "Skill_1": [
+        "9%",
+        "15"
+      ],
+      "Skill_2": [
+        "10.35%",
+        "15"
+      ],
+      "Skill_3": [
+        "11.70%",
+        "15"
+      ],
+      "Skill_4": [
+        "13.05%",
+        "15"
+      ],
+      "Skill_5": [
+        "14.40%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Tempest Mephis",
+      "Slug": "tempest-mephis",
+      "ID": "330000010",
+      "Echo_skill": "Transform into Tempest Mephis to perform tail swing attacks followed by a claw attack. The lightning strike summoned by the tail swing deals {0} Electro DMG each time, while the claw attack deals {1} Electro DMG. After the claw hit, increase the current character’s Electro DMG by <b>12.00%</b> and Heavy Attack DMG by <b>12.00%</b> for <b>15s</b>.\\n\\nCD: <b>20s</b>",
+      "Rarity": 2,
+      "Sonata_Group": [
+        3
+      ],
+      "Skill_1": [
+        "59.40%",
+        "158.40%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "73.66%",
+        "126.27%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "83.27%",
+        "142.74%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "92.87%",
+        "159.21%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "102.48%",
+        "175.68%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "The False Sovereign",
+      "Slug": "the-false-sovereign",
+      "ID": "6000121",
+      "Echo_skill": "Transform into the False Sovereign and dash forward in a spinning strike, dealing {0} Electro DMG 4 times. The Resonator with this Echo equipped in the main slot gains 12.00% Electro DMG Bonus and 12.00% Heavy Attack DMG Bonus. Upon casting Intro Skill, the False Sovereign is also summoned to deal {1} Electro DMG. Start with 2 charges. Gain 1 charge every 8s, up to 2 charges.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        19
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "36.90%",
+        "270.00%"
+      ],
+      "Skill_3": [
+        "43.05%",
+        "315.00%"
+      ],
+      "Skill_4": [
+        "49.20%",
+        "360.00%"
+      ],
+      "Skill_5": [
+        "55.35%",
+        "405.00%"
+      ]
+    },
+    {
+      "Name": "Thousand-Puppet Pavilion",
+      "Slug": "thousand-puppet-pavilion",
+      "ID": "6000218",
+      "Echo_skill": "Use Echo Skill to attack nearby enemies, dealing {0} Havoc DMG and summoning 4 Blades of Thousand Memories that last 15s.\\n\\nWhile Blades of Thousand Memories last, when the Resonator inflicts Havoc Bane, consume 1 Blade of Thousand Memories to deal {1} Havoc DMG once to the target. This effect can be triggered once every 1s\\n\\nResonators with this Echo equipped in the main slot gain 12.00% Havoc DMG and 12.00% Heavy Attack DMG.\\n\\nCD: 20s",
+      "Rarity": 3,
+      "Sonata_Group": [
+        32,
+        37
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "72.96%",
+        "27.36%"
+      ],
+      "Skill_3": [
+        "85.12%",
+        "31.92%"
+      ],
+      "Skill_4": [
+        "97.28%",
+        "36.48%"
+      ],
+      "Skill_5": [
+        "109.44%",
+        "41.04%"
+      ]
+    },
+    {
+      "Name": "Thundering Mephis",
+      "Slug": "thundering-mephis",
+      "ID": "340000080",
+      "Echo_skill": "Transform into Thundering Mephis, engaging in a rapid assault of up to <b>6</b> strikes. The first 5 strikes deal {0} Electro DMG each, while the final strike inflicts {1} Electro DMG, with an additional {2} Electro DMG from the thunder. After the final hit, increase the current character’s Electro DMG by <b>12.00%</b> and Resonance Liberation DMG by <b>12.00%</b> for <b>15s</b>.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 2,
+      "Sonata_Group": [
+        3
+      ],
+      "Skill_1": [
+        "82.88%",
+        "118.40%",
+        "19.73%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_2": [
+        "95.31%",
+        "136.16%",
+        "22.69%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_3": [
+        "107.74%",
+        "153.92%",
+        "25.65%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_4": [
+        "120.18%",
+        "171.68%",
+        "28.61%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ],
+      "Skill_5": [
+        "132.61%",
+        "189.44%",
+        "31.57%",
+        "12%",
+        "12%",
+        "15",
+        "25"
+      ]
+    },
+    {
+      "Name": "Tick Tack",
+      "Slug": "tick-tack",
+      "ID": "310000110",
+      "Echo_skill": "Summon a Tick Tack that charges and bites the enemy. The charge from Tick Tack will deal {0} Havoc DMG to the enemy, and the bite will deal {1} Havoc DMG to the enemy. Reduces enemy Vibration Strength by up to <b>5.00%</b> during <b>5s</b>.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        9,
+        7,
+        6
+      ],
+      "Skill_1": [
+        "42.80%",
+        "64.20%",
+        "5",
+        "5%",
+        "15"
+      ],
+      "Skill_2": [
+        "49.22%",
+        "73.83%",
+        "5",
+        "5%",
+        "15"
+      ],
+      "Skill_3": [
+        "55.64%",
+        "83.46%",
+        "5",
+        "5%",
+        "15"
+      ],
+      "Skill_4": [
+        "62.06%",
+        "93.09%",
+        "5",
+        "5%",
+        "15"
+      ],
+      "Skill_5": [
+        "68.48%",
+        "102.72%",
+        "5",
+        "5%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Traffic Illuminator",
+      "Slug": "traffic-illuminator",
+      "ID": "310000330",
+      "Echo_skill": "Summon a Traffic Illuminator, immobilizing enemies for up to <b>1s</b>. The immobilization will be lifted once the enemy is hit. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        3,
+        4,
+        2
+      ],
+      "Skill_1": [
+        "1",
+        "15"
+      ],
+      "Skill_2": [
+        "1",
+        "15"
+      ],
+      "Skill_3": [
+        "1",
+        "15"
+      ],
+      "Skill_4": [
+        "1",
+        "15"
+      ],
+      "Skill_5": [
+        "1",
+        "15"
+      ]
+    },
+    {
+      "Name": "Tremor Warrior",
+      "Slug": "tremor-warrior",
+      "ID": "6000174",
+      "Echo_skill": "Transform into a Tremor Warrior and viciously attack enemies in the front, dealing {0} Electro DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        23,
+        27,
+        30
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "136.8%"
+      ],
+      "Skill_3": [
+        "159.6%"
+      ],
+      "Skill_4": [
+        "182.4%"
+      ],
+      "Skill_5": [
+        "205.2%"
+      ]
+    },
+    {
+      "Name": "Twin Nova: Collapsar Blade",
+      "Slug": "twin-nova-collapsar-blade",
+      "ID": "6000180",
+      "Echo_skill": "Transform into Twin Nova: Collapsar Blade to rapidly fire at enemies for 5s, with each attack dealing {0} Electro DMG.\\n\\nThe Resonator with this Echo equipped in the main slot gains 12.00% Electro DMG Bonus and 12.00% Basic Attack DMG Bonus.\\n\\nCD: <b>8s</b>.\\n\\nIf Twin Nova: Nebulous Cannon is equipped in another slot on the Resonator: Casting Echo Skill unleashes both Nebulous Cannon and Collapsar Blade skills in quick succession, but is still considered performing the same Echo Skill. DMG dealt by Twin Nova: Collapsar Blade becomes Spectro DMG. The Electro DMG Bonus gained from equipping it in the main slot is turned into Spectro DMG Bonus. Casting Basic Attacks grants 1 stack of Dyad Origins. Casting Resonance Skill grants 3 stacks of Dyad Origins. Dyad Origins can stack up to 6 times and lasts for 8s. Each stack increases Echo Skill DMG by 10%, and all stacks are cleared after this Echo Skill ends. This skill is capped at 2 uses. Initially, this skill can be used 2 times, with 1 use added every 8s.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        25,
+        26,
+        28
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "1.34%"
+      ],
+      "Skill_3": [
+        "1.56%"
+      ],
+      "Skill_4": [
+        "1.79%"
+      ],
+      "Skill_5": [
+        "2.01%"
+      ]
+    },
+    {
+      "Name": "Twin Nova: Nebulous Cannon",
+      "Slug": "twin-nova-nebulous-cannon",
+      "ID": "6000179",
+      "Echo_skill": "Transform into a Twin Nova: Nebulous Cannon to slash enemies twice, with each attack dealing {0} Spectro DMG.\\n\\nThe Resonator with this Echo equipped in the main slot gains 12.00% Spectro DMG Bonus and 12.00% Basic Attack DMG Bonus.\\n\\nCD: <b>8s</b>.\\n\\nIf Twin Nova: Collapsar Blade is equipped in another slot on the Resonator:  Casting Echo Skill unleashes both Nebulous Cannon and Collapsar Blade skills in quick succession, but the DMG Bonus from the Echo in the main slot remains unchanged. DMG dealt by Twin Nova: Collapsar Blade becomes Spectro DMG.  Casting Basic Attacks grants 1 stack of Dyad Origins. Casting Resonance Skill grants 3 stacks of Dyad Origins. Dyad Origins can stack up to 6 times and lasts for 8s. Each stack increases Echo Skill DMG by 10%, and all stacks are cleared after this Echo Skill ends. This skill is capped at 2 uses. Initially, this skill can be used 2 times, with 1 use added every 8s.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        25,
+        27
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "53.67%"
+      ],
+      "Skill_3": [
+        "62.62%"
+      ],
+      "Skill_4": [
+        "71.56%"
+      ],
+      "Skill_5": [
+        "80.51%"
+      ]
+    },
+    {
+      "Name": "Vanguard Junrock",
+      "Slug": "vanguard-junrock",
+      "ID": "310000010",
+      "Echo_skill": "Summon a Vanguard Junrock that charges forward, dealing {0} Physical DMG to enemies in its path. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        7,
+        3,
+        9
+      ],
+      "Skill_1": [
+        "20.00%+40",
+        "15"
+      ],
+      "Skill_2": [
+        "23.00%+46",
+        "15"
+      ],
+      "Skill_3": [
+        "26.00%+52",
+        "15"
+      ],
+      "Skill_4": [
+        "29.00%+58",
+        "15"
+      ],
+      "Skill_5": [
+        "32.00%+64",
+        "15"
+      ]
+    },
+    {
+      "Name": "Violet-Feathered Heron",
+      "Slug": "violet-feathered-heron",
+      "ID": "320000020",
+      "Echo_skill": "Transform into Violet-Feathered Heron and enter a Parry Stance. Counterattack when the Parry stance is over, dealing {0} Electro DMG. If attacked during Parry Stance, you can counterattack in advance and additionally recover <b>5</b> Concerto Energy.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        2,
+        3
+      ],
+      "Skill_1": [
+        "180%",
+        "5",
+        "15"
+      ],
+      "Skill_2": [
+        "207%",
+        "5",
+        "15"
+      ],
+      "Skill_3": [
+        "234%",
+        "5",
+        "15"
+      ],
+      "Skill_4": [
+        "261%",
+        "5",
+        "15"
+      ],
+      "Skill_5": [
+        "288%",
+        "5",
+        "15"
+      ]
+    },
+    {
+      "Name": "Viridblaze Saurian",
+      "Slug": "viridblaze-saurian",
+      "ID": "320000080",
+      "Echo_skill": "Summon a Viridblaze Saurian to continuously spit fire, dealing {0} Fusion DMG <b>10</b> times.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        8,
+        2
+      ],
+      "Skill_1": [
+        "10.70%",
+        "25"
+      ],
+      "Skill_2": [
+        "12.31%",
+        "25"
+      ],
+      "Skill_3": [
+        "13.91%",
+        "25"
+      ],
+      "Skill_4": [
+        "15.52%",
+        "25"
+      ],
+      "Skill_5": [
+        "17.12%",
+        "25"
+      ]
+    },
+    {
+      "Name": "Vitreum Dancer",
+      "Slug": "vitreum-dancer",
+      "ID": "320000290",
+      "Echo_skill": "Transform into Vitreum Dancer and attack surrounding enemies, dealing {0} Electro DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Electro DMG Bonus.\\n\\nCD: <b>20s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        11,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "208.80%"
+      ],
+      "Skill_3": [
+        "243.60%"
+      ],
+      "Skill_4": [
+        "278.40%"
+      ],
+      "Skill_5": [
+        "313.20%"
+      ]
+    },
+    {
+      "Name": "Voidwing Moth",
+      "Slug": "voidwing-moth",
+      "ID": "6000198",
+      "Echo_skill": "Press Echo Skill to transform into Voidwing Moth, dealing {0} Spectro DMG to nearby enemies.\\n\\nHold Echo Skill to continuously attack, dealing up to 12 instances of {1} Spectro DMG.\\n\\nWithin 15s after using this Echo skill, casting Outro Skill increases the incoming Resonator's ATK by 12.00% for 15s.\\n\\nCD: 25s",
+      "Rarity": 1,
+      "Sonata_Group": [
+        29
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "270.00%",
+        "32.89%"
+      ],
+      "Skill_3": [
+        "315.00%",
+        "38.37%"
+      ],
+      "Skill_4": [
+        "360.00%",
+        "43.85%"
+      ],
+      "Skill_5": [
+        "405.00%",
+        "49.33%"
+      ]
+    },
+    {
+      "Name": "Voltscourge Stalker",
+      "Slug": "voltscourge-stalker",
+      "ID": "310000380",
+      "Echo_skill": "Summon a Voltscourge Stalker to perform 3 stages of attacks on enemies, each dealing {0} Electro DMG.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        12,
+        13
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "28.80%"
+      ],
+      "Skill_3": [
+        "33.60%"
+      ],
+      "Skill_4": [
+        "38.40%"
+      ],
+      "Skill_5": [
+        "43.20%"
+      ]
+    },
+    {
+      "Name": "Whiff Whaff",
+      "Slug": "whiff-whaff",
+      "ID": "310000100",
+      "Echo_skill": "Summon a Whiff Whaff that triggers an air explosion, dealing {0} Aero DMG and produce a Low-pressure Zone. The Low-pressure Zone continuously pulls enemies nearby towards the center for <b>2s</b>, dealing {2} Aero DMG up to <b>6</b> times. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        7,
+        8,
+        4
+      ],
+      "Skill_1": [
+        "32.10%",
+        "2",
+        "12.48%",
+        "15"
+      ],
+      "Skill_2": [
+        "36.92%",
+        "2",
+        "14.35%",
+        "15"
+      ],
+      "Skill_3": [
+        "41.73%",
+        "2",
+        "16.22%",
+        "15"
+      ],
+      "Skill_4": [
+        "46.55%",
+        "2",
+        "18.10%",
+        "15"
+      ],
+      "Skill_5": [
+        "51.36%",
+        "2",
+        "19.97%",
+        "15"
+      ]
+    },
+    {
+      "Name": "Windlash Coleoid",
+      "Slug": "windlash-coleoid",
+      "ID": "6000188",
+      "Echo_skill": "Transform into a Windlash Coleoid to kick enemies, dealing {0} Aero DMG.\\n\\nCD: <b>15s</b>.",
+      "Rarity": 1,
+      "Sonata_Group": [
+        25,
+        30
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "178.8%"
+      ],
+      "Skill_3": [
+        "208.6%"
+      ],
+      "Skill_4": [
+        "238.4%"
+      ],
+      "Skill_5": [
+        "268.2%"
+      ]
+    },
+    {
+      "Name": "Young Roseshroom",
+      "Slug": "young-roseshroom",
+      "ID": "310000220",
+      "Echo_skill": "Summon a Baby Roseshroom that fires a laser, dealing {0} Havoc DMG. \\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        4,
+        6
+      ],
+      "Skill_1": [
+        "20%+40",
+        "8"
+      ],
+      "Skill_2": [
+        "23%+46",
+        "8"
+      ],
+      "Skill_3": [
+        "26%+52",
+        "8"
+      ],
+      "Skill_4": [
+        "29%+58",
+        "8"
+      ],
+      "Skill_5": [
+        "32%+64",
+        "8"
+      ]
+    },
+    {
+      "Name": "Zig Zag",
+      "Slug": "zig-zag",
+      "ID": "310000090",
+      "Echo_skill": "Summon a Zig Zag that denotates Spectro energy, dealing {0} Spectro DMG and creating a Stagnation Zone that lasts <b>1.8s</b>. \\n\\nCD: <b>15s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        8,
+        9,
+        5
+      ],
+      "Skill_1": [
+        "30%+60",
+        "8"
+      ],
+      "Skill_2": [
+        "34.50%+69",
+        "8"
+      ],
+      "Skill_3": [
+        "39%+78",
+        "8"
+      ],
+      "Skill_4": [
+        "43.50%+87",
+        "8"
+      ],
+      "Skill_5": [
+        "48%+96 ",
+        "8"
+      ]
+    },
+    {
+      "Name": "Zip Zap",
+      "Slug": "zip-zap",
+      "ID": "6000178",
+      "Echo_skill": "Summon a Zip Zap to launch spinning attacks at enemies, dealing {0} Electro DMG 5 times.\\n\\nCD: <b>8s</b>.",
+      "Rarity": 0,
+      "Sonata_Group": [
+        24,
+        25,
+        27,
+        28
+      ],
+      "Skill_1": [
+        "0"
+      ],
+      "Skill_2": [
+        "17.28%"
+      ],
+      "Skill_3": [
+        "20.16%"
+      ],
+      "Skill_4": [
+        "23.04%"
+      ],
+      "Skill_5": [
+        "25.92%"
+      ]
+    }
+  ]
+}

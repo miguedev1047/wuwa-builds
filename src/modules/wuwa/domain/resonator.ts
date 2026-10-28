@@ -212,7 +212,7 @@ export interface Weapon {
   Stat_secondary: string
   Stat_secondary_value: number
   Source: string
-  [key: string]: string | number | string[]
+  [key: string]: string | number | Array<string | number>
 }
 
 export interface Echo {
@@ -221,8 +221,13 @@ export interface Echo {
   Slug: string
   Rarity: number
   Echo_skill: HtmlString
-  Sonata_Group?: string
-  [key: string]: unknown
+  Sonata_Group: number[]
+  Skill_1: string[]
+  Skill_2: string[]
+  Skill_3: string[]
+  Skill_4: string[]
+  Skill_5: string[]
+  [key: string]: string | number | number[] | string[]
 }
 
 export interface EchoSet {

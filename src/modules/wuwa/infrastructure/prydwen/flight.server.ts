@@ -123,6 +123,26 @@ function sliceBalanced(source: string, start: number): string | null {
 }
 
 /**
+ * Returns the array stored under `"<key>":[` in the flight payload, if any.
+ * Catalog pages (weapons, echoes) ship their whole list as a single array.
+ */
+export function extractArray<T>(flight: string, key: string): T[] | null {
+  const marker = `"${key}":[`
+  const at = flight.indexOf(marker)
+  if (at === -1) return null
+
+  const raw = sliceBalanced(flight, at + marker.length - 1)
+  if (!raw) return null
+
+  try {
+    const value: unknown = JSON.parse(raw)
+    return Array.isArray(value) ? (value as T[]) : null
+  } catch {
+    return null
+  }
+}
+
+/**
  * The payload is serialized as `[...,null,{"character":{...},...}]`. We locate
  * the `character` key and walk outwards to the enclosing object.
  */
