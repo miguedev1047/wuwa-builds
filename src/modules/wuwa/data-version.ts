@@ -1,6 +1,6 @@
 /**
- * Version of the resonator dataset, injected at build time from the hash of
- * `src/data/wuwa-resonators/index.json` (see `vite.config.ts`).
+ * Version of all game data, injected at build time from the hash of every JSON
+ * file in `src/data/wuwa-resonators` and `src/data/wuwa-catalogs`.
  *
  * It changes when a new scrape is deployed. It prefixes the query keys, so any
  * cache — memory now, TanStack DB/SQLite later — stays isolated per version

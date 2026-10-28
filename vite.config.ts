@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto"
-import { readFileSync } from "node:fs"
+import { readFileSync, readdirSync } from "node:fs"
 import { defineConfig } from "vite"
 import { devtools } from "@tanstack/devtools-vite"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
@@ -16,21 +16,30 @@ import tailwindcss from "@tailwindcss/vite"
  * cache such as TanStack DB / SQLite) invalidate on their own. It is computed
  * at build time; after re-scraping, restart the dev server.
  */
-const DATA_FILES = [
-  "./src/data/wuwa-resonators/index.json",
-  "./src/data/wuwa-catalogs/weapons.json",
-  "./src/data/wuwa-catalogs/echoes.json",
-  "./src/data/wuwa-catalogs/echo-sets.json",
+const DATA_DIRECTORIES = [
+  "./src/data/wuwa-resonators",
+  "./src/data/wuwa-catalogs",
 ]
 
 function readDataVersion(): string {
   const hash = createHash("sha256")
 
-  for (const file of DATA_FILES) {
+  for (const directory of DATA_DIRECTORIES) {
+    const directoryUrl = new URL(`${directory}/`, import.meta.url)
+    hash.update(`${directory}\0`)
+
     try {
-      hash.update(readFileSync(new URL(file, import.meta.url)))
+      const files = readdirSync(directoryUrl, { withFileTypes: true })
+        .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+        .map((entry) => entry.name)
+        .sort()
+
+      for (const file of files) {
+        hash.update(`${file}\0`)
+        hash.update(readFileSync(new URL(file, directoryUrl)))
+      }
     } catch {
-      // Missing files are ignored; the version still changes when they appear.
+      // Missing data directories are ignored during initial setup.
     }
   }
 

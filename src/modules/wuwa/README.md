@@ -1,12 +1,15 @@
 # Domain: Wuthering Waves
 
 Resonator data (Prydwen builds) and its scraper. Light DDD split: pure domain,
-use cases, infrastructure, and an entry layer (server functions + CLI).
+use cases, infrastructure, shared queries, and an entry layer (server functions
+
+- CLI).
 
 ## Structure
 
 ```
 src/modules/wuwa/
+├── data-version.ts                   # build-time dataset version
 ├── domain/
 │   ├── resonator.ts                  # pure types (Resonator, ResonatorIndex, ...)
 │   └── catalog.ts                    # shared catalogs (weapons, echoes, sets)
@@ -27,6 +30,10 @@ src/modules/wuwa/
 │   ├── resonators-bundle.server.ts     # resonator JSON bundled at build
 │   ├── catalog-file-store.server.ts    # catalog JSON persistence
 │   └── catalogs-bundle.server.ts       # catalog JSON bundled at build
+├── queries/
+│   ├── keys.ts                       # versioned query keys
+│   ├── resonators.ts                 # resonatorQueries
+│   └── catalogs.ts                   # weapon/echo/echo-set queries
 ├── server/
 │   ├── resonators.ts                 # resonator server functions
 │   └── catalogs.ts                   # weapon/echo server functions
@@ -120,13 +127,26 @@ of reading the DOM, so the values are exactly what the page shows. Long texts
 (`review`, `rotations`) arrive as separate `T` rows and are resolved with
 `createTextLookup`.
 
+## Queries
+
+Shared TanStack Query options live in `src/modules/wuwa/queries`:
+
+- `resonatorQueries.index()` / `.detail(slug)`
+- `weaponQueries.catalog()` / `.detail({ id | slug })`
+- `echoQueries.catalog()` / `.detail({ id | slug })`
+- `echoSetQueries.catalog()` / `.detail({ sonataId | slug })`
+
+Screens must use these options in the loader (`queryClient.query(options)`) and
+in the component (`useSuspenseQuery(options)`) so the cache and the fetch
+definition are shared. Do not create per-screen copies under `panel/*`.
+
 ## Cache
 
 `src/lib/query.tsx` uses `staleTime: "static"`: data only changes when it is
 re-scraped and deployed, so there is no refetch on mount/focus/reconnect.
 
 Query keys (`queries/keys.ts`) are prefixed with `WUWA_DATA_VERSION`, a hash of
-the scraped JSON (resonator index + catalogs) injected at build time from
+every scraped JSON file (resonators + catalogs) injected at build time from
 `vite.config.ts`:
 
 ```ts

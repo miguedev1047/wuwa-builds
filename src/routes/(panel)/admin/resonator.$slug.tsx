@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 import { Show } from "@/components/utility/show"
-import { getResonatorQueryOpts } from "@/modules/panel/admin/queries/get-resonators"
+import { resonatorQueries } from "@/modules/wuwa/queries/resonators"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { Suspense } from "react"
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/(panel)/admin/resonator/$slug")({
   component: RouteComponent,
   loader: async ({ context, params }) => {
     const slug = params.slug
-    await context.queryClient.query(getResonatorQueryOpts(slug))
+    await context.queryClient.query(resonatorQueries.detail(slug))
   },
 })
 
@@ -32,7 +32,7 @@ function RouteComponent() {
 
 function Resonator() {
   const { slug } = Route.useParams()
-  const { data: resonator } = useSuspenseQuery(getResonatorQueryOpts(slug))
+  const { data: resonator } = useSuspenseQuery(resonatorQueries.detail(slug))
 
   return (
     <div>

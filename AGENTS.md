@@ -80,6 +80,9 @@ bun run typecheck && bun run build
   `src/modules/wuwa/queries/keys.ts`), a build-time hash of the scraped JSON
   (resonator index + catalogs). When data changes, keys change and every cache
   is invalidated.
+- Shared query options live in `src/modules/wuwa/queries` (`resonatorQueries`,
+  `weaponQueries`, `echoQueries`, `echoSetQueries`). Screens must use them
+  instead of defining their own.
 - If a query ever needs freshness (for example the builder), override
   `staleTime` in that query's options instead of changing the global default.
 - Any future persistence (TanStack DB, SQLite, IndexedDB) must be namespaced

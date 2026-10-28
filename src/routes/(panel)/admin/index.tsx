@@ -1,6 +1,6 @@
 import { Spinner } from "@/components/ui/spinner"
 import { Show } from "@/components/utility/show"
-import { getResonatorsQueryOpts } from "@/modules/panel/admin/queries/get-resonators"
+import { resonatorQueries } from "@/modules/wuwa/queries/resonators"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { Suspense } from "react"
@@ -8,7 +8,7 @@ import { Suspense } from "react"
 export const Route = createFileRoute("/(panel)/admin/")({
   component: RouteComponent,
   loader: async ({ context }) => {
-    await context.queryClient.query(getResonatorsQueryOpts)
+    await context.queryClient.query(resonatorQueries.index())
   },
 })
 
@@ -23,7 +23,7 @@ function RouteComponent() {
 }
 
 function ResonatorLists() {
-  const { data: resonators } = useSuspenseQuery(getResonatorsQueryOpts)
+  const { data: resonators } = useSuspenseQuery(resonatorQueries.index())
 
   return (
     <ul className="grid grid-cols-5 gap-4">
