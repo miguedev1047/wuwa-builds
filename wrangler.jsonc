@@ -8,4 +8,12 @@
   "observability": {
     "enabled": true,
   },
+
+  "d1_databases": [
+    {
+      "binding": "wuwa_builds",
+      "database_name": "wuwa-builds-db",
+      "database_id": "e28ea5a8-addd-4157-a8ee-b38000989034",
+    },
+  ],
 }
