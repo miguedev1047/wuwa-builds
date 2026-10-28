@@ -7,6 +7,8 @@ import {
 } from "@tanstack/react-router"
 import { Devtools } from "@/components/utility/devtools"
 import type { QueryClient } from "@tanstack/react-query"
+import { ThemeProvider } from "@/providers/theme-provider"
+import { Toaster } from "@/components/ui/sonner"
 
 export interface RouteContext {
   queryClient: QueryClient
@@ -49,7 +51,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        {children}
+        <ThemeProvider defaultTheme="system" storageKey="theme">
+          {children}
+          <Toaster />
+        </ThemeProvider>
         <Devtools />
         <Scripts />
       </body>
