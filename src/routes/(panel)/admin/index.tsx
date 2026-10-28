@@ -14,7 +14,7 @@ export const Route = createFileRoute("/(panel)/admin/")({
 
 function RouteComponent() {
   return (
-    <div>
+    <div className="mx-auto max-w-5xl py-20">
       <Suspense fallback={<Spinner />}>
         <ResonatorLists />
       </Suspense>
@@ -26,27 +26,25 @@ function ResonatorLists() {
   const { data: resonators } = useSuspenseQuery(getResonatorsQueryOpts)
 
   return (
-    <div className="mx-auto max-w-5xl py-20">
-      <ul className="grid grid-cols-5 gap-4">
-        {resonators?.characters.map((resonator) => (
-          <Link
-            key={resonator.name}
-            to="/admin/resonator/$slug"
-            params={{ slug: resonator.slug }}
-          >
-            <li>
-              <Show when={resonator.cardImage}>
-                {(image) => (
-                  <img
-                    className="aspect-2/3 size-full object-cover"
-                    src={image}
-                  />
-                )}
-              </Show>
-            </li>
-          </Link>
-        ))}
-      </ul>
-    </div>
+    <ul className="grid grid-cols-5 gap-4">
+      {resonators?.characters.map((resonator) => (
+        <Link
+          key={resonator.name}
+          to="/admin/resonator/$slug"
+          params={{ slug: resonator.slug }}
+        >
+          <li>
+            <Show when={resonator.cardImage}>
+              {(image) => (
+                <img
+                  className="aspect-2/3 size-full object-cover"
+                  src={image}
+                />
+              )}
+            </Show>
+          </li>
+        </Link>
+      ))}
+    </ul>
   )
 }
