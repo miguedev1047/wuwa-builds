@@ -158,6 +158,10 @@ When new data is deployed every key changes, so any cache (memory, and a future
 TanStack DB/SQLite persistence) is invalidated with no extra logic. After
 re-scraping locally, restart the dev server to recompute the hash.
 
+`WUWA_DATA_VERSION` namespaces immutable catalog caches only. Saved user builds
+live in D1 and are identified by build/user identity plus the payload
+`documentVersion`; a catalog refresh must never invalidate them.
+
 ## Usage from the app
 
 ```tsx

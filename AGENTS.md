@@ -77,12 +77,15 @@ bun run typecheck && bun run build
 - `src/lib/query.tsx` uses `staleTime: "static"`: data is immutable until the
   next deploy.
 - Query keys must include `WUWA_DATA_VERSION` (see
-  `src/modules/wuwa/queries/keys.ts`), a build-time hash of the scraped JSON
-  (resonator index + catalogs). When data changes, keys change and every cache
-  is invalidated.
+  `src/modules/wuwa/queries/keys.ts`), a build-time hash of all scraped JSON
+  (resonator details + catalogs). When data changes, keys change and every
+  catalog cache is invalidated.
 - Shared query options live in `src/modules/wuwa/queries` (`resonatorQueries`,
   `weaponQueries`, `echoQueries`, `echoSetQueries`). Screens must use them
   instead of defining their own.
+- `WUWA_DATA_VERSION` namespaces only immutable catalog caches. Saved builds are
+  scoped by user/build identity and payload `documentVersion`, never by the
+  catalog version.
 - If a query ever needs freshness (for example the builder), override
   `staleTime` in that query's options instead of changing the global default.
 - Any future persistence (TanStack DB, SQLite, IndexedDB) must be namespaced
@@ -119,3 +122,6 @@ bun run typecheck && bun run build
 - Data freshness depends on the manual monthly scrape; the UI does not refetch.
 - Catalogs are exposed through `server/catalogs.ts` (list, and detail by ID or
   slug) but are not used by any screen yet.
+- The saved-builds backend exists (`src/db/schemas/builds.ts`,
+  `src/modules/builds`) but no TanStack DB collection or builder UI is wired
+  yet.

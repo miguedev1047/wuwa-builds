@@ -11,12 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as panelPanelRouteRouteImport } from './routes/(panel)/panel/route'
+import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as panelAdminIndexRouteImport } from './routes/(panel)/admin/index'
 import { Route as panelPanelIndexRouteImport } from './routes/(panel)/panel/index'
 import { Route as panelPanelBuilderRouteImport } from './routes/(panel)/panel/builder'
 import { Route as panelPanelMyBuildsRouteImport } from './routes/(panel)/panel/my-builds'
 import { Route as panelPanelNewBuildRouteImport } from './routes/(panel)/panel/new-build'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as panelAdminResonatorSlugRouteImport } from './routes/(panel)/admin/resonator.$slug'
+import { Route as panelPanelMyBuildsBSlugRouteImport } from './routes/(panel)/panel/my-builds.b.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -26,6 +29,11 @@ const IndexRoute = IndexRouteImport.update({
 const panelPanelRouteRoute = panelPanelRouteRouteImport.update({
   id: '/(panel)/panel',
   path: '/panel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/auth/login',
+  path: '/auth/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const panelAdminIndexRoute = panelAdminIndexRouteImport.update({
@@ -53,77 +61,107 @@ const panelPanelNewBuildRoute = panelPanelNewBuildRouteImport.update({
   path: '/new-build',
   getParentRoute: () => panelPanelRouteRoute,
 } as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const panelAdminResonatorSlugRoute = panelAdminResonatorSlugRouteImport.update({
   id: '/(panel)/admin/resonator/$slug',
   path: '/admin/resonator/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const panelPanelMyBuildsBSlugRoute = panelPanelMyBuildsBSlugRouteImport.update({
+  id: '/b/$slug',
+  path: '/b/$slug',
+  getParentRoute: () => panelPanelMyBuildsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/panel': typeof panelPanelRouteRouteWithChildren
+  '/auth/login': typeof AuthLoginRoute
   '/panel/builder': typeof panelPanelBuilderRoute
-  '/panel/my-builds': typeof panelPanelMyBuildsRoute
+  '/panel/my-builds': typeof panelPanelMyBuildsRouteWithChildren
   '/panel/new-build': typeof panelPanelNewBuildRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin/': typeof panelAdminIndexRoute
   '/panel/': typeof panelPanelIndexRoute
   '/admin/resonator/$slug': typeof panelAdminResonatorSlugRoute
+  '/panel/my-builds/b/$slug': typeof panelPanelMyBuildsBSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth/login': typeof AuthLoginRoute
   '/panel/builder': typeof panelPanelBuilderRoute
-  '/panel/my-builds': typeof panelPanelMyBuildsRoute
+  '/panel/my-builds': typeof panelPanelMyBuildsRouteWithChildren
   '/panel/new-build': typeof panelPanelNewBuildRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof panelAdminIndexRoute
   '/panel': typeof panelPanelIndexRoute
   '/admin/resonator/$slug': typeof panelAdminResonatorSlugRoute
+  '/panel/my-builds/b/$slug': typeof panelPanelMyBuildsBSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/(panel)/panel': typeof panelPanelRouteRouteWithChildren
+  '/auth/login': typeof AuthLoginRoute
   '/(panel)/panel/builder': typeof panelPanelBuilderRoute
-  '/(panel)/panel/my-builds': typeof panelPanelMyBuildsRoute
+  '/(panel)/panel/my-builds': typeof panelPanelMyBuildsRouteWithChildren
   '/(panel)/panel/new-build': typeof panelPanelNewBuildRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
   '/(panel)/admin/': typeof panelAdminIndexRoute
   '/(panel)/panel/': typeof panelPanelIndexRoute
   '/(panel)/admin/resonator/$slug': typeof panelAdminResonatorSlugRoute
+  '/(panel)/panel/my-builds/b/$slug': typeof panelPanelMyBuildsBSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/panel'
+    | '/auth/login'
     | '/panel/builder'
     | '/panel/my-builds'
     | '/panel/new-build'
+    | '/api/auth/$'
     | '/admin/'
     | '/panel/'
     | '/admin/resonator/$slug'
+    | '/panel/my-builds/b/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/auth/login'
     | '/panel/builder'
     | '/panel/my-builds'
     | '/panel/new-build'
+    | '/api/auth/$'
     | '/admin'
     | '/panel'
     | '/admin/resonator/$slug'
+    | '/panel/my-builds/b/$slug'
   id:
     | '__root__'
     | '/'
     | '/(panel)/panel'
+    | '/auth/login'
     | '/(panel)/panel/builder'
     | '/(panel)/panel/my-builds'
     | '/(panel)/panel/new-build'
+    | '/api/auth/$'
     | '/(panel)/admin/'
     | '/(panel)/panel/'
     | '/(panel)/admin/resonator/$slug'
+    | '/(panel)/panel/my-builds/b/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   panelPanelRouteRoute: typeof panelPanelRouteRouteWithChildren
+  AuthLoginRoute: typeof AuthLoginRoute
+  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   panelAdminIndexRoute: typeof panelAdminIndexRoute
   panelAdminResonatorSlugRoute: typeof panelAdminResonatorSlugRoute
 }
@@ -142,6 +180,13 @@ declare module '@tanstack/react-router' {
       path: '/panel'
       fullPath: '/panel'
       preLoaderRoute: typeof panelPanelRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/login': {
+      id: '/auth/login'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/(panel)/admin/': {
@@ -179,6 +224,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof panelPanelNewBuildRouteImport
       parentRoute: typeof panelPanelRouteRoute
     }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/(panel)/admin/resonator/$slug': {
       id: '/(panel)/admin/resonator/$slug'
       path: '/admin/resonator/$slug'
@@ -186,19 +238,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof panelAdminResonatorSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/(panel)/panel/my-builds/b/$slug': {
+      id: '/(panel)/panel/my-builds/b/$slug'
+      path: '/b/$slug'
+      fullPath: '/panel/my-builds/b/$slug'
+      preLoaderRoute: typeof panelPanelMyBuildsBSlugRouteImport
+      parentRoute: typeof panelPanelMyBuildsRoute
+    }
   }
 }
 
+interface panelPanelMyBuildsRouteChildren {
+  panelPanelMyBuildsBSlugRoute: typeof panelPanelMyBuildsBSlugRoute
+}
+
+const panelPanelMyBuildsRouteChildren: panelPanelMyBuildsRouteChildren = {
+  panelPanelMyBuildsBSlugRoute: panelPanelMyBuildsBSlugRoute,
+}
+
+const panelPanelMyBuildsRouteWithChildren =
+  panelPanelMyBuildsRoute._addFileChildren(panelPanelMyBuildsRouteChildren)
+
 interface panelPanelRouteRouteChildren {
   panelPanelBuilderRoute: typeof panelPanelBuilderRoute
-  panelPanelMyBuildsRoute: typeof panelPanelMyBuildsRoute
+  panelPanelMyBuildsRoute: typeof panelPanelMyBuildsRouteWithChildren
   panelPanelNewBuildRoute: typeof panelPanelNewBuildRoute
   panelPanelIndexRoute: typeof panelPanelIndexRoute
 }
 
 const panelPanelRouteRouteChildren: panelPanelRouteRouteChildren = {
   panelPanelBuilderRoute: panelPanelBuilderRoute,
-  panelPanelMyBuildsRoute: panelPanelMyBuildsRoute,
+  panelPanelMyBuildsRoute: panelPanelMyBuildsRouteWithChildren,
   panelPanelNewBuildRoute: panelPanelNewBuildRoute,
   panelPanelIndexRoute: panelPanelIndexRoute,
 }
@@ -210,6 +280,8 @@ const panelPanelRouteRouteWithChildren = panelPanelRouteRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   panelPanelRouteRoute: panelPanelRouteRouteWithChildren,
+  AuthLoginRoute: AuthLoginRoute,
+  ApiAuthSplatRoute: ApiAuthSplatRoute,
   panelAdminIndexRoute: panelAdminIndexRoute,
   panelAdminResonatorSlugRoute: panelAdminResonatorSlugRoute,
 }
