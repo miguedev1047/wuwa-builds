@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 import { ResonatorLists } from "@/modules/panel/user/new-build/components/resonator-list"
-import { resonatorQueries } from "@/modules/wuwa/queries/resonators"
+import { characterQueries } from "@/modules/encore/queries/characters"
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { Suspense } from "react"
 
 export const Route = createFileRoute("/(panel)/panel/new-build")({
   component: RouteComponent,
   loader: async ({ context }) => {
-    await context.queryClient.query(resonatorQueries.index())
+    await context.queryClient.query(characterQueries.list())
   },
 })
 

@@ -49,6 +49,16 @@ Rules:
 - Validate server function inputs with zod through `.validator(...)`.
 - `src/modules/wuwa` is the reference implementation; follow its patterns.
 
+Current modules:
+
+- `src/modules/encore`: read-only game data from the public Encore API
+  (characters, weapons and echoes). Used by the admin and builder screens.
+- `src/modules/wuwa`: Prydwen editorial data and scraper. Kept for build
+  recommendations and tier data; no longer the source of raw game stats.
+- `src/modules/builds`: saved user builds (D1/Drizzle).
+- `src/modules/panel`: panel UI behavior only. It must not import
+  infrastructure directly.
+
 ## Data pipeline (wuwa)
 
 - JSON lives in `src/data/wuwa-resonators` (characters) and
@@ -72,24 +82,38 @@ git add src/data && git commit -m "chore(wuwa): refresh game data"
 bun run typecheck && bun run build
 ```
 
+### Encore game data
+
+Raw game data (characters, weapons, echoes) is read from
+`https://api-v2.encore.moe/api/{lang}/...` through `src/modules/encore`:
+
+- Server cache: 5-minute in-memory dedupe + 6-hour Cloudflare edge cache.
+- Client cache: shared query options use `staleTime: 6h`, `gcTime: 24h`.
+- Lore-only fields (`Words`, `Stories`, `Model3D`, `SkillInputs`, ...) are
+  dropped by the mapper.
+- Do **not** use `WUWA_DATA_VERSION` for Encore data; it changes with game
+  patches, not deploys.
+
 ## Caching
 
-- `src/lib/query.tsx` uses `staleTime: "static"`: data is immutable until the
-  next deploy.
-- Query keys must include `WUWA_DATA_VERSION` (see
+- `src/providers/query-provider/query.tsx` uses `staleTime: "static"`:
+  immutable deployed data.
+- Prydwen JSON query keys include `WUWA_DATA_VERSION` (see
   `src/modules/wuwa/queries/keys.ts`), a build-time hash of all scraped JSON
   (resonator details + catalogs). When data changes, keys change and every
   catalog cache is invalidated.
-- Shared query options live in `src/modules/wuwa/queries` (`resonatorQueries`,
-  `weaponQueries`, `echoQueries`, `echoSetQueries`). Screens must use them
-  instead of defining their own.
+- Shared query options live in `src/modules/wuwa/queries` and
+  `src/modules/encore/queries`. Screens must use them instead of defining their
+  own.
+- Encore queries are a separate namespace with `staleTime: 6h`. Do not add
+  `WUWA_DATA_VERSION` to them.
 - `WUWA_DATA_VERSION` namespaces only immutable catalog caches. Saved builds are
   scoped by user/build identity and payload `documentVersion`, never by the
   catalog version.
 - If a query ever needs freshness (for example the builder), override
   `staleTime` in that query's options instead of changing the global default.
-- Any future persistence (TanStack DB, SQLite, IndexedDB) must be namespaced
-  by `WUWA_DATA_VERSION`.
+- Any future persistence (TanStack DB, SQLite, IndexedDB) must namespace
+  catalog caches by `WUWA_DATA_VERSION` and saved builds by user/build identity.
 
 ## Cloudflare Workers
 
@@ -120,8 +144,8 @@ bun run typecheck && bun run build
 - Some resonators have `stats: null` because Prydwen has no stats table for
   them yet.
 - Data freshness depends on the manual monthly scrape; the UI does not refetch.
-- Catalogs are exposed through `server/catalogs.ts` (list, and detail by ID or
-  slug) but are not used by any screen yet.
+- Prydwen's catalogs (weapons/echoes) remain available for editorial use, but
+  no screen imports them; Encore is the active game-data source.
 - The saved-builds backend exists (`src/db/schemas/builds.ts`,
   `src/modules/builds`) but no TanStack DB collection or builder UI is wired
   yet.

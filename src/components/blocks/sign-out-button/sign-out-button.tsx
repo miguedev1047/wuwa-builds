@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 import { Show } from "@/components/utility/show"
-import { authClient } from "@/lib/auth.client"
+import { authClient } from "@/lib/auth-client"
 import { useTransition } from "react"
 import { toast } from "sonner"
 

@@ -1,16 +1,17 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 import { Show } from "@/components/utility/show"
-import { resonatorQueries } from "@/modules/wuwa/queries/resonators"
+import { characterQueries } from "@/modules/encore/queries/characters"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { Suspense } from "react"
 
-export const Route = createFileRoute("/(panel)/admin/resonator/$slug")({
+export const Route = createFileRoute("/(panel)/admin/resonator/$id")({
   component: RouteComponent,
   loader: async ({ context, params }) => {
-    const slug = params.slug
-    await context.queryClient.query(resonatorQueries.detail(slug))
+    await context.queryClient.query(
+      characterQueries.detail(parseInt(params.id))
+    )
   },
 })
 
@@ -24,30 +25,26 @@ function RouteComponent() {
       />
 
       <Suspense fallback={<Spinner />}>
-        <Resonator />
+        <Character />
       </Suspense>
     </div>
   )
 }
 
-function Resonator() {
-  const { slug } = Route.useParams()
-  const { data: resonator } = useSuspenseQuery(resonatorQueries.detail(slug))
+function Character() {
+  const { id } = Route.useParams()
+
+  const { data: character } = useSuspenseQuery(
+    characterQueries.detail(parseInt(id))
+  )
 
   return (
     <div>
-      <Show when={resonator}>
-        {(resonator) => (
-          <Show when={resonator.images.card}>
-            {(image) => (
-              <div>
-                <img className="aspect-2/3 object-cover" src={image} />
-                <h2>{resonator.name}</h2>
-              </div>
-            )}
-          </Show>
-        )}
+      <Show when={character.images.iconLarge}>
+        {(image) => <img className="aspect-2/3 object-cover" src={image} />}
       </Show>
+      <h2>{character.name}</h2>
+      <p>{character.introduction}</p>
     </div>
   )
 }
