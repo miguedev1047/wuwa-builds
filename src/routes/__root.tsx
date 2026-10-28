@@ -1,10 +1,18 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
-import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
-import { TanStackDevtools } from "@tanstack/react-devtools"
-
 import appCss from "../styles.css?url"
 
-export const Route = createRootRoute({
+import {
+  HeadContent,
+  Scripts,
+  createRootRouteWithContext,
+} from "@tanstack/react-router"
+import { Devtools } from "@/components/utility/devtools"
+import type { QueryClient } from "@tanstack/react-query"
+
+export interface RouteContext {
+  queryClient: QueryClient
+}
+
+export const Route = createRootRouteWithContext<RouteContext>()({
   head: () => ({
     meta: [
       {
@@ -42,17 +50,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        <TanStackDevtools
-          config={{
-            position: "bottom-right",
-          }}
-          plugins={[
-            {
-              name: "Tanstack Router",
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        />
+        <Devtools />
         <Scripts />
       </body>
     </html>
