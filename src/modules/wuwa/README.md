@@ -20,7 +20,8 @@ src/modules/wuwa/
 │   │   ├── flight.server.ts          # parser del payload RSC
 │   │   ├── characters-page.server.ts # índice de personajes (HTML)
 │   │   └── mapper.server.ts          # payload de Prydwen -> modelo de dominio
-│   └── resonators-file-store.server.ts # persistencia JSON
+│   ├── resonators-file-store.server.ts # persistencia JSON (scraper, solo Node)
+│   └── resonators-bundle.server.ts     # JSON empaquetado en build (runtime)
 ├── server/
 │   └── resonators.ts                 # server functions (TanStack Start)
 └── cli/
@@ -42,7 +43,22 @@ Para no ensuciar el diff, el scraper compara el JSON nuevo con el guardado
 ignorando `fetchedAt` y **no reescribe el archivo si no cambió nada real**: el
 commit mensual solo muestra los personajes que Prydwen tocó.
 
-La ruta se puede sobreescribir con `WUWA_RESONATORS_DIR` o con `--out` en el CLI.
+`WUWA_RESONATORS_DIR` y `--out` solo cambian dónde escribe el scraper. En
+runtime no se lee del disco: los JSON se empaquetan en el bundle del servidor
+con `import.meta.glob` (ver `infrastructure/resonators-bundle.server.ts`). Eso
+es obligatorio en Cloudflare Workers, donde workerd no tiene `node:fs`, y de
+paso hace que funcione igual en Node. Consecuencia: tras re-scrapear hay que
+recompilar/desplegar para que el runtime vea los datos nuevos.
+
+### Cloudflare Workers
+
+- El SSR corre en workerd: sin `node:fs` ni `node:child_process`. El scraper
+  sigue siendo local (`bun run scrape`), nunca se ejecuta en el Worker.
+- Los JSON viajan en el bundle del servidor: ~3.5 MB en crudo, **~0.9 MB gzip**.
+  El upload total con Wrangler queda en ~1.1 MiB comprimido, por debajo del
+  límite de 3 MiB del plan gratuito (10 MiB en paid).
+- La lectura del índice y de cada personaje están en módulos `.server.ts`, así
+  que no llegan al bundle del cliente.
 
 ## Refrescar los datos
 
@@ -81,8 +97,9 @@ Las query keys (`queries/keys.ts`) llevan delante `WUWA_DATA_VERSION`, un hash
 del `index.json` inyectado en build desde `vite.config.ts`:
 
 ```ts
-["wuwa", WUWA_DATA_VERSION, "resonators"]
-["wuwa", WUWA_DATA_VERSION, "resonators", slug]
+;["wuwa", WUWA_DATA_VERSION, "resonators"][
+  ("wuwa", WUWA_DATA_VERSION, "resonators", slug)
+]
 ```
 
 Así, al desplegar datos nuevos cambian todas las keys y cualquier caché
@@ -93,10 +110,7 @@ hash.
 ## Uso desde la app
 
 ```tsx
-import {
-  getResonators,
-  getResonator,
-} from "@/modules/wuwa/server/resonators"
+import { getResonators, getResonator } from "@/modules/wuwa/server/resonators"
 
 // En un loader o componente
 const index = await getResonators()
