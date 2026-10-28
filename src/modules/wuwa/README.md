@@ -72,6 +72,24 @@ leer el DOM, así que los valores son exactamente los que muestra la página.
 Los textos largos (`review`, `rotations`) llegan como filas `T` separadas y se
 resuelven con `createTextLookup`.
 
+## Caché
+
+`src/lib/query.tsx` usa `staleTime: "static"`: los datos solo cambian al
+re-scrapear y desplegar, así que no hay refetch por mount/focus/reconnect.
+
+Las query keys (`queries/keys.ts`) llevan delante `WUWA_DATA_VERSION`, un hash
+del `index.json` inyectado en build desde `vite.config.ts`:
+
+```ts
+["wuwa", WUWA_DATA_VERSION, "resonators"]
+["wuwa", WUWA_DATA_VERSION, "resonators", slug]
+```
+
+Así, al desplegar datos nuevos cambian todas las keys y cualquier caché
+(memoria, y en el futuro TanStack DB/SQLite) queda invalidada sin lógica extra.
+Tras re-scrapear en local hay que reiniciar el dev server para recalcular el
+hash.
+
 ## Uso desde la app
 
 ```tsx
