@@ -40,7 +40,10 @@ function Resonator() {
         {(resonator) => (
           <Show when={resonator.images.card}>
             {(image) => (
-              <img className="aspect-2/3 size-full object-cover" src={image} />
+              <div>
+                <img className="aspect-2/3 object-cover" src={image} />
+                <h2>{resonator.name}</h2>
+              </div>
             )}
           </Show>
         )}
