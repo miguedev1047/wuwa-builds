@@ -39,12 +39,14 @@ function Character() {
   )
 
   return (
-    <div>
+    <div className="space-y-4">
       <Show when={character.images.iconLarge}>
         {(image) => <img className="aspect-2/3 object-cover" src={image} />}
       </Show>
-      <h2>{character.name}</h2>
-      <p>{character.introduction}</p>
+      <h2 className="text-xl font-bold">{character.name}</h2>
+
+      {/* TODO: Arreglar esto despues */}
+      <div dangerouslySetInnerHTML={{ __html: character.introduction }} />
     </div>
   )
 }
