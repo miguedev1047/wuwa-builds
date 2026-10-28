@@ -7,7 +7,7 @@ import {
   type ResonatorIndex,
 } from "../domain/resonator"
 
-/** Default location, relative to the project root. Git-ignored on purpose. */
+/** Default scraper output, relative to the project root (committed to git). */
 export const DEFAULT_DATA_DIRECTORY = "src/data/wuwa-resonators"
 
 const INDEX_FILE = "index.json"

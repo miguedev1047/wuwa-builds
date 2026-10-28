@@ -1,100 +1,100 @@
-# Dominio: Wuthering Waves
+# Domain: Wuthering Waves
 
-Datos de resonadores (builds de Prydwen) y scraper. Sigue una separación DDD
-ligera: dominio puro, casos de uso, infraestructura y una capa de entrada
-(server functions + CLI).
+Resonator data (Prydwen builds) and its scraper. Light DDD split: pure domain,
+use cases, infrastructure, and an entry layer (server functions + CLI).
 
-## Estructura
+## Structure
 
 ```
 src/modules/wuwa/
 ├── domain/
-│   └── resonator.ts                  # tipos puros (Resonator, ResonatorIndex, ...)
+│   └── resonator.ts                  # pure types (Resonator, ResonatorIndex, ...)
 ├── application/
-│   ├── schemas.ts                    # contratos de entrada (zod)
-│   ├── read-resonators.server.ts     # casos de uso de lectura
-│   └── scrape-resonators.server.ts   # caso de uso de scraping
+│   ├── schemas.ts                    # input contracts (zod)
+│   ├── read-resonators.server.ts     # read use cases
+│   └── scrape-resonators.server.ts   # scraping use case
 ├── infrastructure/
 │   ├── prydwen/
-│   │   ├── http.server.ts            # transporte (curl + reintentos)
-│   │   ├── flight.server.ts          # parser del payload RSC
-│   │   ├── characters-page.server.ts # índice de personajes (HTML)
-│   │   └── mapper.server.ts          # payload de Prydwen -> modelo de dominio
-│   ├── resonators-file-store.server.ts # persistencia JSON (scraper, solo Node)
-│   └── resonators-bundle.server.ts     # JSON empaquetado en build (runtime)
+│   │   ├── http.server.ts            # transport (curl + retries)
+│   │   ├── flight.server.ts          # RSC payload parser
+│   │   ├── characters-page.server.ts # character index (HTML)
+│   │   └── mapper.server.ts          # Prydwen payload -> domain model
+│   ├── resonators-file-store.server.ts # JSON persistence (scraper, Node only)
+│   └── resonators-bundle.server.ts     # JSON bundled at build (runtime)
 ├── server/
 │   └── resonators.ts                 # server functions (TanStack Start)
 └── cli/
-    └── scrape.ts                     # CLI de desarrollo
+    └── scrape.ts                     # development CLI
 ```
 
-Todo lo que toca filesystem o red lleva sufijo `.server.ts`, así que el
-import-protection de TanStack Start impide que acabe en el bundle del cliente.
+Everything that touches the filesystem or the network uses the `.server.ts`
+suffix, so TanStack Start import protection keeps it out of the client bundle.
 
-## Datos
+## Data
 
-Se escriben en `src/data/wuwa-resonators` y **se versionan en git** (se refrescan
-a mano ~1 vez al mes):
+Written to `src/data/wuwa-resonators` and **committed to git** (refreshed
+manually, about once a month):
 
-- `<slug>.json` por personaje (perfil, builds, stats, sinergias, ...).
-- `index.json` con el roster y sus tiers.
+- `<slug>.json` per character (profile, builds, stats, synergies, ...).
+- `index.json` with the roster and its tier ratings.
 
-Para no ensuciar el diff, el scraper compara el JSON nuevo con el guardado
-ignorando `fetchedAt` y **no reescribe el archivo si no cambió nada real**: el
-commit mensual solo muestra los personajes que Prydwen tocó.
+To keep diffs clean, the scraper compares the new JSON with the stored one
+ignoring `fetchedAt` and **does not rewrite the file when nothing changed**: the
+monthly commit only shows the characters Prydwen actually touched.
 
-`WUWA_RESONATORS_DIR` y `--out` solo cambian dónde escribe el scraper. En
-runtime no se lee del disco: los JSON se empaquetan en el bundle del servidor
-con `import.meta.glob` (ver `infrastructure/resonators-bundle.server.ts`). Eso
-es obligatorio en Cloudflare Workers, donde workerd no tiene `node:fs`, y de
-paso hace que funcione igual en Node. Consecuencia: tras re-scrapear hay que
-recompilar/desplegar para que el runtime vea los datos nuevos.
+`WUWA_RESONATORS_DIR` and `--out` only change where the scraper writes. At
+runtime nothing is read from disk: the JSON is bundled into the server build
+with `import.meta.glob` (see `infrastructure/resonators-bundle.server.ts`). That
+is required on Cloudflare Workers, where workerd has no `node:fs`, and it also
+works on Node. Consequence: after re-scraping, rebuild/redeploy so the runtime
+sees the new data.
 
 ### Cloudflare Workers
 
-- El SSR corre en workerd: sin `node:fs` ni `node:child_process`. El scraper
-  sigue siendo local (`bun run scrape`), nunca se ejecuta en el Worker.
-- Los JSON viajan en el bundle del servidor: ~3.5 MB en crudo, **~0.9 MB gzip**.
-  El upload total con Wrangler queda en ~1.1 MiB comprimido, por debajo del
-  límite de 3 MiB del plan gratuito (10 MiB en paid).
-- La lectura del índice y de cada personaje están en módulos `.server.ts`, así
-  que no llegan al bundle del cliente.
+- SSR runs in workerd: no `node:fs` or `node:child_process`. The scraper stays
+  local (`bun run scrape`) and never runs in the Worker.
+- The JSON ships inside the server bundle: ~3.5 MB raw, **~0.9 MB gzip**. The
+  total Wrangler upload is ~1.1 MiB compressed, under the 3 MiB free-plan limit
+  (10 MiB paid).
+- Index and per-character reads live in `.server.ts` modules, so they never
+  reach the client bundle.
 
-## Refrescar los datos
+## Refreshing the data
 
 ```bash
-bun run scrape                  # incremental: solo baja los que faltan
-bun run scrape --force          # vuelve a bajar todo
+bun run scrape                  # incremental: only fetch what is missing
+bun run scrape --force          # re-fetch everything
 bun run scrape --only aalto,carlotta
 bun run scrape --limit 5 --concurrency 2 --delay 800
-bun run scrape --out src/data/otra-carpeta
+bun run scrape --out src/data/other-folder
 ```
 
-Solo funciona en desarrollo: el CLI aborta con `NODE_ENV=production` y la server
-function `scrapeResonators` comprueba `import.meta.env.DEV`.
+Development only: the CLI aborts with `NODE_ENV=production` and the
+`scrapeResonators` server function checks `import.meta.env.DEV`. It cannot run
+inside the Worker either (no curl and no filesystem), so use the CLI.
 
-### Por qué `curl`
+### Why `curl`
 
-Prydwen está detrás de Cloudflare: `fetch` de Node/Bun recibe un 403
-(`Just a moment...`) por el fingerprint TLS. `curl` con un `User-Agent` de
-navegador sí devuelve el HTML, y no añade dependencias.
+Prydwen sits behind Cloudflare: Node/Bun `fetch` gets a 403
+(`Just a moment...`) because of the TLS fingerprint. `curl` with a browser
+`User-Agent` returns the HTML, and it adds no dependencies.
 
-### De dónde salen los datos
+### Where the data comes from
 
-La web es Next.js (App Router) y no tiene API pública. Cada página renderiza en
-servidor el objeto de props de sus componentes cliente y lo manda dentro del
-payload RSC (`self.__next_f.push(...)`). El parser extrae ese objeto en vez de
-leer el DOM, así que los valores son exactamente los que muestra la página.
-Los textos largos (`review`, `rotations`) llegan como filas `T` separadas y se
-resuelven con `createTextLookup`.
+The site is Next.js (App Router) and has no public API. Every page renders the
+props object used by its client components on the server and ships it inside the
+RSC payload (`self.__next_f.push(...)`). The parser extracts that object instead
+of reading the DOM, so the values are exactly what the page shows. Long texts
+(`review`, `rotations`) arrive as separate `T` rows and are resolved with
+`createTextLookup`.
 
-## Caché
+## Cache
 
-`src/lib/query.tsx` usa `staleTime: "static"`: los datos solo cambian al
-re-scrapear y desplegar, así que no hay refetch por mount/focus/reconnect.
+`src/lib/query.tsx` uses `staleTime: "static"`: data only changes when it is
+re-scraped and deployed, so there is no refetch on mount/focus/reconnect.
 
-Las query keys (`queries/keys.ts`) llevan delante `WUWA_DATA_VERSION`, un hash
-del `index.json` inyectado en build desde `vite.config.ts`:
+Query keys (`queries/keys.ts`) are prefixed with `WUWA_DATA_VERSION`, a hash of
+`index.json` injected at build time from `vite.config.ts`:
 
 ```ts
 ;["wuwa", WUWA_DATA_VERSION, "resonators"][
@@ -102,20 +102,19 @@ del `index.json` inyectado en build desde `vite.config.ts`:
 ]
 ```
 
-Así, al desplegar datos nuevos cambian todas las keys y cualquier caché
-(memoria, y en el futuro TanStack DB/SQLite) queda invalidada sin lógica extra.
-Tras re-scrapear en local hay que reiniciar el dev server para recalcular el
-hash.
+When new data is deployed every key changes, so any cache (memory, and a future
+TanStack DB/SQLite persistence) is invalidated with no extra logic. After
+re-scraping locally, restart the dev server to recompute the hash.
 
-## Uso desde la app
+## Usage from the app
 
 ```tsx
 import { getResonators, getResonator } from "@/modules/wuwa/server/resonators"
 
-// En un loader o componente
+// In a loader or component
 const index = await getResonators()
 const aalto = await getResonator({ data: { slug: "aalto" } })
 ```
 
-Las entradas se validan con zod (`application/schemas.ts`) mediante
-`.validator(...)`, que acepta cualquier Standard Schema.
+Inputs are validated with zod (`application/schemas.ts`) through
+`.validator(...)`, which accepts any Standard Schema.

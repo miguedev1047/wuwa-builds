@@ -1,12 +1,12 @@
 import type { Resonator, ResonatorIndex } from "../domain/resonator"
 
 /**
- * En Cloudflare el SSR corre en workerd, que no tiene `node:fs`. Los datos se
- * empaquetan en el bundle del servidor en build time con `import.meta.glob`
- * (los JSON están versionados en el repo).
+ * On Cloudflare, SSR runs in workerd, which has no `node:fs`. The data is
+ * bundled into the server build with `import.meta.glob` (the JSON files are
+ * committed to the repo).
  *
- * `.server.ts` + import dinámico desde las server functions: no llega al bundle
- * del cliente.
+ * `.server.ts` plus dynamic imports from the server functions keep it out of
+ * the client bundle.
  */
 const files = import.meta.glob<{ default: Resonator | ResonatorIndex }>(
   "../../../data/wuwa-resonators/*.json",

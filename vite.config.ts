@@ -10,11 +10,11 @@ import babel from "@rolldown/plugin-babel"
 import tailwindcss from "@tailwindcss/vite"
 
 /**
- * Versión del dataset de resonadores: hash del `index.json` scrapeado.
+ * Resonator dataset version: hash of the scraped `index.json`.
  *
- * Cambia con cada scrape desplegado, así que las query keys (y una futura
- * caché persistente tipo TanStack DB / SQLite) se invalidan solas. Se calcula
- * en build; tras re-scrapear hay que reiniciar el dev server.
+ * It changes with every deployed scrape, so query keys (and a future persistent
+ * cache such as TanStack DB / SQLite) invalidate on their own. It is computed
+ * at build time; after re-scraping, restart the dev server.
  */
 function readDataVersion(): string {
   try {

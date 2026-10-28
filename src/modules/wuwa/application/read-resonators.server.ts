@@ -11,9 +11,9 @@ import {
 /**
  * Read side of the domain.
  *
- * Los datos se empaquetan en build (`resonators-bundle.server.ts`) para que
- * funcionen tanto en Node como en workerd, donde no existe `node:fs`.
- * El scraper sigue escribiendo en `src/data`, pero el runtime no lee del disco.
+ * Data is bundled at build time (`resonators-bundle.server.ts`) so it works on
+ * both Node and workerd, where `node:fs` does not exist. The scraper still
+ * writes to `src/data`, but the runtime never reads from disk.
  */
 export async function readResonatorsIndex(): Promise<ResonatorIndex | null> {
   return readBundledIndex()

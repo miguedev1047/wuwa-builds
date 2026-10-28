@@ -1,10 +1,10 @@
 /**
- * Versión del dataset de resonadores, inyectada en build desde el hash de
- * `src/data/wuwa-resonators/index.json` (ver `vite.config.ts`).
+ * Version of the resonator dataset, injected at build time from the hash of
+ * `src/data/wuwa-resonators/index.json` (see `vite.config.ts`).
  *
- * Cambia cuando se despliega un scrape nuevo. Va como prefijo de las query
- * keys, así que cualquier caché —memoria ahora, TanStack DB/SQLite después—
- * queda aislada por versión sin lógica adicional.
+ * It changes when a new scrape is deployed. It prefixes the query keys, so any
+ * cache — memory now, TanStack DB/SQLite later — stays isolated per version
+ * with no extra logic.
  */
 export const WUWA_DATA_VERSION: string =
   import.meta.env.VITE_WUWA_DATA_VERSION ?? "dev"
