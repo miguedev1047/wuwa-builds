@@ -10,7 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as panelPanelRouteRouteImport } from './routes/(panel)/panel/route'
 import { Route as panelAdminIndexRouteImport } from './routes/(panel)/admin/index'
+import { Route as panelPanelIndexRouteImport } from './routes/(panel)/panel/index'
+import { Route as panelPanelBuilderRouteImport } from './routes/(panel)/panel/builder'
+import { Route as panelPanelMyBuildsRouteImport } from './routes/(panel)/panel/my-builds'
+import { Route as panelPanelNewBuildRouteImport } from './routes/(panel)/panel/new-build'
 import { Route as panelAdminResonatorSlugRouteImport } from './routes/(panel)/admin/resonator.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -18,10 +23,35 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const panelPanelRouteRoute = panelPanelRouteRouteImport.update({
+  id: '/(panel)/panel',
+  path: '/panel',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const panelAdminIndexRoute = panelAdminIndexRouteImport.update({
   id: '/(panel)/admin/',
   path: '/admin/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const panelPanelIndexRoute = panelPanelIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => panelPanelRouteRoute,
+} as any)
+const panelPanelBuilderRoute = panelPanelBuilderRouteImport.update({
+  id: '/builder',
+  path: '/builder',
+  getParentRoute: () => panelPanelRouteRoute,
+} as any)
+const panelPanelMyBuildsRoute = panelPanelMyBuildsRouteImport.update({
+  id: '/my-builds',
+  path: '/my-builds',
+  getParentRoute: () => panelPanelRouteRoute,
+} as any)
+const panelPanelNewBuildRoute = panelPanelNewBuildRouteImport.update({
+  id: '/new-build',
+  path: '/new-build',
+  getParentRoute: () => panelPanelRouteRoute,
 } as any)
 const panelAdminResonatorSlugRoute = panelAdminResonatorSlugRouteImport.update({
   id: '/(panel)/admin/resonator/$slug',
@@ -31,30 +61,69 @@ const panelAdminResonatorSlugRoute = panelAdminResonatorSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/panel': typeof panelPanelRouteRouteWithChildren
+  '/panel/builder': typeof panelPanelBuilderRoute
+  '/panel/my-builds': typeof panelPanelMyBuildsRoute
+  '/panel/new-build': typeof panelPanelNewBuildRoute
   '/admin/': typeof panelAdminIndexRoute
+  '/panel/': typeof panelPanelIndexRoute
   '/admin/resonator/$slug': typeof panelAdminResonatorSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/panel/builder': typeof panelPanelBuilderRoute
+  '/panel/my-builds': typeof panelPanelMyBuildsRoute
+  '/panel/new-build': typeof panelPanelNewBuildRoute
   '/admin': typeof panelAdminIndexRoute
+  '/panel': typeof panelPanelIndexRoute
   '/admin/resonator/$slug': typeof panelAdminResonatorSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/(panel)/panel': typeof panelPanelRouteRouteWithChildren
+  '/(panel)/panel/builder': typeof panelPanelBuilderRoute
+  '/(panel)/panel/my-builds': typeof panelPanelMyBuildsRoute
+  '/(panel)/panel/new-build': typeof panelPanelNewBuildRoute
   '/(panel)/admin/': typeof panelAdminIndexRoute
+  '/(panel)/panel/': typeof panelPanelIndexRoute
   '/(panel)/admin/resonator/$slug': typeof panelAdminResonatorSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin/' | '/admin/resonator/$slug'
+  fullPaths:
+    | '/'
+    | '/panel'
+    | '/panel/builder'
+    | '/panel/my-builds'
+    | '/panel/new-build'
+    | '/admin/'
+    | '/panel/'
+    | '/admin/resonator/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/admin/resonator/$slug'
-  id: '__root__' | '/' | '/(panel)/admin/' | '/(panel)/admin/resonator/$slug'
+  to:
+    | '/'
+    | '/panel/builder'
+    | '/panel/my-builds'
+    | '/panel/new-build'
+    | '/admin'
+    | '/panel'
+    | '/admin/resonator/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/(panel)/panel'
+    | '/(panel)/panel/builder'
+    | '/(panel)/panel/my-builds'
+    | '/(panel)/panel/new-build'
+    | '/(panel)/admin/'
+    | '/(panel)/panel/'
+    | '/(panel)/admin/resonator/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  panelPanelRouteRoute: typeof panelPanelRouteRouteWithChildren
   panelAdminIndexRoute: typeof panelAdminIndexRoute
   panelAdminResonatorSlugRoute: typeof panelAdminResonatorSlugRoute
 }
@@ -68,12 +137,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/(panel)/panel': {
+      id: '/(panel)/panel'
+      path: '/panel'
+      fullPath: '/panel'
+      preLoaderRoute: typeof panelPanelRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/(panel)/admin/': {
       id: '/(panel)/admin/'
       path: '/admin'
       fullPath: '/admin/'
       preLoaderRoute: typeof panelAdminIndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/(panel)/panel/': {
+      id: '/(panel)/panel/'
+      path: '/'
+      fullPath: '/panel/'
+      preLoaderRoute: typeof panelPanelIndexRouteImport
+      parentRoute: typeof panelPanelRouteRoute
+    }
+    '/(panel)/panel/builder': {
+      id: '/(panel)/panel/builder'
+      path: '/builder'
+      fullPath: '/panel/builder'
+      preLoaderRoute: typeof panelPanelBuilderRouteImport
+      parentRoute: typeof panelPanelRouteRoute
+    }
+    '/(panel)/panel/my-builds': {
+      id: '/(panel)/panel/my-builds'
+      path: '/my-builds'
+      fullPath: '/panel/my-builds'
+      preLoaderRoute: typeof panelPanelMyBuildsRouteImport
+      parentRoute: typeof panelPanelRouteRoute
+    }
+    '/(panel)/panel/new-build': {
+      id: '/(panel)/panel/new-build'
+      path: '/new-build'
+      fullPath: '/panel/new-build'
+      preLoaderRoute: typeof panelPanelNewBuildRouteImport
+      parentRoute: typeof panelPanelRouteRoute
     }
     '/(panel)/admin/resonator/$slug': {
       id: '/(panel)/admin/resonator/$slug'
@@ -85,8 +189,27 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface panelPanelRouteRouteChildren {
+  panelPanelBuilderRoute: typeof panelPanelBuilderRoute
+  panelPanelMyBuildsRoute: typeof panelPanelMyBuildsRoute
+  panelPanelNewBuildRoute: typeof panelPanelNewBuildRoute
+  panelPanelIndexRoute: typeof panelPanelIndexRoute
+}
+
+const panelPanelRouteRouteChildren: panelPanelRouteRouteChildren = {
+  panelPanelBuilderRoute: panelPanelBuilderRoute,
+  panelPanelMyBuildsRoute: panelPanelMyBuildsRoute,
+  panelPanelNewBuildRoute: panelPanelNewBuildRoute,
+  panelPanelIndexRoute: panelPanelIndexRoute,
+}
+
+const panelPanelRouteRouteWithChildren = panelPanelRouteRoute._addFileChildren(
+  panelPanelRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  panelPanelRouteRoute: panelPanelRouteRouteWithChildren,
   panelAdminIndexRoute: panelAdminIndexRoute,
   panelAdminResonatorSlugRoute: panelAdminResonatorSlugRoute,
 }
