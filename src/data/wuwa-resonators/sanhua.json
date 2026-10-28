@@ -1,0 +1,1555 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/sanhua",
+  "fetchedAt": "2026-10-28T03:30:41.998Z",
+  "slug": "sanhua",
+  "name": "Sanhua",
+  "rarity": 4,
+  "element": "Glacio",
+  "weapon": "Sword",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/senhua_card.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/sanhua_full.webp"
+  },
+  "profile": {
+    "id": "cmoxpqegg00choau04a328z76",
+    "slug": "sanhua",
+    "name": "Sanhua",
+    "rarity": 4,
+    "element": "Glacio",
+    "weapon": "Sword",
+    "devId": 1102,
+    "upcoming": false,
+    "introduction": "<p>The bodyguard of Jinzhou’s Magistrate, known for having an icy personality. Once regarded as the Asura of Calamity, Sanhua is now a taciturn guardian. She has learned to maintain inner calmness amidst the chaotic frequencies, and the things that once frightened her now fuel her determination. </p>",
+    "review": "<p>Sanhua is a 5-star Glacio Sword Hybrid buffer character specialized towards buffing Basic Attack damage dealers. She rotates in and out of the field remarkably quicker than most her peers, gives them a sufficient amount of buffs and lets the DPS she’s paired with take the spotlight.</p><h6><strong><u>Key Mechanics &amp; Rotation Concepts</u></strong></h6><p>Sanhua’s primary rotation goal is to create and detonate Ice Creations to generate her Concerto as quickly as possible. She generates the following Ice Creations through the following attacks:</p><ul><li><p>Intro: 1 Ice Thorn per cast;</p></li><li><p>Skill: 1 Ice Prism per cast;</p></li><li><p>Ultimate: 1 Glacier per cast.</p></li></ul><p>Each restores 15 Concerto and deals some amount of damage (we listed them in the order of lowest to highest damage above).</p><p>Sanhua detonates these Ice Creations through her Forte Heavy Attack, called Detonate. It can be activated any time, however it requires you to charge it up and time it with her Forte. A little arrow icon will appear when you hold down Basic Attack on Sanhua and you can release it to make it stop. A regular Heavy Attack is performed if instantly released or released in the grey area. If released in the blue area though, Sanhua performs Heavy: Detonate. Timing the release of the Basic Attack button correctly and quickly is essential to properly performing Sanhua rotations. This timing window is made bigger when Sanhua generates any Ice Creation, allowing for faster, more lenient timings.</p><p>Once the animation is complete, Heavy: Detonate will shatter all Ice Creations and generate a large amount of Concerto Energy. Paired with her Intro, Skill and Ultimate, at S5 (which has the hidden property of dealing Glacier damage twice, giving 15 extra Concerto), it gives Sanhua enough Concerto to get off her Outro. A second Heavy: Detonate will be needed at S4 and below, which will be more difficult to time than the first.</p><p>Other important aspects of Sanhua’s kit are her Outro, which gives 38% Basic Attack DMG Amplification for 14s to the next character, expiring upon swap. This is what gives Sanhua her team synergies. Her S6 also provides 20% team-wide ATK.</p><h6><strong><u>Meta Position &amp; Conclusion</u></strong></h6><p>Sanhua has been a staple F2P meta character since her release. Her and Mortefi are specialized towards amplifying a specific damage type by 38%, which is a pretty large amount for how dated the characters are, all things considered. Paired with the Moonlit Clouds Echo set and their S6, they’re able to provide a good amount of buffs to any character of their corresponding damage types.&nbsp;</p><p>Recently, Sanhua has seen a resurgence in usability, because two key Basic Attack damage dealers have released: Luuk Herssen, and most importantly, Suoming.&nbsp; Suoming has everything Sanhua wants to shine as a buffer: that is, just dealing a lot of Basic Attack damage. Nothing else. Raw Basic Attack damage numbers are exactly what Sanhua buffs, and while Luuk is also a viable choice to use as Sanhua’s Main DPS, he specializes in Tune Strain which Sanhua has no synergy with whatsoever, making her significantly outclassed by Denia and Lynae who have affinities with the archetype.</p><p>In terms of other team options though? Before Luuk, the Basic Attack damage archetype had not seen a non-overly specialized DPS (such as Cartethyia) come out since Camellya. Indeed, a lot of Sanhua’s best teams are still confined to the long-since outdated 1.x version’s meta, like Encore and Havoc Rover for example. She in fact finds better use cases in teams with modern DPS characters who have no better fully F2P teammate alternatives. Teams like Hiyuki Sanhua Verina have come to exist, simply because Sanhua gives small amounts of buffs and allows the DPS to take as much of the spotlight on-field as possible thanks to her lightning fast rotation. It gives her a tiny bit more staying power long-term, but her best use cases are still in Basic Attack damage teams by far.</p><p>In conclusion, Sanhua is a great choice for F2P Basic Attack buffing. Sanhua is never truly best in slot in any current team, however she’s a very close second for a lot of Basic Attack DPS. She can allow players to skip pulling premium Supports for Basic Attack DPS characters while still performing well enough to clear endgame content with a proper build. This makes her a staple investment for many accounts looking to round out their endgame teams.</p>",
+    "pros": "<ul><li><p>The premier and only F2P Basic Attack buffer in the game. Fantastic with all Basic Attack damage dealers;</p></li><li><p>Has one of the fastest rotations in the game and is optimization/quickswap-friendly;</p></li><li><p>Requires next to no investment to perform in terms of build quality and weapon choice;</p></li><li><p>She’s free!</p></li></ul><p></p>",
+    "cons": "<ul><li><p>Basic Attack damage dealers are few and far between, and aside from a select few most of them are really outdated and powercrept, so her synergies are either too old to perform or too account-dependent;</p></li><li><p>Personal damage is among the lowest of all Hybrid/buffer-type characters;</p></li><li><p>S5 is a big rotation time decrease, S6 provides added team buffs. A good amount of her value is locked behind her last 2 Sequence nodes.</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p>HP: <b>15000+</b></p></li><li><p>DEF: <b>1150+</b></p></li><li><p>ATK: <b>1800-2200+</b></p></li><li><p>CRIT Rate: <b>60-80%+</b></p></li><li><p>CRIT DMG: <b>210-260%+</b></p></li><li><p>Energy Regen: <b>100%</b></p><ul><li><p>On Moonlit Clouds, her only meta set which also gives a lot of extra Energy, Sanhua requires no additional Energy Regen.</p></li></ul></li><li><p>Glacio DMG Bonus: <b>30-60%+</b></p></li></ul><p>\n</p>",
+    "rotations": "<h5><strong><u>Rotation &amp; How to Play</u></strong></h5><p>Sanhua’s rotation goal is to generate and detonate all her Ice Creations as quickly as possible in order to generate full Concerto in the quickest amount of time.&nbsp;</p><div data-callout=\"\" class=\"callout callout-info\" style=\"--callout-color: #3B82F6;\" data-callout-type=\"info\"><div class=\"callout-icon\" data-icon=\"circle-info\"></div><div class=\"callout-content\"><h6><u>Echo Timing</u></h6><p>Swap Cancel Impermanence Heron right before her Outro at S5+ (written in the rotation itself), or Interrupt it via Dash and Ultimate before S5 (no Quickswap, written in the rotations themselves), or Swap Cancel it before the rotation starts before S5 (in Quickswap, not written).</p></div></div><h6><strong><u>Standard Rotation: S5+</u></strong></h6><p>At S5 and higher, Sanhua generates 15 more Concerto than normal from detonating her Ice Creations (as Glacier damage occurs twice). This allows us to use a rotation as short as this:</p><ul><li><p>Intro</p></li></ul><ul><li><p>Skill (Cancel animation endlag via Ultimate)</p></li><li><p>Ultimate</p></li><li><p>Heavy: Detonate</p></li><li><p>Echo (Swap)</p></li><li><p>Outro</p></li></ul><h6><strong><u>S0 Rotations</u></strong></h6><p>At S0, Sanhua is missing the 15 Concerto she needs to perform the above rotation, so extra attacks are in order. However, we can try to optimize a bit by interrupting the Impermanence Heron cast via a Dash into an Ultimate after the first Skill, or by Swap Cancelling it before Sanhua Intros in Quickswap loops.</p><h6><strong><u>S0 Opener</u></strong></h6><p>Used in the very first team rotation, when Sanhua has no initial Concerto to begin with.</p><ul><li><p>Intro</p></li><li><p>Skill (Cancel animation endlag via Echo)</p></li><li><p>Echo (Interrupt instantly via Dash</p></li><li><p>Dash (Interrupt instantly via Ultimate)</p></li><li><p>Ultimate</p></li><li><p>Heavy: Detonate&nbsp;</p></li><li><p>Heavy: Detonate</p></li><li><p>Heavy: Detonate (Swap)</p></li><li><p>Outro</p></li></ul><p>Where 15 Concerto is transferred into the next rotation, so you can rotate somewhat similarly to S5+:</p><ul><li><p>Intro</p></li><li><p>Skill (Cancel animation endlag via Echo)</p></li><li><p>Echo (Interrupt instantly via Dash</p></li><li><p>Dash (Interrupt instantly via Ultimate)</p></li><li><p>Ultimate</p></li><li><p>Heavy: Detonate&nbsp;</p></li><li><p>Heavy: Detonate (Swap)</p></li><li><p>Outro&nbsp;</p></li></ul><p>What matters most in this rotation is cancelling your Impermanence Heron cast quickly to ensure an efficient rotation. In Quickswap, it’s also easy to Swap Cancel it before Sanhua’s rotation starts (that is, before her Intro) to retain the damage and Energy generation from the cast. This saves you from doing any related inputs (you can just chain Skill into Ultimate like at S5+).</p><h5><strong><u>Additional Tips &amp; Tricks</u></strong></h5><p>Sanhua’s Heavy: Detonate is a great Swap Cancel window at S5+ and makes for a really easy rotation time save if you have a good window to cast it during your other characters’ rotations (with a Skill and Ultimate preceding it) or if you have something productive to do during Sanhua’s own on-field cast.</p><p>You can Swap Cancel the first Heavy: Detonate in all S0 rotations to execute other parts of your team’s rotation during the cast, but it’ll amount to the same rotation time as not doing so due to needing to charge subsequent Heavy: Detonates making it overall a skippable idea.</p><p>At S5+, with Sanhua and Verina in the same team, Sanhua can execute her Intro twice instead of Verina having to do any of them to save on a bit of rotation time due to her awkward Intro. In that case, just execute Sanhua’s rotation as normal through the Intro given to her by your DPS, swap out of the Heavy: Detonate, and come back through the second Intro generated by Verina.</p><p>If Sanhua is switched into combat without an Intro, she starts from Basic 2. It’s possible to rotate without an Intro by replacing it with Basic 2-3 instead at S5+.</p><p>Lastly, Sanhua has a tech you can execute on all non-mobile devices that involves charging her Forte gauge during her Intro and Skill animations. If you hold Basic Attack all throughout, execute the inputs, and then follow into an Ultimate, the Forte charge arrow will be located where you left it before the Ultimate cutscene started. This can allow you to save around a quarter of a second compared to normal if you want to learn this. On mobile devices, the Forte charge will reset during the Ultimate animation, so this trick is not considered viable for general use.</p>",
+    "skills": [
+      {
+        "name": "Frigid Light",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<h5>Basic Attack</h5><p>Sanhua performs up to <b>5</b> consecutive attacks, dealing <u>Glacio damage.</u></p><h5>Heavy Attack</h5><p>Sanhua consumes Stamina to launch attacks, dealing <u>Glacio damage.</u></p><h5>Mid-air Attack</h5><p>Sanhua consumes Stamina to perform a Mid-Air Plunging Attack, dealing <u>Glacio damage.</u></p><h5>Dodge Counter</h5><p>Use Basic Attack after a successful Dodge to attack the target, dealing <u>Glacio damage.</u></p>",
+        "multipliers": [
+          {
+            "Lv1": "24.50%",
+            "Lv2": "26.51%",
+            "Lv3": "28.52%",
+            "Lv4": "31.34%",
+            "Lv5": "33.34%",
+            "Lv6": "35.65%",
+            "Lv7": "38.87%",
+            "Lv8": "42.08%",
+            "Lv9": "45.30%",
+            "Lv10": "48.71%",
+            "Name": "Part 1 Damage"
+          },
+          {
+            "Lv1": "37.10%",
+            "Lv2": "40.15%",
+            "Lv3": "43.19%",
+            "Lv4": "47.45%",
+            "Lv5": "50.49%",
+            "Lv6": "53.99%",
+            "Lv7": "58.86%",
+            "Lv8": "63.72%",
+            "Lv9": "68.59%",
+            "Lv10": "73.76%",
+            "Name": "Part 2 Damage"
+          },
+          {
+            "Lv1": "10.85%*4",
+            "Lv2": "11.74%*4",
+            "Lv3": "12.63%*4",
+            "Lv4": "13.88%*4",
+            "Lv5": "14.77%*4",
+            "Lv6": "15.79%*4",
+            "Lv7": "17.22%*4",
+            "Lv8": "18.64%*4",
+            "Lv9": "20.06%*4",
+            "Lv10": "21.58%*4",
+            "Name": "Part 3 Damage"
+          },
+          {
+            "Lv1": "19.95%*2",
+            "Lv2": "21.59%*2",
+            "Lv3": "23.23%*2",
+            "Lv4": "25.52%*2",
+            "Lv5": "27.15%*2",
+            "Lv6": "29.03%*2",
+            "Lv7": "31.65%*2",
+            "Lv8": "34.27%*2",
+            "Lv9": "36.89%*2",
+            "Lv10": "39.67%*2",
+            "Name": "Part 4 Damage"
+          },
+          {
+            "Lv1": "117.60%",
+            "Lv2": "127.25%",
+            "Lv3": "136.89%",
+            "Lv4": "150.39%",
+            "Lv5": "160.04%",
+            "Lv6": "171.12%",
+            "Lv7": "186.55%",
+            "Lv8": "201.98%",
+            "Lv9": "217.41%",
+            "Lv10": "233.81%",
+            "Name": "Part 5 Damage"
+          },
+          {
+            "Lv1": "11.20%*5",
+            "Lv2": "12.12%*5",
+            "Lv3": "13.04%*5",
+            "Lv4": "14.33%*5",
+            "Lv5": "15.25%*5",
+            "Lv6": "16.30%*5",
+            "Lv7": "17.77%*5",
+            "Lv8": "19.24%*5",
+            "Lv9": "20.71%*5",
+            "Lv10": "22.27%*5",
+            "Name": "Heavy Attack Damage"
+          },
+          {
+            "Lv1": "43.40%",
+            "Lv2": "46.96%",
+            "Lv3": "50.52%",
+            "Lv4": "55.50%",
+            "Lv5": "59.06%",
+            "Lv6": "63.16%",
+            "Lv7": "68.85%",
+            "Lv8": "74.54%",
+            "Lv9": "80.24%",
+            "Lv10": "86.29%",
+            "Name": "Mid-air Attack Damage"
+          },
+          {
+            "Lv1": "84.00%",
+            "Lv2": "90.89%",
+            "Lv3": "97.78%",
+            "Lv4": "107.42%",
+            "Lv5": "114.31%",
+            "Lv6": "122.23%",
+            "Lv7": "133.25%",
+            "Lv8": "144.27%",
+            "Lv9": "155.30%",
+            "Lv10": "167.01%",
+            "Name": "Dodge Counter Damage"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "Heavy Attack Stamina Cost"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack Stamina Cost"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Eternal Frost",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p>Sanhua sends an air blade to create <b>1</b> &quot;Ice Prism&quot; cross the ground, dealing <u>Glacio damage.</u></p>",
+        "multipliers": [
+          {
+            "Lv1": "181.00%",
+            "Lv2": "195.85%",
+            "Lv3": "210.69%",
+            "Lv4": "231.47%",
+            "Lv5": "246.31%",
+            "Lv6": "263.38%",
+            "Lv7": "287.13%",
+            "Lv8": "310.87%",
+            "Lv9": "334.62%",
+            "Lv10": "359.85%",
+            "Name": "Skill Damage"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Con. Energy Regen"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Glacial Gaze",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p>Sanhua deals <u>Glacio damage</u> and creates <b>1</b> &quot;Glacier&quot;.</p>",
+        "multipliers": [
+          {
+            "Lv1": "407.16%",
+            "Lv2": "440.55%",
+            "Lv3": "473.94%",
+            "Lv4": "520.68%",
+            "Lv5": "554.07%",
+            "Lv6": "592.46%",
+            "Lv7": "645.88%",
+            "Lv8": "699.30%",
+            "Lv9": "752.72%",
+            "Lv10": "809.48%",
+            "Name": "Skill Damage"
+          },
+          {
+            "Lv1": "16",
+            "Lv2": "16",
+            "Lv3": "16",
+            "Lv4": "16",
+            "Lv5": "16",
+            "Lv6": "16",
+            "Lv7": "16",
+            "Lv8": "16",
+            "Lv9": "16",
+            "Lv10": "16",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "100",
+            "Lv2": "100",
+            "Lv3": "100",
+            "Lv4": "100",
+            "Lv5": "100",
+            "Lv6": "100",
+            "Lv7": "100",
+            "Lv8": "100",
+            "Lv9": "100",
+            "Lv10": "100",
+            "Name": "Res. Energy Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Con. Energy Regen"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Clarity of Mind ",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<h5>Heavy Attack: Detonate</h5><p>When holding Basic Attack, your cursor can move. If Basic Attack is released when cursor falls in the &quot;Frostbite&quot; area, Sanhua will cast a Heavy Attack Detonate to attack the target, dealing <u>Glacio damage</u>, considered as Heavy Attack damage.</p><h5>Ice Burst</h5><p>Sanhua’s Heavy Attack Detonate detonates all &quot;Ice Thorns&quot;, &quot;Ice Prisms&quot; and &quot;Glaciers&quot; within her attack range, dealing <u>Glacio damage</u>. DMG done by Ice Burst is considered as Resonance Skill damage.</p><h5>Frostbite Area</h5><p>The &quot;Frostbite&quot; area expands with every <b>1</b> stack of &quot;Clarity&quot;. &quot;Clarity&quot; stacks up to <b>2 </b>times.</p><ul><li><p>Sanhua obtains <b>1 </b>stack of &quot;Clarity&quot; upon performing Basic Attack V.</p></li><li><p>Sanhua obtains <b>1 </b>stack of &quot;Clarity&quot; upon casting Intro Skill Freezing Thorns.</p></li><li><p>Sanhua obtains <b>1 </b>stack of &quot;Clarity&quot; upon casting Resonance Skill Eternal Frost.</p></li><li><p>Sanhua obtains <b>2 </b>stack(s) of &quot;Clarity&quot; upon casting Resonance Liberation Glacial Gaze.</p></li><li><p>Upon casting Heavy Attack Detonate, all &quot;Clarity&quot; is removed.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "93.70%*2",
+            "Lv2": "101.39%*2",
+            "Lv3": "109.07%*2",
+            "Lv4": "119.83%*2",
+            "Lv5": "127.51%*2",
+            "Lv6": "136.35%*2",
+            "Lv7": "148.64%*2",
+            "Lv8": "160.93%*2",
+            "Lv9": "173.23%*2",
+            "Lv10": "186.29%*2",
+            "Name": "Burst Damage"
+          },
+          {
+            "Lv1": "70.00%",
+            "Lv2": "75.74%",
+            "Lv3": "81.48%",
+            "Lv4": "89.52%",
+            "Lv5": "95.26%",
+            "Lv6": "101.86%",
+            "Lv7": "111.05%",
+            "Lv8": "120.23%",
+            "Lv9": "129.41%",
+            "Lv10": "139.17%",
+            "Name": "Glacier Burst Damage"
+          },
+          {
+            "Lv1": "40.00%",
+            "Lv2": "43.28%",
+            "Lv3": "46.56%",
+            "Lv4": "51.16%",
+            "Lv5": "54.44%",
+            "Lv6": "58.21%",
+            "Lv7": "63.46%",
+            "Lv8": "68.70%",
+            "Lv9": "73.95%",
+            "Lv10": "79.53%",
+            "Name": "Ice Prism Burst Damage"
+          },
+          {
+            "Lv1": "30.00%",
+            "Lv2": "32.46%",
+            "Lv3": "34.92%",
+            "Lv4": "38.37%",
+            "Lv5": "40.83%",
+            "Lv6": "43.66%",
+            "Lv7": "47.59%",
+            "Lv8": "51.53%",
+            "Lv9": "55.47%",
+            "Lv10": "59.65%",
+            "Name": "Ice Thorn Burst Damage"
+          },
+          {
+            "Lv1": "5",
+            "Lv2": "5",
+            "Lv3": "5",
+            "Lv4": "5",
+            "Lv5": "5",
+            "Lv6": "5",
+            "Lv7": "5",
+            "Lv8": "5",
+            "Lv9": "5",
+            "Lv10": "5",
+            "Name": "Clarity Duration"
+          },
+          {
+            "Lv1": "5",
+            "Lv2": "5",
+            "Lv3": "5",
+            "Lv4": "5",
+            "Lv5": "5",
+            "Lv6": "5",
+            "Lv7": "5",
+            "Lv8": "5",
+            "Lv9": "5",
+            "Lv10": "5",
+            "Name": "Glacier Duration"
+          },
+          {
+            "Lv1": "5",
+            "Lv2": "5",
+            "Lv3": "5",
+            "Lv4": "5",
+            "Lv5": "5",
+            "Lv6": "5",
+            "Lv7": "5",
+            "Lv8": "5",
+            "Lv9": "5",
+            "Lv10": "5",
+            "Name": "Ice Prism Duration"
+          },
+          {
+            "Lv1": "8",
+            "Lv2": "8",
+            "Lv3": "8",
+            "Lv4": "8",
+            "Lv5": "8",
+            "Lv6": "8",
+            "Lv7": "8",
+            "Lv8": "8",
+            "Lv9": "8",
+            "Lv10": "8",
+            "Name": "Ice Thorn Duration"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Burst Con. Energy Regen"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Glacier Burst Con. Damage Regen"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Ice Prism Burst Con. Damage Regen"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Condensation",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Damage dealt by Sanhua&#039;s Resonance Skill increased by <b>20% </b>for <b>8s </b>after casting her Intro Skill.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Avalanche",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Damage dealt by Sanhua&#039;s Forte Circuit Ice Burst is increased by <b>20%</b> for <b>8s </b>after casting Basic Attack V.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Freezing Thorns",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Sanhua swings her blade downward and creates <b>1</b> &quot;Ice Thorn&quot;, dealing <u>Glacio damage.</u></p>",
+        "multipliers": [
+          {
+            "Lv1": "70.00%",
+            "Lv2": "75.74%",
+            "Lv3": "81.48%",
+            "Lv4": "89.52%",
+            "Lv5": "95.26%",
+            "Lv6": "101.86%",
+            "Lv7": "111.05%",
+            "Lv8": "120.23%",
+            "Lv9": "129.41%",
+            "Lv10": "139.17%",
+            "Name": "Skill Damage"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Con. Energy Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Silversnow",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>The next character (or other characters on a nearby team that activates an Outro Skill) gains <b>38%</b> Basic Attack DMG Deepen for <b>14s</b>, or until the character is switched off field.</p>",
+        "type": "Outro Skill"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p>Basic Attack V increases Sanhua&#039;s Crit. Rate by <b>15%</b> for <b>10s</b>. </p>",
+      "dupe1_name": "Sequence Node 1",
+      "dupe2": "<p>Stamina cost of Heavy Attack Detonate is reduced by <b>10</b>. When Sanhua casts Resonance Skill Eternal Frost, her Anti-interruption is enhanced for <b>10s. </b></p>",
+      "dupe2_name": "Sequence Node 2",
+      "dupe3": "<p>Sanhua&#039;s damage dealt is increased by <b>35%</b> against targets with HP below<b> 70%. </b></p>",
+      "dupe3_name": "Sequence Node 3",
+      "dupe4": "<p>Resonance Liberation Glacial Gaze restores <b>10 </b>Resonance Energy. DMG of the next Heavy Attack Detonate within <b>5s </b>is increased by <b>120%. </b></p>",
+      "dupe4_name": "Sequence Node 4",
+      "dupe5": "<p>Crit. DMG of Forte Circuit Ice Burst is increased by <b>100%</b>. Ice Creations (Ice Thorn, Ice Prism, and Glacier) will explode even if they are not detonated. </p>",
+      "dupe5_name": "Sequence Node 5",
+      "dupe6": "<p>After an Ice Prism or a Glacier is detonated, all team members&#039; ATK is increased by <b>10%</b> for <b>20s</b>, stacking up to <b>2</b> times. </p>",
+      "dupe6_name": "Sequence Node 6"
+    },
+    "voiceActors": {
+      "cn": "Song Yuanyuan",
+      "en": "Jennifer Armour",
+      "kr": "Yu Yeong",
+      "jpn": "Risae Matsuda"
+    },
+    "attributeBonus": [
+      {
+        "name": "Glacio DMG",
+        "value": 12
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": {
+      "skill": {
+        "name": "Unending Destruction",
+        "number": 26
+      },
+      "common": [
+        {
+          "name": "LF Whisperin Core",
+          "number_char": 4,
+          "number_skill": 25
+        },
+        {
+          "name": "MF Whisperin Core",
+          "number_char": 12,
+          "number_skill": 28
+        },
+        {
+          "name": "HF Whisperin Core",
+          "number_char": 12,
+          "number_skill": 40
+        },
+        {
+          "name": "FF Whisperin Core",
+          "number_char": 4,
+          "number_skill": 57
+        }
+      ],
+      "ascension": {
+        "name": "Wintry Bell",
+        "number": 60
+      },
+      "skill_other": [
+        {
+          "name": "Inert Metallic Drip",
+          "number": 25
+        },
+        {
+          "name": "Reactive Metallic Drip",
+          "number": 28
+        },
+        {
+          "name": "Polarized Metallic Drip",
+          "number": 55
+        },
+        {
+          "name": "Heterized Metallic Drip",
+          "number": 67
+        }
+      ],
+      "breakthrough": {
+        "name": "Sound-Keeping Tacet Core",
+        "number": 46
+      }
+    },
+    "videos": [
+      {
+        "video": "2WlnsfujK_A",
+        "url": "https://www.youtube.com/watch?v=2WlnsfujK_A"
+      }
+    ],
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "dmg_atk",
+    "calculationsNotes": "<p><strong>Rotation time after Sequences:</strong> Post S5: 2.84s.</p>"
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "sanhua",
+      "build": 3.7,
+      "review": 3.7
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "sanhua",
+        "Weapon": "Blazing Brilliance",
+        "Dupes": 1,
+        "Percentage": "108.39%",
+        "Percentage_2": "",
+        "Comment": "Changli's signature weapon that's not only fantastic for her but also usable on all damage-focused Sword users who have a large portion of their damage originating from Resonance Skill damage. Offers a huge main stat of CRIT DMG% granting excellent scaling, 12% permanent ATK% and up to 56% increased Resonance Skill DMG% which should be at or close to full power during the bulk of your rotation when opening with one or two resonance skills."
+      },
+      {
+        "ID": 2,
+        "Character": "sanhua",
+        "Weapon": "Red Spring",
+        "Dupes": 1,
+        "Percentage": "103.32%",
+        "Percentage_2": "",
+        "Comment": "Camellya's signature weapon is usable by all Basic Attack focused Sword wielding characters, but clearly designed with her in mind due to a lot of its power locked behind spending Concerto mid-rotation - something only Camellya can do. Offers a decent amount of ATK%, CRIT RATE% and Basic Attack DMG for all characters but a huge Basic Attack DMG bonus after spending Concerto. "
+      },
+      {
+        "ID": 3,
+        "Character": "sanhua",
+        "Weapon": "Emerald Sentence",
+        "Dupes": 1,
+        "Percentage": "100.00%",
+        "Percentage_2": "",
+        "Comment": "Best overall weapon on Sanhua when going by Team DPS by a very slight margin. Provides a 30% Heavy DMG Bonus if Echo is cast before her rotation starts (not accounted for here), but most importantly provides 20% Echo Skill DMG Bonus to all characters in the team upon Intro. Can improve Team DPS by a tiny margin in non-Echo teams (and a better one in Echo teams), making it the best weapon overall."
+      },
+      {
+        "ID": 4,
+        "Character": "sanhua",
+        "Weapon": "Blazing Brilliance",
+        "Dupes": 1,
+        "Percentage": "102.50%",
+        "Percentage_2": "",
+        "Comment": "Best weapon for Sanhua when only looking at personal DMG. Good general ATK, CRIT DMG and Skill DMG stat-stick for her."
+      },
+      {
+        "ID": 5,
+        "Character": "sanhua",
+        "Weapon": "Azure Oath",
+        "Dupes": 1,
+        "Percentage": "99.80%",
+        "Percentage_2": "",
+        "Comment": "ATK, CRIT Rate and DMG Bonus stat-stick for Sanhua, who does not benefit from this weapon's Havoc Bane-related effects."
+      },
+      {
+        "ID": 6,
+        "Character": "sanhua",
+        "Weapon": "Everbright Polestar",
+        "Dupes": 1,
+        "Percentage": "99.80%",
+        "Percentage_2": "",
+        "Comment": "ATK, CRIT Rate and DMG Bonus stat-stick for Sanhua, who does not benefit from this weapon's Tune Rupture/Fusion Burst-related effects."
+      },
+      {
+        "ID": 7,
+        "Character": "sanhua",
+        "Weapon": "Unspoken Rue",
+        "Dupes": 1,
+        "Percentage": "99.10%",
+        "Percentage_2": "",
+        "Comment": "ATK and CRIT Rate stat-stick for Sanhua, who does not benefit from this weapon's Unison/Concerto Consumption-related effects."
+      },
+      {
+        "ID": 8,
+        "Character": "sanhua",
+        "Weapon": "Frostburn",
+        "Dupes": 1,
+        "Percentage": "99.10%",
+        "Percentage_2": "",
+        "Comment": "ATK and CRIT Rate stat-stick for Sanhua, who does not benefit from this weapon's Glacio Chafe-related effects."
+      },
+      {
+        "ID": 9,
+        "Character": "sanhua",
+        "Weapon": "Red Spring",
+        "Dupes": 1,
+        "Percentage": "99.10%",
+        "Percentage_2": "",
+        "Comment": "ATK and CRIT Rate stat-stick for Sanhua, who does not benefit from this weapon's Basic DMG-related effects."
+      },
+      {
+        "ID": 10,
+        "Character": "sanhua",
+        "Weapon": "Glint of Clouds",
+        "Dupes": 1,
+        "Percentage": "98.90%",
+        "Percentage_2": "",
+        "Comment": "ATK and CRIT Rate stat-stick for Sanhua, who does not benefit from this weapon's Tune Strain-related effects."
+      },
+      {
+        "ID": 11,
+        "Character": "sanhua",
+        "Weapon": "Emerald of Genesis",
+        "Dupes": 1,
+        "Percentage": "97.00%",
+        "Percentage_2": "",
+        "Comment": "Best permanent banner option, and most realistic one to use on Sanhua. Barely loses any value while remaining permanently accessible, just an ATK and CRIT Rate stat-stick that works decently on her despite the Energy Regen being useless most of the time due to Sanhua's very low Ultimate Energy cost."
+      },
+      {
+        "ID": 12,
+        "Character": "sanhua",
+        "Weapon": "Feather Edge",
+        "Dupes": 5,
+        "Percentage": "84.80%",
+        "Percentage_2": "",
+        "Comment": "Best 4-star weapon, this Batlle Pass exclusive is a decent ATK, CRIT Rate and Liberation DMG stat-stick for Sanhua. Still far outclassed by any 5-star weapon due to much higher base ATK and CRIT stats."
+      },
+      {
+        "ID": 13,
+        "Character": "sanhua",
+        "Weapon": "Commando of Conviction",
+        "Dupes": 5,
+        "Percentage": "81.50%",
+        "Percentage_2": "",
+        "Comment": "Best permanently accessible option, provides some ATK upon Intro. Plain ATK stat-stick otherwise. Can still be used on Sanhua due to her very low team damage contribution, should not result in drastic team damage losses, though upgrading to a 5-star can help a little bit."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "sanhua",
+        "Type": "Best",
+        "Set": "Moonlit Clouds",
+        "Percentage": "1",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Offers a 10% unconditional Energy Regen% boost taking some pressure off your gear when aiming at ER breakpoints. Also upon using Outro, grants the next character switching in a 22.5% ATK boost, amplifying any of your main damage dealers burst windows.",
+        "Echo_1": "Impermanence Heron",
+        "Echo_1_Comment": "Supportive Echo that can be run at the cost of a sizeable chunk of damage for the character who equips, trading personal gain for team benefits. Should always be used and immediately switch cancelled right before performing an Outro, leading to another DPS. When done so will grant the next character switching in 12% increased DMG% which when combined with the 5P Moonlit set which also grants 22.5% ATK% under the same conditions makes for a sizeable boost. While the echo does lower the damage of whoever wears it, it grants a massive chunk of energy on use usually saving 1 or sometimes even 2 Energy Regen sub stats that may otherwise be needed by the wearer allowing for some damage to be recovered.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "sanhua",
+        "Character": "sanhua",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Glacio DMG",
+        "Echo_3": "Glacio DMG > ATK%",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% > ATK",
+        "Comments": ""
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "sanhua",
+        "Type": "",
+        "Order": "Forte Circuit, Res. Liberation, Res. Skill, Intro Skill, Basic Attack",
+        "Comments": ""
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "sanhua",
+        "Name": "Premium Teams",
+        "Member_1": "suoming, luuk-herssen, camellya",
+        "Member_2": "sanhua",
+        "Member_3": "the-shorekeeper, verina, mornye",
+        "Comments": "Suoming is a huge upgrade over other options, use her if available. Mornye is the best in slot in a team with Luuk only - privilege Shorekeeper/Verina otherwise."
+      },
+      {
+        "ID": 2,
+        "Character": "sanhua",
+        "Name": "F2P Teams",
+        "Member_1": "encore, rover-havoc",
+        "Member_2": "sanhua",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": ""
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "sanhua",
+        "Synergy": "suoming, luuk-herssen, camellya",
+        "Comment": "Sanhua's premium synergies. These limited Basic Attack Main DPS characters make great use of her buffs, Suoming being ideal thanks to her general scaling while Luuk is more reliant on Tune Strain. Camellya is a really old choice that can clear some low-difficulty endgames with enough effort."
+      },
+      {
+        "ID": 2,
+        "Character": "sanhua",
+        "Synergy": "encore, rover-havoc",
+        "Comment": "Sanhua's F2P synergies include the old reliable Encore, the best permanent banner DPS, and Havoc Rover if you really want to make use of DPS Rover. Neither of them fully rely on Basic Attack DMG but mostly do, so Sanhua works decently here, although these are really old F2P pairings so don't expect them to shatter your expectations in endgame."
+      },
+      {
+        "ID": 3,
+        "Character": "sanhua",
+        "Synergy": "the-shorekeeper, verina, mornye",
+        "Comment": "Sanhua's teams generally go alongside DPS characters that don't scale off any specialized mechanics, so Shorekeeper and Verina are the best generalist Support options most of the time. Luuk does scale off of Tune Strain though, which Mornye can help with if you want to use that team in specific."
+      }
+    ]
+  },
+  "stats": {
+    "slug": "sanhua",
+    "name": "Sanhua",
+    "unit_id": 1102,
+    "base_hp": 805,
+    "base_atk": 22,
+    "base_def": 77,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 100,
+    "bonus_ele": 1.12,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 0,
+    "bonus_crit": 0,
+    "bonus_critdmg": 0,
+    "bonus_hp": 0
+  },
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "sanhua",
+        "name": "Sanhua",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 110183,
+          "damage_e1": 110183,
+          "damage_e2": 110183,
+          "damage_e3": 124367,
+          "damage_e4": 135771,
+          "damage_e5": 173599,
+          "damage_e6": 191079
+        },
+        "dps": {
+          "damage": 32793,
+          "damage_e1": 32793,
+          "damage_e2": 32793,
+          "damage_e3": 37014,
+          "damage_e4": 40408,
+          "damage_e5": 51666,
+          "damage_e6": 56869
+        },
+        "time": "3.4",
+        "echo_main": "Impermanence Heron",
+        "echo_4": "CRIT DMG",
+        "echo_3": "Glacio DMG",
+        "echo_3a": "Glacio DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "Energy Regen (9.2%), CRIT Rate (40.4%), CRIT DMG (80.7%), ATK (25.8%), Resonance Skill DMG Bonus (17.2%)",
+        "set_1": "Moonlit Clouds",
+        "set_2": "",
+        "weapon": "Emerald Sentence",
+        "weapon_S": 1
+      },
+      "team": {
+        "ID": 1,
+        "Character": "sanhua",
+        "Member_1_Name": "suoming",
+        "Member_1_Weapon": "Unspoken Rue",
+        "Member_1_Set": "Heart of Sworn Vigil",
+        "Member_1_Echo": "Reminiscence: Suhsin the Inevitable",
+        "Member_2_Name": "the-shorekeeper",
+        "Member_2_Weapon": "Stellar Symphony",
+        "Member_2_Set": "Rejuvenating Glow",
+        "Member_2_Echo": "Fallacy of No Return"
+      },
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      0
+    ],
+    [
+      "Heavy",
+      44010
+    ],
+    [
+      "Skill",
+      77486
+    ],
+    [
+      "Liberation",
+      45411
+    ],
+    [
+      "Intro",
+      7480
+    ],
+    [
+      "Outro",
+      0
+    ],
+    [
+      "Echo",
+      16692
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Azure Oath",
+        "Slug": "azure-oath",
+        "Rarity": 5,
+        "ID": "21020096",
+        "Effect": "Grants {0} All-Attribute DMG Bonus. After inflicting Havoc Bane, the wielder gains {1} Heavy Attack DMG Amplification and their Heavy Attack DMG ignores {0} of the target's DEF, lasting for 8s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "36%",
+          "45%",
+          "54%",
+          "63%",
+          "72%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "Crit. Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": ""
+      },
+      {
+        "Name": "Blazing Brilliance",
+        "Slug": "blazing-brilliance",
+        "Rarity": 5,
+        "ID": "21020016",
+        "Effect": "ATK increased by {0}. The equipper gains 1 stack of Searing Feather upon dealing damage, which can be triggered once every 0.5s, and gains 5 stacks of the same effect upon casting Resonance Skill. Each stack of Searing Feather gives {1} additional Resonance Skill DMG Bonus for up to 14 stacks. All stacks will be removed within 12s after reaching the max stack.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "4%",
+          "5%",
+          "6%",
+          "7%",
+          "8%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Commando of Conviction",
+        "Slug": "commando-of-conviction",
+        "Rarity": 4,
+        "ID": "21020044",
+        "Effect": "When Intro Skill is released, increases ATK by {0}, lasting for {1}.",
+        "Array_0": [
+          "15%",
+          "18.75%",
+          "22.5%",
+          "26.25%",
+          "30%"
+        ],
+        "Array_1": [
+          15,
+          15,
+          15,
+          15,
+          15
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 412,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 30.3,
+        "Source": ""
+      },
+      {
+        "Name": "Emerald Sentence",
+        "Slug": "emerald-sentence",
+        "Rarity": 5,
+        "ID": "21020066",
+        "Effect": "ATK is increased by {0}. Casting Echo Skill within 10s after casting Intro Skill or Basic Attack grants 1 stack of Bamboo Cleaver, which grants {1} Heavy Attack DMG Bonus to the wielder. This effect can be triggered by Echoes of the same name once only, stacking up to 2 times, lasting for 12s. Casting Echo Skill at max stacks does not reset the duration. This effect can be triggered once every 10s and ends early if the wielder is switched off the field. Casting Intro Skill grants {2} Echo Skill DMG Bonus to all Resonators in the team for 30s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "30%",
+          "37.5%",
+          "45%",
+          "52.5%",
+          "60%"
+        ],
+        "Array_2": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Emerald of Genesis",
+        "Slug": "emerald-of-genesis",
+        "Rarity": 5,
+        "ID": "21020015",
+        "Effect": "Increases Energy Regen by {0}. When Resonance Skill is released, increases ATK by {1}, stacking up to 2 time(s). This effect lasts for 10s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "6%",
+          "7.5%",
+          "9%",
+          "10.5%",
+          "12%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Everbright Polestar",
+        "Slug": "everbright-polestar",
+        "Rarity": 5,
+        "ID": "21020076",
+        "Effect": "Increases All-Attribute DMG Bonus by {0}. When inflicting Tune Rupture - Shifting or Fusion Burst, the wielder's Resonance Liberation DMG ignores {1} DEF and {2} Fusion RES on targets for 8s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "32%",
+          "40%",
+          "48%",
+          "56%",
+          "64%"
+        ],
+        "Array_2": [
+          "10%",
+          "15%",
+          "20%",
+          "25%",
+          "30%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Feather Edge",
+        "Slug": "feather-edge",
+        "Rarity": 4,
+        "ID": "21020104",
+        "Effect": "Casting Resonance Liberation increases ATK by {0} and grants {1} Resonance Liberation DMG Bonus for 15s.",
+        "Array_0": [
+          "7.2%",
+          "11.1%",
+          "15.1%",
+          "19%",
+          "23%"
+        ],
+        "Array_1": [
+          "10.8%",
+          "16.7%",
+          "22.6%",
+          "28.6%",
+          "34.5%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 20.3,
+        "Source": "Battle Pass"
+      },
+      {
+        "Name": "Frostburn",
+        "Slug": "frostburn",
+        "Rarity": 5,
+        "ID": "21020086",
+        "Effect": "ATK is increased by {0}. When the wielder applies Glacio Chafe, Glacio DMG is Amplified by {1}, and Resonance Liberation DMG ignores {2} of the target's DEF. If the wielder is the active Resonator in the team, Glacio Chafe DMG dealt to all targets within a certain range is Amplified by {3} for 6s. This effect can be triggered up to 1 time every 0.1s. Only the strongest effect of the same name applies.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "28%",
+          "35%",
+          "42%",
+          "49%",
+          "56%"
+        ],
+        "Array_2": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_3": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Glint of Clouds",
+        "Slug": "glint-of-clouds",
+        "Rarity": 5,
+        "ID": "21020106",
+        "Effect": "ATK is increased by {0}. Inflicting Tune Strain - Shifting grants {1} Aero DMG Bonus for 2s, stacking up to 5 times. This effect can be triggered once every 0.5s. Upon reaching the max stack limit, gain the following effects:\n- This Aero DMG Bonus effect's duration is extended to 30s.\n- Aero DMG ignores {2} of the target's DEF during this effect.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "11.2%",
+          "14%",
+          "16.8%",
+          "19.6%",
+          "22.4%"
+        ],
+        "Array_2": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": ""
+      },
+      {
+        "Name": "Red Spring",
+        "Slug": "red-spring",
+        "Rarity": 5,
+        "ID": "21020026",
+        "Effect": "Increase ATK by {0}. When dealing Basic Attack DMG, the wielder gains {1} Basic Attack DMG Bonus for 14s. This effect can be triggered once per second, stacking up to 3 times. When the wielder's Concerto Energy is consumed, gain {2} Basic DMG Bonus for 10s. This effect can be triggered once per second and ends when the wielder is switched off the field.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": [
+          "40%",
+          "50%",
+          "60%",
+          "70%",
+          "80%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Unspoken Rue",
+        "Slug": "unspoken-rue",
+        "Rarity": 5,
+        "ID": "21020107",
+        "Effect": "ATK is increased by {0}. Upon gaining Unison, the wielder gains {1} Electro DMG Bonus for 30s.\nUpon gaining Unison, the wielder removes Yearning Mind and grants all Resonators in the team the Binding Mind effect: gain {2} Electro DMG Bonus for 30s. Effects of the same name cannot stack.\nWhen the wielder consumes Concerto Energy, they remove Binding Mind from all Resonators in the team and gain the Yearning Mind effect: the wielder additionally gains {3} Electro DMG Bonus for 14s. Switching to another Resonator ends this effect early.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "30%",
+          "37.5%",
+          "45%",
+          "52.5%",
+          "60%"
+        ],
+        "Array_2": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_3": [
+          "40%",
+          "50%",
+          "60%",
+          "70%",
+          "80%"
+        ],
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 588,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": ""
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Fallacy of No Return",
+        "Slug": "fallacy-of-no-return",
+        "ID": "6000060",
+        "Echo_skill": "Activate the Echo Skill to summon a fraction of the Fallacy of No Return's power and deal a blast to the surrounding area, inflicting Spectro DMG equal to {0} of max HP, after which the Resonator gains 10% bonus Energy Regen and all team members 10% bonus ATK for 20s.\\n\\nHold Echo Skill to unleash a series of flurry assaults at the cost of STA, each dealing Spectro DMG equal to {1} of max HP; Release to end the assail in a powerful blow, dealing Spectro DMG equal to {2} of max HP.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          7
+        ],
+        "Skill_1": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "Skill_2": [
+          "11.4%",
+          "1.14%",
+          "14.25%"
+        ],
+        "Skill_3": [
+          "12.88%",
+          "1.29%",
+          "16.11%"
+        ],
+        "Skill_4": [
+          "14.37%",
+          "1.44%",
+          "17.97%"
+        ],
+        "Skill_5": [
+          "15.86%",
+          "1.58%",
+          "19.82%"
+        ]
+      },
+      {
+        "Name": "Impermanence Heron",
+        "Slug": "impermanence-heron",
+        "ID": "330000030",
+        "Echo_skill": "Transform into Impermanence Heron to fly up and smack down, dealing {0} Havoc DMG. Long press to stay as Impermanence Heron Heron and continuously spit flames, each attack dealing {1} Havoc DMG. Once the initial attack lands on any enemy, the current character regains <b>10</b> Resonance Energy. If the current character uses their Outro Skill within the next <b>15s</b>, the next character’s damage dealt will be boosted by <b>12%</b> for <b>15s</b>.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          8
+        ],
+        "Skill_1": [
+          "194.10%",
+          "34.83%",
+          "25"
+        ],
+        "Skill_2": [
+          "223.22%",
+          "40.05%",
+          "25"
+        ],
+        "Skill_3": [
+          "252.33%",
+          "45.28%",
+          "25"
+        ],
+        "Skill_4": [
+          "281.45%",
+          "50.50%",
+          "25"
+        ],
+        "Skill_5": [
+          "310.56%",
+          "55.73%",
+          "25"
+        ]
+      },
+      {
+        "Name": "Reminiscence: Suhsin the Inevitable",
+        "Slug": "reminiscence-suhsin-the-inevitable",
+        "ID": "6000225",
+        "Echo_skill": "Cast Echo Skill to deal 4 instances of {0} Electro DMG and 1 instance of {1} Electro DMG.\\n\\n\nWhen equipped by Hsin, the Echo Skill instead deals 5 instances of {2} Electro DMG and 1 instance of {3} Electro DMG to targets within a larger range.\\n\\n\nThe Resonator with this Echo equipped in their main slot gains 10.00% Electro DMG Bonus. Inflicting Electro Flare, gaining Unison, or triggering Unison Response grants the Resonator an extra 10.00% Electro DMG Bonus for 30s.\\n\\n\nCD: 20s",
+        "Rarity": 3,
+        "Sonata_Group": [
+          35,
+          36
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "18.24%",
+          "109.44%",
+          "5.47%",
+          "155.04%"
+        ],
+        "Skill_3": [
+          "21.28%",
+          "127.68%",
+          "6.38%",
+          "180.88%"
+        ],
+        "Skill_4": [
+          "24.32%",
+          "145.92%",
+          "7.29%",
+          "206.72%"
+        ],
+        "Skill_5": [
+          "27.36%",
+          "164.16%",
+          "8.20%",
+          "232.56%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Heart of Sworn Vigil",
+        "slug": "heart-of-sworn-vigil",
+        "sonata_id": 36,
+        "type": "standard",
+        "bonus_2": "<p><u>Electro DMG</u> <strong>+ 10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Inflicting Electro Flare on the target, obtaining Unison, or triggering Unison Response increases the Resonator's Crit. Rate by <strong>15%</strong> and grants them <strong>22.5%</strong> <u>Electro DMG</u> for <strong>30s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/echo-sets/heart-of-sworn-vigil.webp"
+      },
+      {
+        "name": "Moonlit Clouds",
+        "slug": "moonlit-clouds",
+        "sonata_id": 8,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Outro Skill, ATK of the next Resonator increases by <strong>22.5%</strong> for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_8.webp"
+      },
+      {
+        "name": "Rejuvenating Glow",
+        "slug": "rejuvenating-glow",
+        "sonata_id": 7,
+        "type": "standard",
+        "bonus_2": "<p>Healing increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon healing allies, increase ATK of the entire team by <strong>15%</strong>, lasting <strong>30s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_7.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Sanhua",
+      "slug": "sanhua",
+      "toa_cat": "hybrid",
+      "toa_rating": 10,
+      "toa_tags": "Free,  S0 -1",
+      "toa_marks": "up",
+      "ww_cat": "hybrid",
+      "ww_rating": 6,
+      "ww_tags": "Free",
+      "ww_marks": "",
+      "overall_cat": "hybrid",
+      "overall_rating": 8,
+      "overall_tags": "Free, S0 -1",
+      "overall_marks": "",
+      "rarity": 4,
+      "element": "Glacio",
+      "weapon": "Sword",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S6"
+    }
+  ]
+}

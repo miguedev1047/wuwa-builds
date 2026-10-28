@@ -1,0 +1,1442 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/carlotta",
+  "fetchedAt": "2026-10-28T03:30:34.248Z",
+  "slug": "carlotta",
+  "name": "Carlotta",
+  "rarity": 5,
+  "element": "Glacio",
+  "weapon": "Pistols",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/card_carlotta.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/carlotta_full.webp"
+  },
+  "profile": {
+    "id": "cmoxpqec600b3oau0lv0h5gv5",
+    "slug": "carlotta",
+    "name": "Carlotta",
+    "rarity": 5,
+    "element": "Glacio",
+    "weapon": "Pistols",
+    "devId": 1107,
+    "upcoming": false,
+    "introduction": "<p>Carlotta, the second daughter of the esteemed Montelli family, embodies innate nobility and a refined appreciation for art. Her elegance is matched by her unconventional spirit, unshackled by tradition. To ensure her family’s future, she alternates between dual roles, addressing delicate &quot;troubles&quot; behind the scenes. </p>",
+    "review": "<p style=\"text-align: justify;\">Carlotta is a 5-star Glacio Pistol DPS who has a large portion of her damage window gated behind her Ultimate. She was the first ever character to possess 2 different Ultimates, she uniquely can cast up to 6 different attacks each counted as an Ultimate, and she is still one of the most ranged damage dealers in the game, making her great at avoiding enemy attacks. Carlotta is a character who is defined by her rotation consistency and her ease of use, following a traditional playstyle of building up a Forte gauge to unleash the biggest portion of her damage.</p><h6><strong><u>Key Mechanics &amp; Rotation Concepts</u></strong></h6><p style=\"text-align: justify;\">Like many older characters, Carlotta is a fundamentally simple character to understand. She wants to build up Substance, her first Forte gauge, through Skills and Intros. This allows her to cast a special Heavy Attack that consumes this Forte gauge, which she can then follow with her Ultimate. After casting it, she has access to 4 special ranged attacks called Death Knells that, when cast, follow into her final Ultimate, ending her rotation.</p><p style=\"text-align: justify;\">Other than this, Carlotta will inflict a debuff called Deconstruction which allows her to ignore 18% of enemy DEF using all of the most relevant attacks in her rotation. She can also stun enemies for 1.5s upon hitting them with her first Skill. She may only use her enhanced Forte Heavy Attack every 22s, and her Ultimate once every 25s. Those represent almost all of her damage (aside from her Skills that also have a 14s cooldown), so overall she is very cooldown-gated when it comes to her key abilities.</p><p style=\"text-align: justify;\">Finally, provided Carlotta has cast her Forte Heavy Attack before her Ultimate, she gains an 80% buff to all damage multipliers in her Ultimate window, that expires upon switching her out. It is hence heavily disincentivized to switch her out once her Ultimate has been cast. Her Outro is a simple burst of damage like several older DPS Outros, nothing special there. Her most noteworthy mechanic is her ability to cast 6 different attacks counted as Ultimates (her 4 Death Knells and her 2 Ultimates), which has been used for temporary endgame buffs when she was still recently released, however this mechanic has not been utilized for a while at this point.</p><h6><strong><u>Meta Position &amp; Conclusion</u></strong></h6><p style=\"text-align: justify;\">Carlotta is one of the simplest characters to understand meta-wise in the game. She has two main routes for her premium teams: Zhezhi + Shorekeeper, her on-release team or Lynae + Mornye, the recent universal buffing core released in version 3.0. While in theory, Lynae Mornye is Carlotta’s best team, they are so high-value for modern damage dealers with a higher ceiling than Carlotta that most players still stick to a Zhezhi Shorekeeper team if they have access to it. And for the players who don’t… Carlotta’s performance becomes undeniably subpar.</p><p style=\"text-align: justify;\">While it’s true that on her release, Carlotta w\tas the uncontested best DPS in the game, in the modern era we currently are a part of, she only really sees use in the side towers of ToA, or in Endstate Matrix. Her lack of significant, constant AoE damage makes her a really bad pick for Whimpering Wastes, the middle floors of ToA are nowadays too tanky for casual players to do well given the current difficulty, and Carlotta now needs Sequence Nodes or temporary endgame buffs more than ever to be able to clear the game’s hardest content. Her most recent buff is the release of the new 3.0 permanent banner weapons, among which is Phasic Homogenizer, a fantastic DPS Pistol that renders her Signature weapon completely skippable. However, it did not increase her damage ceiling - it only made her more accessible for budgeting (and it doesn’t change the fact that she still needs premium teammates to perform).</p><p style=\"text-align: justify;\">In conclusion, Carlotta is nowadays not a recommended pull. There are too many newer, more performant damage dealers who work across all endgames and share similar qualities to her to consider her a worthwhile pull. However, for players who already own her, she remains easily usable in some of the game’s easier content, provided you surround her with the right teammates. It’s still completely true that Carlotta is a consistent and easy-to-pilot character, and those are her main strengths that players who can make use of her will get to enjoy even today.</p>",
+    "pros": "<ul><li><p style=\"text-align: justify;\">Probably the most consistent DPS in the game. All of her and her teammates’ attacks are ranged in all of her best teams, so she will very rarely (if ever) get interrupted by enemy attacks (so long as you space yourself properly during her Ultimate, but that isn’t hard to do at all);</p></li><li><p style=\"text-align: justify;\">Does not need her Signature weapon to perform in the slightest - Phasic Homogenizer’s existence makes it one of the most skippable Signature weapons in the game.</p></li><li><p style=\"text-align: justify;\">Managed to survive powercreep decently despite being a very old character.</p></li></ul><p></p>",
+    "cons": "<ul><li><p style=\"text-align: justify;\">Her teammates are either very high-value (Lynae/Mornye) or have not reran in ages (Zhezhi) so it’s unlikely most players have a strong team for her;</p></li><li><p style=\"text-align: justify;\">Low Quickswap compatibility because of major Ultimate self-buffs expiring on Swap;</p></li><li><p style=\"text-align: justify;\">Completely useless in Whimpering Wastes. Zero reason to be used over almost any more recent characters, even in F2P teams compared to Carlotta’s full premium.</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p>HP: <b>17000+</b></p></li><li><p>DEF: <b>1150+</b></p></li><li><p>ATK: <b>1900-2100+</b></p></li><li><p>CRIT Rate: <b>65-80%+</b></p></li><li><p>CRIT DMG: <b>210-280%+</b></p></li><li><p>Energy Regen: <b>108-125%+</b></p><ul><li><p>Lower end was estimated in a team with Zhezhi+Shorekeeper, higher end was estimated in a team with Cantarella+Shorekeeper.</p></li></ul></li><li><p>Glacio DMG Bonus: <b>40-70%+</b></p></li></ul><p></p>",
+    "rotations": "<h5><strong><u>Rotation &amp; How to Play</u></strong></h5><p style=\"text-align: justify;\">Carlotta is one of the easiest characters to pilot in Wuthering Waves. The fundamentals of her playstyle amount to building up her Forte through Intros and Skills, consuming it through her Heavy Attack, and then unleashing the bulk of her damage via her Ultimate sequence. Below are the easiest and most optimal ways to do so.</p><div data-callout=\"\" class=\"callout callout-info\" style=\"--callout-color: #3B82F6;\" data-callout-type=\"info\"><div class=\"callout-icon\" data-icon=\"circle-info\"></div><div class=\"callout-content\"><h6><u>Echo Timing</u></h6><p style=\"text-align: justify;\">Carlotta can cast Sentry Construct’s base form once in her Opener in Quickswap for some extra damage if possible. Otherwise, she will cast the enhanced form at the end of her rotation and Swap Cancel it (either directly in her rotation itself, or optionally by swapping back after her Outro if needed to save time).</p></div></div><h6><strong><u>Opener (Important)</u></strong></h6><p style=\"text-align: justify;\">Before Carlotta can properly begin her rotations, she needs to cast her Skills at the start of the fight. This is to generate 30/120 Substance, as she generates 90 through her Intro and two of her Skills.</p><ul><li><p style=\"text-align: justify;\">Skill: Art of Violence</p></li><li><p style=\"text-align: justify;\">Skill: Chromatic Splendor (Swap)</p></li></ul><p style=\"text-align: justify;\">This only needs to be performed once per fight, but since this will send her Skills on a 14s cooldown, it is highly advised to do this immediately before setting up any other character buffs (except maybe Lynae’s Ultimate if you’re using her).</p><h6><strong><u>Standard Rotation</u></strong></h6><p style=\"text-align: justify;\">Now that Carlotta has 30 Substance to start her rotations with, she can loop the following rotation:</p><ul><li><p style=\"text-align: justify;\">Intro</p></li><li><p style=\"text-align: justify;\">Skill: Art of Violence</p></li><li><p style=\"text-align: justify;\">Skill: Chromatic Splendor</p></li><li><p style=\"text-align: justify;\">Basic: Mid-air Attack</p></li><li><p style=\"text-align: justify;\">Heavy: Imminent Oblivion (Cancel animation endlag via Ultimate)</p></li><li><p style=\"text-align: justify;\">Ultimate: Era of New Wave</p></li><li><p style=\"text-align: justify;\">Ultimate: Death Knell (4 times)</p></li><li><p style=\"text-align: justify;\">Ultimate: Fatal Finale</p></li><li><p style=\"text-align: justify;\">Skill: Art of Violence</p></li><li><p style=\"text-align: justify;\">Skill: Chromatic Splendor (Optionally Swap Cancel)</p></li><li><p style=\"text-align: justify;\">Outro</p></li></ul><p style=\"text-align: justify;\">This rotation is performed in order to ensure Carlotta never has to generate any Substance through slow/low-damaging means like her Basic Attacks.</p><h5><strong><u>Additional Tips &amp; Tricks</u></strong></h5><p style=\"text-align: justify;\">Carlotta’s final Skill before her Outro may be optionally Swap Cancelled if your team’s loop rotation is significantly over Carlotta’s Ultimate cooldown in length. In those cases, her Echo must be cast during another character’s rotation at least a few seconds before Carlotta Intros back in, to ensure she gets the damage from the Echo cast off. If she has the time to spare (will be the case in optimized Zhezhi+Shorekeeper rotations), not Swap Cancelling her final Skill is your best bet to preserve Outro buffs on it before swapping out.</p><p style=\"text-align: justify;\">During the team’s Opener rotation, if you have a Swap Cancel window, you can use it for the base cast of Carlotta’s Echo for some extra damage on your first rotation.</p><p style=\"text-align: justify;\">If needed, to quickly finish off an enemy without much HP left, it is possible to interrupt all of Carlotta’s Death Knells with a Dash each, in order to fire off her second Ultimate much quicker, although this very rarely (if ever) sees use.</p><p style=\"text-align: justify;\">S1+ can give 30 extra Substance on a Skill cast, which can be useful in niche situations (very fast Openers and potentially single 2-Skill loops in Quickswap as well), but generally sticking to the rotation above should work best for most players.</p>",
+    "skills": [
+      {
+        "name": "Silent Execution",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<p><b>Basic Attack</b></p><p>Perform up to <b>2</b> consecutive strikes, dealing <u>Glacio DMG</u>.</p><p><b>Basic Attack - Necessary Measures</b></p><p>With Moldable Crystals, Carlotta&#039;s Basic Attack is replaced with Necessary Measures.</p><p>Chain up to <b>3 </b>strikes, dealing <u>Glacio DMG</u>. Each strike of Necessary Measures consumes <b>1 </b>Moldable Crystal.</p><p><b>Heavy Attack</b></p><p>Deliver a charged attack at the target at the cost of STA, dealing <u>Glacio DMG</u>.</p><p><b>Heavy Attack - Containment Tactics</b></p><p>When Carlotta&#039;s Substance is full, her Heavy Attack will be replaced with Containment Tactics: consume all Substance to deal <u>Glacio DMG</u> and reduce the cooldown of Resonance Skill Art of Violence by <b>6s</b>.</p><p><b>Mid-air Attack</b></p><p>Perform a Plunging Attack at the cost of STA, dealing <u>Glacio DMG</u>. Using Basic Attack shortly after the landing will cast Customary Greetings.</p><p><b>Mid-air Attack - Customary Greetings</b></p><p>Flip over the target and deliver a surprise shot, dealing <u>Glacio DMG</u>.</p><p><b>Dodge Counter</b></p><p>Press Normal Attack shortly after a successful Dodge to deliver a riposte shot, dealing <u>Glacio DMG</u>. This consumes <b>1 </b>Moldable Crystal.</p>",
+        "multipliers": [
+          {
+            "Lv1": "27.20%",
+            "Lv2": "29.44%",
+            "Lv3": "31.67%",
+            "Lv4": "34.79%",
+            "Lv5": "37.02%",
+            "Lv6": "39.58%",
+            "Lv7": "43.15%",
+            "Lv8": "46.72%",
+            "Lv9": "50.29%",
+            "Lv10": "54.08%",
+            "Name": "Basic Attack Stage 1"
+          },
+          {
+            "Lv1": "19.89% + 19.89% + 26.52%",
+            "Lv2": "21.53% + 21.53% + 28.70%",
+            "Lv3": "23.16% + 23.16% + 30.87%",
+            "Lv4": "25.44% + 25.44% + 33.92%",
+            "Lv5": "27.07% + 27.07% + 36.09%",
+            "Lv6": "28.95% + 28.95% + 38.59%",
+            "Lv7": "31.56% + 31.56% + 42.07%",
+            "Lv8": "34.17% + 34.17% + 45.55%",
+            "Lv9": "36.78% + 36.78% + 49.03%",
+            "Lv10": "39.55% + 39.55% + 52.73%",
+            "Name": "Basic Attack Stage 2"
+          },
+          {
+            "Lv1": "33.15%",
+            "Lv2": "35.87%",
+            "Lv3": "38.59%",
+            "Lv4": "42.40%",
+            "Lv5": "45.12%",
+            "Lv6": "48.24%",
+            "Lv7": "52.59%",
+            "Lv8": "56.94%",
+            "Lv9": "61.29%",
+            "Lv10": "65.91%",
+            "Name": "Necessary Measures Stage 1 DMG"
+          },
+          {
+            "Lv1": "30.22% + 36.94%",
+            "Lv2": "32.70% + 39.97%",
+            "Lv3": "35.18% + 42.99%",
+            "Lv4": "38.65% + 47.23%",
+            "Lv5": "41.12% + 50.26%",
+            "Lv6": "43.97% + 53.75%",
+            "Lv7": "47.94% + 58.59%",
+            "Lv8": "51.90% + 63.44%",
+            "Lv9": "55.87% + 68.28%",
+            "Lv10": "60.08% + 73.43%",
+            "Name": "Necessary Measures Stage 2 DMG"
+          },
+          {
+            "Lv1": "70.38% + 11.73%*4",
+            "Lv2": "76.16% + 12.70%*4",
+            "Lv3": "81.93% + 13.66%*4",
+            "Lv4": "90.01% + 15.01%*4",
+            "Lv5": "95.78% + 15.97%*4",
+            "Lv6": "102.41% + 17.07%*4",
+            "Lv7": "111.65% + 18.61%*4",
+            "Lv8": "120.88% + 20.15%*4",
+            "Lv9": "130.12% + 21.69%*4",
+            "Lv10": "139.93% + 23.33%*4",
+            "Name": "Necessary Measures Stage 3 DMG"
+          },
+          {
+            "Lv1": "11.48%*2 + 11.48%*2 + 30.60%",
+            "Lv2": "12.42%*2 + 12.42%*2 + 33.11%",
+            "Lv3": "13.36%*2 + 13.36%*2 + 35.62%",
+            "Lv4": "14.68%*2 + 14.68%*2 + 39.14%",
+            "Lv5": "15.62%*2 + 15.62%*2 + 41.65%",
+            "Lv6": "16.70%*2 + 16.70%*2 + 44.53%",
+            "Lv7": "18.21%*2 + 18.21%*2 + 48.55%",
+            "Lv8": "19.71%*2 + 19.71%*2 + 52.56%",
+            "Lv9": "21.22%*2 + 21.22%*2 + 56.58%",
+            "Lv10": "22.82%*2 + 22.82%*2 + 60.84%",
+            "Name": "Heavy Attack DMG"
+          },
+          {
+            "Lv1": "17.22%*2 + 17.22%*2 + 45.90%",
+            "Lv2": "18.63%*2 + 18.63%*2 + 49.67%",
+            "Lv3": "20.04%*2 + 20.04%*2 + 53.43%",
+            "Lv4": "22.02%*2 + 22.02%*2 + 58.70%",
+            "Lv5": "23.43%*2 + 23.43%*2 + 62.47%",
+            "Lv6": "25.05%*2 + 25.05%*2 + 66.79%",
+            "Lv7": "27.31%*2 + 27.31%*2 + 72.82%",
+            "Lv8": "29.57%*2 + 29.57%*2 + 78.84%",
+            "Lv9": "31.83%*2 + 31.83%*2 + 84.86%",
+            "Lv10": "34.23%*2 + 34.23%*2 + 91.26%",
+            "Name": "Containment Tactics DMG"
+          },
+          {
+            "Lv1": "52.70%",
+            "Lv2": "57.03%",
+            "Lv3": "61.35%",
+            "Lv4": "67.40%",
+            "Lv5": "71.72%",
+            "Lv6": "76.69%",
+            "Lv7": "83.60%",
+            "Lv8": "90.52%",
+            "Lv9": "97.43%",
+            "Lv10": "104.78%",
+            "Name": "Mid-air Attack DMG"
+          },
+          {
+            "Lv1": "54.32% + 66.39%",
+            "Lv2": "58.77% + 71.83%",
+            "Lv3": "63.23% + 77.28%",
+            "Lv4": "69.46% + 84.90%",
+            "Lv5": "73.92% + 90.34%",
+            "Lv6": "79.04% + 96.60%",
+            "Lv7": "86.16% + 105.31%",
+            "Lv8": "93.29% + 114.02%",
+            "Lv9": "100.42% + 122.73%",
+            "Lv10": "107.99% + 131.99%",
+            "Name": "Customary Greetings DMG"
+          },
+          {
+            "Lv1": "52.20% + 69.19%",
+            "Lv2": "56.48% + 74.86%",
+            "Lv3": "60.76% + 80.54%",
+            "Lv4": "66.75% + 88.48%",
+            "Lv5": "71.03% + 94.15%",
+            "Lv6": "75.95% + 100.68%",
+            "Lv7": "82.80% + 109.76%",
+            "Lv8": "89.65% + 118.83%",
+            "Lv9": "96.49% + 127.91%",
+            "Lv10": "103.77% + 137.55%",
+            "Name": "Dodge Counter DMG"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "Heavy Attack STA Cost"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack STA Cost"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Containment Tactics Concerto Regen"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Art of Violence",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p>Deal <u>Glacio DMG</u> and inflict Dispersion on the target. Press Resonance Skill again shortly after to cast Chromatic Splendor. </p><p><b>Dispersion</b></p><p>Targets with Dispersion are immobilized for <b>1.5s.</b> </p><p><b>Chromatic Splendor</b></p><p>Consume all Moldable Crystals and deal <u>Glacio DMG</u>.</p><p>The Resonance Skill enters cooldown after a while if Chromatic Splendor is not cast or Carlotta is switched off the field. </p>",
+        "multipliers": [
+          {
+            "Lv1": "72.49% + 72.49%",
+            "Lv2": "78.43% + 78.43%",
+            "Lv3": "84.37% + 84.37%",
+            "Lv4": "92.69% + 92.69%",
+            "Lv5": "98.64% + 98.64%",
+            "Lv6": "105.47% + 105.47%",
+            "Lv7": "114.98% + 114.98%",
+            "Lv8": "124.49% + 124.49%",
+            "Lv9": "134.00% + 134.00%",
+            "Lv10": "144.11% + 144.11%",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "56.70% + 56.70% + 170.10%",
+            "Lv2": "61.35% + 61.35% + 184.05%",
+            "Lv3": "66.00% + 66.00% + 198.00%",
+            "Lv4": "72.51% + 72.51% + 217.53%",
+            "Lv5": "77.16% + 77.16% + 231.48%",
+            "Lv6": "82.51% + 82.51% + 247.52%",
+            "Lv7": "89.95% + 89.95% + 269.83%",
+            "Lv8": "97.39% + 97.39% + 292.15%",
+            "Lv9": "104.83% + 104.83% + 314.47%",
+            "Lv10": "112.73% + 112.73% + 338.18%",
+            "Name": "Chromatic Splendor DMG"
+          },
+          {
+            "Lv1": "14",
+            "Lv2": "14",
+            "Lv3": "14",
+            "Lv4": "14",
+            "Lv5": "14",
+            "Lv6": "14",
+            "Lv7": "14",
+            "Lv8": "14",
+            "Lv9": "14",
+            "Lv10": "14",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "5",
+            "Lv2": "5",
+            "Lv3": "5",
+            "Lv4": "5",
+            "Lv5": "5",
+            "Lv6": "5",
+            "Lv7": "5",
+            "Lv8": "5",
+            "Lv9": "5",
+            "Lv10": "5",
+            "Name": "Concerto Regen"
+          },
+          {
+            "Lv1": "5",
+            "Lv2": "5",
+            "Lv3": "5",
+            "Lv4": "5",
+            "Lv5": "5",
+            "Lv6": "5",
+            "Lv7": "5",
+            "Lv8": "5",
+            "Lv9": "5",
+            "Lv10": "5",
+            "Name": "Chromatic Splendor Concerto Regen"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Era of New Wave",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p>Deal <u>Glacio DMG</u> to all targets in an area (considered Resonance Skill DMG) and inflict Deconstruction on targets hit, then activate Twilight Tango.</p><p>Can be cast in mid-air close to the ground.</p><p><b>Deconstruction</b></p><p>Dealing DMG to targets inflicted with Deconstruction ignores <b>18% </b>of their DEF.</p><p><b>Twilight Tango</b></p><p>While in Twilight Tango, press Normal Attack or Resonance Liberation to cast Death Knell.</p><p>Each Death Knell grants <b>1</b> Meta Vector.</p><p>With <b>4 </b>Meta Vectors, press Normal Attack or Resonance Liberation to cast Fatal Finale. </p><ul><li><p>All Substance is removed when activating and ending Twilight Tango. Cannot perform Basic Attack Necessary Measures, Heavy Attack Containment Tactics, and Heavy Attack Imminent Oblivion while in Twilight Tango.</p></li></ul><p><b>Death Knell</b></p><p>Carlotta fires powerful shots with her musket and summons <b>4</b> crystal shards to attack the target, dealing <u>Glacio DMG</u>, considered Resonance Skill DMG.</p><ul><li><p>Carlotta moves in the direction of the movement input with each shot of Death Knell.</p></li></ul><p><b>Fatal Finale</b></p><p>Deal <u>Glacio DMG</u> to an area, considered Resonance Skill DMG.</p><ul><li><p>Twilight Tango ends after casting Fatal Finale.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "202.56%",
+            "Lv2": "219.17%",
+            "Lv3": "235.78%",
+            "Lv4": "259.03%",
+            "Lv5": "275.64%",
+            "Lv6": "294.74%",
+            "Lv7": "321.32%",
+            "Lv8": "347.89%",
+            "Lv9": "374.47%",
+            "Lv10": "402.71%",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "92.37% + 7.30%*4",
+            "Lv2": "99.94% + 7.89%*4",
+            "Lv3": "107.52% + 8.49%*4",
+            "Lv4": "118.12% + 9.33%*4",
+            "Lv5": "125.70% + 9.93%*4",
+            "Lv6": "134.41% + 10.62%*4",
+            "Lv7": "146.52% + 11.57%*4",
+            "Lv8": "158.64% + 12.53%*4",
+            "Lv9": "170.76% + 13.49%*4",
+            "Lv10": "183.64% + 14.50%*4",
+            "Name": "Death Knell DMG"
+          },
+          {
+            "Lv1": "324.09%",
+            "Lv2": "350.67%",
+            "Lv3": "377.24%",
+            "Lv4": "414.45%",
+            "Lv5": "441.03%",
+            "Lv6": "471.59%",
+            "Lv7": "514.11%",
+            "Lv8": "556.63%",
+            "Lv9": "599.15%",
+            "Lv10": "644.33%",
+            "Name": "Fatal Finale DMG"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "Skill Cooldown"
+          },
+          {
+            "Lv1": "125",
+            "Lv2": "125",
+            "Lv3": "125",
+            "Lv4": "125",
+            "Lv5": "125",
+            "Lv6": "125",
+            "Lv7": "125",
+            "Lv8": "125",
+            "Lv9": "125",
+            "Lv10": "125",
+            "Name": "Resonance Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Concerto Regen"
+          },
+          {
+            "Lv1": "7",
+            "Lv2": "7",
+            "Lv3": "7",
+            "Lv4": "7",
+            "Lv5": "7",
+            "Lv6": "7",
+            "Lv7": "7",
+            "Lv8": "7",
+            "Lv9": "7",
+            "Lv10": "7",
+            "Name": "Death Knell Concerto Regen"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Fatal Finale Concerto Regen"
+          },
+          {
+            "Lv1": "4",
+            "Lv2": "4",
+            "Lv3": "4",
+            "Lv4": "4",
+            "Lv5": "4",
+            "Lv6": "4",
+            "Lv7": "4",
+            "Lv8": "4",
+            "Lv9": "4",
+            "Lv10": "4",
+            "Name": "Deconstruction Duration"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Twilight Tango Duration"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Lethal Repertoire",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p><b>Heavy Attack - Imminent Oblivion</b></p><ul><li><p>Carlotta activates Tinted Crystal every <b>22s</b>.</p></li><li><p>When Substance is full and Tinted Crystal is activated, hold Normal Attack to consume all Substance and cast Heavy Attack Imminent Oblivion, after which Tinted Crystal enters cooldown. </p></li><li><p>Deal <u>Glacio DMG</u> (considered Resonance Skill DMG), and reduce the cooldown of Resonance Skill Art of Violence by <b>6s</b>. </p></li></ul><p><b>Final Bow</b></p><ul><li><p>When Substance is full, enter the Final Bow state.</p></li><li><p>Increase the DMG Multiplier of Resonance Liberation Era of New Wave, Resonance Liberation Death Knell, and Resonance Liberation Fatal Finale by <b>80%</b>. This effect ends when Carlotta is switched off the field during Twilight Tango or when Twilight Tango ends. </p></li></ul><p><b>Substance</b></p><ul><li><p>Carlotta can hold up to <b>120 </b>points of Substance.</p></li><li><p>Cannot gain Substance while in Twilight Tango triggered by Resonance Liberation.</p></li><li><p>Restore <b>30 </b>point of Substance upon casting Intro Skill Wintertime Aria.</p></li><li><p>Restore <b>10 </b>point of Substance for every <b>1 </b>Moldable Crystal consumed upon casting Resonance Skill Chromatic Splendor.</p></li><li><p>Restore <b>10 </b>point of Substance for every <b>1 </b>Moldable Crystal consumed upon casting Basic Attack Necessary Measures.</p></li><li><p>Consume <b>1 </b>Moldable Crystal and restore <b>10 </b>point of Substance upon casting Dodge Counter.</p></li></ul><p><b>Moldable Crystal</b></p><ul><li><p>Carlotta can hold up to <b>6 </b>Moldable Crystals.</p></li><li><p>Cannot gain Moldable Crystal while in Twilight Tango triggered by Resonance Liberation.</p></li><li><p>Restore <b>3 </b>Moldable Crystal upon casting Basic Attack Stage 2.</p></li><li><p>Restore <b>3 </b>Moldable Crystal upon casting Heavy Attack.</p></li><li><p>Restore <b>3 </b>Moldable Crystal upon casting Mid-air Attack Customary Greetings.</p></li><li><p>Restore <b>3 </b>Moldable Crystal upon casting Intro Skill Wintertime Aria.</p></li><li><p>Restore <b>3 </b>Moldable Crystal upon casting Resonance Skill Art of Violence.</p></li><li><p>Restore <b>3 </b>Moldable Crystal upon a successful Dodge.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "33.62%*5 + 252.11%",
+            "Lv2": "36.38%*5 + 272.78%",
+            "Lv3": "39.13%*5 + 293.45%",
+            "Lv4": "42.99%*5 + 322.39%",
+            "Lv5": "45.75%*5 + 343.07%",
+            "Lv6": "48.92%*5 + 366.84%",
+            "Lv7": "53.33%*5 + 399.92%",
+            "Lv8": "57.74%*5 + 432.99%",
+            "Lv9": "62.15%*5 + 466.07%",
+            "Lv10": "66.83%*5 + 501.21%",
+            "Name": "Imminent Oblivion DMG"
+          },
+          {
+            "Lv1": "22",
+            "Lv2": "22",
+            "Lv3": "22",
+            "Lv4": "22",
+            "Lv5": "22",
+            "Lv6": "22",
+            "Lv7": "22",
+            "Lv8": "22",
+            "Lv9": "22",
+            "Lv10": "22",
+            "Name": "Tinted Crystal Cooldown"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Imminent Oblivion Concerto Regen"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Moldable Crystal Duration"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Flawless Purity",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>After casting Resonance Skill Chromatic Splendor, Carlotta can perform Mid-air Attacks while being immune to any DMG or interruptions before the Mid-air Attack deals DMG.</p><p>When Carlotta is on the team, the active Resonator&#039;s Flight STA cost is reduced by <b>20%</b>. </p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Ars Gratia Artis",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Intro Skill Wintertime Aria, Resonance Skill Chromatic Splendor, Resonance Liberation Death Knell, and Heavy Attack Imminent Oblivion can inflict Deconstruction.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Wintertime Aria",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Attack the target, dealing <u>Glacio DMG</u>.</p>",
+        "multipliers": [
+          {
+            "Lv1": "90.00% + 30.00%*2",
+            "Lv2": "97.38% + 32.46%*2",
+            "Lv3": "104.76% + 34.92%*2",
+            "Lv4": "115.10% + 38.37%*2",
+            "Lv5": "122.48% + 40.83%*2",
+            "Lv6": "130.96% + 43.66%*2",
+            "Lv7": "142.77% + 47.59%*2",
+            "Lv8": "154.58% + 51.53%*2",
+            "Lv9": "166.39% + 55.47%*2",
+            "Lv10": "178.93% + 59.65%*2",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Closing Remark",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>Attack the target, dealing <u>Glacio DMG</u> equal to <b>794.2%</b> of Carlotta&#039;s ATK</p>",
+        "type": "Outro Skill"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p>When Carlotta deals DMG to a target inflicted with Deconstruction, the Crit. Rate of this instance of DMG is increased by <b>12.5%</b>. When Resonance Skill Chromatic Splendor hits a target inflicted with Dispersion, Carlotta additionally restores <b>30 </b>points of Substance. </p>",
+      "dupe1_name": "Sequence Node 1",
+      "dupe2": "<p>The DMG Multiplier of Resonance Liberation Fatal Finale is increased by <b>126%</b>. </p>",
+      "dupe2_name": "Sequence Node 2",
+      "dupe3": "<p>Enable Outro Skill Kaleidoscope Sparks: Deal <b>1</b> additional strike at the end of Outro Skill Closing Remark, dealing <u>Glacio DMG</u> equal to <b>1032.18%</b> of Carlotta&#039;s ATK. The DMG Multiplier of Resonance Skill Art of Violence and Resonance Skill Chromatic Splendor is increased by <b>93%</b>. </p>",
+      "dupe3_name": "Sequence Node 3",
+      "dupe4": "<p>Casting Heavy Attack, Heavy Attack Containment Tactics, and Heavy Attack Imminent Oblivion grants all Resonators in the team <b>25%</b> Resonance Skill DMG Bonus for <b>30s</b>. </p>",
+      "dupe4_name": "Sequence Node 4",
+      "dupe5": "<p>The DMG Multiplier of Heavy Attack Imminent Oblivion is increased by <b>47%</b>. </p>",
+      "dupe5_name": "Sequence Node 5",
+      "dupe6": "<p>Shots of Resonance Liberation Death Knell deal higher DMG and shoot out double the number of crystal shards, representing a total increase of <b>186.6%</b> in the DMG Multiplier of Resonance Liberation Death Knell.</p><p>Shots of Resonance Liberation Death Knell inflict Scattering on targets when hit, during which the target is immobilized. This effect is removed after <b>1.5s </b>or when the target receives DMG. </p>",
+      "dupe6_name": "Sequence Node 6"
+    },
+    "voiceActors": {
+      "jpn": "Kana Ueda (植田 佳奈)"
+    },
+    "attributeBonus": [
+      {
+        "name": "CRIT Rate",
+        "value": 8
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": {
+      "skill": {
+        "name": "The Netherworld's Stare",
+        "number": 26
+      },
+      "common": [
+        {
+          "name": "LF Polygon Core",
+          "number_char": 4,
+          "number_skill": 25
+        },
+        {
+          "name": "MF Polygon Core",
+          "number_char": 12,
+          "number_skill": 28
+        },
+        {
+          "name": "HF Polygon Core",
+          "number_char": 12,
+          "number_skill": 40
+        },
+        {
+          "name": "FF Polygon Core",
+          "number_char": 4,
+          "number_skill": 57
+        }
+      ],
+      "ascension": {
+        "name": "Sword Acorus",
+        "number": 60
+      },
+      "skill_other": [
+        {
+          "name": "Impure Phlogiston",
+          "number": 25
+        },
+        {
+          "name": "Extracted Phlogiston",
+          "number": 28
+        },
+        {
+          "name": "Refined Phlogiston",
+          "number": 55
+        },
+        {
+          "name": "Flawless Phlogiston",
+          "number": 67
+        }
+      ],
+      "breakthrough": {
+        "name": "Platinum Core",
+        "number": 46
+      }
+    },
+    "videos": [
+      {
+        "video": "oePhgy7fk8E",
+        "url": "https://www.youtube.com/watch?v=oePhgy7fk8E"
+      }
+    ],
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "crit_atk",
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "carlotta",
+      "build": 3,
+      "review": 3.7
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "carlotta",
+        "Weapon": "The Last Dance",
+        "Dupes": 1,
+        "Percentage": "100.00%",
+        "Percentage_2": "",
+        "Comment": "The best Carlotta stat-stick that gives her a simple 12% ATK and 48% Skill DMG via its passive as well as a huge CRIT DMG stat and a good Base ATK. Pretty self-explanatory."
+      },
+      {
+        "ID": 2,
+        "Character": "carlotta",
+        "Weapon": "Phasic Homogenizer",
+        "Dupes": 1,
+        "Percentage": "95.10%",
+        "Percentage_2": "",
+        "Comment": "An amazing generalist permanently available pistol that can universally improve the wearer's ATK, DMG Bonus and CRIT DMG. Can get close to a lot of character signatures and is overall a must-have for most accounts. Highly recommended on Carlotta instead of her Signature, as it is permanently accessible and barely comes up short of her best in slot."
+      },
+      {
+        "ID": 3,
+        "Character": "carlotta",
+        "Weapon": "Woodland Aria",
+        "Dupes": 1,
+        "Percentage": "90.30%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT Rate stat-stick for Carlotta, who does not benefit from this weapon's Aero Erosion-focused effects."
+      },
+      {
+        "ID": 4,
+        "Character": "carlotta",
+        "Weapon": "Spectrum Blaster",
+        "Dupes": 1,
+        "Percentage": "89.40%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT Rate stat-stick for Carlotta, who barely benefits from this weapon's Basic DMG-increasing effect."
+      },
+      {
+        "ID": 5,
+        "Character": "carlotta",
+        "Weapon": "Lux & Umbra",
+        "Dupes": 1,
+        "Percentage": "88.90%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT DMG stat-stick for Carlotta, who cannot benefit from this weapon's Heavy and Echo DMG-related effects."
+      },
+      {
+        "ID": 6,
+        "Character": "carlotta",
+        "Weapon": "Static Mist",
+        "Dupes": 1,
+        "Percentage": "87.80%",
+        "Percentage_2": "",
+        "Comment": "Support-focused permanently accessible 5-star weapon. Can provide some ATK% to the next character who Intros in from Carlotta, has a small Energy Regen boost and a nice Base ATK/CRIT Rate, however it's outclassed on her by Phasic Homogenizer quite significantly, and is better relegated to Support options like Lynae who can buff Carlotta with it instead."
+      },
+      {
+        "ID": 7,
+        "Character": "carlotta",
+        "Weapon": "Undying Flame",
+        "Dupes": 5,
+        "Percentage": "76.20%",
+        "Percentage_2": "",
+        "Comment": "Carlotta's best 4-star weapon which gives her a good amount of ATK and Skill DMG when casting Intro. Still not ideal compared to any other 5-star."
+      },
+      {
+        "ID": 8,
+        "Character": "carlotta",
+        "Weapon": "Relativistic Jet",
+        "Dupes": 5,
+        "Percentage": "75.80%",
+        "Percentage_2": "",
+        "Comment": "This weapon provides some ATK and flat Energy restoration to Carlotta, but it's overall not enough for her to clear endgame content with comfortably anymore. Generally not recommended."
+      },
+      {
+        "ID": 9,
+        "Character": "carlotta",
+        "Weapon": "Pistols#26",
+        "Dupes": 5,
+        "Percentage": "72.00%",
+        "Percentage_2": "",
+        "Comment": "Best fully F2P-accessible option which outclasses all non-listed 4-star Pistol choices, but its passive does require Carlotta to never take any damage from the enemy. However, she is one of the easiest characters to do this with thanks to her really high attack range, so overall this weapon synergizes quite well with her. That being said, weapons other than Phasic Homogenizer and above probably are not enough to clear endgame comfortably, so keep this as a temporary choice."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "carlotta",
+        "Type": "Best",
+        "Set": "Frosty Resolve",
+        "Percentage": "100.00%",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Carlotta's best set bar none, that gives her an unconditional 12% Skill DMG Bonus, 22.5% Glacio DMG Bonus and up to an extra 36% Skill DMG Bonus when casting 2 or more Ultimates (a condition that she easily fulfills). Overall gives a total of 70.5% DMG Bonus at maximum which should speak volumes on how good this set is for Carlotta.",
+        "Echo_1": "Sentry Construct",
+        "Echo_1_Comment": "The best Main Echo choice for the Frosty Resolve set as it grants 12% Glacio DMG and 12% Skill DMG Bonus when equipped in the main slot. Its active skill also deals a chunk of damage while freezing enemies in place for a short amount of time if fully stacked (which only Carlotta can do). The base cast can also be used during optimized Opener rotations to squeeze a small amount of extra damage.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "carlotta",
+        "Character": "carlotta",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Glacio DMG",
+        "Echo_3": "Glacio DMG ≥ ATK%",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% > Resonance Skill DMG > ATK",
+        "Comments": ""
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "carlotta",
+        "Type": "",
+        "Order": "Res. Liberation, Res. Skill, Forte Circuit, Intro Skill, Basic Attack",
+        "Comments": "Basic and Intro can be skipped when levelling to save on resources at a minimal damage loss."
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "carlotta",
+        "Name": "Team #1: Best Team",
+        "Member_1": "carlotta",
+        "Member_2": "lynae, zhezhi, brant, cantarella",
+        "Member_3": "mornye, the-shorekeeper, verina",
+        "Comments": "Mornye is only best with Lynae on the team."
+      },
+      {
+        "ID": 2,
+        "Character": "carlotta",
+        "Name": "Team #2: F2P Team",
+        "Member_1": "carlotta",
+        "Member_2": "taoqi, yangyang",
+        "Member_3": "verina, buling",
+        "Comments": ""
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "carlotta",
+        "Synergy": "zhezhi, brant, cantarella, lynae",
+        "Comment": "Carlotta's best buffers and second slot partners as she ideally works in hypercarry compositions. Zhezhi and Lynae are easily the best ones as Lynae has a ton of super strong generalist buffs while Zhezhi gives Carlotta a lot of Energy to lower her Energy Regen requirements while also giving the highest DMG Amplification of all her Supports (45% total) and having fast rotation times, enabling consistent 25s team loops. Brant and Cantarella are good alternatives as while they only provide 25% DMG Amplification, they both have solid personal damage and retain reasonable rotation times."
+      },
+      {
+        "ID": 2,
+        "Character": "carlotta",
+        "Synergy": "yangyang, taoqi",
+        "Comment": "Free-to-play accessible secondary characters for Carlotta teams. While Yangyang does not give any major buffs to Carlotta, her super fast rotation and extra Energy funneling via Outro (reminiscent of Zhezhi) make Carlotta easy to build and rotate with, while she can rely on her third slot partner for extra buffs making the team viable. While Taoqi does have 38% Skill DMG Amplification on her Outro, it does come at the cost of a rather slow and clunky rotation, next to nonexistent personal damage and she does also increase Carlotta's Energy Regen requirements. Overall, Yangyang will be much easier to play but Taoqi can yield higher results if played at her best. Choose based on what category of player you fit in."
+      },
+      {
+        "ID": 3,
+        "Character": "carlotta",
+        "Synergy": "mornye, the-shorekeeper, verina",
+        "Comment": "These are all of Carlotta's 3rd slot teammate options. Mornye has a special synergy with Lynae since Lynae can apply Tune Rupture/Strain for Mornye to respond to them and provide her full array of buffs, making her the best choice if Lynae is in use. Shorekeeper and Verina are the next best ones as they tend to be some of the best generalist Supports for all ATK and CRIT-scaling DPS due to their super high buffs for short rotation times. Buling still does present herself as a good F2P alternative because Buling trades team-wide ATK buffs for Skill DMG buffs to Carlotta and more personal damage for slightly higher rotation times, which makes her not too far behind Verina, equaling her when optimized at S6."
+      }
+    ]
+  },
+  "stats": {
+    "slug": "carlotta",
+    "name": "Carlotta",
+    "unit_id": 1107,
+    "base_hp": 996,
+    "base_atk": 37,
+    "base_def": 98,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 125,
+    "bonus_ele": 0,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 0,
+    "bonus_crit": 8,
+    "bonus_critdmg": 0,
+    "bonus_hp": 0
+  },
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "carlotta",
+        "name": "Carlotta",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 1207741,
+          "damage_e1": 1333272,
+          "damage_e2": 1610676,
+          "damage_e3": 2028638,
+          "damage_e4": 2150416,
+          "damage_e5": 2222663,
+          "damage_e6": 2821421
+        },
+        "dps": {
+          "damage": 90807,
+          "damage_e1": 100246,
+          "damage_e2": 121103,
+          "damage_e3": 152529,
+          "damage_e4": 161685,
+          "damage_e5": 167117,
+          "damage_e6": 212136
+        },
+        "time": "13.3",
+        "echo_main": "Sentry Construct",
+        "echo_4": "CRIT DMG",
+        "echo_3": "ATK%",
+        "echo_3a": "Glacio DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "Energy Regen (18.3%) ATK (25.8%), CRIT Rate (40.4%), CRIT DMG (80.7%), Resonance Skill DMG Bonus (8.6%)",
+        "set_1": "Frosty Resolve",
+        "set_2": "",
+        "weapon": "The Last Dance",
+        "weapon_S": 1
+      },
+      "team": {
+        "ID": 1,
+        "Character": "carlotta",
+        "Member_1_Name": "lynae",
+        "Member_1_Weapon": "Spectrum Blaster",
+        "Member_1_Set": "Pact of Neonlight Leap",
+        "Member_1_Echo": "Hyvatia",
+        "Member_2_Name": "mornye",
+        "Member_2_Weapon": "Starfield Calibrator",
+        "Member_2_Set": "Halo of Starry Radiance",
+        "Member_2_Echo": "Reactor Husk"
+      },
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      12596
+    ],
+    [
+      "Heavy",
+      0
+    ],
+    [
+      "Skill",
+      1024516
+    ],
+    [
+      "Liberation",
+      0
+    ],
+    [
+      "Intro",
+      31408
+    ],
+    [
+      "Outro",
+      92203
+    ],
+    [
+      "Echo",
+      47018
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Lux & Umbra",
+        "Slug": "lux-umbra",
+        "Rarity": 5,
+        "ID": "21030036",
+        "Effect": "ATK is increased by {0}. Upon dealing Echo Skill DMG, gain {1} Heavy Attack DMG Amplification for 6s. Upon dealing Heavy Attack DMG, gain {1} Echo Skill DMG Amplification for 6s. DMG Amplification on each attack is capped at {1}. While both effects are active, dealing damage ignores {2} of the target's DEF.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Phasic Homogenizer",
+        "Slug": "phasic-homogenizer",
+        "Rarity": 5,
+        "ID": "21030045",
+        "Effect": "Increases ATK by {0}. When a Resonator in the team casts a Tune Break skill, it grants {1} All-Attribute DMG Bonus to the wielder for 14s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "20%",
+          "22.5%",
+          "25%",
+          "27.5%",
+          "30%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Pistols#26",
+        "Slug": "pistols-26",
+        "Rarity": 4,
+        "ID": "21030034",
+        "Effect": "When the Resonator takes no damage, increases ATK by {0} every 5s, stacking up to 2 time(s). This effect lasts for 8s. When the Resonator takes damage, reduces the number of stacks by 1 and restores their HP by {1}.",
+        "Array_0": [
+          "6%",
+          "7.5%",
+          "9%",
+          "10.5%",
+          "12%"
+        ],
+        "Array_1": [
+          "5%",
+          "6.25%",
+          "7.5%",
+          "8.75%",
+          "10%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 387,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 36.4,
+        "Source": "Synthesis"
+      },
+      {
+        "Name": "Relativistic Jet",
+        "Slug": "relativistic-jet",
+        "Rarity": 4,
+        "ID": "21030084",
+        "Effect": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for 16s. This effect can be triggered once every 20s.",
+        "Array_0": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Spectrum Blaster",
+        "Slug": "spectrum-blaster",
+        "Rarity": 5,
+        "ID": "21030046",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or hitting the target with Basic Attack increases the wielder's Basic Attack DMG by {1} for 4s. Each time the wielder inflicts Tune Rupture - Shifting or Tune Strain - Shifting during Basic Attacks, all DMG dealt by Resonators in the team is increased by {2} for 30s, up to 3 stacks. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "36%",
+          "45%",
+          "54%",
+          "63%",
+          "72%"
+        ],
+        "Array_2": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Static Mist",
+        "Slug": "static-mist",
+        "Rarity": 5,
+        "ID": "21030015",
+        "Effect": "Increases Energy Regen by {0}. When Outro Skill is released, increases the switched-in Resonator's ATK by {1}, stacking up to 1 time(s). This effect lasts for 14s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "The Last Dance",
+        "Slug": "the-last-dance",
+        "Rarity": 5,
+        "ID": "21030016",
+        "Effect": "Increases ATK by {0}. Every time Intro Skill or Resonance Liberation is cast, Resonance Skill DMG Bonus increases by {1} for 5s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "48%",
+          "60%",
+          "72%",
+          "84%",
+          "96%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 72,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Undying Flame",
+        "Slug": "undying-flame",
+        "Rarity": 4,
+        "ID": "21030044",
+        "Effect": "When Intro Skill is released, increases Resonance Skill DMG Bonus by {0} for {1}s.",
+        "Array_0": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_1": [
+          15,
+          15,
+          15,
+          15,
+          15
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 412,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 30.3,
+        "Source": ""
+      },
+      {
+        "Name": "Woodland Aria",
+        "Slug": "woodland-aria",
+        "Rarity": 5,
+        "ID": "21030026",
+        "Effect": "ATK is increased by {0}. Inflicting Aero Erosion on the target gives {1} Aero DMG Bonus for 10s. Hitting targets with Aero Erosion reduces their Aero RES by {2} for 20s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": [
+          "10%",
+          "11.5%",
+          "13%",
+          "14.5%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Rate-up"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Hyvatia",
+        "Slug": "hyvatia",
+        "ID": "6000189",
+        "Echo_skill": "Summon Hyvatia in mid-air to fire lasers at enemies, dealing {0} Spectro DMG 10 times.\\n\\nCasting Outro Skill within 15s after summoning Hyvatia grants 10.00% All-Attribute DMG Bonus to the Intro Skill of the incoming Resonator for 15s.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          24,
+          25
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "18.24%"
+        ],
+        "Skill_3": [
+          "21.28%"
+        ],
+        "Skill_4": [
+          "24.32%"
+        ],
+        "Skill_5": [
+          "27.36%"
+        ]
+      },
+      {
+        "Name": "Reactor Husk",
+        "Slug": "reactor-husk",
+        "ID": "6000190",
+        "Echo_skill": "Transform into Reactor Husk, jumping into the air and unleashing a heavy slash that deals {0} Fusion DMG to enemies.\\n\\nThe Resonator with this Echo equipped in their main slot gain 10.00% Energy Regen.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          23,
+          27
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "234%"
+        ],
+        "Skill_3": [
+          "273%"
+        ],
+        "Skill_4": [
+          "312%"
+        ],
+        "Skill_5": [
+          "351%"
+        ]
+      },
+      {
+        "Name": "Sentry Construct",
+        "Slug": "sentry-construct",
+        "ID": "330000120",
+        "Echo_skill": "Transform into Sentry Construct and attack enemies in front, dealing {0} Glacio DMG. Each time the Resonator with this Echo casts Resonance Liberation, it charges the Strike Capacitor. Once Strike Capacitor is at max level, the Echo Skill cooldown will be reset.\\n\\nUse Echo Skill to transform into Sentry Construct and dive into enemies from the air, dealing {0} Glacio DMG and freezing the target.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Glacio DMG Bonus and 12.00% Resonance Skill DMG Bonus.\\n\\nCD: <b>25s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          10
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "270%"
+        ],
+        "Skill_3": [
+          "315%"
+        ],
+        "Skill_4": [
+          "360%"
+        ],
+        "Skill_5": [
+          "405%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Frosty Resolve",
+        "slug": "frosty-resolve",
+        "sonata_id": 10,
+        "type": "standard",
+        "bonus_2": "<p>Resonance Skill DMG +<strong>12%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Casting Resonance Skill grants <strong>22.5%</strong> <strong class=\"Glacio\">Glacio DMG</strong> Bonus for <strong>15s</strong> and casting Resonance Liberation increases Resonance Skill DMG by <strong>18%</strong>, lasting for <strong>5s</strong>. This effect stacks up to <strong>2</strong> times.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_10.webp"
+      },
+      {
+        "name": "Halo of Starry Radiance",
+        "slug": "halo-of-starry-radiance",
+        "sonata_id": 23,
+        "type": "standard",
+        "bonus_2": "<p>Healing Bonus +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>When healing a Resonator in the team, every <strong>1%</strong> of Off-Tune Buildup Rate grants a <strong>0.2%</strong> ATK increase to all Resonators in the team for 4s, up to <strong>25%</strong>. Effects of the same name cannot be stacked.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_23.webp"
+      },
+      {
+        "name": "Pact of Neonlight Leap",
+        "slug": "pact-of-neonlight-leap",
+        "sonata_id": 24,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Spectro\">Spectro</strong> DMG +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Casting Outro Skill increases the ATK of the incoming Resonator by <strong>15%</strong>, with each point of Tune Break Boost additionally increasing ATK by <strong>0.3%</strong>, up to <strong>15%</strong>. This effect lasts for <strong>15s</strong>, or until the Resonator is switched out.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_24.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Carlotta",
+      "slug": "carlotta",
+      "toa_cat": "dps",
+      "toa_rating": 7,
+      "toa_tags": "",
+      "toa_marks": "",
+      "ww_cat": "dps",
+      "ww_rating": 5,
+      "ww_tags": "",
+      "ww_marks": "",
+      "overall_cat": "dps",
+      "overall_rating": 6,
+      "overall_tags": "",
+      "overall_marks": "",
+      "rarity": 5,
+      "element": "Glacio",
+      "weapon": "Pistols",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S0"
+    }
+  ]
+}

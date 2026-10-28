@@ -1,0 +1,1720 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/galbrena",
+  "fetchedAt": "2026-10-28T03:30:36.151Z",
+  "slug": "galbrena",
+  "name": "Galbrena",
+  "rarity": 5,
+  "element": "Fusion",
+  "weapon": "Pistols",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/gal_card.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/galbrena_full.webp"
+  },
+  "profile": {
+    "id": "cmoxpqedr00bloau0ingfycz1",
+    "slug": "galbrena",
+    "name": "Galbrena",
+    "rarity": 5,
+    "element": "Fusion",
+    "weapon": "Pistols",
+    "devId": 1208,
+    "upcoming": false,
+    "introduction": null,
+    "review": "<p>Galbrena is a 5-star Fusion Pistol DPS who, despite what her weapon class would make you think, gets up close and personal with her targets to deal Fusion &amp; Heavy/Echo Skill damage to them under her enhanced state called Demon Hypostasis. Accessing this state and optimizing its damage via Galbrena’s numerous self-buffs included in her kit is the key to unleashing her full potential.</p><h6><strong><u>Key Mechanics</u></strong></h6><p>Galbrena’s kit focuses around entering a stance called Demon Hypostasis. It allows her to cast massively enhanced attacks that deal the overwhelming majority of her damage at the cost of Forte points called Sinflame. They get converted 1 to 1 into Purging Flame which is then expended to cast her enhanced moves in Demon Hypostasis. As a result, the focus of her kit is generating her max of 100 Sinflame to then expend it after entering Demon Hypostasis, entered by casting her Enhanced Skill.</p><p>The amount of Sinflame currently generated is visible on her Forte bar, marked in blue outside of Demon Hypostasis. In Demon Hypostasis, only Purging Flame will be visible.</p><p>Via her Inherent Skills, Galbrena possesses Stamina recovery on a lot of her attacks, and a ramp-up DMG Amplify effect up to 20% which is easy to fully stack, as well as 20% ATK which will be up throughout most of her rotation. A lot of self-buffs make for a strong, self-sufficient kit.</p><p>Furthermore, she additionally possesses an extra Forte bar marked in red, and it stacks up to 40 points. It is called Afterflame, and it replenishes by casting Echo skills, at a rate of 8 points per. This increases the <strong><u>DMG Taken</u></strong> of enemies during Demon Hypostasis by up to 60% (1.5% per point).</p><div data-callout=\"\" class=\"callout callout-note\" style=\"--callout-color: #8B5CF6;\" data-callout-type=\"note\"><div class=\"callout-icon\" data-icon=\"pen-to-square\"></div><div class=\"callout-content\"><p>The above is especially important because DMG Taken (also known as Vulnerability) is a multiplier very rarely seen in character kits (mostly high Sequences like Cartethyia’s and Phrolova’s, and Qiuyuan’s Forte buffs). In most cases, it is rare enough to be considered a completely unique multiplier that buffs overall damage by whatever percentage is indicated. In other words, Galbrena’s damage increases by up to 60% with multiple Echo skill casts on the team (in her Mono Fusion team, this will typically not be maxed out and be left at 36%, but will go up to the full 60% with Qiuyuan or Lucilla).</p></div></div><p>And for those who are curious: DMG Taken is the opposite of DMG Reduction observable in Tower of Adversity. They interact with one another directly and are considered the same damage multiplier (they just increment as positive DMG Reduction or Negative DMG Reduction = Vulnerability).</p><h6><strong><u>Attacks outside of Demon Hypostasis</u></strong></h6><p>Outside of Demon Hypostasis, Galbrena will want to execute a mix of Heavy and Basic Attacks because they replenish her Forte gauge the fastest. As a result, we can exploit the following during her rotations:</p><ul><li><p>Intro leads into Basic Attack 2;</p></li><li><p>Heavy Attack 3 can be Dash Cancelled when fired while retaining full damage and Forte generation;</p></li><li><p>Dodge Counter leads into Basic Attack 4 (situational).</p></li></ul><p>Finally, her Ultimate increases the DMG multiplier of all attacks in Demon Hypostasis by 85% which means it is <strong><u>necessary</u></strong> to cast before doing any attacks in Demon Hypostasis, because this buff represents a massive damage boost. However, the 20% DMG Amplify from her Inherent skill should be fully stacked up before using it to maximize damage (simply doing Intro + Basic Attack + Enhanced Skill is sufficient!)</p><h6><strong><u>Attacks during Demon Hypostasis</u></strong></h6><p>During Demon Hypostasis, Galbrena only has her Basic Attack and Dodge Counter that she should worry about in order to fully expend her Forte gauge. There are 4 different properties to note here:</p><ul><li><p>Ultimate leads into Basic Attack 2;</p></li><li><p>Basic Attack 5 leads into Basic Attack 3;</p></li><li><p>Basic Attack 3 can be Dash Cancelled at the end of the animation to save minimal time, Basic Attack 5 can be Dash Cancelled as soon as the enemy is hit by Galbrena’s kick to save a lot of time;</p></li><li><p>Dodge Counter leads into Basic Attack 4.</p></li></ul><p>All of these properties are used in her rotation to skip out on the weak Basic Attack 1 and only focus on the much stronger Basic Attacks 3, 4 and 5 which have much higher damage values than the first two. Additionally, the Dodge Counter is really strong and for all intents and purposes serves as a Basic Attack 3 with higher damage. It can be quite advantageous in the right situations. Starting from max Forte, 2 Dodge Counter combos or 2 full Basic 3,4,5 combos can be executed (alongside a Basic 2 to start with).&nbsp;</p><h6><strong><u>Meta Position &amp; Conclusion</u></strong></h6><p>Galbrena is a very simple Basic Attack spam character, whose only real damage ceiling improvements reside in her rotation outside of Demon Hypostasis - where Heavy Attacks do find some use, and her Forte gauge can be generated before Introing into her in certain teams, particularly those involving Lupa to nearly immediately go into Demon Hypostasis after Intro and save time.</p><p>Beyond this, she has very little intricacies to her kit and as a result presents herself as a decent Fusion damage dealer with decent teams. But that’s all she is: a decent character all around. Galbrena faces issues in endgame content generally by a lack of damage numbers to keep up with the modern 3.x cast. It’s still quite possible to clear with her, particularly in Quickswap, but generally Galbrena is behind the modern damage dealers and it shows. She was at her prime in version 3.0, when Mornye and Phasic Homogenizer both released to give her a new best team alongside Lupa and a fantastic alternative to her Signature, however since the release of Aemeath right after that, in the Fusion DPS department she was quickly outshined for Lupa teams, or at least Mornye teams since Aemeath’s own best team uses her and Lynae. Additionally, Sigrika came out as a new best user of Qiuyuan.&nbsp;</p><p>While Galbrena is decent in both WhiWa and ToA and can see acceptable results, she generally has all of her best teammates constantly stolen from her by damage dealers with simplt higher baseline numbers, that operate in the same niche that she does. Lucilla is the latest expansion to the Echo Skill damage engine that Galbrena can make use of, but she is no upgrade to Qiuyuan as he gives slightly less specialized buffs than Lucilla, and Galbrena deals 1/3 Heavy Attack damage, which Lucilla does not help with in the slightest.</p><p>In conclusion, Galbrena used to be one of the strongest damage dealers when she released, but since then got outshined rather quickly. Landing on the tail end of 2.x damage dealers, the newest generations of damage dealers that came since version 3.1 quickly stole her best teammates to take them to new heights, both in Mono Fusion and in Echo Skill damage, rendering her quite skippable overall for new players, as she remains usable for players who already own her for now.</p>",
+    "pros": "<ul><li><p>Can play into both the Mono Fusion and Echo Skill DMG archetypes, giving her some decent teammate flexibility;</p></li><li><p>Does not need her Signature weapon at all. Phasic Homogenizer is totally fine as a replacement;</p></li><li><p>Outro being damage-only means she is fully Quickswap-friendly.</p></li></ul><p></p>",
+    "cons": "<ul><li><p>Her best team is Mono Fusion. Any more modern Fusion DPS than Galbrena can use those characters better than she can, because her raw damage numbers don’t compete;</p></li><li><p>Her other best team is Echo Skill DMG with Qiuyuan/Lucilla. Sigrika is a direct upgrade to Galbrena in all scenarios there, other than Aero RES;</p></li><li><p>TL;DR: Galbrena has no reason to exist on anyone’s account if you don’t already own her and want to find the best fit for your Echo/Fusion Supports.</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p>HP: <b>14500+</b></p></li><li><p>DEF: <b>1100+</b></p></li><li><p>ATK: <b>1900-2100+</b></p></li><li><p>CRIT Rate: <b>60-80%</b> (before Echo set bonuses)</p></li><li><p>CRIT DMG: <b>230-270%+</b></p></li><li><p>Energy Regen: <b>110-125%</b> </p><ul><li><p>Lower end was estimated in a Mono Fusion team, higher end is for more general use.</p></li></ul></li><li><p>Fusion DMG Bonus: <b>40-70%+</b></p></li></ul><p>\n</p>",
+    "rotations": "<h5><strong><u>Rotation &amp; How to Play</u></strong></h5><p>The focus of Galbrena’s kit lies on building her 2 Forte resources - Afterflame (in red) and Sinflame (in blue) - to then use them during her Demon Hypostasis state (entered via her Enhanced Skill obtained by fully restoring her Sinflame bar).</p><p>To restore Sinflame, the most efficient ways are sometimes Heavy Attacks, but mostly Basic Attacks. Those will also be the core of her damage in Demon Hypostasis.&nbsp;</p><p>To restore Afterflame, it is dependent on Echo skill casts and that is solely provided by casting active Echo skills or having specific teammates like Qiuyuan, Lucilla and Phrolova who have additional attacks that count as Echo skill casts. This means we always want to cast Galbrena’s active Echo Skill before entering Demon Hypostasis to restore Afterflame and expend it during Demon Hypostasis to enhance Galbrena’s damage.</p><p>With these factors in mind, below is what her standard rotation may look like:</p><h6><strong><u>Standard Rotation</u></strong></h6><p>Without featuring any Quickswap, Galbrena can rotate like so:</p><ul><li><p>Intro</p></li><li><p>Basic 2</p></li><li><p>Basic 3</p></li><li><p>Heavy 1</p></li><li><p>Heavy 2</p></li><li><p>Heavy 3 (Cancel animation on shot via Dash)</p></li><li><p>Dash: Hellstride</p></li><li><p>Heavy 1</p></li><li><p>Heavy 2 (Cancel animation as soon as possible via Skill)</p></li><li><p>Skill: Ascent of Malice (Cancel animation endlag via Ultimate)</p></li><li><p>Ultimate</p></li><li><p>Basic: Seraphic Execution 2</p></li><li><p>Basic: Seraphic Execution 3 (Cancel animation endlag via Dash)</p></li><li><p>Dash: Hellstride</p></li><li><p>Basic: Seraphic Execution 4</p></li><li><p>Basic: Seraphic Execution 5 (Cancel animation on kick via Dash)</p></li><li><p>Dash: Hellstride</p></li><li><p>Basic: Seraphic Execution 3 (Cancel animation endlag via Dash)</p></li><li><p>Dash: Hellstride</p></li><li><p>Basic: Seraphic Execution 4</p></li><li><p>Basic: Seraphic Execution 5 (Swap)</p></li><li><p>Outro</p></li></ul><h6><strong><u>Extended Rotation</u></strong></h6><p>To extend her rotation by a bit over a second and deal some extra damage, Galbrena can utilize the same exact rotation concept as before but do 1 more Demon Hypostasis attack:</p><ul><li><p>Intro</p></li><li><p>Basic 2</p></li><li><p>Basic 3</p></li><li><p>Heavy 1</p></li><li><p>Heavy 2</p></li><li><p>Heavy 3 (Cancel animation on shot via Dash)</p></li><li><p>Dash: Hellstride</p></li><li><p>Heavy 1</p></li><li><p>Heavy 2 (Cancel animation as soon as possible via Skill)</p></li><li><p>Skill: Ascent of Malice (Cancel animation endlag via Ultimate)</p></li><li><p>Ultimate</p></li><li><p>Basic: Seraphic Execution 2</p></li><li><p>Basic: Seraphic Execution 3 (Cancel animation endlag via Dash)</p></li><li><p>Dash: Hellstride</p></li><li><p>Basic: Seraphic Execution 4</p></li><li><p>Basic: Seraphic Execution 5 (Cancel animation on kick via Dash)</p></li><li><p>Dash: Hellstride</p></li><li><p>Basic: Seraphic Execution 3 (Cancel animation endlag via Dash)</p></li><li><p>Dash: Hellstride</p></li><li><p>Basic: Seraphic Execution 4</p></li><li><p>Basic: Seraphic Execution 5 (Cancel animation endlag via Dash)</p></li><li><p>Dash: Hellstride</p></li><li><p>Basic: Seraphic Execution 3 (Swap)</p></li><li><p>Outro</p></li></ul><p>The main advantage in this rotation is all buffs are retained on the final Basic 5, including Outro buffs that would normally expire on swap, and buffs that apply only to the active character like Qiuyuan’s CRIT DMG &amp; Echo Skill DMG Bonus buffs. Meanwhile, the final Basic 3 gets almost no buffs, as Galbrena executes a Seraphic Execution Basic while Demon Hypostasis has expired. It’s quite weak, but it’s the best you can get while keeping all buffs active on the final Basic 5 that actually deals good damage.</p><h5><strong><u>Additional Tips &amp; Tricks</u></strong></h5><p>Dodge Counters actually aren’t a big deal for Galbrena to perform, as they are her highest damage multiplier in Demon Hypostasis and act as a significantly enhanced version of her Basic 3. Overall, if needed to execute, while they do extend her rotation time through having to dodge, they aren’t a big deal to perform.</p><p>Galbrena’s Ultimate could theoretically be used before her Enhanced Skill, however it deals a high amount of damage and as a result we want to stack up her 20% DMG Amplify effect from her Inherent Passive to optimize damage.</p><p>In regard to the above point, while Galbrena’s Basic Attacks before her Enhanced Skill can be performed before her Intro, one Basic Attack always needs to be performed to fully stack up this Inherent Passive effect in time for her Ultimate cast. However, to optimize team rotation time (this is particularly applicable with Lupa on the team since she has many Swap Cancel windows), Galbrena can and should ideally perform a Basic 2,3,4 combo before her Intro at minimum.&nbsp;</p><p>This allows her to cast Basic 2,3 after her Intro and proceed with her rotation as normal, though she can cast these two right before Introing in to get her full buffs and Sinflame charged up before her on-field rotation even begun. Note that Galbrena will always start from her Basic 2 if swapped from any character in combat, whether her Intro is available or not.</p>",
+    "skills": [
+      {
+        "name": "Slayer's Trigger",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<p><b>Basic Attack</b></p><p>Perform up to <b>4</b> consecutive attacks, dealing <u>Fusion DMG</u>. Basic Attack Stage 1 to 3 DMG are considered as Heavy Attack DMG, and Basic Attack Stage 4 DMG as Echo Skill DMG.</p><p>Press Normal Attack right after performing Basic Attack Stage 4 to perform Basic Attack Stage 2.</p><p><b>Heavy Attack - Volley of Death</b></p><p>Consume STA to attack the target and perform up to <b>3</b> consecutive attacks, dealing <u>Fusion DMG</u>. Stage 3 DMG is considered as Echo Skill DMG.</p><p>Press Normal Attack right after performing Heavy Attack - Volley of Death Stage 1 to perform Basic Attack Stage 2. Press Normal Attack right after performing Heavy Attack - Volley of Death Stage 2 or 3 to perform Basic Attack Stage 3.</p><p><b>Mid-air Attack - Ashfall Barrage</b></p><p>While in mid-air, press Normal Attack to consume STA to perform a Plunging Attack, dealing <u>Fusion DMG</u>, considered as Heavy Attack DMG.</p><p>While in mid-air, hold Normal Attack to continuously consume STA to launch a barrage of shots at targets below, dealing <u>Fusion DMG</u>, considered as Heavy Attack DMG. If Galbrena does not land when interrupted during the barrage, she cannot immediately cast this skill again. Release Normal Attack during the barrage to cast Plunging Attack.</p><p>Press Normal Attack right after casting Plunging Attack to cast Basic Attack Stage 3.</p><p><b>Dodge Counter - Blood for Blood</b></p><p>Press Normal Attack right after a successful Dodge to attack the target, dealing <u>Fusion DMG</u>, considered as Heavy Attack DMG.\nPress Normal Attack right after casting this skill to cast Basic Attack Stage 4.</p>",
+        "multipliers": [
+          {
+            "Lv1": "29.77%",
+            "Lv2": "32.21%",
+            "Lv3": "34.65%",
+            "Lv4": "38.07%",
+            "Lv5": "38.07%",
+            "Lv6": "43.31%",
+            "Lv7": "47.22%",
+            "Lv8": "51.12%",
+            "Lv9": "55.03%",
+            "Lv10": "59.18%",
+            "Name": "Basic Attack Stage 1 DMG"
+          },
+          {
+            "Lv1": "13.23%+13.23%+39.69%",
+            "Lv2": "14.32%+14.32%+42.95%",
+            "Lv3": "15.40%+15.40%+46.20%",
+            "Lv4": "16.92%+16.92%+50.76%",
+            "Lv5": "16.92%+16.92%+50.76%",
+            "Lv6": "19.26%+19.26%+57.76%",
+            "Lv7": "20.99%+20.99%+62.97%",
+            "Lv8": "22.73%+22.73%+68.17%",
+            "Lv9": "24.46%+24.46%+73.38%",
+            "Lv10": "26.31%+26.31%+78.91%",
+            "Name": "Basic Attack Stage 2 DMG"
+          },
+          {
+            "Lv1": "14.39%+14.39%+21.58%+21.58%",
+            "Lv2": "15.57%+15.57%+23.35%+23.35%",
+            "Lv3": "16.75%+16.75%+25.12%+25.12%",
+            "Lv4": "18.40%+18.40%+27.59%+27.59%",
+            "Lv5": "18.40%+18.40%+27.59%+27.59%",
+            "Lv6": "20.93%+20.93%+31.40%+31.40%",
+            "Lv7": "22.82%+22.82%+34.23%+34.23%",
+            "Lv8": "24.71%+24.71%+37.06%+37.06%",
+            "Lv9": "26.59%+26.59%+39.89%+39.89%",
+            "Lv10": "28.60%+28.60%+42.89%+42.89%",
+            "Name": "Basic Attack Stage 3 DMG"
+          },
+          {
+            "Lv1": "89.46%",
+            "Lv2": "96.80%",
+            "Lv3": "104.14%",
+            "Lv4": "114.41%",
+            "Lv5": "114.41%",
+            "Lv6": "130.18%",
+            "Lv7": "141.92%",
+            "Lv8": "153.65%",
+            "Lv9": "165.39%",
+            "Lv10": "177.86%",
+            "Name": "Basic Attack Stage 4 DMG"
+          },
+          {
+            "Lv1": "20.65%+20.65%+30.97%+30.97%",
+            "Lv2": "22.34%+22.34%+33.51%+33.51%",
+            "Lv3": "24.04%+24.04%+36.05%+36.05%",
+            "Lv4": "26.41%+26.41%+39.61%+39.61%",
+            "Lv5": "26.41%+26.41%+39.61%+39.61%",
+            "Lv6": "30.05%+30.05%+45.07%+45.07%",
+            "Lv7": "32.76%+32.76%+49.13%+49.13%",
+            "Lv8": "35.46%+35.46%+53.19%+53.19%",
+            "Lv9": "38.17%+38.17%+57.26%+57.26%",
+            "Lv10": "41.05%+41.05%+61.57%+61.57%",
+            "Name": "Dodge Counter - Blood for Blood DMG"
+          },
+          {
+            "Lv1": "72.00%",
+            "Lv2": "77.91%",
+            "Lv3": "83.81%",
+            "Lv4": "92.08%",
+            "Lv5": "92.08%",
+            "Lv6": "104.77%",
+            "Lv7": "114.22%",
+            "Lv8": "123.66%",
+            "Lv9": "133.11%",
+            "Lv10": "143.15%",
+            "Name": "Mid-air Attack - Ashfall Barrage Plunging Attack DMG"
+          },
+          {
+            "Lv1": "13.50%",
+            "Lv2": "14.61%",
+            "Lv3": "15.72%",
+            "Lv4": "17.27%",
+            "Lv5": "17.27%",
+            "Lv6": "19.65%",
+            "Lv7": "21.42%",
+            "Lv8": "23.19%",
+            "Lv9": "24.96%",
+            "Lv10": "26.84%",
+            "Name": "Mid-air Attack - Ashfall Barrage Sustained Fire DMG"
+          },
+          {
+            "Lv1": "26.81%+26.81%",
+            "Lv2": "29.01%+29.01%",
+            "Lv3": "31.21%+31.21%",
+            "Lv4": "34.29%+34.29%",
+            "Lv5": "34.29%+34.29%",
+            "Lv6": "39.01%+39.01%",
+            "Lv7": "42.53%+42.53%",
+            "Lv8": "46.05%+46.05%",
+            "Lv9": "49.56%+49.56%",
+            "Lv10": "53.30%+53.30%",
+            "Name": "Heavy Attack - Volley of Death Stage 1 DMG"
+          },
+          {
+            "Lv1": "17.40%*2",
+            "Lv2": "18.83%*2",
+            "Lv3": "20.26%*2",
+            "Lv4": "22.25%*2",
+            "Lv5": "22.25%*2",
+            "Lv6": "25.32%*2",
+            "Lv7": "27.60%*2",
+            "Lv8": "29.88%*2",
+            "Lv9": "32.17%*2",
+            "Lv10": "34.59%*2",
+            "Name": "Heavy Attack - Volley of Death Stage 2 DMG"
+          },
+          {
+            "Lv1": "8.44%*3+59.05%",
+            "Lv2": "9.13%*3+63.89%",
+            "Lv3": "9.82%*3+68.73%",
+            "Lv4": "10.79%*3+75.51%",
+            "Lv5": "10.79%*3+75.51%",
+            "Lv6": "12.28%*3+85.92%",
+            "Lv7": "13.39%*3+93.67%",
+            "Lv8": "14.49%*3+101.41%",
+            "Lv9": "15.60%*3+109.16%",
+            "Lv10": "16.77%*3+117.39%",
+            "Name": "Heavy Attack - Volley of Death Stage 3 DMG"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Mid-air Attack - Ashfall Barrage Sustained Fire STA Cost (Per Sec)"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack - Ashfall Barrage STA Cost"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Heavy Attack - Volley of Death Stage 1 STA Cost"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Heavy Attack - Volley of Death Stage 2 STA Cost"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Heavy Attack - Volley of Death Stage 3 STA Cost"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Edge Transcended",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p><b>Resonance Skill - Encroach</b></p><p>Dash forward and leap into the air. Flip backward upon hitting the target, dealing <u>Fusion DMG</u>, considered Heavy Attack DMG.</p><p><b>Resonance Skill - Ascent of Malice</b></p><p>Upon reaching <b>100 </b>points of Sinflame, Resonance Skill is replaced with Resonance Skill - Ascent of Malice.</p><p>Slash at enemies with her wings, dealing <u>Fusion DMG</u>, considered Heavy Attack DMG. Upon casting this skill:</p><ul><li><p>Galbrena enters Demon Hypostasis.</p></li><li><p>Sinflame is converted into an equivalent amount of Purging Flame.</p></li><li><p>Can be followed by Basic Attack - Seraphic Execution Stage 2.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "5.40%+12.60%",
+            "Lv2": "5.85%+13.63%",
+            "Lv3": "6.29%+14.66%",
+            "Lv4": "6.91%+16.11%",
+            "Lv5": "7.35%+17.14%",
+            "Lv6": "7.86%+18.33%",
+            "Lv7": "8.57%+19.98%",
+            "Lv8": "9.28%+21.64%",
+            "Lv9": "9.98%+23.29%",
+            "Lv10": "10.74%+25.04%",
+            "Name": "Resonance Skill - Encroach DMG"
+          },
+          {
+            "Lv1": "25.94%+25.94%",
+            "Lv2": "28.07%+28.07%",
+            "Lv3": "30.20%+30.20%",
+            "Lv4": "33.17%+33.17%",
+            "Lv5": "35.30%+35.30%",
+            "Lv6": "37.75%+37.75%",
+            "Lv7": "41.15%+41.15%",
+            "Lv8": "44.55%+44.55%",
+            "Lv9": "47.96%+47.96%",
+            "Lv10": "51.57%+51.57%",
+            "Name": "Resonance Skill - Ascent of Malice DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Resonance Skill - Ascent of Malice Concerto Regen"
+          },
+          {
+            "Lv1": "5s",
+            "Lv2": "5s",
+            "Lv3": "5s",
+            "Lv4": "5s",
+            "Lv5": "5s",
+            "Lv6": "5s",
+            "Lv7": "5s",
+            "Lv8": "5s",
+            "Lv9": "5s",
+            "Lv10": "5s",
+            "Name": "Resonance Skill - Encroach Cooldown"
+          },
+          {
+            "Lv1": "13s",
+            "Lv2": "13s",
+            "Lv3": "13s",
+            "Lv4": "13s",
+            "Lv5": "13s",
+            "Lv6": "13s",
+            "Lv7": "13s",
+            "Lv8": "13s",
+            "Lv9": "13s",
+            "Lv10": "13s",
+            "Name": "Resonance Skill - Ascent of Malice Cooldown"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Hellfire Absolution",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p>Attack the target and deal <u>Fusion DMG</u>, considered Echo Skill DMG. </p><p>Gain <b>85%</b> DMG Multiplier increase for Basic Attack - Seraphic Execution, Heavy Attack - Flamewing Verdict, Mid-air Attack - Hellsent Barrage, and Dodge Counter - Purgatory Scourge for <b>14s </b>while in Demon Hypostasis.</p><p>Press Normal Attack after casting Resonance Liberation to cast Basic Atttack Stage 2. While in Demon Hypostasis, cast Basic Attack - Seraphic Execution Stage 2 instead.</p><p>Can be cast in mid-air close to the ground.</p><p></p><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "55.79%+45.64%*11",
+            "Lv2": "60.36%+49.39%*11",
+            "Lv3": "64.93%+53.13%*11",
+            "Lv4": "71.34%+58.37%*11",
+            "Lv5": "75.91%+62.11%*11",
+            "Lv6": "81.17%+66.41%*11",
+            "Lv7": "88.49%+72.40%*11",
+            "Lv8": "95.81%+78.39%*11",
+            "Lv9": "103.13%+84.38%*11",
+            "Lv10": "110.90%+90.74%*11",
+            "Name": "Resonance Liberation - Hellfire Absolution DMG"
+          },
+          {
+            "Lv1": "125",
+            "Lv2": "125",
+            "Lv3": "125",
+            "Lv4": "125",
+            "Lv5": "125",
+            "Lv6": "125",
+            "Lv7": "125",
+            "Lv8": "125",
+            "Lv9": "125",
+            "Lv10": "125",
+            "Name": "Resonance Liberation - Hellfire Absolution Resonance Energy Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Resonance Liberation - Hellfire Absolution Concerto Regen"
+          },
+          {
+            "Lv1": "25s",
+            "Lv2": "25s",
+            "Lv3": "25s",
+            "Lv4": "25s",
+            "Lv5": "25s",
+            "Lv6": "25s",
+            "Lv7": "25s",
+            "Lv8": "25s",
+            "Lv9": "25s",
+            "Lv10": "25s",
+            "Name": "Resonance Liberation - Hellfire Absolution Cooldown"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Beyond Threshold",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p><b>Threshold State</b></p><p>By default, Galbrena is in Threshold State, and in this state, she accumulates Afterflame and Sinflame.</p><p><b>Demon Hypostasis</b></p><p>While in Demon Hypostasis, Basic Attack, Heavy Attack - Volley of Death, Mid-air Attack - Ashfall Barrage, Dodge Counter - Blood for Blood, and Resonance Skill - Encroach are replaced with Basic Attack - Seraphic Execution, Heavy Attack - Flamewing Verdict, Mid-air Attack - Hellsent Barrage, Dodge Counter - Purgatory Scourge, and Resonance Skill - Ravage, which consume Purging Flame on hit.</p><p>While in Demon Hypostasis, every point of Afterflame increases the DMG of Basic Attack - Seraphic Execution, Heavy Attack - Flamewing Verdict, Mid-air Attack - Hellsent Barrage, Resonance Skill - Ravage, and Dodge Counter - Purgatory Scourge by <b>1.5%</b>, up to <b>60%</b>, which is removed upon exiting Demon Hypostasis.</p><p>When Purging Flame depletes or after staying in Demon Hypostasis for over <b>50s</b>, Demon Hypostasis ends automatically.</p><p><b>Basic Attack - Seraphic Execution</b></p><p>Perform up to <b>5 </b>consecutive attacks, dealing <u>Fusion DMG</u>. Consume Purging Flame on hit. Stage 1 to 3 DMG are considered Heavy Attack DMG, and Stage 4 &amp; 5 DMG Echo Skill DMG.</p><p>Press Normal Attack after casting Basic Attack - Seraphic Execution Stage 5 to cast Basic Attack - Seraphic Execution Stage 3.</p><p><b>Heavy Attack - Flamewing Verdict</b></p><p>Consume STA to attack the target and perform up to <b>3 </b>consecutive attacks, dealing <u>Fusion DMG</u>. Consume Purging Flame on hit. Stage 3 DMG is considered Echo Skill DMG.</p><p>Press Normal Attack after casting Heavy Attack - Flamewing Verdict Stage 1 to cast Basic Attack - Seraphic Execution Stage 2.</p><p>Press Normal Attack after casting Heavy Attack - Flamewing Verdict Stage 2 &amp; 3 to cast Basic Attack - Seraphic Execution Stage 3.</p><p><b>Mid-air Attack - Hellsent Barrage</b></p><p>While in mid-air, press Normal Attack to consume STA to perform aerial attacks, dealing <u>Fusion DMG</u>, considered Heavy Attack DMG. Consume Purging Flame on hit.</p><p>While in mid-air, hold Normal Attack to continuously consume STA to launch a barrage of shots at targets, dealing <u>Fusion DMG</u>, considered Heavy Attack DMG. Consume Purging Flame on hit. If Galbrena does not land when interrupted during the barrage, she cannot immediately cast this skill again. Release Normal Attack during the barrage to cast Plunging Attack.</p><p>Press Normal Attack after the Plunging Attack to cast Basic Attack - Seraphic Execution Stage 3.</p><p><b>Dodge Counter - Purgatory Scourge</b></p><p>Press Normal Attack right after a successful Dodge to attack the target, dealing <u>Fusion DMG</u>, considered Heavy Attack DMG.</p><p>Press Normal Attack right after casting this skill to cast Basic Attack - Seraphic Execution Stage 4.</p><p><b>Resonance Skill - Ravage</b></p><p>Dash forward and leap into the air. Flip backward upon hitting the target, dealing <u>Fusion DMG</u>, considered Heavy Attack DMG.</p><p>Consume Purging Flame on hit. Resonance Skill - Ravage and Resonance Skill - Encroach share a cooldown.</p><p><b>Hellstride</b></p><p>Press Dodge on the ground while casting Galbrena&#039;s own skills to cast Hellstride to deal a fixed amount of <u>Fusion DMG</u>, considered Basic Attack DMG that does not bear any effect from DMG buffs. Hellstride can trigger successful Dodges. Hellstride cannot be cast consecutively.</p><p>Casting this skill does not reset the attack cycles within a short period of time.</p><p><b>Burning Drive</b></p><p>Casting Intro Skill, Hellstride, Normal Attack - Seraphic Execution Basic Attack Stage 4, Resonance Skill - Encroach, Resonance Skill - Ascent of Malice, and Resonance Skill - Ravage increases Galbrena&#039;s resistance to interruptions and ATK by <b>20%</b> for <b>4s</b>.</p><p><b>Afterflame</b></p><p>Galbrena can hold up to <b>40 </b>points of Afterflame.</p><p>While in Threshold State, Galbrena recovers <b>8 </b>points of Afterflame when Resonators in the nearby team cast Echo Skill. Echoes with the same name can only trigger this effect once. This effect resets when Galbrena exits Demon Hypostasis.</p><p>All Afterflame is removed upon exiting Demon Hypostasis.</p><p><b>Sinflame</b></p><p>Galbrena can hold up to <b>100 </b>points of Sinflame.</p><p>While in Threshold State, hitting an enemy with Basic Attack, Heavy Attack - Volley of Death, Mid-air Attack - Ashfall Barrage, Resonance Skill - Encroach, and Intro Skill - Hellflare Overload recovers Sinflame.</p>",
+        "multipliers": [
+          {
+            "Lv1": "666",
+            "Lv2": "666",
+            "Lv3": "666",
+            "Lv4": "666",
+            "Lv5": "666",
+            "Lv6": "666",
+            "Lv7": "666",
+            "Lv8": "666",
+            "Lv9": "666",
+            "Lv10": "666",
+            "Name": "Hellstride DMG"
+          },
+          {
+            "Lv1": "29.67%",
+            "Lv2": "32.11%",
+            "Lv3": "34.54%",
+            "Lv4": "37.95%",
+            "Lv5": "40.38%",
+            "Lv6": "43.18%",
+            "Lv7": "47.07%",
+            "Lv8": "50.96%",
+            "Lv9": "54.86%",
+            "Lv10": "58.99%",
+            "Name": "Basic Attack - Seraphic Execution Stage 1 DMG"
+          },
+          {
+            "Lv1": "14.00%+14.00%+42.00%",
+            "Lv2": "15.15%+15.15%+45.45%",
+            "Lv3": "16.30%+16.30%+48.89%",
+            "Lv4": "17.91%+17.91%+53.71%",
+            "Lv5": "19.06%+19.06%+57.16%",
+            "Lv6": "20.38%+20.38%+61.12%",
+            "Lv7": "22.21%+22.21%+66.63%",
+            "Lv8": "24.05%+24.05%+72.14%",
+            "Lv9": "25.89%+25.89%+77.65%",
+            "Lv10": "27.84%+27.84%+83.51%",
+            "Name": "Basic Attack - Seraphic Execution Stage 2 DMG"
+          },
+          {
+            "Lv1": "12.23%*3+85.61%",
+            "Lv2": "13.24%*3+92.64%",
+            "Lv3": "14.24%*3+99.66%",
+            "Lv4": "15.64%*3+109.48%",
+            "Lv5": "16.65%*3+116.50%",
+            "Lv6": "17.80%*3+124.58%",
+            "Lv7": "19.41%*3+135.81%",
+            "Lv8": "21.01%*3+147.04%",
+            "Lv9": "22.61%*3+158.27%",
+            "Lv10": "24.32%*3+170.21%",
+            "Name": "Basic Attack - Seraphic Execution Stage 3 DMG"
+          },
+          {
+            "Lv1": "9.13%*3+63.89%",
+            "Lv2": "9.88%*3+69.13%",
+            "Lv3": "10.63%*3+74.37%",
+            "Lv4": "11.68%*3+81.71%",
+            "Lv5": "12.43%*3+86.95%",
+            "Lv6": "13.29%*3+92.97%",
+            "Lv7": "14.48%*3+101.35%",
+            "Lv8": "15.68%*3+109.73%",
+            "Lv9": "16.88%*3+118.12%",
+            "Lv10": "18.15%*3+127.02%",
+            "Name": "Basic Attack - Seraphic Execution Stage 4 DMG"
+          },
+          {
+            "Lv1": "33.84%+78.96%",
+            "Lv2": "36.62%+85.44%",
+            "Lv3": "39.39%+91.91%",
+            "Lv4": "43.28%+100.98%",
+            "Lv5": "46.05%+107.45%",
+            "Lv6": "49.25%+114.90%",
+            "Lv7": "53.69%+125.26%",
+            "Lv8": "58.13%+135.62%",
+            "Lv9": "62.57%+145.98%",
+            "Lv10": "67.28%+156.99%",
+            "Name": "Basic Attack - Seraphic Execution Stage 5 DMG"
+          },
+          {
+            "Lv1": "29.79%+29.79%",
+            "Lv2": "32.23%+32.23%",
+            "Lv3": "34.67%+34.67%",
+            "Lv4": "38.09%+38.09%",
+            "Lv5": "40.54%+40.54%",
+            "Lv6": "43.35%+43.35%",
+            "Lv7": "47.25%+47.25%",
+            "Lv8": "51.16%+51.16%",
+            "Lv9": "55.07%+55.07%",
+            "Lv10": "59.22%+59.22%",
+            "Name": "Heavy Attack - Flamewing Verdict Stage 1 DMG"
+          },
+          {
+            "Lv1": "19.29%*2",
+            "Lv2": "20.87%*2",
+            "Lv3": "22.45%*2",
+            "Lv4": "24.67%*2",
+            "Lv5": "26.25%*2",
+            "Lv6": "28.07%*2",
+            "Lv7": "30.60%*2",
+            "Lv8": "33.13%*2",
+            "Lv9": "35.66%*2",
+            "Lv10": "38.35%*2",
+            "Name": "Heavy Attack - Flamewing Verdict Stage 2 DMG"
+          },
+          {
+            "Lv1": "8.90%*3+62.26%",
+            "Lv2": "9.63%*3+67.36%",
+            "Lv3": "10.36%*3+72.47%",
+            "Lv4": "11.38%*3+79.62%",
+            "Lv5": "12.11%*3+84.72%",
+            "Lv6": "12.95%*3+90.59%",
+            "Lv7": "14.11%*3+98.76%",
+            "Lv8": "15.28%*3+106.93%",
+            "Lv9": "16.45%*3+115.09%",
+            "Lv10": "17.69%*3+123.77%",
+            "Name": "Heavy Attack - Flamewing Verdict Stage 3 DMG"
+          },
+          {
+            "Lv1": "16.15%*3+113.03%",
+            "Lv2": "17.47%*3+122.29%",
+            "Lv3": "18.80%*3+131.56%",
+            "Lv4": "20.65%*3+144.54%",
+            "Lv5": "21.98%*3+153.81%",
+            "Lv6": "23.50%*3+164.46%",
+            "Lv7": "25.62%*3+179.29%",
+            "Lv8": "27.74%*3+194.12%",
+            "Lv9": "29.85%*3+208.95%",
+            "Lv10": "32.10%*3+224.70%",
+            "Name": "Dodge Counter - Purgatory Scourge"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Heavy Attack - Flamewing Verdict Stage 1 STA Cost"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Heavy Attack - Flamewing Verdict Stage 2 STA Cost"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Heavy Attack - Flamewing Verdict Stage 3 STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Hellstride STA Cost"
+          },
+          {
+            "Lv1": "80.00%",
+            "Lv2": "86.56%",
+            "Lv3": "93.12%",
+            "Lv4": "102.31%",
+            "Lv5": "108.87%",
+            "Lv6": "116.41%",
+            "Lv7": "126.91%",
+            "Lv8": "137.40%",
+            "Lv9": "147.90%",
+            "Lv10": "159.05%",
+            "Name": "Mid-air Attack - Hellsent Barrage Plunging Attack DMG"
+          },
+          {
+            "Lv1": "15.00%",
+            "Lv2": "16.23%",
+            "Lv3": "17.46%",
+            "Lv4": "19.19%",
+            "Lv5": "20.42%",
+            "Lv6": "21.83%",
+            "Lv7": "23.80%",
+            "Lv8": "25.77%",
+            "Lv9": "27.74%",
+            "Lv10": "29.83%",
+            "Name": "Mid-air Attack - Hellsent Barrage Sustained Fire DMG"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Mid-air Attack - Hellsent Barrage Sustained Fire STA Cost (Per Sec)"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack - Hellsent Barrage STA Cost"
+          },
+          {
+            "Lv1": "5.40%+12.60%",
+            "Lv2": "5.85%+13.63%",
+            "Lv3": "6.29%+14.66%",
+            "Lv4": "6.91%+16.11%",
+            "Lv5": "7.35%+17.14%",
+            "Lv6": "7.86%+18.33%",
+            "Lv7": "8.57%+19.98%",
+            "Lv8": "9.28%+21.64%",
+            "Lv9": "9.98%+23.29%",
+            "Lv10": "10.74%+25.04%",
+            "Name": "Resonance Skill - Ravage DMG"
+          },
+          {
+            "Lv1": "5s",
+            "Lv2": "5s",
+            "Lv3": "5s",
+            "Lv4": "5s",
+            "Lv5": "5s",
+            "Lv6": "5s",
+            "Lv7": "5s",
+            "Lv8": "5s",
+            "Lv9": "5s",
+            "Lv10": "5s",
+            "Name": "Resonance Skill - Ravage Cooldown"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Oathbound Hunt",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p><b>1</b> stack of Fated End is inflicted on the target when the following skills hit: Intro Skill, Basic Attack, Basic Attack - Seraphic Execution, Dodge Counter, Heavy Attack - Volley of Death, Heavy Attack - Flamewing Verdict, Mid-air Attack, Hellstride, Resonance Skill - Encroach, Resonance Skill - Ascent of Malice, Resonance Skill - Ravage and Resonance Liberation, up to <b>4</b> stacks. </p><p>Each stack Amplifies the DMG directly dealt by Galbrena&#039;s Normal Attack, Resonance Skill, Forte Circuit, Resonance Liberation, Intro Skill, and Outro Skill by <b>5%</b> for <b>5.5s</b>. The same type of skill can trigger this effect on the same target once every <b>5s</b>. </p><p>Resonance Skill - Encroach and Resonance Skill - Ravage are considered the same type of skill. </p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Sin Feaster",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Casting Basic Attack Stage 4, Basic Attack - Seraphic Execution Stage 5, Heavy Attack - Volley of Death Stage 3, and Heavy Attack - Flamewing Verdict Stage 3 recovers <b>10 </b>points of STA.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Hellflare Overload",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Attack the target and deal <u>Fusion DMG.</u></p><p>Hold Normal Attack after casting this skill to cast Heavy Attack - Volley of Death Stage 2. While in Demon Hypostasis, cast Heavy Attack - Flamewing Verdict Stage 2 instead.</p><p>Press Normal Attack right after casting this skill to perform Basic Attack Stage 2, which is replaced with Basic Attack - Seraphic Execution Stage 2 if Galbrena is in Demon Hypostasis.</p>",
+        "multipliers": [
+          {
+            "Lv1": "47.34%",
+            "Lv2": "51.23%",
+            "Lv3": "55.11%",
+            "Lv4": "60.54%",
+            "Lv5": "64.43%",
+            "Lv6": "68.89%",
+            "Lv7": "75.10%",
+            "Lv8": "81.31%",
+            "Lv9": "87.52%",
+            "Lv10": "94.12%",
+            "Name": "Intro Skill - Hellflare Overload DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Intro Skill - Hellflare Overload Concerto Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Ashen Pursuit",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>Attack the target, dealing <u>Fusion DMG </u>equal to <b>79.5%*3+556.5%</b> of Galbrena&#039;s ATK.</p>",
+        "type": "Outro Skill"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p>When casting Resonance Skill - Ascent of Malice, each point of Afterflame additionally grants<b> 2%</b> Crit. DMG to Basic Attack - Seraphic Execution, Heavy Attack - Flamewing Verdict, Mid-air Attack - Hellsent Barrage, Resonance Skill - Ravage, and Dodge Counter - Purgatory Scourge, up to <b>80%</b>. This effect is removed upon exiting Demon Hypostasis.</p><p>While in Demon Hypostasis, Basic Attack - Seraphic Execution Stage 5, Heavy Attack - Flamewing Verdict Stage 3, and Mid-air Attack - Hellsent Barrage are immune to interruption.</p>",
+      "dupe1_name": "Sequence Node 1",
+      "dupe2": "<p>Burning Drive grants <b>350%</b> more ATK Bonus.</p>",
+      "dupe2_name": "Sequence Node 2",
+      "dupe3": "<p>Resonance Liberation DMG Multiplier is increased by <b>130%</b>.</p>",
+      "dupe3_name": "Sequence Node 3",
+      "dupe4": "<p>When Resonators in the team cast Echo Skill, all Resonators in the team gain<b> 20%</b> all-Attribute DMG Bonus for <b>20s</b>.</p>",
+      "dupe4_name": "Sequence Node 4",
+      "dupe5": "<p>The DMG Multipliers of Resonance Skill - Encroach, Resonance Skill - Ascent of Malice, and Resonance Skill - Ravage are increased by <b>150%</b>.</p>",
+      "dupe5_name": "Sequence Node 5",
+      "dupe6": "<p>Demon Hypostasis becomes Eternal Hypostasis. Eternal Hypostasis retains all effects of Demon Hypostasis.</p><p>Additionally, Eternal Hypostasis lasts, the DMG Multipliers of Basic Attack - Seraphic Execution, Heavy Attack - Flamewing Verdict, Mid-air Attack - Hellsent Barrage, and Dodge Counter -Purgatory Scourge are additionally increased by <b>60%</b>.</p><p>When casting Resonance Skill - Ascent of Malice, for every 1 point of Afterflame consumed, Galbrena&#039;s Basic Attack - Seraphic Execution, Heavy Attack - Flamewing Verdict, Mid-air Attack - Hellsent Barrage, Resonance Skill - Ravage, and Dodge Counter -Purgatory Scourge gain <b>0.875%</b> <u>Fusion DMG Amplification</u>, up to <b>35%</b>, which is removed upon exiting Eternal Hypostasis.</p>",
+      "dupe6_name": "Sequence Node 6"
+    },
+    "voiceActors": {
+      "en": "",
+      "jpn": "",
+      "cn": "",
+      "kr": ""
+    },
+    "attributeBonus": [
+      {
+        "name": "CRIT DMG",
+        "value": 16
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": {
+      "skill": {
+        "name": "Curse of the Abyss",
+        "number": 26
+      },
+      "common": [
+        {
+          "name": "LF Tidal Residuum",
+          "number_char": 4,
+          "number_skill": 25
+        },
+        {
+          "name": "MF Tidal Residuum",
+          "number_char": 12,
+          "number_skill": 28
+        },
+        {
+          "name": "HF Tidal Residuum",
+          "number_char": 12,
+          "number_skill": 40
+        },
+        {
+          "name": "FF Tidal Residuum",
+          "number_char": 4,
+          "number_skill": 57
+        }
+      ],
+      "ascension": {
+        "name": "Stone Rose",
+        "number": 60
+      },
+      "skill_other": [
+        {
+          "name": "Impure Phlogiston",
+          "number": 25
+        },
+        {
+          "name": "Extracted Phlogiston",
+          "number": 28
+        },
+        {
+          "name": "Refined Phlogiston",
+          "number": 55
+        },
+        {
+          "name": "Flawless Phlogiston",
+          "number": 67
+        }
+      ],
+      "breakthrough": {
+        "name": "Blighted Crown of Puppet King",
+        "number": 46
+      }
+    },
+    "videos": [
+      {
+        "video": "Sdrrd5zbUXU",
+        "url": "https://www.youtube.com/watch?v=Sdrrd5zbUXU"
+      }
+    ],
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "critdmg_atk",
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "galbrena",
+      "build": 3,
+      "review": 3.7
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "galbrena",
+        "Weapon": "Lux & Umbra",
+        "Dupes": 1,
+        "Percentage": "100.00%",
+        "Percentage_2": "",
+        "Comment": "Galbrena's Signature Weapon has great base stats and a passive focusing around giving Damage Amplify to Heavy Attacks and Echo Skills in tandem with one another. When both effects are stacked, it even gives a small DEF Ignore boost to further increase this weapon's potential. Overall this is her best choice easily."
+      },
+      {
+        "ID": 2,
+        "Character": "galbrena",
+        "Weapon": "Phasic Homogenizer",
+        "Dupes": 1,
+        "Percentage": "91.80%",
+        "Percentage_2": "",
+        "Comment": "An amazing generalist permanently available pistol that can universally improve the wearer's ATK, DMG Bonus and CRIT DMG. Can get close to a lot of character signatures and is overall a must-have for most accounts."
+      },
+      {
+        "ID": 3,
+        "Character": "galbrena",
+        "Weapon": "Spectrum Blaster",
+        "Dupes": 1,
+        "Percentage": "85.70%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT DMG stat-stick for Galbrena who does not benefit from this weapon's Tune Break and Basic DMG-focused effects."
+      },
+      {
+        "ID": 4,
+        "Character": "galbrena",
+        "Weapon": "The Last Dance",
+        "Dupes": 1,
+        "Percentage": "84.90%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT DMG stat-stick for Galbrena, who does not benefit from this weapon's Skill DMG-increasing effects."
+      },
+      {
+        "ID": 5,
+        "Character": "galbrena",
+        "Weapon": "Static Mist",
+        "Dupes": 1,
+        "Percentage": "83.00%",
+        "Percentage_2": "",
+        "Comment": "The standard banner 5-star is a great choice for Galbrena, having a fully utilized passive in Mono Fusion teams to buff the next incoming character's damage (Lupa for example), while still being generally useful via its high Base ATK, CRIT Rate and Energy Regen stats in any team. This makes it not face significant drop-offs compared to her Signature weapon, which isn't necessary to clear endgame contents thanks to Static Mist, provided Galbrena has good teammates to back her up."
+      },
+      {
+        "ID": 6,
+        "Character": "galbrena",
+        "Weapon": "Woodland Aria",
+        "Dupes": 1,
+        "Percentage": "80.20%",
+        "Percentage_2": "",
+        "Comment": "Simple stat-stick for Galbrena, who does not benefit from this weapon's Aero Erosion-focused effects."
+      },
+      {
+        "ID": 7,
+        "Character": "galbrena",
+        "Weapon": "Solar Flame",
+        "Dupes": 5,
+        "Percentage": "77.50%",
+        "Percentage_2": "",
+        "Comment": "This Battle Pass exclusive provides a good CRIT Rate stat as well as a ramp-up ATK and Heavy ATK DMG increase when dealing Basic or Heavy Attack DMG, all fantastic stats for Galbrena. However, it isn't as strong as any 5-star choice due to its lower Base ATK than the choices above."
+      },
+      {
+        "ID": 8,
+        "Character": "galbrena",
+        "Weapon": "Relativistic Jet",
+        "Dupes": 5,
+        "Percentage": "71.50%",
+        "Percentage_2": "",
+        "Comment": "Overall a great 4-star choice for Galbrena who needs a slight amount of Energy. This weapon's passive increases ATK and restores flat Energy when casting Skill, which makes it a solid choice for her as it makes her not require any Energy Regen substats, although it's not comparable to any 5-star."
+      },
+      {
+        "ID": 9,
+        "Character": "galbrena",
+        "Weapon": "Pistols#26",
+        "Dupes": 5,
+        "Percentage": "68.30%",
+        "Percentage_2": "",
+        "Comment": "The best no-gacha option, this craftable 4-star provides extra ATK over time assuming you don't get hit. This weapon will perform worse than calculated if Galbrena gets hit by enemies often, however it should still outclass any other option than the ones listed above."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "galbrena",
+        "Type": "Best",
+        "Set": "Flamewing's Shadow",
+        "Percentage": "100.00%",
+        "Set_small_1": "Molten Rift, Flaming Clawprint, Trailblazing Star, Chromatic Foam",
+        "Set_small_2": "Endless Resonance, Reel of Spliced Memories",
+        "Set_small_3": "Moonlit Clouds, Empyrean Anthem, Tidebreaking Courage",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Increases the CRIT Rate of Echo skills and Heavy Attacks and increases Fusion DMG Bonus when both effects are active. This makes it the best bundle of stats for Galbrena, who is the only one able to use this Echo set effectively.",
+        "Echo_1": "Corrosaurus",
+        "Echo_1_Comment": "Always use Echo Active Skill before executing Galbrena's Enhanced Skill to generate Afterflame. Summon Echo that provides a small amount of damage and 20% Echo as well as 12% Fusion DMG Bonus when equipped in the main slot, being both of Galbrena's main damage types.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "galbrena",
+        "Character": "galbrena",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Fusion DMG",
+        "Echo_3": "Fusion DMG > ATK%",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% > ATK > Heavy Attack DMG%",
+        "Comments": ""
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "galbrena",
+        "Type": "",
+        "Order": "Forte Circuit, Res. Liberation, Basic Attack, Res. Skill, Intro Skill",
+        "Comments": "Skill and Intro can be skipped when levelling to save on resources at a minimal damage loss."
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "galbrena",
+        "Name": "Team #1: Best Team",
+        "Member_1": "galbrena",
+        "Member_2": "lupa",
+        "Member_3": "mornye",
+        "Comments": ""
+      },
+      {
+        "ID": 2,
+        "Character": "galbrena",
+        "Name": "Team #2: Echo Hypercarry Team",
+        "Member_1": "galbrena",
+        "Member_2": "qiuyuan, lucilla",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": ""
+      },
+      {
+        "ID": 3,
+        "Character": "galbrena",
+        "Name": "Team #3: Mono Fusion Alternatives",
+        "Member_1": "galbrena",
+        "Member_2": "brant, mortefi",
+        "Member_3": "lupa",
+        "Comments": "Brant is only stronger than Mortefi at a minimum of S0R1 with endgame-level Echoes. Mortefi can outperform him at lower investments."
+      },
+      {
+        "ID": 4,
+        "Character": "galbrena",
+        "Name": "Team #4: Alt Premium Teams",
+        "Member_1": "galbrena",
+        "Member_2": "phrolova, iuno",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": "Phrolova is significantly stronger than Iuno here, making for a noticeable jump in power."
+      },
+      {
+        "ID": 5,
+        "Character": "galbrena",
+        "Name": "Team #5: F2P Team",
+        "Member_1": "galbrena",
+        "Member_2": "rebecca, mortefi",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": ""
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "galbrena",
+        "Synergy": "qiuyuan, lucilla",
+        "Comment": "Galbrena's best Echo Damage buffers that provide multiple Echo Skill casts to fill up her Afterflame gauge, and amplify her Echo DMG via their Outros and other passives/weapon effects. Qiuyuan overall wins out by a slight margin as he sports buffs that apply more to Galbrena's 1/3 Heavy 2/3 Echo DMG split, whereas Lucilla really hones in on Echo DMG."
+      },
+      {
+        "ID": 2,
+        "Character": "galbrena",
+        "Synergy": "lupa, brant, mortefi",
+        "Comment": "These 3 are the Mono Fusion team members for Galbrena, an archetype enabled by Lupa's insane buffs catered towards Fusion characters, particularly if the team is only comprised of them. Brant and Mortefi are great Outro buffers for Galbrena since they have 20% Fusion and 38 Heavy DMG Amplification respectively. Brant has higher personal damage which makes him perform at higher investments, but Mortefi is a totally fine alternative, and can even be considered for F2P Galbrena teams. Mono Fusion enabled by Lupa is one of Galbrena's best teams, particularly in Whimpering Wastes, and is definitely worth trying out!"
+      },
+      {
+        "ID": 3,
+        "Character": "galbrena",
+        "Synergy": "phrolova, iuno, rebecca",
+        "Comment": "Not Galbrena's best teammate choices, but in Galbrena teams Phrolova and Iuno respectively provide 25 and 50% Heavy DMG Amplification on their Outros, and they both deal very high personal damage. Phrolova is stronger than Iuno in the personal damage department and has an extra Echo Skill cast for Galbrena's Afterflame, so she tends to outclass Iuno for these reasons; however Iuno has a really easy rotation and extra healing if it is preferred. Rebecca is also a generalist Heavy DMG buffer with minimal upsides beyond that, but all of them can be worth considering if the above options are missing."
+      },
+      {
+        "ID": 4,
+        "Character": "galbrena",
+        "Synergy": "mornye, the-shorekeeper, verina",
+        "Comment": "These 3 are the best generalist Supports in the game. Mornye has a special synergy with Galbrena and Lupa because she enables Galbrena to work in a Hypercarry team while still sporting Lupa's full Mono Fusion buffs which makes her the best choice if that's available. Otherwise, Shorekeeper is amazing thanks to her massive CRIT buffs and other generalist buffs, then Verina is the most accessible and still very strong option if neither are available."
+      }
+    ]
+  },
+  "stats": {
+    "slug": "galbrena",
+    "name": "Galbrena",
+    "unit_id": 1208,
+    "base_hp": 824,
+    "base_atk": 37,
+    "base_def": 91,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 125,
+    "bonus_ele": 0,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 0,
+    "bonus_crit": 0,
+    "bonus_critdmg": 16,
+    "bonus_hp": 0
+  },
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "galbrena",
+        "name": "Galbrena",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 1419271,
+          "damage_e1": 1530131,
+          "damage_e2": 1911710,
+          "damage_e3": 2298254,
+          "damage_e4": 2467452,
+          "damage_e5": 2510217,
+          "damage_e6": 3559509
+        },
+        "dps": {
+          "damage": 116333,
+          "damage_e1": 125420,
+          "damage_e2": 156697,
+          "damage_e3": 188381,
+          "damage_e4": 202250,
+          "damage_e5": 205755,
+          "damage_e6": 291763
+        },
+        "time": "12.2",
+        "echo_main": "Corrosaurus",
+        "echo_4": "CRIT Rate",
+        "echo_3": "Fusion DMG",
+        "echo_3a": "Fusion DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "Energy Regen (18.3%) ATK (25.8%), CRIT Rate (40.4%), CRIT DMG (80.7%), Heavy Attack DMG Bonus (8.6%)",
+        "set_1": "Flamewing's Shadow",
+        "set_2": "Molten Rift",
+        "weapon": "Lux & Umbra",
+        "weapon_S": 1
+      },
+      "team": {
+        "ID": 1,
+        "Character": "galbrena",
+        "Member_1_Name": "lupa",
+        "Member_1_Weapon": "Wildfire Mark",
+        "Member_1_Set": "Flaming Clawprint",
+        "Member_1_Echo": "Lioness of Glory",
+        "Member_2_Name": "mornye",
+        "Member_2_Weapon": "Starfield Calibrator",
+        "Member_2_Set": "Halo of Starry Radiance",
+        "Member_2_Echo": "Reactor Husk"
+      },
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      0
+    ],
+    [
+      "Heavy",
+      522432
+    ],
+    [
+      "Skill",
+      0
+    ],
+    [
+      "Liberation",
+      0
+    ],
+    [
+      "Intro",
+      12127
+    ],
+    [
+      "Outro",
+      138136
+    ],
+    [
+      "Echo",
+      746576
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Lux & Umbra",
+        "Slug": "lux-umbra",
+        "Rarity": 5,
+        "ID": "21030036",
+        "Effect": "ATK is increased by {0}. Upon dealing Echo Skill DMG, gain {1} Heavy Attack DMG Amplification for 6s. Upon dealing Heavy Attack DMG, gain {1} Echo Skill DMG Amplification for 6s. DMG Amplification on each attack is capped at {1}. While both effects are active, dealing damage ignores {2} of the target's DEF.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Phasic Homogenizer",
+        "Slug": "phasic-homogenizer",
+        "Rarity": 5,
+        "ID": "21030045",
+        "Effect": "Increases ATK by {0}. When a Resonator in the team casts a Tune Break skill, it grants {1} All-Attribute DMG Bonus to the wielder for 14s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "20%",
+          "22.5%",
+          "25%",
+          "27.5%",
+          "30%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Pistols#26",
+        "Slug": "pistols-26",
+        "Rarity": 4,
+        "ID": "21030034",
+        "Effect": "When the Resonator takes no damage, increases ATK by {0} every 5s, stacking up to 2 time(s). This effect lasts for 8s. When the Resonator takes damage, reduces the number of stacks by 1 and restores their HP by {1}.",
+        "Array_0": [
+          "6%",
+          "7.5%",
+          "9%",
+          "10.5%",
+          "12%"
+        ],
+        "Array_1": [
+          "5%",
+          "6.25%",
+          "7.5%",
+          "8.75%",
+          "10%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 387,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 36.4,
+        "Source": "Synthesis"
+      },
+      {
+        "Name": "Relativistic Jet",
+        "Slug": "relativistic-jet",
+        "Rarity": 4,
+        "ID": "21030084",
+        "Effect": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for 16s. This effect can be triggered once every 20s.",
+        "Array_0": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Solar Flame",
+        "Slug": "solar-flame",
+        "Rarity": 4,
+        "ID": "21030104",
+        "Effect": "Dealing Basic Attack or Heavy Attack DMG increases ATK by {0} and grants {0} Heavy Attack DMG Bonus for 7s, stacking up to 4 times. This effect can be triggered 1 time every 1s.",
+        "Array_0": [
+          "2.2%",
+          "3.4%",
+          "4.7%",
+          "5.9%",
+          "7.2%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 20.3,
+        "Source": "Battle Pass"
+      },
+      {
+        "Name": "Spectrum Blaster",
+        "Slug": "spectrum-blaster",
+        "Rarity": 5,
+        "ID": "21030046",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or hitting the target with Basic Attack increases the wielder's Basic Attack DMG by {1} for 4s. Each time the wielder inflicts Tune Rupture - Shifting or Tune Strain - Shifting during Basic Attacks, all DMG dealt by Resonators in the team is increased by {2} for 30s, up to 3 stacks. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "36%",
+          "45%",
+          "54%",
+          "63%",
+          "72%"
+        ],
+        "Array_2": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Static Mist",
+        "Slug": "static-mist",
+        "Rarity": 5,
+        "ID": "21030015",
+        "Effect": "Increases Energy Regen by {0}. When Outro Skill is released, increases the switched-in Resonator's ATK by {1}, stacking up to 1 time(s). This effect lasts for 14s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "The Last Dance",
+        "Slug": "the-last-dance",
+        "Rarity": 5,
+        "ID": "21030016",
+        "Effect": "Increases ATK by {0}. Every time Intro Skill or Resonance Liberation is cast, Resonance Skill DMG Bonus increases by {1} for 5s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "48%",
+          "60%",
+          "72%",
+          "84%",
+          "96%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 72,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Woodland Aria",
+        "Slug": "woodland-aria",
+        "Rarity": 5,
+        "ID": "21030026",
+        "Effect": "ATK is increased by {0}. Inflicting Aero Erosion on the target gives {1} Aero DMG Bonus for 10s. Hitting targets with Aero Erosion reduces their Aero RES by {2} for 20s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": [
+          "10%",
+          "11.5%",
+          "13%",
+          "14.5%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Rate-up"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Corrosaurus",
+        "Slug": "corrosaurus",
+        "ID": "6000120",
+        "Echo_skill": "Summon a Corrosaurus to attack enemies, dealing {0} Fusion DMG. The Resonator with this Echo equipped in the main slot gains 12.00% Fusion DMG Bonus and 20.00% Echo Skill DMG Bonus.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 1,
+        "Sonata_Group": [
+          16,
+          21
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "182.40%"
+        ],
+        "Skill_3": [
+          "212.80%"
+        ],
+        "Skill_4": [
+          "243.20%"
+        ],
+        "Skill_5": [
+          "273.60%"
+        ]
+      },
+      {
+        "Name": "Lioness of Glory",
+        "Slug": "lioness-of-glory",
+        "ID": "6000114",
+        "Echo_skill": "Summon the Halberd of Glory to crush an area, dealing {0} Fusion DMG to nearby targets, and then blast off after a short delay, dealing {1} Fusion DMG. The Resonator with this Echo equipped in the main slot gains 12.00% Fusion DMG Bonus and 12.00% Resonance Liberation DMG Bonus.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          16
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "54.72%",
+          "127.68%"
+        ],
+        "Skill_3": [
+          "63.84%",
+          "148.96%"
+        ],
+        "Skill_4": [
+          "72.96%",
+          "170.24%"
+        ],
+        "Skill_5": [
+          "82.08%",
+          "191.52%"
+        ]
+      },
+      {
+        "Name": "Reactor Husk",
+        "Slug": "reactor-husk",
+        "ID": "6000190",
+        "Echo_skill": "Transform into Reactor Husk, jumping into the air and unleashing a heavy slash that deals {0} Fusion DMG to enemies.\\n\\nThe Resonator with this Echo equipped in their main slot gain 10.00% Energy Regen.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          23,
+          27
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "234%"
+        ],
+        "Skill_3": [
+          "273%"
+        ],
+        "Skill_4": [
+          "312%"
+        ],
+        "Skill_5": [
+          "351%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Chromatic Foam",
+        "slug": "chromatic-foam",
+        "sonata_id": 27,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Fusion\">Fusion</strong> DMG% increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>When the Resonator inflicts Fusion Burst on the enemies, they gain the following effects: Gain <strong>10%</strong> <strong class=\"Fusion\">Fusion</strong> DMG Bonus for <strong>15s</strong>. While this effect is active, casting an Outro Skill grants the incoming Resonator <strong>25%</strong> <strong class=\"Fusion\">Fusion</strong> DMG Bonus for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_27.webp"
+      },
+      {
+        "name": "Empyrean Anthem",
+        "slug": "empyrean-anthem",
+        "sonata_id": 13,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Increase the Resonator&apos;s Coordinated Attack DMG by <strong>80%</strong>. Upon a critical hit of Coordinated Attack, increase the active Resonator&apos;s ATK by <strong>20%</strong> for <strong>4s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_13.webp"
+      },
+      {
+        "name": "Endless Resonance",
+        "slug": "endless-resonance",
+        "sonata_id": 9,
+        "type": "standard",
+        "bonus_2": "<p>ATK increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>While on the field, ATK increases by <strong>5%</strong> every <strong>1.5s</strong>, stacking up to <strong>4</strong> times. Outro Skill DMG increases by <strong>60%</strong>.</p>",
+        "aliases": "Lingering Tunes",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_9.webp"
+      },
+      {
+        "name": "Flamewing's Shadow",
+        "slug": "flamewings-shadow",
+        "sonata_id": 21,
+        "type": "compact",
+        "bonus_2": "",
+        "bonus_3": "<p>Dealing Echo Skill DMG increases Heavy Attack Crit. Rate by <strong>20%</strong> for <strong>6s</strong>. Dealing Heavy Attack DMG increases Echo Skill Crit. Rate by <strong>20%</strong> for <strong>6s</strong>. While both effects are active, gain <strong>16%</strong> Fusion DMG Bonus.</p>",
+        "bonus_5": "",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_21.webp"
+      },
+      {
+        "name": "Flaming Clawprint",
+        "slug": "flaming-clawprint",
+        "sonata_id": 16,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Fusion\">Fusion</strong> DMG + <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Casting Resonance Liberation grants all Resonators in the team <strong>15%</strong> <strong class=\"Fusion\">Fusion DMG</strong> Bonus and the caster 20% Resonance Liberation DMG Bonus, lasting for <strong>35s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_16.webp"
+      },
+      {
+        "name": "Halo of Starry Radiance",
+        "slug": "halo-of-starry-radiance",
+        "sonata_id": 23,
+        "type": "standard",
+        "bonus_2": "<p>Healing Bonus +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>When healing a Resonator in the team, every <strong>1%</strong> of Off-Tune Buildup Rate grants a <strong>0.2%</strong> ATK increase to all Resonators in the team for 4s, up to <strong>25%</strong>. Effects of the same name cannot be stacked.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_23.webp"
+      },
+      {
+        "name": "Molten Rift",
+        "slug": "molten-rift",
+        "sonata_id": 2,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Fusion\">Fusion</strong> DMG% increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Resonance Skill, <strong class=\"Fusion\">Fusion DMG</strong> increases by <strong>30%</strong> for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_2.webp"
+      },
+      {
+        "name": "Moonlit Clouds",
+        "slug": "moonlit-clouds",
+        "sonata_id": 8,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Outro Skill, ATK of the next Resonator increases by <strong>22.5%</strong> for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_8.webp"
+      },
+      {
+        "name": "Reel of Spliced Memories",
+        "slug": "reel-of-spliced-memories",
+        "sonata_id": 29,
+        "type": "standard",
+        "bonus_2": "<p>ATK increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Inflicting Tune Rupture - Shifting or Tune Strain - Shifting on enemies increases the Tune Break Boost of Resonators in the team by <strong>20</strong> for <strong>30s</strong>. Effects of the same name do not stack.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_29.webp"
+      },
+      {
+        "name": "Tidebreaking Courage",
+        "slug": "tidebreaking-courage",
+        "sonata_id": 14,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Increase the Resonator&apos;s ATK by <strong>15%</strong>. Reaching 250% Energy Regen increases all Attribute DMG by <strong>30%</strong> for the Resonator.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_14.webp"
+      },
+      {
+        "name": "Trailblazing Star",
+        "slug": "trailblazing-star",
+        "sonata_id": 26,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Fusion\">Fusion</strong> DMG% increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Inflicting Fusion Burst or Tune Rupture - Shifting increases the Resonator&apos;s Crit. Rate by <strong>20%</strong> and grants <strong>20%</strong> <strong class=\"Fusion\">Fusion</strong> DMG Bonus for <strong>8s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_26.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Galbrena",
+      "slug": "galbrena",
+      "toa_cat": "dps",
+      "toa_rating": 7,
+      "toa_tags": "Echo",
+      "toa_marks": "",
+      "ww_cat": "dps",
+      "ww_rating": 8,
+      "ww_tags": "Echo",
+      "ww_marks": "",
+      "overall_cat": "dps",
+      "overall_rating": 8,
+      "overall_tags": "Echo",
+      "overall_marks": "",
+      "rarity": 5,
+      "element": "Fusion",
+      "weapon": "Pistols",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S0"
+    }
+  ]
+}

@@ -1,0 +1,1521 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/roccia",
+  "fetchedAt": "2026-10-28T03:30:40.865Z",
+  "slug": "roccia",
+  "name": "Roccia",
+  "rarity": 5,
+  "element": "Havoc",
+  "weapon": "Gauntlets",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/card_roccia.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/roccia_full.webp"
+  },
+  "profile": {
+    "id": "cmoxpqefs00c9oau0s9yoa9w1",
+    "slug": "roccia",
+    "name": "Roccia",
+    "rarity": 5,
+    "element": "Havoc",
+    "weapon": "Gauntlets",
+    "devId": 1606,
+    "upcoming": false,
+    "introduction": "<p>Roccia is a gifted improvisational comedian and the First Mate of the Fool&#039;s Troupe, known for her mastery of stage props. With a tranquil, composed disposition, she navigates the ship&#039;s quarters, perched atop her giant box, meticulously ensuring the Troupe remains orderly and tidy. </p>",
+    "review": "<p>Roccia is a 5-star Havoc Gauntlets buffer who specializes in buffing Basic/Havoc DMG-dealing characters, with a focus on AoE grouping and the nice feature of having 1 extra Echo Skill cast compared to regular characters. Her rotation is quite fast and features a lot of mid-air action with some decent personal damage and buffing, similar to other characters of the 1.x-early 2.x era.</p><h6><strong><u>Key Mechanics &amp; Rotation</u></strong></h6><p>Roccia rotates on the principle of getting her Outro off as quickly as possible, like most supports and buffer-type characters. It provides 20% Havoc and 25% Basic DMG Amplification to the next character for 14s or until they are switched out, like most Hybrid Outros. To charge it up quickly, she needs to access some mid-air bouncing Heavy Attacks called “Real Fantasy”, as all stages give a ton of Concerto upon landing, increasing as the chain goes on.</p><p>To cast them, she needs to use (and hence build up) Imagination, her Forte gauge split in 3 bars. Roccia can achieve this either by charging a Heavy Attack on the ground, which is rather slow (but at least not slower than most of her Basics), or rotate with an Intro (which chains into a Basic 4) and a Skill, each restoring one of the thirds, which is much faster. Her Skill and ground Heavy Attack are in fact the only ways Roccia has of casting her Real Fantasy bounces, so in case she gets interrupted, her Heavy Attack is your best bet. This will however, slow Roccia’s rotation down significantly and is often grounds for resetting an endgame content run.</p><p>Her Ultimate also buffs the whole party’s ATK by up to 200 for 30s based on her CRIT Rate (maxxing out at 70%) upon casting. And upon casting Outro, Roccia unlocks a special Utility called Magic Box (like the Grapple, Flight or Motorbike utilities, for example), which counts as an extra Echo Skill cast. It deals a flat 100 damage but can group small enemies with your incoming character while Roccia is off-field.</p><h6><strong><u>Meta Position &amp; Conclusion</u></strong></h6><p>As you can see, we’re already done explaining all of Roccia’s buffs and essential rotation moves; she’s an extremely simple character. But that’s unfortunately not to her benefit. In the short rotation, Basic DMG buffing department, Sanhua is an extremely obvious pick that at S6 is already rivaling Roccia for her one use in Basic DMG buffing: Camellya. She already had a fully constituted team with Sanhua, and unfortunately for Roccia - who takes longer to rotate than the fastest Hybrid character in the entire game - her higher personal damage does not justify the rotation time increase, not to mention her buffs are barely better than Sanhua’s for Camellya specifically (and in terms of Basic DMG buffing, that’s all Roccia’s good at). To make matters worse, her grouping is not necessary since Camellya already has some of the widest AoE attacks in the entire game with her spin, Ultimate and Forte Skill. Overall, regarding her Outro and grouping, Roccia only exists as a sidegrade to a completely free character. Not looking good there.</p><p>So let’s shift the focus over to her personal damage and extra Echo Skill cast. She’s a perfect fit for the Phrolova team: an ideal recipient for Phrolova’s Outro, a party-wide ATK buff with her Ultimate, an extra Echo Skill cast to trigger an enhanced Hecate attack. Sure, her grouping is again not needed, since Hecate is the best crowd control utility in the entire game to date, but surely this makes Roccia good, right? Again, a missed opportunity. She’s barely better than Danjin, not better than Shorekeeper, and definitely way worse than Qiuyuan and Lucilla.&nbsp;</p><p>And this unfortunately already exhausted Roccia’s 2 “best” meta niches, if you can even call them that. Even with her Signature weapon equipped, Roccia’s personal damage increases barely make her better than her 4-star competition. In conclusion, Roccia, since her release, has always been destined to fail. She never stood out, even in 2 teams that were built with her in mind, due to a lack of significant buffs and not enough unique features compared to the free alternatives Sanhua and Danjin, and stronger premium alternatives like Lynae (for Camellya) and Qiuyuan/Lucilla (for Phrolova). Overall, unless you’re willing to pull Sequences for Roccia (which in itself is not even an optimal choice since you rather get Sequences on the DPS characters she supports or universal 3rd slots instead), unfortunately she’s either a sidegrade to free characters at best, or a bad premium alternative at worst, making her one of the least valuable limited 5-stars in Wuthering Waves. Here’s to hoping for a Roccia kit buff, because she needs one.</p>",
+    "pros": "<ul><li><p>Has a grouping utility that counts as an extra Echo Skill cast.</p></li><li><p>Has one of the best JP VAs and the cutest pet known to mankind.</p></li></ul><p></p>",
+    "cons": "<ul><li><p>Outclassed in every team she’s a part of (by Lynae, Qiuyuan or Lucilla), and easily replaced by 4-stars in every team she’s a part of (either by Danjin or Sanhua), particularly without her Signature weapon, where she’s just worse than 4-stars outright.</p></li><li><p>Low headroom for Swap Cancels due to a short rotation that relies on 3 mid-air moves that need to be chained one after the other following a specific attack (similar to Qiuyuan).</p></li><li><p>Signature is theoretically skippable, but she’s so close in value to 4-star characters that she needs it to stand out from them.</p></li><li><p>Very inconsistent rotations before S1; again, a similar problem to Qiuyuan where if one of her mid-airs gets interrupted, her rotation slows down massively and this only stops happening at S1 or higher.&nbsp;</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p style=\"text-align: justify;\">HP: <strong>16500+</strong></p></li><li><p style=\"text-align: justify;\">DEF: <strong>1150+</strong></p></li><li><p style=\"text-align: justify;\">ATK: <strong>1900-2600+</strong></p></li><li><p style=\"text-align: justify;\">CRIT Rate: <strong>70%+</strong></p></li><li><p style=\"text-align: justify;\">CRIT DMG: <strong>210-260%+</strong></p></li><li><p style=\"text-align: justify;\">Energy Regen: <strong>120-130%+</strong></p><ul><li><p style=\"text-align: justify;\">Lower end was estimated in a team with Phrolova+Cantarella, higher end was estimated in a team with Camellya+Shorekeeper.</p></li></ul></li><li><p style=\"text-align: justify;\">Havoc DMG Bonus: <strong>40-70%+</strong></p></li></ul><p></p>",
+    "rotations": "<h5><strong><u>Rotation &amp; Gameplay</u></strong></h5><p>Roccia’s rotations have very little room for flexibility and (infamously) lots of room for interruption. While she is very easy to play, be careful when rotating with her and keep in mind to dodge enemy attacks during her mid-air bounces.</p><div data-callout=\"\" class=\"callout callout-info\" style=\"--callout-color: #3B82F6;\" data-callout-type=\"info\"><div class=\"callout-icon\" data-icon=\"circle-info\"></div><div class=\"callout-content\"><h6>Echo Timing</h6><p>Varies depending on the rotation, but Roccia always uses a single-cast Transform Echo so timings will be written within the rotation.</p></div></div><h6><strong><u>Standard Rotation</u></strong></h6><ul><li><p>Intro</p></li><li><p>Basic 4 (Cancel animation endlag via Ultimate)</p></li><li><p>Ultimate</p></li><li><p>Skill (Interrupt animation via Dash on 1st hit)</p></li><li><p>Dash</p></li><li><p>Basic: Real Fantasy 1</p></li><li><p>Basic: Real Fantasy 2</p></li><li><p>Basic: Real Fantasy 3 (Cancel animation endlag via Echo)</p></li><li><p>Echo (Swap)</p></li><li><p>Outro</p></li></ul><p>Ultimate is used right after Basic 4 to ensure the quickest possible uptime on its ATK buff, as well as making Energy requirements on the 2nd rotation more lenient (in case of missing hits or interruption, for example). Although it’s fine to use it after all 3 Real Fantasies if needed. Skill is Dash Cancelled since it provides little benefit damage-wise; only the Concerto, Forte and Real Fantasy status matter, both being given on cast or by the 1st hit. This applies to all rotations that follow as well:</p><h6><strong><u>S1+ Hybrid Rotation</u></strong></h6><p>Since Roccia gets extra Imagination and Concerto from Intro, she can skip her Basic 4 at S1 or higher like this:</p><ul><li><p>Intro</p></li><li><p>Skill (Interrupt animation via Dash on 1st hit)</p></li><li><p>Dash</p></li><li><p>Basic: Real Fantasy 1</p></li><li><p>Basic: Real Fantasy 2</p></li><li><p>Basic: Real Fantasy 3 (Cancel animation endlag via Echo)</p></li><li><p>Ultimate</p></li><li><p>Echo (Swap)</p></li><li><p>Outro</p></li></ul><p>We move Roccia’s Ultimate to after her Real Fantasy basics on every rotation in order to have it benefit from her Signature’s passive effect.</p><h6><strong><u>S6 Main DPS Rotation</u></strong></h6><p>Finally, at S6, since Roccia can bounce indefinitely following her Real Fantasy bounces, she can rotate as an effective Main DPS like so:</p><ul><li><p>Intro</p></li><li><p>Basic 4 (Interrupt animation instantly via Ultimate to activate Signature passive)</p></li><li><p>Ultimate</p></li><li><p>Skill (Interrupt animation via Dash on 1st hit)</p></li><li><p>Dash</p></li><li><p>Basic: Real Fantasy 1</p></li><li><p>Basic: Real Fantasy 2</p></li><li><p>Basic: Real Fantasy 3</p></li><li><p>Basic: Fantasy Recreation (Until Outro buffs run out, should be up to 9 times) (Swap)</p></li><li><p>Outro</p></li></ul><p>We may skip out on casting Echo in this rotation, since casting an extra Fantasy Recreation Basic and switching out is a much better use of Roccia’s rotation time. Roccia may cast her Echo before her Intro if the team has proper Swap Cancel windows to allow for it.</p><p>Ultimate is cast immediately in spite of her Signature’s passive in order to have a smooth transition into her infinite Fantasy bounces.</p>",
+    "skills": [
+      {
+        "name": "Pero, Easy",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<p><b>Basic Attack</b></p><p>Perform up to <b>4</b> consecutive attacks, dealing <u>Havoc DMG.</u></p><p><b>Heavy Attack</b></p><p>Consume STA to attack, dealing <u>Havoc DMG</u>. Hitting a target with at least <b>100 </b>Imagination sends Roccia into mid-air and activates the Beyond Imagination state. The longer you hold the Basic Attack button, the more Imagination Roccia gains. In this state, Roccia can continue to charge the attack even when her STA depletes. Heavy Attack will be automatically cast when you release the Basic Attack button while charging or when Imagination reaches the max limit.</p><p><b>Mid-air Attack</b></p><p>Consume STA to perform a Plunging Attack, dealing <u>Havoc DMG</u>.</p><p><b>Dodge Counter</b></p><p>Use Basic Attack right after a successful Dodge to attack the target, dealing <u>Havoc DMG</u>. </p>",
+        "multipliers": [
+          {
+            "Lv1": "36.81%",
+            "Lv2": "39.83%",
+            "Lv3": "42.85%",
+            "Lv4": "47.07%",
+            "Lv5": "50.09%",
+            "Lv6": "53.56%",
+            "Lv7": "58.39%",
+            "Lv8": "63.22%",
+            "Lv9": "68.05%",
+            "Lv10": "73.18%",
+            "Name": "Stage 1 DMG"
+          },
+          {
+            "Lv1": "19.19%*3",
+            "Lv2": "20.76%*3",
+            "Lv3": "22.33%*3",
+            "Lv4": "24.53%*3",
+            "Lv5": "26.11%*3",
+            "Lv6": "27.92%*3",
+            "Lv7": "30.43%*3",
+            "Lv8": "32.95%*3",
+            "Lv9": "35.47%*3",
+            "Lv10": "38.14%*3",
+            "Name": "Stage 2 DMG"
+          },
+          {
+            "Lv1": "17.00%*2 + 51.00%",
+            "Lv2": "18.40%*2 + 55.19%",
+            "Lv3": "19.79%*2 + 59.37%",
+            "Lv4": "21.74%*2 + 65.22%",
+            "Lv5": "23.14%*2 + 69.41%",
+            "Lv6": "24.74%*2 + 74.22%",
+            "Lv7": "26.97%*2 + 80.91%",
+            "Lv8": "29.20%*2 + 87.60%",
+            "Lv9": "31.43%*2 + 94.29%",
+            "Lv10": "33.80%*2 + 101.40%",
+            "Name": "Stage 3 DMG"
+          },
+          {
+            "Lv1": "52.41%*2",
+            "Lv2": "56.70%*2",
+            "Lv3": "61.00%*2",
+            "Lv4": "67.02%*2",
+            "Lv5": "71.31%*2",
+            "Lv6": "76.26%*2",
+            "Lv7": "83.13%*2",
+            "Lv8": "90.01%*2",
+            "Lv9": "96.88%*2",
+            "Lv10": "104.19%*2",
+            "Name": "Stage 4 DMG"
+          },
+          {
+            "Lv1": "85.00%",
+            "Lv2": "91.97%",
+            "Lv3": "98.94%",
+            "Lv4": "108.70%",
+            "Lv5": "115.67%",
+            "Lv6": "123.69%",
+            "Lv7": "134.84%",
+            "Lv8": "145.99%",
+            "Lv9": "157.14%",
+            "Lv10": "168.99%",
+            "Name": "Heavy Attack DMG"
+          },
+          {
+            "Lv1": "52.70%",
+            "Lv2": "57.03%",
+            "Lv3": "61.35%",
+            "Lv4": "67.40%",
+            "Lv5": "71.72%",
+            "Lv6": "76.69%",
+            "Lv7": "83.60%",
+            "Lv8": "90.52%",
+            "Lv9": "97.43%",
+            "Lv10": "104.78%",
+            "Name": "Mid-air Attack DMG"
+          },
+          {
+            "Lv1": "34.66%*3",
+            "Lv2": "37.50%*3",
+            "Lv3": "40.34%*3",
+            "Lv4": "44.32%*3",
+            "Lv5": "47.16%*3",
+            "Lv6": "50.43%*3",
+            "Lv7": "54.97%*3",
+            "Lv8": "59.52%*3",
+            "Lv9": "64.07%*3",
+            "Lv10": "68.90%*3",
+            "Name": "Dodge Counter DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Heavy Attack STA Cost"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "STA Cost per Second while Charging"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack STA Cost"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Acrobatic Trick",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p>Roccia projects her creativity into reality, pulling in nearby targets and dealing <u>Havoc DMG</u>. She then launches into mid-air and activates the Beyond Imagination state.</p>",
+        "multipliers": [
+          {
+            "Lv1": "30.92%*8",
+            "Lv2": "33.46%*8",
+            "Lv3": "35.99%*8",
+            "Lv4": "39.54%*8",
+            "Lv5": "42.07%*8",
+            "Lv6": "44.99%*8",
+            "Lv7": "49.05%*8",
+            "Lv8": "53.10%*8",
+            "Lv9": "57.16%*8",
+            "Lv10": "61.47%*8",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Commedia Improvviso!",
+        "skill_type": "Resonance Liberation",
+        "description": "<p>Roccia&#039;s improvised comedy begins! Deal <u>Havoc DMG</u> to the target, considered Heavy Attack DMG. For every <b>0.1% </b>of Roccia&#039;s Crit. Rate over <b>50%</b>, this skill increases the ATK of all Resnonators in the team by<b> 1 </b>point for <b>30s</b>, up to <b>200 </b>points.</p>",
+        "multipliers": [
+          {
+            "Lv1": "140.00%*3",
+            "Lv2": "151.48%*3",
+            "Lv3": "162.96%*3",
+            "Lv4": "179.04%*3",
+            "Lv5": "190.52%*3",
+            "Lv6": "203.72%*3",
+            "Lv7": "222.09%*3",
+            "Lv8": "240.45%*3",
+            "Lv9": "258.82%*3",
+            "Lv10": "278.34%*3",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "125",
+            "Lv2": "125",
+            "Lv3": "125",
+            "Lv4": "125",
+            "Lv5": "125",
+            "Lv6": "125",
+            "Lv7": "125",
+            "Lv8": "125",
+            "Lv9": "125",
+            "Lv10": "125",
+            "Name": "Resonance Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "A Prop Master Prepares",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p><b>Beyond Imagination</b></p><ul><li><p>When Roccia is in Beyond Imagination with at least <b>100 </b>Imagination, press the Basic Attack button to consume <b>100 </b>Imagination to cast Basic Attack Real Fantasy.</p></li><li><p>Roccia exits this state when she is not airborne or when switched off the field.</p></li></ul><p><b>Basic Attack - Real Fantasy</b></p><ul><li><p>Perform up to <b>3</b> consecutive attacks, dealing <u>Havoc DMG</u>, considered Heavy Attack DMG. When Roccia lands after Stage <b>1 </b>and Stage <b>2 </b>attacks with over <b>100 </b>Imagination, she will launch into mid-air and activate Beyond Imagination.</p></li></ul><p><b>Imagination</b></p><p>Roccia can hold up to <b>300 </b>Imagination.</p><ul><li><p>Dealing DMG with Normal Attacks restores Imagination.</p></li><li><p>Hold Normal Attack to charge the next attack while restoring Imagination.</p></li><li><p>Casting Resonance Skill Acrobatic Trick restores <b>100 </b>Imagination.</p></li><li><p>Casting Intro Skill Pero, Help restores <b>100 </b>Imagination. </p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "162.00%",
+            "Lv2": "175.29%",
+            "Lv3": "188.57%",
+            "Lv4": "207.17%",
+            "Lv5": "220.45%",
+            "Lv6": "235.73%",
+            "Lv7": "256.99%",
+            "Lv8": "278.24%",
+            "Lv9": "299.49%",
+            "Lv10": "322.08%",
+            "Name": "Stage 1 DMG"
+          },
+          {
+            "Lv1": "171.00%",
+            "Lv2": "185.03%",
+            "Lv3": "199.05%",
+            "Lv4": "218.68%",
+            "Lv5": "232.70%",
+            "Lv6": "248.83%",
+            "Lv7": "271.26%",
+            "Lv8": "293.70%",
+            "Lv9": "316.13%",
+            "Lv10": "339.97%",
+            "Name": "Stage 2 DMG"
+          },
+          {
+            "Lv1": "180.00%",
+            "Lv2": "194.76%",
+            "Lv3": "209.52%",
+            "Lv4": "230.19%",
+            "Lv5": "244.95%",
+            "Lv6": "261.92%",
+            "Lv7": "285.54%",
+            "Lv8": "309.15%",
+            "Lv9": "332.77%",
+            "Lv10": "357.86%",
+            "Name": "Stage 3 DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Stage 1 Concerto Regen"
+          },
+          {
+            "Lv1": "16",
+            "Lv2": "16",
+            "Lv3": "16",
+            "Lv4": "16",
+            "Lv5": "16",
+            "Lv6": "16",
+            "Lv7": "16",
+            "Lv8": "16",
+            "Lv9": "16",
+            "Lv10": "16",
+            "Name": "Stage 2 Concerto Regen"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "Stage 3 Concerto Regen"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Immersive Performance",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Casting Resonance Skill or Heavy Attack increases Roccia&#039;s ATK by<b> 20%</b> for <b>12s</b>.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Super Attractive Magic Box",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>After casting Outro Skill, the Utility of the incoming Resonator is replaced with Magic Box.</p><p><b>Magic Box</b></p><ul><li><p>Upon use, pull nearby targets toward the Magic Box, dealing <b>100 </b>points of <u>Havoc DMG</u>. This skill is considered Echo Skill that deals Utility DMG.</p></li><li><p>The Magic Box lasts for <b>14s </b>or until the Resonator is switched out.</p></li></ul><p></p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Pero, Help",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Attack the target, dealing <u>Havoc DMG</u>. Use Basic Attack right after casting this skill to cast Basic Attack Stage 4.</p>",
+        "multipliers": [
+          {
+            "Lv1": "85.00%",
+            "Lv2": "91.97%",
+            "Lv3": "98.94%",
+            "Lv4": "108.70%",
+            "Lv5": "115.67%",
+            "Lv6": "123.69%",
+            "Lv7": "134.84%",
+            "Lv8": "145.99%",
+            "Lv9": "157.14%",
+            "Lv10": "168.99%",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Applause, Please!",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>The incoming Resonator has their <u>Havoc DMG</u> Amplified by <b>20% </b>and Basic Attack DMG Amplified by <b>25% </b>for <b>14s </b>or until the Resonator is switched out.</p>",
+        "type": "Outro Skill"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p>Casting Resonance Skill Acrobatic Trick grants <b>100 </b>additional Imagination and <b>10 </b>Concerto Energy.</p><p>Immune to interruptions when casting Basic Attack Real Fantasy </p>",
+      "dupe1_name": "Sequence Node 1",
+      "dupe2": "<p>Casting Basic Attack Real Fantasy grants all Resonators in the team <b>10%</b> <u>Havoc DMG</u> Bonus for <b>30s</b>, stacking up to <b>3</b> time. Upon reaching the max stacks, it grants all Resonators in the team <b>10%</b> additional <u>Havoc DMG</u> Bonus for <b>30s</b>.</p>",
+      "dupe2_name": "Sequence Node 2",
+      "dupe3": "<p>Casting Intro Skill Pero, Help increases Roccia&#039;s Crit. Rate by <b>10%</b> and Crit. DMG by <b>30%</b> for <b>15s</b>. </p>",
+      "dupe3_name": "Sequence Node 3",
+      "dupe4": "<p>Casting Resonance Skill Acrobatic Trick increases Basic Attack Real Fantasy&#039;s DMG Multiplier by <b>60%</b> for <b>12s</b>. </p>",
+      "dupe4_name": "Sequence Node 4",
+      "dupe5": "<p>Increase Resonance Liberation Commedia Improvviso!&#039;s DMG Multiplier by <b>20%</b> and Heavy Attack&#039;s DMG Multiplier by <b>80%</b>. </p>",
+      "dupe5_name": "Sequence Node 5",
+      "dupe6": "<p>Casting Resonance Liberation Commedia Improvviso! grants the following effects for <b>12s</b>: </p><ul><li><p>Basic Attack Real Fantasy ignores enemies&#039; DEF by <b>60%</b>.</p></li><li><p>When Roccia lands after performing Basic Attack Real Fantasy Stage 3, she is launched into mid-air, activating Beyond Imagination. In this state, Basic Attack becomes Basic Attack Reality Recreation, dealing DMG equal to <b>100%</b> of Basic Attack Real Fantasy Stage 3 DMG, considered Heavy Attack DMG. Roccia is immune to interruptions while casting Basic Attack Reality Recreation.</p></li><li><p>When Roccia lands after performing Basic Attack Reality Recreation, she is launched into mid-air, activating Beyond Imagination. Basic Attack Reality Recreation is only available in the Beyond Imagination state. </p></li></ul><p></p>",
+      "dupe6_name": "Sequence Node 6"
+    },
+    "voiceActors": {
+      "en": "",
+      "jpn": "",
+      "cn": "",
+      "kr": ""
+    },
+    "attributeBonus": [
+      {
+        "name": "CRIT DMG",
+        "value": 16
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": {
+      "skill": {
+        "name": "The Netherworld's Stare",
+        "number": 26
+      },
+      "common": [
+        {
+          "name": "LF Tidal Residuum",
+          "number_char": 4,
+          "number_skill": 25
+        },
+        {
+          "name": "MF Tidal Residuum",
+          "number_char": 12,
+          "number_skill": 28
+        },
+        {
+          "name": "HF Tidal Residuum",
+          "number_char": 12,
+          "number_skill": 40
+        },
+        {
+          "name": "FF Tidal Residuum",
+          "number_char": 4,
+          "number_skill": 57
+        }
+      ],
+      "ascension": {
+        "name": "Firecracker Jewelweed",
+        "number": 60
+      },
+      "skill_other": [
+        {
+          "name": "Cadence Seed",
+          "number": 25
+        },
+        {
+          "name": "Cadence Bud",
+          "number": 28
+        },
+        {
+          "name": "Cadence Leaf",
+          "number": 55
+        },
+        {
+          "name": "Cadence Blossom",
+          "number": 67
+        }
+      ],
+      "breakthrough": {
+        "name": "Cleansing Conch",
+        "number": 46
+      }
+    },
+    "videos": [
+      {
+        "video": "5j92khZ6E8I",
+        "url": "https://www.youtube.com/watch?v=5j92khZ6E8I"
+      }
+    ],
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "critdmg_atk",
+    "calculationsNotes": "<p><strong>Rotation time after Sequences:</strong> Post S1: 6.45s; Post S6: 7.5s.</p>"
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "roccia",
+      "build": 3.5,
+      "review": 3.6
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "roccia",
+        "Weapon": "Tragicomedy",
+        "Dupes": 1,
+        "Percentage": "100.00%",
+        "Percentage_2": "",
+        "Comment": "Roccia's Signature gives her the best personal damage increases she can get thanks to a 48% Heavy DMG and 24.3% CRIT Rate bonus, making it her best in slot weapon."
+      },
+      {
+        "ID": 2,
+        "Character": "roccia",
+        "Weapon": "Solsworn Ciphers",
+        "Dupes": 1,
+        "Percentage": "90.00%",
+        "Percentage_2": "",
+        "Comment": "Sigrika's Signature gives high ATK and CRIT DMG base stats and also amplifies Echo Skill DMG which represents more of Roccia's total damage than you'd expect, making it a decent alternative to her Signature, although her CRIT Rate requirements will prove harder to hit."
+      },
+      {
+        "ID": 3,
+        "Character": "roccia",
+        "Weapon": "Blazing Justice",
+        "Dupes": 1,
+        "Percentage": "88.20%",
+        "Percentage_2": "",
+        "Comment": "Similarly to Solsworn Ciphers, ATK and CRIT DMG stat-stick with a little extra 8% DEF Ignore throughout Roccia's rotation to add to its value slightly."
+      },
+      {
+        "ID": 4,
+        "Character": "roccia",
+        "Weapon": "Verity's Handle",
+        "Dupes": 1,
+        "Percentage": "88.10%",
+        "Percentage_2": "",
+        "Comment": "ATK, CRIT Rate and DMG Bonus stat-stick for Roccia, who does not benefit from this weapon's Liberation DMG-related effects."
+      },
+      {
+        "ID": 5,
+        "Character": "roccia",
+        "Weapon": "Pulsation Bracer",
+        "Dupes": 1,
+        "Percentage": "86.60%",
+        "Percentage_2": "",
+        "Comment": "Best permanent banner option, grants Roccia some much-desired 24% CRIT Rate and a strong Base ATK to work with. Good stat-stick without any extra effects."
+      },
+      {
+        "ID": 6,
+        "Character": "roccia",
+        "Weapon": "Moongazer's Sigil",
+        "Dupes": 1,
+        "Percentage": "84.70%",
+        "Percentage_2": "",
+        "Comment": "Massive CRIT Rate stat-stick at the cost of lower Base ATK, Roccia does not benefit from this weapon's Liberation DMG-related effects though."
+      },
+      {
+        "ID": 7,
+        "Character": "roccia",
+        "Weapon": "Abyss Surges",
+        "Dupes": 1,
+        "Percentage": "81.20%",
+        "Percentage_2": "",
+        "Comment": "Second best permanent weapon option, grants Roccia some Energy Regen and a lot of ATK%, but CRIT Rate requirements will be difficult to hit and the DMG Bonus effects are practically useless on her."
+      },
+      {
+        "ID": 8,
+        "Character": "roccia",
+        "Weapon": "Aether Strike",
+        "Dupes": 5,
+        "Percentage": "72.90%",
+        "Percentage_2": "",
+        "Comment": "This Battle Pass exclusive grants Roccia some CRIT DMG and easily accessed ATK bonuses, making it the overall best 4-star choice theoretically. Still, meeting CRIT Rate requirements will prove difficult and this weapon is overall not recommended over Pulsation Bracer or her Signature, like any other 4-star, due to their lower Base ATK."
+      },
+      {
+        "ID": 9,
+        "Character": "roccia",
+        "Weapon": "Celestial Spiral",
+        "Dupes": 5,
+        "Percentage": "72.60%",
+        "Percentage_2": "",
+        "Comment": "Grants Roccia some flat Energy to alleviate Energy requirements and a decent Base ATK, but is just an ATK stat-stick beyond this with nothing much to provide Roccia with."
+      },
+      {
+        "ID": 10,
+        "Character": "roccia",
+        "Weapon": "Stonard",
+        "Dupes": 5,
+        "Percentage": "69.50%",
+        "Percentage_2": "",
+        "Comment": "This Battle Pass exclusive has a useless Liberation DMG-boosting passive for Roccia, but provides her with some CRIT Rate to alleviate her requirements there. Still not recommended though, due to low Base ATK and generally bad stats."
+      },
+      {
+        "ID": 11,
+        "Character": "roccia",
+        "Weapon": "Hollow Mirage",
+        "Dupes": 5,
+        "Percentage": "69.20%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK stat-stick that relies on you not getting hit to leverage its ATK-boosting passive stacks fully. Not recommended on Roccia, like any other 4-star weapon."
+      },
+      {
+        "ID": 12,
+        "Character": "roccia",
+        "Weapon": "Legend of Drunken Hero",
+        "Dupes": 5,
+        "Percentage": "66.60%",
+        "Percentage_2": "",
+        "Comment": "Best no-gacha option for Roccia, simple ATK stat-stick with no passive to take advantage of whatsoever since it's Negative Status-related and Roccia plays in no such teams. This can be a temporary weapon choice, but to move away from this weapon and equip her with at least Pulsation Bracer as soon as possible, if you can."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "roccia",
+        "Type": "Best",
+        "Set": "Midnight Veil",
+        "Percentage": "1",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Offers a 10% unconditional Havoc DMG% boost alongside adding a large Havoc Damage hit to the Outro of the wearer. Also grants the incoming resonator a Havoc DMG% boost when the wearer uses their Outro. The set is better than Moonlit Clouds if and only if the equipped character's Echoes have endgame investment (with 9 or 10 CRIT substats total) and the character has a 5-star weapon equipped. If both conditions aren't met, Moonlit Clouds is a better choice. ",
+        "Echo_1": "Nightmare: Impermanence Heron",
+        "Echo_1_Comment": "Offers an unconditional 12% Havoc DMG and 12% Heavy Attack DMG boost when placed in the Main Echo slot, making it a solid choice for Havoc focused resonators who emphasize Heavy Attack damage and are looking to use the 5P Midnight Veil set bonus.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      },
+      {
+        "ID": 2,
+        "Character": "roccia",
+        "Type": "Best",
+        "Set": "Moonlit Clouds",
+        "Percentage": "2",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Offers a 10% unconditional Energy Regen% boost taking some pressure off your gear when aiming at ER breakpoints. Also upon using Outro, grants the next character switching in a 22.5% ATK boost, amplifying any of your main damage dealers burst windows.",
+        "Echo_1": "Impermanence Heron",
+        "Echo_1_Comment": "Supportive Echo that can be run at the cost of a sizeable chunk of damage for the character who equips, trading personal gain for team benefits. Should always be used and immediately switch cancelled right before performing an Outro, leading to another DPS. When done so will grant the next character switching in 12% increased DMG% which when combined with the 5P Moonlit set which also grants 22.5% ATK% under the same conditions makes for a sizeable boost. While the echo does lower the damage of whoever wears it, it grants a massive chunk of energy on use usually saving 1 or sometimes even 2 Energy Regen sub stats that may otherwise be needed by the wearer allowing for some damage to be recovered.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "roccia",
+        "Character": "roccia",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Havoc DMG",
+        "Echo_3": "Havoc DMG > ATK%",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate > CRIT DMG > ATK% > Heavy ATK DMG% > ATK",
+        "Comments": "Prioritize getting 70% CRIT Rate for the maximum possible buffs on her Ultimate once enough Energy Regen is accumulated."
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "roccia",
+        "Type": "",
+        "Order": "Forte Circuit, Res. Liberation, Basic Attack, Intro Skill, Res. Skill",
+        "Comments": "Basic, Intro and Skill can be skipped when levelling to save on resources at a minimal damage loss."
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "roccia",
+        "Name": "Best Team",
+        "Member_1": "phrolova",
+        "Member_2": "cantarella",
+        "Member_3": "roccia",
+        "Comments": ""
+      },
+      {
+        "ID": 2,
+        "Character": "roccia",
+        "Name": "Camellya Team",
+        "Member_1": "camellya",
+        "Member_2": "roccia",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": ""
+      },
+      {
+        "ID": 3,
+        "Character": "roccia",
+        "Name": "Havoc Rover Team",
+        "Member_1": "rover-havoc",
+        "Member_2": "roccia",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": ""
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "roccia",
+        "Synergy": "camellya",
+        "Comment": "Roccia amplifies Havoc DMG by 20% and Basic Attack DMG by 25% on Outro, making the synergy with Camellya, who does those two damage types the most by far, extremely natural. Camellya's best in slot buffer, no doubt (despite being very competitive with Sanhua)."
+      },
+      {
+        "ID": 2,
+        "Character": "roccia",
+        "Synergy": "phrolova",
+        "Comment": "Roccia is one of the best third slot teammate to the Phrolova-Cantarella trio as she is the best recipient of Phrolova's Outro Skill which amplifies Havoc DMG and Heavy Attack DMG by 20% and 25% respectively, lining up with Roccia's damage types and allowing a trio with Cantarella to always upkeep high damage, making for a strong Phrolova team."
+      },
+      {
+        "ID": 3,
+        "Character": "roccia",
+        "Synergy": "rover-havoc",
+        "Comment": "Roccia's 20% Havoc and 25% Basic Attack DMG Amplify on Outro are some of the best buffs Havoc Rover can receive, but additionally Roccia's grouping are very much appreciated with Havoc Rover's small AoE attacks that do big damage. Easily Havoc Rover's best buffer."
+      },
+      {
+        "ID": 4,
+        "Character": "roccia",
+        "Synergy": "verina",
+        "Comment": "One of the usual Healing Support options that can slot into any team. Super easy to use, provides amazing team-wide ATK% buffs and 15% DMG Amplify with one of the fastest rotations in the game. Enjoy. "
+      },
+      {
+        "ID": 5,
+        "Character": "roccia",
+        "Synergy": "the-shorekeeper",
+        "Comment": "Similar to Verina, a premium Healing Support option who can not only slot into any team, but also provide insane 12.5% Crit Rate, 25% Crit DMG, 25% ATK and 15% DMG Amplify buffs to your whole team. One of the best but also easy to use characters in the game. "
+      }
+    ]
+  },
+  "stats": {
+    "slug": "roccia",
+    "name": "Roccia",
+    "unit_id": 1606,
+    "base_hp": 980,
+    "base_atk": 30,
+    "base_def": 98,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 125,
+    "bonus_ele": 0,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 0,
+    "bonus_crit": 0,
+    "bonus_critdmg": 16,
+    "bonus_hp": 0
+  },
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "roccia",
+        "name": "Roccia",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 244695,
+          "damage_e1": 232621,
+          "damage_e2": 273440,
+          "damage_e3": 322680,
+          "damage_e4": 399672,
+          "damage_e5": 420799,
+          "damage_e6": 511835
+        },
+        "dps": {
+          "damage": 47605,
+          "damage_e1": 49493,
+          "damage_e2": 58178,
+          "damage_e3": 68655,
+          "damage_e4": 85055,
+          "damage_e5": 89531,
+          "damage_e6": 108901
+        },
+        "time": "6.65",
+        "echo_main": "Nightmare: Impermanence Heron",
+        "echo_4": "CRIT Rate",
+        "echo_3": "Havoc DMG",
+        "echo_3a": "Havoc DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "Energy Regen (18.3%), CRIT Rate (40.4%), CRIT DMG (80.7%), ATK (25.8%), Heavy Attack DMG Bonus (8.6%)",
+        "set_1": "Midnight Veil",
+        "set_2": "",
+        "weapon": "Tragicomedy",
+        "weapon_S": 1
+      },
+      "team": {
+        "ID": 1,
+        "Character": "roccia",
+        "Member_1_Name": "phrolova",
+        "Member_1_Weapon": "Lethean Elegy",
+        "Member_1_Set": "Dream of the Lost",
+        "Member_1_Echo": "Nightmare: Hecate",
+        "Member_2_Name": "cantarella",
+        "Member_2_Weapon": "Whispers of Sirens",
+        "Member_2_Set": "Midnight Veil",
+        "Member_2_Echo": "Lorelei"
+      },
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      12073
+    ],
+    [
+      "Heavy",
+      170745
+    ],
+    [
+      "Skill",
+      3652
+    ],
+    [
+      "Liberation",
+      0
+    ],
+    [
+      "Intro",
+      9350
+    ],
+    [
+      "Outro",
+      26557
+    ],
+    [
+      "Echo",
+      22408
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Abyss Surges",
+        "Slug": "abyss-surges",
+        "Rarity": 5,
+        "ID": "21040015",
+        "Effect": "Increases Energy Regen by {0}. When hitting a target with Resonance Skill, increases Basic Attack DMG Bonus by {1}, lasting for {2}. When hitting a target with Basic Attacks, increases Resonance Skill DMG Bonus by {3}, lasting for {4}s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": [
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "Array_3": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_4": [
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 36.4,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Aether Strike",
+        "Slug": "aether-strike",
+        "Rarity": 4,
+        "ID": "21040104",
+        "Effect": "Casting Resonance Liberation increases ATK by {0} and grants {1} Resonance Liberation DMG Bonus for 15s.",
+        "Array_0": [
+          "7.2%",
+          "11.1%",
+          "15.1%",
+          "19%",
+          "23%"
+        ],
+        "Array_1": [
+          "10.8%",
+          "16.7%",
+          "22.6%",
+          "28.6%",
+          "34.5%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 40.5,
+        "Source": "Battle Pass"
+      },
+      {
+        "Name": "Blazing Justice",
+        "Slug": "blazing-justice",
+        "Rarity": 5,
+        "ID": "21040036",
+        "Effect": "Increases ATK by {0}. Casting Basic Attack grants the following effects: Dealing damage ignores {1} of the target's DEF and Amplifies Spectro Frazzle DMG dealt by {2} for 6s. Retriggering the effect resets its duration.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_2": [
+          "50%",
+          "62.5%",
+          "75%",
+          "87.5%",
+          "100%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Celestial Spiral",
+        "Slug": "celestial-spiral",
+        "Rarity": 4,
+        "ID": "21040084",
+        "Effect": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for 16s. This effect can be triggered once every 20s.",
+        "Array_0": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Hollow Mirage",
+        "Slug": "hollow-mirage",
+        "Rarity": 4,
+        "ID": "21040064",
+        "Effect": "When Resonance Liberation is released, grants 3 stack(s) of Iron Armor. Each stack increases ATK and DEF by {0}, stacking up to 3 time(s). When the Resonator takes damage, reduces the number of stacks by 1.",
+        "Array_0": [
+          "3%",
+          "3.5%",
+          "4%",
+          "4.5%",
+          "5%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 412,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 30.3,
+        "Source": ""
+      },
+      {
+        "Name": "Legend of Drunken Hero",
+        "Slug": "legend-of-drunken-hero",
+        "Rarity": 4,
+        "ID": "21040094",
+        "Effect": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for 10s. This effect can be triggered 1 time per second, stackable up to 4 times.",
+        "Array_0": [
+          "4%",
+          "5%",
+          "6%",
+          "7%",
+          "8%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Crafting"
+      },
+      {
+        "Name": "Moongazer's Sigil",
+        "Slug": "moongazer-s-sigil",
+        "Rarity": 5,
+        "ID": "21040046",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or Resonance Liberation increases Resonance Liberation DMG by {1} for 15s. Obtaining Shield allows Resonance Liberation DMG to ignore {2} of the target's DEF for 7s, stacking up to 5 times. This effect is triggered once every 0.5s. Upon casting Intro Skill, this effect reaches max stacks immediately, lasting for 3s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_2": [
+          "7.2%",
+          "8.4%",
+          "9.6%",
+          "10.8%",
+          "12%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Pulsation Bracer",
+        "Slug": "pulsation-bracer",
+        "Rarity": 5,
+        "ID": "21040045",
+        "Effect": "Increases ATK by {0}. Dealing damage to targets under Tune Strain: Interfered grants {1} Basic Attack DMG Bonus for 3s, stacking up to 4 times. This effect can be triggered once every 0.5s. Retriggering the effect resets its duration.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "6%",
+          "6.7%",
+          "7.5%",
+          "8.2%",
+          "9%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Solsworn Ciphers",
+        "Slug": "solsworn-ciphers",
+        "Rarity": 5,
+        "ID": "21040066",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or Echo Skill grants {1} Echo Skill DMG Amplification for 15s. When dealing Echo Skill DMG, Aero DMG ignores {2} of the target's DEF for 6s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "32%",
+          "40%",
+          "48%",
+          "56%",
+          "64%"
+        ],
+        "Array_2": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Stonard",
+        "Slug": "stonard",
+        "Rarity": 4,
+        "ID": "21040074",
+        "Effect": "When Resonance Skill is released, increases the caster's Resonance Liberation DMG Bonus by {0}, lasting for 15s.",
+        "Array_0": [
+          "18%",
+          "27%",
+          "36%",
+          "45%",
+          "54%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 20.2,
+        "Source": "Pioneer Podcast"
+      },
+      {
+        "Name": "Tragicomedy",
+        "Slug": "tragicomedy",
+        "Rarity": 5,
+        "ID": "21040026",
+        "Effect": "Increases ATK by {0}. Every time Basic Attack or Intro Skill is cast, Heavy Attack DMG Bonus increases by {1} for 3s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "48%",
+          "60%",
+          "72%",
+          "84%",
+          "96%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Verity's Handle",
+        "Slug": "verity-s-handle",
+        "Rarity": 5,
+        "ID": "21040016",
+        "Effect": "Gain {0} Attribute DMG Bonus. When using Resonance Liberation, the wielder gains {1} Resonance Liberation DMG Bonus for 8s. This effect can be extended by 5 seconds each time Resonance Skills are cast, up to 3 times.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "48%",
+          "60%",
+          "72%",
+          "84%",
+          "94%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Gacha"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Impermanence Heron",
+        "Slug": "impermanence-heron",
+        "ID": "330000030",
+        "Echo_skill": "Transform into Impermanence Heron to fly up and smack down, dealing {0} Havoc DMG. Long press to stay as Impermanence Heron Heron and continuously spit flames, each attack dealing {1} Havoc DMG. Once the initial attack lands on any enemy, the current character regains <b>10</b> Resonance Energy. If the current character uses their Outro Skill within the next <b>15s</b>, the next character’s damage dealt will be boosted by <b>12%</b> for <b>15s</b>.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          8
+        ],
+        "Skill_1": [
+          "194.10%",
+          "34.83%",
+          "25"
+        ],
+        "Skill_2": [
+          "223.22%",
+          "40.05%",
+          "25"
+        ],
+        "Skill_3": [
+          "252.33%",
+          "45.28%",
+          "25"
+        ],
+        "Skill_4": [
+          "281.45%",
+          "50.50%",
+          "25"
+        ],
+        "Skill_5": [
+          "310.56%",
+          "55.73%",
+          "25"
+        ]
+      },
+      {
+        "Name": "Lorelei",
+        "Slug": "lorelei",
+        "ID": "330000110",
+        "Echo_skill": "Transform into Lorelei and attack surrounding enemies, dealing {0} Havoc DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Havoc DMG Bonus and 12.00% Basic Attack DMG Bonus.\\n\\nCD: <b>25s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          12
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "270%"
+        ],
+        "Skill_3": [
+          "315%"
+        ],
+        "Skill_4": [
+          "360%"
+        ],
+        "Skill_5": [
+          "405%"
+        ]
+      },
+      {
+        "Name": "Nightmare: Hecate",
+        "Slug": "nightmare-hecate",
+        "ID": "6000115",
+        "Echo_skill": "Transform into Nightmare: Hecate. Leap up and smash down, dealing 3 stages of damage, each dealing Havoc DMG equal to {0} of her ATK. The Resonator with the Echo equipped in the main slot gains 12.00% Havoc DMG Bonus and 20.00% Echo Skill DMG Bonus.\\n\\nCD: <b>25s</b>.",
+        "Rarity": 3,
+        "Sonata_Group": [
+          18
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "101.59%"
+        ],
+        "Skill_3": [
+          "118.52%"
+        ],
+        "Skill_4": [
+          "135.46%"
+        ],
+        "Skill_5": [
+          "152.39%"
+        ]
+      },
+      {
+        "Name": "Nightmare: Impermanence Heron",
+        "Slug": "nightmare-impermanence-heron",
+        "ID": "330000150",
+        "Echo_skill": "Transform into Nightmare: Impermanence Heron and deliver up to 10 consecutive strikes to surrounding enemies, each dealing {0} Havoc DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Havoc DMG Bonus and 12.00% Heavy Attack DMG Bonus.\\n\\nCD: <b>25s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          12
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "27%"
+        ],
+        "Skill_3": [
+          "31.50%"
+        ],
+        "Skill_4": [
+          "36%"
+        ],
+        "Skill_5": [
+          "40.50%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Dream of the Lost",
+        "slug": "dream-of-the-lost",
+        "sonata_id": 18,
+        "type": "compact",
+        "bonus_2": "",
+        "bonus_3": "<p>Holding 0 Resonance Energy increases Crit. Rate by <strong>20%</strong> and grants <strong>35%</strong> Echo Skill DMG Bonus.</p>",
+        "bonus_5": "",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_18.webp"
+      },
+      {
+        "name": "Midnight Veil",
+        "slug": "midnight-veil",
+        "sonata_id": 12,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Havoc\">Havoc</strong> DMG +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>When Outro Skill is triggered, deal additional 480% <strong class=\"Havoc\">Havoc DMG</strong> to surrounding enemies, considered Outro Skill DMG, and grant the incoming Resonator 15% <strong class=\"Havoc\">Havoc DMG</strong> Bonus for 15s.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_12.webp"
+      },
+      {
+        "name": "Moonlit Clouds",
+        "slug": "moonlit-clouds",
+        "sonata_id": 8,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Outro Skill, ATK of the next Resonator increases by <strong>22.5%</strong> for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_8.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Roccia",
+      "slug": "roccia",
+      "toa_cat": "hybrid",
+      "toa_rating": 5,
+      "toa_tags": "Echo",
+      "toa_marks": "",
+      "ww_cat": "hybrid",
+      "ww_rating": 6,
+      "ww_tags": "Echo",
+      "ww_marks": "",
+      "overall_cat": "hybrid",
+      "overall_rating": 6,
+      "overall_tags": "Echo",
+      "overall_marks": "",
+      "rarity": 5,
+      "element": "Havoc",
+      "weapon": "Gauntlets",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S0"
+    }
+  ]
+}

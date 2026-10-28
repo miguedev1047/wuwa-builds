@@ -1,0 +1,1522 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/rover-electro",
+  "fetchedAt": "2026-10-28T03:30:41.437Z",
+  "slug": "rover-electro",
+  "name": "Rover (Electro)",
+  "rarity": 5,
+  "element": "Electro",
+  "weapon": "Sword",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/rover_card.webp",
+    "full": "$undefined"
+  },
+  "profile": {
+    "id": "cmqvxblym002607l8u4xa7i3s",
+    "slug": "rover-electro",
+    "name": "Rover (Electro)",
+    "rarity": 5,
+    "element": "Electro",
+    "weapon": "Sword",
+    "devId": 60,
+    "upcoming": false,
+    "introduction": null,
+    "review": "<p>Electro Rover is a 5-star Electro Sword Hybrid character who applies Electro Flare and buffs Negative Status characters. They follow a simple rotation that involves building their Forte up to the maximum to cast an enhanced attack before switching out.</p><h6><strong><u>Key Mechanics &amp; Rotation</u></strong></h6><p>Electro Rover applies a total of 15 Electro Flare stacks: 10 via their Forte Skill, 5 via their Ultimate at S2. They access this Forte Skill by charging up Electric Surge, a 120-point Forte gauge that is restored via their Basic Attacks and Skill.</p><p>Once this Forte gauge is full, they have 2 options: tap their Skill, which makes the team benefit from a 10% ATK buff for 20s while dealing some solid damage, and holding their Skill to enter a special state called Apex Resonance.</p><p>Unfortunately, while Apex Resonance is meant to be a sort of Main DPS state where Electro Rover uses all of their elements accessed earlier in the story in order to deal damage at significant field time costs, they not only forfeit the party-wide ATK buff (which doesn’t mesh well with their Outro), they also spend way too long dealing objectively mediocre damage. Judging by this, they are best relegated to only tapping the Forte Skill, rendering this part of their kit nothing more than a gimmick used for Main Story content (meaning their S6 is also useless in practical gameplay).</p><p>So as a Hybrid, what do they provide? On top of that 10% ATK buff and Electro Flare stacks mentioned earlier, their Outro also provides 25% all-type DMG Amplification to any character who inflicts a Negative Status, which is a buff that is lost on swap. Not only is this a minor buff, Electro Rover is our first Negative Status character whose Outro expires on swap, firmly cementing them as a Hybrid character.</p><p>And… that’s it. Since their Sequences are free, we’ll mention them - aside from the S2 that applies extra Electro Flare, they’re only small personal damage or Interruption Resistance increases. S5 and S6 are also useless in practice, since they’re related to their Hold Skill.</p><h6><strong><u>Meta Position &amp; Conclusion</u></strong></h6><p>If it wasn’t obvious, Electro Rover is essentially a completely useless character in the current meta… outside of Hsin Electro Flare teams. Indeed, since Hsin’s kit mentions Electro Rover by name, when the two are used alongside each other, Hsin will benefit from extra buffs. In spite of Electro Rover’s low Electro Flare application relative to even a character like Buling, the fact that their existence makes Hsin benefit from extra Electro DMG Bonus is enough for them to be justified on her Electro Flare team. However, they may easily be outclassed in the future on the chance that they get replaced by a limited Electro Flare-applying Hybrid character. That being said, Electro Rover is overall the best current Hybrid for Electro Flare Hsin, so they are still easily justified to be built for that team if you have it.</p><p>In conclusion, Electro Rover is a good character for Electro Flare Hsin, and that’s basically all they do. Their account value is completely tied to Hsin being on your account, otherwise they are functionally useless. With that being said, they are worth your investment if you don’t make use of your Rover elsewhere, own Hsin, and want to play her in an Electro Flare team - do consider them in that case!</p>",
+    "pros": "<ul><li><p>The best secondary for Hsin in Electro Flare teams currently;</p></li><li><p>Low costs in terms of weapon and Echo investment - can easily be built in little time;</p></li><li><p>They and their Sequences are free!</p></li></ul><p></p>",
+    "cons": "<ul><li><p>Buffs are too low for them to have any synergy with anybody other than Hsin who has specific mentions of Electro Rover in her kit. Their only real use case is to buff Electro Flare Hsin and that’s basically it;</p></li><li><p>Fairly long rotation for a Hybrid character;</p></li><li><p>Outro buff expires on Swap. Unprecedented for a Negative Status character.</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p style=\"text-align: justify;\">HP: <strong>15000+</strong></p></li><li><p style=\"text-align: justify;\">DEF: <strong>1100+</strong></p></li><li><p style=\"text-align: justify;\">ATK: <strong>2100-2400+</strong></p></li><li><p style=\"text-align: justify;\">CRIT Rate: <strong>65-80%+</strong></p></li><li><p style=\"text-align: justify;\">CRIT DMG: <strong>210-260%+</strong></p></li><li><p style=\"text-align: justify;\">Energy Regen: <strong>117-120%+</strong></p><ul><li><p style=\"text-align: justify;\">Lower end was estimated in a Hsin/Suisui team, higher end was estimated in a Hsin/Buling team.</p></li></ul></li><li><p style=\"text-align: justify;\">Electro DMG Bonus: <strong>40-70%+</strong></p></li></ul><p></p>",
+    "rotations": "<h5><strong><u>Rotation &amp; Gameplay</u></strong></h5><p>Electro Rover wants to build their Electric Surge gauge as fast as possible in order to cast their Forte Skill, Overshock, dealing most of their personal damage and applying the majority of their Electro Flare, to then Outro and buff the next character. The quickest Electric Surge buildup rotation is performed as such:</p><div data-callout=\"\" class=\"callout callout-info\" style=\"--callout-color: #3B82F6;\" data-callout-type=\"info\"><div class=\"callout-icon\" data-icon=\"circle-info\"></div><div class=\"callout-content\"><h6>Echo Timing</h6><p>Soulfrayer is free to be summoned at any point in their rotation.</p></div></div><h6><u>Standard Rotation</u></h6><ul><li><p>Intro</p></li><li><p>Basic 1</p></li><li><p>Basic 2</p></li><li><p>Basic 3</p></li><li><p>Basic 4</p></li><li><p>Skill&nbsp;</p></li><li><p>Basic: Repel (Cancel animation endlag via Ultimate)</p></li><li><p>Ultimate</p></li><li><p>Skill: Overshock</p></li><li><p>Outro</p></li></ul><h6><u>Double Intro Rotation</u></h6><p>Useful in teams where the Support character does not benefit from Introing twice, e.g in Hsin/Electro Rover/Buling. Significant but situational time-save.</p><ul><li><p>Intro</p></li><li><p>Heavy: Riposte Strike (Swap)</p></li><li><p>Intro</p></li><li><p>Skill</p></li><li><p>Basic: Repel (Cancel animation endlag via Ultimate)</p></li><li><p>Ultimate</p></li><li><p>Skill: Overshock</p></li><li><p>Outro</p></li></ul><p>The Heavy (Swap) is performed only to give Electro Rover some extra Concerto Energy needed for this rotation to finish, but it remains mandatory.</p><h5><strong><u>Additional Tips &amp; Tricks</u></strong></h5><p>In Quickswap, Electro Rover is completely free to pre-build their Forte gauge during your other characters’ rotations through their Basic Attacks and Skill. Take note of this in order to speed up your team’s rotation significantly if you want to push them further!</p><p></p>",
+    "skills": [
+      {
+        "name": "Deterrence",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<h6>Basic Attack</h6><ul><li><p>Perform up to <strong>4 </strong>consecutive attacks, dealing <u>Electro DMG</u>.</p></li></ul><h6>Parry Stance</h6><ul><li><p>Hold Normal Attack to enter Parry Stance at the cost of STA.</p></li><li><p>While active, Rover is immune to interruptions, takes <strong>60% </strong>less DMG, and continuously consumes STA. Release Normal Attack to exit Parry Stance and perform Basic Attack - Riposte Strike, dealing <u>Electro DMG</u>.</p></li><li><p>If an attack hits Rover during a certain period of Basic Attack - Riposte Strike, neutralize this attack and temporarily Stagnate the target before performing Basic Attack - Riposte Strike: Crumble, dealing <u>Electro DMG</u>.</p></li><li><p>Press Normal Attack shortly after casting Basic Attack - Riposte Strike to cast Basic Attack Stage 2.</p></li><li><p>Press Normal Attack shortly after casting Basic Attack - Riposte Strike: Crumble to cast Mid-air Attack - Havoc.</p></li><li><p>In Parry Stance, use Dodge to consume STA to perform Dodge: Flicker, which can trigger successful Dodges during the action of this skill shortly after it's cast.</p></li></ul><h6>Mid-air Attack</h6><ul><li><p>Consume STA to perform a Plunging Attack from mid-air, dealing <u>Electro DMG</u>.</p></li></ul><h6>Mid-air Attack - Havoc</h6><ul><li><p>Perform up to <strong>3 </strong>consecutive strikes, dealing <u>Havoc DMG</u>. Press Normal Attack shortly after casting Stage 3 of this skill to perform Basic Attack Stage 4.</p></li></ul><h6>Dodge Counter</h6><ul><li><p>Press Normal Attack right after a successful Dodge to attack the target, dealing <u>Electro DMG</u>.</p></li><li><p>Press Normal Attack shortly after to perform Basic Attack Stage 3.</p></li></ul><h6>Mid-air Dodge Counter</h6><ul><li><p>Press Normal Attack right after a successful Dodge in mid-air to perform Plunging Attack at the cost of STA, dealing <u>Electro DMG</u>.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "25.69%",
+            "Lv2": "27.80%",
+            "Lv3": "29.91%",
+            "Lv4": "32.86%",
+            "Lv5": "34.96%",
+            "Lv6": "37.39%",
+            "Lv7": "40.76%",
+            "Lv8": "44.13%",
+            "Lv9": "47.50%",
+            "Lv10": "51.08%",
+            "Name": "Basic Attack Stage 1 DMG"
+          },
+          {
+            "Lv1": "13.08%+19.62%",
+            "Lv2": "14.15%+21.23%",
+            "Lv3": "15.23%+22.84%",
+            "Lv4": "16.73%+25.09%",
+            "Lv5": "17.80%+26.70%",
+            "Lv6": "19.03%+28.55%",
+            "Lv7": "20.75%+31.12%",
+            "Lv8": "22.46%+33.69%",
+            "Lv9": "24.18%+36.27%",
+            "Lv10": "26.00%+39.00%",
+            "Name": "Basic Attack Stage 2 DMG"
+          },
+          {
+            "Lv1": "6.67%*7",
+            "Lv2": "7.22%*7",
+            "Lv3": "7.77%*7",
+            "Lv4": "8.53%*7",
+            "Lv5": "9.08%*7",
+            "Lv6": "9.71%*7",
+            "Lv7": "10.59%*7",
+            "Lv8": "11.46%*7",
+            "Lv9": "12.34%*7",
+            "Lv10": "13.27%*7",
+            "Name": "Basic Attack Stage 3 DMG"
+          },
+          {
+            "Lv1": "36.63%+54.94%",
+            "Lv2": "39.63%+59.45%",
+            "Lv3": "42.64%+63.95%",
+            "Lv4": "46.84%+70.26%",
+            "Lv5": "49.84%+74.76%",
+            "Lv6": "53.30%+79.94%",
+            "Lv7": "58.10%+87.15%",
+            "Lv8": "62.91%+94.36%",
+            "Lv9": "67.71%+101.57%",
+            "Lv10": "72.82%+109.22%",
+            "Name": "Basic Attack Stage 4 DMG"
+          },
+          {
+            "Lv1": "28.14%",
+            "Lv2": "30.45%",
+            "Lv3": "32.76%",
+            "Lv4": "35.99%",
+            "Lv5": "38.30%",
+            "Lv6": "40.95%",
+            "Lv7": "44.64%",
+            "Lv8": "48.34%",
+            "Lv9": "52.03%",
+            "Lv10": "55.95%",
+            "Name": "Basic Attack - Riposte Strike DMG"
+          },
+          {
+            "Lv1": "29.89%",
+            "Lv2": "32.35%",
+            "Lv3": "34.80%",
+            "Lv4": "38.23%",
+            "Lv5": "40.68%",
+            "Lv6": "43.50%",
+            "Lv7": "47.42%",
+            "Lv8": "51.34%",
+            "Lv9": "55.26%",
+            "Lv10": "59.43%",
+            "Name": "Basic Attack - Riposte Strike: Crumble DMG"
+          },
+          {
+            "Lv1": "16.31%",
+            "Lv2": "17.65%",
+            "Lv3": "18.99%",
+            "Lv4": "20.86%",
+            "Lv5": "22.20%",
+            "Lv6": "23.74%",
+            "Lv7": "25.88%",
+            "Lv8": "28.02%",
+            "Lv9": "30.16%",
+            "Lv10": "32.43%",
+            "Name": "Mid-air Attack - Havoc Stage 1 DMG"
+          },
+          {
+            "Lv1": "18.69%",
+            "Lv2": "20.23%",
+            "Lv3": "21.76%",
+            "Lv4": "23.91%",
+            "Lv5": "25.44%",
+            "Lv6": "27.20%",
+            "Lv7": "29.65%",
+            "Lv8": "32.11%",
+            "Lv9": "34.56%",
+            "Lv10": "37.16%",
+            "Name": "Mid-air Attack - Havoc Stage 2 DMG"
+          },
+          {
+            "Lv1": "18.88%+18.88%+19.46%",
+            "Lv2": "20.43%+20.43%+21.05%",
+            "Lv3": "21.98%+21.98%+22.65%",
+            "Lv4": "24.15%+24.15%+24.88%",
+            "Lv5": "25.70%+25.70%+26.47%",
+            "Lv6": "27.48%+27.48%+28.31%",
+            "Lv7": "29.95%+29.95%+30.86%",
+            "Lv8": "32.43%+32.43%+33.41%",
+            "Lv9": "34.91%+34.91%+35.97%",
+            "Lv10": "37.54%+37.54%+38.68%",
+            "Name": "Mid-air Attack - Havoc Stage 3 DMG"
+          },
+          {
+            "Lv1": "52.78%",
+            "Lv2": "57.11%",
+            "Lv3": "61.44%",
+            "Lv4": "67.50%",
+            "Lv5": "71.83%",
+            "Lv6": "76.81%",
+            "Lv7": "83.73%",
+            "Lv8": "90.65%",
+            "Lv9": "97.58%",
+            "Lv10": "104.94%",
+            "Name": "Mid-air Attack DMG"
+          },
+          {
+            "Lv1": "37.35%+37.35%",
+            "Lv2": "40.41%+40.41%",
+            "Lv3": "43.47%+43.47%",
+            "Lv4": "47.76%+47.76%",
+            "Lv5": "50.82%+50.82%",
+            "Lv6": "54.35%+54.35%",
+            "Lv7": "59.25%+59.25%",
+            "Lv8": "64.15%+64.15%",
+            "Lv9": "69.04%+69.04%",
+            "Lv10": "74.25%+74.25%",
+            "Name": "Dodge Counter DMG"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack STA Cost"
+          },
+          {
+            "Lv1": "94.78%",
+            "Lv2": "102.56%",
+            "Lv3": "110.33%",
+            "Lv4": "121.21%",
+            "Lv5": "128.98%",
+            "Lv6": "137.92%",
+            "Lv7": "150.35%",
+            "Lv8": "162.79%",
+            "Lv9": "175.22%",
+            "Lv10": "188.44%",
+            "Name": "Mid-air Dodge Counter DMG"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Parry Stance Activation STA Cost"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Parry Stance STA Cost per Second"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Dodge: Flicker STA Cost"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Dodge Counter STA Cost"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Thunderclap",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p>Launch the Cloudrift Bolt and grapple towards the target, dealing <u>Electro DMG</u>. Press Normal Attack shortly after to cast Basic Attack - Repel, dealing <u>Electro DMG</u>, considered Basic Attack DMG.</p>",
+        "multipliers": [
+          {
+            "Lv1": "50.40%*2",
+            "Lv2": "54.53%*2",
+            "Lv3": "58.67%*2",
+            "Lv4": "64.45%*2",
+            "Lv5": "68.59%*2",
+            "Lv6": "73.34%*2",
+            "Lv7": "79.95%*2",
+            "Lv8": "86.56%*2",
+            "Lv9": "93.17%*2",
+            "Lv10": "100.20%*2",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "28.23%+42.34%",
+            "Lv2": "30.54%+45.81%",
+            "Lv3": "32.86%+49.28%",
+            "Lv4": "36.10%+54.14%",
+            "Lv5": "38.41%+57.62%",
+            "Lv6": "41.07%+61.61%",
+            "Lv7": "44.78%+67.16%",
+            "Lv8": "48.48%+72.72%",
+            "Lv9": "52.18%+78.27%",
+            "Lv10": "56.12%+84.17%",
+            "Name": "Basic Attack - Repel DMG"
+          },
+          {
+            "Lv1": "10s",
+            "Lv2": "10s",
+            "Lv3": "10s",
+            "Lv4": "10s",
+            "Lv5": "10s",
+            "Lv6": "10s",
+            "Lv7": "10s",
+            "Lv8": "10s",
+            "Lv9": "10s",
+            "Lv10": "10s",
+            "Name": "Cooldown"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Ultimate Tactics",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p>Launch the Thunder Quietus, dealing <u>Electro DMG</u>.</p>",
+        "multipliers": [
+          {
+            "Lv1": "600.00%",
+            "Lv2": "649.20%",
+            "Lv3": "698.40%",
+            "Lv4": "767.28%",
+            "Lv5": "816.48%",
+            "Lv6": "873.06%",
+            "Lv7": "951.78%",
+            "Lv8": "1030.50%",
+            "Lv9": "1109.22%",
+            "Lv10": "1109.22%",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "25s",
+            "Lv2": "25s",
+            "Lv3": "25s",
+            "Lv4": "25s",
+            "Lv5": "25s",
+            "Lv6": "25s",
+            "Lv7": "25s",
+            "Lv8": "25s",
+            "Lv9": "25s",
+            "Lv10": "25s",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "125",
+            "Lv2": "125",
+            "Lv3": "125",
+            "Lv4": "125",
+            "Lv5": "125",
+            "Lv6": "125",
+            "Lv7": "125",
+            "Lv8": "125",
+            "Lv9": "125",
+            "Lv10": "125",
+            "Name": "Resonance Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Myriad Omens' Mandate",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<h6>Overshock</h6><ul><li><p>At max Electric Surge, Resonance Skill is replaced with Resonance Skill Overshock, dealing <u>Electro DMG</u>.</p></li><li><p>Press Normal Attack shortly after casting this skill to perform Normal Attack Stage 4.</p></li><li><p>This skill can be cast in mid-air.</p></li><li><p>If Resonance Skill Overshock is cast by pressing the button, clear all Electric Surge to grant Resonators in the team <strong>10% </strong>ATK Bonus for <strong>20s</strong>.</p></li><li><p>If Resonance Skill Overshock is cast by holding down the button, consume <strong>60 </strong>points of Concerto Energy to deal damage, then clear all Electric Surge to enter Apex Resonance.</p></li></ul><h6>Apex Resonance</h6><ul><li><p>While in Apex Resonance, Resonance Skill Thrum of All Sounds is unlocked, which consumes <strong>10% </strong>Thunder Rage per second:</p><ul><li><p>While on the ground, press Resonance Skill to launch up to <strong>7 </strong>consecutive attacks:</p><ul><li><p>The first 3 stages: Thrum of All Sounds: Spectro, dealing <u>Spectro DMG</u>.</p></li><li><p>The next 3 stages: Thrum of All Sounds: Havoc, dealing <u>Havoc DMG</u>.</p></li><li><p>The last 1 stages: Thrum of All Sounds: Silencing Blade, dealing <u>Aero DMG</u>.</p></li></ul></li><li><p>While on the ground, hold Resonance Skill to cast Thrum of All Sounds: Aero, dealing <u>Aero DMG</u> and leaping into the air.</p></li><li><p>While airborne, press Resonance Skill to perform up to 6 stages of Mid-air Attacks:</p><ul><li><p>The first <strong>3 </strong>stages: Thrum of All Sounds: Havoc Mid-air Attack, dealing <u>Havoc DMG</u>.</p></li><li><p>The next <strong>2 </strong>stages : Thrum of All Sounds: Aero Mid-air Attack, dealing <u>Aero DMG</u> and healing all nearby Resonators in the team.</p></li><li><p>- The last <strong>1</strong> stages: Thrum of All Sounds: Aero Plunging Attack, dealing <u>Aero DMG</u>. Press Resonance Skill shortly after landing to cast Thrum of All Sounds: Silencing Blade.</p></li></ul></li></ul></li><li><p>Hold Resonance Skill in mid-air to cast Thrum of All Sounds: Aero Plunging Attack.</p></li><li><p>Each time Thrum of All Sounds hits the target, Thunder Bane is triggered, dealing <u>Electro DMG</u> to the target within range, considered Resonance Skill DMG.</p></li><li><p>While in Apex Resonance, press Resonance Skill shortly after casting a Basic Attack to chain into a specific Thrum of All Sounds skill based on the different Basic Attack Stages.</p></li></ul><h6>Electric Surge</h6><ul><li><p>Rover can hold up to <strong>120 </strong>points of Electric Surge.</p></li><li><p>Electric Surge is restored when Intro Skill - Thunderous Fury, Normal Attack - Deterrence, Resonance Skill - Thunderclap, or Basic Attack - Repel deals damage.</p></li></ul><h6>Thunder Rage</h6><ul><li><p>Rover can hold up to <strong>100 </strong>points of Thunder Rage.</p></li><li><p>Entering Apex Resonance restores Thunder Rage to the max limit.<br>Thunder Rage is restored when Thrum of All Sounds deals damage.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "40.60%*7+213.15%+213.15%",
+            "Lv2": "43.93%*7+230.63%+230.63%",
+            "Lv3": "47.26%*7+248.11%+248.11%",
+            "Lv4": "51.92%*7+272.58%+272.58%",
+            "Lv5": "55.25%*7+290.06%+290.06%",
+            "Lv6": "59.08%*7+310.16%+310.16%",
+            "Lv7": "64.41%*7+338.12%+338.12%",
+            "Lv8": "69.74%*7+366.09%+366.09%",
+            "Lv9": "75.06%*7+394.06%+394.06%",
+            "Lv10": "80.72%*7+423.77%+423.77%",
+            "Name": "Overshock DMG"
+          },
+          {
+            "Lv1": "49.86%",
+            "Lv2": "53.95%",
+            "Lv3": "58.04%",
+            "Lv4": "63.76%",
+            "Lv5": "67.85%",
+            "Lv6": "72.55%",
+            "Lv7": "79.09%",
+            "Lv8": "85.63%",
+            "Lv9": "92.17%",
+            "Lv10": "99.12%",
+            "Name": "Thrum of All Sounds: Spectro Stage 1 DMG"
+          },
+          {
+            "Lv1": "24.68%+24.68%+32.90%",
+            "Lv2": "26.70%+26.70%+35.60%",
+            "Lv3": "28.73%+28.73%+38.30%",
+            "Lv4": "31.56%+31.56%+42.08%",
+            "Lv5": "33.58%+33.58%+44.77%",
+            "Lv6": "35.91%+35.91%+47.88%",
+            "Lv7": "39.15%+39.15%+52.19%",
+            "Lv8": "42.38%+42.38%+56.51%",
+            "Lv9": "45.62%+45.62%+60.82%",
+            "Lv10": "49.06%+49.06%+65.41%",
+            "Name": "Thrum of All Sounds: Spectro Stage 2 DMG"
+          },
+          {
+            "Lv1": "51.34%+77.00%",
+            "Lv2": "55.54%+83.31%",
+            "Lv3": "59.75%+89.63%",
+            "Lv4": "65.65%+98.47%",
+            "Lv5": "69.86%+104.78%",
+            "Lv6": "74.70%+112.04%",
+            "Lv7": "81.43%+122.14%",
+            "Lv8": "88.17%+132.25%",
+            "Lv9": "94.90%+142.35%",
+            "Lv10": "102.06%+153.08%",
+            "Name": "Thrum of All Sounds: Spectro Stage 3 DMG"
+          },
+          {
+            "Lv1": "7.54%*3+52.73%",
+            "Lv2": "8.15%*3+57.05%",
+            "Lv3": "8.77%*3+61.38%",
+            "Lv4": "9.64%*3+67.43%",
+            "Lv5": "10.25%*3+71.75%",
+            "Lv6": "10.96%*3+76.72%",
+            "Lv7": "11.95%*3+83.64%",
+            "Lv8": "12.94%*3+90.56%",
+            "Lv9": "13.93%*3+97.48%",
+            "Lv10": "14.98%*3+104.82%",
+            "Name": "Thrum of All Sounds: Havoc Stage 1 DMG"
+          },
+          {
+            "Lv1": "6.96%*4+41.74%",
+            "Lv2": "7.53%*4+45.17%",
+            "Lv3": "8.10%*4+48.59%",
+            "Lv4": "8.90%*4+53.38%",
+            "Lv5": "9.47%*4+56.80%",
+            "Lv6": "10.13%*4+60.74%",
+            "Lv7": "11.04%*4+66.21%",
+            "Lv8": "11.95%*4+71.69%",
+            "Lv9": "12.87%*4+77.17%",
+            "Lv10": "13.83%*4+82.98%",
+            "Name": "Thrum of All Sounds: Havoc Stage 2 DMG"
+          },
+          {
+            "Lv1": "31.45%+31.45%+10.49%+10.49%+10.49%+10.49%",
+            "Lv2": "34.02%+34.02%+11.34%+11.34%+11.34%+11.34%",
+            "Lv3": "36.60%+36.60%+12.20%+12.20%+12.20%+12.20%",
+            "Lv4": "40.21%+40.21%+13.41%+13.41%+13.41%+13.41%",
+            "Lv5": "42.79%+42.79%+14.27%+14.27%+14.27%+14.27%",
+            "Lv6": "45.75%+45.75%+15.25%+15.25%+15.25%+15.25%",
+            "Lv7": "49.88%+49.88%+16.63%+16.63%+16.63%+16.63%",
+            "Lv8": "54.01%+54.01%+18.01%+18.01%+18.01%+18.01%",
+            "Lv9": "58.13%+58.13%+19.38%+19.38%+19.38%+19.38%",
+            "Lv10": "62.51%+62.51%+20.84%+20.84%+20.84%+20.84%",
+            "Name": "Thrum of All Sounds: Havoc Stage 3 DMG"
+          },
+          {
+            "Lv1": "23.68%*5+118.37%",
+            "Lv2": "25.62%*5+128.08%",
+            "Lv3": "27.56%*5+137.79%",
+            "Lv4": "30.28%*5+151.37%",
+            "Lv5": "32.22%*5+161.08%",
+            "Lv6": "34.45%*5+172.24%",
+            "Lv7": "37.56%*5+187.77%",
+            "Lv8": "40.66%*5+203.30%",
+            "Lv9": "43.77%*5+218.83%",
+            "Lv10": "47.07%*5+235.33%",
+            "Name": "Thrum of All Sounds: Silencing Blade DMG"
+          },
+          {
+            "Lv1": "79.52%",
+            "Lv2": "86.04%",
+            "Lv3": "92.56%",
+            "Lv4": "101.69%",
+            "Lv5": "108.21%",
+            "Lv6": "115.71%",
+            "Lv7": "126.14%",
+            "Lv8": "136.57%",
+            "Lv9": "147.00%",
+            "Lv10": "158.09%",
+            "Name": "Thrum of All Sounds: Aero DMG"
+          },
+          {
+            "Lv1": "25.47%",
+            "Lv2": "27.56%",
+            "Lv3": "29.65%",
+            "Lv4": "32.57%",
+            "Lv5": "34.66%",
+            "Lv6": "37.06%",
+            "Lv7": "40.40%",
+            "Lv8": "43.74%",
+            "Lv9": "47.08%",
+            "Lv10": "50.63%",
+            "Name": "Thrum of All Sounds: Havoc Mid-air Attack Stage 1 DMG"
+          },
+          {
+            "Lv1": "32.10%",
+            "Lv2": "34.74%",
+            "Lv3": "37.37%",
+            "Lv4": "41.05%",
+            "Lv5": "43.68%",
+            "Lv6": "46.71%",
+            "Lv7": "50.92%",
+            "Lv8": "55.13%",
+            "Lv9": "59.35%",
+            "Lv10": "63.82%",
+            "Name": "Thrum of All Sounds: Havoc Mid-air Attack Stage 2 DMG"
+          },
+          {
+            "Lv1": "46.03%+46.03%+47.43%",
+            "Lv2": "49.81%+49.81%+51.32%",
+            "Lv3": "53.58%+53.58%+55.20%",
+            "Lv4": "58.86%+58.86%+60.65%",
+            "Lv5": "62.64%+62.64%+64.54%",
+            "Lv6": "66.98%+66.98%+69.01%",
+            "Lv7": "73.02%+73.02%+75.23%",
+            "Lv8": "79.06%+79.06%+81.45%",
+            "Lv9": "85.10%+85.10%+87.67%",
+            "Lv10": "91.51%+91.51%+94.28%",
+            "Name": "Thrum of All Sounds: Havoc Mid-air Attack Stage 3 DMG"
+          },
+          {
+            "Lv1": "42.56%",
+            "Lv2": "46.05%",
+            "Lv3": "49.54%",
+            "Lv4": "54.43%",
+            "Lv5": "57.92%",
+            "Lv6": "61.93%",
+            "Lv7": "67.51%",
+            "Lv8": "73.10%",
+            "Lv9": "78.68%",
+            "Lv10": "84.61%",
+            "Name": "Thrum of All Sounds: Aero Mid-air Attack Stage 1 DMG"
+          },
+          {
+            "Lv1": "49.00%",
+            "Lv2": "53.02%",
+            "Lv3": "57.04%",
+            "Lv4": "62.66%",
+            "Lv5": "66.68%",
+            "Lv6": "71.30%",
+            "Lv7": "77.73%",
+            "Lv8": "84.16%",
+            "Lv9": "90.58%",
+            "Lv10": "97.41%",
+            "Name": "Thrum of All Sounds: Aero Mid-air Attack Stage 2 DMG"
+          },
+          {
+            "Lv1": "330+11.00% of ATK",
+            "Lv2": "369+11.44% of ATK",
+            "Lv3": "412+11.88% of ATK",
+            "Lv4": "462+12.54% of ATK",
+            "Lv5": "521+13.42% of ATK",
+            "Lv6": "577+14.30% of ATK",
+            "Lv7": "587+15.95% of ATK",
+            "Lv8": "600+17.82% of ATK",
+            "Lv9": "610+19.80% of ATK",
+            "Lv10": "627+23.10% of ATK",
+            "Name": "Thrum of All Sounds: Aero Mid-air Attack Healing"
+          },
+          {
+            "Lv1": "142.09%",
+            "Lv2": "153.74%",
+            "Lv3": "165.39%",
+            "Lv4": "181.70%",
+            "Lv5": "193.35%",
+            "Lv6": "206.75%",
+            "Lv7": "225.39%",
+            "Lv8": "244.03%",
+            "Lv9": "262.67%",
+            "Lv10": "282.48%",
+            "Name": "Thrum of All Sounds: Aero Plunging Attack DMG"
+          },
+          {
+            "Lv1": "20.00%",
+            "Lv2": "21.64%",
+            "Lv3": "23.28%",
+            "Lv4": "25.58%",
+            "Lv5": "27.22%",
+            "Lv6": "29.11%",
+            "Lv7": "31.73%",
+            "Lv8": "34.35%",
+            "Lv9": "36.98%",
+            "Lv10": "39.77%",
+            "Name": "Thunder Bane DMG"
+          },
+          {
+            "Lv1": "25s",
+            "Lv2": "25s",
+            "Lv3": "25s",
+            "Lv4": "25s",
+            "Lv5": "25s",
+            "Lv6": "25s",
+            "Lv7": "25s",
+            "Lv8": "25s",
+            "Lv9": "25s",
+            "Lv10": "25s",
+            "Name": "Overshock Cooldown"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Decipher",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Resonance Skill Overshock inflicts <strong>10 </strong>stacks of Electro Flare on the target it damages.</p>",
+        "multipliers": "",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Regression",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>When Resonance Skill Overshock is cast by holding down the button, gain <strong>20% </strong>Resonance Skill DMG Bonus for <strong>20s</strong>. Switching to another Resonator ends this effect.</p>",
+        "multipliers": "",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Thunderous Fury",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Attack the target, dealing <u>Electro DMG</u>.</p>",
+        "multipliers": [
+          {
+            "Lv1": "16.80%*2+50.40%",
+            "Lv2": "18.18%*2+54.54%",
+            "Lv3": "19.56%*2+58.67%",
+            "Lv4": "21.49%*2+64.46%",
+            "Lv5": "22.87%*2+68.59%",
+            "Lv6": "24.45%*2+73.34%",
+            "Lv7": "26.65%*2+79.95%",
+            "Lv8": "28.86%*2+86.57%",
+            "Lv9": "31.06%*2+93.18%",
+            "Lv10": "33.41%*2+100.21%",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Rumbling Thunders",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>The incoming Resonator gains Electro Core for <strong>20s </strong>or until the Resonator is switched out. After Resonators with Electro Core inflict Negative Statuses, their Electro Core is consumed, and they gain <strong>25% </strong>All DMG Amplification for <strong>14s</strong>. Switching to another Resonator ends the effect.</p><p>Casting Outro Skill ends the Apex Resonance state and clears all Thunder Rage.</p>",
+        "multipliers": "",
+        "type": "Outro Skill"
+      },
+      {
+        "name": "Tune Break - Sword",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p>When the target's Off-Tune Level is full, the Resonator may cast Tune Break on the target.</p>",
+        "multipliers": "",
+        "type": "Forte Circuit"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p>While casting Normal Attack and Resonance Skill Thrum of All Sounds, gain increased resistance to interruption for <strong>0.5s</strong>.</p>",
+      "dupe1_name": "Celestial Ingenuity",
+      "dupe2": "<p>Inflict <strong>5 </strong>stacks of Electro Flare on the targets hit after Resonance Liberation Ultimate Tactics deals damage.</p>",
+      "dupe2_name": "Thousandfold Artifice",
+      "dupe3": "<p>The DMG Multiplier of Resonance Skill Overshock is increased by <strong>20%</strong>.</p>",
+      "dupe3_name": "Alchemy of Wonders",
+      "dupe4": "<p>The DMG Multiplier of Resonance Liberation Ultimate Tactics is increased by <strong>20%</strong>.</p>",
+      "dupe4_name": "Earthquaking Rumble",
+      "dupe5": "<p>Crit. DMG is increased by <strong>20%</strong> while in Apex Resonance.</p>",
+      "dupe5_name": "Principle of Change",
+      "dupe6": "<p>The DMG Multiplier of Resonance Skill Thrum of All Sounds and Thunder Bane is increased by <strong>20%</strong>.</p>",
+      "dupe6_name": "Mind's Depths in a Casket"
+    },
+    "voiceActors": {
+      "en": "",
+      "jpn": "",
+      "cn": "",
+      "kr": ""
+    },
+    "attributeBonus": [
+      {
+        "name": "CRIT Rate",
+        "value": 8
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": null,
+    "videos": null,
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": null,
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "rover-electro",
+      "build": 3.7,
+      "review": 3.7
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "rover-electro",
+        "Weapon": "Blazing Brilliance",
+        "Dupes": 1,
+        "Percentage": "100.00%",
+        "Percentage_2": "",
+        "Comment": "Electro Rover mostly deals Skill DMG, meaning Changli's Signature weapon, also being focused on Skill DMG, gives them the best amount of personal damage they can get."
+      },
+      {
+        "ID": 2,
+        "Character": "rover-electro",
+        "Weapon": "Red Spring",
+        "Dupes": 1,
+        "Percentage": "93.00%",
+        "Percentage_2": "",
+        "Comment": "As Electro Rover also deals a decent amount of Basic DMG, Red Spring is a good choice although not the best one on them."
+      },
+      {
+        "ID": 3,
+        "Character": "rover-electro",
+        "Weapon": "Azure Oath",
+        "Dupes": 1,
+        "Percentage": "92.20%",
+        "Percentage_2": "",
+        "Comment": "ATK, DMG Bonus and CRIT Rate stat-stick for Electro Rover, who does not benefit from this weapon's Havoc Bane-related effects."
+      },
+      {
+        "ID": 4,
+        "Character": "rover-electro",
+        "Weapon": "Everbright Polestar",
+        "Dupes": 1,
+        "Percentage": "92.20%",
+        "Percentage_2": "",
+        "Comment": "ATK, DMG Bonus and CRIT Rate stat-stick for Electro Rover, who does not benefit from this weapon's Tune Rupture/Fusion Burst-related effects."
+      },
+      {
+        "ID": 5,
+        "Character": "rover-electro",
+        "Weapon": "Emerald Sentence",
+        "Dupes": 1,
+        "Percentage": "92.10%",
+        "Percentage_2": "",
+        "Comment": "SImple ATK and CRIT Rate stat-stick for Electro Rover, who does not benefit from this weapon's Heavy/Echo DMG-related effects."
+      },
+      {
+        "ID": 6,
+        "Character": "rover-electro",
+        "Weapon": "Frostburn",
+        "Dupes": 1,
+        "Percentage": "91.50%",
+        "Percentage_2": "",
+        "Comment": "SImple ATK and CRIT Rate stat-stick for Electro Rover, who does not benefit from this weapon's Glacio Chafe-related effects."
+      },
+      {
+        "ID": 7,
+        "Character": "rover-electro",
+        "Weapon": "Emerald of Genesis",
+        "Dupes": 1,
+        "Percentage": "91.40%",
+        "Percentage_2": "",
+        "Comment": "Best permanent weapon option for almost all Sword users. Grants CRIT Rate, Energy Regen, and some ramp-up ATK when casting multiple Skills."
+      },
+      {
+        "ID": 8,
+        "Character": "rover-electro",
+        "Weapon": "Feather Edge",
+        "Dupes": 5,
+        "Percentage": "81.40%",
+        "Percentage_2": "",
+        "Comment": "Best 4-star option, this Battle Pass exclusive grants Electro Rover with some increase to their ATK and Liberation DMG when casting Ultimate, while also coming with a decent CRIT Rate stat at the expense of Base ATK."
+      },
+      {
+        "ID": 9,
+        "Character": "rover-electro",
+        "Weapon": "Fables of Wisdom",
+        "Dupes": 5,
+        "Percentage": "78.00%",
+        "Percentage_2": "",
+        "Comment": "Best no-gacha option, granting a lot of ATK to Electro Rover but no other stats to speak of."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "rover-electro",
+        "Type": "Best",
+        "Set": "Flash of Electric Reflection",
+        "Percentage": "100.00%",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Essentially the Electro version of Chromatic Foam. Provides Electro Rover with 20% Electro DMG Bonus and 25% Electro DMG Bonus to the incoming character they Outro into, making for their best blend of personal damage and buffing potential.",
+        "Echo_1": "Soulfrayer",
+        "Echo_1_Comment": "Simple Summon Echo that gives 12% extra Electro DMG Bonus to the incoming character upon casting Outro. Adds onto the set's 25% for a total of 37% DMG Bonus buffing, making it a very strong source of buffs for Electro Rover.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "rover-electro",
+        "Character": "rover-electro",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Electro DMG",
+        "Echo_3": "Electro DMG",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% > Skill DMG% = ATK > Liberation DMG%",
+        "Comments": ""
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "rover-electro",
+        "Type": "",
+        "Order": "Forte Circuit, Res. Liberation, Basic Attack, Res. Skill, Intro Skill",
+        "Comments": "Intro can be skipped when levelling to save on resources at a minimal damage loss. Basic and Skill don't give huge increases but are decent to level as well."
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "rover-electro",
+        "Name": "Best Team",
+        "Member_1": "hsin",
+        "Member_2": "rover-electro",
+        "Member_3": "suisui, chisa, buling",
+        "Comments": ""
+      },
+      {
+        "ID": 2,
+        "Character": "rover-electro",
+        "Name": "Best Team",
+        "Member_1": "hsin",
+        "Member_2": "rover-electro",
+        "Member_3": "suisui, chisa, buling",
+        "Comments": "By way of more flexibility in quickswap, Chisa could prove stronger for more experienced players willing to take advantage of the mechanic."
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "rover-electro",
+        "Synergy": "hsin",
+        "Comment": "Electro Rover's best and only patner, Hsin is the DPS character they have direct synergy with, as Electro Rover's presence alone gives Hsin extra Electro DMG Bonus to benefit from. Their ability to apply Electro Flare and buff Electro DMG significantly via the Flash of Electric Reflection Echo set is quite appreciated too."
+      }
+    ]
+  },
+  "stats": null,
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "rover-electro",
+        "name": "Rover (Electro)",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 317687,
+          "damage_e1": 317687,
+          "damage_e2": 317687,
+          "damage_e3": 344364,
+          "damage_e4": 361653,
+          "damage_e5": 384081,
+          "damage_e6": 484081
+        },
+        "dps": {
+          "damage": 41311,
+          "damage_e1": 41311,
+          "damage_e2": 41311,
+          "damage_e3": 44780,
+          "damage_e4": 47029,
+          "damage_e5": 49945,
+          "damage_e6": 49945
+        },
+        "time": "7.69",
+        "echo_main": "Soulfrayer",
+        "echo_4": "CRIT Rate",
+        "echo_3": "Electro DMG",
+        "echo_3a": "Electro DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "Energy Regen (18.3%), CRIT Rate (40.4%), CRIT DMG (80.7%), ATK (25.8%), Resonance Skill DMG Bonus (8.6%)",
+        "set_1": "Flash of Electric Reflection",
+        "set_2": "",
+        "weapon": "Blazing Brilliance",
+        "weapon_S": 1
+      },
+      "team": {
+        "ID": 1,
+        "Character": "rover-electro",
+        "Member_1_Name": "hsin",
+        "Member_1_Weapon": "Blooming Jadehaven",
+        "Member_1_Set": "Heart of Sworn Vigil",
+        "Member_1_Echo": "Reminiscence: Suhsin the Inevitable",
+        "Member_2_Name": "suisui",
+        "Member_2_Weapon": "Firstlight's Herald",
+        "Member_2_Set": "Song of Feathered Trace",
+        "Member_2_Echo": "Forbidden Bastion"
+      },
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      38507
+    ],
+    [
+      "Heavy",
+      0
+    ],
+    [
+      "Skill",
+      150282
+    ],
+    [
+      "Liberation",
+      86445
+    ],
+    [
+      "Intro",
+      11635
+    ],
+    [
+      "Outro",
+      0
+    ],
+    [
+      "Echo",
+      1054
+    ],
+    [
+      "Electro Flare",
+      11765
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Azure Oath",
+        "Slug": "azure-oath",
+        "Rarity": 5,
+        "ID": "21020096",
+        "Effect": "Grants {0} All-Attribute DMG Bonus. After inflicting Havoc Bane, the wielder gains {1} Heavy Attack DMG Amplification and their Heavy Attack DMG ignores {0} of the target's DEF, lasting for 8s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "36%",
+          "45%",
+          "54%",
+          "63%",
+          "72%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "Crit. Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": ""
+      },
+      {
+        "Name": "Blazing Brilliance",
+        "Slug": "blazing-brilliance",
+        "Rarity": 5,
+        "ID": "21020016",
+        "Effect": "ATK increased by {0}. The equipper gains 1 stack of Searing Feather upon dealing damage, which can be triggered once every 0.5s, and gains 5 stacks of the same effect upon casting Resonance Skill. Each stack of Searing Feather gives {1} additional Resonance Skill DMG Bonus for up to 14 stacks. All stacks will be removed within 12s after reaching the max stack.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "4%",
+          "5%",
+          "6%",
+          "7%",
+          "8%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Emerald Sentence",
+        "Slug": "emerald-sentence",
+        "Rarity": 5,
+        "ID": "21020066",
+        "Effect": "ATK is increased by {0}. Casting Echo Skill within 10s after casting Intro Skill or Basic Attack grants 1 stack of Bamboo Cleaver, which grants {1} Heavy Attack DMG Bonus to the wielder. This effect can be triggered by Echoes of the same name once only, stacking up to 2 times, lasting for 12s. Casting Echo Skill at max stacks does not reset the duration. This effect can be triggered once every 10s and ends early if the wielder is switched off the field. Casting Intro Skill grants {2} Echo Skill DMG Bonus to all Resonators in the team for 30s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "30%",
+          "37.5%",
+          "45%",
+          "52.5%",
+          "60%"
+        ],
+        "Array_2": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Emerald of Genesis",
+        "Slug": "emerald-of-genesis",
+        "Rarity": 5,
+        "ID": "21020015",
+        "Effect": "Increases Energy Regen by {0}. When Resonance Skill is released, increases ATK by {1}, stacking up to 2 time(s). This effect lasts for 10s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "6%",
+          "7.5%",
+          "9%",
+          "10.5%",
+          "12%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Everbright Polestar",
+        "Slug": "everbright-polestar",
+        "Rarity": 5,
+        "ID": "21020076",
+        "Effect": "Increases All-Attribute DMG Bonus by {0}. When inflicting Tune Rupture - Shifting or Fusion Burst, the wielder's Resonance Liberation DMG ignores {1} DEF and {2} Fusion RES on targets for 8s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "32%",
+          "40%",
+          "48%",
+          "56%",
+          "64%"
+        ],
+        "Array_2": [
+          "10%",
+          "15%",
+          "20%",
+          "25%",
+          "30%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Fables of Wisdom",
+        "Slug": "fables-of-wisdom",
+        "Rarity": 4,
+        "ID": "21020094",
+        "Effect": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for 10s. This effect can be triggered 1 time per second, stackable up to 4 times.",
+        "Array_0": [
+          "4%",
+          "5%",
+          "6%",
+          "7%",
+          "8%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Crafting"
+      },
+      {
+        "Name": "Feather Edge",
+        "Slug": "feather-edge",
+        "Rarity": 4,
+        "ID": "21020104",
+        "Effect": "Casting Resonance Liberation increases ATK by {0} and grants {1} Resonance Liberation DMG Bonus for 15s.",
+        "Array_0": [
+          "7.2%",
+          "11.1%",
+          "15.1%",
+          "19%",
+          "23%"
+        ],
+        "Array_1": [
+          "10.8%",
+          "16.7%",
+          "22.6%",
+          "28.6%",
+          "34.5%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 20.3,
+        "Source": "Battle Pass"
+      },
+      {
+        "Name": "Frostburn",
+        "Slug": "frostburn",
+        "Rarity": 5,
+        "ID": "21020086",
+        "Effect": "ATK is increased by {0}. When the wielder applies Glacio Chafe, Glacio DMG is Amplified by {1}, and Resonance Liberation DMG ignores {2} of the target's DEF. If the wielder is the active Resonator in the team, Glacio Chafe DMG dealt to all targets within a certain range is Amplified by {3} for 6s. This effect can be triggered up to 1 time every 0.1s. Only the strongest effect of the same name applies.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "28%",
+          "35%",
+          "42%",
+          "49%",
+          "56%"
+        ],
+        "Array_2": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_3": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Red Spring",
+        "Slug": "red-spring",
+        "Rarity": 5,
+        "ID": "21020026",
+        "Effect": "Increase ATK by {0}. When dealing Basic Attack DMG, the wielder gains {1} Basic Attack DMG Bonus for 14s. This effect can be triggered once per second, stacking up to 3 times. When the wielder's Concerto Energy is consumed, gain {2} Basic DMG Bonus for 10s. This effect can be triggered once per second and ends when the wielder is switched off the field.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": [
+          "40%",
+          "50%",
+          "60%",
+          "70%",
+          "80%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Sword",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Gacha"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Forbidden Bastion",
+        "Slug": "forbidden-bastion",
+        "ID": "6000216",
+        "Echo_skill": "Use Echo Skill to summon Forbidden Bastion to bash over enemies, dealing {0} Glacio DMG.\\n\\nResonators with this Echo equipped in the main slot gain 10% Healing Bonus.\\n\\nCD: 20s",
+        "Rarity": 1,
+        "Sonata_Group": [
+          32,
+          33,
+          34
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "158.40%"
+        ],
+        "Skill_3": [
+          "184.80%"
+        ],
+        "Skill_4": [
+          "211.20%"
+        ],
+        "Skill_5": [
+          "237.60%"
+        ]
+      },
+      {
+        "Name": "Reminiscence: Suhsin the Inevitable",
+        "Slug": "reminiscence-suhsin-the-inevitable",
+        "ID": "6000225",
+        "Echo_skill": "Cast Echo Skill to deal 4 instances of {0} Electro DMG and 1 instance of {1} Electro DMG.\\n\\n\nWhen equipped by Hsin, the Echo Skill instead deals 5 instances of {2} Electro DMG and 1 instance of {3} Electro DMG to targets within a larger range.\\n\\n\nThe Resonator with this Echo equipped in their main slot gains 10.00% Electro DMG Bonus. Inflicting Electro Flare, gaining Unison, or triggering Unison Response grants the Resonator an extra 10.00% Electro DMG Bonus for 30s.\\n\\n\nCD: 20s",
+        "Rarity": 3,
+        "Sonata_Group": [
+          35,
+          36
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "18.24%",
+          "109.44%",
+          "5.47%",
+          "155.04%"
+        ],
+        "Skill_3": [
+          "21.28%",
+          "127.68%",
+          "6.38%",
+          "180.88%"
+        ],
+        "Skill_4": [
+          "24.32%",
+          "145.92%",
+          "7.29%",
+          "206.72%"
+        ],
+        "Skill_5": [
+          "27.36%",
+          "164.16%",
+          "8.20%",
+          "232.56%"
+        ]
+      },
+      {
+        "Name": "Soulfrayer",
+        "Slug": "soulfrayer",
+        "ID": "6000224",
+        "Echo_skill": "Use Echo Skill to summon a Soulfrayer, dealing {0} Electro DMG 3 times.\\n\\n\nCasting Outro Skill within 15s after summoning Soulfrayer grants 12.00% Electro DMG Bonus to the incoming Resonator for 15s.\\n\\n\nCD: 20s",
+        "Rarity": 1,
+        "Sonata_Group": [
+          35,
+          36
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "60.79%"
+        ],
+        "Skill_3": [
+          "70.92%"
+        ],
+        "Skill_4": [
+          "81.05%"
+        ],
+        "Skill_5": [
+          "91.18%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Flash of Electric Reflection",
+        "slug": "flash-of-electric-reflection",
+        "sonata_id": 35,
+        "type": "standard",
+        "bonus_2": "<p><u>Electro DMG</u> <strong>+ 10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>When the Resonator inflicts Electro Flare on enemies, they gain the following effects: Gain <strong>10%</strong> <u>Electro DMG</u> Bonus for <strong>15s</strong>. While this effect is active, casting Outro Skill grants the incoming Resonator <strong>25% </strong><u>Electro DMG</u> Bonus for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/echo-sets/flash-of-electric-reflection.webp"
+      },
+      {
+        "name": "Heart of Sworn Vigil",
+        "slug": "heart-of-sworn-vigil",
+        "sonata_id": 36,
+        "type": "standard",
+        "bonus_2": "<p><u>Electro DMG</u> <strong>+ 10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Inflicting Electro Flare on the target, obtaining Unison, or triggering Unison Response increases the Resonator's Crit. Rate by <strong>15%</strong> and grants them <strong>22.5%</strong> <u>Electro DMG</u> for <strong>30s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/echo-sets/heart-of-sworn-vigil.webp"
+      },
+      {
+        "name": "Song of Feathered Trace",
+        "slug": "song-of-feathered-trace",
+        "sonata_id": 32,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen <strong>+10%</strong></p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon inflicting Havoc Bane, gain Xuanling's Feather, which grants a <strong>20% </strong>increase in Crit. Rate and <strong>35% </strong>increase in Heavy Attack DMG Bonus to the Resonator, lasting <strong>15s</strong>.</p><p>Upon inflicting Glacio Chafe, gain Chongming's Feather, which grants a <strong>0.1% </strong>increase in ATK to Resonators in the team for every <strong>1% </strong>of the Resonator's Energy Regen, up to <strong>25%</strong>, lasting <strong>10s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/echo-sets/song-of-feathered-trace.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Rover (Electro)",
+      "slug": "rover-electro",
+      "toa_cat": "hybrid",
+      "toa_rating": 9,
+      "toa_tags": "Free, Flare, Partner (Hsin)",
+      "toa_marks": "",
+      "ww_cat": "hybrid",
+      "ww_rating": 9,
+      "ww_tags": "Free, Flare, Partner (Hsin)",
+      "ww_marks": "",
+      "overall_cat": "hybrid",
+      "overall_rating": 9,
+      "overall_tags": "Free, Flare, Partner (Hsin)",
+      "overall_marks": "",
+      "rarity": 5,
+      "element": "Electro",
+      "weapon": "Sword",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S2"
+    }
+  ]
+}

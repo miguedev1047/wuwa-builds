@@ -1,0 +1,1702 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/xiangli-yao",
+  "fetchedAt": "2026-10-28T03:30:43.431Z",
+  "slug": "xiangli-yao",
+  "name": "Xiangli Yao",
+  "rarity": 5,
+  "element": "Electro",
+  "weapon": "Gauntlets",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/card_xiang.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/xiangli-yao_full.webp"
+  },
+  "profile": {
+    "id": "cmoxpqeh300cpoau06e8oujy5",
+    "slug": "xiangli-yao",
+    "name": "Xiangli Yao",
+    "rarity": 5,
+    "element": "Electro",
+    "weapon": "Gauntlets",
+    "devId": 1305,
+    "upcoming": false,
+    "introduction": "<p>Huaxu Academy&#039;s Principal Investigator, Xiangli Yao, displays exceptional expertise in various research fields despite his young age. He is a gentle yet rational soul, embracing unique insights and commitment to the research of Automata Mechanics.</p>",
+    "review": "<p style=\"text-align: justify;\">Xiangli Yao is a 5-star Electro Gauntlets DPS who wants to fire off his Ultimate as quickly as possible to enter a higher-damage stance called Intuition, during which he can deal a larger amount of Resonance Liberation DMG.</p><h6><strong><u>Key Mechanics &amp; Rotation Concepts</u></strong></h6><p style=\"text-align: justify;\">The highlight of Xiangli Yao’s kit is his Ultimate. As explained earlier, it makes him enter the Intuition stance, which lasts a whopping 24s (needless to say it’s not going to expire on him), and he gains access to new attacks as well as a new Forte gauge during this stance. He wants to enter it as quickly as possible to start dealing the majority of his damage.&nbsp;</p><p style=\"text-align: justify;\">Once his and his teammates’ buffs are ready, he enters Intuition and can start filling up his new Forte gauge, Performance Capacity, which stacks up to 5 times. He gains 5 stacks when performing a full Basic Attack chain, or when performing a full Skill chain (which leads him into a Forte Mid-air Attack ending in a plunge). Up to 3 times per Ultimate, when his Forte gauge is full, he can cast a special Forte Skill called Law of Reigns. His rotation goal, as you could’ve guessed, is to cast those 3 Forte Skills as quickly as possible before switching out. In practice, that should be performed through 2 Skill-Plunge chains and 1 full Basic chain.</p><p style=\"text-align: justify;\">Xiangli Yao also has access to another Forte gauge, called Capacity. When fully filled up through his Basic Attacks or Skills outside of his Ultimate form, he can cast a Forte Skill called Decipher which can then follow into the same Mid-air Attack as in his Ultimate form. However, this Forte gauge will not be used in practice since executing this Skill takes too much time and is overall not worth building up to.</p><p style=\"text-align: justify;\">Other than this, his passives are simple self-damage and interruption resistance increases, and his Outro launches 3 extra lightning strikes to enemies hit by other characters’ Basic Attacks.</p><h6><strong><u>Meta Position &amp; Conclusion</u></strong></h6><p style=\"text-align: justify;\">Is Xiangli Yao a good pull? Let’s get the obvious out of the way: No. Xiangli Yao got huge team upgrades since release in the form of Lynae and Mornye being basically as ideal of supports as he could ask for, but they’re not enough. Why? A lack of raw damage numbers. Case in point with arbitrary numbers: giving a 200% boost to a character that deals 300000 damage is not as good as giving a 100% boost to a character that deals 500000 damage (you get 900000 vs 1 million).&nbsp;</p><p style=\"text-align: justify;\">However, Xiangli Yao was given for free way back in 1.2. Let’s assume you’re a long-time player and you already own him on your account, whether from that or from pulling for him on a rerun in the past. Can he be okay to invest into? Sure.&nbsp;</p><p style=\"text-align: justify;\">Xiangli Yao’s one of those damage dealers where you really need to set your expectations low in terms of how they can perform, however he can be okay enough to clear some of the easier endgames with. He can get passing scores with enough investment and a proper rotation. As a matter of fact, if you spend enough time optimizing his Quickswap rotations, or you own Yinlin, he can get clearing performances without necessarily taking up Lynae and Mornye, who are much better used on characters with higher base damage than him. It will be difficult in content like Endstate Matrix for example, but it is possible to get results in theory.</p><p style=\"text-align: justify;\">In conclusion, if you need a weaker team than usual to clear some of the early floors of Tower of Adversity or set another score in Endstate Matrix for example, and you already own him, Xiangli Yao could just be serviceable enough to get the job done if you choose to invest in him. Do we recommend him to any new players? That’s a definite no from a meta standpoint, but older players who already own him can still use him and get some okay-ish results out of doing so.</p>",
+    "pros": "<ul><li><p style=\"text-align: justify;\">Fully Quickswap-friendly, huge amount of Swap Cancel windows and hence has room for a lot of rotation optimizations;</p></li><li><p style=\"text-align: justify;\">Can slow enemies down almost completely, making his rotation easy to perform and hard to interrupt;</p></li><li><p style=\"text-align: justify;\">Used to be free.</p></li></ul><p></p>",
+    "cons": "<ul><li><p style=\"text-align: justify;\">Much like the majority of the older character cast, is completely powercrept at this point. Even his own Signature isn’t best in slot for him anymore;</p></li><li><p style=\"text-align: justify;\">Very abnormally long rotation without Quickswap, 14s Outro buffs are very prone to expiring;</p></li><li><p style=\"text-align: justify;\">When he does have to dodge, his rotations get slowed down significantly most of the time;</p></li><li><p style=\"text-align: justify;\">Not free anymore. Good times…</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p>HP: <b>15000+</b></p></li><li><p>DEF: <b>1100+</b></p></li><li><p>ATK: <b>1800-2300+</b></p></li><li><p>CRIT Rate: <b>60%-80%+</b></p></li><li><p>CRIT DMG: <b>215-280%+</b></p></li><li><p>Energy Regen: <b>120%+</b></p><ul><li><p>Estimated in a Lynae+Shorekeeper team.</p></li></ul></li><li><p>Electro DMG Bonus: <b>40-70%+</b></p></li></ul><p>\n</p>",
+    "rotations": "<h5><strong><u>Rotation &amp; How to Play</u></strong></h5><p style=\"text-align: justify;\">Xiangli Yao’s rotation goal is to set his own and his teammates’ buffs up before using his Ultimate to access his main damage window, and then cast his 3 Law of Reigns skills as quickly as possible before ending his rotation.</p><div data-callout=\"\" class=\"callout callout-info\" style=\"--callout-color: #3B82F6;\" data-callout-type=\"info\"><div class=\"callout-icon\" data-icon=\"circle-info\"></div><div class=\"callout-content\"><h6><u>Echo Timing</u></h6><p style=\"text-align: justify;\">Swap Cancel Nightmare: Thundering Mephis at the very end of his rotation (No Quickswap) or before his rotation starts (in Quickswap).</p></div></div><div data-callout=\"\" class=\"callout callout-tip\" style=\"--callout-color: #22C55E;\" data-callout-type=\"tip\"><div class=\"callout-icon\" data-icon=\"lightbulb\"></div><div class=\"callout-content\"><p style=\"text-align: justify;\">Void Thunder’s 5-piece bonus effect only will only be maxed out if both a Heavy Attack and a Skill are cast, so it’s important to ensure both stacks (15s duration each, separately handled) are up for Xiangli Yao’s rotation.</p></div></div><h6><strong><u>Standard Rotation</u></strong></h6><ul><li><p style=\"text-align: justify;\">Intro&nbsp;</p></li><li><p style=\"text-align: justify;\">Heavy Attack (Instantly interrupt via Skill)</p></li><li><p style=\"text-align: justify;\">Skill (Instantly interrupt via Ultimate)</p></li><li><p style=\"text-align: justify;\">Ultimate</p></li><li><p style=\"text-align: justify;\">Skill: Divergence</p></li><li><p style=\"text-align: justify;\">Basic: Mid-air Attack: Revamp</p></li><li><p style=\"text-align: justify;\">Skill: Law of Reigns</p></li><li><p style=\"text-align: justify;\">Basic: Pivot 1</p></li><li><p style=\"text-align: justify;\">Basic: Pivot 2</p></li><li><p style=\"text-align: justify;\">Basic: Pivot 3</p></li><li><p style=\"text-align: justify;\">Skill: Law of Reigns</p></li><li><p style=\"text-align: justify;\">Skill: Divergence</p></li><li><p style=\"text-align: justify;\">Basic: Mid-air Attack: Revamp</p></li><li><p style=\"text-align: justify;\">Skill: Law of Reigns (Interrupt when cube starts forming via Swap)</p></li><li><p style=\"text-align: justify;\">Echo (Swap)</p></li><li><p style=\"text-align: justify;\">Outro</p></li></ul><p style=\"text-align: justify;\">The interruption on the last Law of Reigns allows for the first 4 hits of it to connect (most of the damage), but the last hit does not occur. Still, this saves a second over letting the full hits connect, and since Xiangli Yao’s rotation is so long to begin with, it ends up more optimal to perform his rotation this way.</p><h5><strong><u>Additional Tips &amp; Tricks</u></strong></h5><p style=\"text-align: justify;\">Timing a Tune Break Skill with the full Forte generation of one of his Mid-air Attacks can save close to a second while sacrificing minimal damage. It is highly recommended outside of Quickswap to significantly speed up your rotations, to execute this when possible (try maximizing Tune Break Skill damage as your first priority though, considering that Xiangli Yao’s own damage is far from the highest in the game).</p><p style=\"text-align: justify;\">Xiangli Yao is a character with a lot of Quickswap freedom. The overwhelming majority of his attacks after his Ultimate are quickswappable, including his Skill (Forte and non-Forte variants), his Mid-air Attack, and his second Basic Attack. Overall, he has a lot of room to execute his rotations within your other characters’ rotations, which makes him a particularly good character to try to Quickswap with. His Quickswap rotations are very free-flow, so experiment as you wish with them!</p>",
+    "skills": [
+      {
+        "name": "Probe",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<p><b>Basic Attack</b></p><p>Perform up to <b>5 </b>consecutive attacks, dealing <u>Electro DMG</u>.</p><p><b>Heavy Attack</b></p><p>Perform a charged attack at the cost of STA, dealing <u>Electro DMG</u>.</p><p><b>Mid-air Attack</b></p><p>Perform a Plunging Attack from mid-air at the cost of STA, dealing <u>Electro DMG</u>.</p><p><b>Dodge Counter</b></p><p>Use Basic Attack after a successful Dodge to attack the target, dealing <u>Electro DMG</u>. </p><p></p><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "16.65%*2",
+            "Lv2": "18.02%*2",
+            "Lv3": "19.39%*2",
+            "Lv4": "21.30%*2",
+            "Lv5": "22.66%*2",
+            "Lv6": "24.23%*2",
+            "Lv7": "26.42%*2",
+            "Lv8": "28.60%*2",
+            "Lv9": "30.79%*2",
+            "Lv10": "33.11%*2",
+            "Name": "Stage 1 DMG"
+          },
+          {
+            "Lv1": "50.10%",
+            "Lv2": "54.21%",
+            "Lv3": "58.32%",
+            "Lv4": "64.07%",
+            "Lv5": "68.18%",
+            "Lv6": "72.91%",
+            "Lv7": "79.48%",
+            "Lv8": "86.05%",
+            "Lv9": "92.62%",
+            "Lv10": "99.61%",
+            "Name": "Stage 2 DMG"
+          },
+          {
+            "Lv1": "20.00%*3",
+            "Lv2": "21.64%*3",
+            "Lv3": "23.28%*3",
+            "Lv4": "25.58%*3",
+            "Lv5": "27.22%*3",
+            "Lv6": "29.10%*3",
+            "Lv7": "31.73%*3",
+            "Lv8": "34.35%*3",
+            "Lv9": "36.98%*3",
+            "Lv10": "39.76%*3",
+            "Name": "Stage 3 DMG"
+          },
+          {
+            "Lv1": "26.68%*2 + 13.34%",
+            "Lv2": "28.87%*2 + 14.44%",
+            "Lv3": "31.06%*2 + 15.53%",
+            "Lv4": "34.12%*2 + 17.06%",
+            "Lv5": "36.31%*2 + 18.16%",
+            "Lv6": "38.83%*2 + 19.42%",
+            "Lv7": "42.33%*2 + 21.17%",
+            "Lv8": "45.83%*2 + 22.92%",
+            "Lv9": "49.33%*2 + 24.67%",
+            "Lv10": "53.05%*2 + 26.53%",
+            "Name": "Stage 4 DMG"
+          },
+          {
+            "Lv1": "100.00%",
+            "Lv2": "108.20%",
+            "Lv3": "116.40%",
+            "Lv4": "127.88%",
+            "Lv5": "136.08%",
+            "Lv6": "145.51%",
+            "Lv7": "158.63%",
+            "Lv8": "171.75%",
+            "Lv9": "184.87%",
+            "Lv10": "198.81%",
+            "Name": "Stage 5 DMG"
+          },
+          {
+            "Lv1": "41.65%*2",
+            "Lv2": "45.07%*2",
+            "Lv3": "48.49%*2",
+            "Lv4": "53.27%*2",
+            "Lv5": "56.68%*2",
+            "Lv6": "60.61%*2",
+            "Lv7": "66.07%*2",
+            "Lv8": "71.54%*2",
+            "Lv9": "77.00%*2",
+            "Lv10": "82.81%*2",
+            "Name": "HA DMG"
+          },
+          {
+            "Lv1": "62.00%",
+            "Lv2": "67.09%",
+            "Lv3": "72.17%",
+            "Lv4": "79.29%",
+            "Lv5": "84.37%",
+            "Lv6": "90.22%",
+            "Lv7": "98.36%",
+            "Lv8": "106.49%",
+            "Lv9": "114.62%",
+            "Lv10": "123.27%",
+            "Name": "Mid-air Attack DMG"
+          },
+          {
+            "Lv1": "120.00%",
+            "Lv2": "129.84%",
+            "Lv3": "139.68%",
+            "Lv4": "153.46%",
+            "Lv5": "163.30%",
+            "Lv6": "174.62%",
+            "Lv7": "190.36%",
+            "Lv8": "206.10%",
+            "Lv9": "221.85%",
+            "Lv10": "238.58%",
+            "Name": "Dodge Counter DMG"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "HA STA Cost"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack STA Cost"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Deduction",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p>Attack the target, dealing <u>Electro DMG.</u></p>",
+        "multipliers": [
+          {
+            "Lv1": "100.00%",
+            "Lv2": "108.20%",
+            "Lv3": "116.40%",
+            "Lv4": "127.88%",
+            "Lv5": "136.08%",
+            "Lv6": "145.51%",
+            "Lv7": "158.63%",
+            "Lv8": "171.75%",
+            "Lv9": "184.87%",
+            "Lv10": "198.81%",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "5",
+            "Lv2": "5",
+            "Lv3": "5",
+            "Lv4": "5",
+            "Lv5": "5",
+            "Lv6": "5",
+            "Lv7": "5",
+            "Lv8": "5",
+            "Lv9": "5",
+            "Lv10": "5",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "7",
+            "Lv2": "7",
+            "Lv3": "7",
+            "Lv4": "7",
+            "Lv5": "7",
+            "Lv6": "7",
+            "Lv7": "7",
+            "Lv8": "7",
+            "Lv9": "7",
+            "Lv10": "7",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Cogitation Model",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p>Attack the target, dealing <u>Electro DMG</u>. Enter Intuition.\nWhen in Intuition:</p><ul><li><p>Obtain <b>3</b> Hypercube(s). Each time Resonance Skill Law of Reigns is cast, consume <b>1</b> Hypercube(s). Intuition ends once all Hypercubes are consumed.</p></li><li><p>Basic Attack and Heavy Attack are replaced with Basic Attack Pivot - Impale, which performs up to <b>3</b> consecutive attacks, dealing <u>Electro DMG</u>.</p></li><li><p>Resonance Skill Deduction is replaced with Resonance Skill Divergence, which deals <u>Electro DMG</u>.</p></li><li><p>Dodge Counter is replaced with Dodge Counter Unfathomed, considered as Resonance Liberation DMG. </p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "737.42%",
+            "Lv2": "797.89%",
+            "Lv3": "858.35%",
+            "Lv4": "943.01%",
+            "Lv5": "1003.48%",
+            "Lv6": "1073.02%",
+            "Lv7": "1169.76%",
+            "Lv8": "1266.51%",
+            "Lv9": "1363.26%",
+            "Lv10": "1466.06%",
+            "Name": "Cogitation Model DMG"
+          },
+          {
+            "Lv1": "60.19%",
+            "Lv2": "65.13%",
+            "Lv3": "70.06%",
+            "Lv4": "76.97%",
+            "Lv5": "81.91%",
+            "Lv6": "87.59%",
+            "Lv7": "95.48%",
+            "Lv8": "103.38%",
+            "Lv9": "111.28%",
+            "Lv10": "119.67%",
+            "Name": "Pivot - Impale Stage 1 DMG"
+          },
+          {
+            "Lv1": "30.65%*4",
+            "Lv2": "33.16%*4",
+            "Lv3": "35.67%*4",
+            "Lv4": "39.19%*4",
+            "Lv5": "41.70%*4",
+            "Lv6": "44.59%*4",
+            "Lv7": "48.61%*4",
+            "Lv8": "52.63%*4",
+            "Lv9": "56.65%*4",
+            "Lv10": "60.92%*4",
+            "Name": "Pivot - Impale Stage 2 DMG"
+          },
+          {
+            "Lv1": "67.03%*2",
+            "Lv2": "72.52%*2",
+            "Lv3": "78.02%*2",
+            "Lv4": "85.71%*2",
+            "Lv5": "91.21%*2",
+            "Lv6": "97.53%*2",
+            "Lv7": "106.32%*2",
+            "Lv8": "115.12%*2",
+            "Lv9": "123.91%*2",
+            "Lv10": "133.25%*2",
+            "Name": "Pivot - Impale Stage 3 DMG"
+          },
+          {
+            "Lv1": "24.94%*3 + 87.29%*2",
+            "Lv2": "26.99%*3 + 94.45%*2",
+            "Lv3": "29.04%*3 + 101.61%*2",
+            "Lv4": "31.90%*3 + 111.63%*2",
+            "Lv5": "33.94%*3 + 118.79%*2",
+            "Lv6": "36.30%*3 + 127.02%*2",
+            "Lv7": "39.57%*3 + 138.47%*2",
+            "Lv8": "42.84%*3 + 149.93%*2",
+            "Lv9": "46.11%*3 + 161.38%*2",
+            "Lv10": "49.59%*3 + 173.55%*2",
+            "Name": "Divergence DMG"
+          },
+          {
+            "Lv1": "19.53%*2 + 156.22%",
+            "Lv2": "21.13%*2 + 169.03%",
+            "Lv3": "22.73%*2 + 181.84%",
+            "Lv4": "24.98%*2 + 199.77%",
+            "Lv5": "26.58%*2 + 212.58%",
+            "Lv6": "28.42%*2 + 227.31%",
+            "Lv7": "30.98%*2 + 247.81%",
+            "Lv8": "33.54%*2 + 268.30%",
+            "Lv9": "36.10%*2 + 288.80%",
+            "Lv10": "38.83%*2 + 310.58%",
+            "Name": "Unfathomed DMG"
+          },
+          {
+            "Lv1": "24",
+            "Lv2": "24",
+            "Lv3": "24",
+            "Lv4": "24",
+            "Lv5": "24",
+            "Lv6": "24",
+            "Lv7": "24",
+            "Lv8": "24",
+            "Lv9": "24",
+            "Lv10": "24",
+            "Name": "Intuition Duration"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "Cogitation Model Cooldown"
+          },
+          {
+            "Lv1": "7",
+            "Lv2": "7",
+            "Lv3": "7",
+            "Lv4": "7",
+            "Lv5": "7",
+            "Lv6": "7",
+            "Lv7": "7",
+            "Lv8": "7",
+            "Lv9": "7",
+            "Lv10": "7",
+            "Name": "Divergence Cooldown"
+          },
+          {
+            "Lv1": "125",
+            "Lv2": "125",
+            "Lv3": "125",
+            "Lv4": "125",
+            "Lv5": "125",
+            "Lv6": "125",
+            "Lv7": "125",
+            "Lv8": "125",
+            "Lv9": "125",
+            "Lv10": "125",
+            "Name": "Resonance Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Cogitation Model Concerto Regen"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Divergence Concerto Regen"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Forever Seeking",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p><b>Resonance Skill - Decipher</b></p><p>When Capacity reaches <b>100</b>, Resonance Skill Deduction is replaced with Resonance Skill Decipher.</p><p>Consume <b>100 </b>Capacity to cast Resonance Skill Decipher, dealing <u>Electro DMG</u>, considered as Resonance Liberation DMG.</p><p><b>Resonance Skill - Law of Reigns</b></p><p>When in Intuition triggered by Resonance Liberation and Performance Capacity reaches <b>5</b>, Resonance Skill Divergence is replaced with Resonance Skill Law of Reigns.</p><p>Consume <b>5 </b>Performance Capacity to cast Resonance Skill Law of Reigns, dealing <u>Electro DMG</u>, considered as Resonance Liberation DMG.</p><p><b>Mid-air Attack - Revamp</b></p><p>Shortly after casting Resonance Skill Decipher or Resonance Skill Divergence, use Basic Attack to perform Mid-air Attack Revamp at the cost of STA, dealing <u>Electro DMG</u>, considered as Resonance Liberation DMG.</p><p><b>Capacity</b></p><p>Xiangli Yao can hold up to <b>100 </b>Capacity.</p><p>Every Normal Attack Probe on hit grants Capacity.</p><p>Every Resonance Skill Deduction on hit grants Capacity.</p><p><b>Performance Capacity</b></p><p>Xiangli Yao can hold up to <b>5</b> Performance Capacity.</p><p>When in Intuition triggered by Resonance Liberation:</p><ul><li><p>Obtain <b>1</b> Performance Capacity when Stage 1 of Basic Attack Pivot - Impale hits a target.</p></li><li><p>Obtain <b>2</b> Performance Capacity when Stage 2 or 3 of Basic Attack Pivot - Impale hits a target.</p></li><li><p>Obtain <b>2 </b>Performance Capacity for every Resonance Skill Divergence on hit.</p></li><li><p>Obtain <b>3</b> Performance Capacity for every Mid-air Attack Revamp on hit.</p></li><li><p>Obtain<b> 2</b> Performance Capacity for every Dodge Counter Unfathomed on hit. </p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "200.10%",
+            "Lv2": "216.51%",
+            "Lv3": "232.92%",
+            "Lv4": "255.89%",
+            "Lv5": "272.30%",
+            "Lv6": "291.17%",
+            "Lv7": "317.42%",
+            "Lv8": "343.68%",
+            "Lv9": "369.93%",
+            "Lv10": "397.82%",
+            "Name": "Decipher DMG"
+          },
+          {
+            "Lv1": "48.15%*4 + 128.40%",
+            "Lv2": "52.10%*4 + 138.93%",
+            "Lv3": "56.05%*4 + 149.46%",
+            "Lv4": "61.58%*4 + 164.20%",
+            "Lv5": "65.53%*4 + 174.73%",
+            "Lv6": "70.07%*4 + 186.84%",
+            "Lv7": "76.39%*4 + 203.69%",
+            "Lv8": "82.70%*4 + 220.53%",
+            "Lv9": "89.02%*4 + 237.38%",
+            "Lv10": "95.73%*4 + 255.28%",
+            "Name": "Law of Reigns DMG"
+          },
+          {
+            "Lv1": "11.00%*4 + 33.00%*2",
+            "Lv2": "11.91%*4 + 35.71%*2",
+            "Lv3": "12.81%*4 + 38.42%*2",
+            "Lv4": "14.07%*4 + 42.21%*2",
+            "Lv5": "14.97%*4 + 44.91%*2",
+            "Lv6": "16.01%*4 + 48.02%*2",
+            "Lv7": "17.45%*4 + 52.35%*2",
+            "Lv8": "18.90%*4 + 56.68%*2",
+            "Lv9": "20.34%*4 + 61.01%*2",
+            "Lv10": "21.87%*4 + 65.61%*2",
+            "Name": "Revamp DMG"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Revamp STA Cost"
+          },
+          {
+            "Lv1": "7",
+            "Lv2": "7",
+            "Lv3": "7",
+            "Lv4": "7",
+            "Lv5": "7",
+            "Lv6": "7",
+            "Lv7": "7",
+            "Lv8": "7",
+            "Lv9": "7",
+            "Lv10": "7",
+            "Name": "Decipher Concerto Regen"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Law of Reigns Concerto Regen"
+          },
+          {
+            "Lv1": "5",
+            "Lv2": "5",
+            "Lv3": "5",
+            "Lv4": "5",
+            "Lv5": "5",
+            "Lv6": "5",
+            "Lv7": "5",
+            "Lv8": "5",
+            "Lv9": "5",
+            "Lv10": "5",
+            "Name": "Revamp Concerto Regen"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Knowing",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Gain <b>5%</b> <u>Electro DMG</u> Bonus after casting Resonance Skill for <b>8s</b>, stackable for up to <b>4 </b>times.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Focus",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>When in Intuition triggered by Resonance Liberation, Xiangli Yao&#039;s resistance to interruption is enhanced.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Principle",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Attack the target, dealing <u>Electro DMG</u>.</p>",
+        "multipliers": [
+          {
+            "Lv1": "50.00%*2",
+            "Lv2": "54.10%*2",
+            "Lv3": "58.20%*2",
+            "Lv4": "63.94%*2",
+            "Lv5": "68.04%*2",
+            "Lv6": "72.76%*2",
+            "Lv7": "79.32%*2",
+            "Lv8": "85.88%*2",
+            "Lv9": "92.44%*2",
+            "Lv10": "99.41%*2",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Chain Rule",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>Xiangli Yao will call down a laser beam upon the first target the incoming Resonator&#039;s Basic Attack hits, dealing <u>Electro DMG</u> equal to <b>237.63%</b> of Xiangli Yao&#039;s ATK to an area. This effect lasts for <b>8s </b>and can be triggered once every <b>2s</b>, up to <b>3</b> times.</p>",
+        "type": "Outro Skill"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p>Resonance Skill Law of Reigns additionally launches <b>6 </b>Convolution Matrices at enemies, each dealing Resonance Liberation DMG equal to <b>8%</b> of the skill&#039;s DMG Multiplier. </p>",
+      "dupe1_name": "Sequence Node 1",
+      "dupe2": "<p>Casting Resonance Skill or Resonance Liberation Cogitation Model increases Crit. DMG by <b>30%</b> for <b>8s</b>. </p>",
+      "dupe2_name": "Sequence Node 2",
+      "dupe3": "<p>Casting Resonance Liberation Cogitation Model increases the DMG of the following Resonance Skill moves by<b> 63% </b>for <b>24s</b>: Decipher, Deduction, Divergence, and Law of Reigns. This effect can be triggered up to<b> 5</b> times. </p>",
+      "dupe3_name": "Sequence Node 3",
+      "dupe4": "<p>Casting Resonance Liberation Cogitation Model grants a <b>25% </b>DMG Bonus to all team members&#039; Resonance Liberation for <b>30s</b>. </p>",
+      "dupe4_name": "Sequence Node 4",
+      "dupe5": "<p>The DMG Multiplier of Outro Skill Chain Rule is increased by <b>222%</b>. The DMG Multiplier of Resonance Liberation Cogitation Model is increased by <b>100%. </b></p>",
+      "dupe5_name": "Sequence Node 5",
+      "dupe6": "<p>The Hypercubes obtained from Resonance Liberation Cogitation Model are enhanced, increasing the DMG Multiplier of Resonance Skill Law of Reigns by <b>76%. </b></p>",
+      "dupe6_name": "Sequence Node 6"
+    },
+    "voiceActors": {
+      "cn": "Ban Ma",
+      "en": "Shaun Mendum",
+      "kr": "Jung Eui Jin",
+      "jpn": "Kobayashi Chiaki"
+    },
+    "attributeBonus": [
+      {
+        "name": "CRIT DMG",
+        "value": 16
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": {
+      "skill": {
+        "name": "Unending Destruction",
+        "number": 26
+      },
+      "common": [
+        {
+          "name": "LF Whisperin Core",
+          "number_char": 4,
+          "number_skill": 25
+        },
+        {
+          "name": "MF Whisperin Core",
+          "number_char": 12,
+          "number_skill": 28
+        },
+        {
+          "name": "HF Whisperin Core",
+          "number_char": 12,
+          "number_skill": 40
+        },
+        {
+          "name": "FF Whisperin Core",
+          "number_char": 4,
+          "number_skill": 57
+        }
+      ],
+      "ascension": {
+        "name": "Violet Coral",
+        "number": 60
+      },
+      "skill_other": [
+        {
+          "name": "Cadence Seed",
+          "number": 25
+        },
+        {
+          "name": "Cadence Bud",
+          "number": 28
+        },
+        {
+          "name": "Cadence Leaf",
+          "number": 55
+        },
+        {
+          "name": "Cadence Blossom",
+          "number": 67
+        }
+      ],
+      "breakthrough": {
+        "name": "Hidden Thunder Tacet Core",
+        "number": 46
+      }
+    },
+    "videos": [
+      {
+        "video": "0f9yBd3ld8A",
+        "url": "https://www.youtube.com/watch?v=0f9yBd3ld8A"
+      }
+    ],
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "critdmg_atk",
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "xiangli-yao",
+      "build": 3.7,
+      "review": 3.7
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "xiangli-yao",
+        "Weapon": "Moongazer's Sigil",
+        "Dupes": 1,
+        "Percentage": "100.0%",
+        "Percentage_2": "",
+        "Comment": "Iuno's Signature is Xiangli Yao's new best weapon, providing him with massive CRIT Rate and good ATK, and better stats than his own Signature like Liberation DMG DEF Ignore and Liberation DMG Bonus on the passive."
+      },
+      {
+        "ID": 2,
+        "Character": "xiangli-yao",
+        "Weapon": "Verity's Handle",
+        "Dupes": 1,
+        "Percentage": "97.0%",
+        "Percentage_2": "",
+        "Comment": "Xiangli Yao's Signature is his second best choice, granting him with solid ATK, CRIT Rate and DMG Bonus, making for an excellent stat-stick for him."
+      },
+      {
+        "ID": 3,
+        "Character": "xiangli-yao",
+        "Weapon": "Blazing Justice",
+        "Dupes": 1,
+        "Percentage": "89.2%",
+        "Percentage_2": "",
+        "Comment": "Zani's Signature weapon is generally good for Gauntlets damage dealers thanks to its consistent ATK and CRIT DMG stats as well as its easily applied DEF Ignore effect."
+      },
+      {
+        "ID": 4,
+        "Character": "xiangli-yao",
+        "Weapon": "Tragicomedy",
+        "Dupes": 1,
+        "Percentage": "88.7%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT Rate stat-stick for Xiangli Yao, who does not benefit from this weapon's Heavy Attack-oriented effects."
+      },
+      {
+        "ID": 5,
+        "Character": "xiangli-yao",
+        "Weapon": "Pulsation Bracer",
+        "Dupes": 1,
+        "Percentage": "88.3%",
+        "Percentage_2": "",
+        "Comment": "Strongest permanently available option and simple ATK and CRIT Rate stat-stick for Xiangli Yao, who does not benefit from this weapon's Basic DMG-oriented effects."
+      },
+      {
+        "ID": 6,
+        "Character": "xiangli-yao",
+        "Weapon": "Solsworn Ciphers",
+        "Dupes": 1,
+        "Percentage": "86.7%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT DMG stat-stick for Xiangli Yao, gives some extra but very negligible damage to his Echo Skill but does not benefit from any of its effects otherwise."
+      },
+      {
+        "ID": 7,
+        "Character": "xiangli-yao",
+        "Weapon": "Abyss Surges",
+        "Dupes": 1,
+        "Percentage": "80.9%",
+        "Percentage_2": "",
+        "Comment": "Another strong permanent option for Xiangli Yao that does not grant him any CRIT but instead favours ATK and Energy Regen. Inferior choice overall but still viable."
+      },
+      {
+        "ID": 8,
+        "Character": "xiangli-yao",
+        "Weapon": "Aether Strike",
+        "Dupes": 5,
+        "Percentage": "78.7%",
+        "Percentage_2": "",
+        "Comment": "Best 4-star weapon and Battle Pass exclusive intended to function on Iuno that can still benefit Xiangli Yao by virtue of its ATK, CRIT DMG and Liberation DMG stats which increase Xiangli Yao's damage well enough to compete with low-ranked 5-star choices."
+      },
+      {
+        "ID": 9,
+        "Character": "xiangli-yao",
+        "Weapon": "Stonard",
+        "Dupes": 5,
+        "Percentage": "78.1%",
+        "Percentage_2": "",
+        "Comment": "Another Battle Pass exclusive which gives CRIT Rate, a low Base ATK but some Liberation DMG Bonus increases to compensate, making for a viable 4-star overall."
+      },
+      {
+        "ID": 10,
+        "Character": "xiangli-yao",
+        "Weapon": "Celestial Spiral",
+        "Dupes": 5,
+        "Percentage": "72.0%",
+        "Percentage_2": "",
+        "Comment": "Grants some extra Energy and ATK buffs with a decent Base ATK, does not compare to any 5-star choices and generally not the best, but a fine choice until stronger options are accessed."
+      },
+      {
+        "ID": 11,
+        "Character": "xiangli-yao",
+        "Weapon": "Hollow Mirage",
+        "Dupes": 5,
+        "Percentage": "70.1%",
+        "Percentage_2": "",
+        "Comment": "Gives some extra ATK and DEF until Xiangli Yao gets hit after casting his Ultimate. Even under the best case scenario, this weapon isn't the best but can serve until stronger weapons are available."
+      },
+      {
+        "ID": 12,
+        "Character": "xiangli-yao",
+        "Weapon": "Legend of Drunken Hero",
+        "Dupes": 5,
+        "Percentage": "66.0%",
+        "Percentage_2": "",
+        "Comment": "Best no-gacha option for Xiangli Yao, does not give anything except some ATK. It is strongly encouraged to replace this weapon by one of the 5-star choices when possible."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "xiangli-yao",
+        "Type": "Best",
+        "Set": "Void Thunder",
+        "Percentage": "100.00%",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Offers a 10% unconditional Electro DMG% boost and up to an additional 30% Electro DMG% after you land a combination of 2 Heavy Attacks or Resonance Skills for a grand total of 40% additional Electro damage after fully ramped.",
+        "Echo_1": "Nightmare: Thundering Mephis",
+        "Echo_1_Comment": "Offers an unconditional 12% Electro DMG and 12% Liberation DMG boost when placed in the main Main Echo slot, making it a solid choice for Electro focused resonators who emphasize Liberation damage and are looking to use the 5P Void Thunder set bonus.",
+        "Echo_2": "Nightmare: Tempest Mephis",
+        "Echo_2_Comment": "Offers an unconditional 12% Electro DMG and 12% Resonance Skill DMG boost when placed in the Main Echo slot, making it a solid choice for Electro focused resonators who emphasize Resonance Skill damage and are looking to use either the 5P Empyrean Anthem Echo or 5P Void Thunder set bonus."
+      },
+      {
+        "ID": 2,
+        "Character": "xiangli-yao",
+        "Type": "Best",
+        "Set": "Endless Resonance",
+        "Percentage": "92.12%",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Offers a 10% unconditional ATK% boost and an additional 5% ATK% for every 1.5 seconds the equipped character has been in combat - up to 20% after 6 seconds, totalling 30% additional ATK% after fully ramped. This set almost almost loses out to most characters signature elemental sets, but is generically usable across all damage characters regardless of their element.\nThe calculations for this set assume you're not swaping during the combo. If you will swap, the set performance drops (to 89.26%).",
+        "Echo_1": "Mech Abomination",
+        "Echo_1_Comment": "Very easy echo to use that should be used at the very beginning of the burst window right after the Intro. Thanks to its instant cast there is no thinking required and you can enjoy your ATK% boost and some nice burst damage.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "xiangli-yao",
+        "Character": "xiangli-yao",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Electro DMG",
+        "Echo_3": "ATK% ≥ Electro DMG",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% > Liberation DMG% > ATK",
+        "Comments": "Without Signature, an Electro DMG 3-cost is always preferred."
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "xiangli-yao",
+        "Type": "",
+        "Order": "Res. Liberation, Forte Circuit, Intro Skill, Res. Skill, Basic Attack",
+        "Comments": "Intro, Skill and Basic can be skipped when levelling to save on resources at a near-nonexistent damage loss."
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "xiangli-yao",
+        "Name": "Best Team",
+        "Member_1": "xiangli-yao",
+        "Member_2": "lynae, yinlin",
+        "Member_3": "mornye, the-shorekeeper, verina",
+        "Comments": "Mornye is only best with Lynae on the team."
+      },
+      {
+        "ID": 2,
+        "Character": "xiangli-yao",
+        "Name": "Expert Team",
+        "Member_1": "xiangli-yao",
+        "Member_2": "changli",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": "VERY difficult to play. Not recommended to casual players."
+      },
+      {
+        "ID": 3,
+        "Character": "xiangli-yao",
+        "Name": "Budget Team",
+        "Member_1": "xiangli-yao",
+        "Member_2": "jianxin",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": "Might face Energy problems and need more Energy Regen to be built on Xiangli Yao."
+      },
+      {
+        "ID": 4,
+        "Character": "xiangli-yao",
+        "Name": "Budget Expert Team",
+        "Member_1": "xiangli-yao",
+        "Member_2": "yangyang",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": "Not recommended to casual players, benefits strongly from Swap Cancels."
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "xiangli-yao",
+        "Synergy": "lynae, yinlin",
+        "Comment": "Easily Xiangli Yao's best partners. Lynae is the best choice by a landslide since she provides an almost equivalent buff to Yinlin's Outro with a much more impressive general buffing profile in the rest of her kit; Yilnlin is another easy to use partner, as she provides great off-field DMG via Coordinated Attacks, and amazing 20% Electro and 25% Liberation DMG Amplify Outro buffs. The pairings here are quite natural and effective."
+      },
+      {
+        "ID": 2,
+        "Character": "xiangli-yao",
+        "Synergy": "changli",
+        "Comment": "Let's be clear: we don't recommend Changli+Xiangli Yao to casual players. The pair is extremely quickswap heavy and reliant on that mechanic to deal any semblance of good damage. It will underperform drastically if you don't quickswap a ton of attacks from both characters, especially compared to Yinlin. However, if you really want to push this game's limits, this duo is one of the highest damaging in the entire game. Good luck."
+      },
+      {
+        "ID": 3,
+        "Character": "xiangli-yao",
+        "Synergy": "jianxin",
+        "Comment": "Good option for Xiangli Yao if you don't own the above options, as she amplifies Liberation DMG by 38% on Outro, which is a significant boost to his damage. However, Jianxin is awkward to use due to her extended field time and Energy problems. Only use her if you don't own above choices or aren't willing to quickswap."
+      },
+      {
+        "ID": 4,
+        "Character": "xiangli-yao",
+        "Synergy": "yangyang",
+        "Comment": "Xiangli Yao's best option that isn't a limited 5 star if you are willing to quickswap. Xiangli Yao has several windows Yangyang can use to get a lot of attacks in and effectively allow you to play two characters at once, making for a great damaging pair. No Energy problems to worry about as well, thanks to Yangyang's Outro."
+      },
+      {
+        "ID": 5,
+        "Character": "xiangli-yao",
+        "Synergy": "mornye, the-shorekeeper, verina",
+        "Comment": "These 3 are the best generalist Supports in the game. Mornye has a special synergy with Lynae since Lynae can apply Tune Rupture/Strain for Mornye to respond to them and provide her full array of buffs, making her the best choice generally if Lynae is in use. Shorekeeper is however a close second thanks to her massive CRIT buffs and other generalist buffs, then Verina is the most accessible and still very strong option if neither are available. "
+      }
+    ]
+  },
+  "stats": {
+    "slug": "xiangli-yao",
+    "name": "Xiangli Yao",
+    "unit_id": 1305,
+    "base_hp": 850,
+    "base_atk": 34,
+    "base_def": 100,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 125,
+    "bonus_ele": 0,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 0,
+    "bonus_crit": 0,
+    "bonus_critdmg": 16,
+    "bonus_hp": 0
+  },
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "xiangli-yao",
+        "name": "Xiangli Yao",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 978201,
+          "damage_e1": 1121686,
+          "damage_e2": 1219122,
+          "damage_e3": 1341359,
+          "damage_e4": 1385201,
+          "damage_e5": 1751086,
+          "damage_e6": 2094834
+        },
+        "dps": {
+          "damage": 73383,
+          "damage_e1": 84147,
+          "damage_e2": 91457,
+          "damage_e3": 100627,
+          "damage_e4": 103916,
+          "damage_e5": 131364,
+          "damage_e6": 157151
+        },
+        "time": "13.3",
+        "echo_main": "Nightmare: Thundering Mephis",
+        "echo_4": "CRIT Rate",
+        "echo_3": "ATK%",
+        "echo_3a": "Electro DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "Energy Regen (9.2%), CRIT Rate (40.4%), CRIT DMG (80.7%), ATK (25.8%), Resonance Liberation DMG Bonus (17.2%)",
+        "set_1": "Void Thunder",
+        "set_2": "",
+        "weapon": "Moongazer's Sigil",
+        "weapon_S": 1
+      },
+      "team": {
+        "ID": 1,
+        "Character": "xiangli-yao",
+        "Member_1_Name": "lynae",
+        "Member_1_Weapon": "Spectrum Blaster",
+        "Member_1_Set": "Pact of Neonlight Leap",
+        "Member_1_Echo": "Hyvatia",
+        "Member_2_Name": "mornye",
+        "Member_2_Weapon": "Starfield Calibrator",
+        "Member_2_Set": "Halo of Starry Radiance",
+        "Member_2_Echo": "Reactor Husk"
+      },
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      77512
+    ],
+    [
+      "Heavy",
+      18657
+    ],
+    [
+      "Skill",
+      122048
+    ],
+    [
+      "Liberation",
+      632024
+    ],
+    [
+      "Intro",
+      20030
+    ],
+    [
+      "Outro",
+      28888
+    ],
+    [
+      "Echo",
+      49236
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Abyss Surges",
+        "Slug": "abyss-surges",
+        "Rarity": 5,
+        "ID": "21040015",
+        "Effect": "Increases Energy Regen by {0}. When hitting a target with Resonance Skill, increases Basic Attack DMG Bonus by {1}, lasting for {2}. When hitting a target with Basic Attacks, increases Resonance Skill DMG Bonus by {3}, lasting for {4}s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": [
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "Array_3": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_4": [
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 36.4,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Aether Strike",
+        "Slug": "aether-strike",
+        "Rarity": 4,
+        "ID": "21040104",
+        "Effect": "Casting Resonance Liberation increases ATK by {0} and grants {1} Resonance Liberation DMG Bonus for 15s.",
+        "Array_0": [
+          "7.2%",
+          "11.1%",
+          "15.1%",
+          "19%",
+          "23%"
+        ],
+        "Array_1": [
+          "10.8%",
+          "16.7%",
+          "22.6%",
+          "28.6%",
+          "34.5%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 40.5,
+        "Source": "Battle Pass"
+      },
+      {
+        "Name": "Blazing Justice",
+        "Slug": "blazing-justice",
+        "Rarity": 5,
+        "ID": "21040036",
+        "Effect": "Increases ATK by {0}. Casting Basic Attack grants the following effects: Dealing damage ignores {1} of the target's DEF and Amplifies Spectro Frazzle DMG dealt by {2} for 6s. Retriggering the effect resets its duration.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_2": [
+          "50%",
+          "62.5%",
+          "75%",
+          "87.5%",
+          "100%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Celestial Spiral",
+        "Slug": "celestial-spiral",
+        "Rarity": 4,
+        "ID": "21040084",
+        "Effect": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for 16s. This effect can be triggered once every 20s.",
+        "Array_0": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Hollow Mirage",
+        "Slug": "hollow-mirage",
+        "Rarity": 4,
+        "ID": "21040064",
+        "Effect": "When Resonance Liberation is released, grants 3 stack(s) of Iron Armor. Each stack increases ATK and DEF by {0}, stacking up to 3 time(s). When the Resonator takes damage, reduces the number of stacks by 1.",
+        "Array_0": [
+          "3%",
+          "3.5%",
+          "4%",
+          "4.5%",
+          "5%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 412,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 30.3,
+        "Source": ""
+      },
+      {
+        "Name": "Legend of Drunken Hero",
+        "Slug": "legend-of-drunken-hero",
+        "Rarity": 4,
+        "ID": "21040094",
+        "Effect": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for 10s. This effect can be triggered 1 time per second, stackable up to 4 times.",
+        "Array_0": [
+          "4%",
+          "5%",
+          "6%",
+          "7%",
+          "8%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Crafting"
+      },
+      {
+        "Name": "Moongazer's Sigil",
+        "Slug": "moongazer-s-sigil",
+        "Rarity": 5,
+        "ID": "21040046",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or Resonance Liberation increases Resonance Liberation DMG by {1} for 15s. Obtaining Shield allows Resonance Liberation DMG to ignore {2} of the target's DEF for 7s, stacking up to 5 times. This effect is triggered once every 0.5s. Upon casting Intro Skill, this effect reaches max stacks immediately, lasting for 3s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_2": [
+          "7.2%",
+          "8.4%",
+          "9.6%",
+          "10.8%",
+          "12%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Pulsation Bracer",
+        "Slug": "pulsation-bracer",
+        "Rarity": 5,
+        "ID": "21040045",
+        "Effect": "Increases ATK by {0}. Dealing damage to targets under Tune Strain: Interfered grants {1} Basic Attack DMG Bonus for 3s, stacking up to 4 times. This effect can be triggered once every 0.5s. Retriggering the effect resets its duration.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "6%",
+          "6.7%",
+          "7.5%",
+          "8.2%",
+          "9%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Solsworn Ciphers",
+        "Slug": "solsworn-ciphers",
+        "Rarity": 5,
+        "ID": "21040066",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or Echo Skill grants {1} Echo Skill DMG Amplification for 15s. When dealing Echo Skill DMG, Aero DMG ignores {2} of the target's DEF for 6s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "32%",
+          "40%",
+          "48%",
+          "56%",
+          "64%"
+        ],
+        "Array_2": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Stonard",
+        "Slug": "stonard",
+        "Rarity": 4,
+        "ID": "21040074",
+        "Effect": "When Resonance Skill is released, increases the caster's Resonance Liberation DMG Bonus by {0}, lasting for 15s.",
+        "Array_0": [
+          "18%",
+          "27%",
+          "36%",
+          "45%",
+          "54%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 20.2,
+        "Source": "Pioneer Podcast"
+      },
+      {
+        "Name": "Tragicomedy",
+        "Slug": "tragicomedy",
+        "Rarity": 5,
+        "ID": "21040026",
+        "Effect": "Increases ATK by {0}. Every time Basic Attack or Intro Skill is cast, Heavy Attack DMG Bonus increases by {1} for 3s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "48%",
+          "60%",
+          "72%",
+          "84%",
+          "96%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Verity's Handle",
+        "Slug": "verity-s-handle",
+        "Rarity": 5,
+        "ID": "21040016",
+        "Effect": "Gain {0} Attribute DMG Bonus. When using Resonance Liberation, the wielder gains {1} Resonance Liberation DMG Bonus for 8s. This effect can be extended by 5 seconds each time Resonance Skills are cast, up to 3 times.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "48%",
+          "60%",
+          "72%",
+          "84%",
+          "94%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Gacha"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Hyvatia",
+        "Slug": "hyvatia",
+        "ID": "6000189",
+        "Echo_skill": "Summon Hyvatia in mid-air to fire lasers at enemies, dealing {0} Spectro DMG 10 times.\\n\\nCasting Outro Skill within 15s after summoning Hyvatia grants 10.00% All-Attribute DMG Bonus to the Intro Skill of the incoming Resonator for 15s.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          24,
+          25
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "18.24%"
+        ],
+        "Skill_3": [
+          "21.28%"
+        ],
+        "Skill_4": [
+          "24.32%"
+        ],
+        "Skill_5": [
+          "27.36%"
+        ]
+      },
+      {
+        "Name": "Mech Abomination",
+        "Slug": "mech-abomination",
+        "ID": "340000060",
+        "Echo_skill": "Strike the enemies in front, dealing {0} Electro DMG. Summon Mech Waste to attack enemies. Mech Waste deals {1} Electro DMG on-hit and explode after a while to deal {2} Electro DMG. After casting this Echo Skill, increase current character's ATK by <b>12.00%</b> for <b>15s</b>. Damage dealt by Mech Waste is considered Outro Skill DMG.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          9
+        ],
+        "Skill_1": [
+          "30.40%",
+          "200%",
+          "100%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_2": [
+          "34.96%",
+          "230%",
+          "115%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_3": [
+          "39.52%",
+          "260",
+          "130%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_4": [
+          "44.08%",
+          "290%",
+          "145%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_5": [
+          "48.64%",
+          "320%",
+          "160%",
+          "12%",
+          "15",
+          "25"
+        ]
+      },
+      {
+        "Name": "Nightmare: Tempest Mephis",
+        "Slug": "nightmare-tempest-mephis",
+        "ID": "330000170",
+        "Echo_skill": "Transform into Nightmare: Tempest Mephis and attack surrounding enemies, dealing {0} Electro DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Electro DMG Bonus and 12.00% Resonance Skill DMG Bonus.\\n\\nCD: <b>25s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          3,
+          13
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "270%"
+        ],
+        "Skill_3": [
+          "315%"
+        ],
+        "Skill_4": [
+          "360%"
+        ],
+        "Skill_5": [
+          "405%"
+        ]
+      },
+      {
+        "Name": "Nightmare: Thundering Mephis",
+        "Slug": "nightmare-thundering-mephis",
+        "ID": "330000160",
+        "Echo_skill": "Transform into Nightmare: Thundering Mephis and attack enemies in front, dealing {0} Electro DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Electro DMG Bonus and 12.00% Resonance Liberation DMG Bonus\\n\\nCD: <b>25s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          3
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "270%"
+        ],
+        "Skill_3": [
+          "315%"
+        ],
+        "Skill_4": [
+          "360%"
+        ],
+        "Skill_5": [
+          "405%"
+        ]
+      },
+      {
+        "Name": "Reactor Husk",
+        "Slug": "reactor-husk",
+        "ID": "6000190",
+        "Echo_skill": "Transform into Reactor Husk, jumping into the air and unleashing a heavy slash that deals {0} Fusion DMG to enemies.\\n\\nThe Resonator with this Echo equipped in their main slot gain 10.00% Energy Regen.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          23,
+          27
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "234%"
+        ],
+        "Skill_3": [
+          "273%"
+        ],
+        "Skill_4": [
+          "312%"
+        ],
+        "Skill_5": [
+          "351%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Endless Resonance",
+        "slug": "endless-resonance",
+        "sonata_id": 9,
+        "type": "standard",
+        "bonus_2": "<p>ATK increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>While on the field, ATK increases by <strong>5%</strong> every <strong>1.5s</strong>, stacking up to <strong>4</strong> times. Outro Skill DMG increases by <strong>60%</strong>.</p>",
+        "aliases": "Lingering Tunes",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_9.webp"
+      },
+      {
+        "name": "Halo of Starry Radiance",
+        "slug": "halo-of-starry-radiance",
+        "sonata_id": 23,
+        "type": "standard",
+        "bonus_2": "<p>Healing Bonus +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>When healing a Resonator in the team, every <strong>1%</strong> of Off-Tune Buildup Rate grants a <strong>0.2%</strong> ATK increase to all Resonators in the team for 4s, up to <strong>25%</strong>. Effects of the same name cannot be stacked.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_23.webp"
+      },
+      {
+        "name": "Pact of Neonlight Leap",
+        "slug": "pact-of-neonlight-leap",
+        "sonata_id": 24,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Spectro\">Spectro</strong> DMG +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Casting Outro Skill increases the ATK of the incoming Resonator by <strong>15%</strong>, with each point of Tune Break Boost additionally increasing ATK by <strong>0.3%</strong>, up to <strong>15%</strong>. This effect lasts for <strong>15s</strong>, or until the Resonator is switched out.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_24.webp"
+      },
+      {
+        "name": "Void Thunder",
+        "slug": "void-thunder",
+        "sonata_id": 3,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Electro\">Electro</strong> DMG increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Heavy Attack or Resonance Skill, <strong class=\"Electro\">Electro DMG</strong> increases by <strong>15%</strong>, stacking up to <strong>2</strong> times, each stack lasting for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_3.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Xiangli Yao",
+      "slug": "xiangli-yao",
+      "toa_cat": "dps",
+      "toa_rating": 5,
+      "toa_tags": "",
+      "toa_marks": "",
+      "ww_cat": "dps",
+      "ww_rating": 5,
+      "ww_tags": "",
+      "ww_marks": "",
+      "overall_cat": "dps",
+      "overall_rating": 5,
+      "overall_tags": "",
+      "overall_marks": "",
+      "rarity": 5,
+      "element": "Electro",
+      "weapon": "Gauntlets",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S0"
+    }
+  ]
+}

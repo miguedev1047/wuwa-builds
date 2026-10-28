@@ -1,0 +1,1479 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/lingyang",
+  "fetchedAt": "2026-10-28T03:30:38.063Z",
+  "slug": "lingyang",
+  "name": "Lingyang",
+  "rarity": 5,
+  "element": "Glacio",
+  "weapon": "Gauntlets",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/ling_card.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/lingyang_full.webp"
+  },
+  "profile": {
+    "id": "cmoxpqeek00bvoau0j0zd4i3u",
+    "slug": "lingyang",
+    "name": "Lingyang",
+    "rarity": 5,
+    "element": "Glacio",
+    "weapon": "Gauntlets",
+    "devId": 1104,
+    "upcoming": false,
+    "introduction": "<p>Lingyang is talented and friendly member of the Liondance Troupe in Jinzhou. His passion and courage are evident as he engages with humans, showcasing his impressive physical abilities. With his unique style, he embodies the spirit of Liondancing. </p>",
+    "review": "<p>Lingyang is a 5-star Glacio Gauntlet wielder DPS that is most often played in Hyper Carry teams. As Lingyang deals the majority of his damage during his Ultimate burst window, which takes up a considerable amount of field time incentivizing him being played with supports to buff him to the max before using his Ultimate Skill. Lingyang also has very little incentive to switch out during his Ultimate burst window with it often resulting in a <b>damage loss</b> meaning you’ll want to pair him with characters that can give him the field time he needs.</p><p>Lingyang recharges his Forte Gauge with his second Resonance Skill, Intro Skill and Ultimate Skill, though an interesting thing to note is that his Forte Gauge can be completely filled by performing his Intro followed by his Ultimate Skill once. This allows players to bypass having to use his Basic Attacks and Resonance Skill to generate Forte Gauge. Once full, he can perform a Heavy Attack to enter Striding Lion state, sending him airborne and enhancing all of his abilities for a short duration. It is during this state that Lingyang’s DPS potential is at maximum and should be played attentively giving him all the buffs and support he needs during it.</p><p>Lingyang features two Resonance Skills with no cooldown. The first Resonance Skill; Ancient Arts is a simple punch that deals a small amount of Glacio damage to its target, though it is rarely used. His second Resonance Skill; Furious Punches can be only utilized after he has either used Basic Attack 3/4/5 or his Special Basic Attack - Feral Roars. This skill also deals a small amount of Glacio damage, however it generates a significant amount of his Forte Gauge along with allowing him to follow it up with Basic Attack 3 directly. This allows you to quickly juggle his Basic Attack 3 and Furious Punches, quickly filling his Forte Gauge.</p><p>His Ultimate deals a large strike in front of him, causing Glacio damage, generating Concerto Energy and a major portion of his Forte Gauge. It also increases his Glacio damage by 50% and further empowers his Forte Gauge empowerment to increase its duration.</p><p>In regards to field time, he is required to stay for the entire duration of his Ultimate enhanced Forte, which allows him to bring solid burst damage during this window. He has a unique aerial combat flair which while makes you immune to some ground attacks, also makes some significantly harder to dodge in return. This can be a drawback of his combat style, as it takes time to become accustomed to it, making actions like hitting enemies, repositioning and target changes harder to execute. Similar to Jiyan, he lacks the opportunity to leave the field mid-rotation as it causes him to lose a considerable amount of damage, making him more suited to the Hyper Carry archetype as mentioned earlier.</p><p>Lingyang is a mixed bag when it comes to play difficulty. On one hand, he is easy to play in the sense that all he requires is building enough Resonance Energy to use his Ultimate then unload all the attacks he can to maximize his damage during the burst window. On other hand, his unique Aerial combat makes it rough to navigate him, and it takes extra practice to master. Having to learn timing to dodge attacks and discern which attacks will hit you or not while airborne contributes massively to his low usage among players.</p><p>As a Main DPS he will prefer damage maximization. As such, you can equip him with damage-focused Echo and set.</p><p>Overall, due to Lingyang’s damage being on the lower side of 5-stars, combined with his unique airborne gameplay that requires extra work to manage, he lags behind in usage compared to most other DPS in endgame.</p>",
+    "pros": "<ul><li><p>Can Fly!</p></li><li><p>Unique playstyle not found anywhere else</p></li><li><p>Gains the most free stats from his baseline S0 kit of any character thanks to his Ultimate boost</p></li><li><p>Button mashing combo that is hard to mess up</p></li><li><p>Can juggle enemies in the air (excluding elites and bosses), comboing them continuously and rendering them immobile</p></li><li><p>Can ignore some boss and enemy mechanics while in the air</p></li></ul><p></p>",
+    "cons": "<ul><li><p>Falls slightly behind other damage dealers with a similar role</p></li><li><p>Flying can be disorienting for some players</p></li><li><p>Flying mobility is somewhat limited, making dodging, retargeting and moving while airborne harder without practice</p></li><li><p>Some bosses have unusual hitboxes which can make striking them while airborne a challenge, resulting in damage losses</p></li><li><p>Takes more time to get used to and learn than many other characters</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p>HP: <b>15000+</b></p></li><li><p>DEF: <b>1150+</b></p></li><li><p>ATK: <b>2100-2500+</b></p></li><li><p>CRIT Rate: <b>60-80%+</b></p></li><li><p>CRIT DMG: <b>215-260%+</b></p></li><li><p>Energy Regen: <b>120-125%+</b></p><ul><li><p>Estimated in a Zhezhi+Shorekeeper team.</p></li></ul></li><li><p>Glacio DMG Bonus: <b>40-70%+</b></p></li></ul><p>\n</p>",
+    "rotations": "<h6>COMBO REQUIREMENTS</h6><p>Unlike other characters, Lingyang can directly jump into action without any Warm-Up phase. Only thing to focus outside of his Ultimate burst combo is ensuring usage of Echo at appropriate time, that is, if Buff Echo, use it right before burst combo execution, if direct damage Echo (such as Glacial Predator), use it whenever off cooldown.</p><h6>BURST COMBO</h6><p>Lingyang’s combo is incredibly simple, just make sure you have full energy available on him before Swapping to him and enter with his Intro to generate a portion of his Forte Gauge required. Follow it up with his Ultimate and perform a Heavy Attack to become airborne.</p><p>While airborne, alternate between using a single Basic Attack and a single Resonance Skill to take advantage of his Inherent Skill: Diligent Practice. Ensure that you do not chain 2 of same type together while alternating between them, as it is very easy to accidentally do the same and lose damage overall.</p><p>Under ideal circumstances, you can execute 9 independant attacks during his Ultimate duration, but if you get Stunned or use Dodge, this number will reduce. While the damage loss from this isn’t a disaster, you may need to spend extra time building energy via other characters to make up for it. While his Ultimate is on cooldown or he lacks the energy, utilize that time on the rest of the team recharging their Concerto Energy and preparing buffs for his next burst combo.</p><ul><li><p>Echo (Use before combo but refer to Echo recommendations for exact specifics for your chosen Echo)</p></li><li><p>Intro</p></li><li><p>Ultimate</p></li><li><p>Heavy Attack: Glorious Plunge (Used to enter Forte and become airborne)</p></li><li><p>Basic Attack: Feral Gyrate P1</p></li><li><p>Skill: Mountain Roamer</p></li><li><p>Basic Attack: Feral Gyrate P2</p></li><li><p>Skill: Mountain Roamer</p></li><li><p>Basic Attack: Feral Gyrate P1</p></li><li><p>Skill: Mountain Roamer</p></li><li><p>Basic Attack: Feral Gyrate P2</p></li><li><p>Skill: Mountain Roamer</p></li><li><p>Basic Attack: Feral Gyrate P1</p></li><li><p>Basic Attack: Stormy Kicks</p></li><li><p>Mid-Air Attack: Tail Strike</p></li><li><p>Outro</p></li></ul><p></p>",
+    "skills": [
+      {
+        "name": "Majestic Fists",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<h5>Basic Attack</h5><p>Perform up to <b>5 </b>attacks, dealing <u>Glacio damage.</u></p><h5>Basic Attack: Feral Roars</h5><p>After Resonance Skill Furious Punches is cast, Basic Attack V is replaced with Feral Roars, dealing <u>Glacio damage.</u></p><h5>Heavy Attack</h5><p>Consume Stamina to attack the target, dealing <u>Glacio damage.</u></p><h5>Mid-air Attack</h5><p>Consume Stamina to perform a Mid-air Plunging Attack, dealing <u>Glacio damage.</u></p><h5>Dodge Counter</h5><p>Use a Basic Attack after a successful Dodge to attack the target, dealing <u>Glacio damage.</u></p>",
+        "multipliers": [
+          {
+            "Lv1": "30.00%",
+            "Lv2": "32.46%",
+            "Lv3": "34.92%",
+            "Lv4": "38.37%",
+            "Lv5": "40.83%",
+            "Lv6": "43.66%",
+            "Lv7": "47.59%",
+            "Lv8": "51.53%",
+            "Lv9": "55.47%",
+            "Lv10": "59.65%",
+            "Name": "Part 1 Damage"
+          },
+          {
+            "Lv1": "40.00%",
+            "Lv2": "43.28%",
+            "Lv3": "46.56%",
+            "Lv4": "51.16%",
+            "Lv5": "54.44%",
+            "Lv6": "58.21%",
+            "Lv7": "63.46%",
+            "Lv8": "68.70%",
+            "Lv9": "73.95%",
+            "Lv10": "79.53%",
+            "Name": "Part 2 Damage"
+          },
+          {
+            "Lv1": "36.65%*2",
+            "Lv2": "39.66%*2",
+            "Lv3": "42.67%*2",
+            "Lv4": "46.87%*2",
+            "Lv5": "49.88%*2",
+            "Lv6": "53.33%*2",
+            "Lv7": "58.14%*2",
+            "Lv8": "62.95%*2",
+            "Lv9": "67.76%*2",
+            "Lv10": "72.87%*2",
+            "Name": "Part 3 Damage"
+          },
+          {
+            "Lv1": "10.27%*5+21.99%",
+            "Lv2": "11.11%*5+23.80%",
+            "Lv3": "11.95%*5+25.60%",
+            "Lv4": "13.13%*5+28.13%",
+            "Lv5": "13.97%*5+29.93%",
+            "Lv6": "14.94%*5+32.00%",
+            "Lv7": "16.28%*5+34.89%",
+            "Lv8": "17.63%*5+37.77%",
+            "Lv9": "18.98%*5+40.66%",
+            "Lv10": "20.41%*5+43.72%",
+            "Name": "Part 4 Damage"
+          },
+          {
+            "Lv1": "76.70%",
+            "Lv2": "82.99%",
+            "Lv3": "89.28%",
+            "Lv4": "98.09%",
+            "Lv5": "104.38%",
+            "Lv6": "111.61%",
+            "Lv7": "121.67%",
+            "Lv8": "131.74%",
+            "Lv9": "141.80%",
+            "Lv10": "152.49%",
+            "Name": "Part 5 Damage"
+          },
+          {
+            "Lv1": "40.00%*2",
+            "Lv2": "43.28%*2",
+            "Lv3": "46.56%*2",
+            "Lv4": "51.16%*2",
+            "Lv5": "54.44%*2",
+            "Lv6": "58.21%*2",
+            "Lv7": "63.46%*2",
+            "Lv8": "68.70%*2",
+            "Lv9": "73.95%*2",
+            "Lv10": "79.53%*2",
+            "Name": "Feral Roars Damage"
+          },
+          {
+            "Lv1": "73.30%",
+            "Lv2": "79.32%",
+            "Lv3": "85.33%",
+            "Lv4": "93.74%",
+            "Lv5": "99.75%",
+            "Lv6": "106.66%",
+            "Lv7": "116.28%",
+            "Lv8": "125.90%",
+            "Lv9": "135.51%",
+            "Lv10": "145.73%",
+            "Name": "Heavy Attack Damage"
+          },
+          {
+            "Lv1": "62.00%",
+            "Lv2": "67.09%",
+            "Lv3": "72.17%",
+            "Lv4": "79.29%",
+            "Lv5": "84.37%",
+            "Lv6": "90.22%",
+            "Lv7": "98.36%",
+            "Lv8": "106.49%",
+            "Lv9": "114.62%",
+            "Lv10": "123.27%",
+            "Name": "Mid-Air Attack Damage"
+          },
+          {
+            "Lv1": "63.40%*2",
+            "Lv2": "68.60%*2",
+            "Lv3": "73.80%*2",
+            "Lv4": "81.08%*2",
+            "Lv5": "86.28%*2",
+            "Lv6": "92.26%*2",
+            "Lv7": "100.58%*2",
+            "Lv8": "108.89%*2",
+            "Lv9": "117.21%*2",
+            "Lv10": "126.05%*2",
+            "Name": "Dodge Counter Damage"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "Heavy Attack Stamina Consumption"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-Air Attack Stamina Consumption"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Ancient Arts",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<h5>Ancient Arts</h5><p>Attack the target, dealing <u>Glacio damage.</u></p><h5>Furious Punches</h5><p>When Basic Attacks III, IV, or V or Basic Attack Feral Roars hits the target, Resonance Skill Ancient Arts is replaced with Resonance Skill Swift Punches. If Lingyang uses Basic Attack after casting Basic Attack Feral Roars and Resonance Skill Swift Punches, he will start from Basic Attack III. </p><p>Lingyang&#039;s Resonance Skill will not reset his Basic Attack stage.</p>",
+        "multipliers": [
+          {
+            "Lv1": "66.70%",
+            "Lv2": "72.17%",
+            "Lv3": "77.64%",
+            "Lv4": "85.30%",
+            "Lv5": "90.77%",
+            "Lv6": "97.06%",
+            "Lv7": "105.81%",
+            "Lv8": "114.56%",
+            "Lv9": "123.31%",
+            "Lv10": "132.61%",
+            "Name": "Ancient Arts Damage"
+          },
+          {
+            "Lv1": "38.35%*2",
+            "Lv2": "41.50%*2",
+            "Lv3": "44.64%*2",
+            "Lv4": "49.05%*2",
+            "Lv5": "52.19%*2",
+            "Lv6": "55.81%*2",
+            "Lv7": "60.84%*2",
+            "Lv8": "65.87%*2",
+            "Lv9": "70.90%*2",
+            "Lv10": "76.25%*2",
+            "Name": "Furious Punches Damage"
+          },
+          {
+            "Lv1": "0",
+            "Lv2": "0",
+            "Lv3": "0",
+            "Lv4": "0",
+            "Lv5": "0",
+            "Lv6": "0",
+            "Lv7": "0",
+            "Lv8": "0",
+            "Lv9": "0",
+            "Lv10": "0",
+            "Name": "Cooldown"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Strive: Lion's Vigor",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p>Attack the target, dealing <u>Glacio damage</u>, and receive the blessing of Lion&#039;s Vigor, which lasts for <b>14 </b>seconds.</p><h5>Lion&#039;s Vigor</h5><p>Lingyang&#039;s <u>Glacio DMG</u> Bonus is increased by <b>50%</b>;</p>",
+        "multipliers": [
+          {
+            "Lv1": "200.00%",
+            "Lv2": "216.40%",
+            "Lv3": "232.80%",
+            "Lv4": "255.76%",
+            "Lv5": "272.16%",
+            "Lv6": "291.02%",
+            "Lv7": "317.26%",
+            "Lv8": "343.50%",
+            "Lv9": "369.74%",
+            "Lv10": "397.62%",
+            "Name": "Skill Damage"
+          },
+          {
+            "Lv1": "14",
+            "Lv2": "14",
+            "Lv3": "14",
+            "Lv4": "14",
+            "Lv5": "14",
+            "Lv6": "14",
+            "Lv7": "14",
+            "Lv8": "14",
+            "Lv9": "14",
+            "Lv10": "14",
+            "Name": "Lion's Vigor Duration"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "125",
+            "Lv2": "125",
+            "Lv3": "125",
+            "Lv4": "125",
+            "Lv5": "125",
+            "Lv6": "125",
+            "Lv7": "125",
+            "Lv8": "125",
+            "Lv9": "125",
+            "Lv10": "125",
+            "Name": "Res. Energy Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Con. Energy Regen"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Unification of Spirits",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<h5>Heavy Attack: Glorious Plunge</h5><p>When Lion&#039;s Spirit is full, use Heavy Attack to perform Glorious Plunge, dealing <u>Glacio damage.</u></p><h5>Mid-air Attack: Tail Strike</h5><p>When Lion&#039;s Spirit is not full, use Basic Attack after Heavy Attack to perform Tail Strike, dealing <u>Glacio damage.</u></p><h5>Striding Lion</h5><p>After casting Heavy Attack Glorious Plunge, enter Striding Lion state; After casting Intro Skill Lion Awakens or Resonance Liberation Strive: Lion&#039;s Vigor, if Lion&#039;s Spirit is full, use Basic Attack to enter Striding Lion state.\nIn the Striding Lion state: Attacks can be launched in mid-air. If you are back on the ground, use Heavy Attack Glorious Plunge to get back in the air.</p><p>Lion&#039;s Spirit is continuously consumed, and the Striding Lion state ends in <b>5s </b>after Lion&#039;s Spirit runs out; If Lingyang is in the Resonance Liberation Lion&#039;s Vigor state, the consumption speed of Lion&#039;s Spirit is reduced by <b>50%</b>, extending Striding Lion state by up to <b>10s</b>.</p><p>Lingyang&#039;s Basic Attack is replaced with Basic Attack Feral Gyrate, which performs up to <b>2 </b>consecutive attacks, dealing <u>Glacio damage.</u> Lingyang&#039;s Resonance Skill is replaced with Mountain Roamer, dealing <u>Glacio damage.</u>\nWhen Lion&#039;s Spirit is less than <b>10</b>, use Basic Attack to perform Stormy Kicks, dealing <u>Glacio damage</u>; after performing Basic Attack Stormy Kicks, the Mid-air Attack Radiant Plunge becomes available. Concerto Energy is restored when Lion&#039;s Spirit is consumed.</p><h5>Lion&#039;s Spirit</h5><p>Lingyang can hold up to <b>100 </b>Lion&#039;s Spirit. When casting Resonance Skill Furious Punches, Lion&#039;s Spirit is restored.\nWhen casting Intro Skill Lion Awakens, Lion&#039;s Spirit is restored. When casting Resonance Liberation Strive: Lion&#039;s Vigor, Lion&#039;s Spirit is restored.</p>",
+        "multipliers": [
+          {
+            "Lv1": "86.70%",
+            "Lv2": "93.81%",
+            "Lv3": "100.92%",
+            "Lv4": "110.88%",
+            "Lv5": "117.99%",
+            "Lv6": "126.16%",
+            "Lv7": "137.54%",
+            "Lv8": "148.91%",
+            "Lv9": "160.29%",
+            "Lv10": "172.37%",
+            "Name": "Glorious Plunge Damage"
+          },
+          {
+            "Lv1": "43.80%*2+58.40%",
+            "Lv2": "47.40%*2+63.19%",
+            "Lv3": "50.99%*2+67.98%",
+            "Lv4": "56.02%*2+74.69%",
+            "Lv5": "59.61%*2+79.48%",
+            "Lv6": "63.74%*2+84.98%",
+            "Lv7": "69.48%*2+92.64%",
+            "Lv8": "75.23%*2+100.31%",
+            "Lv9": "80.98%*2+107.97%",
+            "Lv10": "87.08%*2+116.11%",
+            "Name": "Feral Gyrate Part 1 Damage"
+          },
+          {
+            "Lv1": "15.98%*6",
+            "Lv2": "17.29%*6",
+            "Lv3": "18.60%*6",
+            "Lv4": "20.44%*6",
+            "Lv5": "21.75%*6",
+            "Lv6": "23.26%*6",
+            "Lv7": "25.35%*6",
+            "Lv8": "27.45%*6",
+            "Lv9": "29.55%*6",
+            "Lv10": "31.77%*6",
+            "Name": "Feral Gyrate Part 2 Damage"
+          },
+          {
+            "Lv1": "41.69%*2",
+            "Lv2": "45.11%*2",
+            "Lv3": "48.53%*2",
+            "Lv4": "53.31%*2",
+            "Lv5": "56.73%*2",
+            "Lv6": "60.66%*2",
+            "Lv7": "66.13%*2",
+            "Lv8": "71.60%*2",
+            "Lv9": "77.07%*2",
+            "Lv10": "82.88%*2",
+            "Name": "Mountain Roamer Damage"
+          },
+          {
+            "Lv1": "18.13%*8+96.65%",
+            "Lv2": "19.61%*8+104.58%",
+            "Lv3": "21.10%*8+112.51%",
+            "Lv4": "23.18%*8+123.60%",
+            "Lv5": "24.67%*8+131.53%",
+            "Lv6": "26.37%*8+140.64%",
+            "Lv7": "28.75%*8+153.32%",
+            "Lv8": "31.13%*8+166.00%",
+            "Lv9": "33.51%*8+178.68%",
+            "Lv10": "36.03%*8+192.15%",
+            "Name": "Stormy Kicks Damage"
+          },
+          {
+            "Lv1": "88.00%*2",
+            "Lv2": "95.22%*2",
+            "Lv3": "102.44%*2",
+            "Lv4": "112.54%*2",
+            "Lv5": "119.76%*2",
+            "Lv6": "128.05%*2",
+            "Lv7": "139.60%*2",
+            "Lv8": "151.14%*2",
+            "Lv9": "162.69%*2",
+            "Lv10": "174.96%*2",
+            "Name": "Tail Strike Damage"
+          },
+          {
+            "Lv1": "35",
+            "Lv2": "35",
+            "Lv3": "35",
+            "Lv4": "35",
+            "Lv5": "35",
+            "Lv6": "35",
+            "Lv7": "35",
+            "Lv8": "35",
+            "Lv9": "35",
+            "Lv10": "35",
+            "Name": "Lion's Spirit\" Con. Energy Regen"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Lion's Pride",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>The damage of the Intro Skill Lion Awakens is increased by <b>50%.</b></p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Diligent Practice",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Under the Striding Lion state, within <b>3s </b>after each Basic Attack, the next Mountain Roamer will deal an additional <u>Glacio damage</u>, equal to <b>150% </b>of Mountain Roamer damage, considered as Resonance Skill damage.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Lion Awakens",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Lingyang appears and deals <u>Glacio damage.</u></p>",
+        "multipliers": [
+          {
+            "Lv1": "50.00%*2",
+            "Lv2": "54.10%*2",
+            "Lv3": "58.20%*2",
+            "Lv4": "63.94%*2",
+            "Lv5": "68.04%*2",
+            "Lv6": "72.76%*2",
+            "Lv7": "79.32%*2",
+            "Lv8": "85.88%*2",
+            "Lv9": "92.44%*2",
+            "Lv10": "99.41%*2",
+            "Name": "Skill Damage"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Con. Energy Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Frosty Marks",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>Lingyang releases a shock wave centered on the skill target, dealing <u>Glacio DMG</u> equal to <b>587.94%</b> of Lingyang&#039;s ATK to targets within the range.</p>",
+        "type": "Outro Skill"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p>During Resonance Liberation Lion&#039;s Vigor, Lingyang&#039;s Anti-Interruption is enhanced. </p>",
+      "dupe1_name": "Sequence Node 1",
+      "dupe2": "<p>Intro Skill Lion Awakens additionally recovers <b>10 </b>Resonance Energy for Lingyang, triggered once every <b>20s</b>. </p>",
+      "dupe2_name": "Sequence Node 2",
+      "dupe3": "<p>During Resonance Liberation Lion&#039;s Vigor, Lingyang&#039;s Basic Attack DMG Bonus is increased by <b>20%</b>, and Resonance Skill DMG Bonus increased by <b>10%. </b></p>",
+      "dupe3_name": "Sequence Node 3",
+      "dupe4": "<p>Outro Skill Frosty Marks increases the <u>Glacio DMG</u> Bonus of all team members by<b> 20% </b>for <b>30s</b>. </p>",
+      "dupe4_name": "Sequence Node 4",
+      "dupe5": "<p>Resonance Liberation Strive: Lion&#039;s Vigor additionally deals <u>Glacio DMG</u> equal to<b> 200%</b> of Lingyang&#039;s ATK. </p>",
+      "dupe5_name": "Sequence Node 5",
+      "dupe6": "<p>In the Forte Circuit Striding Lion state, during the first <b>3s </b>after every Resonance Skill Mountain Roamer, the Basic Attack DMG Bonus for Lingyang&#039;s next Basic Attack is increased by <b>100%</b>. </p>",
+      "dupe6_name": "Sequence Node 6"
+    },
+    "voiceActors": {
+      "cn": "Koi",
+      "en": "Aleksander Varadian",
+      "kr": "Lee Sang-ho",
+      "jpn": "Natsuki Hanae"
+    },
+    "attributeBonus": [
+      {
+        "name": "Glacio DMG",
+        "value": 12
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": {
+      "skill": {
+        "name": "Unending Destruction",
+        "number": 26
+      },
+      "common": [
+        {
+          "name": "LF Whisperin Core",
+          "number_char": 4,
+          "number_skill": 25
+        },
+        {
+          "name": "MF Whisperin Core",
+          "number_char": 12,
+          "number_skill": 28
+        },
+        {
+          "name": "HF Whisperin Core",
+          "number_char": 12,
+          "number_skill": 40
+        },
+        {
+          "name": "FF Whisperin Core",
+          "number_char": 4,
+          "number_skill": 57
+        }
+      ],
+      "ascension": {
+        "name": "Coriolus",
+        "number": 60
+      },
+      "skill_other": [
+        {
+          "name": "Cadence Seed",
+          "number": 25
+        },
+        {
+          "name": "Cadence Bud",
+          "number": 28
+        },
+        {
+          "name": "Cadence Leaf",
+          "number": 55
+        },
+        {
+          "name": "Cadence Blossom",
+          "number": 67
+        }
+      ],
+      "breakthrough": {
+        "name": "Sound-Keeping Tacet Core",
+        "number": 46
+      }
+    },
+    "videos": null,
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "dmg_atk",
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "lingyang",
+      "build": 2.6,
+      "review": 1.3
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "lingyang",
+        "Weapon": "Moongazer's Sigil",
+        "Dupes": 1,
+        "Percentage": "106.20%",
+        "Percentage_2": "",
+        "Comment": "Iuno's Signature is Lingyang's best choice by virtue of its really high CRIT Rate boost, its good ATK stats, and its 36% Liberation DMG DEF Ignore and 20% DMG Bonus effects which can fully apply to Lingyang's initial Ultimate cast. In other words, the CRIT and ATK stats are great for Lingyang and it makes his initial Ultimate cast damage go way up, which makes it the best choice."
+      },
+      {
+        "ID": 2,
+        "Character": "lingyang",
+        "Weapon": "Blazing Justice",
+        "Dupes": 1,
+        "Percentage": "105.30%",
+        "Percentage_2": "",
+        "Comment": "Zani's Signature offers high ATK, CRIT DMG and 8% DEF Ignore for 6s when casting Basic Attacks, which is easily upkept throughout most of Lingyang's rotation. Overall a very strong generalist Gauntlets choice."
+      },
+      {
+        "ID": 3,
+        "Character": "lingyang",
+        "Weapon": "Verity's Handle",
+        "Dupes": 1,
+        "Percentage": "104.20%",
+        "Percentage_2": "",
+        "Comment": "High Base ATK, a good CRIT Rate stat, 12% Attribute DMG Bonus unconditionally and 48% Liberation DMG Bonus when casting Ultimate as well. Xiangli Yao's weapon provides lots of good stats, making it a highly competitive weapon choice for Lingyang."
+      },
+      {
+        "ID": 4,
+        "Character": "lingyang",
+        "Weapon": "Tragicomedy",
+        "Dupes": 1,
+        "Percentage": "103.00%",
+        "Percentage_2": "",
+        "Comment": "ATK and CRIT Rate stat-stick for Lingyang, who barely benefits from this weapon's Heavy Attack DMG-increasing effect (he does benefit from it on his Glorious Plunge attack, but it's not enough to make it rank above other limited weapon options)."
+      },
+      {
+        "ID": 5,
+        "Character": "lingyang",
+        "Weapon": "Abyss Surges",
+        "Dupes": 1,
+        "Percentage": "100.00%",
+        "Percentage_2": "",
+        "Comment": "Lingyang's best permanently available Gauntlets choice. Increases Energy Regen which alleviates his requirements and also provides a huge amount of ATK. The Basic and Skill DMG increases are also quite useful on Lingyang, making it a very strong choice overall."
+      },
+      {
+        "ID": 6,
+        "Character": "lingyang",
+        "Weapon": "Aether Strike",
+        "Dupes": 5,
+        "Percentage": "88.90%",
+        "Percentage_2": "",
+        "Comment": "This Battle Pass exclusive provides a great ATK and Liberation DMG increase when casting Ultimate, on top of a CRIT DMG secondary stat while retaining acceptable Base ATK. Not as favourable as Abyss Surges for Lingyang, but a very good replacement nonetheless."
+      },
+      {
+        "ID": 7,
+        "Character": "lingyang",
+        "Weapon": "Celestial Spiral",
+        "Dupes": 5,
+        "Percentage": "86.50%",
+        "Percentage_2": "",
+        "Comment": "Increases ATK by a good amount but also has a very niche Flat Energy restoration effect when casting Skill which helps alleviate Lingyang's Energy Regen requirements, which makes it a strong 4-star alternative."
+      },
+      {
+        "ID": 8,
+        "Character": "lingyang",
+        "Weapon": "Hollow Mirage",
+        "Dupes": 5,
+        "Percentage": "82.80%",
+        "Percentage_2": "",
+        "Comment": "Will perform lower than Stonard if Lingyang takes any damage during his rotation. Niche 4-star weapon only worth using if nothing above is available. Gives extra ATK and DEF after using Ultimate which is only upkept consistently if the character does not take damage."
+      },
+      {
+        "ID": 9,
+        "Character": "lingyang",
+        "Weapon": "Stonard",
+        "Dupes": 5,
+        "Percentage": "82.30%",
+        "Percentage_2": "",
+        "Comment": "This Battle Pass exclusive gives a good amount CRIT Rate despite a rather low Base ATK and increases Liberation DMG when casting Skill. Unfortunately, this doesn't represent much of his damage total and as a result this weapon falls behind in performance when compared to some other 4-stars."
+      },
+      {
+        "ID": 10,
+        "Character": "lingyang",
+        "Weapon": "Legend of Drunken Hero",
+        "Dupes": 5,
+        "Percentage": "79.50%",
+        "Percentage_2": "",
+        "Comment": "The best option that doesn't require any gacha and is permanently accessible. Simple ATK stat-stick for Lingyang who is unable to take advantage of this weapon's additional ATK boosts if Negative Statuses are applied on enemies, since none of his best teams make use of statuses currently."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "lingyang",
+        "Type": "Best",
+        "Set": "Endless Resonance",
+        "Percentage": "100.00%",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Offers a 10% unconditional ATK% boost and an additional 5% ATK% for every 1.5 seconds the equipped character has been actively on-field - up to 20% after 6 seconds, totalling 30% additional ATK% after fully ramped. This set is completely incompatible with quickswap playstyles, but for the hypercarry playstyle Lingyang will generally use, this is his best set by a small margin.",
+        "Echo_1": "Mech Abomination",
+        "Echo_1_Comment": "Very easy echo to use that should be used at the very beginning of the burst window right after the Intro. Thanks to its instant cast there is no thinking required and you can enjoy your ATK% boost and some nice burst damage.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      },
+      {
+        "ID": 2,
+        "Character": "lingyang",
+        "Type": "Best",
+        "Set": "Frosty Resolve",
+        "Percentage": "98.90%",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "This set grants permanent Resonance Skill DMG% and even bigger Glacio and Skill DMG increases when casting Skill and Liberation respectively. While the second Skill DMG boost is not upkept consistently by Lingyang, he does benefit from the stat and the Glacio DMG boost is additionally appreciated, making it his second best set and his best set that can be used in quickswap compositions.",
+        "Echo_1": "Sentry Construct",
+        "Echo_1_Comment": "The Sentry Construct is the most effective Main echo choice for Frosty Resolve users thanks to its passive 12% Glacio and Resonance Skill DMG% bonuses which are active at all times. The transformation ability of Sentry Construct is also powerful, swap cancellable, usable in the air and accessible more often than other Echoes, thanks to its ability to recharge cooldown when the user activates their Resonance Liberation.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      },
+      {
+        "ID": 3,
+        "Character": "lingyang",
+        "Type": "Best",
+        "Set": "Freezing Frost",
+        "Percentage": "97.80%",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Offers a 10% unconditional Glacio DMG% boost and up to an additional 30% Glacio DMG% after you land 3 Basic or Heavy Attacks for a grand total of 40% additional Glacio damage after fully ramped.",
+        "Echo_1": "Lampylumen Myriad",
+        "Echo_1_Comment": "Provides a total of 12% Glacio and Skill DMG boosts when casting all 3 hits for 15s, deals a good amount of damage and freezes enemies for a short duration on the final hit. All great things, but the problem with this Echo is that it takes a while to cast and is best used pre-rotation before Intro by swap cancelling out of the final hit. This takes a lot of time to execute and is the main reason why Freezing Frost does not rank above other Glacio damage-focused sets like Frosty Resolve.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "lingyang",
+        "Character": "lingyang",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Glacio DMG",
+        "Echo_3": "Glacio DMG > ATK%",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% > ATK",
+        "Comments": ""
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "lingyang",
+        "Type": "",
+        "Order": "Forte Circuit, Res. Liberation, Intro Skill, Res. Skill, Basic Attack",
+        "Comments": ""
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "lingyang",
+        "Name": "Best Team",
+        "Member_1": "lingyang",
+        "Member_2": "lynae, zhezhi",
+        "Member_3": "mornye, the-shorekeeper, verina",
+        "Comments": "Mornye is only best with Lynae on the team."
+      },
+      {
+        "ID": 2,
+        "Character": "lingyang",
+        "Name": "F2P Team",
+        "Member_1": "lingyang",
+        "Member_2": "sanhua",
+        "Member_3": "the-shorekeeper, verina",
+        "Comments": ""
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "lingyang",
+        "Synergy": "lynae, zhezhi",
+        "Comment": "Lingyang's best partners. Lynae has the strongest generalist buffs in the game and makes for a particularly strong core with Mornye to deal extra Tune Break damage and provide some the strongest array of buffs Lingyang can have. Zhezhi is also very strong by virtue of sporting good personal damage off-field via Coordinated Attacks and amazing 20% Glacio and 25% Skill DMG buffs on Outro that Lingyang very much appreciates."
+      },
+      {
+        "ID": 2,
+        "Character": "lingyang",
+        "Synergy": "sanhua",
+        "Comment": "One of the fastest rotation times in the game with a very good 38% Basic ATK DMG Amplify buff on Outro allows her to buff Lingyang a great amount, and allows him to take the spotlight by doing most of the team's damage. Often used if Zhezhi is taken up by another team or if you don't own her since Sanhua's free."
+      },
+      {
+        "ID": 3,
+        "Character": "lingyang",
+        "Synergy": "verina",
+        "Comment": "One of the usual Healing Support options that can slot into any team. Super easy to use, provides amazing team-wide ATK% buffs and 15% DMG Amplify with one of the fastest rotations in the game. Enjoy. "
+      },
+      {
+        "ID": 4,
+        "Character": "lingyang",
+        "Synergy": "the-shorekeeper",
+        "Comment": "Similar to Verina, a premium Healing Support option who can not only slot into any team, but also provide insane 12.5% Crit Rate, 25% Crit DMG, 25% ATK and 15% DMG Amplify buffs to your whole team. One of the best but also easy to use characters in the game. "
+      }
+    ]
+  },
+  "stats": {
+    "slug": "lingyang",
+    "name": "Lingyang",
+    "unit_id": 1104,
+    "base_hp": 831,
+    "base_atk": 35,
+    "base_def": 99,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 125,
+    "bonus_ele": 1.12,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 0,
+    "bonus_crit": 0,
+    "bonus_critdmg": 0,
+    "bonus_hp": 0
+  },
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "lingyang",
+        "name": "Lingyang",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 320471,
+          "damage_e1": 320471,
+          "damage_e2": 320471,
+          "damage_e3": 333742,
+          "damage_e4": 359983,
+          "damage_e5": 372854,
+          "damage_e6": 410707
+        },
+        "dps": {
+          "damage": 25234,
+          "damage_e1": 25234,
+          "damage_e2": 25234,
+          "damage_e3": 26279,
+          "damage_e4": 28345,
+          "damage_e5": 29359,
+          "damage_e6": 32339
+        },
+        "time": "12.7",
+        "echo_main": "Mech Abomination",
+        "echo_4": "CRIT Rate",
+        "echo_3": "Glacio DMG",
+        "echo_3a": "Glacio DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "ATK (45%), CRIT Rate (42%), CRIT DMG (84%), Energy Regen (9.6%)",
+        "set_1": "Endless Resonance",
+        "set_2": "",
+        "weapon": "Abyss Surges",
+        "weapon_S": 1
+      },
+      "team": null,
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      108417
+    ],
+    [
+      "Heavy",
+      10209
+    ],
+    [
+      "Skill",
+      101511
+    ],
+    [
+      "Liberation",
+      23550
+    ],
+    [
+      "Intro",
+      13631
+    ],
+    [
+      "Outro",
+      44664
+    ],
+    [
+      "Echo",
+      18488
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Abyss Surges",
+        "Slug": "abyss-surges",
+        "Rarity": 5,
+        "ID": "21040015",
+        "Effect": "Increases Energy Regen by {0}. When hitting a target with Resonance Skill, increases Basic Attack DMG Bonus by {1}, lasting for {2}. When hitting a target with Basic Attacks, increases Resonance Skill DMG Bonus by {3}, lasting for {4}s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": [
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "Array_3": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_4": [
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 36.4,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Aether Strike",
+        "Slug": "aether-strike",
+        "Rarity": 4,
+        "ID": "21040104",
+        "Effect": "Casting Resonance Liberation increases ATK by {0} and grants {1} Resonance Liberation DMG Bonus for 15s.",
+        "Array_0": [
+          "7.2%",
+          "11.1%",
+          "15.1%",
+          "19%",
+          "23%"
+        ],
+        "Array_1": [
+          "10.8%",
+          "16.7%",
+          "22.6%",
+          "28.6%",
+          "34.5%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 40.5,
+        "Source": "Battle Pass"
+      },
+      {
+        "Name": "Blazing Justice",
+        "Slug": "blazing-justice",
+        "Rarity": 5,
+        "ID": "21040036",
+        "Effect": "Increases ATK by {0}. Casting Basic Attack grants the following effects: Dealing damage ignores {1} of the target's DEF and Amplifies Spectro Frazzle DMG dealt by {2} for 6s. Retriggering the effect resets its duration.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_2": [
+          "50%",
+          "62.5%",
+          "75%",
+          "87.5%",
+          "100%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Celestial Spiral",
+        "Slug": "celestial-spiral",
+        "Rarity": 4,
+        "ID": "21040084",
+        "Effect": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for 16s. This effect can be triggered once every 20s.",
+        "Array_0": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Hollow Mirage",
+        "Slug": "hollow-mirage",
+        "Rarity": 4,
+        "ID": "21040064",
+        "Effect": "When Resonance Liberation is released, grants 3 stack(s) of Iron Armor. Each stack increases ATK and DEF by {0}, stacking up to 3 time(s). When the Resonator takes damage, reduces the number of stacks by 1.",
+        "Array_0": [
+          "3%",
+          "3.5%",
+          "4%",
+          "4.5%",
+          "5%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 412,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 30.3,
+        "Source": ""
+      },
+      {
+        "Name": "Legend of Drunken Hero",
+        "Slug": "legend-of-drunken-hero",
+        "Rarity": 4,
+        "ID": "21040094",
+        "Effect": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for 10s. This effect can be triggered 1 time per second, stackable up to 4 times.",
+        "Array_0": [
+          "4%",
+          "5%",
+          "6%",
+          "7%",
+          "8%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Crafting"
+      },
+      {
+        "Name": "Moongazer's Sigil",
+        "Slug": "moongazer-s-sigil",
+        "Rarity": 5,
+        "ID": "21040046",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or Resonance Liberation increases Resonance Liberation DMG by {1} for 15s. Obtaining Shield allows Resonance Liberation DMG to ignore {2} of the target's DEF for 7s, stacking up to 5 times. This effect is triggered once every 0.5s. Upon casting Intro Skill, this effect reaches max stacks immediately, lasting for 3s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_2": [
+          "7.2%",
+          "8.4%",
+          "9.6%",
+          "10.8%",
+          "12%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Stonard",
+        "Slug": "stonard",
+        "Rarity": 4,
+        "ID": "21040074",
+        "Effect": "When Resonance Skill is released, increases the caster's Resonance Liberation DMG Bonus by {0}, lasting for 15s.",
+        "Array_0": [
+          "18%",
+          "27%",
+          "36%",
+          "45%",
+          "54%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 20.2,
+        "Source": "Pioneer Podcast"
+      },
+      {
+        "Name": "Tragicomedy",
+        "Slug": "tragicomedy",
+        "Rarity": 5,
+        "ID": "21040026",
+        "Effect": "Increases ATK by {0}. Every time Basic Attack or Intro Skill is cast, Heavy Attack DMG Bonus increases by {1} for 3s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "48%",
+          "60%",
+          "72%",
+          "84%",
+          "96%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Verity's Handle",
+        "Slug": "verity-s-handle",
+        "Rarity": 5,
+        "ID": "21040016",
+        "Effect": "Gain {0} Attribute DMG Bonus. When using Resonance Liberation, the wielder gains {1} Resonance Liberation DMG Bonus for 8s. This effect can be extended by 5 seconds each time Resonance Skills are cast, up to 3 times.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "48%",
+          "60%",
+          "72%",
+          "84%",
+          "94%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Gauntlets",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Gacha"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Lampylumen Myriad",
+        "Slug": "lampylumen-myriad",
+        "ID": "330000040",
+        "Echo_skill": "Transform into Lampylumen Myriad. Perform up to 3 consecutive attacks. Unleash a freezing shock by performing consecutive forward strikes, with the initial two strikes inflicting {0} and {1} Glacio DMG respectively, and the final strike dealing {2} Glacio DMG. Enemies will be frozen on hit. Each shock increases the current character’s Glacio DMG by <b>4.00%</b> and Resonance Skill DMG dealt by <b>4.00%</b> for <b>15s</b>, stacking up to <b>3</b> times.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          1
+        ],
+        "Skill_1": [
+          "125.10%",
+          "125.10%",
+          "166.80%",
+          "4%",
+          "4%",
+          "15",
+          "25"
+        ],
+        "Skill_2": [
+          "143.87%",
+          "143.87%",
+          "191.82%",
+          "4%",
+          "4%",
+          "15",
+          "25"
+        ],
+        "Skill_3": [
+          "162.63%",
+          "162.63%",
+          "216.84%",
+          "4%",
+          "4%",
+          "15",
+          "25"
+        ],
+        "Skill_4": [
+          "181.40%",
+          "181.40%",
+          "241.86%",
+          "4%",
+          "4%",
+          "15",
+          "25"
+        ],
+        "Skill_5": [
+          "200.16%",
+          "200.16%",
+          "266.88%",
+          "4%",
+          "4%",
+          "15",
+          "25"
+        ]
+      },
+      {
+        "Name": "Mech Abomination",
+        "Slug": "mech-abomination",
+        "ID": "340000060",
+        "Echo_skill": "Strike the enemies in front, dealing {0} Electro DMG. Summon Mech Waste to attack enemies. Mech Waste deals {1} Electro DMG on-hit and explode after a while to deal {2} Electro DMG. After casting this Echo Skill, increase current character's ATK by <b>12.00%</b> for <b>15s</b>. Damage dealt by Mech Waste is considered Outro Skill DMG.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          9
+        ],
+        "Skill_1": [
+          "30.40%",
+          "200%",
+          "100%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_2": [
+          "34.96%",
+          "230%",
+          "115%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_3": [
+          "39.52%",
+          "260",
+          "130%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_4": [
+          "44.08%",
+          "290%",
+          "145%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_5": [
+          "48.64%",
+          "320%",
+          "160%",
+          "12%",
+          "15",
+          "25"
+        ]
+      },
+      {
+        "Name": "Sentry Construct",
+        "Slug": "sentry-construct",
+        "ID": "330000120",
+        "Echo_skill": "Transform into Sentry Construct and attack enemies in front, dealing {0} Glacio DMG. Each time the Resonator with this Echo casts Resonance Liberation, it charges the Strike Capacitor. Once Strike Capacitor is at max level, the Echo Skill cooldown will be reset.\\n\\nUse Echo Skill to transform into Sentry Construct and dive into enemies from the air, dealing {0} Glacio DMG and freezing the target.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Glacio DMG Bonus and 12.00% Resonance Skill DMG Bonus.\\n\\nCD: <b>25s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          10
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "270%"
+        ],
+        "Skill_3": [
+          "315%"
+        ],
+        "Skill_4": [
+          "360%"
+        ],
+        "Skill_5": [
+          "405%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Endless Resonance",
+        "slug": "endless-resonance",
+        "sonata_id": 9,
+        "type": "standard",
+        "bonus_2": "<p>ATK increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>While on the field, ATK increases by <strong>5%</strong> every <strong>1.5s</strong>, stacking up to <strong>4</strong> times. Outro Skill DMG increases by <strong>60%</strong>.</p>",
+        "aliases": "Lingering Tunes",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_9.webp"
+      },
+      {
+        "name": "Freezing Frost",
+        "slug": "freezing-frost",
+        "sonata_id": 1,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Glacio\">Glacio</strong> DMG increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Basic Attack or Heavy Attack, <strong class=\"Glacio\">Glacio DMG</strong> increases by <strong>10%</strong>, stacking up to three times, lasting for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_1.webp"
+      },
+      {
+        "name": "Frosty Resolve",
+        "slug": "frosty-resolve",
+        "sonata_id": 10,
+        "type": "standard",
+        "bonus_2": "<p>Resonance Skill DMG +<strong>12%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Casting Resonance Skill grants <strong>22.5%</strong> <strong class=\"Glacio\">Glacio DMG</strong> Bonus for <strong>15s</strong> and casting Resonance Liberation increases Resonance Skill DMG by <strong>18%</strong>, lasting for <strong>5s</strong>. This effect stacks up to <strong>2</strong> times.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_10.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Lingyang",
+      "slug": "lingyang",
+      "toa_cat": "dps",
+      "toa_rating": 5,
+      "toa_tags": "Free",
+      "toa_marks": "",
+      "ww_cat": "dps",
+      "ww_rating": 5,
+      "ww_tags": "Free",
+      "ww_marks": "",
+      "overall_cat": "dps",
+      "overall_rating": 5,
+      "overall_tags": "Free",
+      "overall_marks": "",
+      "rarity": 5,
+      "element": "Glacio",
+      "weapon": "Gauntlets",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S0"
+    }
+  ]
+}

@@ -1,0 +1,1150 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/buling",
+  "fetchedAt": "2026-10-28T03:30:33.467Z",
+  "slug": "buling",
+  "name": "Buling",
+  "rarity": 4,
+  "element": "Electro",
+  "weapon": "Rectifier",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/buling_card.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/buling_full.webp"
+  },
+  "profile": {
+    "id": "cmoxpqebh00avoau06kcn0tdw",
+    "slug": "buling",
+    "name": "Buling",
+    "rarity": 4,
+    "element": "Electro",
+    "weapon": "Rectifier",
+    "devId": 1307,
+    "upcoming": false,
+    "introduction": null,
+    "review": "<p>Buling is a 4-star Electro Rectifier Support character with abilities ranging from healing, to Electro Flare application, to general and specialized buffs oriented towards Skill damage dealers. Specialized in buffing Skill damage Main DPS characters like Hsin, Carlotta and Phrolova, while retaining more generically applicable buffs for account-wide use, Buling is a character with easy gameplay yet pretty viable buffs that are definitely worth checking out.</p><h6><strong><u>Key Mechanics &amp; Buffs</u></strong></h6><p>Buling’s kit allows her to provide the team with the following array of buffs &amp; utilities when fully executing her rotation:</p><ul><li><p>10% team-wide Skill DMG Bonus for 24s after casting her Enhanced Ultimate and any character’s Intro, which can go up to 25% when a Second Intro is cast (goes up to 50% at S6);</p></li><li><p>15% team-wide General DMG Amplification for 30s when casting her Outro (doesn’t expire when swapping);</p></li><li><p>25% team-wide ATK for 20s with the Rejuvenating Glow Echo set and Fallacy of No Return (which she should always run in her current teams);</p></li><li><p>Healing on her Intro, some of her Heavy Attacks and her Outro (constant off-field healing to the active character);</p></li><li><p>Periodic Electro Flare application via her Intro and enhanced Ultimate (turns into Electro Rage at 10 stacks or above - deals periodic damage to afflicted enemies, possibly enhanced if Electro Rage is also applied up to 10 stacks);</p></li><li><p>Small amounts of enemy grouping via her Skill.</p></li></ul><p>As can be seen above, a lot of her kit revolves around building up to an Enhanced Ultimate, and that is indeed the focus of her kit; obtained by activating 2 of her unique set of Heavy Attacks, Buling’s gameplay revolves around generating and consuming at least 4 Trigrams in order to access her Enhanced Ultimate to apply the majority of her buffs to then end her rotation.</p><h6><strong><u>Moveset &amp; Rotation</u></strong></h6><p>Aside from some specific Heavy Attacks, Buling will always use almost all of her moveset to execute her rotations so all of her available moves are worth using. They all revolve around accomplishing the goal of generating enough Trigrams to access her enhanced Ultimate.</p><p>Buling possesses several ways to generate Trigrams, including her Basic 2, Basic 4, Skill and Mid-Air Attack. We make use of all of these features in her rotation. She can generate Thunder Trigrams and Mountain Trigrams, the former being acquired via her Basic 4, Skill and Mid-Air Attack while the latter is only acquired via her Basic 2. This causes an imbalance of Trigrams and she will tend to generate many more Thunder than Mountain Trigrams. Different Heavy Attacks exist depending on the combinations of Trigrams, but in practice we will use the “Mountain over Thunder” and “Twin Thunders” attacks to execute our rotations (since they can be generated in this order the quickest).</p><p>To do so, we generate a Mountain and Thunder Trigram by executing a Basic Attack 2 into Basic Attack 4 (without an Intro available, to generate extra Concerto Energy) or Mid-Air Attack (with an Intro available, since her Intro gives the Concerto needed for this), then we can use her Skill which directly combos into her Basic 4 for 2 quick extra Thunder Trigrams. Since we’re holding the max of 4 Trigrams, we can then cast her Heavy Attacks to access our Enhanced Ultimate and finish her rotation.</p><p>Buling’s Dodge Counter also allows her to directly transition into her Basic Attack 3, which means it’s perfectly usable to follow with the rest of your rotation if necessary.&nbsp;</p><h6><strong><u>Meta Position &amp; Conclusion</u></strong></h6><p>Buling’s meta position has changed a lot since her initial release. Most notably, the release of Hsin and Endstate Matrix have allowed her to find a lot more use on many accounts. She is generally always better than Baizhi, possesses 2 Vigor, and has a brand new Electro Flare and Skill Damage team synergy in the form of Hsin. This allows her to find use on the majority of the accounts in the game.</p><p>Indeed, she almost does not need any investment, as her Trial build does the job completely fine for Endstate Matrix at S2+ (for Energy Regen purposes). At S0, some uninvested Rejuvenating Glow echoes with enough Energy Regen to scrape by, make her very easily usable with minimal investment as well. She is optimizable for a bit more damage if you really want to, and her S6 is a big increase to her relevancy in teams like Phrolova and Carlotta, as it allows her to provide bigger Skill damage buffs (where she’d otherwise just be outclassed by Verina significantly, Buling matches her with her S6).</p><p>In conclusion, Buling is a decent F2P-friendly generalist Support. For budget Electro Flare/Skill damage teams, or just as a better generalist than Baizhi in Endstate Matrix, she is very likely to find a use case somewhere in your Matrix runs, even though it’s unlikely you use her in other places unless you’re a beginner. As a 4-star Support though, she gets the job done quite well, so consider giving her a go for your next Matrix run if you haven’t already.</p>",
+    "pros": "<ul><li><p>Good generalist buffing reminiscent of already known viable Supports like Verina and Baizhi, featuring her own constant off-field healing while being able to inflict Electro Flare on enemies (very relevant in Hsin teams, her current best use case);</p></li><li><p>Needs close to no investment whatsoever to perform - at S2+, she can be used on her Trial build in Endstate Matrix and will need literally no investment at all to perform there;</p></li><li><p>As a 4-star character, she is quite easy to access permanently alongside Sequence nodes;</p></li><li><p>Basically always better than Baizhi. A 4-star that has a solid use case for once!</p></li></ul><p></p>",
+    "cons": "<ul><li><p>Almost always worse than Verina/Shorekeeper as a generalist. For endgame-level accounts that already own the two stronger generalists, or Supports for specialized teams (different forms of Rover, Chisa, Lupa, Suisui, etc.), she will only ever find use in Matrix;</p></li><li><p>A lot of her general buffing potential is tied to Skill damage dealers and Electro Flare characters, which limits teams where she stands out, as well as her S6, which is not easily accessible in the short-term.</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p style=\"text-align: justify;\">HP: <strong>15000+</strong></p></li><li><p style=\"text-align: justify;\">DEF: <strong>1150+</strong></p></li><li><p style=\"text-align: justify;\">ATK: <strong>1500-2000+</strong></p></li><li><p style=\"text-align: justify;\">CRIT Rate: <strong>60%-80%+</strong></p></li><li><p style=\"text-align: justify;\">CRIT DMG: <strong>215-280%+</strong></p></li><li><p style=\"text-align: justify;\">Energy Regen: <strong>125%-180%+</strong></p><ul><li><p style=\"text-align: justify;\">Can vary between 125-135% (S2) on teams with Carlotta (lower end) and Phrolova (higher end), as well as 160-180% in those same teams before S2.</p></li></ul></li><li><p style=\"text-align: justify;\">Electro DMG Bonus: <strong>0-60%+</strong></p></li></ul><p></p>",
+    "rotations": "<h5><strong><u>Rotation &amp; Gameplay</u></strong></h5><p>Buling’s gameplay loop is rather simple and leaves little room for optimization beyond learning her rotation correctly. Lacking in strong Swap Cancel windows and having a very straightforward rotation makes her a linear Support character that works in a simple, yet quite effective manner.</p><p>To generate her 4 Trigrams necessary to conclude her rotation, she must use several key abilities being her Basic 2, Basic 4, Skill and Mid-Air Attack, which we can combine to create the following rotatuions:</p><div data-callout=\"\" class=\"callout callout-info\" style=\"--callout-color: #3B82F6;\" data-callout-type=\"info\"><div class=\"callout-icon\" data-icon=\"circle-info\"></div><div class=\"callout-content\"><h6>Echo Timing&nbsp;</h6><p>Best used right before Outro to maximize buff uptime.</p></div></div><h6><strong><u>No Intro Rotation</u></strong></h6><p>As Buling is the Support of the teams where she’s involved, she will want to open the team’s rotation cycle without an Intro available, as follows:</p><ul><li><p>Basic 1</p></li></ul><ul><li><p>Basic 2</p></li><li><p>Basic 3</p></li><li><p>Basic 4 (Cancel animation endlag via Skill)</p></li><li><p>Skill</p></li><li><p>Basic 4</p></li><li><p>Heavy: Twin Thunders</p></li><li><p>Heavy: Mountain Over Thunder (Cancel animation endlag via Ultimate)</p></li><li><p>Ultimate: Flashing Thunder Spell - Harmony</p></li><li><p>Outro</p></li></ul><p>However, this rotation is also the fastest one she has, as her Intro is quite slow to cast and doesn’t provide much benefit other than extra Electro Flare application. For this reason, if her teammates (e.g Electro Rover) have a significant benefit in using their own Intro twice, she can do the above rotation indefinitely and let that extra Intro go to other characters on the team.</p><h6><strong><u>Intro Rotation</u></strong></h6><p>When Buling casts an Intro, she applies 4 stacks of Electro Flare to the enemy. It also gives her 10 extra Concerto Energy. This allows her to use the following rotation:</p><ul><li><p>Intro</p></li><li><p>Basic 1</p></li><li><p>Basic 2 (Cancel animation endlag via Jump)&nbsp;</p></li><li><p>Jump</p></li><li><p>Basic: Mid-air Attack (Cancel animation endlag via Skill)</p></li><li><p>Skill</p></li><li><p>Basic 4</p></li><li><p>Heavy: Mountain Over Thunder</p></li><li><p>Heavy: Twin Thunders</p></li><li><p>Ultimate: Flashing Thunder Spell - Harmony</p></li><li><p>Outro</p></li></ul><p>However, it’s quite a bit slower than rotating without an Intro, so if any of Buling’s teammates have a significant benefit from casting their own Intro twice, it’s recommended you do so.</p>",
+    "skills": [
+      {
+        "name": "Hexagram Calls, Lightning Falls",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<p><b>Basic Attack</b></p><ul><li><p>Perform up to <b>4</b> consecutive attacks, dealing <u>Electro DMG</u>.</p></li></ul><p><b>Heavy Attack - Mountain Over Thunder</b></p><ul><li><p>Hold Normal Attack to consume the highlighted Trigram - Mountain and Trigram - Thunder from left to right and cast Heavy Attack - Mountain Over Thunder, dealing <u>Electro DMG</u>.</p></li></ul><p><b>Heavy Attack - Thunder Over Mountain</b></p><ul><li><p>Hold Normal Attack to consume the highlighted Trigram - Thunder and Trigram - Mountain from left to right and cast Heavy Attack - Thunder Over Mountain, dealing a small amount of <u>Electro DMG</u> and additionally reducing the target&#039;s Vibration Strength.</p></li></ul><p><b>Heavy Attack - Twin Mountains</b></p><ul><li><p>Hold Normal Attack to consume the highlighted <b>2 </b>Trigrams - Mountain from left to right and cast Heavy Attack - Twin Mountains, healing all nearby Resonators in the team.</p></li></ul><p><b>Heavy Attack - Twin Thunders</b></p><ul><li><p>Hold Normal Attack to consume the highlighted <b>2 </b>Trigrams - Thunder from left to right and cast Heavy Attack - Twin Thunders, healing all nearby Resonators in the team once per second for <b>8s</b>.</p></li></ul><p><b>Heavy Attack - Ghost Gate Omen</b></p><ul><li><p>When holding Normal Attack with fewer than <b>2 </b>Trigrams, Buling fails the divination, becoming temporarily immobilized and losing all Trigrams and <b>20%</b> of her current HP. This effect will not consume HP if Buling&#039;s current HP is below <b>1%</b>.</p></li></ul><p><b>Mid-air Attack</b></p><ul><li><p>Consume STA to perform Mid-air Attack, dealing <u>Electro DMG</u>.</p></li></ul><p><b>Dodge Counter</b></p><ul><li><p>Press Normal Attack right after a successful Dodge to perform Basic Attack Stage 3, dealing <u>Electro DMG</u>.</p><ul><li><p>After performing Dodge Counter, press Normal Attack to perform Basic Attack Stage 4.</p></li></ul></li><li><p><b>Trigram</b></p></li><li><p>Buling can hold up to <b>4 </b>Trigrams. When Trigrams reach the max number, gaining new Trigrams moves all Trigrams 1 slot to the left, and the original leftmost Trigram will be removed.</p><ul><li><p>Trigram - Mountain is obtained when Basic Attack Stage 2 deals damage.</p></li><li><p>Trigram - Thunder is obtained when Basic Attack Stage 4 or Mid-air Attack deals damage.</p></li><li><p>Trigram - Thunder is obtained when casting Resonance Skill - In Shadow Thunder Stirs.</p></li></ul></li></ul><p></p><p></p><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "10.43%*2",
+            "Lv2": "11.28%*2",
+            "Lv3": "12.14%*2",
+            "Lv4": "13.34%*2",
+            "Lv5": "14.19%*2",
+            "Lv6": "15.17%*2",
+            "Lv7": "16.54%*2",
+            "Lv8": "17.91%*2",
+            "Lv9": "19.28%*2",
+            "Lv10": "20.73%*2",
+            "Name": "Stage 1 DMG"
+          },
+          {
+            "Lv1": "16.83%*2",
+            "Lv2": "18.21%*2",
+            "Lv3": "19.59%*2",
+            "Lv4": "21.52%*2",
+            "Lv5": "22.90%*2",
+            "Lv6": "24.49%*2",
+            "Lv7": "26.69%*2",
+            "Lv8": "28.90%*2",
+            "Lv9": "31.11%*2",
+            "Lv10": "33.45%*2",
+            "Name": "Stage 2 DMG"
+          },
+          {
+            "Lv1": "11.83%*2",
+            "Lv2": "12.80%*2",
+            "Lv3": "13.77%*2",
+            "Lv4": "15.13%*2",
+            "Lv5": "16.10%*2",
+            "Lv6": "17.21%*2",
+            "Lv7": "18.76%*2",
+            "Lv8": "20.31%*2",
+            "Lv9": "21.87%*2",
+            "Lv10": "23.51%*2",
+            "Name": "Stage 3 DMG"
+          },
+          {
+            "Lv1": "47.10%",
+            "Lv2": "50.97%",
+            "Lv3": "54.83%",
+            "Lv4": "60.24%",
+            "Lv5": "64.10%",
+            "Lv6": "68.54%",
+            "Lv7": "74.72%",
+            "Lv8": "80.90%",
+            "Lv9": "87.08%",
+            "Lv10": "93.64%",
+            "Name": "Stage 4 DMG"
+          },
+          {
+            "Lv1": "37.20%",
+            "Lv2": "40.26%",
+            "Lv3": "43.31%",
+            "Lv4": "47.58%",
+            "Lv5": "50.63%",
+            "Lv6": "54.13%",
+            "Lv7": "59.02%",
+            "Lv8": "63.90%",
+            "Lv9": "68.78%",
+            "Lv10": "73.96%",
+            "Name": "Mid-air Attack DMG"
+          },
+          {
+            "Lv1": "11.83%*2",
+            "Lv2": "12.80%*2",
+            "Lv3": "13.77%*2",
+            "Lv4": "15.13%*2",
+            "Lv5": "16.10%*2",
+            "Lv6": "17.21%*2",
+            "Lv7": "18.76%*2",
+            "Lv8": "20.31%*2",
+            "Lv9": "21.87%*2",
+            "Lv10": "23.51%*2",
+            "Name": "Dodge Counter DMG"
+          },
+          {
+            "Lv1": "90.00%",
+            "Lv2": "97.38%",
+            "Lv3": "104.76%",
+            "Lv4": "115.10%",
+            "Lv5": "122.48%",
+            "Lv6": "130.96%",
+            "Lv7": "142.77%",
+            "Lv8": "154.58%",
+            "Lv9": "166.39%",
+            "Lv10": "178.93%",
+            "Name": "Heavy Attack - Mountain Over Thunder DMG"
+          },
+          {
+            "Lv1": "45.00%",
+            "Lv2": "48.69%",
+            "Lv3": "52.38%",
+            "Lv4": "57.55%",
+            "Lv5": "61.24%",
+            "Lv6": "65.48%",
+            "Lv7": "71.39%",
+            "Lv8": "77.29%",
+            "Lv9": "83.20%",
+            "Lv10": "89.47%",
+            "Name": "Heavy Attack - Thunder Over Mountain DMG"
+          },
+          {
+            "Lv1": "360+68.00% ATK",
+            "Lv2": "390+73.58% ATK",
+            "Lv3": "420+79.16% ATK",
+            "Lv4": "461+86.96% ATK",
+            "Lv5": "490+92.54% ATK",
+            "Lv6": "524+98.95% ATK",
+            "Lv7": "572+107.87% ATK",
+            "Lv8": "619+116.79% ATK",
+            "Lv9": "666+125.72% ATK",
+            "Lv10": "716+135.20% ATK",
+            "Name": "Heavy Attack - Twin Mountains Healing"
+          },
+          {
+            "Lv1": "85+9.20% ATK",
+            "Lv2": "92+9.96% ATK",
+            "Lv3": "99+10.71% ATK",
+            "Lv4": "109+11.77% ATK",
+            "Lv5": "116+12.52% ATK",
+            "Lv6": "124+13.39% ATK",
+            "Lv7": "135+14.60% ATK",
+            "Lv8": "146+15.81% ATK",
+            "Lv9": "158+17.01% ATK",
+            "Lv10": "169+18.30% ATK",
+            "Name": "Heavy Attack - Twin Thunders Healing"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Mountain Over Thunder STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Thunder Over Mountain STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Twin Mountains STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Twin Thunders STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Ghost Gate Omen STA Cost"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Heavy Attack - Mountain Over Thunder Concerto Regen"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Heavy Attack - Thunder Over Mountain Concerto Regen"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Heavy Attack - Twin Mountains Concerto Regen"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Heavy Attack - Twin Thunders Concerto Regen"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "In Shadow Thunder Stirs",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p>Attack the target, dealing <u>Electro DMG</u> and continuously pulling in nearby targets.</p><ul><li><p>Right after casting Resonance Skill, press Normal Attack to perform Basic Attack Stage 4.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "29.37%",
+            "Lv2": "31.78%",
+            "Lv3": "34.19%",
+            "Lv4": "37.56%",
+            "Lv5": "39.97%",
+            "Lv6": "42.74%",
+            "Lv7": "46.59%",
+            "Lv8": "50.45%",
+            "Lv9": "54.30%",
+            "Lv10": "58.40%",
+            "Name": "Thunder Talisman DMG"
+          },
+          {
+            "Lv1": "2.94%*10",
+            "Lv2": "3.18%*10",
+            "Lv3": "3.42%*10",
+            "Lv4": "3.76%*10",
+            "Lv5": "4.00%*10",
+            "Lv6": "4.28%*10",
+            "Lv7": "4.66%*10",
+            "Lv8": "5.05%*10",
+            "Lv9": "5.43%*10",
+            "Lv10": "5.84%*10",
+            "Name": "Pull-in Effect Continuous DMG"
+          },
+          {
+            "Lv1": "15s",
+            "Lv2": "15s",
+            "Lv3": "15s",
+            "Lv4": "15s",
+            "Lv5": "15s",
+            "Lv6": "15s",
+            "Lv7": "15s",
+            "Lv8": "15s",
+            "Lv9": "15s",
+            "Lv10": "15s",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "23",
+            "Lv2": "23",
+            "Lv3": "23",
+            "Lv4": "23",
+            "Lv5": "23",
+            "Lv6": "23",
+            "Lv7": "23",
+            "Lv8": "23",
+            "Lv9": "23",
+            "Lv10": "23",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Flashing Thunder Spell",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p>Attack the target, dealing <u>Electro DMG</u>. </p>",
+        "multipliers": [
+          {
+            "Lv1": "180.00%",
+            "Lv2": "194.76%",
+            "Lv3": "209.52%",
+            "Lv4": "230.19%",
+            "Lv5": "244.95%",
+            "Lv6": "261.92%",
+            "Lv7": "285.54%",
+            "Lv8": "309.15%",
+            "Lv9": "332.77%",
+            "Lv10": "357.86%",
+            "Name": "Flashing Thunder Spell DMG"
+          },
+          {
+            "Lv1": "24s",
+            "Lv2": "24s",
+            "Lv3": "24s",
+            "Lv4": "24s",
+            "Lv5": "24s",
+            "Lv6": "24s",
+            "Lv7": "24s",
+            "Lv8": "24s",
+            "Lv9": "24s",
+            "Lv10": "24s",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "150",
+            "Lv2": "150",
+            "Lv3": "150",
+            "Lv4": "150",
+            "Lv5": "150",
+            "Lv6": "150",
+            "Lv7": "150",
+            "Lv8": "150",
+            "Lv9": "150",
+            "Lv10": "150",
+            "Name": "Resonance Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Thunder Begets Life",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p><b>Yin-Yang Balance</b></p><ul><li><p>When Buling obtains Minor Yin and Minor Yang, she enters the Yin-Yang Balance state, replacing her Resonance Liberation - Flashing Thunder Spell with Resonance Liberation - Flashing Thunder Spell: Harmony.</p></li></ul><p><b>Flashing Thunder Spell - Harmony</b></p><ul><li><p>Attack the target, dealing <u>Electro DMG</u> and generating a Five Thunders Spell Array at the target area. The array deals <u>Electro DMG</u> and inflicts <b>2 </b>stacks of Electro Flare on all targets within it every <b>2s</b>, lasting for <b>24s</b>. When Five Thunders Spell Array is active, all Resonators in the team enter the Thunder Spell - Primordial Qi state.</p><ul><li><p>While in the Thunder Spell - Primordial Qi state, when any Resonator in the team casts Intro Skill, Thunder Spell - Primordial Qi becomes Thunder Spell - Yin and Yang.</p></li><li><p>Thunder Spell - Yin and Yang grants <b>10% </b>Resonance Skill DMG Bonus to all active Resonators in the team. When any Resonator in the team casts Intro Skill during this state, Thunder Spell - Yin and Yang becomes Thunder Spell - Heaven, Earth, Mind.</p></li><li><p>Thunder Spell - Heaven, Earth, Mind grants <b>25% </b>Resonance Skill DMG Bonus to all active Resonators in the team.</p></li></ul></li></ul><p><b>Minor Yang and Minor Yin</b></p><ul><li><p>Minor Yang is obtained after casting Heavy Attack - Mountain Over Thunder or Heavy Attack - Thunder Over Mountain.</p></li><li><p>Minor Yin is obtained after casting Heavy Attack - Twin Mountains or Heavy Attack - Twin Thunders.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "270.00%",
+            "Lv2": "292.14%",
+            "Lv3": "314.28%",
+            "Lv4": "345.28%",
+            "Lv5": "367.42%",
+            "Lv6": "392.88%",
+            "Lv7": "428.31%",
+            "Lv8": "463.73%",
+            "Lv9": "499.15%",
+            "Lv10": "536.79%",
+            "Name": "Flashing Thunder Spell - Harmony DMG"
+          },
+          {
+            "Lv1": "10.00%",
+            "Lv2": "10.82%",
+            "Lv3": "11.64%",
+            "Lv4": "12.79%",
+            "Lv5": "13.61%",
+            "Lv6": "14.56%",
+            "Lv7": "15.87%",
+            "Lv8": "17.18%",
+            "Lv9": "18.49%",
+            "Lv10": "19.89%",
+            "Name": "Five Thunders Spell Array Continuous DMG"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Time Arrives, Evil Declines",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Buling gains <b>25%</b> Healing Bonus when restoring HP for Resonators with less than <b>50%</b> HP.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Earthly Immortal is Here!",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>Targets damaged by Intro Skill - Summon and Smite obtain <b>4</b> stacks of Electro Flare. This effect is triggered once every <b>10s</b>.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Summon and Smite",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Attack the target, dealing <u>Electro DMG</u> and healing all nearby Resonators in the team.</p>",
+        "multipliers": [
+          {
+            "Lv1": "65.94%",
+            "Lv2": "71.35%",
+            "Lv3": "76.76%",
+            "Lv4": "84.33%",
+            "Lv5": "89.74%",
+            "Lv6": "95.95%",
+            "Lv7": "104.61%",
+            "Lv8": "113.26%",
+            "Lv9": "121.91%",
+            "Lv10": "131.10%",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "350+40.00% ATK",
+            "Lv2": "379+43.28% ATK",
+            "Lv3": "408+46.56% ATK",
+            "Lv4": "448+51.16% ATK",
+            "Lv5": "477+54.44% ATK",
+            "Lv6": "510+58.21% ATK",
+            "Lv7": "556+63.46% ATK",
+            "Lv8": "602+68.70% ATK",
+            "Lv9": "648+73.95% ATK",
+            "Lv10": "696+79.53% ATK",
+            "Name": "Skill Healing"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Exorcism Spell",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>Heal the active Resonator in the team by <b>18%</b> of Buling&#039;s ATK per second for <b>16s</b>. All nearby Resonators in the team have their DMG Amplified by <b>15% </b>for <b>30s</b>.</p>",
+        "type": "Outro Skill"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p>The Crit. Rate of Resonance Liberation - Flashing Thunder Spell: Harmony is increased by <b>20% </b>upon dealing damage.</p>",
+      "dupe1_name": "Sequence Node 1",
+      "dupe2": "<p>Buling restores <b>25 </b>points of Resonance Energy when she enters the Yin-Yang Balance state. This effect is triggered once every <b>24s</b>.</p>",
+      "dupe2_name": "Sequence Node 2",
+      "dupe3": "<p>While Five Thunders Spell Array lasts, whenever the HP of Resonators in the team drops below <b>50%</b>, immediately restore their HP by <b>350+150% </b>of Buling&#039;s ATK. This effect can be triggered once every <b>24s</b>.</p>",
+      "dupe3_name": "Sequence Node 3",
+      "dupe4": "<p>Buling gains <b>20% </b>Healing Bonus.</p>",
+      "dupe4_name": "Sequence Node 4",
+      "dupe5": "<p>Five Thunders Spell Array instantly inflicts another <b>6 </b>stacks of Electro Flare on all targets within its range upon generation.</p>",
+      "dupe5_name": "Sequence Node 5",
+      "dupe6": "<p>The Thunder Spell - Heaven, Earth, Mind state now grants <b>50% </b>Resonance Skill DMG Bonus to the active Resonator in the team.</p>",
+      "dupe6_name": "Sequence Node 6"
+    },
+    "voiceActors": {
+      "en": "",
+      "jpn": "",
+      "cn": "",
+      "kr": ""
+    },
+    "attributeBonus": [
+      {
+        "name": "Healing Bonus",
+        "value": 12
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": {
+      "skill": {
+        "name": "Curse of the Abyss",
+        "number": 26
+      },
+      "common": [
+        {
+          "name": "LF Whisperin Core",
+          "number_char": 4,
+          "number_skill": 25
+        },
+        {
+          "name": "MF Whisperin Core",
+          "number_char": 12,
+          "number_skill": 28
+        },
+        {
+          "name": "HF Whisperin Core",
+          "number_char": 12,
+          "number_skill": 40
+        },
+        {
+          "name": "FF Whisperin Core",
+          "number_char": 4,
+          "number_skill": 57
+        }
+      ],
+      "ascension": {
+        "name": "Pecok Flower",
+        "number": 60
+      },
+      "skill_other": [
+        {
+          "name": "Lento Helix",
+          "number": 25
+        },
+        {
+          "name": "Adagio Helix",
+          "number": 28
+        },
+        {
+          "name": "Andante Helix",
+          "number": 55
+        },
+        {
+          "name": "Presto Helix",
+          "number": 67
+        }
+      ],
+      "breakthrough": {
+        "name": "Blighted Crown of Puppet King",
+        "number": 46
+      }
+    },
+    "videos": null,
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": "<p>Since Buling is a Support character who deals very little personal damage, calculating her Sequence value won&rsquo;t paint the proper picture of how valuable they are. For this reason, we&rsquo;re instead providing notes on her Sequences to illustrate each of their value for Buling:</p><ul><li><strong>S1</strong> - This Sequence has rather low value but it does give Buling 20% extra CRIT Rate on her strongest attack, which makes for a small personal damage boost on average; however it&rsquo;s nothing really worth caring about.</li><li><strong>S2</strong> - Medium value. It provides Buling with a lot of extra Energy which significantly lowers her Energy Regen requirements, potentially allowing for both of her Cost 3 Echoes to be damage-oriented, which can provide a meaningful boost to her personal damage.</li><li><strong>S3-S4</strong> - Low value. Both of these sequences only provide minor increases to Buling&rsquo;s sustain capabilities which doesn&rsquo;t contribute at all to team damage and only matters if the player is getting frequently hit by enemy attacks. Overall very situational.</li><li><strong>S5</strong> - Low value. This Sequence provides Buling with extra Electro Flare application on enemies hit by her enhanced Ultimate on cast. This could be useful in the future if Buling obtains any Electro Flare-related synergies, but as things stand it only represents a very minor increase to her personal damage.</li><li><strong>S6</strong> - High value. This is Buling&rsquo;s highest value Sequence node since it allows her to provide the Main DPS of her team (which will be the main recipient of her buff) with a total of 50% Skill DMG Bonus instead of the standard 25%. This represents a significant increase to her buffing capabilities and makes her stand out from Verina as a Skill DMG-oriented buffer in certain teams.</li></ul>",
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "heal_atk",
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "buling",
+      "build": 3.7,
+      "review": 3.7
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "buling",
+        "Weapon": "Stringmaster",
+        "Dupes": 1,
+        "Percentage": "1",
+        "Percentage_2": "",
+        "Comment": "The best overall weapon for all Rectifier damage dealers. While Buling is not a damage-oriented character being mostly a Support, she does want to optimize her damage ideally since none of her buffs scale off of a particular stat or condition. As Stringmaster is the best general option for Rectifier damage dealers, it is also the strongest option on Buling thanks to its huge universal damage buffs."
+      },
+      {
+        "ID": 2,
+        "Character": "buling",
+        "Weapon": "Lethean Elegy",
+        "Dupes": 1,
+        "Percentage": "2",
+        "Percentage_2": "",
+        "Comment": "As another strong generalist option, Phrolova's Signature enables Buling to deal a good chunk of damage while not packing as much of a punch as Stringmaster, making it the second best option available for her."
+      },
+      {
+        "ID": 3,
+        "Character": "buling",
+        "Weapon": "Rime-Draped Sprouts",
+        "Dupes": 1,
+        "Percentage": "3",
+        "Percentage_2": "",
+        "Comment": "Mostly an ATK and CRIT DMG stat-stick for Buling, who can barely stack its Basic Attack DMG-oriented effect, but it can still be used decently on her."
+      },
+      {
+        "ID": 4,
+        "Character": "buling",
+        "Weapon": "Luminous Hymn",
+        "Dupes": 1,
+        "Percentage": "4",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT Rate stat-stick for Buling, who does not benefit from this weapon's Spectro Frazzle-oriented effects."
+      },
+      {
+        "ID": 5,
+        "Character": "buling",
+        "Weapon": "Cosmic Ripples",
+        "Dupes": 1,
+        "Percentage": "5",
+        "Percentage_2": "",
+        "Comment": "Strongest permanently available option, which grants a lot of ATK and increased Energy Regen as well as some minor amounts of Basic Attack DMG to the wearer which Buling uses decently. One of the strongest options to increase Buling's Healing capabilities while simultaneously increasing her damage by a solid amount, this option can be considered even over above options in order to optimize Buling's Sustain capabilities."
+      },
+      {
+        "ID": 6,
+        "Character": "buling",
+        "Weapon": "Waltz in Masquerade",
+        "Dupes": 5,
+        "Percentage": "6",
+        "Percentage_2": "",
+        "Comment": "Fully F2P-accessible craftable weapon that capitalizes on Buling's ability to instantly apply Electro Flare on her enemies, which allows this weapon's ATK-increasing passive to be quickly stacked up to the maximum effect for a lot of ATK buffing in total. Still pales in comparison to any 5-stars due to a lack of solid Base ATK."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "buling",
+        "Type": "Best",
+        "Set": "Rejuvenating Glow",
+        "Percentage": "1",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Offers a 10% unconditional Healing% boost and an most importantly a 15% ATK% boost for the entire team, lasting 30 seconds whenever you heal yourself or any of your allies. This bonus can be triggered by character abilities and weapon effects, is easy to keep active 100% of the time and is a big help for all party members.",
+        "Echo_1": "Fallacy of No Return",
+        "Echo_1_Comment": "Simple summon Echo that can be cast any time (ideally right before the wielder's Outro), granting 10% ATK to the team for 20s (sufficient for 2 other teammates' rotation times if cast right before Outro) as well as 10% Energy Regen to the wielder to help with Energy requirements.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "buling",
+        "Character": "buling",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Electro DMG",
+        "Echo_3": "Electro DMG > Energy Regen",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% > ATK",
+        "Comments": "An Energy Regen 3-cost may prove necessary before S2 without good sub-stats. Energy Regen requirements become much lower at S2 onwards."
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "buling",
+        "Type": "",
+        "Order": "Forte Circuit, Basic Attack, Res. Skill, Intro Skill, Res. Liberation",
+        "Comments": "Skill, Intro and Liberation can be skipped when levelling to save on resources at a minimal damage loss."
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "buling",
+        "Name": "Best Team",
+        "Member_1": "hsin",
+        "Member_2": "rover-electro",
+        "Member_3": "buling",
+        "Comments": ""
+      },
+      {
+        "ID": 2,
+        "Character": "buling",
+        "Name": "Alternative Teams",
+        "Member_1": "phrolova, carlotta",
+        "Member_2": "cantarella, zhezhi",
+        "Member_3": "buling",
+        "Comments": "Only use Zhezhi with Carlotta/Cantarella with Phrolova. Danjin can work as a F2P replacement for Phrolova."
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "buling",
+        "Synergy": "hsin, phrolova, carlotta",
+        "Comment": "Buling's best DPS characters to buff as they are Main Skill DMG-oriented DPS. Thanks to Buling's Outro, Echo Set and passive (enhanced via S6), she is capable of providing them with a wide array of ATK, DMG Amplification and Skill DMG Bonus buffs, which makes her suited as a solid Support choice for those teams, particularly if her S6 is unlocked. Hsin in particular is her best choice thanks to her modern damage numbers and ability to apply Electro Flare for Hsin to benefit from."
+      }
+    ]
+  },
+  "stats": {
+    "slug": "buling",
+    "name": "Buling",
+    "unit_id": 1307,
+    "base_hp": 850,
+    "base_atk": 18,
+    "base_def": 103,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 125,
+    "bonus_ele": 0,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 12,
+    "bonus_crit": 0,
+    "bonus_critdmg": 0,
+    "bonus_hp": 0
+  },
+  "calculations": "$undefined",
+  "damageDistribution": "$undefined",
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Cosmic Ripples",
+        "Slug": "cosmic-ripples",
+        "Rarity": 5,
+        "ID": "21050015",
+        "Effect": "Increases Energy Regen by {0}. When hitting a target with Basic Attacks, increases Basic Attack DMG Bonus by {1}, stacking up to {2} time(s). This effect lasts for {3}s and can be triggered 1 time(s) every 0.5s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "3.2%",
+          "4%",
+          "4.8%",
+          "5.6%",
+          "6.4%"
+        ],
+        "Array_2": [
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "Array_3": [
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Rectifier",
+        "Stat_primary": 500,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 54,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Lethean Elegy",
+        "Slug": "lethean-elegy",
+        "Rarity": 5,
+        "ID": "21050066",
+        "Effect": "ATK is increased by {0}. Within 12s after dealing Echo Skill DMG, gain {1} Resonance Skill DMG Bonus and {1} Echo Skill DMG Amplification, and ignore {2} of the target's DEF when dealing damage.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "32%",
+          "40%",
+          "48%",
+          "56%",
+          "64%"
+        ],
+        "Array_2": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Rectifier",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Luminous Hymn",
+        "Slug": "luminous-hymn",
+        "Rarity": 5,
+        "ID": "21050046",
+        "Effect": "Increase ATK by {0}. Dealing DMG to targets with Spectro Frazzle grants the wielder {1} Basic Attack DMG Bonus and {1} Heavy Attack DMG Bonus, stacking up to 3 times for 6s. Casting Outro Skill Amplifies the Spectro Frazzle DMG on targets around the active Resonator by {2} for 30s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "14%",
+          "17.5%",
+          "21%",
+          "24.5%",
+          "28%"
+        ],
+        "Array_2": [
+          "30%",
+          "37.5%",
+          "45%",
+          "52.5%",
+          "60%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Rectifier",
+        "Stat_primary": 500,
+        "Stat_secondary": "Crit. Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Rime-Draped Sprouts",
+        "Slug": "rime-draped-sprouts",
+        "Rarity": 5,
+        "ID": "21050026",
+        "Effect": "Increases ATK by {0}. Using Resonance Skill gives the equipped Resonator {0} Basic Attack DMG Bonus for 6s, stacking up to 3 times. When casting Outro Skill with 3 stacks, consume all stacks to give {1} DMG Bonus to the off-field Basic Attacks performed by the equipped Resonator, lasting for 27s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "52%",
+          "65%",
+          "78%",
+          "91%",
+          "104%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Rectifier",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 72,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Stringmaster",
+        "Slug": "stringmaster",
+        "Rarity": 5,
+        "ID": "21050016",
+        "Effect": "Increases the DMG Bonus by {0}. When dealing Resonance Skill DMG, increases ATK by {1}, stacking up to 2. This effect lasts for 5s. When the equipped Resonator is not on the field, increases their ATK by an additional {2}.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_2": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Rectifier",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Limited"
+      },
+      {
+        "Name": "Waltz in Masquerade",
+        "Slug": "waltz-in-masquerade",
+        "Rarity": 4,
+        "ID": "21050094",
+        "Effect": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for 10s. This effect can be triggered 1 time per second, stackable up to 4 times.",
+        "Array_0": [
+          "4%",
+          "5%",
+          "6%",
+          "7%",
+          "8%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Rectifier",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Crafting"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Fallacy of No Return",
+        "Slug": "fallacy-of-no-return",
+        "ID": "6000060",
+        "Echo_skill": "Activate the Echo Skill to summon a fraction of the Fallacy of No Return's power and deal a blast to the surrounding area, inflicting Spectro DMG equal to {0} of max HP, after which the Resonator gains 10% bonus Energy Regen and all team members 10% bonus ATK for 20s.\\n\\nHold Echo Skill to unleash a series of flurry assaults at the cost of STA, each dealing Spectro DMG equal to {1} of max HP; Release to end the assail in a powerful blow, dealing Spectro DMG equal to {2} of max HP.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          7
+        ],
+        "Skill_1": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "Skill_2": [
+          "11.4%",
+          "1.14%",
+          "14.25%"
+        ],
+        "Skill_3": [
+          "12.88%",
+          "1.29%",
+          "16.11%"
+        ],
+        "Skill_4": [
+          "14.37%",
+          "1.44%",
+          "17.97%"
+        ],
+        "Skill_5": [
+          "15.86%",
+          "1.58%",
+          "19.82%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Rejuvenating Glow",
+        "slug": "rejuvenating-glow",
+        "sonata_id": 7,
+        "type": "standard",
+        "bonus_2": "<p>Healing increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon healing allies, increase ATK of the entire team by <strong>15%</strong>, lasting <strong>30s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_7.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Buling",
+      "slug": "buling",
+      "toa_cat": "support",
+      "toa_rating": 8,
+      "toa_tags": "Free, Flare, S0 -1",
+      "toa_marks": "",
+      "ww_cat": "support",
+      "ww_rating": 9,
+      "ww_tags": "Free, Flare, S0 -1",
+      "ww_marks": "up",
+      "overall_cat": "support",
+      "overall_rating": 9,
+      "overall_tags": "Free, Flare, S0 -1",
+      "overall_marks": "",
+      "rarity": 4,
+      "element": "Electro",
+      "weapon": "Rectifier",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S6"
+    }
+  ]
+}

@@ -1,0 +1,1699 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/lucy",
+  "fetchedAt": "2026-10-28T03:30:38.443Z",
+  "slug": "lucy",
+  "name": "Lucy",
+  "rarity": 5,
+  "element": "Spectro",
+  "weapon": "Pistols",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/wuthering-waves/characters/lucy_card.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/lucy_full.webp"
+  },
+  "profile": {
+    "id": "cuid_8343ee63160c6a34fbd62607b8c2ce95",
+    "slug": "lucy",
+    "name": "Lucy",
+    "rarity": 5,
+    "element": "Spectro",
+    "weapon": "Pistols",
+    "devId": 1511,
+    "upcoming": false,
+    "introduction": null,
+    "review": "<p style=\"text-align: justify;\">Lucy is a 5-star Spectro Pistols DPS from the Cyberpunk: Edgerunners collab who relies on a mechanic called Hack (a variant of Tune Rupture) and a special Ultimate that applies various debuffs and damage to enemies. Lucy’s rotation goal will be to empower that Ultimate to deal as much damage and apply as many debuffs as possible, while also dealing some Hack damage to her targets. Her kit is intrinsically tied to her best Support, Rebecca, from the same collab, as they rely on each other to enhance their damage and make for the best team they can get.</p><h6><strong><u>Key Mechanics</u></strong></h6><p style=\"text-align: justify;\">Lucy’s main rotation focus lies in her Forte resources, being TCP and Root Access. First, she wants to charge up TCP to cast an enhanced Skill called “Deadlock” that then enables her to accumulate Root Access via newly acquired Basic Attacks. At full Root Access, she can then cast a special Heavy Attack called Dual Threading, automatically followed by Multi-threading. At this point, her Ultimate is enhanced, and she is free to cast it and switch out.</p><p style=\"text-align: justify;\">Lucy’s Ultimate is, however, very unique. It freezes all enemies in time for its duration and allows you to select 7 different programs that will debuff or deal damage to enemies depending on the program. Until S2,&nbsp; where all programs are always selectable, the first 5 programs are always the best ones to pick for a mix of damage and damage enhancements.</p><p style=\"text-align: justify;\">Lastly, Lucy has a unique Tune Break response, called Hack. This is functionally the same thing as Tune Rupture; the damage multipliers function in the exact same way; they’re just under a different name. Lucy will apply Hack - Shifting through various attacks on targets that, upon casting a Tune Break Skill, will receive additional Hack damage, empowering your overall damage per Tune Break Skill cast.</p><h6><strong><u>Rotation &amp; Passives</u></strong></h6><p style=\"text-align: justify;\">Lucy’s rotation has her casting her Skills 1 and 2 (“Payload” and “Pulse Interference”) following her Intro in order to regenerate TCP passively while she is on-field after the casts and immediately activating her Signature Weapon’s passives. Afterwards, Lucy has enough TCP to cast her enhanced Skill with the help of 3 Basic Attacks. Finally, a full Basic Attack chain is enough to restore her Root Access fully, at which point she can cast her full Forte Heavy Attack, Ultimate, and swap out. No other attacks are useful in her rotation, and dodging isn’t ideal as it’ll lose time overall, so overall Lucy is unfortunately quite prone to interruption.</p><p style=\"text-align: justify;\">When it comes to her passives, they only help her consistency slightly in the case of her Inherent Skill 1 (even still, it’s quite useless), and her Inherent Skill 2 grants a nichely accessed damage-increasing mark debuff to enemies that can be granted to her and Rebecca when a boss enemy is defeated. This is particularly useful in early Matrix rounds, but may also see small benefits in Tower of Adversity 2-4, giving Lucy’s team a small extra advantage in those areas.</p><h6><strong><u>Meta Position &amp; Conclusion</u></strong></h6><p style=\"text-align: justify;\">As a stand-alone modern mid-3.x DPS release, Lucy’s own damage ceiling isn’t impressive compared to all the DPS powerhouses released before her. Aemeath, Luuk, Sigrika, Hiyuki all significantly outperform her, as her own damage ceiling can be compared to that of Augusta or Phrolova, even in her best team with Rebecca and Mornye/Shorekeeper. All in all, while Lucy is easy to access teams-wise since she’s using a free buffer and generalist Supports, her damage ceiling is unimpressive for a modern release, but still usable. Those who enjoy Lucy as a character from Cyberpunk: Edgerunners may be satisfied with how she turned out, as she is easily serviceable, but as a modern release, for meta-only players with no attachment to Lucy, she is forgettable. Targeting the other modern 3.x teams instead may prove to be a stronger choice if meta performance is your only deciding factor.</p><p style=\"text-align: justify;\">In conclusion, while Lucy doesn’t bring much that’s new meta-wise to the table, and her long-term use cases don’t look great at S0 due to Hack being different from Tune Rupture, she is still quite a serviceable DPS character up to the late 2.x versions’ standard which can help fill out your roster, or let you play a really cool Cyberpunk: Edgerunners character. And we think that’s awesome.</p>",
+    "pros": "<ul><li><p style=\"text-align: justify;\">Accessible - has a free best-in-slot buffer and can use multiple generalist Supports to great effect, all of them not needing their Signature to perform near maximum level.</p></li><li><p style=\"text-align: justify;\">High Sequence value; S1 increases her Whimpering Wastes potential substantially, plus S2-S3 can increase her longevity across all game modes by a lot.</p></li></ul><p></p>",
+    "cons": "<ul><li><p style=\"text-align: justify;\">Has a lower damage ceiling than every modern release before her (about equivalent to a late 2.x character).</p></li><li><p style=\"text-align: justify;\">Pretty Signature weapon-dependent to perform at a standard modern level.</p></li><li><p style=\"text-align: justify;\">Second Inherent Skill (which can boost her damage a decent amount) will almost never activate aside from very specific conditions (Killing an almost-dead Matrix boss, Tower of Adversity 2-4).</p></li><li><p style=\"text-align: justify;\">The Hack mechanic is exclusive to the Edgerunners collab characters, and is a variation of Tune Rupture unable to benefit from standard Tune Rupture temporary buffs in endgame content, impacting long-term use in such scenarios.</p></li><li><p style=\"text-align: justify;\">Collab character - will likely never rerun beyond her first banner. If you don’t have her right now, you’ve most likely missed out forever.</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p style=\"text-align: justify;\">HP: <strong>15500+</strong></p></li><li><p style=\"text-align: justify;\">DEF: <strong>1100+</strong></p></li><li><p style=\"text-align: justify;\">ATK: <strong>2100-2200+</strong></p></li><li><p style=\"text-align: justify;\">CRIT Rate: <strong>65%+ </strong>(Before Adam Smasher)</p></li><li><p style=\"text-align: justify;\">CRIT DMG: <strong>210%+</strong></p></li><li><p style=\"text-align: justify;\">Energy Regen: <strong>125%</strong></p><ul><li><p style=\"text-align: justify;\">Suitable for Mornye, Shorekeeper and Verina team variants. With Mornye, Lucy can get away with 121%, but Lucy will be short on Energy if some attacks miss.</p></li></ul></li><li><p>Spectro DMG Bonus: <strong>40-70%+</strong></p></li></ul><p></p>",
+    "rotations": "<h5><strong><u>Rotation &amp; Gameplay</u></strong></h5><p style=\"text-align: justify;\">The focus of Lucy’s rotation is to build towards her Forte Heavy Attack by quickly building TCP and Root Access to then access her enhanced Ultimate at the end of her rotation. It’s possible to optimize this and the uptime on her Ultimate’s debuffs, as follows:</p><div data-callout=\"\" class=\"callout callout-info\" style=\"--callout-color: #3B82F6;\" data-callout-type=\"info\"><div class=\"callout-icon\" data-icon=\"circle-info\"></div><div class=\"callout-content\"><h6><u>Echo Timing</u></h6><p style=\"text-align: justify;\">Summon Adam Smasher at any point in her rotation.</p></div></div><h6><strong><u>Opener “Rotation”</u></strong></h6><p style=\"text-align: justify;\">Lucy wants to act as the very first character in your team rotation. This is because before coming back to her, in her best teams, over 25 seconds of rotation time will need to be expended before her Ultimate needs to be used again. Hence, she can use it immediately and get all of her debuffs up:</p><ul><li><p style=\"text-align: justify;\">Ultimate (First 5 Programs) (Swap)</p></li></ul><p style=\"text-align: justify;\">The first 5 Programs, starting from the top, are always optimal to utilize for maximum damage and damage-increasing debuffs. At S2, using all 7 Programs becomes possible, but this only brings small amounts of utility.</p><h6><strong><u>Loop Rotation</u></strong></h6><p style=\"text-align: justify;\">Following her immediate Ultimate cast, when it’s finally Lucy’s turn to Intro in after both of her teammates’ buffs have been set up through their own rotations, Lucy rotates like so:</p><ul><li><p style=\"text-align: justify;\">Intro</p></li><li><p style=\"text-align: justify;\">Skill: Payload</p></li><li><p style=\"text-align: justify;\">Skill: Pulse Interference</p></li><li><p style=\"text-align: justify;\">Basic 2</p></li><li><p style=\"text-align: justify;\">Basic 3</p></li><li><p style=\"text-align: justify;\">Basic 4 (Cancel animation endlag via Skill)</p></li><li><p style=\"text-align: justify;\">Skill: Deadlock</p></li><li><p style=\"text-align: justify;\">Basic: Thread 1</p></li><li><p style=\"text-align: justify;\">Basic: Thread 2</p></li><li><p style=\"text-align: justify;\">Basic: Thread 3</p></li><li><p style=\"text-align: justify;\">Basic: Thread 4</p></li><li><p style=\"text-align: justify;\">Heavy: Dual-threading</p></li><li><p style=\"text-align: justify;\">Heavy: Multi-threading (Cancel animation endlag via Ultimate)</p></li><li><p style=\"text-align: justify;\">Ultimate (First 5 Programs)</p></li><li><p style=\"text-align: justify;\">Outro</p></li></ul><h6><strong><u>Additional Tips &amp; Tricks</u></strong></h6><p style=\"text-align: justify;\">In Quickswap, her first and second Skill are able to be used at vastly different times. You may keep this in mind when crafting rotations around this mechanic.</p><p style=\"text-align: justify;\">Additionally, her base form Heavy Attacks have decent damage and Off-Tune Buildup, which could be useful if you have time to spare in your team’s rotation. They may also work towards building up her Skill: Deadlock, so her on-field rotation (the part where she can’t Quickswap as she is being Outro buffed by Rebecca) only includes the cast of this Skill and what follows after it.</p>",
+    "skills": [
+      {
+        "name": "Basic Attack - Locked Thread",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<p style=\"text-align: justify;\"><strong>Basic Attack</strong></p><ul><li><p style=\"text-align: justify;\">Perform up to <strong>4</strong> consecutive attacks, dealing <u>Spectro DMG</u>.</p></li><li><p style=\"text-align: justify;\">Hold Normal Attack right after Basic Attack Stage 1 to continuously attack the targets, dealing <u>Spectro DMG</u>. Hold this skill for a certain amount of time to cast Heavy Attack Stage 1.</p></li><li><p style=\"text-align: justify;\">Hold Normal Attack shortly after Basic Attack Stage 3 lands to cast Heavy Attack Stage 2.</p></li></ul><p style=\"text-align: justify;\"><strong>Heavy Attack</strong></p><ul><li><p style=\"text-align: justify;\">Consume STA to lash out against the enemies with Monowire, dealing <u>Spectro DMG</u>.</p></li><li><p style=\"text-align: justify;\">Hold Normal Attack after Heavy Attack Stage 1 lands to cast Heavy Attack Stage 2, dealing <u>Spectro DMG</u>.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting Heavy Attack Stage 1 to cast Basic Attack Stage 3.</p></li></ul><p style=\"text-align: justify;\"><strong>Mid-air Attack</strong></p><ul><li><p style=\"text-align: justify;\">Consume STA to perform a Plunging Attack, dealing <u>Spectro DMG</u>.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill to cast Basic Attack Stage 2.</p></li></ul><p style=\"text-align: justify;\"><strong>Dodge Counter</strong></p><ul><li><p style=\"text-align: justify;\">Press Normal Attack shortly after a successful Dodge to attack the target, dealing <u>Spectro DMG</u>.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill to cast Basic Attack Stage 4.</p></li><li><p style=\"text-align: justify;\">Hold Normal Attack shortly after this skill lands to cast Heavy Attack Stage 2.</p></li></ul><p style=\"text-align: justify;\"><strong>Basic Attack - Thread Shredding</strong></p><ul><li><p style=\"text-align: justify;\">When in Algorithm Compaction, Lucy's Basic Attack is replaced with Basic Attack - Thread Shredding.</p></li><li><p style=\"text-align: justify;\">Perform up to <strong>4</strong> consecutive attacks, dealing <u>Spectro DMG</u>, considered Heavy Attack DMG.</p></li></ul><p style=\"text-align: justify;\"><strong>Heavy Attack - Single Threading</strong></p><ul><li><p style=\"text-align: justify;\">When in Algorithm Compaction, Lucy's Heavy Attack is replaced with Heavy Attack - Single Threading.</p></li><li><p style=\"text-align: justify;\">Consume STA to attack the target, dealing <u>Spectro DMG</u>.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill while airborne to cast Mid-air Attack - Algorithm Compaction.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill while on the ground to cast Basic Attack - Thread Shredding Stage 2.</p></li></ul><p style=\"text-align: justify;\"><strong>Heavy Attack - Dual Threading</strong></p><ul><li><p style=\"text-align: justify;\">When in Algorithm Compaction and Root Access reaches <strong>100 </strong>points, Heavy Attack - Single Threading is replaced with Heavy Attack - Dual Threading.</p></li><li><p style=\"text-align: justify;\">Consume STA and all Root Access to attack the target, dealing <u>Spectro DMG</u>.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill while airborne to cast Heavy Attack - Multi-threading.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill while on the ground to cast Basic Attack - Thread Shredding Stage 2.</p></li></ul><p style=\"text-align: justify;\"><strong>Heavy Attack - Multi-threading</strong></p><ul><li><p style=\"text-align: justify;\">Consume STA to attack the target, dealing <u>Spectro DMG</u> and inflicting Hack - Shifting on the target. SQL can be consumed for a <strong>270%</strong> increase in this attack's DMG Multiplier.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill to cast Basic Attack - Thread Shredding Stage 2.</p></li></ul><p style=\"text-align: justify;\"><strong>Mid-air Attack - Algorithm Compaction</strong></p><ul><li><p style=\"text-align: justify;\">When in Algorithm Compaction, Mid-air Attack is replaced with Mid-air Attack - Algorithm Compaction.</p></li><li><p style=\"text-align: justify;\">Consume STA to perform a Plunging Attack, dealing <u>Spectro DMG</u>.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill to cast Basic Attack - Thread Shredding Stage 2.</p></li></ul><p style=\"text-align: justify;\"><strong>Dodge Counter - Algorithm Compaction</strong></p><ul><li><p style=\"text-align: justify;\">When in Algorithm Compaction, Dodge Counter is replaced with Dodge Counter - Algorithm Compaction.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after a successful Dodge to attack the target, dealing <u>Spectro DMG</u>.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill to cast Basic Attack - Thread Shredding Stage 3. </p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "6.11%+24.44%",
+            "Lv2": "6.62%+26.45%",
+            "Lv3": "7.12%+28.45%",
+            "Lv4": "7.82%+31.26%",
+            "Lv5": "8.32%+33.26%",
+            "Lv6": "8.90%+35.57%",
+            "Lv7": "9.70%+38.77%",
+            "Lv8": "10.50%+41.98%",
+            "Lv9": "11.30%+45.19%",
+            "Lv10": "12.15%+48.59%",
+            "Name": "Basic Attack Stage 1 DMG"
+          },
+          {
+            "Lv1": "10.39%+10.09%*2",
+            "Lv2": "11.24%+10.91%*2",
+            "Lv3": "12.10%+11.74%*2",
+            "Lv4": "13.29%+12.90%*2",
+            "Lv5": "14.14%+13.72%*2",
+            "Lv6": "15.12%+14.67%*2",
+            "Lv7": "16.48%+16.00%*2",
+            "Lv8": "17.84%+17.32%*2",
+            "Lv9": "19.21%+18.64%*2",
+            "Lv10": "20.66%+20.05%*2",
+            "Name": "Basic Attack Stage 2 DMG"
+          },
+          {
+            "Lv1": "18.14%+18.14%+24.18%",
+            "Lv2": "19.63%+19.63%+26.17%",
+            "Lv3": "21.11%+21.11%+28.15%",
+            "Lv4": "23.20%+23.20%+30.93%",
+            "Lv5": "24.68%+24.68%+32.91%",
+            "Lv6": "26.39%+26.39%+35.19%",
+            "Lv7": "28.77%+28.77%+38.36%",
+            "Lv8": "31.15%+31.15%+41.53%",
+            "Lv9": "33.53%+33.53%+44.71%",
+            "Lv10": "36.06%+36.06%+48.08%",
+            "Name": "Basic Attack Stage 3 DMG"
+          },
+          {
+            "Lv1": "15.60%+7.80%*3+19.50%+19.50%",
+            "Lv2": "16.88%+8.44%*3+21.10%+21.10%",
+            "Lv3": "18.16%+9.08%*3+22.70%+22.70%",
+            "Lv4": "19.95%+9.98%*3+24.94%+24.94%",
+            "Lv5": "21.23%+10.62%*3+26.54%+26.54%",
+            "Lv6": "22.70%+11.35%*3+28.38%+28.38%",
+            "Lv7": "24.75%+12.38%*3+30.94%+30.94%",
+            "Lv8": "26.80%+13.40%*3+33.50%+33.50%",
+            "Lv9": "28.84%+14.42%*3+36.05%+36.05%",
+            "Lv10": "31.02%+15.51%*3+38.77%+38.77%",
+            "Name": "Basic Attack Stage 4 DMG"
+          },
+          {
+            "Lv1": "11.12%+11.12%+14.82%",
+            "Lv2": "12.03%+12.03%+16.04%",
+            "Lv3": "12.94%+12.94%+17.26%",
+            "Lv4": "14.22%+14.22%+18.96%",
+            "Lv5": "15.13%+15.13%+20.17%",
+            "Lv6": "16.18%+16.18%+21.57%",
+            "Lv7": "17.64%+17.64%+23.51%",
+            "Lv8": "19.10%+19.10%+25.46%",
+            "Lv9": "20.55%+20.55%+27.40%",
+            "Lv10": "22.10%+22.10%+29.47%",
+            "Name": "Heavy Attack 1 DMG"
+          },
+          {
+            "Lv1": "28.60%*2+9.54%*3+28.60%+28.60%",
+            "Lv2": "30.95%*2+10.32%*3+30.95%+30.95%",
+            "Lv3": "33.30%*2+11.10%*3+33.30%+33.30%",
+            "Lv4": "36.58%*2+12.20%*3+36.58%+36.58%",
+            "Lv5": "38.92%*2+12.98%*3+38.92%+38.92%",
+            "Lv6": "41.62%*2+13.88%*3+41.62%+41.62%",
+            "Lv7": "45.37%*2+15.13%*3+45.37%+45.37%",
+            "Lv8": "49.13%*2+16.38%*3+49.13%+49.13%",
+            "Lv9": "52.88%*2+17.63%*3+52.88%+52.88%",
+            "Lv10": "56.86%*2+18.96%*3+56.86%+56.86%",
+            "Name": "Heavy Attack 2 DMG"
+          },
+          {
+            "Lv1": "29.25%+29.25%",
+            "Lv2": "31.65%+31.65%",
+            "Lv3": "34.05%+34.05%",
+            "Lv4": "37.41%+37.41%",
+            "Lv5": "39.81%+39.81%",
+            "Lv6": "42.57%+42.57%",
+            "Lv7": "46.40%+46.40%",
+            "Lv8": "50.24%+50.24%",
+            "Lv9": "54.08%+54.08%",
+            "Lv10": "58.16%+58.16%",
+            "Name": "Plunging Attack DMG"
+          },
+          {
+            "Lv1": "29.84%+39.78%+29.84%",
+            "Lv2": "32.29%+43.05%+32.29%",
+            "Lv3": "34.73%+46.31%+34.73%",
+            "Lv4": "38.16%+50.88%+38.16%",
+            "Lv5": "40.60%+54.14%+40.60%",
+            "Lv6": "43.42%+57.89%+43.42%",
+            "Lv7": "47.33%+63.11%+47.33%",
+            "Lv8": "51.25%+68.33%+51.25%",
+            "Lv9": "55.16%+73.55%+55.16%",
+            "Lv10": "59.32%+79.09%+59.32%",
+            "Name": "Dodge Counter DMG"
+          },
+          {
+            "Lv1": "31.50%+31.50%",
+            "Lv2": "34.09%+34.09%",
+            "Lv3": "36.67%+36.67%",
+            "Lv4": "40.29%+40.29%",
+            "Lv5": "42.87%+42.87%",
+            "Lv6": "45.84%+45.84%",
+            "Lv7": "49.97%+49.97%",
+            "Lv8": "54.11%+54.11%",
+            "Lv9": "58.24%+58.24%",
+            "Lv10": "62.63%+62.63%",
+            "Name": "Mid-air Attack - Algorithm Compaction"
+          },
+          {
+            "Lv1": "19.60%+19.60%+19.60%+19.60%+19.60%",
+            "Lv2": "21.21%+21.21%+21.21%+21.21%+21.21%",
+            "Lv3": "22.82%+22.82%+22.82%+22.82%+22.82%",
+            "Lv4": "25.07%+25.07%+25.07%+25.07%+25.07%",
+            "Lv5": "26.68%+26.68%+26.68%+26.68%+26.68%",
+            "Lv6": "28.52%+28.52%+28.52%+28.52%+28.52%",
+            "Lv7": "31.10%+31.10%+31.10%+31.10%+31.10%",
+            "Lv8": "33.67%+33.67%+33.67%+33.67%+33.67%",
+            "Lv9": "36.24%+36.24%+36.24%+36.24%+36.24%",
+            "Lv10": "38.97%+38.97%+38.97%+38.97%+38.97%",
+            "Name": "Dodge Counter - Algorithm Compaction"
+          },
+          {
+            "Lv1": "9.80%+9.80%+9.80%+9.80%",
+            "Lv2": "10.61%+10.61%+10.61%+10.61%",
+            "Lv3": "11.41%+11.41%+11.41%+11.41%",
+            "Lv4": "12.54%+12.54%+12.54%+12.54%",
+            "Lv5": "13.34%+13.34%+13.34%+13.34%",
+            "Lv6": "14.26%+14.26%+14.26%+14.26%",
+            "Lv7": "15.55%+15.55%+15.55%+15.55%",
+            "Lv8": "16.84%+16.84%+16.84%+16.84%",
+            "Lv9": "18.12%+18.12%+18.12%+18.12%",
+            "Lv10": "19.49%+19.49%+19.49%+19.49%",
+            "Name": "Basic Attack - Thread Shredding Stage 1 DMG"
+          },
+          {
+            "Lv1": "11.20%+11.20%+11.20%+11.20%+11.20%",
+            "Lv2": "12.12%+12.12%+12.12%+12.12%+12.12%",
+            "Lv3": "13.04%+13.04%+13.04%+13.04%+13.04%",
+            "Lv4": "14.33%+14.33%+14.33%+14.33%+14.33%",
+            "Lv5": "15.25%+15.25%+15.25%+15.25%+15.25%",
+            "Lv6": "16.30%+16.30%+16.30%+16.30%+16.30%",
+            "Lv7": "17.77%+17.77%+17.77%+17.77%+17.77%",
+            "Lv8": "19.24%+19.24%+19.24%+19.24%+19.24%",
+            "Lv9": "20.71%+20.71%+20.71%+20.71%+20.71%",
+            "Lv10": "22.27%+22.27%+22.27%+22.27%+22.27%",
+            "Name": "Basic Attack - Thread Shredding Stage 2 DMG"
+          },
+          {
+            "Lv1": "14.14%+14.14%+14.14%+14.14%+14.14%",
+            "Lv2": "15.30%+15.30%+15.30%+15.30%+15.30%",
+            "Lv3": "16.46%+16.46%+16.46%+16.46%+16.46%",
+            "Lv4": "18.09%+18.09%+18.09%+18.09%+18.09%",
+            "Lv5": "19.25%+19.25%+19.25%+19.25%+19.25%",
+            "Lv6": "20.58%+20.58%+20.58%+20.58%+20.58%",
+            "Lv7": "22.44%+22.44%+22.44%+22.44%+22.44%",
+            "Lv8": "24.29%+24.29%+24.29%+24.29%+24.29%",
+            "Lv9": "26.15%+26.15%+26.15%+26.15%+26.15%",
+            "Lv10": "28.12%+28.12%+28.12%+28.12%+28.12%",
+            "Name": "Basic Attack - Thread Shredding Stage 3 DMG"
+          },
+          {
+            "Lv1": "12.60%+12.60%+12.60%+12.60%+12.60%",
+            "Lv2": "13.64%+13.64%+13.64%+13.64%+13.64%",
+            "Lv3": "14.67%+14.67%+14.67%+14.67%+14.67%",
+            "Lv4": "16.12%+16.12%+16.12%+16.12%+16.12%",
+            "Lv5": "17.15%+17.15%+17.15%+17.15%+17.15%",
+            "Lv6": "18.34%+18.34%+18.34%+18.34%+18.34%",
+            "Lv7": "19.99%+19.99%+19.99%+19.99%+19.99%",
+            "Lv8": "21.65%+21.65%+21.65%+21.65%+21.65%",
+            "Lv9": "23.30%+23.30%+23.30%+23.30%+23.30%",
+            "Lv10": "25.06%+25.06%+25.06%+25.06%+25.06%",
+            "Name": "Basic Attack - Thread Shredding Stage 4 DMG"
+          },
+          {
+            "Lv1": "11.76%+11.76%+11.76%+11.76%+11.76%",
+            "Lv2": "12.73%+12.73%+12.73%+12.73%+12.73%",
+            "Lv3": "13.69%+13.69%+13.69%+13.69%+13.69%",
+            "Lv4": "15.04%+15.04%+15.04%+15.04%+15.04%",
+            "Lv5": "16.01%+16.01%+16.01%+16.01%+16.01%",
+            "Lv6": "17.12%+17.12%+17.12%+17.12%+17.12%",
+            "Lv7": "18.66%+18.66%+18.66%+18.66%+18.66%",
+            "Lv8": "20.20%+20.20%+20.20%+20.20%+20.20%",
+            "Lv9": "21.75%+21.75%+21.75%+21.75%+21.75%",
+            "Lv10": "23.39%+23.39%+23.39%+23.39%+23.39%",
+            "Name": "Heavy Attack - Single Threading DMG"
+          },
+          {
+            "Lv1": "16.80%+16.80%+16.80%+16.80%+16.80%",
+            "Lv2": "18.18%+18.18%+18.18%+18.18%+18.18%",
+            "Lv3": "19.56%+19.56%+19.56%+19.56%+19.56%",
+            "Lv4": "21.49%+21.49%+21.49%+21.49%+21.49%",
+            "Lv5": "22.87%+22.87%+22.87%+22.87%+22.87%",
+            "Lv6": "24.45%+24.45%+24.45%+24.45%+24.45%",
+            "Lv7": "26.65%+26.65%+26.65%+26.65%+26.65%",
+            "Lv8": "28.86%+28.86%+28.86%+28.86%+28.86%",
+            "Lv9": "31.06%+31.06%+31.06%+31.06%+31.06%",
+            "Lv10": "33.41%+33.41%+33.41%+33.41%+33.41%",
+            "Name": "Heavy Attack - Dual Threading DMG"
+          },
+          {
+            "Lv1": "30.00%+30.00%*3",
+            "Lv2": "32.46%+32.46%*3",
+            "Lv3": "34.92%+34.92%*3",
+            "Lv4": "38.37%+38.37%*3",
+            "Lv5": "40.83%+40.83%*3",
+            "Lv6": "43.66%+43.66%*3",
+            "Lv7": "47.59%+47.59%*3",
+            "Lv8": "51.53%+51.53%*3",
+            "Lv9": "55.47%+55.47%*3",
+            "Lv10": "59.65%+59.65%*3",
+            "Name": "Heavy Attack - Multithreading DMG"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack Stage 1 STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack Stage 2 STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Single Threading STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Dual Threading STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Multithreading STA Cost"
+          },
+          {
+            "Lv1": "8",
+            "Lv2": "8",
+            "Lv3": "8",
+            "Lv4": "8",
+            "Lv5": "8",
+            "Lv6": "8",
+            "Lv7": "8",
+            "Lv8": "8",
+            "Lv9": "8",
+            "Lv10": "8",
+            "Name": "Heavy Attack - Dual Threading Concerto Regen"
+          },
+          {
+            "Lv1": "8",
+            "Lv2": "8",
+            "Lv3": "8",
+            "Lv4": "8",
+            "Lv5": "8",
+            "Lv6": "8",
+            "Lv7": "8",
+            "Lv8": "8",
+            "Lv9": "8",
+            "Lv10": "8",
+            "Name": "Heavy Attack - Multi-Threading Concerto Regen"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Protocol Breach",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p style=\"text-align: justify;\"><strong>Resonance Skill - Payload</strong></p><ul><li><p style=\"text-align: justify;\">Cast Resonance Skill - Payload to charge forward, dealing <u>Spectro DMG</u> and inflicting Hack - Shifting. Upon hitting the target, a follow-up attack is automatically triggered, dealing <u>Spectro DMG</u> and activating Resonance Skill - Pulse Interference. If no target is hit during the charge, reduce the skill CD by <strong>70%</strong>. If the charge is interrupted or not successfully cast, the skill CD is not reduced.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after the follow-up attack to cast Basic Attack Stage 2.</p></li><li><p style=\"text-align: justify;\">Hold Normal Attack shortly after follow-up attack lands to cast Heavy Attack Stage 2.</p></li></ul><p style=\"text-align: justify;\"><strong>Resonance Skill - Pulse Interference</strong></p><ul><li><p style=\"text-align: justify;\">Cast Resonance Skill - Pulse Interference to cut through the target, dealing <u>Spectro DMG</u> and briefly Stagnating the target, before granting Digital Handshake.</p></li><li><p style=\"text-align: justify;\">Digital Handshake: When Lucy is not in Algorithm Compaction and is the active Resonator in the team, she gains TCP every second. This effect is removed when TCP reaches <strong>100 </strong>points or when Resonance Liberation - Netrunner or Resonance Liberation - Old Net Deep Dive is cast.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill to cast Basic Attack Stage 2.</p></li></ul><p style=\"text-align: justify;\"><strong>Resonance Skill - Deadlock</strong></p><ul><li><p style=\"text-align: justify;\">When TCP reaches <strong>100 </strong>points or Lucy is in Algorithm Compaction, Resonance Skill - Payload and Resonance Skill - Pulse Interference are replaced with Resonance Skill - Deadlock.</p></li><li><p style=\"text-align: justify;\">Cast Resonance Skill - Deadlock to attack the target, dealing <u>Spectro DMG</u> and inflicting Hack - Shifting, considered Heavy Attack DMG.</p></li><li><p style=\"text-align: justify;\">Press Normal Attack shortly after casting this skill to cast Basic Attack - Thread Shredding Stage 2.</p></li><li><p style=\"text-align: justify;\">Reset the CD of Resonance Skill - Deadlock after casting Resonance Liberation - Netrunner or Resonance Liberation - Old Net Deep Dive.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "10.08%+5.04%",
+            "Lv2": "10.91%+5.46%",
+            "Lv3": "11.74%+5.87%",
+            "Lv4": "12.90%+6.45%",
+            "Lv5": "13.72%+6.86%",
+            "Lv6": "14.67%+7.34%",
+            "Lv7": "15.99%+8.00%",
+            "Lv8": "17.32%+8.66%",
+            "Lv9": "18.64%+9.32%",
+            "Lv10": "20.05%+10.03%",
+            "Name": "Resonance Skill - Payload Charge DMG"
+          },
+          {
+            "Lv1": "20.16%+5.04%+10.08%",
+            "Lv2": "21.82%+5.46%+10.91%",
+            "Lv3": "23.47%+5.87%+11.74%",
+            "Lv4": "25.79%+6.45%+12.90%",
+            "Lv5": "27.44%+6.86%+13.72%",
+            "Lv6": "29.34%+7.34%+14.67%",
+            "Lv7": "31.98%+8.00%+15.99%",
+            "Lv8": "34.63%+8.66%+17.32%",
+            "Lv9": "37.27%+9.32%+18.64%",
+            "Lv10": "40.09%+10.03%+20.05%",
+            "Name": "Resonance Skill - Payload Follow-Up Attack DMG"
+          },
+          {
+            "Lv1": "15.52%*2+31.04%*3+31.04%",
+            "Lv2": "16.80%*2+33.59%*3+33.59%",
+            "Lv3": "18.07%*2+36.14%*3+36.14%",
+            "Lv4": "19.85%*2+39.70%*3+39.70%",
+            "Lv5": "21.12%*2+42.24%*3+42.24%",
+            "Lv6": "22.59%*2+45.17%*3+45.17%",
+            "Lv7": "24.62%*2+49.24%*3+49.24%",
+            "Lv8": "26.66%*2+53.32%*3+53.32%",
+            "Lv9": "28.70%*2+57.39%*3+57.39%",
+            "Lv10": "30.86%*2+61.72%*3+61.72%",
+            "Name": "Resonance Skill - Pulse Interference DMG"
+          },
+          {
+            "Lv1": "26.00%+104.00%",
+            "Lv2": "28.14%+112.53%",
+            "Lv3": "30.27%+121.06%",
+            "Lv4": "33.25%+133.00%",
+            "Lv5": "35.39%+141.53%",
+            "Lv6": "37.84%+151.34%",
+            "Lv7": "41.25%+164.98%",
+            "Lv8": "44.66%+178.62%",
+            "Lv9": "48.07%+192.27%",
+            "Lv10": "51.70%+206.77%",
+            "Name": "Resonance Skill - Deadlock DMG"
+          },
+          {
+            "Lv1": "15s",
+            "Lv2": "15s",
+            "Lv3": "15s",
+            "Lv4": "15s",
+            "Lv5": "15s",
+            "Lv6": "15s",
+            "Lv7": "15s",
+            "Lv8": "15s",
+            "Lv9": "15s",
+            "Lv10": "15s",
+            "Name": "Resonance Skill - Payload Cooldown"
+          },
+          {
+            "Lv1": "14s",
+            "Lv2": "14s",
+            "Lv3": "14s",
+            "Lv4": "14s",
+            "Lv5": "14s",
+            "Lv6": "14s",
+            "Lv7": "14s",
+            "Lv8": "14s",
+            "Lv9": "14s",
+            "Lv10": "14s",
+            "Name": "Resonance Skill - Deadlock Cooldown"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Netrunner",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p style=\"text-align: justify;\"><strong>Resonance Liberation - Netrunner</strong></p><ul><li><p style=\"text-align: justify;\">Lucy deep dives into cyberspace and pulls up the Protocol Interface for <strong>10s</strong>. While the Protocol Interface is active, choose up to <strong>7 </strong>different Spoofing Program effects, each requiring different RAM costs. Lucy starts with <strong>24 </strong>points of RAM.</p></li><li><p style=\"text-align: justify;\">While in the Protocol Interface, Lucy marks targets within a certain range in her view. Marked targets will be applied with all Spoofing Program effects selected afterwards. Adjust Lucy's view to mark more targets. When no target is in view, no Spoofing Program can be applied.</p></li><li><p style=\"text-align: justify;\">While in the Protocol Interface, when either the duration expires or when Normal Attack is held down, Override is triggered, which deals <u>Spectro DMG</u> to all marked targets before closing the Protocol Interface, considered Heavy Attack DMG. When RAM runs out or is insufficient to activate any Spoofing Programs, press Normal Attack to trigger Override on all marked targets.</p></li><li><p style=\"text-align: justify;\">Can be cast in mid-air close to the ground.</p></li></ul><p style=\"text-align: justify;\"><strong>Spoofing Program: Ping</strong></p><ul><li><p style=\"text-align: justify;\">Requires <strong>2</strong> RAM. Extends field of view. Lucy marks and deals <u>Spectro DMG</u> to all nearby targets within the effective range without having to adjust the view, considered Heavy Attack DMG.</p></li></ul><p style=\"text-align: justify;\"><strong>Spoofing Program: Cyberware Malfunction</strong></p><ul><li><p style=\"text-align: justify;\">Requires <strong>4</strong> RAM. Marked targets take <strong>5%</strong> more DMG for <strong>30s</strong>.</p></li></ul><p style=\"text-align: justify;\"><strong>Spoofing Program: Breach Protocol</strong></p><ul><li><p style=\"text-align: justify;\">Requires <strong>4</strong> RAM. Marked targets' DEF is reduced by <strong>5%</strong> for <strong>30s</strong>.</p></li></ul><p style=\"text-align: justify;\"><strong>Spoofing Program: Synapse Burnout</strong></p><ul><li><p style=\"text-align: justify;\">Requires <strong>5</strong> RAM. Deals Spectro DMG to all marked targets within a certain range, considered Heavy Attack DMG.</p></li></ul><p style=\"text-align: justify;\"><strong>Spoofing Program: Cripple Movement</strong></p><ul><li><p style=\"text-align: justify;\">Requires <strong>6</strong> RAM. Deals Hack DMG to all marked targets and reduces their ATK by <strong>5%</strong> for <strong>30s</strong>.</p></li></ul><p style=\"text-align: justify;\"><strong>Spoofing Program: Weapon Glitch</strong></p><ul><li><p style=\"text-align: justify;\">Requires <strong>5</strong> RAM. Causes all marked targets' attacks to have a chance to be nullified for <strong>30s</strong>.</p></li></ul><p style=\"text-align: justify;\"><strong>Spoofing Program: Cyberpsychosis</strong></p><ul><li><p style=\"text-align: justify;\">Requires <strong>6</strong> RAM. Convert all marked targets to neutral units and reduce their Vibration Strength. Only effective against Common Class enemies.</p></li></ul><p style=\"text-align: justify;\"><strong>Resonance Liberation - Old Net Deep Dive</strong></p><ul><li><p style=\"text-align: justify;\">When in Algorithm Compaction, after Heavy Attack - Multi-threading is cast, Resonance Liberation - Netrunner is replaced with Resonance Liberation - Old Net Deep Dive. Lucy gains all effects of Resonance Liberation - Netrunner, and the DMG Multiplier of Override is greatly increased.</p></li><li><p style=\"text-align: justify;\">After casting Resonance Liberation - Old Net Deep Dive, or when Lucy exits the Algorithm Compaction state, Resonance Liberation - Old Net Deep Dive is replaced with Resonance Liberation - Netrunner.</p></li><li><p style=\"text-align: justify;\">Can be cast in mid-air close to the ground.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "450.00%",
+            "Lv2": "486.90%",
+            "Lv3": "523.80%",
+            "Lv4": "575.46%",
+            "Lv5": "612.36%",
+            "Lv6": "654.80%",
+            "Lv7": "713.84%",
+            "Lv8": "772.88%",
+            "Lv9": "831.92%",
+            "Lv10": "894.65%",
+            "Name": "Resonance Liberation - Netrunner: Override DMG"
+          },
+          {
+            "Lv1": "40.00%",
+            "Lv2": "43.28%",
+            "Lv3": "46.56%",
+            "Lv4": "51.16%",
+            "Lv5": "54.44%",
+            "Lv6": "58.21%",
+            "Lv7": "63.46%",
+            "Lv8": "68.70%",
+            "Lv9": "73.95%",
+            "Lv10": "79.53%",
+            "Name": "Spoofing Program: Ping DMG"
+          },
+          {
+            "Lv1": "40.00%",
+            "Lv2": "43.28%",
+            "Lv3": "46.56%",
+            "Lv4": "51.16%",
+            "Lv5": "54.44%",
+            "Lv6": "58.21%",
+            "Lv7": "63.46%",
+            "Lv8": "68.70%",
+            "Lv9": "73.95%",
+            "Lv10": "79.53%",
+            "Name": "Spoofing Program: Synapse Burnout DMG"
+          },
+          {
+            "Lv1": "458.64% Tune AMP",
+            "Lv2": "496.25% Tune AMP",
+            "Lv3": "533.86% Tune AMP",
+            "Lv4": "586.51% Tune AMP",
+            "Lv5": "624.12% Tune AMP",
+            "Lv6": "667.37% Tune AMP",
+            "Lv7": "727.55% Tune AMP",
+            "Lv8": "787.72% Tune AMP",
+            "Lv9": "847.89% Tune AMP",
+            "Lv10": "911.83% Tune AMP",
+            "Name": "Spoofing Program: Cripple Movement DMG"
+          },
+          {
+            "Lv1": "900.00%",
+            "Lv2": "973.80%",
+            "Lv3": "1047.60%",
+            "Lv4": "1150.92%",
+            "Lv5": "1224.72%",
+            "Lv6": "1309.59%",
+            "Lv7": "1427.67%",
+            "Lv8": "1545.75%",
+            "Lv9": "1663.83%",
+            "Lv10": "1789.29%",
+            "Name": "Resonance Liberation - Old Net Deep Dive: Override DMG"
+          },
+          {
+            "Lv1": "25s",
+            "Lv2": "25s",
+            "Lv3": "25s",
+            "Lv4": "25s",
+            "Lv5": "25s",
+            "Lv6": "25s",
+            "Lv7": "25s",
+            "Lv8": "25s",
+            "Lv9": "25s",
+            "Lv10": "25s",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "125",
+            "Lv2": "125",
+            "Lv3": "125",
+            "Lv4": "125",
+            "Lv5": "125",
+            "Lv6": "125",
+            "Lv7": "125",
+            "Lv8": "125",
+            "Lv9": "125",
+            "Lv10": "125",
+            "Name": "Resonance Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Depths of Blackwall",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p style=\"text-align: justify;\"><strong>Cloud Portal</strong></p><ul><li><p style=\"text-align: justify;\">When not in Algorithm Compaction, Lucy gains TCP upon hitting a target. At <strong>100 </strong>points of TCP, Resonance Skill - Payload and Resonance Skill - Pulse Interference are replaced with Resonance Skill - Deadlock.</p></li><li><p style=\"text-align: justify;\">Casting Resonance Liberation - Netrunner or Resonance Liberation - Old Net Deep Dive clears all TCP.</p></li></ul><p style=\"text-align: justify;\"><strong>Algorithm Compaction</strong></p><ul><li><p style=\"text-align: justify;\">After casting Resonance Skill - Deadlock, Lucy enters Algorithm Compaction and gains <strong>1</strong> stack of SQL. Her Basic Attack is replaced with Basic Attack - Thread Shredding, and Heavy Attack is replaced with Heavy Attack - Single Threading. Lucy's <u>Spectro DMG</u> Bonus is increased by <strong>65%</strong> for <strong>8s</strong>.</p></li><li><p style=\"text-align: justify;\">While in Algorithm Compaction, casting Resonance Skill - Deadlock again will not grant SQL and <u>Spectro DMG</u> Bonus repetitively.</p></li><li><p style=\"text-align: justify;\">When in Algorithm Compaction, Lucy gains Root Access upon hitting a target with attacks including Basic Attack - Thread Shredding and Heavy Attack - Single Threading. Reaching <strong>100 </strong>points of Root Access replaces Heavy Attack - Single Threading with Heavy Attack - Dual Threading. Press or hold Normal Attack shortly after casting Heavy Attack - Dual Threading to cast Heavy Attack - Multi-threading.</p></li><li><p style=\"text-align: justify;\">When casting Heavy Attack - Multi-threading, if Lucy has SQL, increase this attack's DMG Multiplier by <strong>270%</strong> and remove SQL.</p></li><li><p style=\"text-align: justify;\">When casting Heavy Attack - Multi-threading, if Lucy does not have SQL, she loses <strong>20%</strong> of current HP. If Lucy's HP is below <strong>1%</strong>, no HP is consumed.</p></li><li><p style=\"text-align: justify;\">After casting Heavy Attack - Multi-threading, Resonance Liberation - Netrunner is replaced with Resonance Liberation - Old Net Deep Dive.</p></li><li><p style=\"text-align: justify;\">After casting Resonance Liberation, or if no attacks are performed within <strong>8s </strong>after casting Heavy Attack - Multi-threading, Lucy exits the Algorithm Compaction state.</p></li></ul><p style=\"text-align: justify;\"><strong>Hack Response - Data Crash</strong></p><ul><li><p style=\"text-align: justify;\">Lucy deals <u>Spectro DMG</u> to a target inflicted with Hack - Interfered and applies the same target with Data Crash, considered Hack DMG.</p></li><li><p style=\"text-align: justify;\">Data Crash: After the target deals damage, Stagnate the target for <strong>0.5s</strong>.</p></li></ul><p style=\"text-align: justify;\"><strong>TCP</strong></p><ul><li><p style=\"text-align: justify;\">Lucy holds up to <strong>100 </strong>points of TCP.</p></li><li><p style=\"text-align: justify;\">Lucy gains TCP when she deals damage through Basic Attack, Heavy Attack, Mid-air Attack, Dodge Counter.</p></li><li><p style=\"text-align: justify;\">Lucy gains TCP when she deals damage through Resonance Skill - Payload and Resonance Skill - Pulse Interference.</p></li><li><p style=\"text-align: justify;\">After casting Intro Skill - Outdated Hallucination, casting the next Resonance Skill - Pulse Interference additionally grants <strong>20 </strong>points of TCP.</p></li></ul><p style=\"text-align: justify;\"><strong>Root Access</strong></p><ul><li><p style=\"text-align: justify;\">Lucy holds up to <strong>100 </strong>points of Root Access.</p></li><li><p style=\"text-align: justify;\">Lucy gains Root Access when she deals damage through Basic Attack - Thread Shredding, Heavy Attack - Single Threading, Heavy Attack - Dual Threading , Heavy Attack - Multi-Threading, Mid-air Attack - Algorithm Compaction, Dodge Counter - Algorithm Compaction.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "550.37%+34.40%*4 Tune AMP",
+            "Lv2": "595.50%+37.22%*4 Tune AMP",
+            "Lv3": "640.63%+40.04%*4 Tune AMP",
+            "Lv4": "703.82%+43.99%*4 Tune AMP",
+            "Lv5": "748.95%+46.81%*4 Tune AMP",
+            "Lv6": "800.85%+50.06%*4 Tune AMP",
+            "Lv7": "873.05%+54.57%*4 Tune AMP",
+            "Lv8": "945.26%+59.08%*4 Tune AMP",
+            "Lv9": "1017.47%+63.60%*4 Tune AMP",
+            "Lv10": "1094.19%+68.39%*4 Tune AMP",
+            "Name": "Hack Response - Data Crash"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Ghost Cyberware",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p style=\"text-align: justify;\">When Lucy is the active Resonator in the team, if she takes no damage for <strong>8s</strong>, she gains <strong>1</strong> stack of <u>Optical Illusion</u>. Max <strong>1</strong> stack by default.</p><p style=\"text-align: justify;\"><u>Optical Illusion</u>: When attacked, reduce this instance of DMG by <strong>100%</strong>. If Lucy is hit or launched from the attack, she immediately recovers and triggers a successful Dodge if she's on the ground. After this effect is triggered, remove <strong>1</strong> stack of Optical Illusion.</p><p></p>",
+        "multipliers": "",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Function Cracking",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p style=\"text-align: justify;\">When Resonance Skill - Payload, Resonance Skill - Pulse Interference, or Resonance Skill - Deadlock hits an Overlord Class or Calamity Class enemy, Lucy applies Botnet Mark on them for <strong>2</strong> min. While Botnet Mark is active, when a Resonator in the team defeats that target with direct damage, Lucy gains the <u>Network Backdoor</u> effect. If Rebecca is in the team, she gains the same effect.</p><p style=\"text-align: justify;\"><u>Network Backdoor</u>: Grants <strong>10%</strong> All DMG Amplification and <strong>10%</strong> additional Hack DMG Multiplier. This effect lasts for <strong>2</strong> min and stacks up to <strong>2 </strong>times. Gaining this effect again resets its duration. At <strong>2 </strong>stacks, additionally increases All DMG Amplification by <strong>5%</strong> and Hack DMG Multiplier by <strong>5%</strong>. When Lucy is downed, she can no longer gain Network Backdoor, and any existing Network Backdoor effects become invalid.</p><p></p>",
+        "multipliers": "",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Outdated Hallucination",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p style=\"text-align: justify;\">Attack the target, dealing Spectro DMG and granting Resonators in the team Involuntary Sharing, allowing them to see targets behind obstacles for <strong>25s</strong>. Additionally, Involuntary Sharing is enhanced on Rebecca, allowing her to lock onto targets behind obstacles. If Rebecca's turret is on the field, its Overload effect is activated, increasing its DMG dealt for <strong>4s</strong>.</p><p style=\"text-align: justify;\">If Lucy is not in Algorithm Compaction after casting this skill, press Normal Attack within a certain time to cast Basic Attack Stage 2.</p><p style=\"text-align: justify;\">If Lucy is in Algorithm Compaction after casting this skill, press Normal Attack within a certain time to cast Basic Attack - Thread Shredding Stage 2.</p><p style=\"text-align: justify;\">After casting this skill, the next Resonance Skill - Pulse Interference additionally grants <strong>20 </strong>points of TCP.</p><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "34.78%+34.78%",
+            "Lv2": "37.63%+37.63%",
+            "Lv3": "40.48%+40.48%",
+            "Lv4": "44.48%+44.48%",
+            "Lv5": "47.33%+47.33%",
+            "Lv6": "50.61%+50.61%",
+            "Lv7": "55.17%+55.17%",
+            "Lv8": "59.73%+59.73%",
+            "Lv9": "64.29%+64.29%",
+            "Lv10": "69.14%+69.14%",
+            "Name": "Intro Skill - Outdated Hallucination"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Countermeasure Program",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p style=\"text-align: justify;\">The incoming Resonator gains<strong> 25%</strong> Basic Attack DMG Amplification for <strong>14s </strong>or until they are switched out.</p><p style=\"text-align: justify;\">Grants all Resonators in the team Countermeasure Program for <strong>25s</strong>.</p><p style=\"text-align: justify;\">While the effect is active, when an active Resonator in the team other than Lucy inflicts Hack - Shifting, that Resonator gains <strong>20%</strong> All DMG Amplification.</p><p style=\"text-align: justify;\">While the effect is active, when a Resonator in the team other than Lucy is attacked, Lucy grants them <strong>30%</strong> DMG Reduction for <strong>3s </strong>and Stagnates their attacker for <strong>1s</strong>. This effect can only trigger up to <strong>1 </strong>time while Countermeasure Program is active. Obtaining Countermeasure Program again resets the effective charge.</p><p style=\"text-align: justify;\">When the All DMG Amplification is effective, switching to another Resonator ends the Countermeasure Program early.</p><p></p>",
+        "multipliers": "",
+        "type": "Outro Skill"
+      },
+      {
+        "name": "Data Crash",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p style=\"text-align: justify;\">When the target's Off-Tune Level is full, Lucy can cast Tune Break on the target.</p><p>Responding to Hack - Interfered: when Resonators in the team trigger Tune Break on the target and cause them to be affected by Hack - Interfered, Lucy applies Hack Response - Data Crash on the target. Each target can be inflicted with this effect up to <strong>1 </strong>time every <strong>8s</strong>.</p><p></p>",
+        "multipliers": "",
+        "type": "Forte Circuit"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p style=\"text-align: justify;\">Lucy is now immune to interruptions while casting Resonance Skill - Payload, Resonance Skill - Pulse Inteference, Heavy Attack - Dual Threading, and Heavy Attack - Multi-Threading</p><p style=\"text-align: justify;\">Casting Intro Skill - Outdated Hallucination increases ATK by <strong>20%</strong> for <strong>14s</strong>.</p><p style=\"text-align: justify;\">When a Resonator in the team defeats a target affected by Spoofing Program with direct damage, Lucy records the effect triggered and activates the corresponding Quick Action on that Resonator for<strong> 6s</strong>. The record expires when Lucy is knocked out.</p><p style=\"text-align: justify;\">Quick Action: When activated, inflict the recorded Spoofing Program effects on targets within <strong>3m</strong> from the active Resonator in the team, effective once only on each target.</p><p style=\"text-align: justify;\">The following Spoofing Program effects can be recorded: Spoofing Program: Cyberware Malfunction, Spoofing Program: Breach Protocol, Spoofing Program: Cripple Movement, Spoofing Program: Weapon Glitch, and Spoofing Program: Cyberpsychosis. When applying Spoofing Program effects via Quick Action, only the continuous status effects are applied.</p><p></p>",
+      "dupe1_name": "The Moon, a Ticket, and a Dream",
+      "dupe2": "<p style=\"text-align: justify;\">While casting Resonance Liberation - Netrunner and Resonance Liberation - Old Net Deep Dive, Lucy's starting RAM is increased to <strong>32</strong>.</p><p style=\"text-align: justify;\">After casting Resonance Skill - Pulse Interference, deal <strong>1 </strong>additional instance of <u>Spectro DMG</u> equal to <strong>450%</strong> of Lucy's ATK, considered Heavy Attack DMG.</p><p style=\"text-align: justify;\">When this instance of damage hits the target, apply all of the following Spoofing Program effects: Spoofing Program: Cyberware Malfunction,</p><p style=\"text-align: justify;\">Spoofing Program: Breach Protocol, Spoofing Program: Cripple Movement, Spoofing Program: Weapon Glitch, and Spoofing Program: Cyberpsychosis. Only the continuous status effects are applied.</p><p style=\"text-align: justify;\">Forte Circuit - Depths of Blackwall is enhanced: When casting Heavy Attack - Multi-threading, if Lucy has SQL, the DMG Multiplier increase is raised from <strong>270%</strong> to <strong>560%</strong>.</p><p></p>",
+      "dupe2_name": "The Blackwall, the Past, the Escape",
+      "dupe3": "<p style=\"text-align: justify;\">The Override DMG Multiplier of Resonance Liberation - Netrunner and Resonance Liberation - Old Net Deep Dive is increased by <strong>50%</strong>, and their Crit. DMG is increased by <strong>100%</strong>.</p><p style=\"text-align: justify;\">The DMG Multiplier of Spoofing Program: Cripple Movement is increased by <strong>65%</strong>.</p><p style=\"text-align: justify;\">The DMG Multiplier of Hack Response - Data Crash is increased by <strong>65%</strong>.</p><p></p>",
+      "dupe3_name": "Cyberpunk",
+      "dupe4": "<p>When Resonators in the team inflict Hack - Shifting, Resonators in the team gain <strong>20%</strong> All-Attribute DMG Bonus for <strong>20s</strong>.</p>",
+      "dupe4_name": "No Living Legends in Night City",
+      "dupe5": "<p style=\"text-align: justify;\">The stack limit of Optical Illusion obtainable via Inherent Skill - Ghost Cyberware is increased to <strong>2</strong>.</p><p style=\"text-align: justify;\">Inherent Skill - Ghost Cyberware is now enhanced: When Lucy's HP falls below <strong>50%</strong>, she immediately gains <strong>1 </strong>stack of Optical Illusion upon being hit. This effect has a Cooldown of <strong>180s</strong>. When Optical Illusion is triggered, Lucy gains a Shield equal to <strong>150%</strong> of ATK for <strong>10s</strong>.</p><p></p>",
+      "dupe5_name": "A Broken Path to Hell",
+      "dupe6": "<p style=\"text-align: justify;\">Targets with Hack - Shifting or in the Hack - Interfered state take <strong>40%</strong> increased Heavy Attack DMG from Lucy.</p><p style=\"text-align: justify;\">Targets with Hack - Shifting or in the Hack - Interfered state take <strong>60%</strong> increased Hack DMG from Lucy.</p><p style=\"text-align: justify;\">The Stagnation triggered by Hack Response - Data Crash now lasts for <strong>1.5s</strong>.</p><p></p>",
+      "dupe6_name": "I Really Want to Stay At Your House"
+    },
+    "voiceActors": {
+      "en": "",
+      "jpn": "",
+      "cn": "",
+      "kr": ""
+    },
+    "attributeBonus": [
+      {
+        "name": "CRIT Rate",
+        "value": 8
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": null,
+    "videos": [
+      {
+        "video": "https://youtu.be/aMk9CdXmiPg",
+        "url": "https://youtu.be/aMk9CdXmiPg"
+      }
+    ],
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "crit_atk",
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "lucy",
+      "build": 3.6,
+      "review": 3.6
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "lucy",
+        "Weapon": "Spectral Trigger",
+        "Dupes": 1,
+        "Percentage": "100.00%",
+        "Percentage_2": "",
+        "Comment": "Lucy's Signature is a huge stat-stick for her that grants her big Spectro DMG Bonus, Heavy DMG Amplification and Heavy DMG DEF Ignore bonuses, making it far stronger than any other options she has access to. Strongly recommended pull if you plan to get Lucy."
+      },
+      {
+        "ID": 2,
+        "Character": "lucy",
+        "Weapon": "Lux & Umbra",
+        "Dupes": 1,
+        "Percentage": "88.30%",
+        "Percentage_2": "",
+        "Comment": "Galbrena's Signaure grants Lucy a very easy to access Heavy DMG Amplification and DEF Ignore buff that can apply to the latter half of her rotation, where a majority of her damage is dealt. Only strong alternative to her Signature if available."
+      },
+      {
+        "ID": 3,
+        "Character": "lucy",
+        "Weapon": "Skull Thrasher",
+        "Dupes": 1,
+        "Percentage": "83.60%",
+        "Percentage_2": "",
+        "Comment": "Rebecca's Signature is best used on her instead of Lucy, but if you somehow acquire it and don't want to use it on Rebecca, Lucy can increase party-wide ATK using it. Generally not recommended but theoretically possible."
+      },
+      {
+        "ID": 4,
+        "Character": "lucy",
+        "Weapon": "Phasic Homogenizer",
+        "Dupes": 1,
+        "Percentage": "83.40%",
+        "Percentage_2": "",
+        "Comment": "Strongest permanently available option for all Pistol main damage dealers, granting universal ATK, CRIT and DMG Bonus buffs to any character upon dealing Tune Break damage. Overall a good choice if you time your Tune Break Skill casts in a team with Shorekeeper (or in WhiWa), falls behind significantly with Mornye though."
+      },
+      {
+        "ID": 5,
+        "Character": "lucy",
+        "Weapon": "Spectrum Blaster",
+        "Dupes": 1,
+        "Percentage": "79.10%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT Rate stat-stick for Lucy, who barely benefits from this weapon's Basic DMG-increasing effects."
+      },
+      {
+        "ID": 6,
+        "Character": "lucy",
+        "Weapon": "The Last Dance",
+        "Dupes": 1,
+        "Percentage": "78.80%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT DMG stat-stick for Lucy, who barely benefits from this weapon's Skill DMG-increasing effects."
+      },
+      {
+        "ID": 7,
+        "Character": "lucy",
+        "Weapon": "Static Mist",
+        "Dupes": 1,
+        "Percentage": "78.00%",
+        "Percentage_2": "",
+        "Comment": "Fallback permanent option if Phasic Homogenizer isn't available. Its passive effect is barely beneficial to Lucy teams, however the stats it gives may help with meeting Energy Regen requirements if necessary."
+      },
+      {
+        "ID": 8,
+        "Character": "lucy",
+        "Weapon": "Woodland Aria",
+        "Dupes": 1,
+        "Percentage": "76.70%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT Rate stat-stick for Lucy, who does not benefit from this weapon's Aero Erosion-related effects."
+      },
+      {
+        "ID": 9,
+        "Character": "lucy",
+        "Weapon": "Solar Flame",
+        "Dupes": 5,
+        "Percentage": "74.20%",
+        "Percentage_2": "",
+        "Comment": "This Battle Pass exclusive is the best 4-star choice for Lucy thanks to its ability to increase her ATK and Heavy DMG while still granting CRIT buffs. Does not compare to any 5-star choice though."
+      },
+      {
+        "ID": 10,
+        "Character": "lucy",
+        "Weapon": "Relativistic Jet",
+        "Dupes": 5,
+        "Percentage": "66.90%",
+        "Percentage_2": "",
+        "Comment": "Another fallback option that's even weaker than Static Mist while still helping to alleviate Energy Regen requirements. A low Base ATK and no CRIT-increasing effect makes this weapon much less preferred than 5-star choices."
+      },
+      {
+        "ID": 11,
+        "Character": "lucy",
+        "Weapon": "Pistols#26",
+        "Dupes": 5,
+        "Percentage": "65.00%",
+        "Percentage_2": "",
+        "Comment": "Best no-gacha option if necessary, granting some extra ATK when no damage is taken by the character equipping it. Upgrade to 5-star options as soon as possible though."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "lucy",
+        "Type": "Best",
+        "Set": "Shadow of Shattered Dreams",
+        "Percentage": "100.00%",
+        "Set_small_1": "Rite of Gilded Revelation, Pact of Neonlight Leap, Eternal Radiance, Celestial Light",
+        "Set_small_2": "Endless Resonance, Reel of Spliced Memories",
+        "Set_small_3": "Moonlit Clouds, Empyrean Anthem, Tidebreaking Courage",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Grants Lucy an easily activated Basic and Heavy DMG Bonus increase. This is a 1-piece set with only 1 Main Echo possible that also grants Lucy additional CRIT Rate, making it the overall best blend of stats she can have paired alongside 2 2-piece sets. These sets include:",
+        "Echo_1": "Reminiscence - Nightmare: Adam Smasher",
+        "Echo_1_Comment": "Only Echo for the Shadow of Shattered Dreams set, simple summon Echo that grants an extra 15% CRIT Rate to Lucy or Rebecca.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "lucy",
+        "Character": "lucy",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Spectro DMG",
+        "Echo_3": "Spectro DMG ≥ ATK%",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% > Heavy DMG% > ATK ",
+        "Comments": ""
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "lucy",
+        "Type": "",
+        "Order": "Res. Liberation, Basic Attack, Forte Circuit, Res. Skill, Intro Skill",
+        "Comments": "Forte and Skill matter substantially less than Liberation and Basic. Intro can be skipped when levelling to save on resources at a minimal damage loss."
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "lucy",
+        "Name": "Best Team",
+        "Member_1": "lucy",
+        "Member_2": "rebecca",
+        "Member_3": "mornye, the-shorekeeper, verina",
+        "Comments": "Shorekeeper may prove stronger in Whimpering Wastes as building Off-Tune multiple times on the same enemy (the reason why Mornye is ran) will almost never happen in that gamemode."
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "lucy",
+        "Synergy": "rebecca",
+        "Comment": "Lucy's best partner by far, Rebecca has a kit that's intrinsically tied to Lucy as her own kit mentions Rebecca by name several times throughout. Able to provide a variety of unique buffs, personal damage, and significant Hack synergy, Lucy and Rebecca pair seamlessly together in a way where she is the only character strong enough to have Lucy reveal her true potential - no alternative comes close."
+      },
+      {
+        "ID": 2,
+        "Character": "lucy",
+        "Synergy": "mornye, the-shorekeeper, verina",
+        "Comment": "Lucy can use a variety of generalist Supports for her team's third slot, Mornye being ideal to put the highest emphasis possible on Hack damage via her ability to increase the team's Off-Tune Buildup Rate. However, Shorekeeper is a very close second that can serve almost exactly as effectively thanks to her CRIT buffs (and even see better results in Whimpering Wastes where building off-tune multiple times on the same enemy will almost never happen), and Verina is the generalist fallback permanently accessible option that will not be as strong, but make for a capable team overall still."
+      }
+    ]
+  },
+  "stats": {
+    "slug": "lucy",
+    "name": "Lucy",
+    "unit_id": 1511,
+    "base_hp": 882,
+    "base_atk": 34,
+    "base_def": 94,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 150,
+    "bonus_ele": 0,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 0,
+    "bonus_crit": 1.12,
+    "bonus_critdmg": 0,
+    "bonus_hp": 0
+  },
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "lucy",
+        "name": "Lucy",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 1235587,
+          "damage_e1": 1303813,
+          "damage_e2": 1621912,
+          "damage_e3": 2202140,
+          "damage_e4": 2321654,
+          "damage_e5": 2321654,
+          "damage_e6": 3239735
+        },
+        "dps": {
+          "damage": 104445,
+          "damage_e1": 110212,
+          "damage_e2": 137101,
+          "damage_e3": 186148,
+          "damage_e4": 196251,
+          "damage_e5": 196251,
+          "damage_e6": 273857
+        },
+        "time": "11.83",
+        "echo_main": "Reminiscence - Nightmare: Adam Smasher",
+        "echo_4": "CRIT Rate",
+        "echo_3": "Spectro DMG",
+        "echo_3a": "Spectro DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "Energy Regen (27.5%), CRIT Rate (40.4%), CRIT DMG (80.7%), ATK (17.2%), Heavy Attack DMG Bonus (8.6%)",
+        "set_1": "Shadow of Shattered Dreams",
+        "set_2": "Pact of Neonlight Leap",
+        "weapon": "Spectral Trigger",
+        "weapon_S": 1
+      },
+      "team": {
+        "ID": 1,
+        "Character": "lucy",
+        "Member_1_Name": "rebecca",
+        "Member_1_Weapon": "Skull Thrasher",
+        "Member_1_Set": "Moonlit Clouds",
+        "Member_1_Echo": "Bell-Borne Geochelone",
+        "Member_2_Name": "mornye",
+        "Member_2_Weapon": "Starfield Calibrator",
+        "Member_2_Set": "Halo of Starry Radiance",
+        "Member_2_Echo": "Reactor Husk"
+      },
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      51998
+    ],
+    [
+      "Heavy",
+      1014155
+    ],
+    [
+      "Skill",
+      30112
+    ],
+    [
+      "Liberation",
+      0
+    ],
+    [
+      "Intro",
+      18074
+    ],
+    [
+      "Outro",
+      0
+    ],
+    [
+      "Echo",
+      45249
+    ],
+    [
+      "Hack",
+      152527
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Lux & Umbra",
+        "Slug": "lux-umbra",
+        "Rarity": 5,
+        "ID": "21030036",
+        "Effect": "ATK is increased by {0}. Upon dealing Echo Skill DMG, gain {1} Heavy Attack DMG Amplification for 6s. Upon dealing Heavy Attack DMG, gain {1} Echo Skill DMG Amplification for 6s. DMG Amplification on each attack is capped at {1}. While both effects are active, dealing damage ignores {2} of the target's DEF.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Phasic Homogenizer",
+        "Slug": "phasic-homogenizer",
+        "Rarity": 5,
+        "ID": "21030045",
+        "Effect": "Increases ATK by {0}. When a Resonator in the team casts a Tune Break skill, it grants {1} All-Attribute DMG Bonus to the wielder for 14s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "20%",
+          "22.5%",
+          "25%",
+          "27.5%",
+          "30%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Pistols#26",
+        "Slug": "pistols-26",
+        "Rarity": 4,
+        "ID": "21030034",
+        "Effect": "When the Resonator takes no damage, increases ATK by {0} every 5s, stacking up to 2 time(s). This effect lasts for 8s. When the Resonator takes damage, reduces the number of stacks by 1 and restores their HP by {1}.",
+        "Array_0": [
+          "6%",
+          "7.5%",
+          "9%",
+          "10.5%",
+          "12%"
+        ],
+        "Array_1": [
+          "5%",
+          "6.25%",
+          "7.5%",
+          "8.75%",
+          "10%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 387,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 36.4,
+        "Source": "Synthesis"
+      },
+      {
+        "Name": "Relativistic Jet",
+        "Slug": "relativistic-jet",
+        "Rarity": 4,
+        "ID": "21030084",
+        "Effect": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for 16s. This effect can be triggered once every 20s.",
+        "Array_0": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Skull Thrasher",
+        "Slug": "skull-thrasher",
+        "Rarity": 5,
+        "ID": "21030066",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill grants {1} Basic Attack DMG Bonus to the wielder for 14s. Inflicting Hack - Shifting grants {0} Basic Attack DMG Bonus to the wielder for 14s, and increases the ATK of Resonators in the team by {1} for 30s. Effects of the same name do not stack.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT DMG%",
+        "Stat_secondary_value": 72,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Solar Flame",
+        "Slug": "solar-flame",
+        "Rarity": 4,
+        "ID": "21030104",
+        "Effect": "Dealing Basic Attack or Heavy Attack DMG increases ATK by {0} and grants {0} Heavy Attack DMG Bonus for 7s, stacking up to 4 times. This effect can be triggered 1 time every 1s.",
+        "Array_0": [
+          "2.2%",
+          "3.4%",
+          "4.7%",
+          "5.9%",
+          "7.2%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 20.3,
+        "Source": "Battle Pass"
+      },
+      {
+        "Name": "Spectral Trigger",
+        "Slug": "spectral-trigger",
+        "Rarity": 5,
+        "ID": "21030056",
+        "Effect": "Increases ATK by {0}. Casting Resonance Skill grants 20% Spectro DMG Bonus to the wielder for 14s, stacking up to 2 times. Inflicting Hack - Shifting grants {1} Heavy Attack DMG Amplification to the wielder for 14s, during which Heavy Attack DMG ignores {2} of the target's DEF.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "30%",
+          "37.5%",
+          "45%",
+          "52.5%",
+          "60%"
+        ],
+        "Array_2": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG%",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Spectrum Blaster",
+        "Slug": "spectrum-blaster",
+        "Rarity": 5,
+        "ID": "21030046",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or hitting the target with Basic Attack increases the wielder's Basic Attack DMG by {1} for 4s. Each time the wielder inflicts Tune Rupture - Shifting or Tune Strain - Shifting during Basic Attacks, all DMG dealt by Resonators in the team is increased by {2} for 30s, up to 3 stacks. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "36%",
+          "45%",
+          "54%",
+          "63%",
+          "72%"
+        ],
+        "Array_2": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Static Mist",
+        "Slug": "static-mist",
+        "Rarity": 5,
+        "ID": "21030015",
+        "Effect": "Increases Energy Regen by {0}. When Outro Skill is released, increases the switched-in Resonator's ATK by {1}, stacking up to 1 time(s). This effect lasts for 14s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "The Last Dance",
+        "Slug": "the-last-dance",
+        "Rarity": 5,
+        "ID": "21030016",
+        "Effect": "Increases ATK by {0}. Every time Intro Skill or Resonance Liberation is cast, Resonance Skill DMG Bonus increases by {1} for 5s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "48%",
+          "60%",
+          "72%",
+          "84%",
+          "96%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 72,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Woodland Aria",
+        "Slug": "woodland-aria",
+        "Rarity": 5,
+        "ID": "21030026",
+        "Effect": "ATK is increased by {0}. Inflicting Aero Erosion on the target gives {1} Aero DMG Bonus for 10s. Hitting targets with Aero Erosion reduces their Aero RES by {2} for 20s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": [
+          "10%",
+          "11.5%",
+          "13%",
+          "14.5%",
+          "16%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Pistols",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Rate-up"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Bell-Borne Geochelone",
+        "Slug": "bell-borne-geochelone",
+        "ID": "340000020",
+        "Echo_skill": "Activate the protection of Bell-Borne Geochelone. Deal Glacio DMG based on {0} of the current character's DEF to nearby enemies, and obtain a Bell-Borne Shield that lasts for <b>15s</b> The Bell-Borne Shield provides <b>50.00%</b> DMG Reduction and <b>10.00%</b> DMG Boost for the current team members, and disappears after the current character is hit for <b>3</b> times.\\n\\nCD: <b>20s</b>",
+        "Rarity": 3,
+        "Sonata_Group": [
+          8,
+          7
+        ],
+        "Skill_1": [
+          "109.20%",
+          "15",
+          "50%",
+          "10%",
+          "3",
+          "25"
+        ],
+        "Skill_2": [
+          "104.88%",
+          "15",
+          "50%",
+          "10%",
+          "3",
+          "25"
+        ],
+        "Skill_3": [
+          "118.56%",
+          "15",
+          "50%",
+          "10%",
+          "3",
+          "25"
+        ],
+        "Skill_4": [
+          "132.24%",
+          "15",
+          "50%",
+          "10%",
+          "3",
+          "25"
+        ],
+        "Skill_5": [
+          "145.92%",
+          "15",
+          "50%",
+          "10%",
+          "3",
+          "25"
+        ]
+      },
+      {
+        "Name": "Reactor Husk",
+        "Slug": "reactor-husk",
+        "ID": "6000190",
+        "Echo_skill": "Transform into Reactor Husk, jumping into the air and unleashing a heavy slash that deals {0} Fusion DMG to enemies.\\n\\nThe Resonator with this Echo equipped in their main slot gain 10.00% Energy Regen.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          23,
+          27
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "234%"
+        ],
+        "Skill_3": [
+          "273%"
+        ],
+        "Skill_4": [
+          "312%"
+        ],
+        "Skill_5": [
+          "351%"
+        ]
+      },
+      {
+        "Name": "Reminiscence - Nightmare: Adam Smasher",
+        "Slug": "reminiscence-nightmare-adam-smasher",
+        "ID": "6000201",
+        "Echo_skill": "Cast Echo Skill to deal 16 instances of Physical DMG equal to {0}  of ATK to enemies within range.\\n\\nWhen Lucy or Rebecca has this Echo equipped in the main slot, their Crit. Rate is increased by 15% and they unlock special Echo Skills.\\n\\n\\n\\nIf equipped by Lucy:\\n\\n- Press the Echo Skill button to deal Spectro DMG equal to {1} of ATK to nearby enemies.\\n\\n- Hold the Echo Skill button to deal Spectro DMG equal to {1} of ATK to nearby enemies and enter a special moving state, increasing Lucy's movement speed while slowing nearby enemies.\\n\\n\\n\\nIf equipped by Rebecca:\\n\\n- Cast Echo Skill to fire missiles, dealing 16 instances of Electro DMG equal to {2} of ATK to enemies.\\n\\nCD: 20s",
+        "Rarity": 2,
+        "Sonata_Group": [
+          31
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "6.84%",
+          "182.40%",
+          "11.40%"
+        ],
+        "Skill_3": [
+          "7.98%",
+          "212.80%",
+          "13.30%"
+        ],
+        "Skill_4": [
+          "9.12%",
+          "243.20%",
+          "15.20%"
+        ],
+        "Skill_5": [
+          "10.26%",
+          "273.60%",
+          "17.10%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Celestial Light",
+        "slug": "celestial-light",
+        "sonata_id": 5,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Spectro\">Spectro</strong> DMG increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Intro Skill, <strong class=\"Spectro\">Spectro DMG</strong> increases by <strong>30%</strong> for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_5.webp"
+      },
+      {
+        "name": "Empyrean Anthem",
+        "slug": "empyrean-anthem",
+        "sonata_id": 13,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Increase the Resonator&apos;s Coordinated Attack DMG by <strong>80%</strong>. Upon a critical hit of Coordinated Attack, increase the active Resonator&apos;s ATK by <strong>20%</strong> for <strong>4s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_13.webp"
+      },
+      {
+        "name": "Endless Resonance",
+        "slug": "endless-resonance",
+        "sonata_id": 9,
+        "type": "standard",
+        "bonus_2": "<p>ATK increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>While on the field, ATK increases by <strong>5%</strong> every <strong>1.5s</strong>, stacking up to <strong>4</strong> times. Outro Skill DMG increases by <strong>60%</strong>.</p>",
+        "aliases": "Lingering Tunes",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_9.webp"
+      },
+      {
+        "name": "Eternal Radiance",
+        "slug": "eternal-radiance",
+        "sonata_id": 11,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Spectro\">Spectro</strong> DMG +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Inflicting enemies with Spectro Frazzle increases Crit. Rate by <strong>20%</strong> for <strong>15s</strong>. Attacking enemies with 10 stacks of Spectro Frazzle grants <strong>15%</strong> <strong class=\"Spectro\">Spectro DMG</strong> Bonus for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_11.webp"
+      },
+      {
+        "name": "Halo of Starry Radiance",
+        "slug": "halo-of-starry-radiance",
+        "sonata_id": 23,
+        "type": "standard",
+        "bonus_2": "<p>Healing Bonus +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>When healing a Resonator in the team, every <strong>1%</strong> of Off-Tune Buildup Rate grants a <strong>0.2%</strong> ATK increase to all Resonators in the team for 4s, up to <strong>25%</strong>. Effects of the same name cannot be stacked.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_23.webp"
+      },
+      {
+        "name": "Moonlit Clouds",
+        "slug": "moonlit-clouds",
+        "sonata_id": 8,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Outro Skill, ATK of the next Resonator increases by <strong>22.5%</strong> for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_8.webp"
+      },
+      {
+        "name": "Pact of Neonlight Leap",
+        "slug": "pact-of-neonlight-leap",
+        "sonata_id": 24,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Spectro\">Spectro</strong> DMG +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Casting Outro Skill increases the ATK of the incoming Resonator by <strong>15%</strong>, with each point of Tune Break Boost additionally increasing ATK by <strong>0.3%</strong>, up to <strong>15%</strong>. This effect lasts for <strong>15s</strong>, or until the Resonator is switched out.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_24.webp"
+      },
+      {
+        "name": "Reel of Spliced Memories",
+        "slug": "reel-of-spliced-memories",
+        "sonata_id": 29,
+        "type": "standard",
+        "bonus_2": "<p>ATK increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Inflicting Tune Rupture - Shifting or Tune Strain - Shifting on enemies increases the Tune Break Boost of Resonators in the team by <strong>20</strong> for <strong>30s</strong>. Effects of the same name do not stack.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_29.webp"
+      },
+      {
+        "name": "Rite of Gilded Revelation",
+        "slug": "rite-of-gilded-revelation",
+        "sonata_id": 25,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Spectro\">Spectro</strong> DMG +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Dealing Basic Attack DMG increases <strong class=\"Spectro\">Spectro DMG</strong> by <strong>10%</strong> for <strong>5s</strong>, stacking up to <strong>3</strong> times. With <strong>3</strong> stacks, casting Resonance Liberation grants <strong>40%</strong> Basic Attack DMG Bonus.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_25.webp"
+      },
+      {
+        "name": "Shadow of Shattered Dreams",
+        "slug": "shadow-of-shattered-dreams",
+        "sonata_id": 31,
+        "type": "standard",
+        "bonus_2": "<p>Inflicting Hack - Shifting on the target grants <strong>35% </strong>Basic Attack DMG Bonus and Heavy Attack DMG Bonus for <strong>15s</strong>.</p><p></p>",
+        "bonus_3": "",
+        "bonus_5": "",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/echo-sets/shadow-of-shattered-dreams.webp"
+      },
+      {
+        "name": "Tidebreaking Courage",
+        "slug": "tidebreaking-courage",
+        "sonata_id": 14,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Increase the Resonator&apos;s ATK by <strong>15%</strong>. Reaching 250% Energy Regen increases all Attribute DMG by <strong>30%</strong> for the Resonator.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_14.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Lucy",
+      "slug": "lucy",
+      "toa_cat": "dps",
+      "toa_rating": 8,
+      "toa_tags": "Hack, Partner (Rebecca)",
+      "toa_marks": "",
+      "ww_cat": "dps",
+      "ww_rating": 6,
+      "ww_tags": "Hack, Partner (Rebecca)",
+      "ww_marks": "",
+      "overall_cat": "dps",
+      "overall_rating": 7,
+      "overall_tags": "Hack, Partner (Rebecca)",
+      "overall_marks": "",
+      "rarity": 5,
+      "element": "Spectro",
+      "weapon": "Pistols",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S0"
+    }
+  ]
+}

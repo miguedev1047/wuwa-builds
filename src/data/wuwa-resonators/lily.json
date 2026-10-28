@@ -1,0 +1,150 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/lily",
+  "fetchedAt": "2026-10-28T03:30:37.766Z",
+  "slug": "lily",
+  "name": "Lily",
+  "rarity": 5,
+  "element": "Spectro",
+  "weapon": "Pistols",
+  "upcoming": true,
+  "updatedAt": "08/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/wuthering-waves/characters/lily_card.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/lily_full.webp"
+  },
+  "profile": {
+    "id": "cmuzcgzur02oi07lda69yiaxr",
+    "slug": "lily",
+    "name": "Lily",
+    "rarity": 5,
+    "element": "Spectro",
+    "weapon": "Pistols",
+    "devId": 61,
+    "upcoming": true,
+    "introduction": null,
+    "review": null,
+    "pros": null,
+    "cons": null,
+    "endgameStats": null,
+    "rotations": null,
+    "skills": [],
+    "dupes": {
+      "dupenull": "",
+      "dupenull_name": ""
+    },
+    "voiceActors": {
+      "en": "",
+      "jpn": "",
+      "cn": "",
+      "kr": ""
+    },
+    "attributeBonus": null,
+    "ascensionMaterials": null,
+    "videos": null,
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "08/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": null,
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "lily",
+      "build": 0,
+      "review": 0
+    },
+    "weapons": [],
+    "echoes": [],
+    "echoStats": [],
+    "skillPriority": [],
+    "teams": [],
+    "synergies": []
+  },
+  "stats": null,
+  "calculations": "$undefined",
+  "damageDistribution": "$undefined",
+  "reference": {
+    "weapons": [],
+    "echoes": [],
+    "echoSets": [],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": []
+}

@@ -1,0 +1,1479 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/jiyan",
+  "fetchedAt": "2026-10-28T03:30:37.471Z",
+  "slug": "jiyan",
+  "name": "Jiyan",
+  "rarity": 5,
+  "element": "Aero",
+  "weapon": "Broadblade",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/jiyan_card.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/jiyan_full.webp"
+  },
+  "profile": {
+    "id": "cmoxpqeee00btoau0p5bpp9eo",
+    "slug": "jiyan",
+    "name": "Jiyan",
+    "rarity": 5,
+    "element": "Aero",
+    "weapon": "Broadblade",
+    "devId": 1404,
+    "upcoming": false,
+    "introduction": "<p>Jiyan, leader of the Midnight Rangers, acts with swift and resolute righteousness. He possesses the formidable ability to conjure a powerful Qingloong from the winds, making him invincible on the battlefield.</p>",
+    "review": "<p>Jiyan is a 5-star Aero main damage dealer and was the first Main DPS as well as first limited character to ever exist in the game. His kit is definitely reminiscent of the philosophy of the game’s on-release days, not centred around any specific game mechanics other than dealing as much damage as possible within his Ultimate damage window, and general Heavy Attack-related buffs.</p><h6><strong><u>Key Mechanics &amp; Rotation Concepts</u></strong></h6><p>Jiyan’s rotation revolves around his Ultimate almost entirely. This is because his Ultimate makes him enter a special stance called Qingloong mode for 10s. In those 10s, he is able to cast special Qingloong Heavy Attacks, which deal way more damage than anything else in his kit. They represent the core of his damage and fitting in as many as he can in that 10s window is the goal of his rotation.</p><p>Jiyan’s Forte is built up through his Intro or Basic Attacks. He holds up to 2 charges of “Resolve” (60 points, 30 per charge) that empower either his Skills or Ultimates when consumed. The increase on the empowered Skill is really minimal though, so what matters is the Ultimate. When cast, it deals no damage unless Jiyan holds a charge of Resolve, in which case he performs an opening attack that deals a good amount of damage. Jiyan also gains the enhancement on his Skill for free if he casts it during his Ultimate window.</p><p>Finally, Jiyan’s passives are simple damage increases activated by Intro and hitting a target respectively, and his Outro enables him to cast 2 Coordinated Attacks for a bit more damage when other characters cast Heavy Attacks for 8s. Most of the time, this will only be triggered once per team rotation, though it’s possible to go out of your way to trigger it a second time if you want.</p><h6><strong><u>Meta Position &amp; Conclusion</u></strong></h6><p>Jiyan has been an outdated DPS for a long time. It’s fair to say that as a 1;x DPS, much like the other older members of the roster, he should not even be considered to pull if you care about the meta. His teams deal too little damage to be worth it, or require insane time/build investment to learn proper rotations with a good build. Generally, Jiyan is not recommended.</p><p>However, Jiyan does have two advantages if he’s already on your account: He’s Quickswap-friendly, and he doesn’t need limited teammates to get close to his full potential. Sure, both Iuno and Ciaccona are upgrade paths, but Mortefi and Shorekeeper or Verina can suffice for clearing scores in low ToA floors or in Endstate Matrix. Don’t count on him for Whimpering Wastes though; despite his AoE capabilities, he doesn’t deal the damage required to keep up anymore.&nbsp;</p><p>There are two issues still: First, the elephant in the room, there are a lot of characters who can accomplish this other than Jiyan. Good examples of this are Jingran, Suoming, Augusta and so on. Even in the free character department, Encore and Havoc Rover can work decently with free teammates, to a degree that approaches Jiyan’s. But they’re permanently available and don’t require a limited weapon to perform, unlike him.</p><p>Second, he pretty much cannot hit airborne enemies, and mobile enemies hurt his damage potential a lot as well. Even in his few use cases, he’s limited in terms of what enemies he can actually attack properly, simply because his attacks don’t connect against a lot of enemies in the game.</p><p>In conclusion, while Jiyan is not a recommended pull currently, if he’s already on your account, you can still get some decent use out of him. In ToA or Endstate Matrix, he can still perform if you have him properly invested and some teammates available (which shouldn’t be difficult as he has a good selection of free and limited teammates). </p>",
+    "pros": "<ul><li><p>Strong AoE: Constant hits, and all Ultimate attacks group enemies;</p></li><li><p>One of the lowest Ultimate cooldowns in the game (16s) enable uniquely fast team rotations as his Ultimate allows him to access the majority of his damage;</p></li><li><p>Has good synergies with general buffers for Aero and Heavy Attack damage alike, as well as general Supports.</p></li></ul><p></p>",
+    "cons": "<ul><li><p>One of the oldest DPS characters in the game. Noticeably powercrept since release, struggles to clear endgame content when it becomes any difficult;</p></li><li><p>Signature weapon is basically necessary for him to clear any important endgame nowadays;</p></li><li><p>Can experience noticeable Energy issues depending on the enemy encounter and rotation used;</p></li><li><p>Almost incapable of hitting airborne enemies at all, strongly dislikes enemies with high mobility. Result: Jiyan straight-up doesn’t function against a lot of boss enemies in the game.</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p>HP: <b>15000+</b></p></li><li><p>DEF: <b>1150+</b></p></li><li><p>ATK: <b>1900-2700+</b></p></li><li><p>CRIT Rate: <b>65-80%+</b></p></li><li><p>CRIT DMG: <b>215-260%+</b></p></li><li><p>Energy Regen: <b>115-125%+</b></p><ul><li><p>A Iuno+Ciaccona team requires around 117% Energy Regen, but in Shorekeeper/Verina teams more Energy Regen will be required.</p></li></ul></li><li><p>Aero DMG Bonus: <b>20-80%+</b></p><ul><li><p>Aero ATK is technically optimal, but Aero Aero still works as a 3 cost option which may cause this stat to vary significantly.</p></li></ul></li></ul><p></p>",
+    "rotations": "<h5><strong><u>Rotation &amp; How to Play</u></strong></h5><p>Jiyan’s main rotation goal is to enter Qingloong mode as quickly as possible through his Ultimate and get off as many Qingloong attacks as possible within that window. All of Jiyan’s rotation rely upon Dash Cancelling his Qingloong attacks to fire them off faster (as they deal about the same amount of damage as doing his full Qingloong attack chain, if not slightly more).</p><div data-callout=\"\" class=\"callout callout-info\" style=\"--callout-color: #3B82F6;\" data-callout-type=\"info\"><div class=\"callout-icon\" data-icon=\"circle-info\"></div><div class=\"callout-content\"><h6><u>Echo Timing</u></h6><p>Summon Nightmare: Feilian Beringal at any point in his rotation (Sierra Gale) or skip out on transforming into Nightmare: Kelpie entirely (Windward Pilgrimage).</p></div></div><div data-callout=\"\" class=\"callout callout-tip\" style=\"--callout-color: #22C55E;\" data-callout-type=\"tip\"><div class=\"callout-icon\" data-icon=\"lightbulb\"></div><div class=\"callout-content\"><p>In all the rotations below, Jiyan’s Qingloong attacks are Dash Cancelled to save on rotation time. This is the most basic rotation optimization he has access to. However, if cancelled too early, most of the hits will be interrupted. To prevent this, make sure to dash out of a Qingloong attack once Jiyan actually throws the dragon he summoned at the opponent (at that point, the hits will connect by themselves even if dashed out of).</p></div></div><h6><strong><u>Standard Rotation</u></strong></h6><p>The simplest rotation Jiyan has access to. Straightforward Hypercarry rotation that aims to get as many Qingloong attacks off as possible in his Ultimate window, disregarding Quickswap-related optimizations.</p><ul><li><p>Intro</p></li><li><p>Ultimate: Finale</p></li><li><p>Basic: Lance of Qingloong 1 (Interrupt animation instantly via Skill)</p></li><li><p>Skill</p></li><li><p>Basic: Lance of Qingloong 1 (Cancel animation endlag via Dash then Skill) (7-8 times)</p></li><li><p>Skill (Swap)</p></li><li><p>Outro</p></li></ul><p>While it's theoretically possible to execute an 8th full Qingloong within this rotation (casting a full Qingloong before your first Skill helps), it is very difficult and unrealistic due to enemies being able to interrupt you, and the timing being very tight. However, if you time a Tune Break Skill cast to act as a faster cancel than a Dash, it becomes a lot more possible (the timing becomes more lenient by about 0.4s, so against the least aggressive enemies in the game it becomes more realistic).</p><h6><strong><u>Double Intro</u></strong></h6><p>If your team has too much rotation time to spare, as Jiyan’s Ultimate cooldown is 16s but that may not be the case for most of his Supports who have longer cooldowns, Jiyan can spend extra time dealing some damage and restoring Energy for himself through a Double Intro rotation, like so:</p><ul><li><p>Intro&nbsp;</p></li><li><p>Basic: Mid-air Attack</p></li><li><p>Basic: Mid-air Attack: Banner of Triumph</p></li><li><p>Skill (Swap)</p></li></ul><p>→ Build up your Outro from your secondary character here.</p><ul><li><p>Intro</p></li></ul><ul><li><p>Ultimate: Finale</p></li><li><p>Basic: Lance of Qingloong 1 (Interrupt animation instantly via Skill)</p></li><li><p>Skill</p></li><li><p>Basic: Lance of Qingloong 1 (Cancel animation endlag via Dash then Skill) (7 times)</p></li><li><p>Skill (Swap)</p></li><li><p>Outro</p></li></ul><h5><strong><u>Additional Tips &amp; Tricks</u></strong></h5><p>Jiyan is a fully Quickswap-friendly character. His teammates may not necessarily be Quickswap-friendly on their end, however in the case that they are (in a team like Ciaccona+Shorekeeper for example where no buffs expire on Swap), Jiyan is capable of Swap Cancelling each and every single one of his Qingloong attacks for other teammates to do their own rotations during Jiyan’s. For example, Ciaccona can chain a bunch of Jump → Plunge → Basic 4 combos and execute extra Forte Heavies in turn, as Jiyan is busy doing his own rotation.</p><p>Finally, Jiyan can rotate multiple times within Verina or Shorekeeper’s main buff windows thanks to his 16s-long Ultimate cooldown. In Quickswap with other fast rotation characters like Mortefi, it’s possible for Jiyan to rotate twice per full team loop, increasing his damage substantially. This is however limited to Quickswap as without it, he cannot save enough team rotation time for this to be worth it usually.</p>",
+    "skills": [
+      {
+        "name": "Lone Lance",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<h5>Basic Attack</h5><p>Perform up to <b>5</b> consecutive attacks, dealing <u>Aero DMG.</u></p><h5>Heavy Attack</h5><p>Consume Stamina to perform a thrust attack, dealing <u>Aero DMG.</u></p><h5>Heavy Attack: Windborne Strike</h5><p>Hold the Basic Attack during Heavy Attack to cast Windborne Strike after the Heavy Attack ends, dealing <u>Aero DMG.</u></p><h5>Heavy Attack: Abyssal Slash</h5><p>Release the Basic Attack during the Heavy Attack to cast Abyssal Slash after the Heavy Attack ends, dealing <u>Aero DMG.</u></p><h5>Mid-air Attack</h5><p>Consume Stamina to perform a Mid-Air Plunging Attack, dealing <u>Aero DMG.</u> After the Plunging Attack, use Basic Attack to perform a following attack, dealing <u>Aero DMG.</u></p><h5>Mid-air Attack: Banner of Triumph</h5><p>After casting the Heavy Attack Windborne Strike or the Resonance Skill Windqueller in the air, Jiyan can perform an aerial attack, dealing <u>Aero DMG.</u></p><h5>Dodge Counter</h5><p>Use a Basic Attack after a successful Dodge to attack the target with, dealing <u>Aero DMG.</u></p>",
+        "multipliers": [
+          {
+            "Lv1": "36.80%",
+            "Lv2": "39.81%",
+            "Lv3": "42.83%",
+            "Lv4": "47.05%",
+            "Lv5": "50.07%",
+            "Lv6": "53.54%",
+            "Lv7": "58.37%",
+            "Lv8": "63.20%",
+            "Lv9": "68.03%",
+            "Lv10": "73.16%",
+            "Name": "Part 1 Damage"
+          },
+          {
+            "Lv1": "22.00%",
+            "Lv2": "23.80%",
+            "Lv3": "25.60%",
+            "Lv4": "28.13%",
+            "Lv5": "29.93%",
+            "Lv6": "32.01%",
+            "Lv7": "34.89%",
+            "Lv8": "37.78%",
+            "Lv9": "40.67%",
+            "Lv10": "43.73%",
+            "Name": "Part 2 Damage"
+          },
+          {
+            "Lv1": "18.30%*5",
+            "Lv2": "19.80%*5",
+            "Lv3": "21.30%*5",
+            "Lv4": "23.40%*5",
+            "Lv5": "24.90%*5",
+            "Lv6": "26.62%*5",
+            "Lv7": "29.02%*5",
+            "Lv8": "31.43%*5",
+            "Lv9": "33.83%*5",
+            "Lv10": "36.38%*5",
+            "Name": "Part 3 Damage"
+          },
+          {
+            "Lv1": "33.30%*2",
+            "Lv2": "36.03%*2",
+            "Lv3": "38.76%*2",
+            "Lv4": "42.58%*2",
+            "Lv5": "45.31%*2",
+            "Lv6": "48.45%*2",
+            "Lv7": "52.82%*2",
+            "Lv8": "57.19%*2",
+            "Lv9": "61.56%*2",
+            "Lv10": "66.20%*2",
+            "Name": "Part 4 Damage"
+          },
+          {
+            "Lv1": "11.87%*7+77.18%*2",
+            "Lv2": "12.84%*7+83.51%*2",
+            "Lv3": "13.82%*7+89.84%*2",
+            "Lv4": "15.18%*7+98.70%*2",
+            "Lv5": "16.15%*7+105.03%*2",
+            "Lv6": "17.27%*7+112.31%*2",
+            "Lv7": "18.83%*7+122.44%*2",
+            "Lv8": "20.39%*7+132.56%*2",
+            "Lv9": "21.95%*7+142.69%*2",
+            "Lv10": "23.60%*7+153.45%*2",
+            "Name": "Part 5 Damage"
+          },
+          {
+            "Lv1": "11.16%*6",
+            "Lv2": "12.08%*6",
+            "Lv3": "12.99%*6",
+            "Lv4": "14.27%*6",
+            "Lv5": "15.19%*6",
+            "Lv6": "16.24%*6",
+            "Lv7": "17.71%*6",
+            "Lv8": "19.17%*6",
+            "Lv9": "20.64%*6",
+            "Lv10": "22.20%*6",
+            "Name": "Heavy Attack Damage"
+          },
+          {
+            "Lv1": "53.30%",
+            "Lv2": "57.67%",
+            "Lv3": "62.04%",
+            "Lv4": "68.16%",
+            "Lv5": "72.53%",
+            "Lv6": "77.55%",
+            "Lv7": "84.54%",
+            "Lv8": "91.54%",
+            "Lv9": "98.53%",
+            "Lv10": "105.96%",
+            "Name": "Windborne Strike Damage"
+          },
+          {
+            "Lv1": "41.10%",
+            "Lv2": "44.47%",
+            "Lv3": "47.84%",
+            "Lv4": "52.55%",
+            "Lv5": "55.92%",
+            "Lv6": "59.80%",
+            "Lv7": "65.19%",
+            "Lv8": "70.58%",
+            "Lv9": "75.98%",
+            "Lv10": "81.71%",
+            "Name": "Abyssal Slash Damage"
+          },
+          {
+            "Lv1": "62.00%",
+            "Lv2": "67.08%",
+            "Lv3": "72.16%",
+            "Lv4": "79.28%",
+            "Lv5": "84.36%",
+            "Lv6": "90.21%",
+            "Lv7": "98.35%",
+            "Lv8": "106.48%",
+            "Lv9": "114.61%",
+            "Lv10": "123.26%",
+            "Name": "Mid-Air Attack Damage"
+          },
+          {
+            "Lv1": "40.00%",
+            "Lv2": "43.28%",
+            "Lv3": "46.56%",
+            "Lv4": "51.15%",
+            "Lv5": "54.43%",
+            "Lv6": "58.20%",
+            "Lv7": "63.45%",
+            "Lv8": "68.70%",
+            "Lv9": "73.94%",
+            "Lv10": "79.52%",
+            "Name": "Banner Of Triumph Damage"
+          },
+          {
+            "Lv1": "78.30%",
+            "Lv2": "84.72%",
+            "Lv3": "91.14%",
+            "Lv4": "100.13%",
+            "Lv5": "106.55%",
+            "Lv6": "113.93%",
+            "Lv7": "124.20%",
+            "Lv8": "134.48%",
+            "Lv9": "144.75%",
+            "Lv10": "155.66%",
+            "Name": "Mid-Air Attack Follow-Up Damage"
+          },
+          {
+            "Lv1": "63.30%*2",
+            "Lv2": "68.49%*2",
+            "Lv3": "73.68%*2",
+            "Lv4": "80.95%*2",
+            "Lv5": "86.14%*2",
+            "Lv6": "92.11%*2",
+            "Lv7": "100.41%*2",
+            "Lv8": "108.72%*2",
+            "Lv9": "117.02%*2",
+            "Lv10": "125.85%*2",
+            "Name": "Dodge Counter Damage"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "Heavy Attack Stamina Consumption"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-Air Attack Stamina Consumption"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Windqueller",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p>Dash forward a certain distance, dealing <u>Aero DMG</u>. Can be cast in the air. </p>",
+        "multipliers": [
+          {
+            "Lv1": "53.50%*4",
+            "Lv2": "57.88%*4",
+            "Lv3": "62.27%*4",
+            "Lv4": "68.41%*4",
+            "Lv5": "72.80%*4",
+            "Lv6": "77.84%*4",
+            "Lv7": "84.86%*4",
+            "Lv8": "91.88%*4",
+            "Lv9": "98.90%*4",
+            "Lv10": "106.36%*4",
+            "Name": "Skill Damage"
+          },
+          {
+            "Lv1": "7",
+            "Lv2": "7",
+            "Lv3": "7",
+            "Lv4": "7",
+            "Lv5": "7",
+            "Lv6": "7",
+            "Lv7": "7",
+            "Lv8": "7",
+            "Lv9": "7",
+            "Lv10": "7",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "16",
+            "Lv2": "16",
+            "Lv3": "16",
+            "Lv4": "16",
+            "Lv5": "16",
+            "Lv6": "16",
+            "Lv7": "16",
+            "Lv8": "16",
+            "Lv9": "16",
+            "Lv10": "16",
+            "Name": "Con. Energy Regen"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Emerald Storm: Prelude",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p>After releasing Emerald Storm: Prelude, Jiyan enters Qingloong Mode.</p><h5>Qingloong Mode</h5><p>Jiyan has increased Anti-interruption; Basic Attack, Heavy Attack and Dodge Counter are replaced with Heavy Attack Lance of Qingloong.</p><h5>Heavy Attack: Lance of Qingloong</h5><p>Perform up to<b> 3</b> continuous attacks, dealing <u>Aero DMG</u>, considered as Heavy Attack damage.</p>",
+        "multipliers": [
+          {
+            "Lv1": "32.95%*8",
+            "Lv2": "35.66%*8",
+            "Lv3": "38.36%*8",
+            "Lv4": "42.14%*8",
+            "Lv5": "44.84%*8",
+            "Lv6": "47.95%*8",
+            "Lv7": "52.28%*8",
+            "Lv8": "56.60%*8",
+            "Lv9": "60.93%*8",
+            "Lv10": "65.52%*8",
+            "Name": "Lance Of Qingloong Part 1 Damage"
+          },
+          {
+            "Lv1": "30.96%*8",
+            "Lv2": "33.49%*8",
+            "Lv3": "36.03%*8",
+            "Lv4": "39.59%*8",
+            "Lv5": "42.13%*8",
+            "Lv6": "45.05%*8",
+            "Lv7": "49.11%*8",
+            "Lv8": "53.17%*8",
+            "Lv9": "57.23%*8",
+            "Lv10": "61.55%*8",
+            "Name": "Lance Of Qingloong Part 2 Damage"
+          },
+          {
+            "Lv1": "33.58%*8",
+            "Lv2": "36.33%*8",
+            "Lv3": "39.08%*8",
+            "Lv4": "42.94%*8",
+            "Lv5": "45.69%*8",
+            "Lv6": "48.86%*8",
+            "Lv7": "53.27%*8",
+            "Lv8": "57.67%*8",
+            "Lv9": "62.08%*8",
+            "Lv10": "66.76%*8",
+            "Name": "Lance Of Qingloong Part 3 Damage"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Qingloong Mode Duration"
+          },
+          {
+            "Lv1": "16",
+            "Lv2": "16",
+            "Lv3": "16",
+            "Lv4": "16",
+            "Lv5": "16",
+            "Lv6": "16",
+            "Lv7": "16",
+            "Lv8": "16",
+            "Lv9": "16",
+            "Lv10": "16",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "125",
+            "Lv2": "125",
+            "Lv3": "125",
+            "Lv4": "125",
+            "Lv5": "125",
+            "Lv6": "125",
+            "Lv7": "125",
+            "Lv8": "125",
+            "Lv9": "125",
+            "Lv10": "125",
+            "Name": "Res. Energy Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Con. Energy Regen"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Qingloong at War",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p>When casting Resonance Skill Windqueller, if Jiyan has <b>30</b> or more &quot;Resolve&quot;, he consumes <b>30 </b>&quot;Resolve&quot; to increase the damage of this Resonance Skill Windqueller by <b>20%.</b> When Jiyan is in Qingloong Mode, DMG of Resonance Skill Windqueller is increased by <b>20%</b> and no longer consumes &quot;Resolve&quot;.</p><h5>Resonance Liberation: Emerald Storm: Finale</h5><p>When casting Resonance Liberation Emerald Storm: Prelude, if Jiyan has <b>30 </b>&quot;Resolve&quot; or more, he will consume <b>30 </b>&quot;Resolve&quot; to cast Emerald Storm: Finale, dealing <u>Aero DMG</u>, considered as Heavy Attack damage.\nEmerald Storm: Finale can be cast in mid-air at low altitude.</p><h5>Resolve</h5><p>Jiyan can hold up to <b>60 </b>Resolve. Jiyan gains &quot;Resolve&quot; when his Normal Attack Lone Lance hits the target. Jiyan gains &quot;Resolve&quot; when the Intro Skill Tactical Strike hits the target. If Jiyan does not hit a target within <b>15 </b>seconds, his &quot;Resolve&quot; will gradually decrease.</p>",
+        "multipliers": [
+          {
+            "Lv1": "71.88%*2+215.65%",
+            "Lv2": "77.78%*2+233.33%",
+            "Lv3": "83.67%*2+251.01%",
+            "Lv4": "91.92%*2+275.77%",
+            "Lv5": "97.82%*2+293.45%",
+            "Lv6": "104.60%*2+313.79%",
+            "Lv7": "114.03%*2+342.08%",
+            "Lv8": "123.46%*2+370.38%",
+            "Lv9": "132.89%*2+398.67%",
+            "Lv10": "142.91%*2+428.73%",
+            "Name": "Emerald Storm: Finale Damage"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Heavenly Balance",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>After casting the Intro Skill Tactical Strike, Jiyan&#039;s ATK is increased by <b>10%</b> for <b>15s</b>.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Tempest Taming",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>When attacks hit a target, Jiyan&#039;s Crit. DMG is increased by <b>12% </b>for <b>8s</b>.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Tactical Strike",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Jiyan stabs the target from the air, dealing <u>Aero DMG</u>.</p>",
+        "multipliers": [
+          {
+            "Lv1": "100.00%",
+            "Lv2": "108.20%",
+            "Lv3": "116.40%",
+            "Lv4": "127.88%",
+            "Lv5": "136.08%",
+            "Lv6": "145.51%",
+            "Lv7": "158.63%",
+            "Lv8": "171.75%",
+            "Lv9": "184.87%",
+            "Lv10": "198.81%",
+            "Name": "Skill Damage"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Con. Energy Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Discipline",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>When the next Character&#039;s (or other Characters on a nearby team that activates an Outro Skill) Heavy Attack hits the target, Jiyan will summon Qingloong to launch a Coordinated Attack, dealing <u>Aero DMG</u> equal to <b>313.40%</b> of Jiyan&#039;s ATK. This attack lasts for <b>8s</b>, and can be triggered once every <b>1s</b>, up to <b>2 </b>times.</p>",
+        "type": "Outro Skill"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<p>Resonance Skill Windqueller can be used <b>1</b> more time. When casting Resonance Skill Windqueller, the &quot;Resolve&quot; cost is decreased by <b>15</b>. </p>",
+      "dupe1_name": "Sequence Node 1",
+      "dupe2": "<p>After casting Intro Skill Tactical Strike, Jiyan gains <b>30 </b>&quot;Resolve&quot; and his ATK is increased by<b> 28%</b> for <b>15s</b>. This can be triggered once every <b>15 </b>seconds. </p>",
+      "dupe2_name": "Sequence Node 2",
+      "dupe3": "<p>When casting Resonance Skill Windqueller, Resonance Liberation Emerald Storm: Prelude, Resonance Skill Emerald Storm: Finale or Intro Skill Tactical Strike, Jiyan&#039;s Crit. Rate is increased by <b>16%</b> and Crit. DMG is increased by <b>32%</b> for <b>8s</b>. </p>",
+      "dupe3_name": "Sequence Node 3",
+      "dupe4": "<p>When casting Resonance Liberation Emerald Storm: Prelude or Resonance Liberation Emerald Storm: Finale, the Heavy Attack DMG Bonus of all team members is increased by <b>25%</b> for <b>30s</b>. </p>",
+      "dupe4_name": "Sequence Node 4",
+      "dupe5": "<p>The DMG multiplier of Outro Skill Discipline is increased by <b>120%.</b> When Jiyan&#039;s attacks hit a target, his ATK is increased by <b>3%</b> for <b>8s</b>, stacking up to <b>15 </b>times; this effect is immediately maxed after he casts Intro Skill Tactical Strike. </p>",
+      "dupe5_name": "Sequence Node 5",
+      "dupe6": "<p>Every time Heavy Attack, Intro Skill Tactical Strike or Resonance Skill Windqueller is used, Jiyan gains <b>1 </b>stack(s) of &quot;Momentum&quot;, stacking up to <b>2</b> times.</p><p>Resonance Liberation Emerald Storm: Finale will consume all &quot;Momentum&quot;, and each stack consumed increases the DMG multiplier of Resonance Liberation Emerald Storm: Finale by <b>120%. </b></p>",
+      "dupe6_name": "Sequence Node 6"
+    },
+    "voiceActors": {
+      "cn": "Sun Ye",
+      "en": "Alex Jordan",
+      "kr": "Nam Doh Hyeong",
+      "jpn": "Ono Yuki"
+    },
+    "attributeBonus": [
+      {
+        "name": "CRIT Rate",
+        "value": 8
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": {
+      "skill": {
+        "name": "Monument Bell",
+        "number": 26
+      },
+      "common": [
+        {
+          "name": "LF Howler Core",
+          "number_char": 4,
+          "number_skill": 25
+        },
+        {
+          "name": "MF Howler Core",
+          "number_char": 12,
+          "number_skill": 28
+        },
+        {
+          "name": "HF Howler Core",
+          "number_char": 12,
+          "number_skill": 40
+        },
+        {
+          "name": "FF Howler Core",
+          "number_char": 4,
+          "number_skill": 57
+        }
+      ],
+      "ascension": {
+        "name": "Pecok Flower",
+        "number": 60
+      },
+      "skill_other": [
+        {
+          "name": "Waveworn Residue 210",
+          "number": 25
+        },
+        {
+          "name": "Waveworn Residue 226",
+          "number": 28
+        },
+        {
+          "name": "Waveworn Residue 235",
+          "number": 55
+        },
+        {
+          "name": "Waveworn Residue 239",
+          "number": 67
+        }
+      ],
+      "breakthrough": {
+        "name": "Roaring Rock Fist",
+        "number": 46
+      }
+    },
+    "videos": null,
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "crit_atk",
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "jiyan",
+      "build": 3.7,
+      "review": 3.7
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "jiyan",
+        "Weapon": "Verdant Summit",
+        "Dupes": 1,
+        "Percentage": "100.00%",
+        "Percentage_2": "",
+        "Comment": "Jiyan's Signature is naturally his best weapon, as it grants him high Base ATK, alongside a lot of DMG Bonus to his main damage type being Heavy Attacks, and a CRIT DMG secondary stat to boot. A good blend of stats for a big damage increase compared to other weapons."
+      },
+      {
+        "ID": 2,
+        "Character": "jiyan",
+        "Weapon": "Thunderflare Dominion",
+        "Dupes": 1,
+        "Percentage": "90.30%",
+        "Percentage_2": "",
+        "Comment": "Augusta's Signature provides Jiyan with a massive Base ATK, a small CRIT Rate boost and some Heavy DMG. Not quite as good as his own Signature but still a very nice weapon to use on him."
+      },
+      {
+        "ID": 3,
+        "Character": "jiyan",
+        "Weapon": "Ages of Harvest",
+        "Dupes": 1,
+        "Percentage": "88.30%",
+        "Percentage_2": "",
+        "Comment": "Some general DMG Bonus with an emphasis on Skill DMG, alongside solid ATK and CRIT Rate stats make this weapon a solid choice on Jiyan."
+      },
+      {
+        "ID": 4,
+        "Character": "jiyan",
+        "Weapon": "Kumokiri",
+        "Dupes": 1,
+        "Percentage": "86.90%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT Rate stat-stick for Jiyan, who does not benefit from this weapon's Liberation DMG-focused effects."
+      },
+      {
+        "ID": 5,
+        "Character": "jiyan",
+        "Weapon": "Wildfire Mark",
+        "Dupes": 1,
+        "Percentage": "86.30%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT DMG stat-stick for Jiyan, who does not benefit from this weapon's Liberation DMG-focused effects - but funnily enough, it can buff Mortefi's damage if he's in Jiyan's team (it does not change this weapon's level of strength though)."
+      },
+      {
+        "ID": 6,
+        "Character": "jiyan",
+        "Weapon": "Radiance Cleaver",
+        "Dupes": 1,
+        "Percentage": "86.30%",
+        "Percentage_2": "",
+        "Comment": "Best permanently available option for Jiyan, which acts as a simple ATK and CRIT DMG stat-stick for him."
+      },
+      {
+        "ID": 7,
+        "Character": "jiyan",
+        "Weapon": "Aureate Zenith",
+        "Dupes": 5,
+        "Percentage": "83.20%",
+        "Percentage_2": "",
+        "Comment": "Best 4-star choice Jiyan has, this Battle Pass exclusive grants him a super easy-to-activate ATK and Heavy DMG passive effect alongside nice ATK and CRIT DMG stats, but its lower Base ATK makes it pale in comparison to most 5-stars."
+      },
+      {
+        "ID": 8,
+        "Character": "jiyan",
+        "Weapon": "Lustrous Razor",
+        "Dupes": 1,
+        "Percentage": "82.30%",
+        "Percentage_2": "",
+        "Comment": "Weakest 5-star choice that doesn't grant CRIT from its stats but instead focuses on higher ATK and some Energy Regen. Still viable for Jiyan, but not favoured over above options."
+      },
+      {
+        "ID": 9,
+        "Character": "jiyan",
+        "Weapon": "Autumntrace",
+        "Dupes": 5,
+        "Percentage": "77.60%",
+        "Percentage_2": "",
+        "Comment": "This Battle Pass exclusive grants Jiyan some scaling ATK and some CRIT Rate, which is acceptable but not recommended over 5-star choices due to its weak Base ATK."
+      },
+      {
+        "ID": 10,
+        "Character": "jiyan",
+        "Weapon": "Meditations on Mercy",
+        "Dupes": 5,
+        "Percentage": "73.10%",
+        "Percentage_2": "",
+        "Comment": "Strongest no-gacha weapon for most Broadblade characters, granting a lot of ATK particularly if Negative Statuses are present on the enemy, but not recommended over 5-star choices."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "jiyan",
+        "Type": "Best",
+        "Set": "Windward Pilgrimage",
+        "Percentage": "100.00%",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Best set for Aero Main DPS characters who can apply Aero Erosion or have an Aero Erosion applier on the team. Grants 10% Aero DMG Bonus and an extra 30% Aero DMG Bonus as well as 10% CRIT Rate for 10s when attacking targets inflicted with Aero Erosion. Offers an extra 10% CRIT Rate over the other Aero sets such as Gusts of Welkin or Sierra Gale, providing extra overall damage so long as Aero Erosion is present on the enemy. In teams without Aero Erosion appliers however, this set is useless comparatively to Sierra Gale.",
+        "Echo_1": "Nightmare: Kelpie",
+        "Echo_1_Comment": " This Echo provides a free decent amount of Aero DMG when casting Outro Skill in all situations, provides 12% Aero DMG Bonus to Jiyan and while its Transform Active Skill is not used in Jiyan's rotations, it is the best Main Echo he has, albeit by a very small difference when compared to Reminiscence: Fleurdelys (pick what has the best substats overall!)",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      },
+      {
+        "ID": 2,
+        "Character": "jiyan",
+        "Type": "Best",
+        "Set": "Sierra Gale",
+        "Percentage": "94.30%",
+        "Set_small_1": "",
+        "Set_small_2": "",
+        "Set_small_3": "",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Offers a 10% unconditional Aero DMG% boost and an additional 30% Aero DMG% after using the intro lasting 15 seconds for a grand total of 40% additional Aero damage for Jiyan's damage window.",
+        "Echo_1": "Nightmare: Feilian Beringal",
+        "Echo_1_Comment": "Offers an unconditional 12% Aero DMG and Heavy ATK boost when used as the Main Echo, and additionally is a Summon-type echo making it easy to use in any character's rotation, which often makes it the best option for any character using the set.",
+        "Echo_2": "Feilian Beringal",
+        "Echo_2_Comment": "Gives the same buffs as its Nightmare variant, but only after being transformed into, for a duration of 15 seconds. This Echo compensates by dealing close to double the damage of the Nightmare and giving more Energy to the character using it, but it's more difficult to incorporate into rotations, as it needs to be Swap Cancelled after the first hit to be used smoothly while making sure your character gets its buffs."
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "jiyan",
+        "Character": "jiyan",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Aero DMG",
+        "Echo_3": "ATK% ≥ Aero DMG",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% > ATK = Heavy DMG%",
+        "Comments": "Always privilege Aero/ATK in compositions with Ciaccona, otherwise Aero/Aero can be equal to it."
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "jiyan",
+        "Type": "",
+        "Order": "Res. Liberation, Forte Circuit, Res. Skill, Intro Skill, Basic Attack",
+        "Comments": "Intro and Basic can be skipped when levelling to save on resources at a minimal damage loss."
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "jiyan",
+        "Name": "Best Team",
+        "Member_1": "jiyan",
+        "Member_2": "iuno, phrolova, rebecca, mortefi",
+        "Member_3": "the-shorekeeper, ciaccona, verina",
+        "Comments": "Only consider Ciaccona in the third slot with Jiyan on Windward Pilgrimage, Iuno in the team, and Ciaccona on her Signature Weapon."
+      },
+      {
+        "ID": 2,
+        "Character": "jiyan",
+        "Name": "Erosion team",
+        "Member_1": "jiyan",
+        "Member_2": "ciaccona",
+        "Member_3": "the-shorekeeper, rover-aero",
+        "Comments": "Very strong in quickswap with Shorekeeper, can be equal to Jiyan's strongest team; Aero Rover is recommended for more casual players."
+      },
+      {
+        "ID": 3,
+        "Character": "jiyan",
+        "Name": "Lynae Team",
+        "Member_1": "jiyan",
+        "Member_2": "lynae",
+        "Member_3": "mornye",
+        "Comments": "Only consider this team if Lynae and Mornye can't go anywhere else and Iuno isn't available - otherwise it may be a waste to spend such a strong universal buffing duo on Jiyan who has access to strong, free and permanent teammates."
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "jiyan",
+        "Synergy": "iuno, phrolova, rebecca, mortefi",
+        "Comment": "As a Heavy Attack Main DMG dealer, Jiyan can function with a variety of Heavy Attack DMG buffers to increase his damage, Iuno being the best overall as she provides the best mix of buffs and personal damage as well as an Aero element synergy. Phrolova is an excellent Dual DPS option who also mixes in some Heavy DMG buffing, while Rebecca and Mortefi are the more accessible Heavy DMG buffing options accessible for free."
+      },
+      {
+        "ID": 2,
+        "Character": "jiyan",
+        "Synergy": "ciaccona, lynae",
+        "Comment": "These two are more unconventional buffer choices for Jiyan. Ciaccona can either work as an insanely strong secondary in Quickswap Jiyan compositions as none of her buffs expire upon swapping, which means Jiyan can switch in the middle of his Heavy Attacks for Ciaccona to do several complete attack combos while Jiyan is rotating. However, for more casual players, Ciaconna is also undeniably the best third slot teammate for Jiyan alongside Iuno, making for a strong Mono Aero team composition. Lynae is also a possible option alongside Mornye as the duo's generalist buffing potential is enough to outdo any F2P team choices, but will see rarer use as that duo is often better used elsewhere."
+      },
+      {
+        "ID": 3,
+        "Character": "jiyan",
+        "Synergy": "the-shorekeeper, verina, mornye, rover-aero",
+        "Comment": "Jiyan works with all kinds of universal Support options. Shorekeeper and Verina are the most obvious picks as they offer a wide variety of generalist, non-specialized buffs that can increase the entire team's damage regardless of who they are. Mornye and Aero Rover are more niche, as Mornye will only see use alongside Rebecca and Lynae for Hack and Tune Rupture synergies respectively, while Aero Rover may be considered alongside Ciaccona outside of Quickswap compositions for an Aero Erosion synergy."
+      }
+    ]
+  },
+  "stats": {
+    "slug": "jiyan",
+    "name": "Jiyan",
+    "unit_id": 1404,
+    "base_hp": 839,
+    "base_atk": 35,
+    "base_def": 97,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 125,
+    "bonus_ele": 0,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 0,
+    "bonus_crit": 8,
+    "bonus_critdmg": 0,
+    "bonus_hp": 0
+  },
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "jiyan",
+        "name": "Jiyan",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 717087,
+          "damage_e1": 717087,
+          "damage_e2": 796724,
+          "damage_e3": 978252,
+          "damage_e4": 1047278,
+          "damage_e5": 1228745,
+          "damage_e6": 1611683
+        },
+        "dps": {
+          "damage": 58922,
+          "damage_e1": 58922,
+          "damage_e2": 65466,
+          "damage_e3": 80382,
+          "damage_e4": 86054,
+          "damage_e5": 100965,
+          "damage_e6": 132430
+        },
+        "time": "12.17",
+        "echo_main": "Nightmare: Kelpie",
+        "echo_4": "CRIT Rate",
+        "echo_3": "ATK%",
+        "echo_3a": "Aero DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "Energy Regen (18.3%), CRIT Rate (40.4%), CRIT DMG (80.7%), ATK (25.8%), Heavy Attack DMG Bonus (8.6%)",
+        "set_1": "Windward Pilgrimage",
+        "set_2": "",
+        "weapon": "Verdant Summit",
+        "weapon_S": 1
+      },
+      "team": {
+        "ID": 1,
+        "Character": "jiyan",
+        "Member_1_Name": "iuno",
+        "Member_1_Weapon": "Moongazer's Sigil",
+        "Member_1_Set": "Crown of Valor, Sierra Gale",
+        "Member_1_Echo": "Lady of the Sea",
+        "Member_2_Name": "ciaccona",
+        "Member_2_Weapon": "Woodland Aria",
+        "Member_2_Set": "Gusts of Welkin",
+        "Member_2_Echo": "Nightmare: Kelpie"
+      },
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      0
+    ],
+    [
+      "Heavy",
+      586105
+    ],
+    [
+      "Skill",
+      63978
+    ],
+    [
+      "Liberation",
+      0
+    ],
+    [
+      "Intro",
+      13844
+    ],
+    [
+      "Outro",
+      21824
+    ],
+    [
+      "Echo",
+      31336
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Ages of Harvest",
+        "Slug": "ages-of-harvest",
+        "Rarity": 5,
+        "ID": "21010026",
+        "Effect": "Grants {0} Attribute DMG Bonus. Casting Intro Skill gives the equipper Ageless Marking, which grants {1} Resonance Skill DMG Bonus for 12s. Casting Resonance Skill gives the equipper Ethereal Endowment, which grants {1} Resonance Skill DMG Bonus for 12s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Aureate Zenith",
+        "Slug": "aureate-zenith",
+        "Rarity": 4,
+        "ID": "21010104",
+        "Effect": "Casting Resonance Liberation increases ATK by {0} and grants {1} Heavy Attack DMG Bonus for 15s.",
+        "Array_0": [
+          "7.2%",
+          "11.1%",
+          "15.1%",
+          "19%",
+          "23%"
+        ],
+        "Array_1": [
+          "10.8%",
+          "16.7%",
+          "22.6%",
+          "28.6%",
+          "34.5%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 40.5,
+        "Source": "Battle Pass"
+      },
+      {
+        "Name": "Autumntrace",
+        "Slug": "autumntrace",
+        "Rarity": 4,
+        "ID": "21010074",
+        "Effect": "Increases ATK by {0} upon dealing Basic Attack DMG or Heavy Attack DMG, stacking up to 5 time(s). This effect lasts for 7s and can be triggered 1 time(s) every 1s.",
+        "Array_0": [
+          "4%",
+          "6%",
+          "8.4%",
+          "10.6%",
+          "12.8%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 20.2,
+        "Source": "Pioneer Podcast"
+      },
+      {
+        "Name": "Kumokiri",
+        "Slug": "kumokiri",
+        "Rarity": 5,
+        "ID": "21010056",
+        "Effect": "ATK is increased by {0}. When the wielder casts Intro Skill or inflicts Negative Statuses, they gain {1} Resonance Liberation DMG Bonus, stacking up to 3 times for 15s. At max stacks, when Resonators in the team inflict Negative Statuses, they gain  {2} All-Attribute DMG Bonus for 15s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_2": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Lustrous Razor",
+        "Slug": "lustrous-razor",
+        "Rarity": 5,
+        "ID": "21010015",
+        "Effect": "Increases Energy Regen by {0}. When Resonance Skill is released, increases Resonance Liberation DMG by {1}, stacking up to {2} times. This effect lasts for {3}s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "7%",
+          "8.75%",
+          "10.5%",
+          "12.5%",
+          "14%"
+        ],
+        "Array_2": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "Array_3": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 36.4,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Meditations on Mercy",
+        "Slug": "meditations-on-mercy",
+        "Rarity": 4,
+        "ID": "21010094",
+        "Effect": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for 10s. This effect can be triggered 1 time per second, stackable up to 4 times.",
+        "Array_0": [
+          "4%",
+          "5%",
+          "6%",
+          "7%",
+          "8%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Crafting"
+      },
+      {
+        "Name": "Radiance Cleaver",
+        "Slug": "radiance-cleaver",
+        "Rarity": 5,
+        "ID": "21010045",
+        "Effect": "Increases ATK by {0}. Dealing damage to targets under Tune Strain: Interfered grants {1} Resonance Liberation Bonus for 3s. Retriggering the effect resets its duration.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "27%",
+          "30%",
+          "33%",
+          "36%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Thunderflare Dominion",
+        "Slug": "thunderflare-dominion",
+        "Rarity": 5,
+        "ID": "21010046",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or Resonance Skill increases Heavy Attack DMG by {1} for 15s. Obtaining Shield allows Heavy Attack DMG to ignore {2} of the target's DEF for 7s, stacking up to 5 times. This effect is triggered once every 0.5s",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_2": [
+          "7.2%",
+          "8.4%",
+          "9.6%",
+          "10.8%",
+          "12%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 675,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 12.1,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Verdant Summit",
+        "Slug": "verdant-summit",
+        "Rarity": 5,
+        "ID": "21010016",
+        "Effect": "Increases the DMG Bonus of all Resonance Attributes by {0}. Every time Intro Skill or Resonance Liberation is cast, increases Heavy Attack DMG Bonus by {1}, stacking up to 2 time(s). This effect lasts for 14s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Limited"
+      },
+      {
+        "Name": "Wildfire Mark",
+        "Slug": "wildfire-mark",
+        "Rarity": 5,
+        "ID": "21010036",
+        "Effect": "Increases ATK by {0}. Performing Intro Skill or Resonance Liberation increases Resonance Liberation DMG by {1} for 6s. Dealing Heavy Attack DMG extends this effect by 4s, up to 1 time. Each successful extension gives {1} Fusion DMG Bonus to all Resonators in the team for 30s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Feilian Beringal",
+        "Slug": "feilian-beringal",
+        "ID": "330000050",
+        "Echo_skill": "Transform into Feilian Beringal to perform a powerful kick. If the kick lands on an enemy, immediately perform a follow-up strike. The kick deals {0} Aero DMG, and the follow-up strike deals {1} Aero DMG. After the follow-up strike hits, the current character's Aero DMG increases by <b>12.00%</b>, and the Heavy Attack DMG increases by <b>12.00%</b> for <b>15s</b>.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          4
+        ],
+        "Skill_1": [
+          "144.90%",
+          "177.10%",
+          "12%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_2": [
+          "166.64%",
+          "203.67%",
+          "12%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_3": [
+          "188.37%",
+          "230.23%",
+          "12%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_4": [
+          "210.11%",
+          "256.80%",
+          "12%",
+          "12%",
+          "15",
+          "25"
+        ],
+        "Skill_5": [
+          "231.84%",
+          "283.36%",
+          "12%",
+          "12%",
+          "15",
+          "25"
+        ]
+      },
+      {
+        "Name": "Lady of the Sea",
+        "Slug": "lady-of-the-sea",
+        "ID": "6000160",
+        "Echo_skill": "Summon a Tidestorm to deal {0} Aero DMG ten times and {1} Aero DMG one time to enemies. The Resonator with this Echo equipped in the main slot gains 12.00% Aero DMG Bonus and 12.00% Resonance Liberation DMG Bonus.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          19
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "9.12%",
+          "109.44%"
+        ],
+        "Skill_3": [
+          "10.64%",
+          "127.68%"
+        ],
+        "Skill_4": [
+          "12.16%",
+          "145.92%"
+        ],
+        "Skill_5": [
+          "13.68%",
+          "164.16%"
+        ]
+      },
+      {
+        "Name": "Nightmare: Feilian Beringal",
+        "Slug": "nightmare-feilian-beringal",
+        "ID": "330000140",
+        "Echo_skill": "Summon a Nightmare: Feilian Beringal to attack enemies, dealing {0} Aero DMG. The remaining Whirlwind Beam will continuously attack surrounding enemies up to 5 times, each dealing {1} Aero DMG.\\n\\nThe Resonator with this Echo equipped in their main slot gains 12.00% Aero DMG Bonus and 12.00% Heavy Attack DMG Bonus.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          4
+        ],
+        "Skill_1": [
+          "0",
+          "0"
+        ],
+        "Skill_2": [
+          "109.44%",
+          "14.59%"
+        ],
+        "Skill_3": [
+          "127.68%",
+          "17.02%"
+        ],
+        "Skill_4": [
+          "145.92%",
+          "19.46%"
+        ],
+        "Skill_5": [
+          "164.16%",
+          "21.89%"
+        ]
+      },
+      {
+        "Name": "Nightmare: Kelpie",
+        "Slug": "nightmare-kelpie",
+        "ID": "6000113",
+        "Echo_skill": "Transform into Nightmare: Kelpie to attack nearby targets, dealing {0} Glacio DMG. The Resonator with this Echo equipped in the main slot gains 12.00% Glacio DMG Bonus and 12.00% Aero DMG Bonus. Switching out the Resonator with Outro Skill summons Nightmares: Kelpie to deal 405.00% Aero DMG.\\n\\nCD: <b>25s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          15,
+          17
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "270%"
+        ],
+        "Skill_3": [
+          "315%"
+        ],
+        "Skill_4": [
+          "360%"
+        ],
+        "Skill_5": [
+          "405%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Crown of Valor",
+        "slug": "crown-of-valor",
+        "sonata_id": 19,
+        "type": "compact",
+        "bonus_2": "",
+        "bonus_3": "<p>Upon gaining a Shield, increase the Resonator&apos;s ATK by <strong>6%</strong> and Crit. DMG by <strong>4%</strong> for <strong>4s</strong>. This effect can be triggered once every <strong>0.5s</strong> and stacks up to <strong>5</strong> times.</p>",
+        "bonus_5": "",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_19.webp"
+      },
+      {
+        "name": "Gusts of Welkin",
+        "slug": "gusts-of-welkin",
+        "sonata_id": 15,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Aero\">Aero</strong> DMG +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Inflicting <strong class=\"Aero\">Aero Erosion</strong> upon enemies increases <strong class=\"Aero\">Aero DMG</strong> for all Resonators in the team by <strong>15%</strong>, and for the Resonator triggering this effect by an additional <strong>15%</strong>, lasting for <strong>20s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_15.webp"
+      },
+      {
+        "name": "Sierra Gale",
+        "slug": "sierra-gale",
+        "sonata_id": 4,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Aero\">Aero</strong> DMG increase by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Intro Skill, <strong class=\"Aero\">Aero DMG</strong> increases by <strong>30%</strong> for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_4.webp"
+      },
+      {
+        "name": "Windward Pilgrimage",
+        "slug": "windward-pilgrimage",
+        "sonata_id": 17,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Aero\">Aero</strong> DMG +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Hitting a target with <strong class=\"Aero\">Aero Erosion</strong> increases Crit. Rate by <strong>10%</strong> and grants <strong>30%</strong> <strong class=\"Aero\">Aero DMG</strong> Bonus, lasting for <strong>10s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_17.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Jiyan",
+      "slug": "jiyan",
+      "toa_cat": "dps",
+      "toa_rating": 6,
+      "toa_tags": "",
+      "toa_marks": "",
+      "ww_cat": "dps",
+      "ww_rating": 5,
+      "ww_tags": "Expert +1",
+      "ww_marks": "expert",
+      "overall_cat": "dps",
+      "overall_rating": 5,
+      "overall_tags": "",
+      "overall_marks": "",
+      "rarity": 5,
+      "element": "Aero",
+      "weapon": "Broadblade",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S0"
+    }
+  ]
+}

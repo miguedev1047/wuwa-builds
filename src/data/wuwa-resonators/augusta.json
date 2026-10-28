@@ -1,0 +1,1707 @@
+{
+  "source": "https://www.prydwen.gg/wuthering-waves/characters/augusta",
+  "fetchedAt": "2026-10-28T03:30:32.835Z",
+  "slug": "augusta",
+  "name": "Augusta",
+  "rarity": 5,
+  "element": "Electro",
+  "weapon": "Broadblade",
+  "upcoming": false,
+  "updatedAt": "22/October/2026",
+  "images": {
+    "card": "https://cdn.prydwen.gg/images/ww/characters/aug_card.webp",
+    "full": "https://cdn.prydwen.gg/images/wuthering-waves/characters/augusta_full.webp"
+  },
+  "profile": {
+    "id": "cmoxpqeb300aroau0ggs5lum0",
+    "slug": "augusta",
+    "name": "Augusta",
+    "rarity": 5,
+    "element": "Electro",
+    "weapon": "Broadblade",
+    "devId": 1306,
+    "upcoming": false,
+    "introduction": null,
+    "review": "<p>Augusta is a 5-star Electro Broadblade DPS whose focus is on dealing high Heavy Attack damage to enemies by activating a time-stop Ultimate stance where she attacks enemies in quick succession, dealing lots of damage in the blink of an eye. Much like her Electro element would suggest, in spite of wielding a heavy weapon class, Augusta is capable of unleashing many attacks in quick succession to tear down her enemies.</p><h6><strong><u>Key Mechanics</u></strong></h6><p>Let’s get the most important abilities of Augusta out of the way first: her 3 unique resources.</p><ul><li><p>The first of which is Prowess: this is her first Forte gauge used to cast Enhanced Heavy Attacks and is obtained when most of her abilities deal damage.</p></li><li><p>The second is Ascendancy: this is her second Forte gauge restored via Basic Attacks, Intro skill, her first Ultimate and her base Resonance Skill. It allows her to cast an enhanced Resonance Skill to gain her final resource, Majesty.</p></li><li><p>Majesty has 2 points, 1 of which is acquired via her Outro and the other is acquired via an enhanced Resonance Skill with full Ascendancy. When 2 points are obtained, Augusta can unleash her second Ultimate for massive damage, ending her rotation.</p></li></ul><p>Therefore, Augusta’s goal will be to maximize Prowess and Ascendancy generation in order to gain her Majesty stacks and finish it off with her second Ultimate.</p><p>Additionally, Augusta starts combat with 1 Majesty thanks to her second Inherent Skill which means she won’t have ramp-up issues due to lacking an Outro initially. Finally, her first Inherent Skill makes it so Augusta gains a shield for 5s every 0.5s every time she deals damage, to trigger her Echo set, Signature weapon buffs, and other shield generation-related effects.</p><p><strong><u>Intro Skill</u></strong></p><p>Augusta’s Intro makes her restore 20% Ascendancy and full Prowess so it’s definitely a must in her rotation. Aside from that, it simply deals damage and restores Concerto Energy like all other Intros.</p><h6><strong><u>How to use Prowess and restore Ascendancy</u></strong></h6><p>Augusta’s Prowess mechanic allows her to use different Enhanced Heavy Attacks, triggered with different inputs. The most standard of both is the Backstep and Spinslash combo, which can either be performed by Heavy Attacking on the ground with full Prowess or executing a Dodge Counter with full Prowess. It deals good damage, but is slower than Uppercut, which is triggered by a jump with full Prowess. However, since it sends Augusta into the air, she will only use it if it can be cancelled by a Tune Break, her Forte Skill 3-part chain, or before swapping out.</p><p>Other than this, her base Resonance Skill restores full Prowess and her Intro Skill does also, which should be plenty in order to restore Ascendancy fully, provided her base Ultimate is used also - as it gives the 10% Ascendancy she’d be missing. It only requires using Ultimate with enough Resonance Energy, so make sure that condition is fulfilled by having enough Energy Regen. Additional Forte Heavies may be used in her combos through the use of regular Heavy Attacks, which generate about 60% of her Prowess gauge each and can be quickly cancelled by other inputs for quick Prowess generation. This may be utilized to extend her rotations and have her deal higher damage if your team can spare the rotation time.</p><h6><strong><u>How to use Ascendancy</u></strong></h6><p>Ascendancy is used in order to perform 3 Skills in quick succession, all being part of the same sequence. With full Ascendancy, Augusta may cast her 3-part Skill chain and restore her second Majesty stack needed for her final Ultimate.</p><h6><strong><u>Second Ultimate and Outro</u></strong></h6><p>By holding Ultimate with 2 stacks of Majesty, Augusta enters her Second Ultimate stance for 7s. Within this duration, time is stopped and she cannot switch out or do anything except walk, dodge, and finish her rotation with 9 swift Heavy Attacks (simply performed by spamming or holding Basic Attack), then use a finishing move by pressing Basic Attack again.</p><p>Finally, Augusta’s Outro Skill allows her to give 15% DMG Amplify to any character that she outros into, which lasts the usual 14s. It also restores 1 Majesty if that character performs their own Outro skill, and gives Augusta 15% Electro DMG Bonus for her next rotation, but be careful as all of these effects expire on swap - because of this mechanic, Augusta is much less compatible with quickswapping than most other characters as the character Augusta Outros into cannot be switched out of until they can cast their own Outro skill, since it would ruin Augusta’s Majesty stack generation, thus significantly slowing down her subsequent rotation.</p><h6><strong><u>Meta position &amp; Conclusion</u></strong></h6><p>In the current meta, Augusta is to say the least, powercrept. In terms of a Shielding, Heavy Attack damage dealer, the new best answer in that category is Jingran. Sure enough, Augusta uses all of Jingran’s teammates, just… worse than him. The only difference between the two is their element, which can make Augusta a slightly better idea if JIngran’s Fusion element is resisted by the enemies you’re trying to face. Even still, you can just choose to use Jingran against non-Fusion enemies and it barely ever becomes an issue.</p><p>Due to her lack of damage output and no other outstanding features compared to her competition, Augusta only serves as a niche DPS you’ll use in Endstate Matrix if you already own her, or if you skipped Jingran and have teammates available for her, or if she’s your best Electro DPS and endgame content currently favours her element. However, this doesn’t make her a good pull anymore - it just gives her decent use cases if you already own her.</p><p>In conclusion, Augusta’s direct competition with Jingran makes her questionable to pull from a meta standpoint as a new player, and we definitely don’t recommend her to beginners, since Jingran is a direct upgrade in her exact niche, particularly considering they share the same weapon type. Finally, she does remain viable and is still able to clear endgame contents, hence why she can be used if you already own her, however from a meta perspective, she is currently not a recommended pull.</p>",
+    "pros": "<ul><li><p style=\"text-align: justify;\">Able to function with premium teammates and without - has amazing F2P options which allow her to perform even without high vertical investment;</p></li><li><p style=\"text-align: justify;\">Functions well in both single-target and AoE situations;</p></li><li><p style=\"text-align: justify;\">Completely stops time during her second Ultimate, meaning you’re fully invulnerable during the cast;</p></li><li><p style=\"text-align: justify;\">Summons a REALLY cool blazing sun in the sky when casting her second Ultimate. How was that necessary??</p></li></ul><p></p>",
+    "cons": "<ul><li><p>Powercrept in all situations by Jingran (except against Fusion RES enemies) due to them fulfilling the same niche, using the same teammates, and having the same damage and weapon types;</p></li><li><p>Her Shields have next to no strength whatsoever, they only serve as a means to activate her Signature Weapon and Echo Set buffs and won’t actually protect from any meaningful damage;</p></li><li><p>Has no good Whimpering Wastes purple tokens available for her to use as a Shield character;</p></li><li><p>Outro is difficult to maneuver around in quickswap and poses a lot of restrictions, and while not impossible, forcing quickswap is quite tedious;</p></li></ul><p></p>",
+    "endgameStats": "<ul><li><p>HP: <b>14500+</b></p></li><li><p>DEF: <b>1100+</b></p></li><li><p>ATK: <b>2000-2800+</b></p></li><li><p>CRIT Rate: <b>65-80%+</b></p></li><li><p>CRIT DMG: <b>210-260%+</b></p></li><li><p>Energy Regen: <b>116%-125%</b></p><ul><li><p>Lower end estimated in a team with Mortefi+Shorekeeper, higher end estimated in a team with Iuno+Shorekeeper.</p></li></ul></li><li><p>Electro DMG Bonus: <b>40-70%+</b> </p></li></ul><p></p>",
+    "rotations": "<h5><strong><u>Rotation &amp; How to play</u></strong></h5><p>Augusta’s rotation goal is to build up her Forte resources to cast her 3-skill chain and her second Ultimate. She may also extend her rotations in order to cast more Forte Heavy Attacks if her team has rotation time to spare. Below are all the ways to do so.</p><div data-callout=\"\" class=\"callout callout-info\" style=\"--callout-color: #3B82F6;\" data-callout-type=\"info\"><div class=\"callout-icon\" data-icon=\"circle-info\"></div><div class=\"callout-content\"><h6><u>Echo Timing</u></h6><p>Her Echo, The False Sovereign, tends to be difficult to utilize in a lot of her rotations aside from her fastest one where it can be cast once. It may be used in quickswap, at the end of her rotation before swapping (if you aren’t swapping out of anything else), or not at all (since the automatic cast upon Intro deals most of its damage anyways).</p></div></div><h6><strong><u>Fastest Rotation</u></strong></h6><p>This is Augusta’s fastest possible rotation that only uses 2 Forte Heavy Attacks. In most of her teams, rotating this quickly is not needed provided your rotations are optimized, but if your Ultimate cooldowns line up with this rotation, it should be privileged.</p><ul><li><p>Intro</p></li><li><p>Heavy: Backstep</p></li><li><p>Basic: Spinslash</p></li><li><p>Skill</p></li><li><p>Heavy: Backstep</p></li><li><p>Basic: Spinslash (Cancel animation endlag via Ultimate)</p></li><li><p>Ultimate: Sword of Eternal Oath</p></li><li><p>Skill: Undying Sunlight: Strike</p></li><li><p>Skill: Undying Sunlight: Leap</p></li><li><p>Skill: Undying Sunlight: Plunge (Cancel animation endlag via Hold Ultimate)</p></li><li><p>Hold Ultimate: Sublime is the Sun</p></li><li><p>Basic: Sunborne (9x)</p></li><li><p>Ultimate: Everbright Protector</p></li><li><p>Echo (Swap)</p></li><li><p>Outro</p></li></ul><h6><strong><u>3 Forte Rotation</u></strong></h6><p>Used in the majority of Augusta’s teams, including her best team with Iuno and Shorekeeper.</p><ul><li><p>Intro</p></li><li><p>Heavy: Backstep</p></li><li><p>Basic: Spinslash</p></li><li><p>Skill</p></li><li><p>Heavy: Backstep</p></li><li><p>Basic: Spinslash</p></li><li><p>Heavy (Cancel animation endlag Ultimate)</p></li><li><p>Ultimate: Sword of Eternal Oath&nbsp;</p></li><li><p>Heavy (Cancel animation endlag via Skill)</p></li><li><p>Skill: Undying Sunlight: Strike</p></li><li><p>Skill: Undying Sunlight: Leap</p></li><li><p>Skill: Undying Sunlight: Plunge (Cancel animation endlag via Hold Ultimate)</p></li><li><p>Hold Ultimate: Sublime is the Sun</p></li><li><p>Basic: Sunborne (9x)</p></li><li><p>Ultimate: Everbright Protector</p></li><li><p>Jump: Uppercut (Swap on final hit to keep Outro buffs)</p></li><li><p>Outro</p></li></ul><h6><strong><u>4 Forte Single Intro Rotation:</u></strong></h6><ul><li><p>Intro</p></li><li><p>Heavy: Backstep</p></li><li><p>Basic: Spinslash</p></li><li><p>Skill</p></li><li><p>Heavy: Backstep</p></li><li><p>Heavy (Cancel animation endlag via Basic)</p></li><li><p>Basic: Spinslash</p></li><li><p>Heavy (Cancel animation endlag via Ultimate)</p></li><li><p>Ultimate: Sword of Eternal Oath</p></li><li><p>Jump: Uppercut (Cancel animation endlag via Skill)</p></li><li><p>Skill: Undying Sunlight: Strike</p></li><li><p>Skill: Undying Sunlight: Leap</p></li><li><p>Skill: Undying Sunlight: Plunge (Cancel animation endlag via Hold Ultimate)</p></li><li><p>Hold Ultimate: Sublime is the Sun</p></li><li><p>Basic: Sunborne (9x)</p></li><li><p>Ultimate: Everbright Protector</p></li><li><p>Heavy</p></li><li><p>Heavy</p></li><li><p>Jump: Uppercut (Swap)</p></li><li><p>Outro</p></li></ul><p>With a Tune Break Skill available, you may start the above rotations with:</p><ul><li><p>Intro</p></li><li><p>Jump: Uppercut (Cancel animation endlag via Tune Break Skill)</p></li><li><p>Tune Break Skill</p></li><li><p>Skill</p></li></ul><p>And resume from there for a rotation that’s about a second faster at the cost of some damage.</p><h6><strong><u>Additional Tips &amp; Tricks</u></strong></h6><p>In Quickswap rotations, Augusta may execute Double Intro rotations for a quick way to generate Forte and deal some extra damage via an Uppercut Swap. This can allow for up to 5 Forte rotations (or quicker 4 Forte ones) and allow her to delay her Ultimate, in order to fully empower it with full Crown of Valor Echo set buffs, and animation cancel its endlag into her Second Ultimate for slightly quicker rotations and big backloaded damage output.</p><p>Additionally, her Echo can be cast in Quickswap if her Outro doesn’t get in the way (it usually does though). This can be a way to get around her sometimes steep Energy Regen requirements.</p>",
+    "skills": [
+      {
+        "name": "Hunter's Path",
+        "category": "Active",
+        "skill_type": "Basic Attack",
+        "description": "<p><b>Basic Attack</b></p><p>Perform up to <b>4</b> consecutive attacks, dealing <u>Electro DMG.</u></p><p><b>Heavy Attack - Steelclash</b></p><p>Consume STA to attack the target, dealing <u>Electro DMG</u>. Press Normal Attack shortly after performing Heavy Attack to perform Basic Attack Stage 2.</p><p><b>Mid-air Attack</b></p><p>Consume STA to perform Plunging Attack from mid-air, dealing <u>Electro DMG</u>.</p><p><b>Dodge Counter</b></p><p>Press Normal Attack after a successful Dodge to attack the target, dealing <u>Electro DMG</u>.</p><p><b>Mid-air Dodge Counter</b></p><p>Press Normal Attack after a successful Mid-air Dodge to perform Plunging Attack at the cost of STA, dealing <u>Electro DMG</u>.</p><p><b>Heavy Attack - Thunderoar: Backstep</b></p><p>When Prowess is full, Heavy Attack - Steelclash is replaced with Heavy Attack - Thunderoar: Backstep, dealing <u>Electro DMG</u> and consuming all Prowess.</p><ul><li><p>While in action, release or press Normal Attack again within a certain period to perform Heavy Attack - Thunderoar: Spinslash.</p></li><li><p>Heavy Attack - Thunderoar: Spinslash is available if Augusta remains on the ground for a certain period after this skill is interrupted.</p></li></ul><p><b>Heavy Attack - Thunderoar: Spinslash</b></p><p>Augusta whirls and lashes out with her Broadblade, dealing <u>Electro DMG</u>.</p><p><b>Heavy Attack - Thunderoar: Uppercut</b></p><p>Press Jump when Prowess is full to perform Heavy Attack - Thunderoar: Uppercut, dealing <u>Electro DMG</u> and consuming all Prowess.</p><ul><li><p>If Prowess is full when casting Resonance Skill - Warrior&#039;s Blade, press Resonance Skill or Jump to perform Heavy Attack - Thunderoar: Uppercut, dealing <u>Electro DMG</u> and consuming all Prowess.</p></li><li><p>If Prowess is full when casting Heavy Attack - Steelclash or Dodge Counter – Heavy Attack: Steelclash, release Normal Attack after a certain period or press Normal Attack or Jump again to perform Heavy Attack - Thunderoar: Uppercut, dealing, <u>Electro DMG</u> and consuming all Prowess.</p></li></ul><p><b>Dodge Counter - Heavy Attack: Steelclash</b></p><p>When Prowess is full, Dodge Counter is replaced with Dodge Counter - Heavy Attack: Steelclash, dealing <u>Electro DMG</u>, considered as Heavy Attack DMG.</p><p><b>Dodge Counter - Thunderoar: Backstep</b></p><p>When Ascendancy is full, press Normal Attack following a successful Dodge on the ground to cast Dodge Counter - Thunderoar: Backstep in place of Dodge Counter and Dodge Counter - Heavy Attack: Steelclash, dealing <u>Electro DMG</u>, considered as Heavy Attack DMG.</p><ul><li><p>Release or press Normal Attack again within a certain period into the action to perform Heavy Attack - Thunderoar: Spinslash.</p></li><li><p>Heavy Attack - Thunderoar: Spinslash is available if Augusta remains on the ground for a certain period after this skill is interrupted.</p></li></ul><p><b>Prowess</b></p><p>Augusta can hold up to <b>100 </b>points of Prowess.</p><ul><li><p>Prowess is obtained when Basic Attack, Heavy Attack - Steelclash, Mid-air Attack, Mid-air Dodge Counter, Resonance Skill - Warrior&#039;s Blade, Dodge Counter, or Dodge Counter - Heavy Attack: Steelclash deals damage.</p></li><li><p>Prowess is fully restored when casting Intro Skill - Stride of Goldenflare.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "28.90%",
+            "Lv2": "31.27%",
+            "Lv3": "33.64%",
+            "Lv4": "36.96%",
+            "Lv5": "39.33%",
+            "Lv6": "42.06%",
+            "Lv7": "45.85%",
+            "Lv8": "49.64%",
+            "Lv9": "53.43%",
+            "Lv10": "57.46%",
+            "Name": "Stage 1 DMG"
+          },
+          {
+            "Lv1": "33.70%*2",
+            "Lv2": "36.47%*2",
+            "Lv3": "39.23%*2",
+            "Lv4": "43.10%*2",
+            "Lv5": "45.86%*2",
+            "Lv6": "49.04%*2",
+            "Lv7": "53.46%*2",
+            "Lv8": "57.88%*2",
+            "Lv9": "62.31%*2",
+            "Lv10": "67.00%*2",
+            "Name": "Stage 2 DMG"
+          },
+          {
+            "Lv1": "33.00%*3",
+            "Lv2": "35.71%*3",
+            "Lv3": "38.42%*3",
+            "Lv4": "42.21%*3",
+            "Lv5": "44.91%*3",
+            "Lv6": "48.02%*3",
+            "Lv7": "52.35%*3",
+            "Lv8": "56.68%*3",
+            "Lv9": "61.01%*3",
+            "Lv10": "65.61%*3",
+            "Name": "Stage 3 DMG"
+          },
+          {
+            "Lv1": "32.51%*3",
+            "Lv2": "35.18%*3",
+            "Lv3": "37.84%*3",
+            "Lv4": "41.57%*3",
+            "Lv5": "44.24%*3",
+            "Lv6": "47.30%*3",
+            "Lv7": "51.57%*3",
+            "Lv8": "55.83%*3",
+            "Lv9": "60.10%*3",
+            "Lv10": "64.63%*3",
+            "Name": "Stage 4 DMG"
+          },
+          {
+            "Lv1": "23.34%*3",
+            "Lv2": "25.25%*3",
+            "Lv3": "27.16%*3",
+            "Lv4": "29.84%*3",
+            "Lv5": "31.76%*3",
+            "Lv6": "33.96%*3",
+            "Lv7": "37.02%*3",
+            "Lv8": "40.08%*3",
+            "Lv9": "43.14%*3",
+            "Lv10": "46.39%*3",
+            "Name": "Heavy Attack: Steelclash DMG"
+          },
+          {
+            "Lv1": "30.00%*2",
+            "Lv2": "32.46%*2",
+            "Lv3": "34.92%*2",
+            "Lv4": "38.37%*2",
+            "Lv5": "40.83%*2",
+            "Lv6": "43.66%*2",
+            "Lv7": "47.59%*2",
+            "Lv8": "51.53%*2",
+            "Lv9": "55.47%*2",
+            "Lv10": "59.65%*2",
+            "Name": "Mid-air Attack DMG"
+          },
+          {
+            "Lv1": "33.70%*2",
+            "Lv2": "36.47%*2",
+            "Lv3": "39.23%*2",
+            "Lv4": "43.10%*2",
+            "Lv5": "45.86%*2",
+            "Lv6": "49.04%*2",
+            "Lv7": "53.46%*2",
+            "Lv8": "57.88%*2",
+            "Lv9": "62.31%*2",
+            "Lv10": "67.00%*2",
+            "Name": "Dodge Counter DMG"
+          },
+          {
+            "Lv1": "30.00%*2",
+            "Lv2": "32.46%*2",
+            "Lv3": "34.92%*2",
+            "Lv4": "38.37%*2",
+            "Lv5": "40.83%*2",
+            "Lv6": "43.66%*2",
+            "Lv7": "47.59%*2",
+            "Lv8": "51.53%*2",
+            "Lv9": "55.47%*2",
+            "Lv10": "59.65%*2",
+            "Name": "Mid-air Dodge Counter DMG"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack: Steelclash STA Cost"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Attack STA Cost"
+          },
+          {
+            "Lv1": "30",
+            "Lv2": "30",
+            "Lv3": "30",
+            "Lv4": "30",
+            "Lv5": "30",
+            "Lv6": "30",
+            "Lv7": "30",
+            "Lv8": "30",
+            "Lv9": "30",
+            "Lv10": "30",
+            "Name": "Mid-air Dodge Counter STA Cost"
+          },
+          {
+            "Lv1": "27.00%",
+            "Lv2": "29.22%",
+            "Lv3": "31.43%",
+            "Lv4": "34.53%",
+            "Lv5": "36.75%",
+            "Lv6": "39.29%",
+            "Lv7": "42.84%",
+            "Lv8": "46.38%",
+            "Lv9": "49.92%",
+            "Lv10": "53.68%",
+            "Name": "Heavy Attack - Thunderoar: Backstep DMG"
+          },
+          {
+            "Lv1": "71.28%*3",
+            "Lv2": "77.13%*3",
+            "Lv3": "82.97%*3",
+            "Lv4": "91.16%*3",
+            "Lv5": "97.00%*3",
+            "Lv6": "103.72%*3",
+            "Lv7": "113.08%*3",
+            "Lv8": "122.43%*3",
+            "Lv9": "131.78%*3",
+            "Lv10": "141.72%*3",
+            "Name": "Heavy Attack - Thunderoar: Spinslash DMG"
+          },
+          {
+            "Lv1": "90.00%*2",
+            "Lv2": "97.38%*2",
+            "Lv3": "104.76%*2",
+            "Lv4": "115.10%*2",
+            "Lv5": "122.48%*2",
+            "Lv6": "130.96%*2",
+            "Lv7": "142.77%*2",
+            "Lv8": "154.58%*2",
+            "Lv9": "166.39%*2",
+            "Lv10": "178.93%*2",
+            "Name": "Heavy Attack - Thunderoar: Uppercut DMG"
+          },
+          {
+            "Lv1": "23.34%*3",
+            "Lv2": "25.25%*3",
+            "Lv3": "27.16%*3",
+            "Lv4": "29.84%*3",
+            "Lv5": "31.76%*3",
+            "Lv6": "33.96%*3",
+            "Lv7": "37.02%*3",
+            "Lv8": "40.08%*3",
+            "Lv9": "43.14%*3",
+            "Lv10": "46.39%*3",
+            "Name": "Dodge Counter - Heavy Attack: Steelclash DMG"
+          },
+          {
+            "Lv1": "27.00%",
+            "Lv2": "29.22%",
+            "Lv3": "31.43%",
+            "Lv4": "34.53%",
+            "Lv5": "36.75%",
+            "Lv6": "39.29%",
+            "Lv7": "42.84%",
+            "Lv8": "46.38%",
+            "Lv9": "49.92%",
+            "Lv10": "53.68%",
+            "Name": "Dodge Counter - Thunderoar: Backstep DMG"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Thunderoar: Spinslash STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Heavy Attack - Thunderoar: Uppercut STA Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Dodge Counter - Heavy Attack: Steelclash STA Cost"
+          }
+        ],
+        "type": "Basic Attack"
+      },
+      {
+        "name": "Warrior's Blade",
+        "category": "Active",
+        "skill_type": "Resonance Skill",
+        "description": "<p>Augusta leaps and slams down her Broadblade, dealing <u>Electro DMG</u>.</p>",
+        "multipliers": [
+          {
+            "Lv1": "110.00%*3",
+            "Lv2": "119.02%*3",
+            "Lv3": "128.04%*3",
+            "Lv4": "140.67%*3",
+            "Lv5": "149.69%*3",
+            "Lv6": "160.07%*3",
+            "Lv7": "174.50%*3",
+            "Lv8": "188.93%*3",
+            "Lv9": "203.36%*3",
+            "Lv10": "218.70%*3",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "15",
+            "Lv2": "15",
+            "Lv3": "15",
+            "Lv4": "15",
+            "Lv5": "15",
+            "Lv6": "15",
+            "Lv7": "15",
+            "Lv8": "15",
+            "Lv9": "15",
+            "Lv10": "15",
+            "Name": "Cooldown"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Resonance Skill"
+      },
+      {
+        "name": "Sunward Conquest",
+        "category": "Active",
+        "skill_type": "Resonance Liberation",
+        "description": "<p><b>Resonance Liberation - Sword of Eternal Oath</b></p><p>Press and release Resonance Liberation to cast this skill. Augusta will sweep her Broadblade forward, dealing <u>Electro DMG</u>, considered as Heavy Attack DMG.</p><p><b>Resonance Liberation - Sublime is the Sun</b></p><p>When Majesty reaches <b>2 </b>stacks, hold Resonance Liberation to cast Resonance Liberation - Sublime is the Sun. Casting Resonance Liberation - Sublime is the Sun costs no Resonance Energy but <b>2 </b>stacks of Majesty instead.</p><ul><li><p>When casting Resonance Liberation - Sublime is the Sun, Augusta generates the Ruler&#039;s Realm and enters the Sworn Allegiance state for <b>7s</b>. Within this duration, time is temporarily stopped, and Resonator switching is disabled. Only Sublime is the Sun - Sunborne, Sublime is the Sun - Everbright Protector, and Dodge can be performed in the Sworn Allegiance state. Mid-air Attack is available while airborne.</p></li><li><p>In the Sworn Allegiance state, press or hold Normal Attack to cast Sublime is the Sun - Sunborne. Augusta can walk on water without consuming STA in this state.</p></li><li><p>Performing environmental, gameplay, or other interactions ends Sworn Allegiance without triggering Sublime is the Sun - Everbright Protector.</p></li></ul><p><b>Sublime is the Sun - Sunborne</b></p><p>Deal <u>Electro DMG</u>, considered as Heavy Attack DMG. After casting Sublime is the Sun - Sunborne <b>9 </b>times, press Normal Attack or Resonance Liberation to perform Sublime is the Sun - Everbright Protector.</p><p><b>Sublime is the Sun - Everbright Protector</b></p><p>Deal <u>Electro DMG</u>, considered as Heavy Attack DMG. Casting Sublime is the Sun - Everbright Protector ends the Sworn Allegiance state and consumes all stacks of Crown of Wills later. All other Resonators in the team will be made to leave the field.</p><ul><li><p>When Sworn Allegiance ends, Sublime is the Sun - Everbright Protector is automatically cast.</p></li><li><p>During Sworn Allegiance, hold Resonance Liberation to cast Sublime is the Sun - Everbright Protector early.</p></li></ul><p><b>Ruler&#039;s Realm</b></p><ul><li><p>Ruler&#039;s Realm lasts for <b>30s</b>.</p></li><li><p>When Resonators in the team cast Intro Skill within Ruler&#039;s Realm, they gain a shield equal to <b>650 + 5%</b> of Augusta&#039;s Max HP for <b>10s</b>. This effect is unstackable. This Shield will not be passed on to the incoming Resonator.</p></li></ul><p><b>Majesty</b></p><p>Augusta can hold up to <b>2 </b>stacks of Majesty.</p><ul><li><p><b>1 </b>stack of Majesty is obtained when casting Resonance Skill - Undying Sunlight: Plunge.</p></li><li><p><b>1 </b>stack of Majesty is obtained when other Resonators in the team cast Outro Skill under the effect of Augusta&#039;s Outro Skill - Battlesong of the Unyielding.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "16.59%*2 + 66.36%*3 + 16.59%*2 + 287.56%",
+            "Lv2": "17.96%*2 + 71.81%*3 + 17.96%*2 + 311.14%",
+            "Lv3": "19.32%*2 + 77.25%*3 + 19.32%*2 + 334.72%",
+            "Lv4": "21.22%*2 + 84.87%*3 + 21.22%*2 + 367.74%",
+            "Lv5": "22.58%*2 + 90.31%*3 + 22.58%*2 + 391.32%",
+            "Lv6": "24.15%*2 + 96.57%*3 + 24.15%*2 + 418.43%",
+            "Lv7": "26.32%*2 + 105.27%*3 + 26.32%*2 + 456.16%",
+            "Lv8": "28.50%*2 + 113.98%*3 + 28.50%*2 + 493.89%",
+            "Lv9": "30.67%*2 + 122.68%*3 + 30.67%*2 + 531.62%",
+            "Lv10": "32.99%*2 + 131.94%*3 + 32.99%*2 + 571.7%",
+            "Name": "Resonance Liberation - Sword of Eternal Oath DMG"
+          },
+          {
+            "Lv1": "60.00%",
+            "Lv2": "64.92%",
+            "Lv3": "69.84%",
+            "Lv4": "76.73%",
+            "Lv5": "81.65%",
+            "Lv6": "87.31%",
+            "Lv7": "95.18%",
+            "Lv8": "103.05%",
+            "Lv9": "110.93%",
+            "Lv10": "119.29%",
+            "Name": "Sublime is the Sun - Sunborne DMG"
+          },
+          {
+            "Lv1": "120.00%+450.00%+3.00%*10",
+            "Lv2": "129.84%+486.90%+3.25%*10",
+            "Lv3": "139.68%+523.80%+3.50%*10",
+            "Lv4": "153.46%+575.46%+3.84%*10",
+            "Lv5": "163.30%+612.36%+4.09%*10",
+            "Lv6": "174.62%+654.80%+4.37%*10",
+            "Lv7": "190.36%+713.84%+4.76%*10",
+            "Lv8": "206.10%+772.88%+5.16%*10",
+            "Lv9": "221.85%+831.92%+5.55%*10",
+            "Lv10": "238.58%+894.65%+5.97%*10",
+            "Name": "Sublime is the Sun - Everbright Protector DMG"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "Resonance Liberation - Sword of Eternal Oath Cooldown"
+          },
+          {
+            "Lv1": "125",
+            "Lv2": "125",
+            "Lv3": "125",
+            "Lv4": "125",
+            "Lv5": "125",
+            "Lv6": "125",
+            "Lv7": "125",
+            "Lv8": "125",
+            "Lv9": "125",
+            "Lv10": "125",
+            "Name": "Resonance Liberation - Sword of Eternal Oath Resonance Cost"
+          },
+          {
+            "Lv1": "20",
+            "Lv2": "20",
+            "Lv3": "20",
+            "Lv4": "20",
+            "Lv5": "20",
+            "Lv6": "20",
+            "Lv7": "20",
+            "Lv8": "20",
+            "Lv9": "20",
+            "Lv10": "20",
+            "Name": "Resonance Liberation - Sword of Eternal Oath Concerto Regen"
+          },
+          {
+            "Lv1": "25",
+            "Lv2": "25",
+            "Lv3": "25",
+            "Lv4": "25",
+            "Lv5": "25",
+            "Lv6": "25",
+            "Lv7": "25",
+            "Lv8": "25",
+            "Lv9": "25",
+            "Lv10": "25",
+            "Name": "Resonance Liberation - Sublime is the Sun Cooldown"
+          },
+          {
+            "Lv1": "3",
+            "Lv2": "3",
+            "Lv3": "3",
+            "Lv4": "3",
+            "Lv5": "3",
+            "Lv6": "3",
+            "Lv7": "3",
+            "Lv8": "3",
+            "Lv9": "3",
+            "Lv10": "3",
+            "Name": "Sublime is the Sun - Everbright Protector Cooldown"
+          }
+        ],
+        "type": "Resonance Liberation"
+      },
+      {
+        "name": "Call Me By the Sun",
+        "category": "Forte Circuit",
+        "skill_type": "Forte Circuit",
+        "description": "<p><b>Resonance Skill - Undying Sunlight: Strike</b></p><p>When Ascendancy is full, Resonance Skill - Warrior&#039;s Blade is replaced with Resonance Skill - Undying Sunlight: Strike, dealing <u>Electro DMG</u>.</p><ul><li><p>Press Normal Attack or Resonance Skill during the action to cast Resonance Skill - Undying Sunlight: Leap.</p></li><li><p>Resonance Skill - Undying Sunlight: Strike can be re-cast shortly after being interrupted.</p></li><li><p>Resonance Skill - Undying Sunlight: Leap can be cast some time again after being interrupted.</p></li><li><p>Can be cast mid-air.</p></li></ul><p><b>Resonance Skill - Undying Sunlight: Leap</b></p><p>Deal <u>Electro DMG</u>.</p><ul><li><p>Press Normal Attack or Resonance Skill during the action to cast Resonance Skill - Undying Sunlight: Plunge.</p></li><li><p>Resonance Skill - Undying Sunlight: Leap can be re-cast shortly after being interrupted.</p></li><li><p>Resonance Skill - Undying Sunlight: Plunge can be cast some time again after being interrupted.</p></li><li><p>Can only be cast mid-air.</p></li></ul><p><b>Resonance Skill - Undying Sunlight: Plunge</b></p><p>Consume all Ascendancy to cast this skill, dealing <u>Electro DMG</u>, considered as Heavy Attack DMG.</p><ul><li><p>Casting this skill grants 1 stack of Majesty.</p></li><li><p>Can only be cast mid-air.</p></li></ul><p><b>Dodge Counter - Undying Sunlight: Strike</b></p><p>When Ascendancy is full, press Resonance Skill after a successful ground Dodge or press Normal Attack or Resonance Skill after successful Mid-air Dodge to cast Dodge Counter - Undying Sunlight: Strike, dealing <u>Electro DMG</u>, considered as Resonance Skill DMG.</p><ul><li><p>Press Normal Attack or Resonance Skill during the action to cast Resonance Skill - Undying Sunlight: Leap.</p></li><li><p>Resonance Skill - Undying Sunlight: Leap can be cast again some time after being interrupted.</p></li></ul><p><b>Ascendancy</b></p><p>Augusta can hold up to <b>100 </b>points of Ascendancy.</p><ul><li><p>Ascendancy is obtained when Normal Attacks deal damage.</p></li><li><p>Casting Intro Skill - Stride of Goldenflare restores <b>20% </b>Ascendancy.</p></li><li><p>Casting Resonance Skill - Warrior&#039;s Blade restores <b>10% </b>Ascendancy.</p></li><li><p>Casting Resonance Liberation - Sword of Eternal Oath restores <b>40%</b> Ascendancy.</p></li></ul><p></p>",
+        "multipliers": [
+          {
+            "Lv1": "70.00%*2",
+            "Lv2": "75.74%*2",
+            "Lv3": "81.48%*2",
+            "Lv4": "89.52%*2",
+            "Lv5": "95.26%*2",
+            "Lv6": "101.86%*2",
+            "Lv7": "111.05%*2",
+            "Lv8": "120.23%*2",
+            "Lv9": "129.41%*2",
+            "Lv10": "139.17%*2",
+            "Name": "Resonance Skill - Undying Sunlight: Strike DMG"
+          },
+          {
+            "Lv1": "112.00% + 14.00%*2",
+            "Lv2": "121.19% + 15.15%*2",
+            "Lv3": "130.37% + 16.30%*2",
+            "Lv4": "143.23% + 17.91%*2",
+            "Lv5": "152.41% + 19.06%*2",
+            "Lv6": "162.98% + 20.38%*2",
+            "Lv7": "177.67% + 22.21%*2",
+            "Lv8": "192.36% + 24.05%*2",
+            "Lv9": "207.06% + 25.89%*2",
+            "Lv10": "222.67% + 27.84%*2",
+            "Name": "Resonance Skill - Undying Sunlight: Leap DMG"
+          },
+          {
+            "Lv1": "43.55% + 391.95%",
+            "Lv2": "47.13% + 424.09%",
+            "Lv3": "50.70% + 456.23%",
+            "Lv4": "55.70% + 501.23%",
+            "Lv5": "59.27% + 533.37%",
+            "Lv6": "63.37% + 570.33%",
+            "Lv7": "69.09% + 621.76%",
+            "Lv8": "74.80% + 673.18%",
+            "Lv9": "80.52% + 724.60%",
+            "Lv10": "86.59% + 779.24%",
+            "Name": "Resonance Skill - Undying Sunlight: Plunge DMG"
+          },
+          {
+            "Lv1": "70.00%*2",
+            "Lv2": "75.74%*2",
+            "Lv3": "81.48%*2",
+            "Lv4": "89.52%*2",
+            "Lv5": "95.26%*2",
+            "Lv6": "101.86%*2",
+            "Lv7": "111.05%*2",
+            "Lv8": "120.23%*2",
+            "Lv9": "129.41%*2",
+            "Lv10": "139.17%*2",
+            "Name": "Mid-air Dodge Counter - Undying Sunlight: Strike DMG"
+          },
+          {
+            "Lv1": "7",
+            "Lv2": "7",
+            "Lv3": "7",
+            "Lv4": "7",
+            "Lv5": "7",
+            "Lv6": "7",
+            "Lv7": "7",
+            "Lv8": "7",
+            "Lv9": "7",
+            "Lv10": "7",
+            "Name": "Resonance Skill - Undying Sunlight: Plunge Concerto Regen"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Resonance Skill - Undying Sunlight: Strike STA Cost"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Resonance Skill - Undying Sunlight: Leap STA Cost"
+          }
+        ],
+        "type": "Forte Circuit"
+      },
+      {
+        "name": "Glory's Favor",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>When Augusta deals damage, she gains a shield equal to <b>350 + 2.5% </b>of her Max HP for <b>5s</b>, triggered once every <b>0.5s</b>. This effect is unstackable. This Shield will not be passed on to the incoming Resonator.</p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Blazing Valor",
+        "category": "Inherent",
+        "skill_type": "Inherent Skill",
+        "description": "<p>When Augusta is out of combat for over <b>4s</b>, she gains the following effects that can be triggered once every <b>4s</b>:</p><ul><li><p>If Majesty is less than <b>1 </b>stack, restore <b>1 </b>stack.</p></li><li><p>Fully restore Crown of Wills.</p></li></ul><p></p>",
+        "type": "Inherent Skill"
+      },
+      {
+        "name": "Stride of Goldenflare",
+        "category": "Transition",
+        "skill_type": "Intro Skill",
+        "description": "<p>Deal <u>Electro DMG</u>.</p>",
+        "multipliers": [
+          {
+            "Lv1": "50.00%*2",
+            "Lv2": "54.10%*2",
+            "Lv3": "58.20%*2",
+            "Lv4": "63.94%*2",
+            "Lv5": "68.04%*2",
+            "Lv6": "72.76%*2",
+            "Lv7": "79.32%*2",
+            "Lv8": "85.88%*2",
+            "Lv9": "92.44%*2",
+            "Lv10": "99.41%*2",
+            "Name": "Skill DMG"
+          },
+          {
+            "Lv1": "10",
+            "Lv2": "10",
+            "Lv3": "10",
+            "Lv4": "10",
+            "Lv5": "10",
+            "Lv6": "10",
+            "Lv7": "10",
+            "Lv8": "10",
+            "Lv9": "10",
+            "Lv10": "10",
+            "Name": "Concerto Regen"
+          }
+        ],
+        "type": "Intro Skill"
+      },
+      {
+        "name": "Battlesong of the Unyielding",
+        "category": "Transition",
+        "skill_type": "Outro Skill",
+        "description": "<p>The next Resonator switched onto the field gains the following effects for <b>14s</b>, which end immediately if they are switched out:</p><ul><li><p>Gain <b>15%</b> DMG Amplification for all Attributes.</p></li><li><p>Casting Outro Skill grants <b>1 </b>stack of Majesty and <b>1 </b>stack of Crown of Wills to Augusta.</p></li></ul><p><b>Crown of Wills</b></p><ul><li><p>Each stack grants<b> 15%</b> <u>Electro DMG Bonus</u>, up to <b>1 </b>stack. </p></li><li><p>When Resonance Liberation - Sublime is the Sun: Everbright Protector ends, all stacks of Crown of Wills are removed.</p></li></ul><p></p>",
+        "type": "Outro Skill"
+      }
+    ],
+    "dupes": {
+      "dupe1": "<ul><li><p>Each stack of Crown of Wills additionally increases Augusta&#039;s Crit. DMG by <b>15%</b>.</p></li><li><p>The max stack of Crown of Wills is increased to <b>2</b>.</p></li><li><p>Casting Intro Skill - Stride of Goldenflare now grants <b>1 </b>stack of Crown of Wills.</p></li><li><p>Resonance Skill - Undying Sunlight: Strike, Resonance Skill - Undying Sunlight: Leap, and Resonance Skill - Undying Sunlight: Plunge are now immune to interruption.</p></li></ul><p></p>",
+      "dupe1_name": "Sequence Node 1",
+      "dupe2": "<ul><li><p>Crown of Wills provides additional effects: Each stack increases Augusta&#039;s Crit. Rate by<b> 20%</b>.</p></li><li><p>For every<b> 1% </b>of Crit. Rate over<b> 100%</b>, Augusta gains <b>2%</b> Crit. DMG increase, up to<b> 100%</b>.</p></li></ul><p></p>",
+      "dupe2_name": "Sequence Node 2",
+      "dupe3": "<p>The following skills have their DMG Multiplier increased by <b>25%</b>:</p><ul><li><p>Heavy Attack - Thunderoar: Backstep, Dodge Counter - Thunderoar: Backstep, Heavy Attack - Thunderoar: Spinslash, Heavy Attack - Thunderoar: Uppercut.</p></li><li><p>Resonance Skill - Undying Sunlight: Plunge.</p></li><li><p>Resonance Liberation - Sublime is the Sun: Sunborne, Resonance Liberation - Sublime is the Sun: Everbright Protector.</p></li></ul><p></p>",
+      "dupe3_name": "Sequence Node 3",
+      "dupe4": "<p>Casting Intro Skill - Stride of Goldenflare increases the ATK of all Resonators in the team by <b>20%</b> for <b>30s</b>.</p>",
+      "dupe4_name": "Sequence Node 4",
+      "dupe5": "<p>The Shield provided by Inherent Skill - Glory&#039;s Favor is increased by <b>50%</b>.</p>",
+      "dupe5_name": "Sequence Node 5",
+      "dupe6": "<ul><li><p>Augusta can now hold up to 4 stacks of Crown of Wills.</p></li><li><p>For every <b>1%</b> of Crit. Rate over <b>150%</b>, Augusta gains <b>2%</b> Crit. DMG increase, up to <b>50%</b>.</p></li><li><p>When Augusta performs Heavy Attack - Thunderoar: Spinslash or Heavy Attack - Thunderoar: Uppercut, she obtains <b>2 </b>stacks of Crown of Wills. Augusta can only obtain <b>2 </b>stacks of Crown of Wills every <b>1s </b>via Engraved in Radiant Light.</p></li><li><p>While casting Heavy Attack - Thunderoar: Spinslash or Heavy Attack - Thunderoar: Uppercut, Thunder Rage is triggered at the spot, dealing two instances of <u>Electro DMG</u>, with each instance equal to<b> 100%</b> of Augusta&#039;s ATK, considered as Heavy Attack DMG.</p></li></ul><p></p>",
+      "dupe6_name": "Sequence Node 6"
+    },
+    "voiceActors": {
+      "en": "",
+      "jpn": "",
+      "cn": "",
+      "kr": ""
+    },
+    "attributeBonus": [
+      {
+        "name": "CRIT Rate",
+        "value": 8
+      },
+      {
+        "name": "ATK%",
+        "value": 12
+      }
+    ],
+    "ascensionMaterials": {
+      "skill": {
+        "name": "When Irises Bloom",
+        "number": 26
+      },
+      "common": [
+        {
+          "name": "LF Tidal Residuum",
+          "number_char": 4,
+          "number_skill": 25
+        },
+        {
+          "name": "MF Tidal Residuum",
+          "number_char": 12,
+          "number_skill": 28
+        },
+        {
+          "name": "HF Tidal Residuum",
+          "number_char": 12,
+          "number_skill": 40
+        },
+        {
+          "name": "FF Tidal Residuum",
+          "number_char": 4,
+          "number_skill": 57
+        }
+      ],
+      "ascension": {
+        "name": "Luminous Calendula",
+        "number": 60
+      },
+      "skill_other": [
+        {
+          "name": "Waveworn Residue 210",
+          "number": 25
+        },
+        {
+          "name": "Waveworn Residue 226",
+          "number": 28
+        },
+        {
+          "name": "Waveworn Residue 235",
+          "number": 55
+        },
+        {
+          "name": "Waveworn Residue 239",
+          "number": 67
+        }
+      ],
+      "breakthrough": {
+        "name": "Blighted Crown of Puppet King",
+        "number": 46
+      }
+    },
+    "videos": [
+      {
+        "video": "-KTz1g809Qw",
+        "url": "https://www.youtube.com/watch?v=-KTz1g809Qw"
+      }
+    ],
+    "imageAltText": "$undefined",
+    "heroHeadline": "$undefined",
+    "updatedAt": "22/October/2026",
+    "sequenceReview": null,
+    "synergyNote": null,
+    "buildNote": null,
+    "teamsNote": null,
+    "statBonusType": "crit_atk",
+    "calculationsNotes": null
+  },
+  "build": {
+    "lastUpdate": {
+      "slug": "augusta",
+      "build": 3.6,
+      "review": 3.6
+    },
+    "weapons": [
+      {
+        "ID": 1,
+        "Character": "augusta",
+        "Weapon": "Thunderflare Dominion",
+        "Dupes": 1,
+        "Percentage": "100.00%",
+        "Percentage_2": "",
+        "Comment": "A very specialized Broadblade that breaks records for the highest Base ATK in the game, providing a smaller amount of CRIT Rate in exchange, while giving Heavy Attack DMG Bonus, ATK%, and allowing Heavy Attack DMG to ignore target DEF when applying shields up to 36% DEF at 5 stacks. While this weapon does have ramp-up on its DEF ignore effect, it's easily the best choice for Augusta bar none, as this weapon is specialized to be used by her in order to make full use of its effect."
+      },
+      {
+        "ID": 2,
+        "Character": "augusta",
+        "Weapon": "Verdant Summit",
+        "Dupes": 1,
+        "Percentage": "93.60%",
+        "Percentage_2": "",
+        "Comment": "Jiyan's Signature weapon is fantastic on Augusta and has similar performance to even her Signature weapon thanks to its easy to acquire 48% Heavy Attack DMG Bonus increase, as well as 12% general DMG Bonus, good Base ATK and CRIT DMG stats."
+      },
+      {
+        "ID": 3,
+        "Character": "augusta",
+        "Weapon": "Ages of Harvest",
+        "Dupes": 1,
+        "Percentage": "82.00%",
+        "Percentage_2": "",
+        "Comment": "While this weapon focuses on boosting Resonance Skill damage, Jinhsi's Signature is still great on Augusta as she does deal some amount of Skill damage and benefits from its good Base ATK, as well as its DMG Bonus and CRIT Rate increasing effects."
+      },
+      {
+        "ID": 4,
+        "Character": "augusta",
+        "Weapon": "Wildfire Mark",
+        "Dupes": 1,
+        "Percentage": "78.50%",
+        "Percentage_2": "",
+        "Comment": "This Broadblade lacks the extra punch that the above options do as its passive effect is entirely useless on Augusta. It does buff Mortefi's DMG if he is present on the team, however he is far from dealing most of the damage in the team and Augusta only uses this Broadblade for its ATK and CRIT DMG stats, which makes it rank lower than above options."
+      },
+      {
+        "ID": 5,
+        "Character": "augusta",
+        "Weapon": "Radiance Cleaver",
+        "Dupes": 1,
+        "Percentage": "78.50%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT DMG stat-stick for Augusta, the strongest permanently available choice for her."
+      },
+      {
+        "ID": 6,
+        "Character": "augusta",
+        "Weapon": "Kumokiri",
+        "Dupes": 1,
+        "Percentage": "78.30%",
+        "Percentage_2": "",
+        "Comment": "Simple ATK and CRIT Rate stat-stick for Augusta, who does not benefit from this weapon's Liberation DMG-increasing effects."
+      },
+      {
+        "ID": 7,
+        "Character": "augusta",
+        "Weapon": "Aureate Zenith",
+        "Dupes": 5,
+        "Percentage": "75.40%",
+        "Percentage_2": "",
+        "Comment": "The new Battle Pass Broadblade is amazing on Augusta and is her best 4* option bar none as it increases ATK, Heavy Attack DMG Bonus and CRIT DMG by massive amounts especially at Rank 5. Unfortunately, its lower-end Base ATK makes it rank below almost all 5-star options, but it remains a good choice if you don't wish to invest any pulls into Augusta and rather spend for this weapon instead."
+      },
+      {
+        "ID": 8,
+        "Character": "augusta",
+        "Weapon": "Lustrous Razor",
+        "Dupes": 1,
+        "Percentage": "74.80%",
+        "Percentage_2": "",
+        "Comment": "One of the best permanent choices for Augusta who benefits from its Energy Regen boosting effect but its Resonance Liberation DMG increase is useless on her, which makes it rank below all limited options. Nonetheless very much usable on Augusta who performs fantastically even with this weapon equipped."
+      },
+      {
+        "ID": 9,
+        "Character": "augusta",
+        "Weapon": "Autumntrace",
+        "Dupes": 5,
+        "Percentage": "70.90%",
+        "Percentage_2": "",
+        "Comment": "This Battle Pass weapon also gives Augusta good stats, particularly ATK and CRIT Rate, but suffers like all other 4-star weapons from low Base ATK which causes it to perform lower than all 5-star options. However it remains very much usable on Augusta."
+      },
+      {
+        "ID": 10,
+        "Character": "augusta",
+        "Weapon": "Waning Redshift",
+        "Dupes": 5,
+        "Percentage": "66.90%",
+        "Percentage_2": "",
+        "Comment": "The best non-Battle Pass 4-star for Augusta as it gives her some flat Resonance Energy which means she doesn't need any Energy Regen on her build to work, however only increasing ATK isn't enough to make it stand out above other options."
+      },
+      {
+        "ID": 11,
+        "Character": "augusta",
+        "Weapon": "Helios Cleaver",
+        "Dupes": 5,
+        "Percentage": "63.90%",
+        "Percentage_2": "",
+        "Comment": "Similar to Waning Redshift but focuses even more on increasing ATK after using multiple Resonance Skills, which Augusta isn't able to fully stack, making it lag behind other choices in terms of performance."
+      },
+      {
+        "ID": 12,
+        "Character": "augusta",
+        "Weapon": "Meditations on Mercy",
+        "Dupes": 5,
+        "Percentage": "61.30%",
+        "Percentage_2": "",
+        "Comment": "Last resort option if none of the above weapons are owned. Solely used as an ATK stat-stick as its passive is entirely unused on Augusta, but accessible as a guarantee thanks to being craftable."
+      }
+    ],
+    "echoes": [
+      {
+        "ID": 1,
+        "Character": "augusta",
+        "Type": "Best",
+        "Set": "Crown of Valor",
+        "Percentage": "100.00%",
+        "Set_small_1": "Void Thunder",
+        "Set_small_2": "Endless Resonance, Reel of Spliced Memories",
+        "Set_small_3": "Moonlit Clouds, Empyrean Anthem, Tidebreaking Courage",
+        "Set_small_4": "",
+        "Set_small_5": "",
+        "Comment": "Augusta's best set bar none. Increases ATK and CRIT DMG by 6% and 4% for 4s respectively when a Shield is applied to the equipped character, stacking up to 5 times every 0.5s. This totals to 30% ATK and 20% CRIT DMG, which is the best set for Augusta in specific as she's the only character in the game who's able to fully stack up this effect.",
+        "Echo_1": "The False Sovereign",
+        "Echo_1_Comment": "A Transform and Summon echo similar to Nightmare: Kelpie, which gives 12% Electro and 12% Heavy DMG Bonus passively in the main slot, and unconditionally summons the Echo to deal DMG whenever an Intro skill is triggered, additionally having Transform casts for extra damage. One of them is typically used at the end of a rotation, the second cast is a bit more difficult to exploit and may require quickswapping to be utilized (difficult in a team with Augusta but not impossible). The best Echo for Augusta in any situation.",
+        "Echo_2": "",
+        "Echo_2_Comment": ""
+      }
+    ],
+    "echoStats": [
+      {
+        "ID": 1,
+        "Name": "augusta",
+        "Character": "augusta",
+        "Format": 43311,
+        "Slot_4": "",
+        "Echo_1": "CRIT Rate / CRIT DMG",
+        "Echo_2": "Electro DMG",
+        "Echo_3": "Electro DMG > ATK%",
+        "Echo_4": "ATK%",
+        "Echo_5": "ATK%",
+        "Substats": "Energy Regen (Until Satisfied) > CRIT Rate = CRIT DMG > ATK% = Heavy Attack DMG% > ATK > Resonance Skill DMG%",
+        "Comments": ""
+      }
+    ],
+    "skillPriority": [
+      {
+        "ID": 1,
+        "Character": "augusta",
+        "Type": "",
+        "Order": "Res. Liberation, Forte Circuit, Basic Attack, Res. Skill, Intro Skill",
+        "Comments": "Skill and Intro can be skipped when levelling to save on resources at a minimal damage loss."
+      }
+    ],
+    "teams": [
+      {
+        "ID": 1,
+        "Character": "augusta",
+        "Name": "Team #1 - Best Team",
+        "Member_1": "augusta",
+        "Member_2": "iuno, lynae, rebecca, mortefi",
+        "Member_3": "the-shorekeeper, verina, mornye",
+        "Comments": "Mornye is more niche in use, only consider her with Rebecca or Lynae on the team (for Hack and Tune Rupture synergies respectively)."
+      }
+    ],
+    "synergies": [
+      {
+        "ID": 1,
+        "Character": "augusta",
+        "Synergy": "iuno, lynae, rebecca, mortefi",
+        "Comment": "These are the Outro buffers that pair best with Augusta. Iuno is the best by far due to her high personal damage and giving a whopping 90% DMG Amplification effect to Augusta in total, however Mortefi and Rebecca are close seconds in the Heavy DMG buffing department. Lynae may also prove more effective than those two in conjunction with Mornye as the extent of their generalist buffing potential is unparalleled."
+      },
+      {
+        "ID": 2,
+        "Character": "augusta",
+        "Synergy": "the-shorekeeper, verina, mornye",
+        "Comment": "As the two best generalist Supports by heaps and bounds, it's no surprise Shorekeeper and Verina can slot in almost any team in the game as they provide high team-wide ATK% and 15% DMG Amplify. Shorekeeper additionally provides CRIT Rate and CRIT DMG, always making her the best third slot teammate for Augusta teams, but Verina is a close, more accessible second provided Shorekeeper isn't available. Mornye may also see niche use cases alongside Lynae and Rebecca due to their synergy with Tune Rupture and Hack mechanics respectively."
+      }
+    ]
+  },
+  "stats": {
+    "slug": "augusta",
+    "name": "Augusta",
+    "unit_id": 1306,
+    "base_hp": 824,
+    "base_atk": 37,
+    "base_def": 91,
+    "base_crit": 5,
+    "base_critdmg": 150,
+    "base_healing": 0,
+    "max_energy": 125,
+    "bonus_ele": 0,
+    "bonus_atk": 1.12,
+    "bonus_def": 0,
+    "bonus_heal": 0,
+    "bonus_crit": 8,
+    "bonus_critdmg": 0,
+    "bonus_hp": 0
+  },
+  "calculations": [
+    {
+      "teamName": "",
+      "ranking": {
+        "slug": "augusta",
+        "name": "Augusta",
+        "disclaimer": "",
+        "dmg": {
+          "damage": 1467160,
+          "damage_e1": 1716410,
+          "damage_e2": 2147249,
+          "damage_e3": 2527396,
+          "damage_e4": 2663161,
+          "damage_e5": 2663161,
+          "damage_e6": 3618003
+        },
+        "dps": {
+          "damage": 117278,
+          "damage_e1": 137202,
+          "damage_e2": 171642,
+          "damage_e3": 202030,
+          "damage_e4": 212882,
+          "damage_e5": 212882,
+          "damage_e6": 289208
+        },
+        "time": "12.51",
+        "echo_main": "The False Sovereign",
+        "echo_4": "CRIT Rate",
+        "echo_3": "Electro DMG",
+        "echo_3a": "Electro DMG",
+        "echo_1": "ATK%",
+        "echo_1a": "ATK%",
+        "substats": "Energy Regen (18.3%), CRIT Rate (40.4%), CRIT DMG (80.7%), ATK (25.8%), Heavy Attack DMG Bonus (8.6%)",
+        "set_1": "Crown of Valor",
+        "set_2": "Void Thunder",
+        "weapon": "Thunderflare Dominion",
+        "weapon_S": 1
+      },
+      "team": {
+        "ID": 1,
+        "Character": "augusta",
+        "Member_1_Name": "iuno",
+        "Member_1_Weapon": "Moongazer's Sigil",
+        "Member_1_Set": "Crown of Valor, Sierra Gale",
+        "Member_1_Echo": "Lady of the Sea",
+        "Member_2_Name": "the-shorekeeper",
+        "Member_2_Weapon": "Stellar Symphony",
+        "Member_2_Set": "Rejuvenating Glow",
+        "Member_2_Echo": "Fallacy of No Return"
+      },
+      "comments": ""
+    }
+  ],
+  "damageDistribution": [
+    [
+      "Skill",
+      "Dmg"
+    ],
+    [
+      "Basic",
+      0
+    ],
+    [
+      "Heavy",
+      1293055
+    ],
+    [
+      "Skill",
+      139439
+    ],
+    [
+      "Liberation",
+      0
+    ],
+    [
+      "Intro",
+      16262
+    ],
+    [
+      "Outro",
+      0
+    ],
+    [
+      "Echo",
+      18404
+    ]
+  ],
+  "reference": {
+    "weapons": [
+      {
+        "Name": "Ages of Harvest",
+        "Slug": "ages-of-harvest",
+        "Rarity": 5,
+        "ID": "21010026",
+        "Effect": "Grants {0} Attribute DMG Bonus. Casting Intro Skill gives the equipper Ageless Marking, which grants {1} Resonance Skill DMG Bonus for 12s. Casting Resonance Skill gives the equipper Ethereal Endowment, which grants {1} Resonance Skill DMG Bonus for 12s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 24.3,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Aureate Zenith",
+        "Slug": "aureate-zenith",
+        "Rarity": 4,
+        "ID": "21010104",
+        "Effect": "Casting Resonance Liberation increases ATK by {0} and grants {1} Heavy Attack DMG Bonus for 15s.",
+        "Array_0": [
+          "7.2%",
+          "11.1%",
+          "15.1%",
+          "19%",
+          "23%"
+        ],
+        "Array_1": [
+          "10.8%",
+          "16.7%",
+          "22.6%",
+          "28.6%",
+          "34.5%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 40.5,
+        "Source": "Battle Pass"
+      },
+      {
+        "Name": "Autumntrace",
+        "Slug": "autumntrace",
+        "Rarity": 4,
+        "ID": "21010074",
+        "Effect": "Increases ATK by {0} upon dealing Basic Attack DMG or Heavy Attack DMG, stacking up to 5 time(s). This effect lasts for 7s and can be triggered 1 time(s) every 1s.",
+        "Array_0": [
+          "4%",
+          "6%",
+          "8.4%",
+          "10.6%",
+          "12.8%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 412,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 20.2,
+        "Source": "Pioneer Podcast"
+      },
+      {
+        "Name": "Helios Cleaver",
+        "Slug": "helios-cleaver",
+        "Rarity": 4,
+        "ID": "21010064",
+        "Effect": "Within {0}s after Resonance Skill is cast, increases ATK by {2} every 2s, stacking up to 4 time(s). This effect can be triggered 1 time(s) every 12s. When the number of stacks reaches 4, all stacks will be reset within 6s.",
+        "Array_0": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "Array_1": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "Array_2": [
+          "3%",
+          "3.75%",
+          "4.5%",
+          "5.25%",
+          "6%"
+        ],
+        "Array_3": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 412,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 30.3,
+        "Source": ""
+      },
+      {
+        "Name": "Kumokiri",
+        "Slug": "kumokiri",
+        "Rarity": 5,
+        "ID": "21010056",
+        "Effect": "ATK is increased by {0}. When the wielder casts Intro Skill or inflicts Negative Statuses, they gain {1} Resonance Liberation DMG Bonus, stacking up to 3 times for 15s. At max stacks, when Resonators in the team inflict Negative Statuses, they gain  {2} All-Attribute DMG Bonus for 15s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "8%",
+          "10%",
+          "12%",
+          "14%",
+          "16%"
+        ],
+        "Array_2": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 500,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 36,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Lustrous Razor",
+        "Slug": "lustrous-razor",
+        "Rarity": 5,
+        "ID": "21010015",
+        "Effect": "Increases Energy Regen by {0}. When Resonance Skill is released, increases Resonance Liberation DMG by {1}, stacking up to {2} times. This effect lasts for {3}s.",
+        "Array_0": [
+          "12.8%",
+          "16%",
+          "19.2%",
+          "22.4%",
+          "25.6%"
+        ],
+        "Array_1": [
+          "7%",
+          "8.75%",
+          "10.5%",
+          "12.5%",
+          "14%"
+        ],
+        "Array_2": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "Array_3": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 36.4,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Meditations on Mercy",
+        "Slug": "meditations-on-mercy",
+        "Rarity": 4,
+        "ID": "21010094",
+        "Effect": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for 10s. This effect can be triggered 1 time per second, stackable up to 4 times.",
+        "Array_0": [
+          "4%",
+          "5%",
+          "6%",
+          "7%",
+          "8%"
+        ],
+        "Array_1": "",
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Crafting"
+      },
+      {
+        "Name": "Radiance Cleaver",
+        "Slug": "radiance-cleaver",
+        "Rarity": 5,
+        "ID": "21010045",
+        "Effect": "Increases ATK by {0}. Dealing damage to targets under Tune Strain: Interfered grants {1} Resonance Liberation Bonus for 3s. Retriggering the effect resets its duration.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "27%",
+          "30%",
+          "33%",
+          "36%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Permanent Convene"
+      },
+      {
+        "Name": "Thunderflare Dominion",
+        "Slug": "thunderflare-dominion",
+        "Rarity": 5,
+        "ID": "21010046",
+        "Effect": "Increases ATK by {0}. Casting Intro Skill or Resonance Skill increases Heavy Attack DMG by {1} for 15s. Obtaining Shield allows Heavy Attack DMG to ignore {2} of the target's DEF for 7s, stacking up to 5 times. This effect is triggered once every 0.5s",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "20%",
+          "25%",
+          "30%",
+          "35%",
+          "40%"
+        ],
+        "Array_2": [
+          "7.2%",
+          "8.4%",
+          "9.6%",
+          "10.8%",
+          "12%"
+        ],
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 675,
+        "Stat_secondary": "CRIT Rate",
+        "Stat_secondary_value": 12.1,
+        "Source": "Rate-up"
+      },
+      {
+        "Name": "Verdant Summit",
+        "Slug": "verdant-summit",
+        "Rarity": 5,
+        "ID": "21010016",
+        "Effect": "Increases the DMG Bonus of all Resonance Attributes by {0}. Every time Intro Skill or Resonance Liberation is cast, increases Heavy Attack DMG Bonus by {1}, stacking up to 2 time(s). This effect lasts for 14s.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Limited"
+      },
+      {
+        "Name": "Waning Redshift",
+        "Slug": "waning-redshift",
+        "Rarity": 4,
+        "ID": "21010084",
+        "Effect": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for 16s. This effect can be triggered once every 20s.",
+        "Array_0": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "Array_1": [
+          "10%",
+          "12.5%",
+          "15%",
+          "17.5%",
+          "20%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 462,
+        "Stat_secondary": "ATK",
+        "Stat_secondary_value": 18.2,
+        "Source": "Gacha"
+      },
+      {
+        "Name": "Wildfire Mark",
+        "Slug": "wildfire-mark",
+        "Rarity": 5,
+        "ID": "21010036",
+        "Effect": "Increases ATK by {0}. Performing Intro Skill or Resonance Liberation increases Resonance Liberation DMG by {1} for 6s. Dealing Heavy Attack DMG extends this effect by 4s, up to 1 time. Each successful extension gives {1} Fusion DMG Bonus to all Resonators in the team for 30s. Effects of the same name cannot be stacked.",
+        "Array_0": [
+          "12%",
+          "15%",
+          "18%",
+          "21%",
+          "24%"
+        ],
+        "Array_1": [
+          "24%",
+          "30%",
+          "36%",
+          "42%",
+          "48%"
+        ],
+        "Array_2": "",
+        "Array_3": "",
+        "Array_4": "",
+        "Array_5": "",
+        "Array_6": "",
+        "Array_7": "",
+        "Weapon_Type": "Broadblade",
+        "Stat_primary": 587,
+        "Stat_secondary": "CRIT DMG",
+        "Stat_secondary_value": 48.6,
+        "Source": "Rate-up"
+      }
+    ],
+    "echoes": [
+      {
+        "Name": "Fallacy of No Return",
+        "Slug": "fallacy-of-no-return",
+        "ID": "6000060",
+        "Echo_skill": "Activate the Echo Skill to summon a fraction of the Fallacy of No Return's power and deal a blast to the surrounding area, inflicting Spectro DMG equal to {0} of max HP, after which the Resonator gains 10% bonus Energy Regen and all team members 10% bonus ATK for 20s.\\n\\nHold Echo Skill to unleash a series of flurry assaults at the cost of STA, each dealing Spectro DMG equal to {1} of max HP; Release to end the assail in a powerful blow, dealing Spectro DMG equal to {2} of max HP.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          7
+        ],
+        "Skill_1": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "Skill_2": [
+          "11.4%",
+          "1.14%",
+          "14.25%"
+        ],
+        "Skill_3": [
+          "12.88%",
+          "1.29%",
+          "16.11%"
+        ],
+        "Skill_4": [
+          "14.37%",
+          "1.44%",
+          "17.97%"
+        ],
+        "Skill_5": [
+          "15.86%",
+          "1.58%",
+          "19.82%"
+        ]
+      },
+      {
+        "Name": "Lady of the Sea",
+        "Slug": "lady-of-the-sea",
+        "ID": "6000160",
+        "Echo_skill": "Summon a Tidestorm to deal {0} Aero DMG ten times and {1} Aero DMG one time to enemies. The Resonator with this Echo equipped in the main slot gains 12.00% Aero DMG Bonus and 12.00% Resonance Liberation DMG Bonus.\\n\\nCD: <b>20s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          19
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "9.12%",
+          "109.44%"
+        ],
+        "Skill_3": [
+          "10.64%",
+          "127.68%"
+        ],
+        "Skill_4": [
+          "12.16%",
+          "145.92%"
+        ],
+        "Skill_5": [
+          "13.68%",
+          "164.16%"
+        ]
+      },
+      {
+        "Name": "The False Sovereign",
+        "Slug": "the-false-sovereign",
+        "ID": "6000121",
+        "Echo_skill": "Transform into the False Sovereign and dash forward in a spinning strike, dealing {0} Electro DMG 4 times. The Resonator with this Echo equipped in the main slot gains 12.00% Electro DMG Bonus and 12.00% Heavy Attack DMG Bonus. Upon casting Intro Skill, the False Sovereign is also summoned to deal {1} Electro DMG. Start with 2 charges. Gain 1 charge every 8s, up to 2 charges.\\n\\nCD: <b>8s</b>.",
+        "Rarity": 2,
+        "Sonata_Group": [
+          19
+        ],
+        "Skill_1": [
+          "0"
+        ],
+        "Skill_2": [
+          "36.90%",
+          "270.00%"
+        ],
+        "Skill_3": [
+          "43.05%",
+          "315.00%"
+        ],
+        "Skill_4": [
+          "49.20%",
+          "360.00%"
+        ],
+        "Skill_5": [
+          "55.35%",
+          "405.00%"
+        ]
+      }
+    ],
+    "echoSets": [
+      {
+        "name": "Crown of Valor",
+        "slug": "crown-of-valor",
+        "sonata_id": 19,
+        "type": "compact",
+        "bonus_2": "",
+        "bonus_3": "<p>Upon gaining a Shield, increase the Resonator&apos;s ATK by <strong>6%</strong> and Crit. DMG by <strong>4%</strong> for <strong>4s</strong>. This effect can be triggered once every <strong>0.5s</strong> and stacks up to <strong>5</strong> times.</p>",
+        "bonus_5": "",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_19.webp"
+      },
+      {
+        "name": "Empyrean Anthem",
+        "slug": "empyrean-anthem",
+        "sonata_id": 13,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Increase the Resonator&apos;s Coordinated Attack DMG by <strong>80%</strong>. Upon a critical hit of Coordinated Attack, increase the active Resonator&apos;s ATK by <strong>20%</strong> for <strong>4s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_13.webp"
+      },
+      {
+        "name": "Endless Resonance",
+        "slug": "endless-resonance",
+        "sonata_id": 9,
+        "type": "standard",
+        "bonus_2": "<p>ATK increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>While on the field, ATK increases by <strong>5%</strong> every <strong>1.5s</strong>, stacking up to <strong>4</strong> times. Outro Skill DMG increases by <strong>60%</strong>.</p>",
+        "aliases": "Lingering Tunes",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_9.webp"
+      },
+      {
+        "name": "Moonlit Clouds",
+        "slug": "moonlit-clouds",
+        "sonata_id": 8,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Outro Skill, ATK of the next Resonator increases by <strong>22.5%</strong> for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_8.webp"
+      },
+      {
+        "name": "Reel of Spliced Memories",
+        "slug": "reel-of-spliced-memories",
+        "sonata_id": 29,
+        "type": "standard",
+        "bonus_2": "<p>ATK increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Inflicting Tune Rupture - Shifting or Tune Strain - Shifting on enemies increases the Tune Break Boost of Resonators in the team by <strong>20</strong> for <strong>30s</strong>. Effects of the same name do not stack.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_29.webp"
+      },
+      {
+        "name": "Rejuvenating Glow",
+        "slug": "rejuvenating-glow",
+        "sonata_id": 7,
+        "type": "standard",
+        "bonus_2": "<p>Healing increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon healing allies, increase ATK of the entire team by <strong>15%</strong>, lasting <strong>30s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_7.webp"
+      },
+      {
+        "name": "Sierra Gale",
+        "slug": "sierra-gale",
+        "sonata_id": 4,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Aero\">Aero</strong> DMG increase by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Intro Skill, <strong class=\"Aero\">Aero DMG</strong> increases by <strong>30%</strong> for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_4.webp"
+      },
+      {
+        "name": "Tidebreaking Courage",
+        "slug": "tidebreaking-courage",
+        "sonata_id": 14,
+        "type": "standard",
+        "bonus_2": "<p>Energy Regen +<strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Increase the Resonator&apos;s ATK by <strong>15%</strong>. Reaching 250% Energy Regen increases all Attribute DMG by <strong>30%</strong> for the Resonator.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_14.webp"
+      },
+      {
+        "name": "Void Thunder",
+        "slug": "void-thunder",
+        "sonata_id": 3,
+        "type": "standard",
+        "bonus_2": "<p><strong class=\"Electro\">Electro</strong> DMG increases by <strong>10%</strong>.</p>",
+        "bonus_3": "",
+        "bonus_5": "<p>Upon using Heavy Attack or Resonance Skill, <strong class=\"Electro\">Electro DMG</strong> increases by <strong>15%</strong>, stacking up to <strong>2</strong> times, each stack lasting for <strong>15s</strong>.</p>",
+        "aliases": "",
+        "imageUrl": "https://cdn.prydwen.gg/images/wuthering-waves/icons/set_3.webp"
+      }
+    ],
+    "tierConfig": [
+      {
+        "name": "T0",
+        "color": "#EF5350",
+        "label": "T0 Tier",
+        "minRating": 11
+      },
+      {
+        "name": "T0.5",
+        "color": "#ec6563",
+        "label": "T0.5 Tier",
+        "minRating": 10
+      },
+      {
+        "name": "T1",
+        "color": "#ffa967",
+        "label": "T1 Tier",
+        "minRating": 9
+      },
+      {
+        "name": "T1.5",
+        "color": "#ffbe7c",
+        "label": "T1.5 Tier",
+        "minRating": 8
+      },
+      {
+        "name": "T2",
+        "color": "#FED4A0",
+        "label": "T2 Tier",
+        "minRating": 7
+      },
+      {
+        "name": "T3",
+        "color": "#BFFF7F",
+        "label": "T3 Tier",
+        "minRating": 6
+      },
+      {
+        "name": "T4",
+        "color": "#9DF89D",
+        "label": "T4 Tier",
+        "minRating": 5
+      }
+    ],
+    "headings": {
+      "pros": {
+        "text": "Pros",
+        "level": 5
+      },
+      "cons": {
+        "text": "Cons",
+        "level": 5
+      },
+      "characterAscensionTotal": {
+        "text": "Character Ascension (total)",
+        "level": 5
+      },
+      "skillUpgradesTotal": {
+        "text": "Skill Upgrades (total)",
+        "level": 5
+      },
+      "valueTierList": {
+        "text": "Value Tier List",
+        "level": 6
+      },
+      "bestEchoSets": {
+        "text": "Best Echo Sets",
+        "level": 6
+      },
+      "specialEchoSets": {
+        "text": "Special Echo Sets",
+        "level": 6
+      }
+    }
+  },
+  "valueRatings": [
+    {
+      "id": 1,
+      "name": "Augusta",
+      "slug": "augusta",
+      "toa_cat": "dps",
+      "toa_rating": 8,
+      "toa_tags": "",
+      "toa_marks": "",
+      "ww_cat": "dps",
+      "ww_rating": 8,
+      "ww_tags": "",
+      "ww_marks": "",
+      "overall_cat": "dps",
+      "overall_rating": 8,
+      "overall_tags": "",
+      "overall_marks": "",
+      "rarity": 5,
+      "element": "Electro",
+      "weapon": "Broadblade",
+      "toa_expert": false,
+      "ww_expert": false,
+      "toa_expert_column": "",
+      "sequence_display": "",
+      "dupes": "S0"
+    }
+  ]
+}
