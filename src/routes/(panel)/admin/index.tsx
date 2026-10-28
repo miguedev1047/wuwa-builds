@@ -27,24 +27,28 @@ function ResonatorLists() {
 
   return (
     <ul className="grid grid-cols-5 gap-4">
-      {resonators?.characters.map((resonator) => (
-        <Link
-          key={resonator.name}
-          to="/admin/resonator/$slug"
-          params={{ slug: resonator.slug }}
-        >
-          <li>
-            <Show when={resonator.cardImage}>
-              {(image) => (
-                <img
-                  className="aspect-2/3 size-full object-cover"
-                  src={image}
-                />
-              )}
-            </Show>
-          </li>
-        </Link>
-      ))}
+      <Show when={resonators?.characters}>
+        {(characters) =>
+          characters.map((resonator) => (
+            <Link
+              key={resonator.name}
+              to="/admin/resonator/$slug"
+              params={{ slug: resonator.slug }}
+            >
+              <li>
+                <Show when={resonator.cardImage}>
+                  {(image) => (
+                    <img
+                      className="aspect-2/3 size-full object-cover"
+                      src={image}
+                    />
+                  )}
+                </Show>
+              </li>
+            </Link>
+          ))
+        }
+      </Show>
     </ul>
   )
 }
