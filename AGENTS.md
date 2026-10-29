@@ -47,6 +47,9 @@ Rules:
   the handler so Node-only code never reaches the client bundle.
 - Validate server function inputs with zod through `.validator(...)`.
 - `src/modules/encore` is the reference implementation; follow its patterns.
+- `user.role` is `USER | ADMIN` (default `USER`, not client-settable). Any
+  admin-only read/write must check the session role on the server; route guards
+  are not authorization.
 
 Current modules:
 

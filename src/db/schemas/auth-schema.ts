@@ -1,5 +1,9 @@
 import { defineRelationsPart, sql } from "drizzle-orm"
-import { sqliteTable, text, integer, index } from "drizzle-orm/sqlite-core"
+import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core"
+
+export const USER_ROLES = ["USER", "ADMIN"] as const
+
+export type UserRole = (typeof USER_ROLES)[number]
 
 export const user = sqliteTable("user", {
   id: text("id").primaryKey(),
@@ -9,6 +13,7 @@ export const user = sqliteTable("user", {
     .default(false)
     .notNull(),
   image: text("image"),
+  role: text("role", { enum: USER_ROLES }).default("USER").notNull(),
   createdAt: integer("created_at", { mode: "timestamp_ms" })
     .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
     .notNull(),
