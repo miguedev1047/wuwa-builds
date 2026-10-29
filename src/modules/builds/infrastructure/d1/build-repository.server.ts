@@ -13,7 +13,7 @@ function toRecord(row: BuildRow): BuildRecord {
   return {
     id: row.id,
     userId: row.userId,
-    resonatorSlug: row.resonatorSlug,
+    characterId: row.characterId,
     name: row.name,
     payload: row.payload,
     documentVersion: row.documentVersion,
@@ -34,15 +34,12 @@ export function createD1BuildRepository(database: AppDb): BuildRepository {
       return rows.map(toRecord)
     },
 
-    async listByUserAndResonator(userId, resonatorSlug) {
+    async listByUserAndCharacter(userId, characterId) {
       const rows = await database
         .select()
         .from(builds)
         .where(
-          and(
-            eq(builds.userId, userId),
-            eq(builds.resonatorSlug, resonatorSlug)
-          )
+          and(eq(builds.userId, userId), eq(builds.characterId, characterId))
         )
         .orderBy(desc(builds.updatedAt))
 
@@ -65,7 +62,7 @@ export function createD1BuildRepository(database: AppDb): BuildRepository {
         .values({
           id: crypto.randomUUID(),
           userId,
-          resonatorSlug: data.resonatorSlug,
+          characterId: data.characterId,
           name: data.name,
           payload: data.payload,
           documentVersion: BUILD_DOCUMENT_VERSION,
@@ -103,14 +100,11 @@ export function createD1BuildRepository(database: AppDb): BuildRepository {
       return rows.length > 0
     },
 
-    async deleteByResonator(userId, resonatorSlug) {
+    async deleteByCharacter(userId, characterId) {
       const rows = await database
         .delete(builds)
         .where(
-          and(
-            eq(builds.userId, userId),
-            eq(builds.resonatorSlug, resonatorSlug)
-          )
+          and(eq(builds.userId, userId), eq(builds.characterId, characterId))
         )
         .returning({ id: builds.id })
 

@@ -19,7 +19,7 @@ export function buildRecordToDraft(record: BuildRecord): BuildDraft {
   return buildDraftSchema.parse({
     id: record.id,
     savedBuildId: record.id,
-    resonatorSlug: record.resonatorSlug,
+    characterId: record.characterId,
     name: record.name,
     documentVersion: record.documentVersion,
     payload: record.payload,
@@ -35,7 +35,7 @@ export function buildDraftToCreateInput(draft: BuildDraft): CreateBuildInput {
   }
 
   return createBuildInputSchema.parse({
-    resonatorSlug: draft.resonatorSlug,
+    characterId: draft.characterId,
     name: draft.name,
     payload: draft.payload,
   })

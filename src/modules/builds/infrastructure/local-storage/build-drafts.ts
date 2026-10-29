@@ -4,7 +4,7 @@ import {
 } from "@tanstack/react-db"
 import { buildDraftSchema, type BuildDraft } from "../../domain/build-draft"
 
-const BUILD_DRAFT_STORAGE_VERSION = 1
+const BUILD_DRAFT_STORAGE_VERSION = 2
 
 /**
  * Create a browser-local draft collection for one account scope.

@@ -48,14 +48,9 @@ export const SELECT_ECHO_MAIN_STATS = {
       values: [7.6, 13.7, 19.8, 25.8, 31.9, 38],
     },
     {
-      stat: "energy_recharge",
+      stat: "energy_regen",
       label: "Recarga de energia",
       values: [6.4, 11.5, 16.6, 21.8, 26.9, 32],
-    },
-    {
-      stat: "aero_dmg",
-      label: "Dano Aero",
-      values: [6, 10.8, 15.8, 20.4, 25.2, 30],
     },
     {
       stat: "aero_dmg",
@@ -73,7 +68,7 @@ export const SELECT_ECHO_MAIN_STATS = {
       values: [6, 10.8, 15.8, 20.4, 25.2, 30],
     },
     {
-      stat: "gelio_dmg",
+      stat: "glacio_dmg",
       label: "Dano Glacio",
       values: [6, 10.8, 15.8, 20.4, 25.2, 30],
     },

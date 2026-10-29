@@ -10,19 +10,19 @@ export const buildRowSchema = createSelectSchema(builds).extend({
 
 export const buildIdSchema = z.string().min(1)
 export const buildNameSchema = z.string().trim().min(1).max(80)
-export const resonatorSlugSchema = z.string().trim().min(1).max(100)
+export const characterIdSchema = z.number().int().positive()
 
 export const buildIdInputSchema = z.object({
   buildId: buildIdSchema,
 })
 
-export const resonatorGroupInputSchema = z.object({
-  resonatorSlug: resonatorSlugSchema,
+export const characterGroupInputSchema = z.object({
+  characterId: characterIdSchema,
 })
 
 /** Public create contract: owner, id and timestamps are server-owned. */
 export const createBuildInputSchema = z.object({
-  resonatorSlug: resonatorSlugSchema,
+  characterId: characterIdSchema,
   name: buildNameSchema,
   payload: buildPayloadSchema,
 })
@@ -38,4 +38,4 @@ export type BuildRowInput = z.infer<typeof buildRowSchema>
 export type CreateBuildInput = z.infer<typeof createBuildInputSchema>
 export type UpdateBuildInput = z.infer<typeof updateBuildInputSchema>
 export type BuildIdInput = z.infer<typeof buildIdInputSchema>
-export type ResonatorGroupInput = z.infer<typeof resonatorGroupInputSchema>
+export type CharacterGroupInput = z.infer<typeof characterGroupInputSchema>

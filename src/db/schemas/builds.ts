@@ -4,8 +4,8 @@ import type { BuildPayload } from "../../modules/builds/domain/build"
 import { user } from "./auth-schema"
 
 /**
- * One row per saved build. Several rows may share (userId, resonatorSlug):
- * "my builds" groups them by resonator, but the build ID is the identity.
+ * One row per saved build. Several rows may share (userId, characterId):
+ * "my builds" groups them by character, but the build ID is the identity.
  */
 export const builds = sqliteTable(
   "builds",
@@ -14,7 +14,8 @@ export const builds = sqliteTable(
     userId: text("user_id")
       .notNull()
       .references(() => user.id, { onDelete: "cascade" }),
-    resonatorSlug: text("resonator_slug").notNull(),
+    /** Numeric Encore character ID. */
+    characterId: integer("character_id").notNull(),
     name: text("name").notNull(),
     payload: text("payload", { mode: "json" }).$type<BuildPayload>().notNull(),
     documentVersion: integer("document_version").notNull(),
@@ -27,13 +28,13 @@ export const builds = sqliteTable(
       .notNull(),
   },
   (table) => [
-    index("builds_user_resonator_idx").on(
+    index("builds_user_character_idx").on(
       table.userId,
-      table.resonatorSlug,
-      table.updatedAt
+      table.characterId,
+      table.updatedAt,
     ),
     index("builds_user_updated_idx").on(table.userId, table.updatedAt),
-  ]
+  ],
 )
 
 export type BuildRow = typeof builds.$inferSelect

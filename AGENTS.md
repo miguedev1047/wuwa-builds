@@ -26,6 +26,7 @@ public Encore API and saved user builds in D1.
 | `bun run build`            | Production build                 |
 | `bun run preview`          | Preview the built Worker locally |
 | `bun run typecheck`        | `tsc --noEmit`; must stay clean  |
+| `bun test`                 | Unit tests (Bun)                 |
 | `bun run lint`             | ESLint                           |
 | `bun run format` / `check` | Prettier write/check             |
 
@@ -36,6 +37,7 @@ Modules follow a light DDD split under `src/modules/<domain>`:
 - `domain/`: pure types and rules. No I/O.
 - `application/`: use cases and input schemas.
 - `infrastructure/`: adapters (HTTP, D1).
+- `client/`: browser-only state and collections.
 - `server/`: TanStack server functions; the only entry point for the UI.
 - `queries/`: shared query keys and TanStack Query options.
 
@@ -89,6 +91,10 @@ Rules:
   deploy.
 - Saved builds are scoped by user/build identity and payload `documentVersion`,
   never by catalog freshness.
+- TanStack DB build drafts are scoped by authenticated user ID and Local Storage
+  schema version. Clear or switch the collection on sign-out/account changes.
+- The builder UI contract and pending screens are documented in
+  `BUILDER_UI.md`.
 - If a query needs a different freshness (for example the builder), override
   `staleTime` in that query's options instead of changing the global default.
 - Any future persistence (TanStack DB, SQLite, IndexedDB) must namespace saved
@@ -119,7 +125,9 @@ Rules:
 
 - Encore is a third-party public API. The 6-hour cache means a game patch can
   take up to 6h to appear.
-- The saved-builds backend exists (`src/db/schemas/builds.ts`,
-  `src/modules/builds`) but no TanStack DB collection or builder UI is wired
-  yet.
-- Weapon and echo queries are exposed but no screen uses them yet.
+- The saved-builds backend and local draft collection exist
+  (`src/db/schemas/builds.ts`, `src/modules/builds`). Character selection creates
+  a local draft and the builder route loads it; editor sections and the save
+  flow are still pending. See `BUILDER_UI.md`.
+- Weapon and echo queries are exposed; the builder editor that consumes them is
+  still pending.

@@ -1,5 +1,9 @@
 import { z } from "zod"
-import { BUILD_DOCUMENT_VERSION, buildPayloadSchema } from "./build"
+import {
+  BUILD_DOCUMENT_VERSION,
+  buildPayloadSchema,
+  createEmptyBuildPayload,
+} from "./build"
 
 /**
  * Local editor state. It contains catalog references and user selections, not
@@ -10,7 +14,8 @@ export const buildDraftSchema = z.object({
   id: z.string().min(1),
   /** Null until this draft has been saved to the server. */
   savedBuildId: z.string().min(1).nullable(),
-  resonatorSlug: z.string().trim().min(1).max(100),
+  /** Numeric Encore character ID. */
+  characterId: z.number().int().positive(),
   /** Drafts may be unnamed; the save contract validates the final name. */
   name: z.string().max(80),
   documentVersion: z.literal(BUILD_DOCUMENT_VERSION),
@@ -23,22 +28,22 @@ export type BuildDraft = z.infer<typeof buildDraftSchema>
 
 export interface CreateEmptyBuildDraftInput {
   id: string
-  resonatorSlug: string
+  characterId: number
   createdAt: string
   name?: string
 }
 
-/** Create an empty, serializable editor model after the user picks a resonator. */
+/** Create an empty, serializable editor model after the user picks a character. */
 export function createEmptyBuildDraft(
   input: CreateEmptyBuildDraftInput
 ): BuildDraft {
   return buildDraftSchema.parse({
     id: input.id,
     savedBuildId: null,
-    resonatorSlug: input.resonatorSlug,
+    characterId: input.characterId,
     name: input.name ?? "",
     documentVersion: BUILD_DOCUMENT_VERSION,
-    payload: buildPayloadSchema.parse({}),
+    payload: createEmptyBuildPayload(),
     createdAt: input.createdAt,
     updatedAt: input.createdAt,
   })

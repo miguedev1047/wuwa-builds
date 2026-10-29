@@ -3,7 +3,8 @@ import type { BuildPayload } from "../../domain/build"
 export interface BuildRecord {
   id: string
   userId: string
-  resonatorSlug: string
+  /** Numeric Encore character ID. */
+  characterId: number
   name: string
   payload: BuildPayload
   documentVersion: number
@@ -12,7 +13,7 @@ export interface BuildRecord {
 }
 
 export interface CreateBuildData {
-  resonatorSlug: string
+  characterId: number
   name: string
   payload: BuildPayload
 }
@@ -28,9 +29,9 @@ export interface UpdateBuildData {
  */
 export interface BuildRepository {
   listByUser(userId: string): Promise<BuildRecord[]>
-  listByUserAndResonator(
+  listByUserAndCharacter(
     userId: string,
-    resonatorSlug: string
+    characterId: number
   ): Promise<BuildRecord[]>
   getById(userId: string, buildId: string): Promise<BuildRecord | null>
   create(userId: string, data: CreateBuildData): Promise<BuildRecord>
@@ -40,5 +41,5 @@ export interface BuildRepository {
     data: UpdateBuildData
   ): Promise<BuildRecord | null>
   delete(userId: string, buildId: string): Promise<boolean>
-  deleteByResonator(userId: string, resonatorSlug: string): Promise<number>
+  deleteByCharacter(userId: string, characterId: number): Promise<number>
 }

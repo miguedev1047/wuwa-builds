@@ -16,12 +16,12 @@ import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as panelAdminIndexRouteImport } from './routes/(panel)/admin/index'
 import { Route as panelAdminResonatorsRouteImport } from './routes/(panel)/admin/resonators'
 import { Route as panelPanelIndexRouteImport } from './routes/(panel)/panel/index'
-import { Route as panelPanelBuilderRouteImport } from './routes/(panel)/panel/builder'
 import { Route as panelPanelMyBuildsRouteImport } from './routes/(panel)/panel/my-builds'
 import { Route as panelPanelNewBuildRouteImport } from './routes/(panel)/panel/new-build'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as panelAdminResonatorIdRouteImport } from './routes/(panel)/admin/resonator.$id'
-import { Route as panelPanelMyBuildsBSlugRouteImport } from './routes/(panel)/panel/my-builds.b.$slug'
+import { Route as panelPanelBuilderDraftIdRouteImport } from './routes/(panel)/panel/builder.$draftId'
+import { Route as panelPanelMyBuildsBCharacterIdRouteImport } from './routes/(panel)/panel/my-builds.b.$characterId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,11 +58,6 @@ const panelPanelIndexRoute = panelPanelIndexRouteImport.update({
   path: '/',
   getParentRoute: () => panelPanelRouteRoute,
 } as any)
-const panelPanelBuilderRoute = panelPanelBuilderRouteImport.update({
-  id: '/builder',
-  path: '/builder',
-  getParentRoute: () => panelPanelRouteRoute,
-} as any)
 const panelPanelMyBuildsRoute = panelPanelMyBuildsRouteImport.update({
   id: '/my-builds',
   path: '/my-builds',
@@ -83,11 +78,18 @@ const panelAdminResonatorIdRoute = panelAdminResonatorIdRouteImport.update({
   path: '/resonator/$id',
   getParentRoute: () => panelAdminRouteRoute,
 } as any)
-const panelPanelMyBuildsBSlugRoute = panelPanelMyBuildsBSlugRouteImport.update({
-  id: '/b/$slug',
-  path: '/b/$slug',
-  getParentRoute: () => panelPanelMyBuildsRoute,
-} as any)
+const panelPanelBuilderDraftIdRoute =
+  panelPanelBuilderDraftIdRouteImport.update({
+    id: '/builder/$draftId',
+    path: '/builder/$draftId',
+    getParentRoute: () => panelPanelRouteRoute,
+  } as any)
+const panelPanelMyBuildsBCharacterIdRoute =
+  panelPanelMyBuildsBCharacterIdRouteImport.update({
+    id: '/b/$characterId',
+    path: '/b/$characterId',
+    getParentRoute: () => panelPanelMyBuildsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -95,27 +97,27 @@ export interface FileRoutesByFullPath {
   '/panel': typeof panelPanelRouteRouteWithChildren
   '/auth/login': typeof AuthLoginRoute
   '/admin/resonators': typeof panelAdminResonatorsRoute
-  '/panel/builder': typeof panelPanelBuilderRoute
   '/panel/my-builds': typeof panelPanelMyBuildsRouteWithChildren
   '/panel/new-build': typeof panelPanelNewBuildRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin/': typeof panelAdminIndexRoute
   '/panel/': typeof panelPanelIndexRoute
   '/admin/resonator/$id': typeof panelAdminResonatorIdRoute
-  '/panel/my-builds/b/$slug': typeof panelPanelMyBuildsBSlugRoute
+  '/panel/builder/$draftId': typeof panelPanelBuilderDraftIdRoute
+  '/panel/my-builds/b/$characterId': typeof panelPanelMyBuildsBCharacterIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth/login': typeof AuthLoginRoute
   '/admin/resonators': typeof panelAdminResonatorsRoute
-  '/panel/builder': typeof panelPanelBuilderRoute
   '/panel/my-builds': typeof panelPanelMyBuildsRouteWithChildren
   '/panel/new-build': typeof panelPanelNewBuildRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof panelAdminIndexRoute
   '/panel': typeof panelPanelIndexRoute
   '/admin/resonator/$id': typeof panelAdminResonatorIdRoute
-  '/panel/my-builds/b/$slug': typeof panelPanelMyBuildsBSlugRoute
+  '/panel/builder/$draftId': typeof panelPanelBuilderDraftIdRoute
+  '/panel/my-builds/b/$characterId': typeof panelPanelMyBuildsBCharacterIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -124,14 +126,14 @@ export interface FileRoutesById {
   '/(panel)/panel': typeof panelPanelRouteRouteWithChildren
   '/auth/login': typeof AuthLoginRoute
   '/(panel)/admin/resonators': typeof panelAdminResonatorsRoute
-  '/(panel)/panel/builder': typeof panelPanelBuilderRoute
   '/(panel)/panel/my-builds': typeof panelPanelMyBuildsRouteWithChildren
   '/(panel)/panel/new-build': typeof panelPanelNewBuildRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/(panel)/admin/': typeof panelAdminIndexRoute
   '/(panel)/panel/': typeof panelPanelIndexRoute
   '/(panel)/admin/resonator/$id': typeof panelAdminResonatorIdRoute
-  '/(panel)/panel/my-builds/b/$slug': typeof panelPanelMyBuildsBSlugRoute
+  '/(panel)/panel/builder/$draftId': typeof panelPanelBuilderDraftIdRoute
+  '/(panel)/panel/my-builds/b/$characterId': typeof panelPanelMyBuildsBCharacterIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,27 +143,27 @@ export interface FileRouteTypes {
     | '/panel'
     | '/auth/login'
     | '/admin/resonators'
-    | '/panel/builder'
     | '/panel/my-builds'
     | '/panel/new-build'
     | '/api/auth/$'
     | '/admin/'
     | '/panel/'
     | '/admin/resonator/$id'
-    | '/panel/my-builds/b/$slug'
+    | '/panel/builder/$draftId'
+    | '/panel/my-builds/b/$characterId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/auth/login'
     | '/admin/resonators'
-    | '/panel/builder'
     | '/panel/my-builds'
     | '/panel/new-build'
     | '/api/auth/$'
     | '/admin'
     | '/panel'
     | '/admin/resonator/$id'
-    | '/panel/my-builds/b/$slug'
+    | '/panel/builder/$draftId'
+    | '/panel/my-builds/b/$characterId'
   id:
     | '__root__'
     | '/'
@@ -169,14 +171,14 @@ export interface FileRouteTypes {
     | '/(panel)/panel'
     | '/auth/login'
     | '/(panel)/admin/resonators'
-    | '/(panel)/panel/builder'
     | '/(panel)/panel/my-builds'
     | '/(panel)/panel/new-build'
     | '/api/auth/$'
     | '/(panel)/admin/'
     | '/(panel)/panel/'
     | '/(panel)/admin/resonator/$id'
-    | '/(panel)/panel/my-builds/b/$slug'
+    | '/(panel)/panel/builder/$draftId'
+    | '/(panel)/panel/my-builds/b/$characterId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -238,13 +240,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof panelPanelIndexRouteImport
       parentRoute: typeof panelPanelRouteRoute
     }
-    '/(panel)/panel/builder': {
-      id: '/(panel)/panel/builder'
-      path: '/builder'
-      fullPath: '/panel/builder'
-      preLoaderRoute: typeof panelPanelBuilderRouteImport
-      parentRoute: typeof panelPanelRouteRoute
-    }
     '/(panel)/panel/my-builds': {
       id: '/(panel)/panel/my-builds'
       path: '/my-builds'
@@ -273,11 +268,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof panelAdminResonatorIdRouteImport
       parentRoute: typeof panelAdminRouteRoute
     }
-    '/(panel)/panel/my-builds/b/$slug': {
-      id: '/(panel)/panel/my-builds/b/$slug'
-      path: '/b/$slug'
-      fullPath: '/panel/my-builds/b/$slug'
-      preLoaderRoute: typeof panelPanelMyBuildsBSlugRouteImport
+    '/(panel)/panel/builder/$draftId': {
+      id: '/(panel)/panel/builder/$draftId'
+      path: '/builder/$draftId'
+      fullPath: '/panel/builder/$draftId'
+      preLoaderRoute: typeof panelPanelBuilderDraftIdRouteImport
+      parentRoute: typeof panelPanelRouteRoute
+    }
+    '/(panel)/panel/my-builds/b/$characterId': {
+      id: '/(panel)/panel/my-builds/b/$characterId'
+      path: '/b/$characterId'
+      fullPath: '/panel/my-builds/b/$characterId'
+      preLoaderRoute: typeof panelPanelMyBuildsBCharacterIdRouteImport
       parentRoute: typeof panelPanelMyBuildsRoute
     }
   }
@@ -300,28 +302,28 @@ const panelAdminRouteRouteWithChildren = panelAdminRouteRoute._addFileChildren(
 )
 
 interface panelPanelMyBuildsRouteChildren {
-  panelPanelMyBuildsBSlugRoute: typeof panelPanelMyBuildsBSlugRoute
+  panelPanelMyBuildsBCharacterIdRoute: typeof panelPanelMyBuildsBCharacterIdRoute
 }
 
 const panelPanelMyBuildsRouteChildren: panelPanelMyBuildsRouteChildren = {
-  panelPanelMyBuildsBSlugRoute: panelPanelMyBuildsBSlugRoute,
+  panelPanelMyBuildsBCharacterIdRoute: panelPanelMyBuildsBCharacterIdRoute,
 }
 
 const panelPanelMyBuildsRouteWithChildren =
   panelPanelMyBuildsRoute._addFileChildren(panelPanelMyBuildsRouteChildren)
 
 interface panelPanelRouteRouteChildren {
-  panelPanelBuilderRoute: typeof panelPanelBuilderRoute
   panelPanelMyBuildsRoute: typeof panelPanelMyBuildsRouteWithChildren
   panelPanelNewBuildRoute: typeof panelPanelNewBuildRoute
   panelPanelIndexRoute: typeof panelPanelIndexRoute
+  panelPanelBuilderDraftIdRoute: typeof panelPanelBuilderDraftIdRoute
 }
 
 const panelPanelRouteRouteChildren: panelPanelRouteRouteChildren = {
-  panelPanelBuilderRoute: panelPanelBuilderRoute,
   panelPanelMyBuildsRoute: panelPanelMyBuildsRouteWithChildren,
   panelPanelNewBuildRoute: panelPanelNewBuildRoute,
   panelPanelIndexRoute: panelPanelIndexRoute,
+  panelPanelBuilderDraftIdRoute: panelPanelBuilderDraftIdRoute,
 }
 
 const panelPanelRouteRouteWithChildren = panelPanelRouteRoute._addFileChildren(
