@@ -69,8 +69,12 @@ Decisiones de V1:
   guarda si el usuario elige uno explícito.
 - **Substats**: `value` en unidades de display. Porcentajes como puntos
   (`6.3` = 6.3%), planos como valor directo. Nunca guardes etiquetas localizadas.
-- **Skills**: `skillId` es el `SkillId` numérico de Encore. Los niveles son
-  editables; el array puede estar incompleto mientras se edita.
+- **Skills**: `skillId` es el `SkillId` numérico de Encore. El builder siembra
+  `skillLevels` desde el detalle del personaje con
+  `createDefaultSkillLevels(character.skills)` en el orden del juego: Ataque
+  normal, Habilidad de resonancia, Circuito del Forte, Liberación de resonancia,
+  Habilidad Intro. Por defecto nivel 10; pasa `1` como segundo argumento si
+  quieres empezar en nivel 1.
 - **Main echo**: se representa por índice en `echoLoadout`; no hay `mainEchoId`
   duplicado.
 - **Nada de** nombres, iconos, descripciones ni totales calculados dentro del
@@ -158,10 +162,14 @@ Secciones sugeridas, cada una ligada a campos concretos:
    - Acciones: guardar, volver.
 
 2. **Resonador** → `payload.resonator`
-   - Nivel (`level`) 1–90.
-   - Secuencia (`sequenceRank`) 0–6.
-   - Skills: usar `character.skills` para listar `SkillId` y editar
-     `skillLevels`. Máximo 10; nivel 1–10.
+   - Nivel (`level`) 1-90.
+   - Secuencia (`sequenceRank`) 0-6.
+   - Skills: usa
+     `getUpgradeableSkills(character.skills)` para renderizar en orden de juego
+     (Normal, Resonance Skill, Forte, Liberation, Intro) y
+     `createDefaultSkillLevels(character.skills)` para sembrar
+     `skillLevels`. El builder ya lo hace cuando llega el detalle; no hace falta
+     fetchear el personaje en `handleNewBuild`.
 
 3. **Arma** → `payload.weapon`
    - Selector con `weaponQueries.list()` filtrado por `character.weaponType`.

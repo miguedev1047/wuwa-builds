@@ -23,6 +23,8 @@ export const skillLevelSchema = z.object({
   level: z.number().int().min(1).max(SKILL_LEVEL_MAX),
 })
 
+export type SkillLevel = z.infer<typeof skillLevelSchema>
+
 export const echoSubstatSchema = z.object({
   statId: z.string().min(1),
   /**

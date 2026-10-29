@@ -1,8 +1,12 @@
 import { Show } from "@/components/utility/show"
 import { useBuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
-import { createEmptyBuildDraft } from "@/modules/builds/domain/build-draft"
+import { createBuildDraftFromEncoreCharacter } from "@/modules/builds/infrastructure/encore/build-draft"
 import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
+import { characterQueries } from "@/modules/encore/queries/characters"
+import { useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
+import { cn } from "cn"
+import { useTransition } from "react"
 import { toast } from "sonner"
 
 interface CharacterItemProps {
@@ -12,29 +16,48 @@ interface CharacterItemProps {
 export function CharacterItem({ character }: CharacterItemProps) {
   const collection = useBuildDraftCollection()
   const navigate = useNavigate()
+  const queryClient = useQueryClient()
+
+  const [isPending, startTransition] = useTransition()
 
   const handleNewBuild = () => {
-    if (!collection) {
-      toast.error("Espera un momento y vuelve a intentarlo")
-      return
-    }
+    if (!collection || isPending) return
 
-    const id = crypto.randomUUID()
-    const draft = createEmptyBuildDraft({
-      id,
-      characterId: character.id,
-      createdAt: new Date().toISOString(),
+    startTransition(async () => {
+      try {
+        const characterDetail = await queryClient.query(
+          characterQueries.detail(character.id)
+        )
+
+        const id = crypto.randomUUID()
+        const draft = createBuildDraftFromEncoreCharacter({
+          id,
+          character: characterDetail,
+          createdAt: new Date().toISOString(),
+        })
+
+        collection.insert(draft)
+
+        await navigate({
+          to: "/panel/builder/$draftId",
+          params: { draftId: id },
+        })
+      } catch (error) {
+        console.error(error)
+        toast.error("No se pudo cargar el personaje para crear la build")
+      }
     })
-
-    collection.insert(draft)
-    navigate({ to: "/panel/builder/$draftId", params: { draftId: id } })
   }
 
   return (
     <li
       onClick={handleNewBuild}
       role="button"
-      className="aspect-2/3 overflow-hidden"
+      data-disabled={isPending}
+      className={cn(
+        "aspect-2/3 overflow-hidden",
+        "data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50"
+      )}
     >
       <Show when={character.icon}>
         {(image) => (

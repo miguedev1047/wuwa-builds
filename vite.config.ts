@@ -1,7 +1,7 @@
 import { defineConfig } from "vite"
 import { devtools } from "@tanstack/devtools-vite"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
-import { redact } from "@tanstack/redact/vite"
+// import { redact } from "@tanstack/redact/vite"
 import { cloudflare } from "@cloudflare/vite-plugin"
 import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react"
 import babel from "@rolldown/plugin-babel"
@@ -15,7 +15,7 @@ const config = defineConfig({
     tailwindcss(),
     tanstackStart(),
     viteReact(),
-    redact(),
+    // redact(),
     babel({ presets: [reactCompilerPreset()] }),
   ],
 })

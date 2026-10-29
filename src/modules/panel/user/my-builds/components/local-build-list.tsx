@@ -101,10 +101,12 @@ function LocalBuildListContent({
               </ItemMedia>
             </Link>
             <ItemContent>
-              <ItemTitle className="block truncate font-medium">
-                {draft.name || "Sin nombre"} -{" "}
-                {character?.name ?? `Personaje ${draft.characterId}`}
-              </ItemTitle>
+              <Link to="/panel/builder/$draftId" params={{ draftId: draft.id }}>
+                <ItemTitle className="block truncate font-medium hover:underline">
+                  {draft.name || "Sin nombre"} -{" "}
+                  {character?.name ?? `Personaje ${draft.characterId}`}
+                </ItemTitle>
+              </Link>
 
               <ItemDescription className="block text-xs opacity-60">
                 Actualizado {formatDate(draft.updatedAt)}
