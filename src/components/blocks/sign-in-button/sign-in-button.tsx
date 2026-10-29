@@ -18,7 +18,7 @@ export function SignInButton({ children, provider }: SignInButtonProps) {
       try {
         const result = await authClient.signIn.social({
           provider: provider,
-          callbackURL: "/",
+          callbackURL: "/panel",
         })
 
         if (result.error) {

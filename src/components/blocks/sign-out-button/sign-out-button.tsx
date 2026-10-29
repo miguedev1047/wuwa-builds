@@ -13,7 +13,9 @@ export function SignOutButton({ ...props }: SignOutButtonProps) {
   const handleSignOut = () => {
     startTransition(async () => {
       try {
-        await authClient.signOut()
+        await authClient.signOut({
+          callbackURL: "/",
+        })
       } catch {
         toast.error("Sign out failed.")
       }
