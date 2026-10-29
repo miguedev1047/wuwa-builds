@@ -137,11 +137,14 @@ Reglas:
 
 ### `/panel/my-builds`
 
-- Lista los drafts locales con `useLiveQuery` sobre la colección.
-- Muestra nombre (o “Sin nombre”), personaje (`characterId`) y `updatedAt`.
-- Ordena por `updatedAt` descendente.
-- Acciones: abrir en `/panel/builder/$draftId`, borrar draft local.
-- Más adelante: añadir builds de D1 con `getMyBuilds()` y reconciliar.
+- **Implementado**: `LocalBuildList`
+  (`src/modules/panel/user/my-builds/components/local-build-list.tsx`) lista los
+  drafts locales con `useLiveQuery`, resuelve el nombre/icono del personaje con
+  `characterQueries.list()` y enlaza a `/panel/builder/$draftId`.
+- Ordena por `updatedAt` descendente y permite borrar el draft local.
+- Estado vacío con acceso a “Nueva Build”.
+- Pendiente: listar builds de D1 con `getMyBuilds()` y reconciliar con la
+  colección local.
 
 ### `/panel/builder/$draftId`
 

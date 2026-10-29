@@ -127,7 +127,8 @@ Rules:
   take up to 6h to appear.
 - The saved-builds backend and local draft collection exist
   (`src/db/schemas/builds.ts`, `src/modules/builds`). Character selection creates
-  a local draft and the builder route loads it; editor sections and the save
-  flow are still pending. See `BUILDER_UI.md`.
+  a local draft, the builder route loads it and `/panel/my-builds` lists local
+  drafts; editor sections, cloud saves and cloud build listing are still
+  pending. See `BUILDER_UI.md`.
 - Weapon and echo queries are exposed; the builder editor that consumes them is
   still pending.
