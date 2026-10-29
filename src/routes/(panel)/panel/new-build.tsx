@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
-import { ResonatorLists } from "@/modules/panel/user/new-build/components/resonator-list"
+import { CharacterList } from "@/modules/panel/user/new-build/components/character-list"
 import { characterQueries } from "@/modules/encore/queries/characters"
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { Suspense } from "react"
@@ -22,7 +22,7 @@ function RouteComponent() {
       />
 
       <Suspense fallback={<Spinner />}>
-        <ResonatorLists />
+        <CharacterList />
       </Suspense>
     </div>
   )
