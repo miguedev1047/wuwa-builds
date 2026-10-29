@@ -45,10 +45,6 @@ function Builder({
       .findOne()
   )
 
-  const handleRemoveLocalBuild = () => {
-    collection.delete(draftId)
-  }
-
   if (!draft) {
     return (
       <div className="space-y-4">
@@ -66,7 +62,6 @@ function Builder({
   return (
     <div className="space-y-4">
       <Button
-        onClick={handleRemoveLocalBuild}
         nativeButton={false}
         render={<Link to="/panel/my-builds">Volver</Link>}
       />
