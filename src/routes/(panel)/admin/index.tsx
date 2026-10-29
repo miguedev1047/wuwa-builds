@@ -1,8 +1,6 @@
-import { Spinner } from "@/components/ui/spinner"
+import { Button } from "@/components/ui/button"
 import { characterQueries } from "@/modules/encore/queries/characters"
-import { CharacterList } from "@/modules/panel/admin/components/character-list"
-import { createFileRoute } from "@tanstack/react-router"
-import { Suspense } from "react"
+import { createFileRoute, Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/")({
   component: RouteComponent,
@@ -12,11 +10,19 @@ export const Route = createFileRoute("/(panel)/admin/")({
 })
 
 function RouteComponent() {
+  const { session } = Route.useRouteContext()
+
+  const user = session.user
+
   return (
     <div className="mx-auto max-w-5xl py-20">
-      <Suspense fallback={<Spinner />}>
-        <CharacterList />
-      </Suspense>
+      <div className="space-y-4">
+        <h2>Hola {user.name}. Bienvenido a la pagina de administrador</h2>
+        <Button
+          nativeButton={false}
+          render={<Link to="/admin/resonators">Ver resonadores</Link>}
+        />
+      </div>
     </div>
   )
 }
