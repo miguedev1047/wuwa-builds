@@ -7,7 +7,6 @@ export const Route = createFileRoute("/(panel)/panel/my-builds")({
 
 function RouteComponent() {
   const { session } = Route.useRouteContext()
-
   const user = session.user
 
   return (
