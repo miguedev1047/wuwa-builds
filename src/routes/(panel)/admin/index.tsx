@@ -11,7 +11,6 @@ export const Route = createFileRoute("/(panel)/admin/")({
 
 function RouteComponent() {
   const { session } = Route.useRouteContext()
-
   const user = session.user
 
   return (
