@@ -53,7 +53,9 @@ function RouteComponent() {
             </div>
           }
         >
-          <Outlet />
+          <main className="mx-auto max-w-5xl py-20">
+            <Outlet />
+          </main>
         </Show>
       )}
     </Show>

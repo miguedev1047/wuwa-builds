@@ -1,12 +1,8 @@
 import { Button } from "@/components/ui/button"
-import { characterQueries } from "@/modules/encore/queries/characters"
 import { createFileRoute, Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/")({
   component: RouteComponent,
-  loader: async ({ context }) => {
-    await context.queryClient.query(characterQueries.list())
-  },
 })
 
 function RouteComponent() {
@@ -14,13 +10,33 @@ function RouteComponent() {
   const user = session.user
 
   return (
-    <div className="mx-auto max-w-5xl py-20">
+    <div className="space-y-8">
       <div className="space-y-4">
         <h2>Hola {user.name}. Bienvenido a la pagina de administrador</h2>
+      </div>
+
+      <div className="grid gap-4">
         <Button
+          className="flex h-40 w-full items-center justify-center text-4xl font-bold"
           nativeButton={false}
-          render={<Link to="/admin/resonators">Ver resonadores</Link>}
-        />
+          render={<Link to="/admin/resonators" />}
+        >
+          Resonadores
+        </Button>
+        <Button
+          className="flex h-40 w-full items-center justify-center text-4xl font-bold"
+          nativeButton={false}
+          render={<Link to="/admin/resonators" />}
+        >
+          Armas
+        </Button>
+        <Button
+          className="flex h-40 w-full items-center justify-center text-4xl font-bold"
+          nativeButton={false}
+          render={<Link to="/admin/resonators" />}
+        >
+          Ecos
+        </Button>
       </div>
     </div>
   )
