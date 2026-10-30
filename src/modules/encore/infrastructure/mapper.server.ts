@@ -39,6 +39,8 @@ export interface RawCharacterList {
 }
 
 interface RawGrowth {
+  /** Present on character properties, unused by the mapper. */
+  growthId?: number
   level?: number
   Level?: number
   value?: number | string

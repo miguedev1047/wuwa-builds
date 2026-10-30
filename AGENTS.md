@@ -61,7 +61,7 @@ Current modules:
   authenticated server functions).
 - `src/modules/panel`: panel UI behavior only. It must not import
   infrastructure directly.
-- `src/db`: Drizzle schema for auth and builds (D1).
+- `src/db`: Drizzle schema for auth, saved builds and the Encore catalog (D1).
 
 ## Game data
 
@@ -125,6 +125,11 @@ Rules:
 
 - Encore is a third-party public API. The 6-hour cache means a game patch can
   take up to 6h to appear.
+- The Encore catalog is also mirrored into normalized D1 tables
+  (`src/db/schemas/resonators.ts`, `weapons.ts`, `echoes.ts`) with a
+  whole-document adapter (`src/modules/encore/infrastructure/catalog-d1.server.ts`).
+  Nothing populates those tables yet (no scheduled sync or admin action), so
+  screens keep reading the API.
 - The saved-builds backend and local draft collection exist
   (`src/db/schemas/builds.ts`, `src/modules/builds`). Character selection creates
   a local draft, the builder route loads it and `/panel/my-builds` lists local
