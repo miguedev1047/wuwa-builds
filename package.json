@@ -36,6 +36,7 @@
     "cn": "^0.5.0",
     "dotenv": "^18.0.9",
     "drizzle-orm": "^1.0.0-rc.5",
+    "motion": "^14.9.0",
     "next-themes": "^0.4.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
