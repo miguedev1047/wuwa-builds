@@ -4,7 +4,7 @@ import { CatalogSection } from "@/modules/panel/admin/game-data/components/catal
 
 export function WeaponItem({ weapon }: { weapon: WeaponRow }) {
   return (
-    <CatalogSection.Item className="aspect-square rounded-lg bg-muted/40">
+    <CatalogSection.Item aspect="square" className="rounded-lg bg-muted/40">
       <Show when={weapon.icon}>
         {(image) => (
           <CatalogSection.Image

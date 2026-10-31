@@ -146,4 +146,38 @@ describe("CatalogSection", () => {
     // Space reserved for the fixed bar.
     expect(html).toContain("h-24")
   })
+
+  test("renders the loading grid with the requested columns and aspect", () => {
+    const html = renderToStaticMarkup(
+      <CatalogSection.Loading cols={6} aspect="square" count={4} />
+    )
+
+    expect(html).toContain('role="status"')
+    expect(html).toContain("Cargando contenido")
+    expect(html).toContain("lg:grid-cols-6")
+    expect(html.match(/aspect-square/g)).toHaveLength(4)
+    expect(html).not.toContain("aspect-2/3")
+  })
+
+  test("List loading replaces the items with the loading grid", () => {
+    const html = renderToStaticMarkup(
+      <CatalogSection.List items={items} cols={10} loading loadingCount={3}>
+        {(item) => <li>{item.name}</li>}
+      </CatalogSection.List>
+    )
+
+    expect(html).toContain('role="status"')
+    expect(html).toContain("lg:grid-cols-10")
+    expect(html.match(/aspect-2\/3/g)).toHaveLength(3)
+    expect(html).not.toContain("Yangyang")
+  })
+
+  test("items default to the portrait shape and accept a square one", () => {
+    const portrait = renderToStaticMarkup(<CatalogSection.Item />)
+    const square = renderToStaticMarkup(<CatalogSection.Item aspect="square" />)
+
+    expect(portrait).toContain("aspect-2/3")
+    expect(square).toContain("aspect-square")
+    expect(square).not.toContain("aspect-2/3")
+  })
 })

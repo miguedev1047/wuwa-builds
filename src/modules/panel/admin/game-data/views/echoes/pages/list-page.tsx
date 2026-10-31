@@ -1,5 +1,3 @@
-import { Spinner } from "@/components/ui/spinner"
-import { Suspense } from "react"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
 import { dockActions } from "@/modules/panel/admin/game-data/views/echoes/helpers/dock-actions"
 import { EchoList } from "@/modules/panel/admin/game-data/views/echoes/components/echo-list"
@@ -14,9 +12,7 @@ export function EchoListPage() {
         </CatalogSection.Description>
       </CatalogSection.Header>
 
-      <Suspense fallback={<Spinner />}>
-        <EchoList />
-      </Suspense>
+      <EchoList />
 
       <CatalogSection.DockActions items={dockActions} />
     </CatalogSection.Root>

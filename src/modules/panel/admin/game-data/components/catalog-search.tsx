@@ -1,4 +1,3 @@
-import { Skeleton } from "@/components/ui/skeleton"
 import {
   CommandDialog,
   CommandEmpty,
@@ -18,6 +17,7 @@ import {
   type ReactElement,
   type ReactNode,
 } from "react"
+import { SkeletonBox } from "skullet/react"
 
 /**
  * Command palette used to pick external (Encore) data and prefill admin forms.
@@ -139,9 +139,15 @@ type CatalogSearchLoadingProps = {
 /** Placeholder rows for the `Suspense` fallback. */
 export function CatalogSearchLoading({ count = 6 }: CatalogSearchLoadingProps) {
   return (
-    <div className="space-y-1 p-1">
+    <div aria-hidden className="space-y-1 p-1">
       {Array.from({ length: count }, (_, index) => (
-        <Skeleton key={index} className="h-7 w-full" />
+        <div
+          key={index}
+          className="flex min-h-7 items-center gap-2 rounded-md px-2.5 py-1.5"
+        >
+          <SkeletonBox width={28} height={28} radius="0.125rem" />
+          <SkeletonBox width="45%" height={12} />
+        </div>
       ))}
     </div>
   )

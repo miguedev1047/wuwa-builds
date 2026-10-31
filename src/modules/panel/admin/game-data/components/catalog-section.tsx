@@ -13,6 +13,7 @@ import { Link, type LinkOptions } from "@tanstack/react-router"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 import { Fragment, type ComponentProps, type Key, type ReactNode } from "react"
+import { SkeletonBox } from "skullet/react"
 
 /**
  * Presentational shell for the game-data screens: a titled section with an
@@ -121,8 +122,26 @@ const listVariants = cva("grid grid-cols-1 gap-4 md:grid-cols-2", {
   },
 })
 
+/** Card shape shared by the items and their loading placeholders. */
+const aspectVariants = cva("", {
+  variants: {
+    aspect: {
+      portrait: "aspect-2/3",
+      square: "aspect-square",
+    },
+  },
+  defaultVariants: {
+    aspect: "portrait",
+  },
+})
+
+export type CatalogSectionAspect = NonNullable<
+  VariantProps<typeof aspectVariants>["aspect"]
+>
+
 type CatalogSectionListProps<T> = Omit<ComponentProps<"ul">, "children"> &
-  VariantProps<typeof listVariants> & {
+  VariantProps<typeof listVariants> &
+  VariantProps<typeof aspectVariants> & {
     items: readonly T[]
     /** Render prop for each item; it must return the `<li>` itself. */
     children: (item: T, index: number) => ReactNode
@@ -130,6 +149,10 @@ type CatalogSectionListProps<T> = Omit<ComponentProps<"ul">, "children"> &
     empty?: ReactNode
     /** Defaults to the item index, which is only safe for static lists. */
     getItemKey?: (item: T, index: number) => Key
+    /** Renders the built-in skeleton grid instead of the list. */
+    loading?: boolean
+    /** Placeholder cards while loading; defaults to two rows. */
+    loadingCount?: number
   }
 
 export function CatalogSectionList<T>({
@@ -139,8 +162,17 @@ export function CatalogSectionList<T>({
   empty = null,
   getItemKey,
   cols,
+  aspect,
+  loading = false,
+  loadingCount,
   ...props
 }: CatalogSectionListProps<T>) {
+  if (loading) {
+    return (
+      <CatalogSectionLoading cols={cols} aspect={aspect} count={loadingCount} />
+    )
+  }
+
   if (items.length === 0) {
     return <>{empty}</>
   }
@@ -156,15 +188,61 @@ export function CatalogSectionList<T>({
   )
 }
 
+type CatalogSectionLoadingProps = VariantProps<typeof listVariants> &
+  VariantProps<typeof aspectVariants> & {
+    /** Number of placeholder cards; defaults to two rows of `cols`. */
+    count?: number
+    label?: string
+    className?: string
+  }
+
+/**
+ * Loading state of the section: the same grid and card shape as the real list,
+ * filled with `SkeletonBox` bars.
+ */
+export function CatalogSectionLoading({
+  cols,
+  aspect,
+  count,
+  label = "Cargando contenido",
+  className,
+}: CatalogSectionLoadingProps) {
+  const placeholders = count ?? Number(cols ?? 4) * 2
+
+  return (
+    <div role="status" aria-live="polite">
+      <span className="sr-only">{label}</span>
+      <ul aria-hidden className={cn(listVariants({ cols }), className)}>
+        {Array.from({ length: placeholders }, (_, index) => (
+          <li
+            key={index}
+            className={cn("overflow-hidden", aspectVariants({ aspect }))}
+          >
+            <SkeletonBox width="100%" height="100%" />
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+type CatalogSectionItemProps = React.ComponentProps<"li"> &
+  VariantProps<typeof aspectVariants>
+
 export function CatalogSectionItem({
   className,
+  aspect,
   ...props
-}: React.ComponentProps<"li">) {
+}: CatalogSectionItemProps) {
   return (
     <li
       data-slot="catalog-section-item"
       role="button"
-      className={cn("aspect-2/3 overflow-hidden bg-accent", className)}
+      className={cn(
+        "overflow-hidden bg-accent",
+        aspectVariants({ aspect }),
+        className
+      )}
       {...props}
     />
   )
@@ -278,5 +356,6 @@ export const CatalogSection = {
   Item: CatalogSectionItem,
   Image: CatalogSectionImage,
   Empty: CatalogSectionEmpty,
+  Loading: CatalogSectionLoading,
   DockActions: CatalogSectionDockActions,
 } as const
