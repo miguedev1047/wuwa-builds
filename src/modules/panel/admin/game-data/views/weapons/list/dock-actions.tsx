@@ -6,7 +6,7 @@ const glyph = (icon: IconSvgElement) => (
   <HugeiconsIcon icon={icon} size="1em" strokeWidth={1.8} />
 )
 
-export const dockActions: DockItemData[] = [
+export const weaponListDockActions: DockItemData[] = [
   {
     type: "link",
     linkOptions: { to: "/admin" },
@@ -15,8 +15,8 @@ export const dockActions: DockItemData[] = [
   },
   {
     type: "link",
-    linkOptions: { to: "/admin/echoes" },
+    linkOptions: { to: "/admin/weapons" },
     icon: glyph(PlusIcon),
-    label: "Agregar eco",
+    label: "Agregar arma",
   },
 ]

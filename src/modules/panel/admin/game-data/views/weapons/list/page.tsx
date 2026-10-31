@@ -1,6 +1,6 @@
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { dockActions } from "@/modules/panel/admin/game-data/views/weapons/helpers/dock-actions"
-import { WeaponList } from "@/modules/panel/admin/game-data/views/weapons/components/weapon-list"
+import { WeaponList } from "@/modules/panel/admin/game-data/views/weapons/list/components/weapon-list"
+import { weaponListDockActions } from "@/modules/panel/admin/game-data/views/weapons/list/dock-actions"
 
 export function WeaponListPage() {
   return (
@@ -14,7 +14,7 @@ export function WeaponListPage() {
 
       <WeaponList />
 
-      <CatalogSection.DockActions items={dockActions} />
+      <CatalogSection.DockActions items={weaponListDockActions} />
     </CatalogSection.Root>
   )
 }

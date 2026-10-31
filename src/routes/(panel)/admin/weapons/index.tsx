@@ -1,6 +1,6 @@
 import { Spinner } from "@/components/ui/spinner"
 import { weaponQueries } from "@/modules/panel/admin/game-data/queries/weapons"
-import { WeaponListPage } from "@/modules/panel/admin/game-data/views/weapons/pages/list-page"
+import { WeaponListPage } from "@/modules/panel/admin/game-data/views/weapons/list/page"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/weapons/")({

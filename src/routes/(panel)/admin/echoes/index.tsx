@@ -1,6 +1,6 @@
 import { Spinner } from "@/components/ui/spinner"
 import { echoQueries } from "@/modules/panel/admin/game-data/queries/echoes"
-import { EchoListPage } from "@/modules/panel/admin/game-data/views/echoes/pages/list-page"
+import { EchoListPage } from "@/modules/panel/admin/game-data/views/echoes/list/page"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/echoes/")({

@@ -1,6 +1,6 @@
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { dockActions } from "@/modules/panel/admin/game-data/views/echoes/helpers/dock-actions"
-import { EchoList } from "@/modules/panel/admin/game-data/views/echoes/components/echo-list"
+import { EchoList } from "@/modules/panel/admin/game-data/views/echoes/list/components/echo-list"
+import { echoListDockActions } from "@/modules/panel/admin/game-data/views/echoes/list/dock-actions"
 
 export function EchoListPage() {
   return (
@@ -14,7 +14,7 @@ export function EchoListPage() {
 
       <EchoList />
 
-      <CatalogSection.DockActions items={dockActions} />
+      <CatalogSection.DockActions items={echoListDockActions} />
     </CatalogSection.Root>
   )
 }

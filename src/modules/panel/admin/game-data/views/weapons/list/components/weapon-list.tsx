@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { echoQueries } from "@/modules/panel/admin/game-data/queries/echoes"
-import { EchoItem } from "@/modules/panel/admin/game-data/views/echoes/components/echo-item"
+import { weaponQueries } from "@/modules/panel/admin/game-data/queries/weapons"
+import { WeaponItem } from "@/modules/panel/admin/game-data/views/weapons/list/components/weapon-item"
 import { Skeleton } from "skullet/react"
 
-export function EchoList() {
-  const { data } = useQuery(echoQueries.list())
+export function WeaponList() {
+  const { data } = useQuery(weaponQueries.list())
 
   return (
     <Skeleton
@@ -13,24 +13,24 @@ export function EchoList() {
       label="Cargando armas"
       skeleton={<CatalogSection.Loading cols={6} aspect="square" count={12} />}
     >
-      {(echoes) => (
+      {(weapons) => (
         <CatalogSection.List
-          items={echoes}
+          items={weapons}
           cols={6}
           aspect="square"
-          getItemKey={(echo) => echo.id}
+          getItemKey={(weapon) => weapon.id}
           empty={
             <CatalogSection.Empty
               title="Sin datos"
-              description="Sin ecos disponibles en esta seccion"
+              description="Sin armas disponibles en esta seccion"
               action={{
-                label: "Agregar eco",
-                linkOptions: { to: "/admin/echoes" },
+                label: "Agregar arma",
+                linkOptions: { to: "/admin/weapons" },
               }}
             />
           }
         >
-          {(echo) => <EchoItem echo={echo} />}
+          {(weapon) => <WeaponItem weapon={weapon} />}
         </CatalogSection.List>
       )}
     </Skeleton>
