@@ -261,7 +261,7 @@ export function CatalogSectionImage({
     <img
       data-slot="catalog-section-image"
       className={cn(
-        "size-full! object-cover transition-transform ease-in-out",
+        "pointer-events-none size-full! object-cover transition-transform ease-in-out select-none",
         animated && "hover:scale-120",
         className
       )}
@@ -324,7 +324,7 @@ export function CatalogSectionDockActions({ items }: CatalogSectionDockProps) {
     <>
       <nav
         aria-label="Acciones del catalogo"
-        className="fixed inset-x-0 bottom-0 z-40 h-0"
+        className="fixed inset-x-0 bottom-6 z-40 h-0"
       >
         <Dock
           items={items}
@@ -339,8 +339,6 @@ export function CatalogSectionDockActions({ items }: CatalogSectionDockProps) {
           showBadges={false}
         />
       </nav>
-
-      <div aria-hidden className="h-24" />
     </>
   )
 }

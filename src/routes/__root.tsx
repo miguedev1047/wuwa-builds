@@ -10,6 +10,7 @@ import type { QueryClient } from "@tanstack/react-query"
 import { ThemeProvider } from "@/providers/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { SkulletProvider } from "skullet/react"
 
 export interface RouteContext {
   queryClient: QueryClient
@@ -53,10 +54,23 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider defaultTheme="system" storageKey="theme">
-          <TooltipProvider>
-            {children}
-            <Toaster />
-          </TooltipProvider>
+          <SkulletProvider
+            mode="system"
+            theme={{
+              radius: "0px",
+              animation: "shimmer",
+              speed: "slow",
+              text: {
+                top: "ascender",
+                bottom: "descender",
+              },
+            }}
+          >
+            <TooltipProvider>
+              {children}
+              <Toaster />
+            </TooltipProvider>
+          </SkulletProvider>
         </ThemeProvider>
         <Devtools />
         <Scripts />

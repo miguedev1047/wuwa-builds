@@ -143,8 +143,8 @@ describe("CatalogSection", () => {
     expect(html).toContain('<button type="button"')
     // Theme tokens instead of the dock's built-in palette.
     expect(html).toContain("--dock-accent:var(--primary)")
-    // Space reserved for the fixed bar.
-    expect(html).toContain("h-24")
+    // Fixed action bar pinned to the viewport.
+    expect(html).toContain("fixed inset-x-0")
   })
 
   test("renders the loading grid with the requested columns and aspect", () => {
