@@ -1,7 +1,7 @@
 import { Spinner } from "@/components/ui/spinner"
 import { Suspense } from "react"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { dockActions } from "@/modules/panel/admin/game-data/views/echoes/constants/dock-actions"
+import { dockActions } from "@/modules/panel/admin/game-data/views/echoes/helpers/dock-actions"
 import { EchoList } from "@/modules/panel/admin/game-data/views/echoes/components/echo-list"
 
 export function EchoListPage() {
