@@ -164,7 +164,7 @@ export function CatalogSectionItem({
     <li
       data-slot="catalog-section-item"
       role="button"
-      className={cn("aspect-2/3 overflow-hidden", className)}
+      className={cn("aspect-2/3 overflow-hidden bg-accent", className)}
       {...props}
     />
   )
@@ -183,7 +183,7 @@ export function CatalogSectionImage({
     <img
       data-slot="catalog-section-image"
       className={cn(
-        "size-full object-cover transition-transform ease-in-out",
+        "size-full! object-cover transition-transform ease-in-out",
         animated && "hover:scale-120",
         className
       )}

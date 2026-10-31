@@ -6,7 +6,7 @@ export function ResonatorItem({ character }: { character: ResonatorRow }) {
   return (
     <CatalogSection.Item>
       <Show when={character.iconLarge}>
-        {(image) => <CatalogSection.Image animated src={image} />}
+        {(icon) => <CatalogSection.Image animated src={icon} />}
       </Show>
     </CatalogSection.Item>
   )

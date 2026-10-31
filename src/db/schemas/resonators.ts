@@ -31,8 +31,11 @@ import { getDate } from "@/db/helpers/gen-date"
 export const resonators = sqliteTable(
   "resonators",
   {
-    /** `Id` */
-    id: integer("id", { mode: "number" }).primaryKey(),
+    /**
+     * `Id`. Encore rows keep their API id (explicit insert); rows created from
+     * the admin panel let SQLite assign one.
+     */
+    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
     /** `Name.Content` */
     name: text("name").notNull(),
     /** `NickName.Content` */

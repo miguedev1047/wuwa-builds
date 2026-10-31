@@ -1,7 +1,11 @@
 import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
-import { idInput } from "@/modules/panel/admin/game-data/application/schemas"
+import {
+  idInput,
+  resonatorInput,
+} from "@/modules/panel/admin/game-data/application/schemas"
 import { adminMiddleware } from "@/functions/middlewares"
+import { resonators } from "@/db/schema"
 
 export const getCharacters = createServerFn({ method: "GET" })
   .middleware([adminMiddleware])
@@ -23,4 +27,13 @@ export const getCharacter = createServerFn({
     })
 
     return character
+  })
+
+export const createResonator = createServerFn({ method: "POST" })
+  .middleware([adminMiddleware])
+  .validator(resonatorInput)
+  .handler(async ({ data }) => {
+    const [resonator] = await db.insert(resonators).values(data).returning()
+
+    return resonator
   })
