@@ -6,7 +6,7 @@ const glyph = (icon: IconSvgElement) => (
   <HugeiconsIcon icon={icon} size="1em" strokeWidth={1.8} />
 )
 
-export const dockActions: DockItemData[] = [
+export const resonatorPageDockActions: DockItemData[] = [
   {
     type: "link",
     linkOptions: { to: "/admin" },
@@ -15,7 +15,7 @@ export const dockActions: DockItemData[] = [
   },
   {
     type: "link",
-    linkOptions: { to: "/admin/resonators" },
+    linkOptions: { to: "/admin/resonators/new" },
     icon: glyph(PlusIcon),
     label: "Agregar resonador",
   },

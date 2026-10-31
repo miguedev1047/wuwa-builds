@@ -17,7 +17,7 @@ export function ResonatorList() {
           description="Sin resonadores disponibles en esta seccion"
           action={{
             label: "Agregar resonador",
-            linkOptions: { to: "/admin/resonators" },
+            linkOptions: { to: "/admin/resonators/new" },
           }}
         />
       }
