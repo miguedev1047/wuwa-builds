@@ -26,14 +26,14 @@ function RouteComponent() {
         <Button
           className="flex h-40 w-full items-center justify-center text-4xl font-bold"
           nativeButton={false}
-          render={<Link to="/admin/resonators" />}
+          render={<Link to="/admin/weapons" />}
         >
           Armas
         </Button>
         <Button
           className="flex h-40 w-full items-center justify-center text-4xl font-bold"
           nativeButton={false}
-          render={<Link to="/admin/resonators" />}
+          render={<Link to="/admin/echoes" />}
         >
           Ecos
         </Button>

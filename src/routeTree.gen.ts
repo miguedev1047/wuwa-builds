@@ -14,7 +14,9 @@ import { Route as panelAdminRouteRouteImport } from './routes/(panel)/admin/rout
 import { Route as panelPanelRouteRouteImport } from './routes/(panel)/panel/route'
 import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as panelAdminIndexRouteImport } from './routes/(panel)/admin/index'
+import { Route as panelAdminEchoesRouteImport } from './routes/(panel)/admin/echoes'
 import { Route as panelAdminResonatorsRouteImport } from './routes/(panel)/admin/resonators'
+import { Route as panelAdminWeaponsRouteImport } from './routes/(panel)/admin/weapons'
 import { Route as panelPanelIndexRouteImport } from './routes/(panel)/panel/index'
 import { Route as panelPanelMyBuildsRouteImport } from './routes/(panel)/panel/my-builds'
 import { Route as panelPanelNewBuildRouteImport } from './routes/(panel)/panel/new-build'
@@ -48,9 +50,19 @@ const panelAdminIndexRoute = panelAdminIndexRouteImport.update({
   path: '/',
   getParentRoute: () => panelAdminRouteRoute,
 } as any)
+const panelAdminEchoesRoute = panelAdminEchoesRouteImport.update({
+  id: '/echoes',
+  path: '/echoes',
+  getParentRoute: () => panelAdminRouteRoute,
+} as any)
 const panelAdminResonatorsRoute = panelAdminResonatorsRouteImport.update({
   id: '/resonators',
   path: '/resonators',
+  getParentRoute: () => panelAdminRouteRoute,
+} as any)
+const panelAdminWeaponsRoute = panelAdminWeaponsRouteImport.update({
+  id: '/weapons',
+  path: '/weapons',
   getParentRoute: () => panelAdminRouteRoute,
 } as any)
 const panelPanelIndexRoute = panelPanelIndexRouteImport.update({
@@ -96,7 +108,9 @@ export interface FileRoutesByFullPath {
   '/admin': typeof panelAdminRouteRouteWithChildren
   '/panel': typeof panelPanelRouteRouteWithChildren
   '/auth/login': typeof AuthLoginRoute
+  '/admin/echoes': typeof panelAdminEchoesRoute
   '/admin/resonators': typeof panelAdminResonatorsRoute
+  '/admin/weapons': typeof panelAdminWeaponsRoute
   '/panel/my-builds': typeof panelPanelMyBuildsRouteWithChildren
   '/panel/new-build': typeof panelPanelNewBuildRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -109,7 +123,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth/login': typeof AuthLoginRoute
+  '/admin/echoes': typeof panelAdminEchoesRoute
   '/admin/resonators': typeof panelAdminResonatorsRoute
+  '/admin/weapons': typeof panelAdminWeaponsRoute
   '/panel/my-builds': typeof panelPanelMyBuildsRouteWithChildren
   '/panel/new-build': typeof panelPanelNewBuildRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -125,7 +141,9 @@ export interface FileRoutesById {
   '/(panel)/admin': typeof panelAdminRouteRouteWithChildren
   '/(panel)/panel': typeof panelPanelRouteRouteWithChildren
   '/auth/login': typeof AuthLoginRoute
+  '/(panel)/admin/echoes': typeof panelAdminEchoesRoute
   '/(panel)/admin/resonators': typeof panelAdminResonatorsRoute
+  '/(panel)/admin/weapons': typeof panelAdminWeaponsRoute
   '/(panel)/panel/my-builds': typeof panelPanelMyBuildsRouteWithChildren
   '/(panel)/panel/new-build': typeof panelPanelNewBuildRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -142,7 +160,9 @@ export interface FileRouteTypes {
     | '/admin'
     | '/panel'
     | '/auth/login'
+    | '/admin/echoes'
     | '/admin/resonators'
+    | '/admin/weapons'
     | '/panel/my-builds'
     | '/panel/new-build'
     | '/api/auth/$'
@@ -155,7 +175,9 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/auth/login'
+    | '/admin/echoes'
     | '/admin/resonators'
+    | '/admin/weapons'
     | '/panel/my-builds'
     | '/panel/new-build'
     | '/api/auth/$'
@@ -170,7 +192,9 @@ export interface FileRouteTypes {
     | '/(panel)/admin'
     | '/(panel)/panel'
     | '/auth/login'
+    | '/(panel)/admin/echoes'
     | '/(panel)/admin/resonators'
+    | '/(panel)/admin/weapons'
     | '/(panel)/panel/my-builds'
     | '/(panel)/panel/new-build'
     | '/api/auth/$'
@@ -226,11 +250,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof panelAdminIndexRouteImport
       parentRoute: typeof panelAdminRouteRoute
     }
+    '/(panel)/admin/echoes': {
+      id: '/(panel)/admin/echoes'
+      path: '/echoes'
+      fullPath: '/admin/echoes'
+      preLoaderRoute: typeof panelAdminEchoesRouteImport
+      parentRoute: typeof panelAdminRouteRoute
+    }
     '/(panel)/admin/resonators': {
       id: '/(panel)/admin/resonators'
       path: '/resonators'
       fullPath: '/admin/resonators'
       preLoaderRoute: typeof panelAdminResonatorsRouteImport
+      parentRoute: typeof panelAdminRouteRoute
+    }
+    '/(panel)/admin/weapons': {
+      id: '/(panel)/admin/weapons'
+      path: '/weapons'
+      fullPath: '/admin/weapons'
+      preLoaderRoute: typeof panelAdminWeaponsRouteImport
       parentRoute: typeof panelAdminRouteRoute
     }
     '/(panel)/panel/': {
@@ -286,13 +324,17 @@ declare module '@tanstack/react-router' {
 }
 
 interface panelAdminRouteRouteChildren {
+  panelAdminEchoesRoute: typeof panelAdminEchoesRoute
   panelAdminResonatorsRoute: typeof panelAdminResonatorsRoute
+  panelAdminWeaponsRoute: typeof panelAdminWeaponsRoute
   panelAdminIndexRoute: typeof panelAdminIndexRoute
   panelAdminResonatorIdRoute: typeof panelAdminResonatorIdRoute
 }
 
 const panelAdminRouteRouteChildren: panelAdminRouteRouteChildren = {
+  panelAdminEchoesRoute: panelAdminEchoesRoute,
   panelAdminResonatorsRoute: panelAdminResonatorsRoute,
+  panelAdminWeaponsRoute: panelAdminWeaponsRoute,
   panelAdminIndexRoute: panelAdminIndexRoute,
   panelAdminResonatorIdRoute: panelAdminResonatorIdRoute,
 }

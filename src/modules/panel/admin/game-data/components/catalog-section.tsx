@@ -1,0 +1,229 @@
+import { Button } from "@/components/ui/button"
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyTitle,
+} from "@/components/ui/empty"
+import { PlusIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { Link, type LinkOptions } from "@tanstack/react-router"
+import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "cn"
+import { Fragment, type ComponentProps, type Key, type ReactNode } from "react"
+
+/**
+ * Presentational shell for the game-data screens: a titled section with an
+ * optional action, a responsive grid and a built-in empty state.
+ *
+ * Every part is a plain element wrapper (`section`, `h2`, `p`, `ul`) so the
+ * markup stays semantic and props keep the native element types.
+ */
+
+export function CatalogSectionRoot({
+  className,
+  ...props
+}: ComponentProps<"section">) {
+  return (
+    <section
+      data-slot="catalog-section"
+      className={cn(
+        "space-y-4 [--catalog-section-spacing:--spacing(4)]",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export function CatalogSectionHeader({
+  className,
+  ...props
+}: ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="catalog-section-header"
+      className={cn(
+        "group/catalog-section-header @container/catalog-section-header grid auto-rows-min items-start gap-1 has-data-[slot=catalog-section-action]:grid-cols-[1fr_auto] has-data-[slot=catalog-section-description]:grid-rows-[auto_auto] [.border-b]:pb-(--catalog-section-spacing)",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export function CatalogSectionTitle({
+  className,
+  ...props
+}: ComponentProps<"h2">) {
+  return (
+    <h2
+      data-slot="catalog-section-title"
+      className={cn("font-heading text-xl font-bold", className)}
+      {...props}
+    />
+  )
+}
+
+export function CatalogSectionDescription({
+  className,
+  ...props
+}: ComponentProps<"p">) {
+  return (
+    <p
+      data-slot="catalog-section-description"
+      className={cn("text-xs/relaxed text-muted-foreground", className)}
+      {...props}
+    />
+  )
+}
+
+export function CatalogSectionAction({
+  className,
+  ...props
+}: ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="catalog-section-action"
+      className={cn(
+        "col-start-2 row-span-2 row-start-1 flex items-center gap-2 self-start justify-self-end",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+const listVariants = cva("grid grid-cols-1 gap-4 md:grid-cols-2", {
+  variants: {
+    cols: {
+      4: "lg:grid-cols-4",
+      6: "lg:grid-cols-6",
+      10: "lg:grid-cols-10",
+    },
+  },
+  defaultVariants: {
+    cols: 4,
+  },
+})
+
+type CatalogSectionListProps<T> = Omit<ComponentProps<"ul">, "children"> &
+  VariantProps<typeof listVariants> & {
+    items: readonly T[]
+    /** Render prop for each item; it must return the `<li>` itself. */
+    children: (item: T, index: number) => ReactNode
+    /** Rendered instead of the list when `items` is empty. */
+    empty?: ReactNode
+    /** Defaults to the item index, which is only safe for static lists. */
+    getItemKey?: (item: T, index: number) => Key
+  }
+
+export function CatalogSectionList<T>({
+  className,
+  children,
+  items,
+  empty = null,
+  getItemKey,
+  cols,
+  ...props
+}: CatalogSectionListProps<T>) {
+  if (items.length === 0) {
+    return <>{empty}</>
+  }
+
+  return (
+    <ul className={cn(listVariants({ cols, className }))} {...props}>
+      {items.map((item, index) => (
+        <Fragment key={getItemKey?.(item, index) ?? index}>
+          {children(item, index)}
+        </Fragment>
+      ))}
+    </ul>
+  )
+}
+
+export function CatalogSectionItem({
+  className,
+  ...props
+}: React.ComponentProps<"li">) {
+  return (
+    <li
+      data-slot="catalog-section-item"
+      role="button"
+      className={cn("aspect-2/3 overflow-hidden", className)}
+      {...props}
+    />
+  )
+}
+
+interface CatalogSectionImage extends React.ComponentProps<"img"> {
+  animated?: boolean
+}
+
+export function CatalogSectionImage({
+  className,
+  animated,
+  ...props
+}: CatalogSectionImage) {
+  return (
+    <img
+      data-slot="catalog-section-image"
+      className={cn(
+        "size-full object-cover transition-transform ease-in-out",
+        animated && "hover:scale-120",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+type CatalogSectionEmptyProps = {
+  title: ReactNode
+  description: ReactNode
+  action?: {
+    label: string
+    linkOptions: LinkOptions
+  }
+}
+
+export function CatalogSectionEmpty({
+  title,
+  description,
+  action,
+}: CatalogSectionEmptyProps) {
+  return (
+    <Empty className="h-100 border border-dashed">
+      <EmptyHeader>
+        <EmptyTitle>{title}</EmptyTitle>
+        <EmptyDescription>{description}</EmptyDescription>
+      </EmptyHeader>
+      {action ? (
+        <EmptyContent>
+          <Button
+            nativeButton={false}
+            render={
+              <Link {...action.linkOptions}>
+                <HugeiconsIcon icon={PlusIcon} />
+                {action.label}
+              </Link>
+            }
+          />
+        </EmptyContent>
+      ) : null}
+    </Empty>
+  )
+}
+
+export const CatalogSection = {
+  Root: CatalogSectionRoot,
+  Header: CatalogSectionHeader,
+  Title: CatalogSectionTitle,
+  Description: CatalogSectionDescription,
+  Action: CatalogSectionAction,
+  List: CatalogSectionList,
+  Item: CatalogSectionItem,
+  Image: CatalogSectionImage,
+  Empty: CatalogSectionEmpty,
+} as const
