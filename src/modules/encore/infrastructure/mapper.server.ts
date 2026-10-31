@@ -13,6 +13,7 @@ import type {
   EncoreEchoSet,
   EncoreEchoSummary,
 } from "../domain/echo"
+import { encoreAssetUrl } from "../domain/asset"
 import type { EncoreProperty } from "../domain/property"
 import type {
   EncoreWeaponBreach,
@@ -141,14 +142,14 @@ export function toCharacterSummary(
     rarity: raw.QualityId,
     element: raw.Element?.Name ?? "",
     weaponType: raw.WeaponType?.Name ?? "",
-    icon: raw.RoleHeadIcon ?? "",
+    icon: encoreAssetUrl(raw.RoleHeadIcon),
   }
 }
 
 function toProperty(raw: RawProperty): EncoreProperty {
   return {
     name: raw.Name ?? "",
-    icon: raw.Icon ?? "",
+    icon: encoreAssetUrl(raw.Icon),
     baseValue: raw.BaseValue ?? 0,
     growth: (raw.GrowthValues ?? []).map((growth) => ({
       level: growth.level ?? growth.Level ?? 0,
@@ -163,7 +164,7 @@ function toSkill(raw: RawSkill): EncoreSkill {
     type: raw.SkillType ?? "",
     name: raw.SkillName ?? "",
     description: raw.SkillDescribe ?? "",
-    icon: raw.Icon ?? "",
+    icon: encoreAssetUrl(raw.Icon),
     media: raw.SkillMedia ?? "",
     attributes: (raw.SkillAttributes ?? []).map((attribute) => ({
       id: attribute.attributeId,
@@ -189,7 +190,7 @@ function toCostItem(raw: RawCostItem): EncoreCostItem {
   return {
     key: raw.Key,
     value: raw.Value,
-    icon: raw.Icon ?? "",
+    icon: encoreAssetUrl(raw.Icon),
     quality: raw.QualityId ?? 0,
   }
 }
@@ -199,7 +200,7 @@ function toPassive(raw: RawPassive): EncorePassive {
     id: raw.Id,
     title: raw.PropertyNodeTitle ?? "",
     description: raw.PropertyNodeDescribe ?? "",
-    icon: raw.PropertyNodeIcon ?? "",
+    icon: encoreAssetUrl(raw.PropertyNodeIcon),
     consume: (raw.Consume ?? []).map(toCostItem),
   }
 }
@@ -218,7 +219,7 @@ function toTag(raw: RawTag): EncoreTag {
     name: raw.TagName ?? "",
     description: raw.TagDesc ?? "",
     color: raw.TagNameColor ?? "",
-    icon: raw.TagIcon ?? "",
+    icon: encoreAssetUrl(raw.TagIcon),
   }
 }
 
@@ -233,13 +234,13 @@ export function toCharacterDetail(
     rarity: raw.QualityId ?? 0,
     element: raw.ElementName ?? "",
     weaponType: raw.WeaponTypeName ?? "",
-    icon: raw.RoleHeadIcon ?? "",
+    icon: encoreAssetUrl(raw.RoleHeadIcon),
     images: {
-      card: raw.Card ?? "",
-      icon: raw.RoleHeadIcon ?? "",
-      iconLarge: raw.RoleHeadIconLarge ?? "",
-      circle: raw.RoleHeadIconCircle ?? "",
-      portrait: raw.RolePortrait ?? "",
+      card: encoreAssetUrl(raw.Card),
+      icon: encoreAssetUrl(raw.RoleHeadIcon),
+      iconLarge: encoreAssetUrl(raw.RoleHeadIconLarge),
+      circle: encoreAssetUrl(raw.RoleHeadIconCircle),
+      portrait: encoreAssetUrl(raw.RolePortrait),
     },
     tags: (raw.Tags ?? []).map(toTag),
     properties: (raw.Properties ?? []).map(toProperty),
@@ -349,7 +350,7 @@ export function toWeaponSummary(raw: RawWeaponSummary): EncoreWeaponSummary {
     rarity: raw.QualityId ?? 0,
     type: raw.Type ?? 0,
     typeName: raw.TypeName ?? "",
-    icon: raw.Icon ?? "",
+    icon: encoreAssetUrl(raw.Icon),
   }
 }
 
@@ -369,7 +370,7 @@ export function toWeaponDetail(raw: RawWeaponDetail): EncoreWeaponDetail {
     rarity: raw.QualityId ?? 0,
     type: raw.WeaponType ?? 0,
     typeName: raw.WeaponTypeName ?? "",
-    icon: raw.Icon ?? "",
+    icon: encoreAssetUrl(raw.Icon),
     description: raw.AttributesDescription || raw.BgDescription || "",
     effect: raw.Desc ?? "",
     properties: (raw.Properties ?? []).map(toProperty),
@@ -387,7 +388,7 @@ export function toEchoSummary(raw: RawEchoSummary): EncoreEchoSummary {
     sets: (raw.FetterGroups ?? []).map((group) => ({
       id: group.Id,
       name: group.Name ?? "",
-      icon: group.Icon ?? "",
+      icon: encoreAssetUrl(group.Icon),
       effects: (group.Fetters ?? []).map((fetter) => ({
         key: fetter.Key,
         description: fetter.EffectDescription ?? "",
@@ -435,7 +436,7 @@ export function toEchoDetail(raw: RawEchoDetail): EncoreEchoDetail {
     name: raw.MonsterName ?? "",
     rarity: raw.Rarity ?? 0,
     element: raw.Element?.Name ?? "",
-    icon: raw.Icon ?? "",
+    icon: encoreAssetUrl(raw.Icon),
     description: raw.AttributesDescription ?? "",
     sets: toEchoDetailSets(raw),
     skill: skill

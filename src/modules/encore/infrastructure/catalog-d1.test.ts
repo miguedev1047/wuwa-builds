@@ -61,10 +61,13 @@ const rawCharacter: RawCharacterDetail = {
   QualityId: 4,
   ElementName: "Aero",
   WeaponTypeName: "Espada",
-  Card: "card.webp",
-  RoleHeadIcon: "icon.webp",
-  RoleHeadIconLarge: "icon-large.webp",
-  RoleHeadIconCircle: "circle.webp",
+  Card: "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/card.webp",
+  RoleHeadIcon:
+    "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/icon.webp",
+  RoleHeadIconLarge:
+    "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/icon-large.webp",
+  RoleHeadIconCircle:
+    "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/circle.webp",
   RolePortrait: "portrait.webp",
   Tags: [
     {
@@ -147,7 +150,8 @@ const rawWeapon: RawWeaponDetail = {
   QualityId: 4,
   WeaponType: 1,
   WeaponTypeName: "Mandoble",
-  Icon: "weapon.webp",
+  // Weapon detail endpoints send Unreal asset paths (`Package.Object`).
+  Icon: "/Game/Aki/UI/Image/IconWeapon/weapon.weapon",
   Desc: "Efecto pasivo",
   AttributesDescription: "ATQ 500",
   BgDescription: "Lore del arma",
@@ -173,7 +177,7 @@ const rawEcho: RawEchoDetail = {
   ItemId: 6000039,
   MonsterName: "Campemico",
   Rarity: 5,
-  Icon: "echo.webp",
+  Icon: "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/echo.webp",
   Element: { Name: "Aero" },
   AttributesDescription: "Descripción del eco",
   Skill: {
@@ -222,7 +226,7 @@ describe("encore catalog schema", () => {
         rarity: 4,
         element: "Aero",
         weaponType: "Espada",
-        icon: "icon.webp",
+        icon: "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/icon.webp",
       },
     ])
 
@@ -233,7 +237,8 @@ describe("encore catalog schema", () => {
         rarity: 4,
         type: 1,
         typeName: "Mandoble",
-        icon: "weapon.webp",
+        // The Unreal asset path stored by Encore becomes a fetchable URL.
+        icon: "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/Image/IconWeapon/weapon.webp",
       },
     ])
 
@@ -243,7 +248,7 @@ describe("encore catalog schema", () => {
         name: "Campemico",
         rarity: 5,
         element: "Aero",
-        icon: "echo.webp",
+        icon: "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/echo.webp",
         sets: [
           {
             id: 9,

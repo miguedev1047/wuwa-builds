@@ -39,6 +39,10 @@ import type { EncoreWeaponDetail, EncoreWeaponSummary } from "../domain/weapon"
  * game patch that drops a skill or reorders properties never leaves stale rows
  * behind. Reads rebuild the same `Encore*` domain object the API mapper
  * produces, so callers do not care where the data came from.
+ *
+ * The delete relies on `ON DELETE CASCADE`, which D1 enables by default. A
+ * custom SQLite connection (scripts, tests) must run `PRAGMA foreign_keys = ON`
+ * or the re-insert will collide with the orphaned rows.
  */
 
 /** Escape hatch for the insert returning clause used to link child rows. */
