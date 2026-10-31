@@ -1,5 +1,4 @@
 import { useParams } from "@tanstack/react-router"
-import { useResonatorDialog } from "@/modules/panel/admin/game-data/views/resonators/stores/dialog"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -14,26 +13,27 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 
-export function ResonatorDeleteDialog() {
+type ResonatorDeleteDialogProps = {
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}
+
+export function ResonatorDeleteDialog({
+  open,
+  onOpenChange,
+}: ResonatorDeleteDialogProps) {
   const { id } = useParams({ from: "/(panel)/admin/resonators/$id" })
   const resonatorId = Number(id)
-
-  const setIsOpen = useResonatorDialog((state) => state.setIsOpen)
-  const close = useResonatorDialog((state) => state.close)
-  const dialogType = useResonatorDialog((state) => state.type)
-  const isOpen = useResonatorDialog(
-    (state) => state.isOpen && dialogType === "delete"
-  )
 
   const handleResonatorDelete = () => {
     if (!Number.isInteger(resonatorId) || resonatorId <= 0) return
 
     // TODO: delete the resonator and invalidate the list query.
-    close()
+    onOpenChange(false)
   }
 
   return (
-    <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
+    <AlertDialog open={open} onOpenChange={onOpenChange}>
       <AlertDialogContent size="sm">
         <AlertDialogHeader>
           <AlertDialogMedia>

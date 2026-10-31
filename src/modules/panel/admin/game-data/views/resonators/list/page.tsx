@@ -1,6 +1,6 @@
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { ResonatorList } from "@/modules/panel/admin/game-data/views/resonators/components/resonator-list"
-import { resonatorPageDockActions } from "@/modules/panel/admin/game-data/views/resonators/helpers/dock-actions"
+import { ResonatorList } from "@/modules/panel/admin/game-data/views/resonators/list/components/resonator-list"
+import { resonatorListDockActions } from "@/modules/panel/admin/game-data/views/resonators/list/dock-actions"
 
 export function ResonatorListPage() {
   return (
@@ -16,7 +16,7 @@ export function ResonatorListPage() {
         <ResonatorList />
       </CatalogSection.Content>
 
-      <CatalogSection.DockActions items={resonatorPageDockActions} />
+      <CatalogSection.DockActions items={resonatorListDockActions} />
     </CatalogSection.Root>
   )
 }

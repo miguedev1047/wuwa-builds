@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import { Skeleton } from "skullet/react"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
 import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
-import { ResonatorItem } from "@/modules/panel/admin/game-data/views/resonators/components/resonator-item"
+import { ResonatorItem } from "@/modules/panel/admin/game-data/views/resonators/list/components/resonator-item"
 
 export function ResonatorList() {
   const { data } = useQuery(characterQueries.list())

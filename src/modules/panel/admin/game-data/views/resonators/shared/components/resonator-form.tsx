@@ -18,13 +18,13 @@ import {
 } from "@/modules/panel/admin/game-data/components/form-fields"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { createResonator } from "@/modules/panel/admin/game-data/server/characters"
-import { resonatorDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/application/resonator-draft"
-import { ResonatorSearch } from "@/modules/panel/admin/game-data/views/resonators/components/resonator-search"
+import { resonatorDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
+import { ResonatorSearch } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-search"
 import {
   RESONATOR_ELEMENTS,
   RESONATOR_RARITY,
   RESONATOR_WEAPON_TYPES,
-} from "@/modules/panel/admin/game-data/views/resonators/constants/resonator"
+} from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
 import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
 import { characterQueries } from "@/modules/encore/queries/characters"
 

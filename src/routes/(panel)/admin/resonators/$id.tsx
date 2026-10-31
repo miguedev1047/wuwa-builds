@@ -1,11 +1,11 @@
 import { Spinner } from "@/components/ui/spinner"
 import { characterQueries as encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { characterQueries as wuwaBuildsCharacterQueries } from "@/modules/panel/admin/game-data/queries/characters"
-import { ResonatorIdPage } from "@/modules/panel/admin/game-data/views/resonators/pages/id-page"
+import { ResonatorDetailPage } from "@/modules/panel/admin/game-data/views/resonators/detail/page"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/resonators/$id")({
-  component: () => <ResonatorIdPage />,
+  component: () => <ResonatorDetailPage />,
 
   pendingComponent: () => <Spinner />,
   errorComponent: () => <Spinner />,

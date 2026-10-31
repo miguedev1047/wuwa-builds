@@ -6,26 +6,27 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { useResonatorDialog } from "@/modules/panel/admin/game-data/views/resonators/stores/dialog"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { useId } from "react"
 import { useParams } from "@tanstack/react-router"
 import { useQuery } from "@tanstack/react-query"
-import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
 import { Skeleton } from "skullet/react"
-import { Input } from "@/components/ui/input"
+import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
 
-export function ResonatorEditDialog() {
+type ResonatorEditDialogProps = {
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}
+
+export function ResonatorEditDialog({
+  open,
+  onOpenChange,
+}: ResonatorEditDialogProps) {
   const { id } = useParams({ from: "/(panel)/admin/resonators/$id" })
   const resonatorId = Number(id)
 
   const formId = `edit-resonator-form-${useId()}`
-
-  const setIsOpen = useResonatorDialog((state) => state.setIsOpen)
-  const dialogType = useResonatorDialog((state) => state.type)
-  const isOpen = useResonatorDialog(
-    (state) => state.isOpen && dialogType === "edit"
-  )
 
   const { data } = useQuery({
     ...characterQueries.detail(resonatorId),
@@ -33,7 +34,7 @@ export function ResonatorEditDialog() {
   })
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent size="lg">
         <DialogHeader>
           <DialogTitle>Editar resonador</DialogTitle>
