@@ -96,6 +96,18 @@ export function CatalogSectionAction({
   )
 }
 
+export function CatalogSectionContent({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="catalog-section-content"
+      className={cn("space-y-4", className)}
+      {...props}
+    />
+  )
+}
 const listVariants = cva("grid grid-cols-1 gap-4 md:grid-cols-2", {
   variants: {
     cols: {
@@ -262,6 +274,7 @@ export const CatalogSection = {
   Description: CatalogSectionDescription,
   Action: CatalogSectionAction,
   List: CatalogSectionList,
+  Content: CatalogSectionContent,
   Item: CatalogSectionItem,
   Image: CatalogSectionImage,
   Empty: CatalogSectionEmpty,
