@@ -53,7 +53,7 @@ function RouteComponent() {
             </div>
           }
         >
-          <main className="mx-auto max-w-5xl py-20">
+          <main className="mx-auto max-w-5xl px-4 py-20 md:px-8">
             <Outlet />
           </main>
         </Show>
