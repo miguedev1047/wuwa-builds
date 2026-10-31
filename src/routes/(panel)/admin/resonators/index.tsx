@@ -1,10 +1,10 @@
 import { Spinner } from "@/components/ui/spinner"
-import { echoQueries } from "@/modules/panel/admin/game-data/queries/echoes"
-import { EchoListPage } from "@/modules/panel/admin/game-data/views/echoes/pages/list-page"
+import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
+import { ResonatorListPage } from "@/modules/panel/admin/game-data/views/resonators/pages/list-page"
 import { createFileRoute } from "@tanstack/react-router"
 
-export const Route = createFileRoute("/(panel)/admin/echoes")({
-  component: () => <EchoListPage />,
+export const Route = createFileRoute("/(panel)/admin/resonators/")({
+  component: () => <ResonatorListPage />,
   pendingComponent: () => (
     <div className="grid place-content-center">
       <div className="flex items-center gap-1">
@@ -21,6 +21,6 @@ export const Route = createFileRoute("/(panel)/admin/echoes")({
     </div>
   ),
   loader: async ({ context }) => {
-    await context.queryClient.query(echoQueries.list())
+    await context.queryClient.query(characterQueries.list())
   },
 })

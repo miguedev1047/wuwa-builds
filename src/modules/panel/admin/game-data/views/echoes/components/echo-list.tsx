@@ -9,7 +9,7 @@ export function EchoList() {
   return (
     <CatalogSection.List
       items={echoes}
-      cols={10}
+      cols={6}
       getItemKey={(echo) => echo.id}
       empty={
         <CatalogSection.Empty

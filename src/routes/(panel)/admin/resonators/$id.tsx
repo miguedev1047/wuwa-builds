@@ -6,7 +6,7 @@ import { useSuspenseQuery } from "@tanstack/react-query"
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { Suspense } from "react"
 
-export const Route = createFileRoute("/(panel)/admin/resonator/$id")({
+export const Route = createFileRoute("/(panel)/admin/resonators/$id")({
   component: RouteComponent,
   loader: async ({ context, params }) => {
     await context.queryClient.query(

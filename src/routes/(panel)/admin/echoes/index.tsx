@@ -1,10 +1,10 @@
 import { Spinner } from "@/components/ui/spinner"
-import { weaponQueries } from "@/modules/panel/admin/game-data/queries/weapons"
-import { WeaponListPage } from "@/modules/panel/admin/game-data/views/weapons/pages/list-page"
+import { echoQueries } from "@/modules/panel/admin/game-data/queries/echoes"
+import { EchoListPage } from "@/modules/panel/admin/game-data/views/echoes/pages/list-page"
 import { createFileRoute } from "@tanstack/react-router"
 
-export const Route = createFileRoute("/(panel)/admin/weapons")({
-  component: () => <WeaponListPage />,
+export const Route = createFileRoute("/(panel)/admin/echoes/")({
+  component: () => <EchoListPage />,
   pendingComponent: () => (
     <div className="grid place-content-center">
       <div className="flex items-center gap-1">
@@ -21,6 +21,6 @@ export const Route = createFileRoute("/(panel)/admin/weapons")({
     </div>
   ),
   loader: async ({ context }) => {
-    await context.queryClient.query(weaponQueries.list())
+    await context.queryClient.query(echoQueries.list())
   },
 })
