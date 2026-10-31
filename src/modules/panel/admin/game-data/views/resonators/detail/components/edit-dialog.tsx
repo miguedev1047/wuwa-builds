@@ -1,3 +1,7 @@
+import { useEffect, useId } from "react"
+import { useQuery } from "@tanstack/react-query"
+import { useParams } from "@tanstack/react-router"
+import { useAppForm } from "@/components/form"
 import {
   Dialog,
   DialogClose,
@@ -7,12 +11,13 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { useId } from "react"
-import { useParams } from "@tanstack/react-router"
-import { useQuery } from "@tanstack/react-query"
-import { Skeleton } from "skullet/react"
+import { resonatorInput } from "@/modules/panel/admin/game-data/application/schemas"
 import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
+import { resonatorDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
+import {
+  ResonatorFields,
+  resonatorFormDefaults,
+} from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-fields"
 
 type ResonatorEditDialogProps = {
   open: boolean
@@ -33,6 +38,21 @@ export function ResonatorEditDialog({
     enabled: Number.isInteger(resonatorId) && resonatorId > 0,
   })
 
+  const form = useAppForm({
+    formId,
+    defaultValues: resonatorFormDefaults,
+    validators: { onSubmit: resonatorInput },
+    onSubmit: async () => {
+      // TODO: call the update server function and invalidate the detail query.
+    },
+  })
+
+  useEffect(() => {
+    if (!data) return
+
+    form.reset(resonatorDraftFromRow(data))
+  }, [data, form])
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent size="lg">
@@ -40,23 +60,23 @@ export function ResonatorEditDialog({
           <DialogTitle>Editar resonador</DialogTitle>
         </DialogHeader>
 
-        <Skeleton data={data} skeleton={<div className="h-40" />}>
-          {(resonator) => (
-            <form
-              id={formId}
-              className="no-scrollbar max-h-[40vh] w-full space-y-4 overflow-y-scroll"
-            >
-              {/* TODO: campos del formulario de edición */}
-              <Input value={resonator.name} readOnly />
-            </form>
-          )}
-        </Skeleton>
+        <form
+          id={formId}
+          onSubmit={(event) => {
+            event.preventDefault()
+            form.handleSubmit()
+          }}
+          className="no-scrollbar max-h-[50vh] overflow-y-scroll"
+        >
+          {/* TODO: pass the update mutation's `isPending` here. */}
+          <ResonatorFields form={form} />
+        </form>
 
         <DialogFooter>
-          <DialogClose render={<Button>Cerrar</Button>} />
-          <Button type="submit" form={formId}>
-            Editar
-          </Button>
+          <DialogClose render={<Button variant="secondary">Cerrar</Button>} />
+          <form.AppForm>
+            <form.SubmitButton label="Guardar" formId={formId} />
+          </form.AppForm>
         </DialogFooter>
       </DialogContent>
     </Dialog>

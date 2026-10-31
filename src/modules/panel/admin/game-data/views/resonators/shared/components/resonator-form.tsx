@@ -1,47 +1,23 @@
-import { useForm } from "@tanstack/react-form"
+import { useEffect, useId, useState } from "react"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
-import { useEffect, useId, useState } from "react"
 import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
-import { FieldGroup } from "@/components/ui/field"
-import { Spinner } from "@/components/ui/spinner"
+import { useAppForm } from "@/components/form"
 import {
   resonatorInput,
   type ResonatorInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import {
-  SelectField,
-  TextareaField,
-  TextField,
-} from "@/modules/panel/admin/game-data/components/form-fields"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { createResonator } from "@/modules/panel/admin/game-data/server/characters"
 import { resonatorDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
-import { ResonatorSearch } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-search"
 import {
-  RESONATOR_ELEMENTS,
-  RESONATOR_RARITY,
-  RESONATOR_WEAPON_TYPES,
-} from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+  ResonatorFields,
+  resonatorFormDefaults,
+} from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-fields"
+import { ResonatorSearch } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-search"
 import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
 import { characterQueries } from "@/modules/encore/queries/characters"
-
-const defaultValues: ResonatorInput = {
-  id: 0,
-  name: "",
-  nickname: "",
-  introduction: "",
-  rarity: 5,
-  element: "",
-  weaponType: "",
-  icon: "",
-  card: "",
-  circle: "",
-  iconLarge: "",
-  portrait: "",
-}
 
 export function ResonatorForm() {
   const formId = `new-resonator-form-${useId()}`
@@ -50,43 +26,43 @@ export function ResonatorForm() {
 
   const [selected, setSelected] = useState<EncoreCharacterSummary | null>(null)
 
-  // The list endpoint only returns a summary; the detail carries the fields
-  // the form needs (nickname, introduction, images).
   const { data: encoreCharacter, isLoading: isEncoreLoading } = useQuery({
     ...characterQueries.detail(selected?.id ?? 0),
-    // A disabled query is still `isPending`, so gate the spinner on the fetch
-    // and enable it with the selection itself.
     enabled: selected !== null,
   })
 
-  const { mutate, isPending: isMutationPending } = useMutation({
+  const { mutateAsync, isPending: isMutationPending } = useMutation({
     mutationFn: (value: ResonatorInput) => createResonator({ data: value }),
-    onSuccess: async () => {
+    onSuccess: async (resonator) => {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.characters(),
       })
       toast.success("Resonador creado")
 
-      await navigate({ to: "/admin/resonators" })
+      await navigate({
+        to: "/admin/resonators/$id",
+        params: { id: resonator.id.toString() },
+      })
     },
     onError: (error) => {
       toast.error(error.message)
     },
   })
 
-  const isPending = isEncoreLoading || isMutationPending
+  const isPending = isMutationPending
 
-  const form = useForm({
+  const form = useAppForm({
     formId,
-    defaultValues,
+    defaultValues: resonatorFormDefaults,
     validators: { onSubmit: resonatorInput },
-    onSubmit: ({ value }) => {
-      mutate(value)
+    onSubmit: async ({ value }) => {
+      await mutateAsync(value)
     },
   })
 
   useEffect(() => {
     if (!encoreCharacter) return
+
     form.reset(resonatorDraftFromEncore(encoreCharacter))
   }, [encoreCharacter, form])
 
@@ -99,124 +75,19 @@ export function ResonatorForm() {
           form.handleSubmit()
         }}
       >
-        <FieldGroup className="grid gap-4 md:grid-cols-2">
-          <form.Field
-            name="name"
-            validators={{ onBlur: resonatorInput.shape.name }}
-          >
-            {(field) => (
-              <TextField
-                field={field}
-                label="Nombre del resonador"
-                placeholder="Cartethyia"
-                disabled={isPending}
-              />
-            )}
-          </form.Field>
-
-          <form.Field
-            name="nickname"
-            validators={{ onBlur: resonatorInput.shape.nickname }}
-          >
-            {(field) => (
-              <TextField
-                field={field}
-                label="Apodo"
-                placeholder="Aero"
-                disabled={isPending}
-              />
-            )}
-          </form.Field>
-
-          <form.Field
-            name="introduction"
-            validators={{ onBlur: resonatorInput.shape.introduction }}
-          >
-            {(field) => (
-              <TextareaField
-                field={field}
-                label="Introducción"
-                placeholder="Descripción del resonador"
-                rows={4}
-                className="md:col-span-2"
-                disabled={isPending}
-              />
-            )}
-          </form.Field>
-
-          <form.Field
-            name="rarity"
-            validators={{ onSubmit: resonatorInput.shape.rarity }}
-          >
-            {(field) => (
-              <SelectField
-                field={field}
-                label="Rareza"
-                options={RESONATOR_RARITY}
-                placeholder="Seleccionar rareza"
-                disabled={isPending}
-              />
-            )}
-          </form.Field>
-
-          <form.Field
-            name="element"
-            validators={{ onSubmit: resonatorInput.shape.element }}
-          >
-            {(field) => (
-              <SelectField
-                field={field}
-                label="Elemento"
-                options={RESONATOR_ELEMENTS}
-                placeholder="Seleccionar elemento"
-                disabled={isPending}
-              />
-            )}
-          </form.Field>
-
-          <form.Field
-            name="weaponType"
-            validators={{ onSubmit: resonatorInput.shape.weaponType }}
-          >
-            {(field) => (
-              <SelectField
-                field={field}
-                label="Tipo de arma"
-                options={RESONATOR_WEAPON_TYPES}
-                placeholder="Seleccionar tipo de arma"
-                disabled={isPending}
-              />
-            )}
-          </form.Field>
-
-          <form.Field
-            name="icon"
-            validators={{ onBlur: resonatorInput.shape.icon }}
-          >
-            {(field) => (
-              <TextField
-                field={field}
-                label="Icono"
-                placeholder="https://api-v2.encore.moe/resource/..."
-                inputMode="url"
-                disabled={isPending}
-              />
-            )}
-          </form.Field>
-        </FieldGroup>
+        <ResonatorFields form={form} isPending={isPending} />
       </form>
 
       <div className="grid w-full grid-cols-2 gap-2">
         <ResonatorSearch
           selectedId={selected?.id}
           onSelect={setSelected}
-          disabled={isPending}
+          disabled={isPending || isEncoreLoading}
         />
 
-        <Button size="xl" type="submit" disabled={isPending} form={formId}>
-          {isPending && <Spinner />}
-          {!isPending && "Crear"}
-        </Button>
+        <form.AppForm>
+          <form.SubmitButton label="Crear" formId={formId} />
+        </form.AppForm>
       </div>
     </CatalogSection.Content>
   )

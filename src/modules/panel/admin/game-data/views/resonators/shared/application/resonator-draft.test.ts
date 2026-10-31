@@ -1,8 +1,12 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
+import type { ResonatorRow } from "@/db/schema"
 import type { EncoreCharacterDetail } from "@/modules/encore/domain/character"
-import { resonatorDraftFromEncore } from "./resonator-draft"
+import {
+  resonatorDraftFromEncore,
+  resonatorDraftFromRow,
+} from "./resonator-draft"
 
 const character: EncoreCharacterDetail = {
   id: 1402,
@@ -31,6 +35,40 @@ const character: EncoreCharacterDetail = {
 describe("resonatorDraftFromEncore", () => {
   test("maps the detail fields the form needs", () => {
     expect(resonatorDraftFromEncore(character)).toEqual({
+      id: 1402,
+      name: "Yangyang",
+      nickname: "Brisa",
+      introduction: "Resonadora de Jinzhou",
+      rarity: 4,
+      element: "Aero",
+      weaponType: "Espada",
+      icon: "https://api.encore.moe/resource/Data/icon.webp",
+      card: "https://api.encore.moe/resource/Data/card.webp",
+      circle: "https://api.encore.moe/resource/Data/circle.webp",
+      portrait: "https://api.encore.moe/resource/Data/portrait.webp",
+      iconLarge: "https://api.encore.moe/resource/Data/icon-large.webp",
+    })
+  })
+
+  test("maps a saved row to the edit form values", () => {
+    const row: ResonatorRow = {
+      id: 1402,
+      name: "Yangyang",
+      nickname: "Brisa",
+      introduction: "Resonadora de Jinzhou",
+      rarity: 4,
+      element: "Aero",
+      weaponType: "Espada",
+      icon: "https://api.encore.moe/resource/Data/icon.webp",
+      card: "https://api.encore.moe/resource/Data/card.webp",
+      circle: "https://api.encore.moe/resource/Data/circle.webp",
+      portrait: "https://api.encore.moe/resource/Data/portrait.webp",
+      iconLarge: "https://api.encore.moe/resource/Data/icon-large.webp",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }
+
+    expect(resonatorDraftFromRow(row)).toEqual({
       id: 1402,
       name: "Yangyang",
       nickname: "Brisa",
