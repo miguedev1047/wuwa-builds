@@ -24,8 +24,8 @@ export function ResonatorInfoSection() {
           </CatalogSection.Header>
 
           <CatalogSection.Content className="bg-card p-4">
-            <div className="flex w-full items-start gap-4">
-              <figure className="aspect-2/3 shrink-0 overflow-hidden bg-accent">
+            <div className="flex w-full flex-col items-start gap-4 md:flex-row">
+              <figure className="shrink-0 overflow-hidden bg-accent max-[480px]:w-full sm:aspect-2/3">
                 <CatalogSection.Image
                   src={resonator.iconLarge}
                   alt={resonator.name}

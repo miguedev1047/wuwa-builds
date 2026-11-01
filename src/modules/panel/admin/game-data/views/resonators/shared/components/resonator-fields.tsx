@@ -25,13 +25,6 @@ export const resonatorFormDefaults: ResonatorInput = {
   iconLarge: "",
 }
 
-/**
- * Fields of the resonator form.
- *
- * It receives the `form` by props (`withForm`), so the same definition is used
- * by the create page and the edit dialog. `isPending` is a custom prop: it
- * disables every control while a request is in flight.
- */
 export const ResonatorFields = withForm({
   defaultValues: resonatorFormDefaults,
   props: {} as {
@@ -43,7 +36,7 @@ export const ResonatorFields = withForm({
       <FieldGroup className="grid gap-4 md:grid-cols-2">
         <form.AppField
           name="name"
-          validators={{ onBlur: resonatorInput.shape.name }}
+          validators={{ onSubmit: resonatorInput.shape.name }}
         >
           {(field) => (
             <field.TextField
@@ -56,27 +49,12 @@ export const ResonatorFields = withForm({
 
         <form.AppField
           name="nickname"
-          validators={{ onBlur: resonatorInput.shape.nickname }}
+          validators={{ onSubmit: resonatorInput.shape.nickname }}
         >
           {(field) => (
             <field.TextField
               label="Apodo"
               placeholder="Aero"
-              disabled={isPending}
-            />
-          )}
-        </form.AppField>
-
-        <form.AppField
-          name="introduction"
-          validators={{ onBlur: resonatorInput.shape.introduction }}
-        >
-          {(field) => (
-            <field.TextareaField
-              label="Introducción"
-              placeholder="Descripción del resonador"
-              rows={4}
-              className="md:col-span-2"
               disabled={isPending}
             />
           )}
@@ -126,13 +104,28 @@ export const ResonatorFields = withForm({
 
         <form.AppField
           name="icon"
-          validators={{ onBlur: resonatorInput.shape.icon }}
+          validators={{ onSubmit: resonatorInput.shape.icon }}
         >
           {(field) => (
             <field.TextField
               label="Icono"
               placeholder="https://api-v2.encore.moe/resource/..."
               inputMode="url"
+              disabled={isPending}
+            />
+          )}
+        </form.AppField>
+
+        <form.AppField
+          name="introduction"
+          validators={{ onSubmit: resonatorInput.shape.introduction }}
+        >
+          {(field) => (
+            <field.TextareaField
+              label="Descripción"
+              placeholder="Descripción del resonador"
+              rows={4}
+              className="md:col-span-2"
               disabled={isPending}
             />
           )}

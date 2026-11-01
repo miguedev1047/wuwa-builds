@@ -1,4 +1,6 @@
-import { useParams } from "@tanstack/react-router"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
+import { useNavigate, useParams } from "@tanstack/react-router"
+import { toast } from "sonner"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,6 +14,8 @@ import {
 } from "@/components/ui/alert-dialog"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
+import { deleteResonator } from "@/modules/panel/admin/game-data/server/characters"
 
 type ResonatorDeleteDialogProps = {
   open: boolean
@@ -24,12 +28,32 @@ export function ResonatorDeleteDialog({
 }: ResonatorDeleteDialogProps) {
   const { id } = useParams({ from: "/(panel)/admin/resonators/$id" })
   const resonatorId = Number(id)
+  const queryClient = useQueryClient()
+  const navigate = useNavigate()
+
+  const { mutate, isPending } = useMutation({
+    mutationFn: () => deleteResonator({ data: { id: resonatorId } }),
+    onSettled: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: wuwaBuildsKeys.characters(),
+      })
+      queryClient.removeQueries({
+        queryKey: wuwaBuildsKeys.character(resonatorId),
+      })
+    },
+    onSuccess: () => {
+      toast.success("Resonador eliminado")
+      onOpenChange(false)
+      navigate({ to: "/admin/resonators" })
+    },
+    onError: (error) => {
+      toast.error(error.message)
+    },
+  })
 
   const handleResonatorDelete = () => {
     if (!Number.isInteger(resonatorId) || resonatorId <= 0) return
-
-    // TODO: delete the resonator and invalidate the list query.
-    onOpenChange(false)
+    mutate()
   }
 
   return (
@@ -45,9 +69,12 @@ export function ResonatorDeleteDialog({
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancelar</AlertDialogCancel>
-          <AlertDialogAction onClick={handleResonatorDelete}>
-            Eliminar
+          <AlertDialogCancel disabled={isPending}>Cancelar</AlertDialogCancel>
+          <AlertDialogAction
+            disabled={isPending}
+            onClick={handleResonatorDelete}
+          >
+            {isPending ? "Eliminando..." : "Eliminar"}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

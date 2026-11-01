@@ -1,5 +1,6 @@
 import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
+import { eq } from "drizzle-orm"
 import {
   idInput,
   resonatorInput,
@@ -36,4 +37,39 @@ export const createResonator = createServerFn({ method: "POST" })
     const [resonator] = await db.insert(resonators).values(data).returning()
 
     return resonator
+  })
+
+export const updateResonator = createServerFn({ method: "POST" })
+  .middleware([adminMiddleware])
+  .validator(resonatorInput)
+  .handler(async ({ data }) => {
+    const { id, ...values } = data
+
+    const [resonator] = await db
+      .update(resonators)
+      .set(values)
+      .where(eq(resonators.id, id))
+      .returning()
+
+    if (!resonator) {
+      throw new Error("Resonador no encontrado")
+    }
+
+    return resonator
+  })
+
+export const deleteResonator = createServerFn({ method: "POST" })
+  .middleware([adminMiddleware])
+  .validator(idInput)
+  .handler(async ({ data }) => {
+    const deleted = await db
+      .delete(resonators)
+      .where(eq(resonators.id, data.id))
+      .returning({ id: resonators.id })
+
+    if (deleted.length === 0) {
+      throw new Error("Resonador no encontrado")
+    }
+
+    return deleted[0].id
   })
