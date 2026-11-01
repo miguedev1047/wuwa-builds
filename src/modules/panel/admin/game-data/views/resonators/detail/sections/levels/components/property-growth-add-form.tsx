@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select"
 import { Show } from "@/components/utility/show"
 import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
-import { formatGrowthValue } from "@/modules/panel/admin/game-data/application/property-growth"
+import { growthMilestoneOptions } from "@/modules/panel/admin/game-data/application/property-growth"
 import {
   resonatorPropertyGrowthInput,
   type ResonatorPropertyGrowthInput,
@@ -79,25 +79,7 @@ export function PropertyGrowthAddForm({
     },
   })
 
-  const encoreOptions = encoreGrowth.flatMap((entry, index) => {
-    const value = String(entry.value)
-    const alreadySaved = savedGrowth.some(
-      (saved) =>
-        saved.level === entry.level && formatGrowthValue(saved) === value
-    )
-
-    if (alreadySaved) {
-      return []
-    }
-
-    return [
-      {
-        label: `Nivel ${entry.level} - ${value}`,
-        value: String(index),
-        entry,
-      },
-    ]
-  })
+  const encoreOptions = growthMilestoneOptions(encoreGrowth, savedGrowth)
 
   return (
     <>

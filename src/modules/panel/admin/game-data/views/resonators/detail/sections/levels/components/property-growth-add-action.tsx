@@ -27,7 +27,12 @@ export function PropertyGrowthAddAction({
       title="Agregar nivel"
       description="Elige un nivel de Encore o escribe su valor."
       trigger={
-        <Button type="button" size="icon-sm" aria-label="Agregar nivel">
+        <Button
+          type="button"
+          variant="outline"
+          size="icon-sm"
+          aria-label="Agregar nivel"
+        >
           <HugeiconsIcon icon={PlusSignIcon} />
         </Button>
       }

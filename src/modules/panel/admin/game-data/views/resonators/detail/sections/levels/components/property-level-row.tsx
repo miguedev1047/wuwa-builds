@@ -58,7 +58,12 @@ export function PropertyLevelRow({
         <EditableSection.ItemActions>
           <CollapsibleTrigger
             render={
-              <Button type="button" size="icon-sm" aria-label="Mostrar niveles">
+              <Button
+                type="button"
+                variant="outline"
+                size="icon-sm"
+                aria-label="Mostrar niveles"
+              >
                 <HugeiconsIcon icon={ChevronDownIcon} />
               </Button>
             }

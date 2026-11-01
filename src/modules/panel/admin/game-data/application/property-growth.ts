@@ -1,4 +1,5 @@
 import type { ResonatorPropertyGrowthRow } from "@/db/schema"
+import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
 
 type GrowthValueColumns = {
   valueNumber: number | null
@@ -7,6 +8,12 @@ type GrowthValueColumns = {
 
 /** Stored fields needed to format a growth value. */
 type GrowthValue = Pick<ResonatorPropertyGrowthRow, "valueNumber" | "valueText">
+
+export type GrowthMilestoneOption = {
+  label: string
+  value: string
+  entry: EncorePropertyGrowth
+}
 
 /**
  * Whether a form value can be stored as a growth entry.
@@ -24,6 +31,44 @@ export function isGrowthValue(value: string): boolean {
   }
 
   return trimmed.length > 0 && Number.isFinite(Number(trimmed))
+}
+
+/** Milestones offered by the Encore picker: 1 and every 10 levels up to 90. */
+function isGrowthMilestone(level: number): boolean {
+  return level >= 1 && level <= 90 && (level === 1 || level % 10 === 0)
+}
+
+/**
+ * Milestone options from Encore that the property does not have yet.
+ *
+ * Encore repeats the ascension levels, so only the first entry of each level
+ * is kept; levels with a saved growth entry are hidden.
+ */
+export function growthMilestoneOptions(
+  encoreGrowth: EncorePropertyGrowth[],
+  savedGrowth: Pick<ResonatorPropertyGrowthRow, "level">[]
+): GrowthMilestoneOption[] {
+  const seenLevels = new Set<number>()
+
+  return encoreGrowth.flatMap((entry, index) => {
+    if (!isGrowthMilestone(entry.level) || seenLevels.has(entry.level)) {
+      return []
+    }
+
+    seenLevels.add(entry.level)
+
+    if (savedGrowth.some((saved) => saved.level === entry.level)) {
+      return []
+    }
+
+    return [
+      {
+        label: `Nivel ${entry.level}`,
+        value: String(index),
+        entry,
+      },
+    ]
+  })
 }
 
 /** Splits a form value into the number/text columns of the growth table. */
