@@ -109,6 +109,7 @@ export function CatalogSectionContent({
     />
   )
 }
+
 const listVariants = cva("grid grid-cols-1 gap-4 md:grid-cols-2", {
   variants: {
     cols: {

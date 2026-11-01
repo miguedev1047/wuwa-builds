@@ -1,8 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "@tanstack/react-router"
 import { Skeleton } from "skullet/react"
+import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
 import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
+import { ResonatorDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/components/delete-action"
+import { ResonatorEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/components/edit-action"
 
 export function ResonatorInfoSection() {
   const { id } = useParams({ from: "/(panel)/admin/resonators/$id" })
@@ -16,38 +19,37 @@ export function ResonatorInfoSection() {
   return (
     <Skeleton data={data} skeleton={<div className="h-40" />}>
       {(resonator) => (
-        <CatalogSection.Root>
-          <CatalogSection.Header>
-            <CatalogSection.Title>
+        <EditableSection.Root>
+          <EditableSection.Header>
+            <EditableSection.Title>
               Resonador: {resonator.name}
-            </CatalogSection.Title>
-          </CatalogSection.Header>
+            </EditableSection.Title>
 
-          <CatalogSection.Content className="bg-card p-4">
-            <div className="flex w-full flex-col items-start gap-4 md:flex-row">
-              <figure className="shrink-0 overflow-hidden bg-accent max-[480px]:w-full sm:aspect-2/3">
-                <CatalogSection.Image
-                  src={resonator.iconLarge}
-                  alt={resonator.name}
-                  className="size-full object-cover"
-                />
-              </figure>
-              <div className="flex flex-1">
-                <div className="space-y-1">
-                  <h2 className="font-mono text-5xl font-bold">
-                    {resonator.name}
-                  </h2>
-                  <p
-                    className="text-muted-foreground"
-                    dangerouslySetInnerHTML={{
-                      __html: resonator.introduction,
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-          </CatalogSection.Content>
-        </CatalogSection.Root>
+            <EditableSection.Action>
+              <ResonatorEditAction resonator={resonator} />
+              <ResonatorDeleteAction />
+            </EditableSection.Action>
+          </EditableSection.Header>
+
+          <EditableSection.Content className="flex w-full items-start gap-4">
+            <EditableSection.Media className="aspect-2/3 w-40">
+              <CatalogSection.Image
+                src={resonator.iconLarge}
+                alt={resonator.name}
+                className="size-full object-cover"
+              />
+            </EditableSection.Media>
+
+            <EditableSection.Body>
+              <EditableSection.Heading>
+                {resonator.name}
+              </EditableSection.Heading>
+              <EditableSection.Text
+                dangerouslySetInnerHTML={{ __html: resonator.introduction }}
+              />
+            </EditableSection.Body>
+          </EditableSection.Content>
+        </EditableSection.Root>
       )}
     </Skeleton>
   )

@@ -1,65 +1,18 @@
 import { useId } from "react"
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { useParams } from "@tanstack/react-router"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import type { ResonatorRow } from "@/db/schema"
-import {
-  Dialog,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
+import { DialogFooter } from "@/components/ui/dialog"
 import {
   resonatorInput,
   type ResonatorInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
-import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { updateResonator } from "@/modules/panel/admin/game-data/server/characters"
 import { resonatorDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
 import { ResonatorFields } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-fields"
-import { Skeleton } from "skullet/react"
-
-type ResonatorEditDialogProps = {
-  open: boolean
-  onOpenChange: (open: boolean) => void
-}
-
-export function ResonatorEditDialog({
-  open,
-  onOpenChange,
-}: ResonatorEditDialogProps) {
-  const { id } = useParams({ from: "/(panel)/admin/resonators/$id" })
-  const resonatorId = Number(id)
-
-  const { data } = useQuery({
-    ...characterQueries.detail(resonatorId),
-    enabled: Number.isInteger(resonatorId) && resonatorId > 0,
-  })
-
-  return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent size="lg">
-        <DialogHeader>
-          <DialogTitle>Editar resonador</DialogTitle>
-        </DialogHeader>
-
-        <Skeleton data={data}>
-          {(resonator) => (
-            <ResonatorEditForm
-              resonator={resonator}
-              onSaved={() => onOpenChange(false)}
-              onCancel={() => onOpenChange(false)}
-            />
-          )}
-        </Skeleton>
-      </DialogContent>
-    </Dialog>
-  )
-}
 
 type ResonatorEditFormProps = {
   resonator: ResonatorRow
@@ -67,7 +20,7 @@ type ResonatorEditFormProps = {
   onCancel: () => void
 }
 
-function ResonatorEditForm({
+export function ResonatorEditForm({
   resonator,
   onSaved,
   onCancel,
@@ -86,7 +39,6 @@ function ResonatorEditForm({
           queryKey: wuwaBuildsKeys.character(updated.id),
         }),
       ])
-
       toast.success("Resonador actualizado")
       onSaved()
     },
@@ -105,7 +57,7 @@ function ResonatorEditForm({
   })
 
   return (
-    <div className="space-y-6">
+    <>
       <form
         id={formId}
         onSubmit={(event) => {
@@ -125,6 +77,6 @@ function ResonatorEditForm({
           <form.SubmitButton label="Guardar" formId={formId} />
         </form.AppForm>
       </DialogFooter>
-    </div>
+    </>
   )
 }
