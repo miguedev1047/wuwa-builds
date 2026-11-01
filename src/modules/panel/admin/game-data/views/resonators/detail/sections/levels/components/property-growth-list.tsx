@@ -28,7 +28,7 @@ export function PropertyGrowthList({
               Nivel {entry.level}
             </EditableSection.ItemTitle>
             <EditableSection.ItemDescription>
-              {formatGrowthValue(entry)}
+              <span className="tabular-nums">{formatGrowthValue(entry)}</span>
             </EditableSection.ItemDescription>
           </EditableSection.ItemContent>
 

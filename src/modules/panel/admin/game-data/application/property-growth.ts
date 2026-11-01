@@ -132,5 +132,5 @@ export function growthValueColumns(value: string): GrowthValueColumns {
 
 /** Value shown in the UI, preserving a stored zero. */
 export function formatGrowthValue(entry: GrowthValue): string {
-  return entry.valueText ?? entry.valueNumber?.toString() ?? ""
+  return entry.valueText ?? entry.valueNumber?.toFixed(0)?.toString() ?? ""
 }
