@@ -5,11 +5,16 @@ export function ResonatorInfoSkeleton() {
   return (
     <EditableSection.Root>
       <EditableSection.Header>
-        <SkeletonBox width="12rem" height={24} />
+        <SkeletonBox width="12rem" height={32} />
+
+        <EditableSection.Action>
+          <SkeletonBox width={72} height={20} />
+          <SkeletonBox width={92} height={20} />
+        </EditableSection.Action>
       </EditableSection.Header>
 
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">
-        <SkeletonBox width={160} height={240} radius={6} />
+        <SkeletonBox width={160} height={240} radius={0} />
 
         <div className="flex flex-1 flex-col gap-3">
           <SkeletonBox width="40%" height={32} />

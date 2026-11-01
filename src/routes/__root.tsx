@@ -58,7 +58,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             mode="system"
             theme={{
               radius: "0px",
-              animation: "shimmer",
+              animation: "pulse",
               speed: "slow",
               text: {
                 top: "ascender",

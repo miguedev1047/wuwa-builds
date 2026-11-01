@@ -85,9 +85,10 @@ function ResonatorTagsForm({
   })
 
   return (
-    <EditableSection.Content className="space-y-4">
+    <EditableSection.Content>
       <form
         id={formId}
+        className="space-y-2"
         onSubmit={(event) => {
           event.preventDefault()
           form.handleSubmit()
@@ -106,9 +107,7 @@ function ResonatorTagsForm({
             />
           )}
         </form.AppField>
-      </form>
 
-      <div className="flex justify-end">
         <form.AppForm>
           <form.SubmitButton
             label="Guardar"
@@ -117,7 +116,7 @@ function ResonatorTagsForm({
             className="w-full"
           />
         </form.AppForm>
-      </div>
+      </form>
     </EditableSection.Content>
   )
 }
