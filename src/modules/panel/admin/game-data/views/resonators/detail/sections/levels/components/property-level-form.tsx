@@ -23,7 +23,7 @@ import { propertyLevelDraftFromEncore } from "@/modules/panel/admin/game-data/vi
 import {
   PropertyLevelFields,
   propertyLevelFormDefaults,
-} from "@/modules/panel/admin/game-data/views/resonators/detail/components/property-level-fields"
+} from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-fields"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
 

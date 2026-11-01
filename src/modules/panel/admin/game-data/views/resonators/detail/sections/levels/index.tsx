@@ -5,9 +5,9 @@ import { Show } from "@/components/utility/show"
 import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
-import { ResonatorLevelAddAction } from "@/modules/panel/admin/game-data/views/resonators/detail/components/add-level-action"
-import { ResonatorPropertyLevelDelete } from "@/modules/panel/admin/game-data/views/resonators/detail/components/property-level-delete"
-import { ResonatorLevelsSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/ui-states/levels-skeleton"
+import { ResonatorLevelAddAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/add-level-action"
+import { ResonatorPropertyLevelDelete } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-delete"
+import { ResonatorLevelsSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/levels-skeleton"
 
 /** Properties (`resonator_property_levels`) of the resonator. */
 export function ResonatorLevelsSection() {

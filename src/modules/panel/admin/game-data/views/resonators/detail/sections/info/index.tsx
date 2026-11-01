@@ -4,9 +4,9 @@ import { SkeletonSuspense } from "skullet/react"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
-import { ResonatorDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/components/delete-action"
-import { ResonatorEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/components/edit-action"
-import { ResonatorInfoSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/ui-states/info-skeleton"
+import { ResonatorDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/info/components/delete-action"
+import { ResonatorEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/info/components/edit-action"
+import { ResonatorInfoSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/info/components/info-skeleton"
 
 export function ResonatorInfoSection() {
   const { id } = useParams({ from: "/(panel)/admin/resonators/$id" })

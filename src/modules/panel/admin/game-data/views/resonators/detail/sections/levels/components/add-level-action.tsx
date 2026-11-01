@@ -1,6 +1,6 @@
 import type { EncoreProperty } from "@/modules/encore/domain/property"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { PropertyLevelAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/components/property-level-form"
+import { PropertyLevelAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-form"
 
 type ResonatorLevelAddActionProps = {
   resonatorId: number
