@@ -64,7 +64,7 @@ export function ResonatorEditForm({
           event.preventDefault()
           form.handleSubmit()
         }}
-        className="no-scrollbar max-h-[50vh] overflow-y-scroll"
+        className="-mx-4 no-scrollbar max-h-[50vh] overflow-y-auto px-4"
       >
         <ResonatorFields form={form} isPending={isPending} />
       </form>

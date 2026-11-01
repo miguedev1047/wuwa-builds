@@ -3,6 +3,7 @@ import { fieldContext, formContext } from "./form-context"
 import { NumberField } from "./fields/number-field"
 import { SelectField } from "./fields/select-field"
 import { TextField } from "./fields/text-field"
+import { ImageField } from "./fields/image-field"
 import { TextareaField } from "./fields/textarea-field"
 import { SubmitButton } from "./submit-button"
 
@@ -26,6 +27,7 @@ export const { useAppForm, withForm, withFieldGroup, extendForm } =
       TextareaField,
       NumberField,
       SelectField,
+      ImageField,
     },
     formComponents: {
       SubmitButton,

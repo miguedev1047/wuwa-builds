@@ -32,7 +32,7 @@ export const ResonatorFields = withForm({
   },
   render: function Render({ form, isPending }) {
     return (
-      <FieldGroup className="grid gap-4 md:grid-cols-2">
+      <FieldGroup className="grid w-full gap-4 md:grid-cols-2">
         <form.AppField
           name="name"
           validators={{ onSubmit: resonatorInput.shape.name }}
@@ -94,7 +94,7 @@ export const ResonatorFields = withForm({
           validators={{ onSubmit: resonatorInput.shape.icon }}
         >
           {(field) => (
-            <field.TextField
+            <field.ImageField
               label="Icono"
               placeholder="https://api-v2.encore.moe/resource/..."
               inputMode="url"

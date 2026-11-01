@@ -28,6 +28,7 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@/components/ui/item"
+import { Show } from "@/components/utility/show"
 import { DeleteIcon, PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { cn } from "cn"
@@ -280,11 +281,10 @@ export function EditableSectionEditAction({
       <DialogContent {...contentProps}>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
-          {description ? (
+          <Show when={description}>
             <DialogDescription>{description}</DialogDescription>
-          ) : null}
+          </Show>
         </DialogHeader>
-
         {children({ close })}
       </DialogContent>
     </Dialog>
@@ -341,9 +341,9 @@ export function EditableSectionDeleteAction({
             <HugeiconsIcon icon={DeleteIcon} />
           </AlertDialogMedia>
           <AlertDialogTitle>{title}</AlertDialogTitle>
-          {description ? (
+          <Show when={description}>
             <AlertDialogDescription>{description}</AlertDialogDescription>
-          ) : null}
+          </Show>
         </AlertDialogHeader>
 
         <AlertDialogFooter>
