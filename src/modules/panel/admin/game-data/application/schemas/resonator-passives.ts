@@ -12,7 +12,6 @@ export const resonatorPassiveInput = createInsertSchema(resonatorPassives, {
       .trim()
       .min(1, "El titulo es obligatorio")
       .max(120, "Maximo 120 caracteres"),
-  description: (schema) => schema.trim().max(20000, "Maximo 20000 caracteres"),
   icon: (schema) => schema.trim(),
 }).omit({ id: true, createdAt: true, updatedAt: true })
 

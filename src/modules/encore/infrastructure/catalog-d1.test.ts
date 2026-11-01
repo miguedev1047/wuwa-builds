@@ -9,6 +9,7 @@ import { drizzle } from "drizzle-orm/bun-sqlite"
 import type { AppDb } from "@/db/create"
 import { relations } from "@/db/relations"
 import { resonators } from "@/db/schema"
+import { numberConverter } from "@/lib/number-converter"
 import type { EncoreCharacterDetail } from "@/modules/encore/domain/character"
 import {
   toCharacterDetail,
@@ -207,6 +208,7 @@ function withoutDroppedDetails(
     })),
     passives: character.passives.map((passive) => ({
       ...passive,
+      description: String(numberConverter({ input: passive.description })),
       consume: [],
     })),
   }
@@ -295,6 +297,7 @@ describe("encore catalog schema", () => {
     expect(stored?.skills[0].attributes).toEqual([])
     expect(stored?.properties[0].growth).toHaveLength(3)
     expect(stored?.passives[0].consume).toEqual([])
+    expect(stored?.passives[0].description).toBe("1.8")
     expect(stored?.breaches).toHaveLength(2)
     expect(stored?.tags).toHaveLength(1)
     expect(stored?.sequences).toHaveLength(1)

@@ -57,7 +57,9 @@ Encore JSON key):
 tables as whole documents (`saveCharacter`/`readCharacter`, and the weapon and
 echo equivalents), returning the same `Encore*` types the API mapper produces.
 Skill attributes, consumes and damage, and the passive consume list are
-intentionally not stored: the D1 reader returns them as empty arrays. Writes
+intentionally not stored: the D1 reader returns them as empty arrays. Passive
+descriptions are converted to `value_number` and the D1 reader returns them as
+their numeric string. Writes
 delete and re-insert the entity, so a game patch never leaves stale child rows
 behind. `catalog-d1.test.ts` applies
 the generated migrations to an in-memory SQLite database and asserts the stored

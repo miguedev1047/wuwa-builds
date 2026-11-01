@@ -230,8 +230,8 @@ export const resonatorPassives = sqliteTable(
     sortOrder: integer("sort_order", { mode: "number" }).notNull(),
     /** `PropertyNodeTitle` */
     title: text("title").notNull().default(""),
-    /** `PropertyNodeDescribe` */
-    description: text("description").notNull().default(""),
+    /** `PropertyNodeDescribe` converted to a real value. */
+    valueNumber: real("value_number").notNull().default(0),
     /** `PropertyNodeIcon` */
     icon: text("icon").notNull().default(""),
 

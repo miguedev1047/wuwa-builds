@@ -12,18 +12,24 @@ const passiveRow: ResonatorPassiveRow = {
   passiveId: 155,
   sortOrder: 1,
   title: "ATQ+",
-  description: "<p>Descripcion</p>",
+  valueNumber: 1.8,
   icon: "passive.webp",
   createdAt: new Date(0),
   updatedAt: new Date(0),
 }
 
 const encorePassives: EncorePassive[] = [
-  { id: 155, title: "A", description: "d1", icon: "i1", consume: [] },
+  {
+    id: 155,
+    title: "A",
+    description: "ATQ +1.80%",
+    icon: "i1",
+    consume: [],
+  },
   {
     id: 156,
     title: "B",
-    description: "d2",
+    description: "DEF +12%",
     icon: "i2",
     consume: [{ key: 1, value: 2, icon: "item.webp", quality: 1 }],
   },
@@ -37,14 +43,14 @@ describe("resonatorPassiveDraftFromRow", () => {
       passiveId: 155,
       sortOrder: 1,
       title: "ATQ+",
-      description: "<p>Descripcion</p>",
+      valueNumber: 1.8,
       icon: "passive.webp",
     })
   })
 })
 
 describe("resonatorPassivePayloads", () => {
-  test("expands the selected passives in Encore order", () => {
+  test("converts the Encore text into a number, in Encore order", () => {
     expect(
       resonatorPassivePayloads(["156", "155"], encorePassives, 1311, 3)
     ).toEqual([
@@ -53,7 +59,7 @@ describe("resonatorPassivePayloads", () => {
         passiveId: 155,
         sortOrder: 3,
         title: "A",
-        description: "d1",
+        valueNumber: 1.8,
         icon: "i1",
       },
       {
@@ -61,7 +67,7 @@ describe("resonatorPassivePayloads", () => {
         passiveId: 156,
         sortOrder: 4,
         title: "B",
-        description: "d2",
+        valueNumber: 12,
         icon: "i2",
       },
     ])

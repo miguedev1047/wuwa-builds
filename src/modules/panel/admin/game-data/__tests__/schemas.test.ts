@@ -246,7 +246,7 @@ describe("resonatorPassiveInput", () => {
     passiveId: 155,
     sortOrder: 1,
     title: "  ATQ+  ",
-    description: "<p>Descripcion</p>",
+    valueNumber: 1.8,
     icon: "passive.webp",
   }
 
@@ -263,6 +263,12 @@ describe("resonatorPassiveInput", () => {
   test("requires a positive passive id", () => {
     expect(
       resonatorPassiveInput.safeParse({ ...valid, passiveId: 0 }).success
+    ).toBe(false)
+  })
+
+  test("requires a numeric value", () => {
+    expect(
+      resonatorPassiveInput.safeParse({ ...valid, valueNumber: "1.8" }).success
     ).toBe(false)
   })
 })

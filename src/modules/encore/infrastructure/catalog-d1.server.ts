@@ -1,5 +1,6 @@
 import { eq } from "drizzle-orm"
 import type { AppDb } from "@/db/create"
+import { numberConverter } from "@/lib/number-converter"
 import {
   echoSetEffects,
   echoSets,
@@ -164,7 +165,7 @@ export async function saveCharacter(
         passiveId: passive.id,
         sortOrder,
         title: passive.title,
-        description: passive.description,
+        valueNumber: numberConverter({ input: passive.description }),
         icon: passive.icon,
       }))
     )
@@ -255,7 +256,7 @@ export async function readCharacter(
     passives: row.passives.map((passive) => ({
       id: passive.passiveId,
       title: passive.title,
-      description: passive.description,
+      description: String(passive.valueNumber),
       icon: passive.icon,
       consume: [],
     })),

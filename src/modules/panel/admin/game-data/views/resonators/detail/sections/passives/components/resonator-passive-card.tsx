@@ -1,16 +1,15 @@
 import type { ResonatorPassiveRow } from "@/db/schema"
 import { Show } from "@/components/utility/show"
+import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { ResonatorPassiveDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-delete-action"
 import { ResonatorPassiveEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-edit-action"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { numberConverter } from "@/modules/panel/admin/game-data/views/resonators/detail/application/number-converter"
 
 type ResonatorPassiveCardProps = {
   passive: ResonatorPassiveRow
   resonatorId: number
 }
 
-/** Card of one resonator passive with its description collapsed. */
+/** Row of one resonator passive with its numeric value. */
 export function ResonatorPassiveCard({
   passive,
   resonatorId,
@@ -35,7 +34,7 @@ export function ResonatorPassiveCard({
           {passive.title}
         </EditableSection.ItemTitle>
         <EditableSection.ItemDescription>
-          {numberConverter({ input: passive.description })}
+          Valor: {passive.valueNumber}
         </EditableSection.ItemDescription>
       </EditableSection.ItemContent>
       <EditableSection.ItemActions>

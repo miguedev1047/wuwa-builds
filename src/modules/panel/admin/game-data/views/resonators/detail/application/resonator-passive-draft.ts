@@ -1,4 +1,5 @@
 import type { ResonatorPassiveRow } from "@/db/schema"
+import { numberConverter } from "@/lib/number-converter"
 import type { EncorePassive } from "@/modules/encore/domain/character"
 import type {
   ResonatorPassiveInput,
@@ -15,7 +16,7 @@ export function resonatorPassiveDraftFromRow(
     passiveId: passive.passiveId,
     sortOrder: passive.sortOrder,
     title: passive.title,
-    description: passive.description,
+    valueNumber: passive.valueNumber,
     icon: passive.icon,
   }
 }
@@ -34,7 +35,7 @@ export function resonatorPassivePayloads(
       passiveId: passive.id,
       sortOrder: firstSortOrder + index,
       title: passive.title,
-      description: passive.description,
+      valueNumber: numberConverter({ input: passive.description }),
       icon: passive.icon,
     }))
 }

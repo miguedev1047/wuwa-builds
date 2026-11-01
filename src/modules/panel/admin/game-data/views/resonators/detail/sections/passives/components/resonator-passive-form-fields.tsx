@@ -12,7 +12,7 @@ export const resonatorPassiveFormDefaults: ResonatorPassiveUpdateInput = {
   passiveId: 0,
   sortOrder: 1,
   title: "",
-  description: "",
+  valueNumber: 0,
   icon: "",
 }
 
@@ -40,16 +40,16 @@ export const ResonatorPassiveFields = withForm({
         </form.AppField>
 
         <form.AppField
-          name="description"
+          name="valueNumber"
           validators={{
-            onSubmit: resonatorPassiveUpdateInput.shape.description,
+            onSubmit: resonatorPassiveUpdateInput.shape.valueNumber,
           }}
         >
           {(field) => (
-            <field.TextareaField
-              label="Descripcion"
-              placeholder="Descripcion de la pasiva"
-              rows={6}
+            <field.NumberField
+              label="Valor"
+              placeholder="1.8"
+              step="any"
               disabled={isPending}
             />
           )}
