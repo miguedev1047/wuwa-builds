@@ -87,14 +87,15 @@ export function PropertyGrowthAddForm({
       <Show when={encoreOptions.length > 0}>
         <form.AppField name="encoreLevels">
           {(field) => (
-            <field.SelectMultipleField
+            <field.MultiComboboxField
               label="Autocompletado inteligente"
               description="Copia los niveles y valores del resonador en Encore."
               options={encoreOptions.map(({ label, value }) => ({
                 label,
                 value,
               }))}
-              placeholder="Elegir niveles de Encore"
+              placeholder="Agregar nivel"
+              emptyMessage="Sin niveles disponibles"
               disabled={isPending}
             />
           )}
