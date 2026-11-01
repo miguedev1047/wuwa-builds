@@ -13,6 +13,7 @@ type NumberFieldProps = {
   "value" | "onChange" | "name" | "id" | "type"
 >
 
+/** Numeric input. `0` is the empty value of the forms, so it shows the placeholder. */
 export function NumberField({
   label,
   description,
@@ -23,7 +24,6 @@ export function NumberField({
   const value = useSelector(field.store, (state) => state.value)
   const meta = useSelector(field.store, (state) => state.meta)
   const invalid = meta.isTouched && !meta.isValid
-  // `0` is the empty value of the forms here, so it shows the placeholder.
   const displayValue = value === undefined || value === 0 ? "" : String(value)
 
   return (

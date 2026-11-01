@@ -112,6 +112,9 @@ Rules:
 ## Conventions
 
 - **English** for code comments, documentation, and commit messages.
+- Keep component bodies comment-free. Document props on their type and exported
+  functions/components with a JSDoc block above them; no `//` or `{/* ... */}`
+  inside a render tree, callback or hook body.
 - Prettier style: no semicolons, double quotes, 2 spaces, 80 columns.
 - Prefer honest types; passthrough JSON may use `unknown` with a comment.
 - Conventional commits: `feat(encore): ...`, `fix(panel): ...`,
