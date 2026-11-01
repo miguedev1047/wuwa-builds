@@ -84,7 +84,7 @@ export function PropertyLevelRow({
         </EditableSection.ItemActions>
       </EditableSection.Item>
 
-      <CollapsibleContent>
+      <CollapsibleContent className="mt-4">
         <div className="px-3 pb-3">
           <PropertyGrowthList
             growth={property.growth}

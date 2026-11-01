@@ -15,6 +15,23 @@ export type GrowthMilestoneOption = {
   entry: EncorePropertyGrowth
 }
 
+/** Values handled by the growth form, including the Encore selection. */
+export type PropertyGrowthFormValues = {
+  propertyId: number
+  sortOrder: number
+  level: number
+  value: string
+  /** Selected `GrowthMilestoneOption` values. */
+  encoreLevels: string[]
+}
+
+export type PropertyGrowthPayload = {
+  propertyId: number
+  sortOrder: number
+  level: number
+  value: string
+}
+
 /**
  * Whether a form value can be stored as a growth entry.
  *
@@ -69,6 +86,37 @@ export function growthMilestoneOptions(
       },
     ]
   })
+}
+
+/**
+ * Payloads for the selected Encore milestones, or the manual entry.
+ *
+ * When the multi-select has values, they are expanded in Encore order and each
+ * one gets the next `sortOrder`; otherwise the manual level and value are used.
+ */
+export function propertyGrowthPayloads(
+  values: PropertyGrowthFormValues,
+  options: GrowthMilestoneOption[]
+): PropertyGrowthPayload[] {
+  if (values.encoreLevels.length === 0) {
+    return [
+      {
+        propertyId: values.propertyId,
+        sortOrder: values.sortOrder,
+        level: values.level,
+        value: values.value,
+      },
+    ]
+  }
+
+  return options
+    .filter((option) => values.encoreLevels.includes(option.value))
+    .map((option, index) => ({
+      propertyId: values.propertyId,
+      sortOrder: values.sortOrder + index,
+      level: option.entry.level,
+      value: String(option.entry.value),
+    }))
 }
 
 /** Splits a form value into the number/text columns of the growth table. */

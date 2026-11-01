@@ -1,16 +1,15 @@
+import type { PropertyGrowthFormValues } from "@/modules/panel/admin/game-data/application/property-growth"
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
-import {
-  resonatorPropertyGrowthInput,
-  type ResonatorPropertyGrowthInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+import { resonatorPropertyGrowthInput } from "@/modules/panel/admin/game-data/application/schemas"
 
 /** Empty values shared by every property growth form. */
-export const propertyGrowthFormDefaults: ResonatorPropertyGrowthInput = {
+export const propertyGrowthFormDefaults: PropertyGrowthFormValues = {
   propertyId: 0,
   sortOrder: 1,
   level: 1,
   value: "",
+  encoreLevels: [],
 }
 
 /** Reusable fields of the property growth form. */

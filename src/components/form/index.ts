@@ -3,6 +3,7 @@ import { fieldContext, formContext } from "@/components/form/form-context"
 import { MultiComboboxField } from "@/components/form/fields/multi-combobox-field"
 import { NumberField } from "@/components/form/fields/number-field"
 import { SelectField } from "@/components/form/fields/select-field"
+import { SelectMultipleField } from "@/components/form/fields/select-multiple-field"
 import { TextField } from "@/components/form/fields/text-field"
 import { ImageField } from "@/components/form/fields/image-field"
 import { TextareaField } from "@/components/form/fields/textarea-field"
@@ -29,6 +30,7 @@ export const { useAppForm, withForm, withFieldGroup, extendForm } =
       NumberField,
       MultiComboboxField,
       SelectField,
+      SelectMultipleField,
       ImageField,
     },
     formComponents: {
@@ -45,4 +47,5 @@ export {
 
 export { FieldShell } from "@/components/form/field-shell"
 export type { FormOption } from "@/components/form/fields/select-field"
+export type { SelectMultipleOption } from "@/components/form/fields/select-multiple-field"
 export type { MultiComboboxOption } from "@/components/form/fields/multi-combobox-field"

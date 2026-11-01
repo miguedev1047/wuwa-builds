@@ -5,6 +5,8 @@ import {
   growthMilestoneOptions,
   growthValueColumns,
   isGrowthValue,
+  propertyGrowthPayloads,
+  type GrowthMilestoneOption,
 } from "@/modules/panel/admin/game-data/application/property-growth"
 
 const encoreGrowth: EncorePropertyGrowth[] = [
@@ -67,6 +69,47 @@ describe("growthMilestoneOptions", () => {
       "Nivel 10",
       "Nivel 90",
     ])
+  })
+})
+
+describe("propertyGrowthPayloads", () => {
+  const options: GrowthMilestoneOption[] = [
+    { label: "Nivel 1", value: "0", entry: { level: 1, value: 824 } },
+    { label: "Nivel 10", value: "2", entry: { level: 10, value: 1448 } },
+    { label: "Nivel 20", value: "3", entry: { level: 20, value: 2143 } },
+  ]
+
+  test("expands the selected milestones with sequential sort orders", () => {
+    expect(
+      propertyGrowthPayloads(
+        {
+          propertyId: 8,
+          sortOrder: 4,
+          level: 1,
+          value: "",
+          encoreLevels: ["0", "3"],
+        },
+        options
+      )
+    ).toEqual([
+      { propertyId: 8, sortOrder: 4, level: 1, value: "824" },
+      { propertyId: 8, sortOrder: 5, level: 20, value: "2143" },
+    ])
+  })
+
+  test("uses the manual values when no milestone is selected", () => {
+    expect(
+      propertyGrowthPayloads(
+        {
+          propertyId: 8,
+          sortOrder: 4,
+          level: 45,
+          value: "5%",
+          encoreLevels: [],
+        },
+        options
+      )
+    ).toEqual([{ propertyId: 8, sortOrder: 4, level: 45, value: "5%" }])
   })
 })
 
