@@ -11,8 +11,9 @@ export type PropertyLevelDraft = {
 /**
  * Maps an Encore base stat to the values of the property level form.
  *
- * Encore names stats with abbreviations (`ATQ`, `PS`, ...), so the label is
- * resolved from `RESONATOR_PROPERTY_NAMES`; unknown names are kept as-is.
+ * Encore names stats with abbreviations (`ATQ`, `PS`, ...) and scales
+ * percentage stats by 100, so the label and the value are normalized before
+ * filling the form. Unknown names are kept as-is.
  */
 export function propertyLevelDraftFromEncore(
   property: EncoreProperty
@@ -23,7 +24,7 @@ export function propertyLevelDraftFromEncore(
 
   return {
     name: option?.value ?? property.name,
-    baseValue: property.baseValue,
+    baseValue: property.baseValue / (option?.encoreScale ?? 1),
     icon: property.icon,
   }
 }

@@ -25,18 +25,30 @@ describe("propertyLevelDraftFromEncore", () => {
     )
   })
 
-  test("maps the critical stats and the resonance break boost", () => {
+  test("normalizes the percentage stats and the resonance break boost", () => {
     expect(
-      propertyLevelDraftFromEncore(encoreProperty("Prob. CRIT", 5)).name
-    ).toBe("Prob. Criti.")
+      propertyLevelDraftFromEncore(encoreProperty("Prob. CRIT", 500))
+    ).toEqual({
+      name: "Prob. Criti.",
+      baseValue: 5,
+      icon: "icon.webp",
+    })
     expect(
-      propertyLevelDraftFromEncore(encoreProperty("Daño CRIT", 15000)).name
-    ).toBe("Dano Crit.")
+      propertyLevelDraftFromEncore(encoreProperty("Daño CRIT", 15000))
+    ).toEqual({
+      name: "Dano Crit.",
+      baseValue: 150,
+      icon: "icon.webp",
+    })
     expect(
       propertyLevelDraftFromEncore(
         encoreProperty("Impulso de Ruptura de Tonalidad", 0)
-      ).name
-    ).toBe("Impulso de Ruptura de Tonalidad")
+      )
+    ).toEqual({
+      name: "Impulso de Ruptura de Tonalidad",
+      baseValue: 0,
+      icon: "icon.webp",
+    })
   })
 
   test("keeps a zero base value and unknown Encore names", () => {

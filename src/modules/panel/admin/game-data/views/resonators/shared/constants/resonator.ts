@@ -43,18 +43,30 @@ export const RESONATOR_WEAPON_TYPES = [
 /**
  * Base stats a resonator can have in `resonator_property_levels`.
  *
- * `encoreName` is the label the Encore API uses, so the panel can prefill the
- * form with a saved property the user already knows from the game.
+ * `encoreName` is the label the Encore API uses and `encoreScale` the factor
+ * between the API value and the stored one: percentage stats come multiplied
+ * by 100 (`500` and `15000` for a base of `5` and `150`).
  */
 export const RESONATOR_PROPERTY_NAMES = [
-  { label: "Ataque", value: "Ataque", encoreName: "ATQ" },
-  { label: "Vida", value: "Vida", encoreName: "PS" },
-  { label: "Defensa", value: "Defensa", encoreName: "DEF" },
-  { label: "Prob. Criti.", value: "Prob. Criti.", encoreName: "Prob. CRIT" },
-  { label: "Dano Crit.", value: "Dano Crit.", encoreName: "Daño CRIT" },
+  { label: "Ataque", value: "Ataque", encoreName: "ATQ", encoreScale: 1 },
+  { label: "Vida", value: "Vida", encoreName: "PS", encoreScale: 1 },
+  { label: "Defensa", value: "Defensa", encoreName: "DEF", encoreScale: 1 },
+  {
+    label: "Prob. Criti.",
+    value: "Prob. Criti.",
+    encoreName: "Prob. CRIT",
+    encoreScale: 100,
+  },
+  {
+    label: "Dano Crit.",
+    value: "Dano Crit.",
+    encoreName: "Daño CRIT",
+    encoreScale: 100,
+  },
   {
     label: "Impulso de Ruptura de Tonalidad",
     value: "Impulso de Ruptura de Tonalidad",
     encoreName: "Impulso de Ruptura de Tonalidad",
+    encoreScale: 1,
   },
 ] as const
