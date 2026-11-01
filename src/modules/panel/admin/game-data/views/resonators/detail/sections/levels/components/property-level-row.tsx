@@ -39,11 +39,7 @@ export function PropertyLevelRow({
         <Show when={property.icon}>
           {(icon) => (
             <EditableSection.ItemMedia variant="image">
-              <img
-                src={icon}
-                alt={property.name}
-                className="size-full object-cover"
-              />
+              <EditableSection.Image src={icon} alt={property.name} />
             </EditableSection.ItemMedia>
           )}
         </Show>

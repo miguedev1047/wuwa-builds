@@ -243,6 +243,28 @@ export function EditableSectionItem({
   )
 }
 
+interface EditableSectionImage extends React.ComponentProps<"img"> {
+  animated?: boolean
+}
+
+export function EditableSectionImage({
+  className,
+  animated,
+  ...props
+}: EditableSectionImage) {
+  return (
+    <img
+      data-slot="editable-section-image"
+      className={cn(
+        "pointer-events-none size-full! object-cover transition-transform ease-in-out select-none",
+        animated && "hover:scale-120",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
 type EditableSectionEditActionProps = {
   title: string
   description?: string
@@ -422,6 +444,7 @@ export const EditableSection = {
   Text: EditableSectionText,
   List: EditableSectionList,
   Item: EditableSectionItem,
+  Image: EditableSectionImage,
   ItemMedia: ItemMedia,
   ItemContent: ItemContent,
   ItemTitle: ItemTitle,
