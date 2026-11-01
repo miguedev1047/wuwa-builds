@@ -49,15 +49,16 @@ Encore JSON key):
 | --------------- | ---------------------------------------------------------------------------------------- |
 | `resonators.ts` | `resonators`, `resonator_tags`, `resonator_property_levels`, `resonator_property_growth` |
 |                 | `resonator_skills`, `resonator_sequences`                                                |
-|                 | `resonator_passives`, `resonator_breaches`                                               |
+|                 | `resonator_passives`                                                                     |
 | `weapons.ts`    | `weapons`, `weapon_properties`, `weapon_property_growth`, `weapon_breaches`              |
 | `echoes.ts`     | `echoes`, `echo_sets`, `echo_set_effects`, `echo_skills`                                 |
 
 `src/modules/encore/infrastructure/catalog-d1.server.ts` writes and reads those
 tables as whole documents (`saveCharacter`/`readCharacter`, and the weapon and
 echo equivalents), returning the same `Encore*` types the API mapper produces.
-Skill attributes, consumes and damage, and the passive consume list are
-intentionally not stored: the D1 reader returns them as empty arrays. Passive
+Skill attributes, consumes and damage, the passive consume list and the
+resonator breaches are intentionally not stored: the D1 reader returns them as
+empty arrays. Passive
 descriptions are converted to `value_number` and the D1 reader returns them as
 their numeric string. Writes
 delete and re-insert the entity, so a game patch never leaves stale child rows

@@ -211,6 +211,7 @@ function withoutDroppedDetails(
       description: String(numberConverter({ input: passive.description })),
       consume: [],
     })),
+    breaches: [],
   }
 }
 
@@ -298,7 +299,7 @@ describe("encore catalog schema", () => {
     expect(stored?.properties[0].growth).toHaveLength(3)
     expect(stored?.passives[0].consume).toEqual([])
     expect(stored?.passives[0].description).toBe("1.8")
-    expect(stored?.breaches).toHaveLength(2)
+    expect(stored?.breaches).toEqual([])
     expect(stored?.tags).toHaveLength(1)
     expect(stored?.sequences).toHaveLength(1)
   })

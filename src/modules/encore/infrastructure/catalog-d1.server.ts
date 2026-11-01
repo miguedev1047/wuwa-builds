@@ -6,7 +6,6 @@ import {
   echoSets,
   echoSkills,
   echoes,
-  resonatorBreaches,
   resonatorPassives,
   resonatorPropertyLevels,
   resonatorPropertyGrowth,
@@ -170,19 +169,6 @@ export async function saveCharacter(
       }))
     )
   }
-
-  if (character.breaches.length > 0) {
-    await db.insert(resonatorBreaches).values(
-      character.breaches.map((breach, sortOrder) => ({
-        resonatorId: character.id,
-        breachId: breach.id,
-        sortOrder,
-        level: breach.level,
-        maxLevel: breach.maxLevel,
-        items: breach.items,
-      }))
-    )
-  }
 }
 
 export async function readCharacter(
@@ -200,7 +186,6 @@ export async function readCharacter(
       skills: { orderBy: { sortOrder: "asc" } },
       sequences: { orderBy: { sortOrder: "asc" } },
       passives: { orderBy: { sortOrder: "asc" } },
-      breaches: { orderBy: { sortOrder: "asc" } },
     },
   })
 
@@ -260,12 +245,7 @@ export async function readCharacter(
       icon: passive.icon,
       consume: [],
     })),
-    breaches: row.breaches.map((breach) => ({
-      id: breach.breachId,
-      level: breach.level,
-      maxLevel: breach.maxLevel,
-      items: breach.items,
-    })),
+    breaches: [],
   }
 }
 
