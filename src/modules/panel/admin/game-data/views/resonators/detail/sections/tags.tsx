@@ -13,7 +13,7 @@ export function ResonatorTagsSection() {
       <EditableSection.Header>
         <EditableSection.Title>Etiquetas</EditableSection.Title>
         <EditableSection.Description>
-          Se reemplazan al guardar; las opciones vienen del detalle de Encore.
+          En esta seccion puedes agregar estilos de combate del resonador
         </EditableSection.Description>
       </EditableSection.Header>
 
