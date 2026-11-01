@@ -245,35 +245,6 @@ export const resonatorPassives = sqliteTable(
   ]
 )
 
-/** `SkillTree[].Consume[]`: materials a passive upgrade costs. */
-export const resonatorPassiveItems = sqliteTable(
-  "resonator_passive_items",
-  {
-    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
-    passiveId: integer("passive_id", { mode: "number" })
-      .notNull()
-      .references(() => resonatorPassives.id, { onDelete: "cascade" }),
-    /** Position in `Consume[]`. */
-    sortOrder: integer("sort_order", { mode: "number" }).notNull(),
-    /** `Key` (item ID) */
-    key: integer("key", { mode: "number" }).notNull(),
-    /** `Value` (quantity) */
-    value: integer("value", { mode: "number" }).notNull(),
-    /** `Icon` */
-    icon: text("icon").notNull().default(""),
-    /** `QualityId` */
-    quality: integer("quality", { mode: "number" }).notNull().default(0),
-
-    ...getDate(),
-  },
-  (table) => [
-    index("resonator_passive_items_passive_idx").on(
-      table.passiveId,
-      table.sortOrder
-    ),
-  ]
-)
-
 /** `Breaches[]`: ascension breakpoints and their material list. */
 export const resonatorBreaches = sqliteTable(
   "resonator_breaches",
@@ -320,9 +291,6 @@ export type ResonatorSequenceRow = typeof resonatorSequences.$inferSelect
 export type NewResonatorSequenceRow = typeof resonatorSequences.$inferInsert
 export type ResonatorPassiveRow = typeof resonatorPassives.$inferSelect
 export type NewResonatorPassiveRow = typeof resonatorPassives.$inferInsert
-export type ResonatorPassiveItemRow = typeof resonatorPassiveItems.$inferSelect
-export type NewResonatorPassiveItemRow =
-  typeof resonatorPassiveItems.$inferInsert
 export type ResonatorBreachRow = typeof resonatorBreaches.$inferSelect
 export type NewResonatorBreachRow = typeof resonatorBreaches.$inferInsert
 
@@ -335,7 +303,6 @@ export const resonatorRelations = defineRelationsPart(
     resonatorSkills,
     resonatorSequences,
     resonatorPassives,
-    resonatorPassiveItems,
     resonatorBreaches,
   },
   (r) => ({
@@ -403,16 +370,6 @@ export const resonatorRelations = defineRelationsPart(
       resonator: r.one.resonators({
         from: r.resonatorPassives.resonatorId,
         to: r.resonators.id,
-      }),
-      consume: r.many.resonatorPassiveItems({
-        from: r.resonatorPassives.id,
-        to: r.resonatorPassiveItems.passiveId,
-      }),
-    },
-    resonatorPassiveItems: {
-      passive: r.one.resonatorPassives({
-        from: r.resonatorPassiveItems.passiveId,
-        to: r.resonatorPassives.id,
       }),
     },
     resonatorBreaches: {

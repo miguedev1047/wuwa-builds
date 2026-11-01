@@ -3,6 +3,7 @@
 import { describe, expect, test } from "bun:test"
 import {
   resonatorInput,
+  resonatorPassiveInput,
   resonatorPropertyGrowthInput,
   resonatorPropertyLevelsSchema,
   resonatorSequenceInput,
@@ -235,6 +236,33 @@ describe("resonatorSequenceInput", () => {
   test("requires a name", () => {
     expect(
       resonatorSequenceInput.safeParse({ ...valid, name: " " }).success
+    ).toBe(false)
+  })
+})
+
+describe("resonatorPassiveInput", () => {
+  const valid = {
+    resonatorId: 1311,
+    passiveId: 155,
+    sortOrder: 1,
+    title: "  ATQ+  ",
+    description: "<p>Descripcion</p>",
+    icon: "passive.webp",
+  }
+
+  test("trims the title and accepts a valid passive", () => {
+    expect(resonatorPassiveInput.parse(valid).title).toBe("ATQ+")
+  })
+
+  test("rejects an empty title", () => {
+    expect(
+      resonatorPassiveInput.safeParse({ ...valid, title: " " }).success
+    ).toBe(false)
+  })
+
+  test("requires a positive passive id", () => {
+    expect(
+      resonatorPassiveInput.safeParse({ ...valid, passiveId: 0 }).success
     ).toBe(false)
   })
 })

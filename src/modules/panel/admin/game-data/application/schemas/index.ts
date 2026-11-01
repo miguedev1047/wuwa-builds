@@ -1,5 +1,6 @@
 export * from "./property-growth"
 export * from "./property-levels"
+export * from "./resonator-passives"
 export * from "./resonator-sequences"
 export * from "./resonator-skills"
 export * from "./resonators"

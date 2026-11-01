@@ -36,10 +36,7 @@ export const getCharacter = createServerFn({
         },
         skills: { orderBy: { sortOrder: "asc" } },
         sequences: { orderBy: { sortOrder: "asc" } },
-        passives: {
-          orderBy: { sortOrder: "asc" },
-          with: { consume: { orderBy: { sortOrder: "asc" } } },
-        },
+        passives: { orderBy: { sortOrder: "asc" } },
         breaches: { orderBy: { sortOrder: "asc" } },
       },
     })

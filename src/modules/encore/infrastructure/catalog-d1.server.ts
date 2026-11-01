@@ -6,7 +6,6 @@ import {
   echoSkills,
   echoes,
   resonatorBreaches,
-  resonatorPassiveItems,
   resonatorPassives,
   resonatorPropertyLevels,
   resonatorPropertyGrowth,
@@ -159,37 +158,16 @@ export async function saveCharacter(
   }
 
   if (character.passives.length > 0) {
-    const inserted = (await db
-      .insert(resonatorPassives)
-      .values(
-        character.passives.map((passive, sortOrder) => ({
-          resonatorId: character.id,
-          passiveId: passive.id,
-          sortOrder,
-          title: passive.title,
-          description: passive.description,
-          icon: passive.icon,
-        }))
-      )
-      .returning({
-        id: resonatorPassives.id,
-        sortOrder: resonatorPassives.sortOrder,
-      })) as InsertedId[]
-
-    const consume = inserted.flatMap((row) =>
-      character.passives[row.sortOrder].consume.map((item, sortOrder) => ({
-        passiveId: row.id,
+    await db.insert(resonatorPassives).values(
+      character.passives.map((passive, sortOrder) => ({
+        resonatorId: character.id,
+        passiveId: passive.id,
         sortOrder,
-        key: item.key,
-        value: item.value,
-        icon: item.icon,
-        quality: item.quality,
+        title: passive.title,
+        description: passive.description,
+        icon: passive.icon,
       }))
     )
-
-    if (consume.length > 0) {
-      await db.insert(resonatorPassiveItems).values(consume)
-    }
   }
 
   if (character.breaches.length > 0) {
@@ -220,10 +198,7 @@ export async function readCharacter(
       },
       skills: { orderBy: { sortOrder: "asc" } },
       sequences: { orderBy: { sortOrder: "asc" } },
-      passives: {
-        orderBy: { sortOrder: "asc" },
-        with: { consume: { orderBy: { sortOrder: "asc" } } },
-      },
+      passives: { orderBy: { sortOrder: "asc" } },
       breaches: { orderBy: { sortOrder: "asc" } },
     },
   })
@@ -282,12 +257,7 @@ export async function readCharacter(
       title: passive.title,
       description: passive.description,
       icon: passive.icon,
-      consume: passive.consume.map((item) => ({
-        key: item.key,
-        value: item.value,
-        icon: item.icon,
-        quality: item.quality,
-      })),
+      consume: [],
     })),
     breaches: row.breaches.map((breach) => ({
       id: breach.breachId,

@@ -193,8 +193,8 @@ const rawEcho: RawEchoDetail = {
   },
 }
 
-/** The D1 document no longer stores skill attributes, consumes or damage. */
-function withoutSkillDetails(
+/** The D1 document no longer stores skill or passive details. */
+function withoutDroppedDetails(
   character: EncoreCharacterDetail
 ): EncoreCharacterDetail {
   return {
@@ -204,6 +204,10 @@ function withoutSkillDetails(
       attributes: [],
       consumes: [],
       damage: [],
+    })),
+    passives: character.passives.map((passive) => ({
+      ...passive,
+      consume: [],
     })),
   }
 }
@@ -225,7 +229,7 @@ describe("encore catalog schema", () => {
     await saveEcho(db, echo)
 
     expect(await readCharacter(db, character.id)).toEqual(
-      withoutSkillDetails(character)
+      withoutDroppedDetails(character)
     )
     expect(await readWeapon(db, weapon.id)).toEqual(weapon)
     expect(await readEcho(db, echo.id)).toEqual(echo)
@@ -290,7 +294,7 @@ describe("encore catalog schema", () => {
     expect(stored?.skills).toHaveLength(1)
     expect(stored?.skills[0].attributes).toEqual([])
     expect(stored?.properties[0].growth).toHaveLength(3)
-    expect(stored?.passives[0].consume).toHaveLength(1)
+    expect(stored?.passives[0].consume).toEqual([])
     expect(stored?.breaches).toHaveLength(2)
     expect(stored?.tags).toHaveLength(1)
     expect(stored?.sequences).toHaveLength(1)
@@ -315,10 +319,10 @@ describe("encore catalog schema", () => {
     await saveCharacter(db, other)
 
     expect(await readCharacter(db, first.id)).toEqual(
-      withoutSkillDetails(first)
+      withoutDroppedDetails(first)
     )
     expect(await readCharacter(db, other.id)).toEqual(
-      withoutSkillDetails(other)
+      withoutDroppedDetails(other)
     )
   })
 

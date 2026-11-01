@@ -1,0 +1,39 @@
+import type { EncorePassive } from "@/modules/encore/domain/character"
+import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
+import { ResonatorPassiveAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-add-form"
+
+type ResonatorPassiveAddActionProps = {
+  resonatorId: number
+  sortOrder: number
+  isMaxPassives: boolean
+  encorePassives: EncorePassive[]
+  savedPassiveIds: number[]
+}
+
+/** Header action that opens the passive form inside a dialog. */
+export function ResonatorPassiveAddAction({
+  resonatorId,
+  sortOrder,
+  isMaxPassives,
+  encorePassives,
+  savedPassiveIds,
+}: ResonatorPassiveAddActionProps) {
+  return (
+    <EditableSection.AddAction
+      disabled={isMaxPassives}
+      title="Agregar pasivas"
+      description="Elige una o mas pasivas de Encore."
+    >
+      {({ close }) => (
+        <ResonatorPassiveAddForm
+          resonatorId={resonatorId}
+          sortOrder={sortOrder}
+          encorePassives={encorePassives}
+          savedPassiveIds={savedPassiveIds}
+          onSaved={close}
+          onCancel={close}
+        />
+      )}
+    </EditableSection.AddAction>
+  )
+}
