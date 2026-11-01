@@ -92,8 +92,8 @@ export const resonatorTags = sqliteTable(
 )
 
 /** `Properties[]`: base stats such as ATK, HP or DEF. */
-export const resonatorProperties = sqliteTable(
-  "resonator_properties",
+export const resonatorPropertyLevels = sqliteTable(
+  "resonator_property_levels",
   {
     id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
     resonatorId: integer("resonator_id", { mode: "number" })
@@ -111,7 +111,7 @@ export const resonatorProperties = sqliteTable(
     ...getDate(),
   },
   (table) => [
-    index("resonator_properties_resonator_idx").on(
+    index("resonator_property_levels_resonator_idx").on(
       table.resonatorId,
       table.sortOrder
     ),
@@ -134,7 +134,7 @@ export const resonatorPropertyGrowth = sqliteTable(
     id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
     propertyId: integer("property_id", { mode: "number" })
       .notNull()
-      .references(() => resonatorProperties.id, { onDelete: "cascade" }),
+      .references(() => resonatorPropertyLevels.id, { onDelete: "cascade" }),
     /** Position in `GrowthValues[]`. */
     sortOrder: integer("sort_order", { mode: "number" }).notNull(),
     /** `level` */
@@ -340,8 +340,9 @@ export type ResonatorRow = typeof resonators.$inferSelect
 export type NewResonatorRow = typeof resonators.$inferInsert
 export type ResonatorTagRow = typeof resonatorTags.$inferSelect
 export type NewResonatorTagRow = typeof resonatorTags.$inferInsert
-export type ResonatorPropertyRow = typeof resonatorProperties.$inferSelect
-export type NewResonatorPropertyRow = typeof resonatorProperties.$inferInsert
+export type ResonatorPropertyRow = typeof resonatorPropertyLevels.$inferSelect
+export type NewResonatorPropertyRow =
+  typeof resonatorPropertyLevels.$inferInsert
 export type ResonatorPropertyGrowthRow =
   typeof resonatorPropertyGrowth.$inferSelect
 export type NewResonatorPropertyGrowthRow =
@@ -366,7 +367,7 @@ export const resonatorRelations = defineRelationsPart(
   {
     resonators,
     resonatorTags,
-    resonatorProperties,
+    resonatorPropertyLevels,
     resonatorPropertyGrowth,
     resonatorSkills,
     resonatorSkillAttributes,
@@ -381,9 +382,9 @@ export const resonatorRelations = defineRelationsPart(
         from: r.resonators.id,
         to: r.resonatorTags.resonatorId,
       }),
-      properties: r.many.resonatorProperties({
+      properties: r.many.resonatorPropertyLevels({
         from: r.resonators.id,
-        to: r.resonatorProperties.resonatorId,
+        to: r.resonatorPropertyLevels.resonatorId,
       }),
       skills: r.many.resonatorSkills({
         from: r.resonators.id,
@@ -408,20 +409,20 @@ export const resonatorRelations = defineRelationsPart(
         to: r.resonators.id,
       }),
     },
-    resonatorProperties: {
+    resonatorPropertyLevels: {
       resonator: r.one.resonators({
-        from: r.resonatorProperties.resonatorId,
+        from: r.resonatorPropertyLevels.resonatorId,
         to: r.resonators.id,
       }),
       growth: r.many.resonatorPropertyGrowth({
-        from: r.resonatorProperties.id,
+        from: r.resonatorPropertyLevels.id,
         to: r.resonatorPropertyGrowth.propertyId,
       }),
     },
     resonatorPropertyGrowth: {
-      property: r.one.resonatorProperties({
+      property: r.one.resonatorPropertyLevels({
         from: r.resonatorPropertyGrowth.propertyId,
-        to: r.resonatorProperties.id,
+        to: r.resonatorPropertyLevels.id,
       }),
     },
     resonatorSkills: {

@@ -8,7 +8,7 @@ import {
   resonatorBreaches,
   resonatorPassiveItems,
   resonatorPassives,
-  resonatorProperties,
+  resonatorPropertyLevels,
   resonatorPropertyGrowth,
   resonatorSequences,
   resonatorSkillAttributes,
@@ -102,7 +102,7 @@ export async function saveCharacter(
 
   if (character.properties.length > 0) {
     const inserted = (await db
-      .insert(resonatorProperties)
+      .insert(resonatorPropertyLevels)
       .values(
         character.properties.map((property, sortOrder) => ({
           resonatorId: character.id,
@@ -113,8 +113,8 @@ export async function saveCharacter(
         }))
       )
       .returning({
-        id: resonatorProperties.id,
-        sortOrder: resonatorProperties.sortOrder,
+        id: resonatorPropertyLevels.id,
+        sortOrder: resonatorPropertyLevels.sortOrder,
       })) as InsertedId[]
 
     const growth = inserted.flatMap((row) =>

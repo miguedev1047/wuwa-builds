@@ -45,13 +45,13 @@ set effects are kept.
 in D1 (one table per nested collection, every column annotated with the raw
 Encore JSON key):
 
-| File            | Tables                                                                      |
-| --------------- | --------------------------------------------------------------------------- |
-| `resonators.ts` | `resonators`, `resonator_tags`, `resonator_properties`, `resonator_property_growth` |
-|                 | `resonator_skills`, `resonator_skill_attributes`, `resonator_sequences`      |
-|                 | `resonator_passives`, `resonator_passive_items`, `resonator_breaches`        |
-| `weapons.ts`    | `weapons`, `weapon_properties`, `weapon_property_growth`, `weapon_breaches`  |
-| `echoes.ts`     | `echoes`, `echo_sets`, `echo_set_effects`, `echo_skills`                     |
+| File            | Tables                                                                                   |
+| --------------- | ---------------------------------------------------------------------------------------- |
+| `resonators.ts` | `resonators`, `resonator_tags`, `resonator_property_levels`, `resonator_property_growth` |
+|                 | `resonator_skills`, `resonator_skill_attributes`, `resonator_sequences`                  |
+|                 | `resonator_passives`, `resonator_passive_items`, `resonator_breaches`                    |
+| `weapons.ts`    | `weapons`, `weapon_properties`, `weapon_property_growth`, `weapon_breaches`              |
+| `echoes.ts`     | `echoes`, `echo_sets`, `echo_set_effects`, `echo_skills`                                 |
 
 `src/modules/encore/infrastructure/catalog-d1.server.ts` writes and reads those
 tables as whole documents (`saveCharacter`/`readCharacter`, and the weapon and
