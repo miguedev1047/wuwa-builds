@@ -9,6 +9,12 @@ import {
 } from "@/components/ui/card"
 import { ResonatorSequenceDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-delete-action"
 import { ResonatorSequenceEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-edit-action"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+import { Button } from "@/components/ui/button"
 
 type ResonatorSequenceCardProps = {
   sequence: ResonatorSequenceRow
@@ -44,10 +50,21 @@ export function ResonatorSequenceCard({
       </CardHeader>
 
       <CardContent>
-        <div
-          className="line-clamp-4 text-xs/relaxed text-muted-foreground"
-          dangerouslySetInnerHTML={{ __html: sequence.description }}
-        />
+        <Collapsible>
+          <CollapsibleTrigger
+            render={
+              <Button variant="outline" className="w-full">
+                Ver descripción
+              </Button>
+            }
+          />
+          <CollapsibleContent className="mt-4 px-2">
+            <div
+              className="text-xs/relaxed text-muted-foreground"
+              dangerouslySetInnerHTML={{ __html: sequence.description }}
+            />
+          </CollapsibleContent>
+        </Collapsible>
       </CardContent>
     </Card>
   )
