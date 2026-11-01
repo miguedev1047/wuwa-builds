@@ -58,8 +58,8 @@ export const RESONATOR_PROPERTY_NAMES = [
     encoreScale: 100,
   },
   {
-    label: "Dano Crit.",
-    value: "Dano Crit.",
+    label: "Daño Crit.",
+    value: "Daño Crit.",
     encoreName: "Daño CRIT",
     encoreScale: 100,
   },

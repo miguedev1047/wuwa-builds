@@ -24,6 +24,7 @@ import {
   PropertyLevelFields,
   propertyLevelFormDefaults,
 } from "@/modules/panel/admin/game-data/views/resonators/detail/components/property-level-fields"
+import { Separator } from "@/components/ui/separator"
 
 type PropertyLevelAddFormProps = {
   resonatorId: number
@@ -88,9 +89,12 @@ export function PropertyLevelAddForm({
     <>
       {encoreOptions.length > 0 ? (
         <Field>
-          <FieldLabel htmlFor={encoreFieldId}>Rellenar desde Encore</FieldLabel>
+          <FieldLabel htmlFor={encoreFieldId}>
+            Autocompletado inteligente
+          </FieldLabel>
 
-          <Select<string>
+          <Select
+            items={encoreOptions}
             value={encoreName}
             disabled={isPending}
             onValueChange={(value) => {
@@ -123,10 +127,12 @@ export function PropertyLevelAddForm({
           </Select>
 
           <FieldDescription>
-            Copia el valor base y el icono del resonador en Encore.
+            Copia el valor base y el icono del resonador.
           </FieldDescription>
         </Field>
       ) : null}
+
+      <Separator />
 
       <form
         id={formId}
