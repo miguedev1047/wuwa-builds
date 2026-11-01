@@ -61,7 +61,7 @@ export const PropertyLevelFields = withForm({
           validators={{ onSubmit: resonatorPropertyLevelsSchema.shape.icon }}
         >
           {(field) => (
-            <field.TextField
+            <field.ImageField
               label="Icono"
               placeholder="https://api-v2.encore.moe/resource/..."
               inputMode="url"
