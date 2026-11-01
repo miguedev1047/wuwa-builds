@@ -30,7 +30,7 @@ export function PropertyGrowthAddAction({
         <Button
           type="button"
           variant="outline"
-          size="icon-sm"
+          size="icon"
           aria-label="Agregar nivel"
         >
           <HugeiconsIcon icon={PlusSignIcon} />

@@ -57,7 +57,7 @@ export function PropertyLevelRow({
               <Button
                 type="button"
                 variant="outline"
-                size="icon-sm"
+                size="icon"
                 aria-label="Mostrar niveles"
               >
                 <HugeiconsIcon icon={ChevronDownIcon} />

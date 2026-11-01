@@ -10,6 +10,12 @@ import {
 import { Show } from "@/components/utility/show"
 import { ResonatorSkillDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-delete-action"
 import { ResonatorSkillEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-edit-action"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+import { Button } from "@/components/ui/button"
 
 type ResonatorSkillCardProps = {
   skill: ResonatorSkillRow
@@ -53,10 +59,21 @@ export function ResonatorSkillCard({
       </CardHeader>
 
       <CardContent>
-        <div
-          className="line-clamp-4 text-xs/relaxed text-muted-foreground"
-          dangerouslySetInnerHTML={{ __html: skill.description }}
-        />
+        <Collapsible>
+          <CollapsibleTrigger
+            render={
+              <Button variant="outline" className="w-full">
+                Ver descripción
+              </Button>
+            }
+          />
+          <CollapsibleContent className="mt-4 px-2">
+            <div
+              className="text-xs/relaxed text-muted-foreground"
+              dangerouslySetInnerHTML={{ __html: skill.description }}
+            />
+          </CollapsibleContent>
+        </Collapsible>
       </CardContent>
     </Card>
   )

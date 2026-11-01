@@ -51,7 +51,7 @@ export function ResonatorSkillDeleteAction({
         <Button
           type="button"
           variant="destructive"
-          size="icon-sm"
+          size="icon"
           aria-label="Eliminar habilidad"
           disabled={isPending}
         >
