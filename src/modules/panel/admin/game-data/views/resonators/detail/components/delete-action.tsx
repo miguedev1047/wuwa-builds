@@ -36,16 +36,18 @@ export function ResonatorDeleteAction() {
     },
   })
 
+  const handleRemoveResonator = () => {
+    if (!isValidId(resonatorId)) return
+
+    mutate()
+  }
+
   return (
     <EditableSection.DeleteAction
       title="Eliminar resonador"
       description="Estas seguro que quieres eliminar este resonador"
       isPending={isPending}
-      onConfirm={() => {
-        if (!isValidId(resonatorId)) return
-
-        mutate()
-      }}
+      onConfirm={handleRemoveResonator}
       trigger={
         <Button
           type="button"

@@ -51,7 +51,7 @@ function ResonatorLevelAddLoader({
     encoreCharacterQueries.detail(resonatorId)
   )
 
-  const isMaxProperties = resonator.properties.length >= 5
+  const isMaxProperties = resonator.properties.length >= 6
 
   const savedNames = resonator.properties.map((property) => property.name)
   const sortOrder =
