@@ -20,7 +20,7 @@ export function ResonatorPassiveEditAction({
         <Button
           type="button"
           variant="secondary"
-          size="icon-sm"
+          size="icon"
           aria-label="Editar pasiva"
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />

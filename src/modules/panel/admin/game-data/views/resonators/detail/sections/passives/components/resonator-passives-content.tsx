@@ -15,10 +15,14 @@ export function ResonatorPassivesContent({
     characterQueries.detail(resonatorId)
   )
 
+  const orderedPassives = resonator.passives.sort((a, b) =>
+    a.title.localeCompare(b.title)
+  )
+
   return (
     <EditableSection.Content>
       <EditableSection.List
-        items={resonator.passives}
+        items={orderedPassives}
         getItemKey={(passive) => passive.id}
         empty={
           <EditableSection.Text>Sin pasivas agregadas.</EditableSection.Text>

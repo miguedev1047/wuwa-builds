@@ -51,7 +51,7 @@ export function ResonatorPassiveDeleteAction({
         <Button
           type="button"
           variant="destructive"
-          size="icon-sm"
+          size="icon"
           aria-label="Eliminar pasiva"
           disabled={isPending}
         >

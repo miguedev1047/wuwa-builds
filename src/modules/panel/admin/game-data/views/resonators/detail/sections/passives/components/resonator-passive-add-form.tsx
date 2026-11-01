@@ -35,6 +35,8 @@ export function ResonatorPassiveAddForm({
     mutationFn: (payloads: ResonatorPassiveInput[]) =>
       Promise.all(payloads.map((data) => createResonatorPassive({ data }))),
     onSuccess: async (_created, payloads) => {
+      console.log(payloads)
+
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.character(resonatorId),
       })
@@ -77,6 +79,7 @@ export function ResonatorPassiveAddForm({
       label: passive.title,
       value: String(passive.id),
     }))
+    .sort((a, b) => a.label.localeCompare(b.label))
 
   return (
     <>
