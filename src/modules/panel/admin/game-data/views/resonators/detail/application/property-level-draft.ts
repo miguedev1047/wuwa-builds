@@ -8,6 +8,18 @@ export type PropertyLevelDraft = {
   icon: string
 }
 
+/** Resolves the Encore property that matches a saved property level name. */
+export function findEncoreProperty(
+  properties: EncoreProperty[],
+  name: string
+): EncoreProperty | undefined {
+  const option = RESONATOR_PROPERTY_NAMES.find((item) => item.value === name)
+
+  return properties.find(
+    (property) => property.name === (option?.encoreName ?? name)
+  )
+}
+
 /**
  * Maps an Encore base stat to the values of the property level form.
  *

@@ -1,6 +1,9 @@
 import { describe, expect, test } from "bun:test"
 import type { EncoreProperty } from "@/modules/encore/domain/property"
-import { propertyLevelDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/detail/application/property-level-draft"
+import {
+  findEncoreProperty,
+  propertyLevelDraftFromEncore,
+} from "@/modules/panel/admin/game-data/views/resonators/detail/application/property-level-draft"
 
 function encoreProperty(
   name: string,
@@ -59,5 +62,26 @@ describe("propertyLevelDraftFromEncore", () => {
       baseValue: 0,
       icon: "icon.webp",
     })
+  })
+})
+
+describe("findEncoreProperty", () => {
+  const properties = [
+    encoreProperty("ATQ", 35),
+    encoreProperty("PS", 824),
+    encoreProperty("Prob. CRIT", 500),
+  ]
+
+  test("matches a saved label with its Encore name", () => {
+    expect(findEncoreProperty(properties, "Ataque")?.name).toBe("ATQ")
+    expect(findEncoreProperty(properties, "Vida")?.name).toBe("PS")
+    expect(findEncoreProperty(properties, "Prob. Crit.")?.name).toBe(
+      "Prob. CRIT"
+    )
+  })
+
+  test("keeps working with the raw Encore name or an unknown one", () => {
+    expect(findEncoreProperty(properties, "PS")?.name).toBe("PS")
+    expect(findEncoreProperty(properties, "Desconocida")).toBeUndefined()
   })
 })

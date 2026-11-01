@@ -1,0 +1,45 @@
+import type { ResonatorPropertyGrowthRow } from "@/db/schema"
+import { formatGrowthValue } from "@/modules/panel/admin/game-data/application/property-growth"
+import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
+import { PropertyGrowthDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-delete-action"
+
+type PropertyGrowthListProps = {
+  growth: ResonatorPropertyGrowthRow[]
+  resonatorId: number
+}
+
+/** Growth values of a property, each one deletable. */
+export function PropertyGrowthList({
+  growth,
+  resonatorId,
+}: PropertyGrowthListProps) {
+  return (
+    <EditableSection.List
+      items={growth}
+      getItemKey={(entry) => entry.id}
+      empty={
+        <EditableSection.Text>Sin niveles agregados.</EditableSection.Text>
+      }
+    >
+      {(entry) => (
+        <EditableSection.Item size="sm">
+          <EditableSection.ItemContent>
+            <EditableSection.ItemTitle>
+              Nivel {entry.level}
+            </EditableSection.ItemTitle>
+            <EditableSection.ItemDescription>
+              {formatGrowthValue(entry)}
+            </EditableSection.ItemDescription>
+          </EditableSection.ItemContent>
+
+          <EditableSection.ItemActions>
+            <PropertyGrowthDeleteAction
+              growthId={entry.id}
+              resonatorId={resonatorId}
+            />
+          </EditableSection.ItemActions>
+        </EditableSection.Item>
+      )}
+    </EditableSection.List>
+  )
+}

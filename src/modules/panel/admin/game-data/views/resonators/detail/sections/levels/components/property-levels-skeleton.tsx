@@ -1,7 +1,7 @@
 import { SkeletonBox } from "skullet/react"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 
-export function ResonatorLevelsSkeleton() {
+export function PropertyLevelsSkeleton() {
   return (
     <EditableSection.Content>
       <div className="space-y-2">

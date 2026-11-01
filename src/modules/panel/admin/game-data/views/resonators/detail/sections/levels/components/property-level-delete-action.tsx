@@ -8,16 +8,16 @@ import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { deleteResonatorPropertyLevel } from "@/modules/panel/admin/game-data/server/property-levels"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 
-type ResonatorPropertyLevelDeleteProps = {
+type PropertyLevelDeleteActionProps = {
   propertyLevelId: number
   resonatorId: number
 }
 
-/** Removes one property level from the resonator after confirmation. */
-export function ResonatorPropertyLevelDelete({
+/** Removes one base stat from the resonator after confirmation. */
+export function PropertyLevelDeleteAction({
   propertyLevelId,
   resonatorId,
-}: ResonatorPropertyLevelDeleteProps) {
+}: PropertyLevelDeleteActionProps) {
   const queryClient = useQueryClient()
 
   const { mutate, isPending } = useMutation({
@@ -36,7 +36,7 @@ export function ResonatorPropertyLevelDelete({
     },
   })
 
-  const handleRemoveLevel = () => {
+  const handleRemoveProperty = () => {
     if (!isValidId(propertyLevelId)) return
     mutate()
   }
@@ -45,7 +45,7 @@ export function ResonatorPropertyLevelDelete({
     <EditableSection.DeleteAction
       title="Eliminar propiedad. Esta accion es irreversible."
       description="Estas seguro que quieres eliminar esta propiedad. Esta accion es irreversible."
-      onConfirm={handleRemoveLevel}
+      onConfirm={handleRemoveProperty}
       isPending={isPending}
       trigger={
         <Button

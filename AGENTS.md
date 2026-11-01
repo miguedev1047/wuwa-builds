@@ -112,6 +112,11 @@ Rules:
 ## Conventions
 
 - **English** for code comments, documentation, and commit messages.
+- Keep every component under 200 lines. When a section grows, split it into
+  its `index.tsx` root plus one file per component under `components/`, and
+  name each file after the entity and its role
+  (`property-growth-add-form.tsx`), never with generic names
+  (`add-level-action.tsx`).
 - Keep component bodies comment-free. Document props on their type and exported
   functions/components with a JSDoc block above them; no `//` or `{/* ... */}`
   inside a render tree, callback or hook body.

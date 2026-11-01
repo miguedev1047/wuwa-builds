@@ -3,6 +3,7 @@
 import { describe, expect, test } from "bun:test"
 import {
   resonatorInput,
+  resonatorPropertyGrowthInput,
   resonatorPropertyLevelsSchema,
   resonatorTagsInput,
   resonatorTagsSelectionInput,
@@ -114,6 +115,46 @@ describe("resonatorPropertyLevelsSchema", () => {
     expect(
       resonatorPropertyLevelsSchema.safeParse({ ...valid, sortOrder: 0 })
         .success
+    ).toBe(false)
+  })
+})
+
+describe("resonatorPropertyGrowthInput", () => {
+  const valid = {
+    propertyId: 12,
+    sortOrder: 1,
+    level: 90,
+    value: "824",
+  }
+
+  test("accepts a numeric value and trims it", () => {
+    expect(
+      resonatorPropertyGrowthInput.parse({ ...valid, value: " 824 " }).value
+    ).toBe("824")
+  })
+
+  test("accepts a percentage value", () => {
+    expect(
+      resonatorPropertyGrowthInput.safeParse({ ...valid, value: "5.2%" })
+        .success
+    ).toBe(true)
+  })
+
+  test("rejects levels outside 1..90", () => {
+    expect(
+      resonatorPropertyGrowthInput.safeParse({ ...valid, level: 0 }).success
+    ).toBe(false)
+    expect(
+      resonatorPropertyGrowthInput.safeParse({ ...valid, level: 91 }).success
+    ).toBe(false)
+  })
+
+  test("rejects empty or non numeric values", () => {
+    expect(
+      resonatorPropertyGrowthInput.safeParse({ ...valid, value: " " }).success
+    ).toBe(false)
+    expect(
+      resonatorPropertyGrowthInput.safeParse({ ...valid, value: "abc" }).success
     ).toBe(false)
   })
 })
