@@ -1,41 +1,14 @@
 import { useId } from "react"
-import {
-  useMutation,
-  useQueryClient,
-  useSuspenseQuery,
-} from "@tanstack/react-query"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import type { ResonatorTagRow } from "@/db/schema"
 import { useAppForm } from "@/components/form"
 import type { EncoreTag } from "@/modules/encore/domain/character"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { resonatorTagsSelectionInput } from "@/modules/panel/admin/game-data/application/schemas"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { replaceResonatorTags } from "@/modules/panel/admin/game-data/server/tags"
 import { toTagInput } from "@/modules/panel/admin/game-data/views/resonators/detail/application/to-tag-input"
-
-type ResonatorTagsLoaderProps = {
-  resonatorId: number
-}
-
-export function ResonatorTagsLoader({ resonatorId }: ResonatorTagsLoaderProps) {
-  const { data: resonator } = useSuspenseQuery(
-    characterQueries.detail(resonatorId)
-  )
-  const { data: encoreCharacter } = useSuspenseQuery(
-    encoreCharacterQueries.detail(resonatorId)
-  )
-
-  return (
-    <ResonatorTagsForm
-      resonatorId={resonatorId}
-      savedTags={resonator.tags}
-      encoreTags={encoreCharacter.tags}
-    />
-  )
-}
 
 type ResonatorTagsFormProps = {
   resonatorId: number
@@ -43,7 +16,8 @@ type ResonatorTagsFormProps = {
   encoreTags: EncoreTag[]
 }
 
-function ResonatorTagsForm({
+/** Tags form of the resonator. */
+export function ResonatorTagsForm({
   resonatorId,
   savedTags,
   encoreTags,
