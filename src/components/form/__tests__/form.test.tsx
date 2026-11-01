@@ -2,7 +2,7 @@
 
 import { describe, expect, test } from "bun:test"
 import { renderToStaticMarkup } from "react-dom/server"
-import { useAppForm, withForm } from "./index"
+import { useAppForm, withForm } from "@/components/form"
 
 const TextForm = withForm({
   defaultValues: { name: "" },

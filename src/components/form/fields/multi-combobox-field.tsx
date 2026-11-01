@@ -12,8 +12,8 @@ import {
   ComboboxValue,
   useComboboxAnchor,
 } from "@/components/ui/combobox"
-import { FieldShell } from "../field-shell"
-import { useFieldContext } from "../form-context"
+import { FieldShell } from "@/components/form/field-shell"
+import { useFieldContext } from "@/components/form/form-context"
 
 export type MultiComboboxOption = {
   label: string

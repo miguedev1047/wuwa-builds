@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
-import { useFormContext } from "./form-context"
+import { useFormContext } from "@/components/form/form-context"
 import type { ComponentProps } from "react"
 
 type SubmitButtonProps = {

@@ -7,8 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { FieldShell } from "../field-shell"
-import { useFieldContext } from "../form-context"
+import { FieldShell } from "@/components/form/field-shell"
+import { useFieldContext } from "@/components/form/form-context"
 
 export type FormOption = {
   label: ReactNode

@@ -1,8 +1,8 @@
 import { useSelector } from "@tanstack/react-form"
 import type { ComponentProps, ReactNode } from "react"
 import { Textarea } from "@/components/ui/textarea"
-import { FieldShell } from "../field-shell"
-import { useFieldContext } from "../form-context"
+import { FieldShell } from "@/components/form/field-shell"
+import { useFieldContext } from "@/components/form/form-context"
 
 type TextareaFieldProps = {
   label: ReactNode

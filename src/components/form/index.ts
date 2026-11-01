@@ -1,12 +1,12 @@
 import { createFormHook } from "@tanstack/react-form"
-import { fieldContext, formContext } from "./form-context"
-import { MultiComboboxField } from "./fields/multi-combobox-field"
-import { NumberField } from "./fields/number-field"
-import { SelectField } from "./fields/select-field"
-import { TextField } from "./fields/text-field"
-import { ImageField } from "./fields/image-field"
-import { TextareaField } from "./fields/textarea-field"
-import { SubmitButton } from "./submit-button"
+import { fieldContext, formContext } from "@/components/form/form-context"
+import { MultiComboboxField } from "@/components/form/fields/multi-combobox-field"
+import { NumberField } from "@/components/form/fields/number-field"
+import { SelectField } from "@/components/form/fields/select-field"
+import { TextField } from "@/components/form/fields/text-field"
+import { ImageField } from "@/components/form/fields/image-field"
+import { TextareaField } from "@/components/form/fields/textarea-field"
+import { SubmitButton } from "@/components/form/submit-button"
 
 /**
  * App-wide form toolkit.
@@ -41,8 +41,8 @@ export {
   formContext,
   useFieldContext,
   useFormContext,
-} from "./form-context"
+} from "@/components/form/form-context"
 
-export { FieldShell } from "./field-shell"
-export type { FormOption } from "./fields/select-field"
-export type { MultiComboboxOption } from "./fields/multi-combobox-field"
+export { FieldShell } from "@/components/form/field-shell"
+export type { FormOption } from "@/components/form/fields/select-field"
+export type { MultiComboboxOption } from "@/components/form/fields/multi-combobox-field"
