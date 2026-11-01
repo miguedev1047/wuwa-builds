@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import { Skeleton } from "skullet/react"
 import { Button } from "@/components/ui/button"
 import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
-import { characterQueries } from "@/modules/encore/queries/characters"
+import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { CatalogSearch } from "@/modules/panel/admin/game-data/components/catalog-search"
 
 type ResonatorSearchProps = {
@@ -52,7 +52,7 @@ function ResonatorSearchResults({
   selectedId,
   onSelect,
 }: ResonatorSearchResultsProps) {
-  const { data } = useQuery(characterQueries.list())
+  const { data } = useQuery(encoreCharacterQueries.list())
 
   return (
     <Skeleton

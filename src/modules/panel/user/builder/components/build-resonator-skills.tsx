@@ -8,7 +8,7 @@ import {
   getUpgradeableSkills,
   type UpgradeableSkill,
 } from "@/modules/builds/infrastructure/encore/skill-levels"
-import { characterQueries } from "@/modules/encore/queries/characters"
+import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { eq, useLiveQuery } from "@tanstack/react-db"
 import { useQuery } from "@tanstack/react-query"
 
@@ -29,7 +29,7 @@ export function BuildResonatorSkills({
   )
 
   const { data: character, isLoading } = useQuery({
-    ...characterQueries.detail(draft?.characterId ?? 0),
+    ...encoreCharacterQueries.detail(draft?.characterId ?? 0),
     enabled: draft?.characterId !== undefined,
   })
 

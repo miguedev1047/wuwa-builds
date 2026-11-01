@@ -17,7 +17,7 @@ import {
 } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-fields"
 import { ResonatorSearch } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-search"
 import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
-import { characterQueries } from "@/modules/encore/queries/characters"
+import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 
 export function ResonatorForm() {
   const formId = `new-resonator-form-${useId()}`
@@ -27,7 +27,7 @@ export function ResonatorForm() {
   const [selected, setSelected] = useState<EncoreCharacterSummary | null>(null)
 
   const { data: encoreCharacter, isLoading: isEncoreLoading } = useQuery({
-    ...characterQueries.detail(selected?.id ?? 0),
+    ...encoreCharacterQueries.detail(selected?.id ?? 0),
     enabled: selected !== null,
   })
 

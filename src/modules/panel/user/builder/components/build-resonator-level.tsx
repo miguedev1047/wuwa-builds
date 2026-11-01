@@ -3,7 +3,7 @@ import { Slider } from "@/components/ui/slider"
 import { Spinner } from "@/components/ui/spinner"
 import { Show } from "@/components/utility/show"
 import type { BuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
-import { characterQueries } from "@/modules/encore/queries/characters"
+import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { eq, useLiveQuery } from "@tanstack/react-db"
 import { useQuery } from "@tanstack/react-query"
 
@@ -24,7 +24,7 @@ export function BuildResonatorLevel({
   )
 
   const { data: character, isLoading } = useQuery({
-    ...characterQueries.detail(draft?.characterId ?? 0),
+    ...encoreCharacterQueries.detail(draft?.characterId ?? 0),
     enabled: draft?.characterId !== undefined,
   })
 

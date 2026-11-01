@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 import { CharacterList } from "@/modules/panel/user/new-build/components/character-list"
-import { characterQueries } from "@/modules/encore/queries/characters"
+import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { Suspense } from "react"
 
 export const Route = createFileRoute("/(panel)/panel/new-build")({
   component: RouteComponent,
   loader: async ({ context }) => {
-    await context.queryClient.query(characterQueries.list())
+    await context.queryClient.query(encoreCharacterQueries.list())
   },
 })
 

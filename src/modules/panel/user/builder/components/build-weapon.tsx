@@ -12,8 +12,8 @@ import { Field } from "@/components/ui/field"
 import { Spinner } from "@/components/ui/spinner"
 import { Show } from "@/components/utility/show"
 import type { BuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
-import { weaponQueries } from "@/modules/encore/queries/catalogs"
-import { characterQueries } from "@/modules/encore/queries/characters"
+import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
+import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { eq, useLiveQuery } from "@tanstack/react-db"
@@ -36,10 +36,10 @@ export function BuildWeapon({ collection, draftId }: BuildWeaponProps) {
       .findOne()
   )
 
-  const { data: weapons } = useSuspenseQuery(weaponQueries.list())
+  const { data: weapons } = useSuspenseQuery(encoreWeaponQueries.list())
 
   const { data: character } = useSuspenseQuery({
-    ...characterQueries.detail(draft?.characterId ?? 0),
+    ...encoreCharacterQueries.detail(draft?.characterId ?? 0),
   })
 
   const weaponType = character.weaponType
@@ -160,7 +160,9 @@ interface WeaponActionsProps {
 }
 
 function WeaponActions({ weaponId }: WeaponActionsProps) {
-  const { data: weapon } = useSuspenseQuery(weaponQueries.detail(weaponId))
+  const { data: weapon } = useSuspenseQuery(
+    encoreWeaponQueries.detail(weaponId)
+  )
 
   if (!weaponId) return
 

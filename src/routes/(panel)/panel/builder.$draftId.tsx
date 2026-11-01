@@ -4,8 +4,8 @@ import {
   useBuildDraftCollection,
   type BuildDraftCollection,
 } from "@/modules/builds/client/build-drafts-provider"
-import { characterQueries } from "@/modules/encore/queries/characters"
-import { echoQueries, weaponQueries } from "@/modules/encore/queries/catalogs"
+import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+import { encoreEchoQueries, encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
 import { eq } from "@tanstack/db"
 import { useLiveQuery } from "@tanstack/react-db"
 import { useQuery } from "@tanstack/react-query"
@@ -23,9 +23,9 @@ export const Route = createFileRoute("/(panel)/panel/builder/$draftId")({
   ssr: false,
   loader: async ({ context }) => {
     await Promise.all([
-      context.queryClient.query(characterQueries.list()),
-      context.queryClient.query(weaponQueries.list()),
-      context.queryClient.query(echoQueries.list()),
+      context.queryClient.query(encoreCharacterQueries.list()),
+      context.queryClient.query(encoreWeaponQueries.list()),
+      context.queryClient.query(encoreEchoQueries.list()),
     ])
   },
 })
@@ -62,7 +62,7 @@ function Builder({
   const characterId = draft?.characterId
 
   const { data: character, isError } = useQuery({
-    ...characterQueries.detail(characterId ?? 0),
+    ...encoreCharacterQueries.detail(characterId ?? 0),
     enabled: characterId !== undefined,
   })
 

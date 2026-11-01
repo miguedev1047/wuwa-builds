@@ -3,7 +3,7 @@ import { getCharacter, getCharacters } from "../server/characters"
 import { ENCORE_GC_TIME, ENCORE_STALE_TIME } from "./cache"
 import { encoreKeys } from "./keys"
 
-export const characterQueries = {
+export const encoreCharacterQueries = {
   list: () =>
     queryOptions({
       queryKey: encoreKeys.characters(),

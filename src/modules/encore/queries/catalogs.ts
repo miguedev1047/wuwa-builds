@@ -3,7 +3,7 @@ import { getEcho, getEchoes, getWeapon, getWeapons } from "../server/catalogs"
 import { ENCORE_GC_TIME, ENCORE_STALE_TIME } from "./cache"
 import { encoreKeys } from "./keys"
 
-export const weaponQueries = {
+export const encoreWeaponQueries = {
   list: () =>
     queryOptions({
       queryKey: encoreKeys.weapons(),
@@ -21,7 +21,7 @@ export const weaponQueries = {
     }),
 }
 
-export const echoQueries = {
+export const encoreEchoQueries = {
   list: () =>
     queryOptions({
       queryKey: encoreKeys.echoes(),

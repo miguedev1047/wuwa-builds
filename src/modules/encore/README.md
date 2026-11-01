@@ -79,16 +79,24 @@ so the screens still read the live API.
 
 ## Usage
 
+Encore is a decoupled external source: it is read to search and prefill the
+admin forms, while the app itself reads its own catalog from D1
+(`@/modules/panel/admin/game-data/queries`). That is why every export here is
+prefixed with `encore`.
+
 ```tsx
-import { characterQueries } from "@/modules/encore/queries/characters"
-import { echoQueries, weaponQueries } from "@/modules/encore/queries/catalogs"
+import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+import {
+  encoreEchoQueries,
+  encoreWeaponQueries,
+} from "@/modules/encore/queries/catalogs"
 
-const characters = await queryClient.query(characterQueries.list())
-const character = await queryClient.query(characterQueries.detail(1210))
+const characters = await queryClient.query(encoreCharacterQueries.list())
+const character = await queryClient.query(encoreCharacterQueries.detail(1210))
 
-const weapons = await queryClient.query(weaponQueries.list())
-const weapon = await queryClient.query(weaponQueries.detail(21010074))
+const weapons = await queryClient.query(encoreWeaponQueries.list())
+const weapon = await queryClient.query(encoreWeaponQueries.detail(21010074))
 
-const echoes = await queryClient.query(echoQueries.list())
-const echo = await queryClient.query(echoQueries.detail(6000038))
+const echoes = await queryClient.query(encoreEchoQueries.list())
+const echo = await queryClient.query(encoreEchoQueries.detail(6000038))
 ```

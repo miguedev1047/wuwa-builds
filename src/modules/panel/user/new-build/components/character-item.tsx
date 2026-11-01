@@ -2,7 +2,7 @@ import { Show } from "@/components/utility/show"
 import { useBuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
 import { createBuildDraftFromEncoreCharacter } from "@/modules/builds/infrastructure/encore/build-draft"
 import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
-import { characterQueries } from "@/modules/encore/queries/characters"
+import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
 import { cn } from "cn"
@@ -26,7 +26,7 @@ export function CharacterItem({ character }: CharacterItemProps) {
     startTransition(async () => {
       try {
         const characterDetail = await queryClient.query(
-          characterQueries.detail(character.id)
+          encoreCharacterQueries.detail(character.id)
         )
 
         const id = crypto.randomUUID()
