@@ -3,20 +3,7 @@ import { resonatorTags } from "@/db/schema"
 import { adminMiddleware } from "@/functions/middlewares"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
-import {
-  idInput,
-  resonatorTagsInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-
-export const getResonatorTags = createServerFn({ method: "GET" })
-  .middleware([adminMiddleware])
-  .validator(idInput)
-  .handler(async ({ data }) => {
-    return await db.query.resonatorTags.findMany({
-      where: { resonatorId: data.id },
-      orderBy: { sortOrder: "asc" },
-    })
-  })
+import { resonatorTagsInput } from "@/modules/panel/admin/game-data/application/schemas"
 
 /** Replaces the tags of a resonator: delete everything, then insert the new set. */
 export const replaceResonatorTags = createServerFn({ method: "POST" })

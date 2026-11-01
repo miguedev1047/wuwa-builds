@@ -2,7 +2,7 @@
 
 import { describe, expect, test } from "bun:test"
 import { renderToStaticMarkup } from "react-dom/server"
-import { EditableSection } from "./editable-section"
+import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 
 type Row = { id: number; name: string }
 

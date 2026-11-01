@@ -6,7 +6,7 @@ import type { EncoreCharacterDetail } from "@/modules/encore/domain/character"
 import {
   resonatorDraftFromEncore,
   resonatorDraftFromRow,
-} from "./resonator-draft"
+} from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
 
 const character: EncoreCharacterDetail = {
   id: 1402,

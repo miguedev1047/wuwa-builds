@@ -1,5 +1,6 @@
 import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
+import { notFound } from "@tanstack/react-router"
 import { eq } from "drizzle-orm"
 import {
   idInput,
@@ -14,6 +15,10 @@ export const getCharacters = createServerFn({ method: "GET" })
     return await db.query.resonators.findMany()
   })
 
+/**
+ * Single query of the resonator detail screen: the row plus every relation the
+ * panel can edit, so sections do not need their own `wuwa-builds` queries.
+ */
 export const getCharacter = createServerFn({
   method: "GET",
   strict: { output: false },
@@ -21,13 +26,31 @@ export const getCharacter = createServerFn({
   .middleware([adminMiddleware])
   .validator(idInput)
   .handler(async ({ data }) => {
-    const character = db.query.resonators.findFirst({
-      where: {
-        id: data.id,
+    const resonator = await db.query.resonators.findFirst({
+      where: { id: data.id },
+      with: {
+        tags: { orderBy: { sortOrder: "asc" } },
+        properties: {
+          orderBy: { sortOrder: "asc" },
+          with: { growth: { orderBy: { sortOrder: "asc" } } },
+        },
+        skills: {
+          orderBy: { sortOrder: "asc" },
+          with: { attributes: { orderBy: { sortOrder: "asc" } } },
+        },
+        sequences: { orderBy: { sortOrder: "asc" } },
+        passives: {
+          orderBy: { sortOrder: "asc" },
+          with: { consume: { orderBy: { sortOrder: "asc" } } },
+        },
+        breaches: { orderBy: { sortOrder: "asc" } },
       },
     })
 
-    return character
+    if (!resonator) {
+      throw notFound()
+    }
+    return resonator
   })
 
 export const createResonator = createServerFn({ method: "POST" })

@@ -3,7 +3,7 @@ import { EditableSection } from "@/modules/panel/admin/game-data/components/edit
 import type { ResonatorRow } from "@/db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { ResonatorEditForm } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-edit-form"
+import { ResonatorEditForm } from "@/modules/panel/admin/game-data/views/resonators/detail/components/edit-form"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { Show } from "@/components/utility/show"
 

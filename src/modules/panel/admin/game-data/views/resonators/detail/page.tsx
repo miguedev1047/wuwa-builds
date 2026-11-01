@@ -5,11 +5,11 @@ import { ResonatorTagsSection } from "@/modules/panel/admin/game-data/views/reso
 
 export function ResonatorDetailPage() {
   return (
-    <>
+    <div className="space-y-10">
       <ResonatorInfoSection />
       <ResonatorTagsSection />
 
       <CatalogSection.DockActions items={resonatorDetailDockActions} />
-    </>
+    </div>
   )
 }

@@ -1,15 +1,13 @@
 /**
- * Query keys for Wuwa Builds game data.
+ * Query keys for the Wuwa Builds panel.
  *
- * Keys are not tied to a deploy-time data version: Wuwa Builds freshness is
- * controlled by the API cache TTL.
+ * The panel reads its catalog from D1, so freshness follows each query's
+ * `staleTime` (see `cache.ts`), not a deploy-time data version.
  */
 export const wuwaBuildsKeys = {
   all: ["wuwa-builds"] as const,
   characters: () => [...wuwaBuildsKeys.all, "characters"] as const,
   character: (id: number) => [...wuwaBuildsKeys.all, "character", id] as const,
-  characterTags: (id: number) =>
-    [...wuwaBuildsKeys.all, "character", id, "tags"] as const,
   weapons: () => [...wuwaBuildsKeys.all, "weapons"] as const,
   weapon: (id: number) => [...wuwaBuildsKeys.all, "weapon", id] as const,
   echoes: () => [...wuwaBuildsKeys.all, "echoes"] as const,

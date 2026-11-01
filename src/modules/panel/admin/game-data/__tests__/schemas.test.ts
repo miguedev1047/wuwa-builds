@@ -5,7 +5,7 @@ import {
   resonatorInput,
   resonatorTagsInput,
   resonatorTagsSelectionInput,
-} from "./schemas"
+} from "@/modules/panel/admin/game-data/application/schemas"
 
 const valid = {
   id: 1402,
