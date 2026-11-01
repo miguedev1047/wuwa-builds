@@ -5,6 +5,7 @@ import {
   resonatorInput,
   resonatorPropertyGrowthInput,
   resonatorPropertyLevelsSchema,
+  resonatorSequenceInput,
   resonatorSkillFormInput,
   resonatorSkillInput,
   resonatorTagsInput,
@@ -203,6 +204,38 @@ describe("resonatorSkillInput", () => {
     expect(resonatorSkillFormInput.safeParse({ ...valid, id: 0 }).success).toBe(
       true
     )
+  })
+})
+
+describe("resonatorSequenceInput", () => {
+  const valid = {
+    resonatorId: 1311,
+    sequenceId: 355,
+    sortOrder: 1,
+    index: 1,
+    name: "  Bote, rompe la marea creciente  ",
+    description: "<p>Descripcion</p>",
+  }
+
+  test("trims the name and accepts a valid sequence", () => {
+    expect(resonatorSequenceInput.parse(valid).name).toBe(
+      "Bote, rompe la marea creciente"
+    )
+  })
+
+  test("rejects indexes outside 1..6", () => {
+    expect(
+      resonatorSequenceInput.safeParse({ ...valid, index: 0 }).success
+    ).toBe(false)
+    expect(
+      resonatorSequenceInput.safeParse({ ...valid, index: 7 }).success
+    ).toBe(false)
+  })
+
+  test("requires a name", () => {
+    expect(
+      resonatorSequenceInput.safeParse({ ...valid, name: " " }).success
+    ).toBe(false)
   })
 })
 

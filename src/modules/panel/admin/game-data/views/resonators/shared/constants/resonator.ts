@@ -70,3 +70,13 @@ export const RESONATOR_PROPERTY_NAMES = [
     encoreScale: 1,
   },
 ] as const
+
+/** `GroupIndex` of the six Resonant Chain nodes. */
+export const RESONATOR_SEQUENCE = [
+  { label: "Secuencia 1", value: 1 },
+  { label: "Secuencia 2", value: 2 },
+  { label: "Secuencia 3", value: 3 },
+  { label: "Secuencia 4", value: 4 },
+  { label: "Secuencia 5", value: 5 },
+  { label: "Secuencia 6", value: 6 },
+] as const
