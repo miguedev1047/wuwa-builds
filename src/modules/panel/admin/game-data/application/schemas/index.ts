@@ -1,4 +1,5 @@
 export * from "./property-growth"
 export * from "./property-levels"
+export * from "./resonator-skills"
 export * from "./resonators"
 export * from "./tags"

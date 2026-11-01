@@ -11,7 +11,6 @@ import {
   resonatorPropertyLevels,
   resonatorPropertyGrowth,
   resonatorSequences,
-  resonatorSkillAttributes,
   resonatorSkills,
   resonatorTags,
   resonators,
@@ -132,43 +131,18 @@ export async function saveCharacter(
   }
 
   if (character.skills.length > 0) {
-    const inserted = (await db
-      .insert(resonatorSkills)
-      .values(
-        character.skills.map((skill, sortOrder) => ({
-          resonatorId: character.id,
-          skillId: skill.id,
-          sortOrder,
-          type: skill.type,
-          name: skill.name,
-          description: skill.description,
-          icon: skill.icon,
-          media: skill.media,
-          consumes: skill.consumes,
-          damage: skill.damage,
-        }))
-      )
-      .returning({
-        id: resonatorSkills.id,
-        sortOrder: resonatorSkills.sortOrder,
-      })) as InsertedId[]
-
-    const attributes = inserted.flatMap((row) =>
-      character.skills[row.sortOrder].attributes.map(
-        (attribute, sortOrder) => ({
-          skillId: row.id,
-          sortOrder,
-          attributeId: attribute.id,
-          name: attribute.name,
-          values: attribute.values,
-          description: attribute.description ?? null,
-        })
-      )
+    await db.insert(resonatorSkills).values(
+      character.skills.map((skill, sortOrder) => ({
+        resonatorId: character.id,
+        skillId: skill.id,
+        sortOrder,
+        type: skill.type,
+        name: skill.name,
+        description: skill.description,
+        icon: skill.icon,
+        media: skill.media,
+      }))
     )
-
-    if (attributes.length > 0) {
-      await db.insert(resonatorSkillAttributes).values(attributes)
-    }
   }
 
   if (character.sequences.length > 0) {
@@ -244,10 +218,7 @@ export async function readCharacter(
         orderBy: { sortOrder: "asc" },
         with: { growth: { orderBy: { sortOrder: "asc" } } },
       },
-      skills: {
-        orderBy: { sortOrder: "asc" },
-        with: { attributes: { orderBy: { sortOrder: "asc" } } },
-      },
+      skills: { orderBy: { sortOrder: "asc" } },
       sequences: { orderBy: { sortOrder: "asc" } },
       passives: {
         orderBy: { sortOrder: "asc" },
@@ -296,14 +267,9 @@ export async function readCharacter(
       description: skill.description,
       icon: skill.icon,
       media: skill.media,
-      attributes: skill.attributes.map((attribute) => ({
-        id: attribute.attributeId,
-        name: attribute.name,
-        values: attribute.values,
-        description: attribute.description ?? undefined,
-      })),
-      consumes: skill.consumes,
-      damage: skill.damage,
+      attributes: [],
+      consumes: [],
+      damage: [],
     })),
     sequences: row.sequences.map((sequence) => ({
       id: sequence.sequenceId,

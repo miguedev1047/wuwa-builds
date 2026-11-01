@@ -5,6 +5,8 @@ import {
   resonatorInput,
   resonatorPropertyGrowthInput,
   resonatorPropertyLevelsSchema,
+  resonatorSkillFormInput,
+  resonatorSkillInput,
   resonatorTagsInput,
   resonatorTagsSelectionInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
@@ -156,6 +158,51 @@ describe("resonatorPropertyGrowthInput", () => {
     expect(
       resonatorPropertyGrowthInput.safeParse({ ...valid, value: "abc" }).success
     ).toBe(false)
+  })
+})
+
+describe("resonatorSkillInput", () => {
+  const valid = {
+    resonatorId: 1311,
+    skillId: 1006102,
+    sortOrder: 1,
+    type: "  Habilidad de resonancia  ",
+    name: "  Al corazon bajo la luna  ",
+    description: "<span>Descripcion</span>",
+    icon: "icon.webp",
+    media: "skill.mp4",
+  }
+
+  test("trims the text fields and accepts a valid skill", () => {
+    const parsed = resonatorSkillInput.parse(valid)
+
+    expect(parsed.type).toBe("Habilidad de resonancia")
+    expect(parsed.name).toBe("Al corazon bajo la luna")
+  })
+
+  test("rejects empty name and type", () => {
+    const result = resonatorSkillInput.safeParse({
+      ...valid,
+      name: " ",
+      type: "",
+    })
+
+    expect(result.error?.issues.map((issue) => issue.path[0])).toEqual([
+      "type",
+      "name",
+    ])
+  })
+
+  test("requires a positive skill id", () => {
+    expect(
+      resonatorSkillInput.safeParse({ ...valid, skillId: 0 }).success
+    ).toBe(false)
+  })
+
+  test("the form schema accepts the create id of zero", () => {
+    expect(resonatorSkillFormInput.safeParse({ ...valid, id: 0 }).success).toBe(
+      true
+    )
   })
 })
 

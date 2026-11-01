@@ -176,10 +176,6 @@ export const resonatorSkills = sqliteTable(
     icon: text("icon").notNull().default(""),
     /** `SkillMedia` */
     media: text("media").notNull().default(""),
-    /** `Consumes` (passthrough, `unknown[]`). */
-    consumes: text("consumes", { mode: "json" }).$type<unknown[]>().notNull(),
-    /** `DamageList` (passthrough, `unknown[]`). */
-    damage: text("damage", { mode: "json" }).$type<unknown[]>().notNull(),
 
     ...getDate(),
   },
@@ -187,35 +183,6 @@ export const resonatorSkills = sqliteTable(
     uniqueIndex("resonator_skills_resonator_skill_idx").on(
       table.resonatorId,
       table.skillId
-    ),
-  ]
-)
-
-/** `Skills[].SkillAttributes[]`: named multiplier rows of a skill. */
-export const resonatorSkillAttributes = sqliteTable(
-  "resonator_skill_attributes",
-  {
-    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
-    skillId: integer("skill_id", { mode: "number" })
-      .notNull()
-      .references(() => resonatorSkills.id, { onDelete: "cascade" }),
-    /** Position in `SkillAttributes[]`. */
-    sortOrder: integer("sort_order", { mode: "number" }).notNull(),
-    /** `attributeId` */
-    attributeId: integer("attribute_id", { mode: "number" }).notNull(),
-    /** `attributeName` */
-    name: text("name").notNull().default(""),
-    /** `values`, one entry per skill level. */
-    values: text("values", { mode: "json" }).$type<string[]>().notNull(),
-    /** `Description` (absent in most rows). */
-    description: text("description"),
-
-    ...getDate(),
-  },
-  (table) => [
-    index("resonator_skill_attributes_skill_idx").on(
-      table.skillId,
-      table.sortOrder
     ),
   ]
 )
@@ -349,10 +316,6 @@ export type NewResonatorPropertyGrowthRow =
   typeof resonatorPropertyGrowth.$inferInsert
 export type ResonatorSkillRow = typeof resonatorSkills.$inferSelect
 export type NewResonatorSkillRow = typeof resonatorSkills.$inferInsert
-export type ResonatorSkillAttributeRow =
-  typeof resonatorSkillAttributes.$inferSelect
-export type NewResonatorSkillAttributeRow =
-  typeof resonatorSkillAttributes.$inferInsert
 export type ResonatorSequenceRow = typeof resonatorSequences.$inferSelect
 export type NewResonatorSequenceRow = typeof resonatorSequences.$inferInsert
 export type ResonatorPassiveRow = typeof resonatorPassives.$inferSelect
@@ -370,7 +333,6 @@ export const resonatorRelations = defineRelationsPart(
     resonatorPropertyLevels,
     resonatorPropertyGrowth,
     resonatorSkills,
-    resonatorSkillAttributes,
     resonatorSequences,
     resonatorPassives,
     resonatorPassiveItems,
@@ -429,16 +391,6 @@ export const resonatorRelations = defineRelationsPart(
       resonator: r.one.resonators({
         from: r.resonatorSkills.resonatorId,
         to: r.resonators.id,
-      }),
-      attributes: r.many.resonatorSkillAttributes({
-        from: r.resonatorSkills.id,
-        to: r.resonatorSkillAttributes.skillId,
-      }),
-    },
-    resonatorSkillAttributes: {
-      skill: r.one.resonatorSkills({
-        from: r.resonatorSkillAttributes.skillId,
-        to: r.resonatorSkills.id,
       }),
     },
     resonatorSequences: {

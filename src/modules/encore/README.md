@@ -48,7 +48,7 @@ Encore JSON key):
 | File            | Tables                                                                                   |
 | --------------- | ---------------------------------------------------------------------------------------- |
 | `resonators.ts` | `resonators`, `resonator_tags`, `resonator_property_levels`, `resonator_property_growth` |
-|                 | `resonator_skills`, `resonator_skill_attributes`, `resonator_sequences`                  |
+|                 | `resonator_skills`, `resonator_sequences`                                                |
 |                 | `resonator_passives`, `resonator_passive_items`, `resonator_breaches`                    |
 | `weapons.ts`    | `weapons`, `weapon_properties`, `weapon_property_growth`, `weapon_breaches`              |
 | `echoes.ts`     | `echoes`, `echo_sets`, `echo_set_effects`, `echo_skills`                                 |
@@ -56,9 +56,11 @@ Encore JSON key):
 `src/modules/encore/infrastructure/catalog-d1.server.ts` writes and reads those
 tables as whole documents (`saveCharacter`/`readCharacter`, and the weapon and
 echo equivalents), returning the same `Encore*` types the API mapper produces.
-Writes delete and re-insert the entity, so a game patch never leaves stale
-child rows behind. `catalog-d1.test.ts` applies the generated migrations to an
-in-memory SQLite database and asserts the round trip is lossless.
+Skill attributes, consumes and damage are intentionally not stored: the D1
+reader returns them as empty arrays. Writes delete and re-insert the entity, so
+a game patch never leaves stale child rows behind. `catalog-d1.test.ts` applies
+the generated migrations to an in-memory SQLite database and asserts the stored
+document round trip.
 
 Two quirks of the real payloads shape the keys:
 

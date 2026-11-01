@@ -9,6 +9,7 @@ import { drizzle } from "drizzle-orm/bun-sqlite"
 import type { AppDb } from "@/db/create"
 import { relations } from "@/db/relations"
 import { resonators } from "@/db/schema"
+import type { EncoreCharacterDetail } from "@/modules/encore/domain/character"
 import {
   toCharacterDetail,
   toEchoDetail,
@@ -192,6 +193,21 @@ const rawEcho: RawEchoDetail = {
   },
 }
 
+/** The D1 document no longer stores skill attributes, consumes or damage. */
+function withoutSkillDetails(
+  character: EncoreCharacterDetail
+): EncoreCharacterDetail {
+  return {
+    ...character,
+    skills: character.skills.map((skill) => ({
+      ...skill,
+      attributes: [],
+      consumes: [],
+      damage: [],
+    })),
+  }
+}
+
 describe("encore catalog schema", () => {
   let db: AppDb
 
@@ -208,7 +224,9 @@ describe("encore catalog schema", () => {
     await saveWeapon(db, weapon)
     await saveEcho(db, echo)
 
-    expect(await readCharacter(db, character.id)).toEqual(character)
+    expect(await readCharacter(db, character.id)).toEqual(
+      withoutSkillDetails(character)
+    )
     expect(await readWeapon(db, weapon.id)).toEqual(weapon)
     expect(await readEcho(db, echo.id)).toEqual(echo)
   })
@@ -270,7 +288,7 @@ describe("encore catalog schema", () => {
 
     const stored = await readCharacter(db, character.id)
     expect(stored?.skills).toHaveLength(1)
-    expect(stored?.skills[0].attributes).toHaveLength(2)
+    expect(stored?.skills[0].attributes).toEqual([])
     expect(stored?.properties[0].growth).toHaveLength(3)
     expect(stored?.passives[0].consume).toHaveLength(1)
     expect(stored?.breaches).toHaveLength(2)
@@ -296,8 +314,12 @@ describe("encore catalog schema", () => {
     await saveCharacter(db, first)
     await saveCharacter(db, other)
 
-    expect(await readCharacter(db, first.id)).toEqual(first)
-    expect(await readCharacter(db, other.id)).toEqual(other)
+    expect(await readCharacter(db, first.id)).toEqual(
+      withoutSkillDetails(first)
+    )
+    expect(await readCharacter(db, other.id)).toEqual(
+      withoutSkillDetails(other)
+    )
   })
 
   test("deleting a character cascades to its child tables", async () => {

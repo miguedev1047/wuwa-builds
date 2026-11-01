@@ -34,10 +34,7 @@ export const getCharacter = createServerFn({
           orderBy: { sortOrder: "asc" },
           with: { growth: { orderBy: { sortOrder: "asc" } } },
         },
-        skills: {
-          orderBy: { sortOrder: "asc" },
-          with: { attributes: { orderBy: { sortOrder: "asc" } } },
-        },
+        skills: { orderBy: { sortOrder: "asc" } },
         sequences: { orderBy: { sortOrder: "asc" } },
         passives: {
           orderBy: { sortOrder: "asc" },
