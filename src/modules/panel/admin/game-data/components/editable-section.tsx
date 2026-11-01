@@ -29,7 +29,11 @@ import {
   ItemTitle,
 } from "@/components/ui/item"
 import { Show } from "@/components/utility/show"
-import { DeleteIcon, PencilEdit01Icon } from "@hugeicons/core-free-icons"
+import {
+  DeleteIcon,
+  PencilEdit01Icon,
+  PlusIcon,
+} from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { cn } from "cn"
 import {
@@ -46,8 +50,8 @@ import {
  *
  * A compound component built on shadcn primitives: `Content`/`Media`/`Body`
  * render a single editable block, `List`/`Item` render rows, and the actions
- * always end in a `Dialog` for edit and an `AlertDialog` for delete, both at
- * section level and inside list rows.
+ * always end in a `Dialog` for create/edit and an `AlertDialog` for delete,
+ * both at section level and inside list rows.
  */
 
 export function EditableSectionRoot({
@@ -291,6 +295,41 @@ export function EditableSectionEditAction({
   )
 }
 
+type EditableSectionAddActionProps = Omit<
+  EditableSectionEditActionProps,
+  "label"
+> & {
+  /** Text of the default trigger; it is also its accessible name. */
+  label?: string
+}
+
+/** Same dialog as `EditAction`, with a create-flavoured default trigger. */
+export function EditableSectionAddAction({
+  label = "Agregar",
+  trigger,
+  ...props
+}: EditableSectionAddActionProps) {
+  return (
+    <EditableSectionEditAction
+      label={label}
+      trigger={
+        trigger ?? (
+          <Button
+            type="button"
+            variant="secondary"
+            size="sm"
+            aria-label={label}
+          >
+            <HugeiconsIcon icon={PlusIcon} />
+            {label}
+          </Button>
+        )
+      }
+      {...props}
+    />
+  )
+}
+
 type EditableSectionDeleteActionProps = {
   title: string
   description?: ReactNode
@@ -383,5 +422,6 @@ export const EditableSection = {
   ItemDescription: ItemDescription,
   ItemActions: ItemActions,
   EditAction: EditableSectionEditAction,
+  AddAction: EditableSectionAddAction,
   DeleteAction: EditableSectionDeleteAction,
 } as const

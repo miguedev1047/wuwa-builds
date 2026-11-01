@@ -5,7 +5,8 @@ import type z from "zod"
 export const resonatorPropertyLevelsSchema = createInsertSchema(
   resonatorPropertyLevels,
   {
-    baseValue: (schema) => schema.min(1, "El valor base es requerido."),
+    baseValue: (schema) =>
+      schema.min(0, "El valor base no puede ser negativo."),
     icon: (schema) => schema.min(1, "El icono es requerido"),
     name: (schema) => schema.min(1, "El nombre es requerido"),
     resonatorId: (schema) => schema.min(1, "El ID del resonador es requerido"),

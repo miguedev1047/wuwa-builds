@@ -82,9 +82,12 @@ describe("EditableSection", () => {
     expect(html).not.toContain('role="list"')
   })
 
-  test("edit and delete actions render their triggers", () => {
+  test("add, edit and delete actions render their triggers", () => {
     const html = renderToStaticMarkup(
       <>
+        <EditableSection.AddAction title="Agregar propiedad">
+          {() => null}
+        </EditableSection.AddAction>
         <EditableSection.EditAction title="Editar resonador">
           {() => null}
         </EditableSection.EditAction>
@@ -95,6 +98,7 @@ describe("EditableSection", () => {
       </>
     )
 
+    expect(html).toContain('aria-label="Agregar"')
     expect(html).toContain('aria-label="Editar"')
     expect(html).toContain('aria-label="Eliminar"')
   })

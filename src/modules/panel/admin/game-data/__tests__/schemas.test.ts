@@ -3,6 +3,7 @@
 import { describe, expect, test } from "bun:test"
 import {
   resonatorInput,
+  resonatorPropertyLevelsSchema,
   resonatorTagsInput,
   resonatorTagsSelectionInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
@@ -71,6 +72,49 @@ describe("resonatorInput", () => {
     expect(parsed.id).toBe(1402)
     expect(parsed).not.toHaveProperty("createdAt")
     expect(parsed).not.toHaveProperty("updatedAt")
+  })
+})
+
+describe("resonatorPropertyLevelsSchema", () => {
+  const valid = {
+    resonatorId: 1104,
+    sortOrder: 1,
+    name: "Vida",
+    baseValue: 831,
+    icon: "https://api-v2.encore.moe/icon.webp",
+  }
+
+  test("accepts the property level payload", () => {
+    expect(resonatorPropertyLevelsSchema.parse(valid)).toEqual(valid)
+  })
+
+  test("accepts a zero base value", () => {
+    const result = resonatorPropertyLevelsSchema.safeParse({
+      ...valid,
+      baseValue: 0,
+    })
+
+    expect(result.success).toBe(true)
+  })
+
+  test("requires the name and the icon", () => {
+    const result = resonatorPropertyLevelsSchema.safeParse({
+      ...valid,
+      name: "",
+      icon: "",
+    })
+
+    expect(result.error?.issues.map((issue) => issue.path[0])).toEqual([
+      "name",
+      "icon",
+    ])
+  })
+
+  test("requires a positive sort order", () => {
+    expect(
+      resonatorPropertyLevelsSchema.safeParse({ ...valid, sortOrder: 0 })
+        .success
+    ).toBe(false)
   })
 })
 

@@ -39,3 +39,22 @@ export const RESONATOR_WEAPON_TYPES = [
   { label: "Pistolas", value: "Pistolas" },
   { label: "Rectificador", value: "Rectificador" },
 ]
+
+/**
+ * Base stats a resonator can have in `resonator_property_levels`.
+ *
+ * `encoreName` is the label the Encore API uses, so the panel can prefill the
+ * form with a saved property the user already knows from the game.
+ */
+export const RESONATOR_PROPERTY_NAMES = [
+  { label: "Ataque", value: "Ataque", encoreName: "ATQ" },
+  { label: "Vida", value: "Vida", encoreName: "PS" },
+  { label: "Defensa", value: "Defensa", encoreName: "DEF" },
+  { label: "Prob. Criti.", value: "Prob. Criti.", encoreName: "Prob. CRIT" },
+  { label: "Dano Crit.", value: "Dano Crit.", encoreName: "Daño CRIT" },
+  {
+    label: "Impulso de Ruptura de Tonalidad",
+    value: "Impulso de Ruptura de Tonalidad",
+    encoreName: "Impulso de Ruptura de Tonalidad",
+  },
+] as const
