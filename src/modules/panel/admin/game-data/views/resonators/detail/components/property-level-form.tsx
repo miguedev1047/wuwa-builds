@@ -25,6 +25,7 @@ import {
   propertyLevelFormDefaults,
 } from "@/modules/panel/admin/game-data/views/resonators/detail/components/property-level-fields"
 import { Separator } from "@/components/ui/separator"
+import { Show } from "@/components/utility/show"
 
 type PropertyLevelAddFormProps = {
   resonatorId: number
@@ -87,7 +88,7 @@ export function PropertyLevelAddForm({
 
   return (
     <>
-      {encoreOptions.length > 0 ? (
+      <Show when={encoreOptions.length > 0}>
         <Field>
           <FieldLabel htmlFor={encoreFieldId}>
             Autocompletado inteligente
@@ -110,6 +111,7 @@ export function PropertyLevelAddForm({
                 sortOrder,
                 ...option.draft,
               })
+
               setEncoreName(null)
             }}
           >
@@ -130,7 +132,7 @@ export function PropertyLevelAddForm({
             Copia el valor base y el icono del resonador.
           </FieldDescription>
         </Field>
-      ) : null}
+      </Show>
 
       <Separator />
 

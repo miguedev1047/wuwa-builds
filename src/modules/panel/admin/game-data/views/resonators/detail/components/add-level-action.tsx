@@ -5,6 +5,7 @@ import { PropertyLevelAddForm } from "@/modules/panel/admin/game-data/views/reso
 type ResonatorLevelAddActionProps = {
   resonatorId: number
   sortOrder: number
+  isMaxProperties: boolean
   encoreProperties: EncoreProperty[]
   savedNames: string[]
 }
@@ -14,10 +15,12 @@ export function ResonatorLevelAddAction({
   resonatorId,
   sortOrder,
   encoreProperties,
+  isMaxProperties,
   savedNames,
 }: ResonatorLevelAddActionProps) {
   return (
     <EditableSection.AddAction
+      disabled={isMaxProperties}
       title="Agregar propiedad"
       description="Elige una propiedad de Encore o escribe sus datos."
     >

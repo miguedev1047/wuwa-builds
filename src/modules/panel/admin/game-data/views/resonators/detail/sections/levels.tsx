@@ -50,6 +50,8 @@ function ResonatorLevelAddLoader({
     encoreCharacterQueries.detail(resonatorId)
   )
 
+  const isMaxProperties = resonator.properties.length >= 5
+
   const savedNames = resonator.properties.map((property) => property.name)
   const sortOrder =
     resonator.properties.reduce(
@@ -61,6 +63,7 @@ function ResonatorLevelAddLoader({
     <ResonatorLevelAddAction
       resonatorId={resonatorId}
       sortOrder={sortOrder}
+      isMaxProperties={isMaxProperties}
       encoreProperties={encoreCharacter.properties}
       savedNames={savedNames}
     />
@@ -92,7 +95,11 @@ function ResonatorLevelsList({ resonatorId }: ResonatorLevelsListProps) {
             <Show when={property.icon}>
               {(icon) => (
                 <EditableSection.ItemMedia variant="image">
-                  <img src={icon} alt={property.name} />
+                  <img
+                    src={icon}
+                    alt={property.name}
+                    className="size-full object-cover"
+                  />
                 </EditableSection.ItemMedia>
               )}
             </Show>

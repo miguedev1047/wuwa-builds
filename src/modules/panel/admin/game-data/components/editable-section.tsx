@@ -234,6 +234,7 @@ export function EditableSectionItem({
   return (
     <Item
       data-slot="editable-section-item"
+      variant="outline"
       className={cn("bg-card/50", className)}
       {...props}
     />
@@ -301,11 +302,13 @@ type EditableSectionAddActionProps = Omit<
 > & {
   /** Text of the default trigger; it is also its accessible name. */
   label?: string
+  disabled?: boolean
 }
 
 /** Same dialog as `EditAction`, with a create-flavoured default trigger. */
 export function EditableSectionAddAction({
   label = "Agregar",
+  disabled = false,
   trigger,
   ...props
 }: EditableSectionAddActionProps) {
@@ -316,6 +319,7 @@ export function EditableSectionAddAction({
         trigger ?? (
           <Button
             type="button"
+            disabled={disabled}
             variant="secondary"
             size="sm"
             aria-label={label}

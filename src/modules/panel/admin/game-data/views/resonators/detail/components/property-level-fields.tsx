@@ -22,7 +22,7 @@ export const PropertyLevelFields = withForm({
     /** Disables every control while a mutation is in flight. */
     isPending?: boolean
   },
-  render: function Render({ form, isPending }) {
+  render: function Render({ form }) {
     return (
       <FieldGroup className="grid w-full gap-4">
         <form.AppField
@@ -34,7 +34,7 @@ export const PropertyLevelFields = withForm({
               label="Nombre"
               options={RESONATOR_PROPERTY_NAMES}
               placeholder="Seleccionar propiedad"
-              disabled={isPending}
+              disabled
             />
           )}
         </form.AppField>
@@ -48,10 +48,11 @@ export const PropertyLevelFields = withForm({
           {(field) => (
             <field.NumberField
               label="Valor base"
+              readOnly
               placeholder="831"
               min={0}
               step="any"
-              disabled={isPending}
+              disabled
             />
           )}
         </form.AppField>
@@ -63,9 +64,10 @@ export const PropertyLevelFields = withForm({
           {(field) => (
             <field.ImageField
               label="Icono"
+              readOnly
               placeholder="https://api-v2.encore.moe/resource/..."
               inputMode="url"
-              disabled={isPending}
+              disabled
             />
           )}
         </form.AppField>
