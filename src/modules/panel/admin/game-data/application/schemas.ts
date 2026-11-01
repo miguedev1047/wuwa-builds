@@ -28,7 +28,6 @@ export const resonatorInput = createInsertSchema(resonators, {
   iconLarge: (schema) => schema.trim(),
   rarity: (schema) =>
     schema.min(1, "La rareza minima es 1").max(5, "La rareza maxima es 5"),
-  nickname: (schema) => schema.trim().max(80, "Maximo 80 caracteres"),
   introduction: (schema) => schema.trim().max(2000, "Maximo 2000 caracteres"),
   element: (schema) => schema.trim().min(1, "Selecciona un elemento"),
   weaponType: (schema) => schema.trim().min(1, "Selecciona un tipo de arma"),

@@ -38,8 +38,6 @@ export const resonators = sqliteTable(
     id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
     /** `Name.Content` */
     name: text("name").notNull(),
-    /** `NickName.Content` */
-    nickname: text("nickname").notNull().default(""),
     /** `Introduction.Content` */
     introduction: text("introduction").notNull().default(""),
     /** `QualityId` */

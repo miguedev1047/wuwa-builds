@@ -76,7 +76,6 @@ export async function saveCharacter(
   await db.insert(resonators).values({
     id: character.id,
     name: character.name,
-    nickname: character.nickname,
     introduction: character.introduction,
     rarity: character.rarity,
     element: character.element,
@@ -263,7 +262,6 @@ export async function readCharacter(
   return {
     id: row.id,
     name: row.name,
-    nickname: row.nickname,
     introduction: row.introduction,
     rarity: row.rarity,
     element: row.element,

@@ -82,7 +82,6 @@ export interface EncoreCharacterImages {
 
 /** Lean character payload: lore-only fields are intentionally not stored. */
 export interface EncoreCharacterDetail extends EncoreCharacterSummary {
-  nickname: string
   introduction: string
   images: EncoreCharacterImages
   tags: EncoreTag[]

@@ -11,7 +11,6 @@ import {
 const character: EncoreCharacterDetail = {
   id: 1402,
   name: "Yangyang",
-  nickname: "Brisa",
   introduction: "Resonadora de Jinzhou",
   rarity: 4,
   element: "Aero",
@@ -37,8 +36,7 @@ describe("resonatorDraftFromEncore", () => {
     expect(resonatorDraftFromEncore(character)).toEqual({
       id: 1402,
       name: "Yangyang",
-      nickname: "Brisa",
-      introduction: "Resonadora de Jinzhou",
+          introduction: "Resonadora de Jinzhou",
       rarity: 4,
       element: "Aero",
       weaponType: "Espada",
@@ -54,8 +52,7 @@ describe("resonatorDraftFromEncore", () => {
     const row: ResonatorRow = {
       id: 1402,
       name: "Yangyang",
-      nickname: "Brisa",
-      introduction: "Resonadora de Jinzhou",
+          introduction: "Resonadora de Jinzhou",
       rarity: 4,
       element: "Aero",
       weaponType: "Espada",
@@ -71,8 +68,7 @@ describe("resonatorDraftFromEncore", () => {
     expect(resonatorDraftFromRow(row)).toEqual({
       id: 1402,
       name: "Yangyang",
-      nickname: "Brisa",
-      introduction: "Resonadora de Jinzhou",
+          introduction: "Resonadora de Jinzhou",
       rarity: 4,
       element: "Aero",
       weaponType: "Espada",

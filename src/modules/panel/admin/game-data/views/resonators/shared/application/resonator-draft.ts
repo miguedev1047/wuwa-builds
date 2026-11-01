@@ -6,8 +6,7 @@ import type { ResonatorInput } from "@/modules/panel/admin/game-data/application
  * Fills the admin form with a full Encore character.
  *
  * The list endpoint only carries a summary, so the form requests the detail
- * before prefilling: that is where `nickname`, `introduction` and the image
- * fields live.
+ * before prefilling: that is where `introduction` and the image fields live.
  */
 export function resonatorDraftFromEncore(
   character: EncoreCharacterDetail
@@ -15,7 +14,6 @@ export function resonatorDraftFromEncore(
   return {
     id: character.id,
     name: character.name,
-    nickname: character.nickname,
     introduction: character.introduction,
     rarity: character.rarity,
     element: character.element,
@@ -33,7 +31,6 @@ export function resonatorDraftFromRow(resonator: ResonatorRow): ResonatorInput {
   return {
     id: resonator.id,
     name: resonator.name,
-    nickname: resonator.nickname,
     introduction: resonator.introduction,
     rarity: resonator.rarity,
     element: resonator.element,

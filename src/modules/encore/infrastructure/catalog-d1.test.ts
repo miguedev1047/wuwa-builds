@@ -56,7 +56,6 @@ function createTestDb(): AppDb {
 const rawCharacter: RawCharacterDetail = {
   Id: 1402,
   Name: { Title: "Yangyang", Content: "Yangyang" },
-  NickName: { Title: "Brisa", Content: "Brisa" },
   Introduction: { Title: "Introducción", Content: "Introducción" },
   QualityId: 4,
   ElementName: "Aero",

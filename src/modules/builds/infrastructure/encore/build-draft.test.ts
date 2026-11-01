@@ -30,7 +30,6 @@ function character(skills: EncoreSkill[]): EncoreCharacterDetail {
     element: "Fusion",
     weaponType: "Sword",
     icon: "character-icon",
-    nickname: "",
     introduction: "",
     images: {
       card: "",

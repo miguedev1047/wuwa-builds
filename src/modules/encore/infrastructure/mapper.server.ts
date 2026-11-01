@@ -113,7 +113,6 @@ interface RawTag {
 export interface RawCharacterDetail {
   Id: number
   Name?: RawText
-  NickName?: RawText
   Introduction?: RawText
   QualityId?: number
   ElementName?: string
@@ -229,7 +228,6 @@ export function toCharacterDetail(
   return {
     id: raw.Id,
     name: text(raw.Name),
-    nickname: text(raw.NickName),
     introduction: text(raw.Introduction),
     rarity: raw.QualityId ?? 0,
     element: raw.ElementName ?? "",

@@ -6,7 +6,6 @@ import { resonatorInput } from "./schemas"
 const valid = {
   id: 1402,
   name: "  Cartethyia  ",
-  nickname: " Dama del mar ",
   introduction: "Resonadora de Rinascita",
   rarity: 5,
   element: "Aero",
@@ -19,7 +18,6 @@ describe("resonatorInput", () => {
     const parsed = resonatorInput.parse(valid)
 
     expect(parsed.name).toBe("Cartethyia")
-    expect(parsed.nickname).toBe("Dama del mar")
     expect(parsed.rarity).toBe(5)
   })
 

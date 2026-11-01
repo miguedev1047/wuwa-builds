@@ -13,7 +13,6 @@ import {
 export const resonatorFormDefaults: ResonatorInput = {
   id: 0,
   name: "",
-  nickname: "",
   introduction: "",
   rarity: 5,
   element: "",
@@ -43,19 +42,7 @@ export const ResonatorFields = withForm({
               label="Nombre del resonador"
               placeholder="Cartethyia"
               disabled={isPending}
-            />
-          )}
-        </form.AppField>
-
-        <form.AppField
-          name="nickname"
-          validators={{ onSubmit: resonatorInput.shape.nickname }}
-        >
-          {(field) => (
-            <field.TextField
-              label="Apodo"
-              placeholder="Aero"
-              disabled={isPending}
+              className="md:col-span-2"
             />
           )}
         </form.AppField>
