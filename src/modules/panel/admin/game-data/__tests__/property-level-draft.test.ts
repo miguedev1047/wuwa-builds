@@ -29,14 +29,14 @@ describe("propertyLevelDraftFromEncore", () => {
     expect(
       propertyLevelDraftFromEncore(encoreProperty("Prob. CRIT", 500))
     ).toEqual({
-      name: "Prob. Criti.",
+      name: "Prob. Crit.",
       baseValue: 5,
       icon: "icon.webp",
     })
     expect(
       propertyLevelDraftFromEncore(encoreProperty("Daño CRIT", 15000))
     ).toEqual({
-      name: "Dano Crit.",
+      name: "Daño Crit.",
       baseValue: 150,
       icon: "icon.webp",
     })

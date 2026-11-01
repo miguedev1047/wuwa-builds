@@ -6,6 +6,7 @@ import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
 import { ResonatorLevelAddAction } from "@/modules/panel/admin/game-data/views/resonators/detail/components/add-level-action"
+import { ResonatorPropertyLevelDelete } from "@/modules/panel/admin/game-data/views/resonators/detail/components/property-level-delete"
 import { ResonatorLevelsSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/ui-states/levels-skeleton"
 
 /** Properties (`resonator_property_levels`) of the resonator. */
@@ -112,6 +113,13 @@ function ResonatorLevelsList({ resonatorId }: ResonatorLevelsListProps) {
                 Valor base: {property.baseValue}
               </EditableSection.ItemDescription>
             </EditableSection.ItemContent>
+
+            <EditableSection.ItemActions>
+              <ResonatorPropertyLevelDelete
+                propertyLevelId={property.id}
+                resonatorId={resonatorId}
+              />
+            </EditableSection.ItemActions>
           </EditableSection.Item>
         )}
       </EditableSection.List>

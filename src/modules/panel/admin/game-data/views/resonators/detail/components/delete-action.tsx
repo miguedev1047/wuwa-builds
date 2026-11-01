@@ -4,6 +4,7 @@ import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
+import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { deleteResonator } from "@/modules/panel/admin/game-data/server/characters"
@@ -41,7 +42,7 @@ export function ResonatorDeleteAction() {
       description="Estas seguro que quieres eliminar este resonador"
       isPending={isPending}
       onConfirm={() => {
-        if (!Number.isInteger(resonatorId) || resonatorId <= 0) return
+        if (!isValidId(resonatorId)) return
 
         mutate()
       }}
