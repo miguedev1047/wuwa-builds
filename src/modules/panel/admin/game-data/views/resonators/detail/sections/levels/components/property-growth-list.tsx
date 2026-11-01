@@ -15,6 +15,7 @@ export function PropertyGrowthList({
 }: PropertyGrowthListProps) {
   return (
     <EditableSection.List
+      className="grid md:grid-cols-2"
       items={growth}
       getItemKey={(entry) => entry.id}
       empty={

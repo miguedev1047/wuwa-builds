@@ -204,12 +204,14 @@ type EditableSectionListProps<T> = {
   empty?: ReactNode
   /** Defaults to the item index, which is only safe for static lists. */
   getItemKey?: (item: T, index: number) => Key
+  className?: string
 }
 
 export function EditableSectionList<T>({
   items,
   children,
   empty = null,
+  className,
   getItemKey,
 }: EditableSectionListProps<T>) {
   if (items.length === 0) {
@@ -217,7 +219,7 @@ export function EditableSectionList<T>({
   }
 
   return (
-    <ItemGroup data-slot="editable-section-list">
+    <ItemGroup className={cn(className)} data-slot="editable-section-list">
       {items.map((item, index) => (
         <Fragment key={getItemKey?.(item, index) ?? index}>
           {children(item, index)}
