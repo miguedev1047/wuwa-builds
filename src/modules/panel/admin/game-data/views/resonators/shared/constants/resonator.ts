@@ -52,8 +52,8 @@ export const RESONATOR_PROPERTY_NAMES = [
   { label: "Vida", value: "Vida", encoreName: "PS", encoreScale: 1 },
   { label: "Defensa", value: "Defensa", encoreName: "DEF", encoreScale: 1 },
   {
-    label: "Prob. Criti.",
-    value: "Prob. Criti.",
+    label: "Prob. Crit.",
+    value: "Prob. Crit.",
     encoreName: "Prob. CRIT",
     encoreScale: 100,
   },
