@@ -31,7 +31,7 @@ export function ResonatorInfoSection() {
             </EditableSection.Action>
           </EditableSection.Header>
 
-          <EditableSection.Content className="flex w-full items-start gap-4">
+          <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">
             <EditableSection.Media className="aspect-2/3 w-40">
               <CatalogSection.Image
                 src={resonator.iconLarge}

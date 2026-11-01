@@ -7,9 +7,12 @@ import { Button } from "@/components/ui/button"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { deleteResonator } from "@/modules/panel/admin/game-data/server/characters"
+import { useIsMobile } from "@/hooks/use-mobile"
+import { Show } from "@/components/utility/show"
 
 export function ResonatorDeleteAction() {
   const { id } = useParams({ from: "/(panel)/admin/resonators/$id" })
+  const isMobile = useIsMobile()
   const resonatorId = Number(id)
   const queryClient = useQueryClient()
   const navigate = useNavigate()
@@ -43,9 +46,13 @@ export function ResonatorDeleteAction() {
         mutate()
       }}
       trigger={
-        <Button type="button" variant="secondary" size="sm">
+        <Button
+          type="button"
+          variant="destructive"
+          size={isMobile ? "icon-sm" : "sm"}
+        >
           <HugeiconsIcon icon={DeleteIcon} />
-          Eliminar
+          <Show when={!isMobile}>Eliminar</Show>
         </Button>
       }
     />

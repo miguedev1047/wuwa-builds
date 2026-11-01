@@ -115,7 +115,7 @@ export function EditableSectionAction({
     <div
       data-slot="editable-section-action"
       className={cn(
-        "col-start-2 row-span-2 row-start-1 flex items-center gap-2 self-start justify-self-end",
+        "col-start-2 row-span-2 row-start-1 flex items-center gap-1 self-start justify-self-end md:gap-2",
         className
       )}
       {...props}
@@ -337,7 +337,7 @@ export function EditableSectionDeleteAction({
 
       <AlertDialogContent size="sm" {...contentProps}>
         <AlertDialogHeader>
-          <AlertDialogMedia>
+          <AlertDialogMedia className="bg-destructive/10 text-destructive dark:bg-destructive/20 dark:text-destructive">
             <HugeiconsIcon icon={DeleteIcon} />
           </AlertDialogMedia>
           <AlertDialogTitle>{title}</AlertDialogTitle>
@@ -350,7 +350,12 @@ export function EditableSectionDeleteAction({
           <AlertDialogCancel size="xl" disabled={isPending}>
             {cancelLabel}
           </AlertDialogCancel>
-          <AlertDialogAction size="xl" disabled={isPending} onClick={onConfirm}>
+          <AlertDialogAction
+            size="xl"
+            variant="destructive"
+            disabled={isPending}
+            onClick={onConfirm}
+          >
             {isPending ? pendingLabel : confirmLabel}
           </AlertDialogAction>
         </AlertDialogFooter>
