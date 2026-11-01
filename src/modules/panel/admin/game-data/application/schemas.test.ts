@@ -1,7 +1,11 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { resonatorInput } from "./schemas"
+import {
+  resonatorInput,
+  resonatorTagsInput,
+  resonatorTagsSelectionInput,
+} from "./schemas"
 
 const valid = {
   id: 1402,
@@ -67,5 +71,45 @@ describe("resonatorInput", () => {
     expect(parsed.id).toBe(1402)
     expect(parsed).not.toHaveProperty("createdAt")
     expect(parsed).not.toHaveProperty("updatedAt")
+  })
+})
+
+describe("resonatorTagsInput", () => {
+  const tag = (index: number) => ({
+    name: `Etiqueta ${index}`,
+    description: "",
+    color: "",
+    icon: "",
+  })
+
+  test("accepts up to eight tags", () => {
+    const tags = Array.from({ length: 8 }, (_, index) => tag(index))
+
+    expect(resonatorTagsInput.safeParse({ resonatorId: 1, tags }).success).toBe(
+      true
+    )
+  })
+
+  test("rejects more than eight tags", () => {
+    const tags = Array.from({ length: 9 }, (_, index) => tag(index))
+    const result = resonatorTagsInput.safeParse({ resonatorId: 1, tags })
+
+    expect(result.success).toBe(false)
+    expect(result.error?.issues[0]?.message).toBe("Maximo 8 etiquetas")
+  })
+})
+
+describe("resonatorTagsSelectionInput", () => {
+  test("rejects empty tag names", () => {
+    expect(
+      resonatorTagsSelectionInput.safeParse({ tags: ["  "] }).success
+    ).toBe(false)
+  })
+
+  test("accepts a list of names", () => {
+    const result = resonatorTagsSelectionInput.safeParse({ tags: ["Curación"] })
+
+    expect(result.success).toBe(true)
+    expect(result.data?.tags).toEqual(["Curación"])
   })
 })
