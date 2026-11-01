@@ -51,7 +51,7 @@ export function ResonatorSequenceDeleteAction({
         <Button
           type="button"
           variant="destructive"
-          size="icon-sm"
+          size="icon"
           aria-label="Eliminar secuencia"
           disabled={isPending}
         >

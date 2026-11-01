@@ -20,7 +20,7 @@ export function ResonatorSequenceEditAction({
         <Button
           type="button"
           variant="secondary"
-          size="icon-sm"
+          size="icon"
           aria-label="Editar secuencia"
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
