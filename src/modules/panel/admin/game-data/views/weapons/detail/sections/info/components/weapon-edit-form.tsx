@@ -10,7 +10,7 @@ import {
   type WeaponInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { updateWeapon } from "@/modules/panel/admin/game-data/server/weapons"
+import { updateWeapon } from "@/modules/panel/admin/game-data/server/weapons/weapons"
 import { weaponDraftFromRow } from "@/modules/panel/admin/game-data/views/weapons/shared/application/weapon-draft"
 import { WeaponFields } from "@/modules/panel/admin/game-data/views/weapons/shared/components/weapon-fields"
 

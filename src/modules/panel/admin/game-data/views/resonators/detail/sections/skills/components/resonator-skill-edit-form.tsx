@@ -10,7 +10,7 @@ import {
   type ResonatorSkillUpdateInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { updateResonatorSkill } from "@/modules/panel/admin/game-data/server/skills"
+import { updateResonatorSkill } from "@/modules/panel/admin/game-data/server/resonators/skills"
 import { resonatorSkillDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-skill-draft"
 import { ResonatorSkillFields } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-form-fields"
 

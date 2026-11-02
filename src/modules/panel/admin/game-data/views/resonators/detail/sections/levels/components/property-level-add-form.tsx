@@ -18,7 +18,7 @@ import {
   type ResonatorPropertyLevelInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createResonatorPropertyLevels } from "@/modules/panel/admin/game-data/server/property-levels"
+import { createResonatorPropertyLevels } from "@/modules/panel/admin/game-data/server/resonators/properties"
 import { propertyLevelDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/detail/application/property-level-draft"
 import {
   PropertyLevelFields,

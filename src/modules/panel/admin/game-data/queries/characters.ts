@@ -1,7 +1,7 @@
 import {
   getCharacter,
   getCharacters,
-} from "@/modules/panel/admin/game-data/server/characters"
+} from "@/modules/panel/admin/game-data/server/resonators/resonators"
 import { queryOptions } from "@tanstack/react-query"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import {

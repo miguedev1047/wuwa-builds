@@ -4,7 +4,7 @@ import { describe, expect, test } from "bun:test"
 import {
   WEAPON_TYPES,
   weaponTypeName,
-} from "@/modules/panel/admin/game-data/application/weapon-types"
+} from "@/modules/panel/admin/game-data/application/weapons/types"
 
 describe("weaponTypeName", () => {
   test("maps every known type id to its stored display name", () => {

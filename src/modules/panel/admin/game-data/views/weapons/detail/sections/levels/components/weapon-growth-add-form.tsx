@@ -13,9 +13,9 @@ import {
   weaponGrowthMilestoneOptions,
   weaponGrowthPayloads,
   type WeaponGrowthPayload,
-} from "@/modules/panel/admin/game-data/application/weapon-property-growth"
+} from "@/modules/panel/admin/game-data/application/weapons/property-growth"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createWeaponPropertyGrowth } from "@/modules/panel/admin/game-data/server/weapon-property-growth"
+import { createWeaponPropertyGrowth } from "@/modules/panel/admin/game-data/server/weapons/property-growth"
 import {
   WeaponGrowthFields,
   weaponGrowthFormDefaults,

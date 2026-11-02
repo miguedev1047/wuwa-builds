@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { deleteResonatorPropertyGrowth } from "@/modules/panel/admin/game-data/server/property-growth"
+import { deleteResonatorPropertyGrowth } from "@/modules/panel/admin/game-data/server/resonators/property-growth"
 
 type PropertyGrowthDeleteActionProps = {
   growthId: number

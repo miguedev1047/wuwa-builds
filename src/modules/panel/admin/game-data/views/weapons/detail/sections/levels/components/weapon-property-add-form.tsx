@@ -20,7 +20,7 @@ import {
   type WeaponPropertyInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createWeaponProperty } from "@/modules/panel/admin/game-data/server/weapon-properties"
+import { createWeaponProperty } from "@/modules/panel/admin/game-data/server/weapons/properties"
 import { weaponPropertyDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-property-draft"
 import {
   WeaponPropertyFields,

@@ -1,7 +1,7 @@
 import {
   getWeapon,
   getWeapons,
-} from "@/modules/panel/admin/game-data/server/weapons"
+} from "@/modules/panel/admin/game-data/server/weapons/weapons"
 import { queryOptions } from "@tanstack/react-query"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import {

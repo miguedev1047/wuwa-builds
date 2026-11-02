@@ -2,10 +2,8 @@ import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
 import { notFound } from "@tanstack/react-router"
 import { eq } from "drizzle-orm"
-import {
-  idInput,
-  resonatorInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+import { idInput } from "@/modules/panel/admin/game-data/application/id"
+import { resonatorInput } from "@/modules/panel/admin/game-data/application/schemas"
 import { adminMiddleware } from "@/functions/middlewares"
 import { resonators } from "@/db/schema"
 

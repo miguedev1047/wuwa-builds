@@ -1,6 +1,6 @@
 import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
-import { idInput } from "@/modules/panel/admin/game-data/application/schemas"
+import { idInput } from "@/modules/panel/admin/game-data/application/id"
 
 export const getEchoes = createServerFn({ method: "GET" }).handler(async () => {
   return await db.query.echoes.findMany({ orderBy: { id: "asc" } })

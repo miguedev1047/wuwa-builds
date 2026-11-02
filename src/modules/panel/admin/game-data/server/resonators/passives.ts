@@ -3,8 +3,8 @@ import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { adminMiddleware } from "@/functions/middlewares"
 import { resonatorPassives } from "@/db/schema"
+import { idInput } from "@/modules/panel/admin/game-data/application/id"
 import {
-  idInput,
   resonatorPassivesInput,
   resonatorPassiveUpdateInput,
 } from "@/modules/panel/admin/game-data/application/schemas"

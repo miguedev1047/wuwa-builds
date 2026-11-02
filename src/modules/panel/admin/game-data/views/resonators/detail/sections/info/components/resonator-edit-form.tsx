@@ -10,7 +10,7 @@ import {
   type ResonatorInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { updateResonator } from "@/modules/panel/admin/game-data/server/characters"
+import { updateResonator } from "@/modules/panel/admin/game-data/server/resonators/resonators"
 import { resonatorDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
 import { ResonatorFields } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-fields"
 

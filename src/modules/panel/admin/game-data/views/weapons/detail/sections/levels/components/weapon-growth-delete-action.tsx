@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { deleteWeaponPropertyGrowth } from "@/modules/panel/admin/game-data/server/weapon-property-growth"
+import { deleteWeaponPropertyGrowth } from "@/modules/panel/admin/game-data/server/weapons/property-growth"
 
 type WeaponGrowthDeleteActionProps = {
   growthId: number

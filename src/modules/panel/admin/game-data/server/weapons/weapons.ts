@@ -3,11 +3,9 @@ import { createServerFn } from "@tanstack/react-start"
 import { notFound } from "@tanstack/react-router"
 import { eq } from "drizzle-orm"
 import { adminMiddleware } from "@/functions/middlewares"
-import {
-  idInput,
-  weaponInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { weaponTypeName } from "@/modules/panel/admin/game-data/application/weapon-types"
+import { idInput } from "@/modules/panel/admin/game-data/application/id"
+import { weaponInput } from "@/modules/panel/admin/game-data/application/schemas"
+import { weaponTypeName } from "@/modules/panel/admin/game-data/application/weapons/types"
 import { weapons } from "@/db/schema"
 
 export const getWeapons = createServerFn({ method: "GET" })

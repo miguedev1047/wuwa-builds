@@ -3,11 +3,9 @@ import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { weaponPropertyGrowth } from "@/db/schema"
 import { adminMiddleware } from "@/functions/middlewares"
-import { weaponGrowthValueColumns } from "@/modules/panel/admin/game-data/application/weapon-property-growth"
-import {
-  idInput,
-  weaponPropertyGrowthInputs,
-} from "@/modules/panel/admin/game-data/application/schemas"
+import { weaponGrowthValueColumns } from "@/modules/panel/admin/game-data/application/weapons/property-growth"
+import { idInput } from "@/modules/panel/admin/game-data/application/id"
+import { weaponPropertyGrowthInputs } from "@/modules/panel/admin/game-data/application/schemas"
 
 export const createWeaponPropertyGrowth = createServerFn({
   method: "POST",

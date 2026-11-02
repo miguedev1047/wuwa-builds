@@ -1,7 +1,7 @@
 import {
   getEcho,
   getEchoes,
-} from "@/modules/panel/admin/game-data/server/echoes"
+} from "@/modules/panel/admin/game-data/server/echoes/echoes"
 import { queryOptions } from "@tanstack/react-query"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import {

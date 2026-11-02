@@ -9,7 +9,7 @@ import {
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createWeapon } from "@/modules/panel/admin/game-data/server/weapons"
+import { createWeapon } from "@/modules/panel/admin/game-data/server/weapons/weapons"
 import { weaponDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/shared/application/weapon-draft"
 import {
   WeaponFields,

@@ -7,7 +7,7 @@ import { DialogFooter } from "@/components/ui/dialog"
 import type { EncorePassive } from "@/modules/encore/domain/character"
 import type { ResonatorPassiveInput } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createResonatorPassives } from "@/modules/panel/admin/game-data/server/passives"
+import { createResonatorPassives } from "@/modules/panel/admin/game-data/server/resonators/passives"
 import { resonatorPassivePayloads } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
 
 type ResonatorPassiveAddFormProps = {

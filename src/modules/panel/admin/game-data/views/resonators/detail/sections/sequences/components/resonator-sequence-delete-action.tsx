@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { deleteResonatorSequence } from "@/modules/panel/admin/game-data/server/sequences"
+import { deleteResonatorSequence } from "@/modules/panel/admin/game-data/server/resonators/sequences"
 
 type ResonatorSequenceDeleteActionProps = {
   sequenceId: number

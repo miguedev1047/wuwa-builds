@@ -1,7 +1,7 @@
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
 import { weaponPropertyGrowthInput } from "@/modules/panel/admin/game-data/application/schemas"
-import type { WeaponGrowthFormValues } from "@/modules/panel/admin/game-data/application/weapon-property-growth"
+import type { WeaponGrowthFormValues } from "@/modules/panel/admin/game-data/application/weapons/property-growth"
 
 /** Empty values shared by every weapon growth form. */
 export const weaponGrowthFormDefaults: WeaponGrowthFormValues = {

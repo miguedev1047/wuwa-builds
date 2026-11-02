@@ -3,10 +3,8 @@ import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { weaponProperties } from "@/db/schema"
 import { adminMiddleware } from "@/functions/middlewares"
-import {
-  idInput,
-  weaponPropertyInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+import { idInput } from "@/modules/panel/admin/game-data/application/id"
+import { weaponPropertyInput } from "@/modules/panel/admin/game-data/application/schemas"
 
 export const createWeaponProperty = createServerFn({
   method: "POST",

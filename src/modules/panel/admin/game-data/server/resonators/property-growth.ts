@@ -3,11 +3,9 @@ import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { db } from "@/db"
 import { resonatorPropertyGrowth } from "@/db/schema"
-import { growthValueColumns } from "@/modules/panel/admin/game-data/application/property-growth"
-import {
-  idInput,
-  resonatorPropertyGrowthInputs,
-} from "@/modules/panel/admin/game-data/application/schemas"
+import { growthValueColumns } from "@/modules/panel/admin/game-data/application/resonators/property-growth"
+import { idInput } from "@/modules/panel/admin/game-data/application/id"
+import { resonatorPropertyGrowthInputs } from "@/modules/panel/admin/game-data/application/schemas"
 
 export const createResonatorPropertyGrowth = createServerFn({
   method: "POST",

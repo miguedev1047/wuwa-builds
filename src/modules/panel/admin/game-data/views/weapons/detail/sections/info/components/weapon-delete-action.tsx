@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { deleteWeapon } from "@/modules/panel/admin/game-data/server/weapons"
+import { deleteWeapon } from "@/modules/panel/admin/game-data/server/weapons/weapons"
 
 export function WeaponDeleteAction() {
   const { id } = useParams({ from: "/(panel)/admin/weapons/$id" })

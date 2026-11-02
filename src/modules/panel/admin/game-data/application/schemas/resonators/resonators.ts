@@ -2,12 +2,6 @@ import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
 import { resonators } from "@/db/schema"
 
-export const idInput = z.object({
-  id: z.number().int().positive(),
-})
-
-export type IdInput = z.infer<typeof idInput>
-
 /**
  * Fields the admin panel can set when creating a resonator.
  *

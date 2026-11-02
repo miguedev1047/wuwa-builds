@@ -153,9 +153,9 @@ describe("weaponPropertyInput", () => {
 
   test("accepts the property payload, including a zero base value", () => {
     expect(weaponPropertyInput.parse(valid)).toEqual(valid)
-    expect(weaponPropertyInput.safeParse({ ...valid, baseValue: 0 }).success).toBe(
-      true
-    )
+    expect(
+      weaponPropertyInput.safeParse({ ...valid, baseValue: 0 }).success
+    ).toBe(true)
   })
 
   test("requires the name, the icon and a non negative base value", () => {

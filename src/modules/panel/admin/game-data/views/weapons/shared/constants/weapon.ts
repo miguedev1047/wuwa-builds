@@ -1,4 +1,4 @@
-import { WEAPON_TYPES } from "@/modules/panel/admin/game-data/application/weapon-types"
+import { WEAPON_TYPES } from "@/modules/panel/admin/game-data/application/weapons/types"
 
 export const WEAPON_RARITY = [
   {

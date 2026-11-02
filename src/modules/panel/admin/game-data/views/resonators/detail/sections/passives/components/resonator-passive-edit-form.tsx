@@ -10,7 +10,7 @@ import {
   type ResonatorPassiveUpdateInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { updateResonatorPassive } from "@/modules/panel/admin/game-data/server/passives"
+import { updateResonatorPassive } from "@/modules/panel/admin/game-data/server/resonators/passives"
 import { resonatorPassiveDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
 import { ResonatorPassiveFields } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-form-fields"
 

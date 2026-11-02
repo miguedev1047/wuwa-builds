@@ -9,7 +9,7 @@ import {
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createResonator } from "@/modules/panel/admin/game-data/server/characters"
+import { createResonator } from "@/modules/panel/admin/game-data/server/resonators/resonators"
 import { resonatorDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
 import {
   ResonatorFields,

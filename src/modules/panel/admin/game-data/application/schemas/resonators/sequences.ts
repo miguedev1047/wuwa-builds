@@ -1,7 +1,7 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
 import { resonatorSequences } from "@/db/schema"
-import { idInput } from "./resonators"
+import { idInput } from "../../id"
 
 /** Fields the admin panel can set for a resonator sequence. */
 export const resonatorSequenceInput = createInsertSchema(resonatorSequences, {

@@ -1,4 +1,4 @@
-import type { PropertyGrowthFormValues } from "@/modules/panel/admin/game-data/application/property-growth"
+import type { PropertyGrowthFormValues } from "@/modules/panel/admin/game-data/application/resonators/property-growth"
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
 import { resonatorPropertyGrowthInput } from "@/modules/panel/admin/game-data/application/schemas"

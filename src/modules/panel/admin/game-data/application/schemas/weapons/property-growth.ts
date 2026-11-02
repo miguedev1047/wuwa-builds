@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { isWeaponGrowthValue } from "@/modules/panel/admin/game-data/application/weapon-property-growth"
+import { isWeaponGrowthValue } from "@/modules/panel/admin/game-data/application/weapons/property-growth"
 
 /** Fields the admin panel sends when adding a weapon property level. */
 export const weaponPropertyGrowthInput = z.object({

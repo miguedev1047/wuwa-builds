@@ -9,7 +9,7 @@ import {
   weaponGrowthPayloads,
   weaponGrowthValueColumns,
   type WeaponGrowthMilestoneOption,
-} from "@/modules/panel/admin/game-data/application/weapon-property-growth"
+} from "@/modules/panel/admin/game-data/application/weapons/property-growth"
 
 const encoreGrowth: EncorePropertyGrowth[] = [
   { level: 1, value: "33.00" },
