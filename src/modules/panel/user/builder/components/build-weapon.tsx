@@ -98,7 +98,7 @@ export function BuildWeapon({ collection, draftId }: BuildWeaponProps) {
                           current.payload.weapon.weaponId = null
                         })
                       }}
-                      size="icon-sm"
+                      size="icon"
                       variant="ghost"
                     >
                       <HugeiconsIcon icon={DeleteIcon} />

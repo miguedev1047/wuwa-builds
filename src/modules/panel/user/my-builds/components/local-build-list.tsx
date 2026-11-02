@@ -115,7 +115,7 @@ function LocalBuildListContent({
             <ItemActions>
               <Button
                 variant="ghost"
-                size="icon-sm"
+                size="icon"
                 onClick={() => collection.delete(draft.id)}
               >
                 <HugeiconsIcon icon={DeleteIcon} />

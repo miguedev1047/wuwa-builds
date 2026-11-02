@@ -17,10 +17,6 @@ export function ResonatorInfoContent({
     characterQueries.detail(resonatorId)
   )
 
-  if (!resonator) {
-    return null
-  }
-
   return (
     <EditableSection.Root>
       <EditableSection.Header>

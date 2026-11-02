@@ -298,7 +298,7 @@ export function EditableSectionEditAction({
             <Button
               type="button"
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               aria-label={label}
             >
               <HugeiconsIcon icon={PencilEdit01Icon} />
@@ -393,7 +393,7 @@ export function EditableSectionDeleteAction({
             <Button
               type="button"
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               aria-label={label}
             >
               <HugeiconsIcon icon={DeleteIcon} />

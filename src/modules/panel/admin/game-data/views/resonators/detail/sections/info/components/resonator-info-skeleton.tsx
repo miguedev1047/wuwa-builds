@@ -8,8 +8,8 @@ export function ResonatorInfoSkeleton() {
         <SkeletonBox width="12rem" height={32} />
 
         <EditableSection.Action>
-          <SkeletonBox width={72} height={20} />
-          <SkeletonBox width={92} height={20} />
+          <SkeletonBox width={72} height={28} />
+          <SkeletonBox width={28} height={28} />
         </EditableSection.Action>
       </EditableSection.Header>
 

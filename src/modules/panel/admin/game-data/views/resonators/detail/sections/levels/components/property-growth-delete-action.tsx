@@ -51,7 +51,7 @@ export function PropertyGrowthDeleteAction({
         <Button
           type="button"
           variant="destructive"
-          size="icon-sm"
+          size="icon"
           aria-label="Eliminar nivel"
           disabled={isPending}
         >

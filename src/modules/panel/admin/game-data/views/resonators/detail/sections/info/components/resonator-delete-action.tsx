@@ -8,12 +8,9 @@ import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { deleteResonator } from "@/modules/panel/admin/game-data/server/characters"
-import { useIsMobile } from "@/hooks/use-mobile"
-import { Show } from "@/components/utility/show"
 
 export function ResonatorDeleteAction() {
   const { id } = useParams({ from: "/(panel)/admin/resonators/$id" })
-  const isMobile = useIsMobile()
   const resonatorId = Number(id)
   const queryClient = useQueryClient()
   const navigate = useNavigate()
@@ -49,13 +46,8 @@ export function ResonatorDeleteAction() {
       isPending={isPending}
       onConfirm={handleRemoveResonator}
       trigger={
-        <Button
-          type="button"
-          variant="destructive"
-          size={isMobile ? "icon-sm" : "sm"}
-        >
+        <Button type="button" variant="destructive" size="icon">
           <HugeiconsIcon icon={DeleteIcon} />
-          <Show when={!isMobile}>Eliminar</Show>
         </Button>
       }
     />
