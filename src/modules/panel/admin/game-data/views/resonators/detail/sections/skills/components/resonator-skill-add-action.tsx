@@ -21,8 +21,8 @@ export function ResonatorSkillAddAction({
   return (
     <EditableSection.AddAction
       disabled={isMaxSkills}
-      title="Agregar habilidad"
-      description="Elige una habilidad de Encore o escribe sus datos."
+      title="Agregar habilidades"
+      description="Elige una o mas habilidades de Encore."
     >
       {({ close }) => (
         <ResonatorSkillAddForm
