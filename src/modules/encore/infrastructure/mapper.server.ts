@@ -16,8 +16,8 @@ import type {
 import { encoreAssetUrl } from "../domain/asset"
 import type { EncoreProperty } from "../domain/property"
 import type {
-  EncoreWeaponBreach,
   EncoreWeaponDetail,
+  EncoreWeaponRefinement,
   EncoreWeaponSummary,
 } from "../domain/weapon"
 
@@ -262,13 +262,6 @@ export interface RawWeaponList {
   weapons?: RawWeaponSummary[]
 }
 
-interface RawWeaponBreach {
-  Id: number
-  Level?: number
-  LevelLimit?: number
-  Items?: unknown[]
-}
-
 export interface RawWeaponDetail {
   ItemId: number
   WeaponName?: string
@@ -276,11 +269,13 @@ export interface RawWeaponDetail {
   WeaponType?: number
   WeaponTypeName?: string
   Icon?: string
+  /** Passive title shared by the five refinement ranks. */
+  ResonName?: string
+  /** Passive template with one highlighted value list per rank. */
   Desc?: string
   AttributesDescription?: string
   BgDescription?: string
   Properties?: RawProperty[]
-  Breaches?: RawWeaponBreach[]
 }
 
 interface RawEchoFetter {
@@ -352,13 +347,49 @@ export function toWeaponSummary(raw: RawWeaponSummary): EncoreWeaponSummary {
   }
 }
 
-function toWeaponBreach(raw: RawWeaponBreach): EncoreWeaponBreach {
-  return {
-    id: raw.Id,
-    level: raw.Level ?? 0,
-    levelLimit: raw.LevelLimit ?? 0,
-    items: raw.Items ?? [],
-  }
+/** Refinement ranks every weapon has: 1 to 5. */
+const WEAPON_REFINEMENT_RANKS = 5
+const HIGHLIGHTED_VALUES = /<span[^>]*>(.*?)<\/span>/g
+
+/**
+ * Expands a `Desc` template into one effect per refinement rank.
+ *
+ * Every highlighted span holds the slash-separated values of the five ranks
+ * (`"12%/15%/18%/21%/24%"`); the rest of the text is shared. Only the
+ * highlighted value changes, so the span markup is kept and the builder can
+ * still render the emphasis. `DescParams` repeats those values, but Encore
+ * sometimes sends them in a different order than the spans (Defier's Thorn,
+ * Solar Flame), so each span itself is the source of truth. A span with fewer
+ * values than ranks reuses its last one.
+ */
+function toWeaponRefinements(
+  desc: string,
+  name: string
+): EncoreWeaponRefinement[] {
+  const spans = [...desc.matchAll(HIGHLIGHTED_VALUES)]
+
+  return Array.from({ length: WEAPON_REFINEMENT_RANKS }, (_, index) => {
+    let cursor = 0
+    let effect = ""
+
+    for (const span of spans) {
+      const start = span.index ?? 0
+      const values = (span[1] ?? "").split("/")
+      const value = values[index] ?? values[values.length - 1] ?? ""
+      const openTag = span[0].slice(0, span[0].indexOf(">") + 1)
+
+      effect += desc.slice(cursor, start)
+      effect += `${openTag}${value}</span>`
+      cursor = start + span[0].length
+    }
+
+    return {
+      rank: index + 1,
+      name,
+      effect: effect + desc.slice(cursor),
+      stats: [],
+    }
+  })
 }
 
 export function toWeaponDetail(raw: RawWeaponDetail): EncoreWeaponDetail {
@@ -370,9 +401,8 @@ export function toWeaponDetail(raw: RawWeaponDetail): EncoreWeaponDetail {
     typeName: raw.WeaponTypeName ?? "",
     icon: encoreAssetUrl(raw.Icon),
     description: raw.AttributesDescription || raw.BgDescription || "",
-    effect: raw.Desc ?? "",
     properties: (raw.Properties ?? []).map(toProperty),
-    breaches: (raw.Breaches ?? []).map(toWeaponBreach),
+    refinements: toWeaponRefinements(raw.Desc ?? "", raw.ResonName ?? ""),
   }
 }
 

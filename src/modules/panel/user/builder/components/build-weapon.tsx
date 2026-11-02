@@ -107,7 +107,10 @@ export function BuildWeapon({ collection, draftId }: BuildWeaponProps) {
                 </div>
 
                 <Suspense key={weapon.id} fallback={<Spinner />}>
-                  <WeaponActions weaponId={weapon.id} />
+                  <WeaponActions
+                    weaponId={weapon.id}
+                    refinementRank={draft.payload.weapon.refinementRank}
+                  />
                 </Suspense>
               </div>
             )}
@@ -157,18 +160,23 @@ export function BuildWeapon({ collection, draftId }: BuildWeaponProps) {
 }
 interface WeaponActionsProps {
   weaponId: number
+  refinementRank: number
 }
 
-function WeaponActions({ weaponId }: WeaponActionsProps) {
+function WeaponActions({ weaponId, refinementRank }: WeaponActionsProps) {
   const { data: weapon } = useSuspenseQuery(
     encoreWeaponQueries.detail(weaponId)
   )
 
   if (!weaponId) return
 
+  const effect =
+    weapon.refinements.find((refinement) => refinement.rank === refinementRank)
+      ?.effect ?? ""
+
   return (
     <div>
-      <div dangerouslySetInnerHTML={{ __html: weapon.effect }} />
+      <div dangerouslySetInnerHTML={{ __html: effect }} />
     </div>
   )
 }

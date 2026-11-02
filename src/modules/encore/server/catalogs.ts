@@ -4,9 +4,9 @@ import { idInput } from "../application/schemas"
 /**
  * Encore weapon/echo server functions.
  *
- * Detail payloads still contain passthrough game-data arrays (`items`,
- * `damage`) typed as `unknown[]`, so the strict output check is disabled for
- * those two; the values are plain JSON.
+ * Detail payloads still contain passthrough game-data arrays (`damage`) typed
+ * as `unknown[]`, so the strict output check is disabled for that one; the
+ * values are plain JSON.
  */
 export const getWeapons = createServerFn({ method: "GET" }).handler(
   async () => {

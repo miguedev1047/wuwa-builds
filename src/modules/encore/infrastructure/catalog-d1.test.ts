@@ -8,9 +8,10 @@ import { eq } from "drizzle-orm"
 import { drizzle } from "drizzle-orm/bun-sqlite"
 import type { AppDb } from "@/db/create"
 import { relations } from "@/db/relations"
-import { resonators } from "@/db/schema"
+import { resonators, weaponRefinementStats, weapons } from "@/db/schema"
 import { numberConverter } from "@/lib/number-converter"
 import type { EncoreCharacterDetail } from "@/modules/encore/domain/character"
+import type { EncoreWeaponDetail } from "@/modules/encore/domain/weapon"
 import {
   toCharacterDetail,
   toEchoDetail,
@@ -144,6 +145,9 @@ const rawCharacter: RawCharacterDetail = {
   ],
 }
 
+/** Highlighted span Encore uses to pack the five refinement values. */
+const highlighted = 'style="color:#ffd12f;" class="font-bold"'
+
 /** Trimmed but structurally faithful `weapon/{id}` response. */
 const rawWeapon: RawWeaponDetail = {
   ItemId: 21010074,
@@ -153,7 +157,8 @@ const rawWeapon: RawWeaponDetail = {
   WeaponTypeName: "Mandoble",
   // Weapon detail endpoints send Unreal asset paths (`Package.Object`).
   Icon: "/Game/Aki/UI/Image/IconWeapon/weapon.weapon",
-  Desc: "Efecto pasivo",
+  ResonName: "Dirección del filo",
+  Desc: `Aumenta el ATQ un <span ${highlighted}>4%/6.2%/8.4%/10.6%/12.8%</span> al infligir Daño de Ataque básico.`,
   AttributesDescription: "ATQ 500",
   BgDescription: "Lore del arma",
   Properties: [
@@ -167,10 +172,13 @@ const rawWeapon: RawWeaponDetail = {
       ],
     },
   ],
-  Breaches: [
-    { Id: 1, Level: 0, LevelLimit: 20, Items: [{ Key: 2, Value: 3 }] },
-  ],
 }
+
+/** The `Desc` template expanded per rank: only the highlighted value changes. */
+const weaponRefinementEffects = ["4%", "6.2%", "8.4%", "10.6%", "12.8%"].map(
+  (value) =>
+    `Aumenta el ATQ un <span ${highlighted}>${value}</span> al infligir Daño de Ataque básico.`
+)
 
 /** Trimmed but structurally faithful `echo/{id}` response. */
 const rawEcho: RawEchoDetail = {
@@ -337,5 +345,91 @@ describe("encore catalog schema", () => {
     await db.delete(resonators).where(eq(resonators.id, character.id))
 
     expect(await readCharacter(db, character.id)).toBeNull()
+  })
+
+  test("expands the weapon passive into one effect per refinement rank", () => {
+    const weapon = toWeaponDetail(rawWeapon)
+
+    expect(weapon.refinements.map((refinement) => refinement.rank)).toEqual([
+      1, 2, 3, 4, 5,
+    ])
+    expect(weapon.refinements.map((refinement) => refinement.effect)).toEqual(
+      weaponRefinementEffects
+    )
+    expect(
+      weapon.refinements.every((refinement) => refinement.stats.length === 0)
+    ).toBe(true)
+  })
+
+  test("expands every highlighted span, not just the first", () => {
+    const weapon = toWeaponDetail({
+      ...rawWeapon,
+      Desc: `Max HP is increased by <span ${highlighted}>12%/15%/18%/21%/24%</span>. After <span ${highlighted}>15/15/15/15/15</span>s.`,
+    })
+
+    expect(weapon.refinements[0].effect).toBe(
+      `Max HP is increased by <span ${highlighted}>12%</span>. After <span ${highlighted}>15</span>s.`
+    )
+    expect(weapon.refinements[4].effect).toBe(
+      `Max HP is increased by <span ${highlighted}>24%</span>. After <span ${highlighted}>15</span>s.`
+    )
+  })
+
+  test("reuses the last value when a rank list is shorter than five", () => {
+    const weapon = toWeaponDetail({
+      ...rawWeapon,
+      // Solar Flame ships a four-value list on a five-rank weapon.
+      Desc: `Dura <span ${highlighted}>4/5/6/7</span> s.`,
+    })
+
+    expect(weapon.refinements.map((refinement) => refinement.effect)).toEqual([
+      `Dura <span ${highlighted}>4</span> s.`,
+      `Dura <span ${highlighted}>5</span> s.`,
+      `Dura <span ${highlighted}>6</span> s.`,
+      `Dura <span ${highlighted}>7</span> s.`,
+      `Dura <span ${highlighted}>7</span> s.`,
+    ])
+  })
+
+  test("keeps manually authored refinement stats across a re-save", async () => {
+    const weapon = toWeaponDetail(rawWeapon)
+    const withStats: EncoreWeaponDetail = {
+      ...weapon,
+      refinements: weapon.refinements.map((refinement) =>
+        refinement.rank === 5
+          ? { ...refinement, stats: [{ name: "HP%", value: 24 }] }
+          : refinement
+      ),
+    }
+
+    await saveWeapon(db, withStats)
+    expect((await readWeapon(db, weapon.id))?.refinements[4].stats).toEqual([
+      { name: "HP%", value: 24 },
+    ])
+
+    // The API mapper always sends empty stats; the sync must not drop them.
+    await saveWeapon(db, weapon)
+    const stored = await readWeapon(db, weapon.id)
+
+    expect(stored?.refinements).toHaveLength(5)
+    expect(stored?.refinements[4].stats).toEqual([{ name: "HP%", value: 24 }])
+    expect(stored?.refinements[0].stats).toEqual([])
+  })
+
+  test("deleting a weapon cascades to its refinements and stats", async () => {
+    const weapon = toWeaponDetail(rawWeapon)
+    const withStats: EncoreWeaponDetail = {
+      ...weapon,
+      refinements: weapon.refinements.map((refinement) => ({
+        ...refinement,
+        stats: [{ name: "ATQ%", value: refinement.rank }],
+      })),
+    }
+
+    await saveWeapon(db, withStats)
+    await db.delete(weapons).where(eq(weapons.id, weapon.id))
+
+    expect(await readWeapon(db, weapon.id)).toBeNull()
+    expect(await db.select().from(weaponRefinementStats)).toEqual([])
   })
 })

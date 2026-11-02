@@ -13,7 +13,8 @@ import {
   resonatorSkills,
   resonatorTags,
   resonators,
-  weaponBreaches,
+  weaponRefinementStats,
+  weaponRefinements,
   weaponProperties,
   weaponPropertyGrowth,
   weapons,
@@ -27,7 +28,11 @@ import type {
   EncoreEchoSet,
   EncoreEchoSummary,
 } from "../domain/echo"
-import type { EncoreWeaponDetail, EncoreWeaponSummary } from "../domain/weapon"
+import type {
+  EncoreWeaponDetail,
+  EncoreWeaponRefinementStat,
+  EncoreWeaponSummary,
+} from "../domain/weapon"
 
 /**
  * D1 adapter for the Encore catalog (see `src/db/schemas/resonators.ts`,
@@ -266,10 +271,39 @@ export async function readCharacters(
   }))
 }
 
+/**
+ * Refinement stats already authored for a weapon, keyed by rank.
+ *
+ * `saveWeapon` deletes and re-inserts the whole document and the API never
+ * carries these rows, so they are read first and restored for every rank that
+ * still exists. Without this, a re-sync would wipe builder-critical data.
+ */
+async function refinementStatsByRank(
+  db: AppDb,
+  weaponId: number
+): Promise<Map<number, EncoreWeaponRefinementStat[]>> {
+  const rows = await db.query.weaponRefinements.findMany({
+    where: { weaponId },
+    with: { stats: { orderBy: { sortOrder: "asc" } } },
+  })
+
+  return new Map(
+    rows.map((row) => [
+      row.sortOrder,
+      row.stats.map((stat) => ({
+        name: stat.statName,
+        value: stat.statNumber,
+      })),
+    ])
+  )
+}
+
 export async function saveWeapon(
   db: AppDb,
   weapon: EncoreWeaponDetail
 ): Promise<void> {
+  const storedStats = await refinementStatsByRank(db, weapon.id)
+
   await db.delete(weapons).where(eq(weapons.id, weapon.id))
 
   await db.insert(weapons).values({
@@ -280,7 +314,6 @@ export async function saveWeapon(
     typeName: weapon.typeName,
     icon: weapon.icon,
     description: weapon.description,
-    effect: weapon.effect,
   })
 
   if (weapon.properties.length > 0) {
@@ -314,17 +347,42 @@ export async function saveWeapon(
     }
   }
 
-  if (weapon.breaches.length > 0) {
-    await db.insert(weaponBreaches).values(
-      weapon.breaches.map((breach, sortOrder) => ({
-        weaponId: weapon.id,
-        breachId: breach.id,
+  if (weapon.refinements.length > 0) {
+    const inserted = (await db
+      .insert(weaponRefinements)
+      .values(
+        weapon.refinements.map((refinement) => ({
+          weaponId: weapon.id,
+          sortOrder: refinement.rank,
+          name: refinement.name,
+          effect: refinement.effect,
+        }))
+      )
+      .returning({
+        id: weaponRefinements.id,
+        sortOrder: weaponRefinements.sortOrder,
+      })) as InsertedId[]
+
+    const stats = inserted.flatMap((row) => {
+      const provided = weapon.refinements.find(
+        (refinement) => refinement.rank === row.sortOrder
+      )?.stats
+      const source =
+        provided && provided.length > 0
+          ? provided
+          : (storedStats.get(row.sortOrder) ?? [])
+
+      return source.map((stat, sortOrder) => ({
+        refinementId: row.id,
         sortOrder,
-        level: breach.level,
-        levelLimit: breach.levelLimit,
-        items: breach.items,
+        statName: stat.name,
+        statNumber: stat.value,
       }))
-    )
+    })
+
+    if (stats.length > 0) {
+      await db.insert(weaponRefinementStats).values(stats)
+    }
   }
 }
 
@@ -339,7 +397,10 @@ export async function readWeapon(
         orderBy: { sortOrder: "asc" },
         with: { growth: { orderBy: { sortOrder: "asc" } } },
       },
-      breaches: { orderBy: { sortOrder: "asc" } },
+      refinements: {
+        orderBy: { sortOrder: "asc" },
+        with: { stats: { orderBy: { sortOrder: "asc" } } },
+      },
     },
   })
 
@@ -353,7 +414,6 @@ export async function readWeapon(
     typeName: row.typeName,
     icon: row.icon,
     description: row.description,
-    effect: row.effect,
     properties: row.properties.map((property) => ({
       name: property.name,
       icon: property.icon,
@@ -363,11 +423,14 @@ export async function readWeapon(
         value: growthValueFromRow(entry),
       })),
     })),
-    breaches: row.breaches.map((breach) => ({
-      id: breach.breachId,
-      level: breach.level,
-      levelLimit: breach.levelLimit,
-      items: breach.items,
+    refinements: row.refinements.map((refinement) => ({
+      rank: refinement.sortOrder,
+      name: refinement.name,
+      effect: refinement.effect,
+      stats: refinement.stats.map((stat) => ({
+        name: stat.statName,
+        value: stat.statNumber,
+      })),
     })),
   }
 }

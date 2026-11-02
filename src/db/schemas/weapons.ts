@@ -16,6 +16,11 @@ import { getDate } from "@/db/helpers/gen-date"
  * field by field; the comment on each column is the raw Encore JSON key.
  * Model, mesh and stand-animation fields are dropped by the mapper and are not
  * stored here either.
+ *
+ * Encore sends the passive as one `Desc` template with slash-separated values
+ * per rank (`"12%/15%/18%/21%/24%"`); the mapper expands it into one
+ * `weapon_refinements` row per rank (1 to 5). Ascension `Breaches[]` are not
+ * stored.
  */
 
 /** One row per weapon (raw `weapons[]` + `weapon/{id}`). */
@@ -36,8 +41,6 @@ export const weapons = sqliteTable(
     icon: text("icon").notNull().default(""),
     /** `AttributesDescription` (falls back to `BgDescription`). */
     description: text("description").notNull().default(""),
-    /** `Desc` (the passive effect text). */
-    effect: text("effect").notNull().default(""),
 
     ...getDate(),
   },
@@ -101,31 +104,69 @@ export const weaponPropertyGrowth = sqliteTable(
   ]
 )
 
-/** `Breaches[]`: ascension breakpoints and their material list. */
-export const weaponBreaches = sqliteTable(
-  "weapon_breaches",
+/**
+ * `ResonName` + `Desc`: one row per refinement rank.
+ *
+ * Every weapon has five ranks (1 to 5). The mapper expands the `Desc` template
+ * into a concrete effect per rank, so each row stores the text a rank actually
+ * shows instead of the whole `"a/b/c/d/e"` list.
+ */
+export const weaponRefinements = sqliteTable(
+  "weapon_refinements",
   {
     id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
     weaponId: integer("weapon_id", { mode: "number" })
       .notNull()
       .references(() => weapons.id, { onDelete: "cascade" }),
-    /** `Id` */
-    breachId: integer("breach_id", { mode: "number" }).notNull(),
-    /** Position in `Breaches[]`. */
+    /**
+     * Refinement rank, 1 to 5. It doubles as the ordering key, so a refinement
+     * is always selected by its rank and never by array position.
+     */
     sortOrder: integer("sort_order", { mode: "number" }).notNull(),
-    /** `Level` */
-    level: integer("level", { mode: "number" }).notNull().default(0),
-    /** `LevelLimit` */
-    levelLimit: integer("level_limit", { mode: "number" }).notNull().default(0),
-    /** `Items` (passthrough, `unknown[]`). */
-    items: text("items", { mode: "json" }).$type<unknown[]>().notNull(),
+    /** `ResonName`: the passive title, shared by the five ranks. */
+    name: text("name").notNull().default(""),
+    /** `Desc` with this rank's values substituted. */
+    effect: text("effect").notNull().default(""),
 
     ...getDate(),
   },
   (table) => [
-    uniqueIndex("weapon_breaches_weapon_breach_idx").on(
+    uniqueIndex("weapon_refinements_weapon_sort_idx").on(
       table.weaponId,
-      table.breachId
+      table.sortOrder
+    ),
+  ]
+)
+
+/**
+ * Stats granted by one refinement rank.
+ *
+ * The builder adds these values on top of the weapon base stats, so the table
+ * is authored by hand: Encore only carries prose, and a passive such as
+ * "Max HP +12%/15%/18%/21%/24%" must reach the final HP calculation as a real
+ * number. `saveWeapon` never derives these rows from the API and preserves them
+ * when a weapon is re-synced.
+ */
+export const weaponRefinementStats = sqliteTable(
+  "weapon_refinement_stats",
+  {
+    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+    refinementId: integer("refinement_id", { mode: "number" })
+      .notNull()
+      .references(() => weaponRefinements.id, { onDelete: "cascade" }),
+    /** Position inside the refinement's stat list. */
+    sortOrder: integer("sort_order", { mode: "number" }).notNull(),
+    /** Stat name as the builder knows it (`HP%`, `ATK`, `CRIT Rate`). */
+    statName: text("stat_name").notNull().default(""),
+    /** Amount as the game shows it, e.g. `20` for +20%. */
+    statNumber: real("stat_number").notNull().default(0),
+
+    ...getDate(),
+  },
+  (table) => [
+    uniqueIndex("weapon_refinement_stats_refinement_sort_idx").on(
+      table.refinementId,
+      table.sortOrder
     ),
   ]
 )
@@ -137,20 +178,29 @@ export type NewWeaponPropertyRow = typeof weaponProperties.$inferInsert
 export type WeaponPropertyGrowthRow = typeof weaponPropertyGrowth.$inferSelect
 export type NewWeaponPropertyGrowthRow =
   typeof weaponPropertyGrowth.$inferInsert
-export type WeaponBreachRow = typeof weaponBreaches.$inferSelect
-export type NewWeaponBreachRow = typeof weaponBreaches.$inferInsert
+export type WeaponRefinementRow = typeof weaponRefinements.$inferSelect
+export type NewWeaponRefinementRow = typeof weaponRefinements.$inferInsert
+export type WeaponRefinementStatRow = typeof weaponRefinementStats.$inferSelect
+export type NewWeaponRefinementStatRow =
+  typeof weaponRefinementStats.$inferInsert
 
 export const weaponRelations = defineRelationsPart(
-  { weapons, weaponProperties, weaponPropertyGrowth, weaponBreaches },
+  {
+    weapons,
+    weaponProperties,
+    weaponPropertyGrowth,
+    weaponRefinements,
+    weaponRefinementStats,
+  },
   (r) => ({
     weapons: {
       properties: r.many.weaponProperties({
         from: r.weapons.id,
         to: r.weaponProperties.weaponId,
       }),
-      breaches: r.many.weaponBreaches({
+      refinements: r.many.weaponRefinements({
         from: r.weapons.id,
-        to: r.weaponBreaches.weaponId,
+        to: r.weaponRefinements.weaponId,
       }),
     },
     weaponProperties: {
@@ -169,10 +219,20 @@ export const weaponRelations = defineRelationsPart(
         to: r.weaponProperties.id,
       }),
     },
-    weaponBreaches: {
+    weaponRefinements: {
       weapon: r.one.weapons({
-        from: r.weaponBreaches.weaponId,
+        from: r.weaponRefinements.weaponId,
         to: r.weapons.id,
+      }),
+      stats: r.many.weaponRefinementStats({
+        from: r.weaponRefinements.id,
+        to: r.weaponRefinementStats.refinementId,
+      }),
+    },
+    weaponRefinementStats: {
+      refinement: r.one.weaponRefinements({
+        from: r.weaponRefinementStats.refinementId,
+        to: r.weaponRefinements.id,
       }),
     },
   })

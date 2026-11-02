@@ -14,7 +14,7 @@ available). No auth, CORS enabled.
 | `character?page=1` | 64 character summaries             |
 | `character/{id}`   | full character (lean mapped here)  |
 | `weapon`           | 124 weapons                        |
-| `weapon/{id}`      | weapon stats, effect and ascension |
+| `weapon/{id}`      | weapon stats and refinement ranks  |
 | `echo`             | 319 echoes with their sonata sets  |
 | `echo/{id}`        | echo skill and set effects         |
 
@@ -33,11 +33,12 @@ Dropped to keep payloads small (and because they are lore/text): `Words`,
 `Goods` (favorite-item lore).
 
 Kept: stats with per-level growth, skills (description, attributes,
-multipliers), sequences, passives, breaches, tags and images.
+multipliers), sequences, passives, tags and images.
 
-Weapons drop model/physics/stand-animation fields; echoes drop
-mesh/location/animation fields. Their stats, effects, ascension data and sonata
-set effects are kept.
+Weapons drop model/physics/stand-animation fields and ascension breaches;
+echoes drop mesh/location/animation fields. Weapon stats, refinement effects and
+echo sonata set effects are kept. The single `Desc` passive is expanded into one
+effect per refinement rank (1 to 5).
 
 ## D1 catalog
 
@@ -50,21 +51,27 @@ Encore JSON key):
 | `resonators.ts` | `resonators`, `resonator_tags`, `resonator_property_levels`, `resonator_property_growth` |
 |                 | `resonator_skills`, `resonator_sequences`                                                |
 |                 | `resonator_passives`                                                                     |
-| `weapons.ts`    | `weapons`, `weapon_properties`, `weapon_property_growth`, `weapon_breaches`              |
+| `weapons.ts`    | `weapons`, `weapon_properties`, `weapon_property_growth`                                 |
+|                 | `weapon_refinements`, `weapon_refinement_stats`                                          |
 | `echoes.ts`     | `echoes`, `echo_sets`, `echo_set_effects`, `echo_skills`                                 |
 
 `src/modules/encore/infrastructure/catalog-d1.server.ts` writes and reads those
 tables as whole documents (`saveCharacter`/`readCharacter`, and the weapon and
 echo equivalents), returning the same `Encore*` types the API mapper produces.
-Skill attributes, consumes and damage, the passive consume list and the
-resonator breaches are intentionally not stored: the D1 reader returns them as
-empty arrays. Passive
-descriptions are converted to `value_number` and the D1 reader returns them as
-their numeric string. Writes
-delete and re-insert the entity, so a game patch never leaves stale child rows
-behind. `catalog-d1.test.ts` applies
+Skill attributes, consumes and damage, the passive consume list and both
+character and weapon breaches are intentionally not stored: the D1 reader
+returns them as empty arrays (weapon breaches are no longer part of the domain
+type). Passive descriptions are converted to `value_number` and the D1 reader
+returns them as their numeric string. Writes delete and re-insert the entity, so
+a game patch never leaves stale child rows behind. `catalog-d1.test.ts` applies
 the generated migrations to an in-memory SQLite database and asserts the stored
 document round trip.
+
+Weapon refinement stats are the exception to the derived data: Encore only
+carries the passive prose, so the builder-critical numbers (`stat_name`,
+`stat_number`) are authored by hand. `saveWeapon` reads them before the
+delete/re-insert and restores them per refinement rank, so a re-sync never wipes
+them.
 
 Two quirks of the real payloads shape the keys:
 
@@ -75,6 +82,11 @@ Two quirks of the real payloads shape the keys:
   the level) and CRIT stats report `"5%"` strings while HP/ATK report numbers,
   so growth rows are ordered by `sort_order` and store numbers and strings in
   separate `value_number`/`value_text` columns.
+- Each highlighted `Desc` span carries its own `"a/b/c/d/e"` rank list, and
+  `DescParams` does not always follow the same order (for example Defier's
+  Thorn and Solar Flame, which even ships a four-value list), so the mapper
+  expands every span from the span itself and reuses the last value when a rank
+  is missing.
 
 Every entity round-trips exactly: a one-off run of all 64 characters, 124
 weapons and 319 echoes (≈63k child rows) read back deep-equal to the mapper
