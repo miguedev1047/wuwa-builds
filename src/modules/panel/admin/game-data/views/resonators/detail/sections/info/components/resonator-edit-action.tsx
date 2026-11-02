@@ -21,7 +21,7 @@ export function ResonatorEditAction({ resonator }: ResonatorEditActionProps) {
         <Button
           type="button"
           variant="secondary"
-          size={isMobile ? "icon-sm" : "sm"}
+          size={isMobile ? "icon" : "default"}
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
           <Show when={!isMobile}>Editar</Show>
