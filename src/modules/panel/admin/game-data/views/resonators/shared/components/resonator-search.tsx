@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query"
-import { Skeleton } from "skullet/react"
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { SkeletonSuspense } from "skullet/react"
 import { Button } from "@/components/ui/button"
 import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
 import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
@@ -37,7 +37,9 @@ export function ResonatorSearch({
       <CatalogSearch.Input placeholder="Nombre o ID del resonador" />
 
       <CatalogSearch.List>
-        <ResonatorSearchResults selectedId={selectedId} onSelect={onSelect} />
+        <SkeletonSuspense skeleton={<CatalogSearch.Loading />}>
+          <ResonatorSearchResults selectedId={selectedId} onSelect={onSelect} />
+        </SkeletonSuspense>
       </CatalogSearch.List>
     </CatalogSearch.Root>
   )
@@ -52,45 +54,35 @@ function ResonatorSearchResults({
   selectedId,
   onSelect,
 }: ResonatorSearchResultsProps) {
-  const { data } = useQuery(encoreCharacterQueries.list())
+  const { data: characters } = useSuspenseQuery(encoreCharacterQueries.list())
 
   return (
-    <Skeleton
-      data={data}
-      label="Buscando resonadores"
-      skeleton={<CatalogSearch.Loading />}
-    >
-      {(characters) => (
-        <>
-          <CatalogSearch.Empty>
-            Sin resonadores con ese nombre.
-          </CatalogSearch.Empty>
+    <>
+      <CatalogSearch.Empty>Sin resonadores con ese nombre.</CatalogSearch.Empty>
 
-          <CatalogSearch.Group heading="Resonadores">
-            {characters.map((character) => (
-              <CatalogSearch.Item
-                key={character.id}
-                value={`${character.name} ${character.id}`}
-                onSelect={() => onSelect(character)}
-              >
-                <img
-                  src={character.icon}
-                  alt={character.name}
-                  width={28}
-                  height={28}
-                  className="aspect-square size-7 shrink-0 rounded-sm bg-accent object-cover"
-                />
+      <CatalogSearch.Group heading="Resonadores">
+        {characters.map((character) => (
+          <CatalogSearch.Item
+            key={character.id}
+            value={`${character.name} ${character.id}`}
+            onSelect={() => onSelect(character)}
+          >
+            <img
+              src={character.icon}
+              alt={character.name}
+              width={28}
+              height={28}
+              className="aspect-square size-7 shrink-0 rounded-sm bg-accent object-cover"
+            />
 
-                <span className="truncate">{character.name}</span>
+            <span className="truncate">{character.name}</span>
 
-                {selectedId === character.id ? (
-                  <CatalogSearch.Shortcut>Actual</CatalogSearch.Shortcut>
-                ) : null}
-              </CatalogSearch.Item>
-            ))}
-          </CatalogSearch.Group>
-        </>
-      )}
-    </Skeleton>
+            {selectedId === character.id ? (
+              <CatalogSearch.Shortcut>Actual</CatalogSearch.Shortcut>
+            ) : null}
+          </CatalogSearch.Item>
+        ))}
+      </CatalogSearch.Group>
+    </>
   )
 }
