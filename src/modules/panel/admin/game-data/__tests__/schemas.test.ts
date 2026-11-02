@@ -19,6 +19,11 @@ import {
   weaponPropertyGrowthInput,
   weaponPropertyGrowthInputs,
   weaponPropertyInput,
+  weaponRefinementFormInput,
+  weaponRefinementInput,
+  weaponRefinementStatInput,
+  weaponRefinementStatsFormInput,
+  weaponRefinementStatsInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 
 const valid = {
@@ -226,6 +231,125 @@ describe("weaponPropertyGrowthInput", () => {
     }))
 
     expect(weaponPropertyGrowthInputs.safeParse(eleven).success).toBe(false)
+  })
+})
+
+describe("weaponRefinementInput", () => {
+  const valid = {
+    weaponId: 21050016,
+    sortOrder: 3,
+    name: "  Amplificación eléctrica  ",
+    effect: "Aumenta el ATQ un 18%.",
+  }
+
+  test("trims the name and accepts a valid refinement", () => {
+    const parsed = weaponRefinementInput.parse(valid)
+
+    expect(parsed.name).toBe("Amplificación eléctrica")
+    expect(parsed.sortOrder).toBe(3)
+  })
+
+  test("rejects an empty name", () => {
+    const result = weaponRefinementInput.safeParse({ ...valid, name: "  " })
+
+    expect(result.success).toBe(false)
+    expect(result.error?.issues[0]?.message).toBe("El nombre es obligatorio")
+  })
+
+  test("rejects a rank outside 1..5", () => {
+    expect(
+      weaponRefinementInput.safeParse({ ...valid, sortOrder: 0 }).success
+    ).toBe(false)
+    expect(
+      weaponRefinementInput.safeParse({ ...valid, sortOrder: 6 }).success
+    ).toBe(false)
+  })
+
+  test("requires the weapon id and accepts an empty effect", () => {
+    expect(
+      weaponRefinementInput.safeParse({ ...valid, weaponId: 0 }).success
+    ).toBe(false)
+    expect(
+      weaponRefinementInput.safeParse({ ...valid, effect: "" }).success
+    ).toBe(true)
+  })
+
+  test("the form schema accepts the create id of zero", () => {
+    expect(
+      weaponRefinementFormInput.safeParse({ ...valid, id: 0 }).success
+    ).toBe(true)
+    expect(weaponRefinementFormInput.safeParse(valid).success).toBe(false)
+  })
+})
+
+describe("weaponRefinementStatInput", () => {
+  const valid = {
+    refinementId: 9,
+    sortOrder: 1,
+    statName: "Ataque %",
+    statNumber: 18,
+  }
+
+  test("accepts a stat row", () => {
+    expect(weaponRefinementStatInput.parse(valid)).toEqual(valid)
+  })
+
+  test("requires a stat name and a finite value", () => {
+    expect(
+      weaponRefinementStatInput.safeParse({ ...valid, statName: " " }).success
+    ).toBe(false)
+    expect(
+      weaponRefinementStatInput.safeParse({ ...valid, statNumber: Infinity })
+        .success
+    ).toBe(false)
+  })
+
+  test("requires the refinement id and the sort order", () => {
+    expect(
+      weaponRefinementStatInput.safeParse({ ...valid, refinementId: 0 }).success
+    ).toBe(false)
+    expect(
+      weaponRefinementStatInput.safeParse({ ...valid, sortOrder: 0 }).success
+    ).toBe(false)
+  })
+
+  test("bulk payloads require at least one stat and cap at ten", () => {
+    expect(weaponRefinementStatsInput.safeParse([valid]).success).toBe(true)
+    expect(weaponRefinementStatsInput.safeParse([]).success).toBe(false)
+
+    const eleven = Array.from({ length: 11 }, (_, index) => ({
+      ...valid,
+      sortOrder: index + 1,
+    }))
+
+    expect(weaponRefinementStatsInput.safeParse(eleven).success).toBe(false)
+  })
+})
+
+describe("weaponRefinementStatsFormInput", () => {
+  const valid = {
+    refinementId: 9,
+    sortOrder: 1,
+    stats: [
+      { statName: "Ataque %", value: 18 },
+      { statName: "Bono de Eco", value: 20 },
+    ],
+  }
+
+  test("accepts multiple stat rows", () => {
+    expect(weaponRefinementStatsFormInput.parse(valid)).toEqual(valid)
+  })
+
+  test("rejects an empty array and an incomplete row", () => {
+    expect(
+      weaponRefinementStatsFormInput.safeParse({ ...valid, stats: [] }).success
+    ).toBe(false)
+    expect(
+      weaponRefinementStatsFormInput.safeParse({
+        ...valid,
+        stats: [{ statName: "", value: 0 }],
+      }).success
+    ).toBe(false)
   })
 })
 

@@ -26,6 +26,15 @@ export const WEAPON_RARITY = [
 /** Weapon type options shared by the form fields and future detail screens. */
 export const WEAPON_TYPE_OPTIONS = WEAPON_TYPES
 
+/** Refinement ranks of a weapon, 1 to 5. */
+export const WEAPON_REFINEMENT_RANKS = [
+  { label: "Refinamiento 1", value: 1 },
+  { label: "Refinamiento 2", value: 2 },
+  { label: "Refinamiento 3", value: 3 },
+  { label: "Refinamiento 4", value: 4 },
+  { label: "Refinamiento 5", value: 5 },
+]
+
 /** Display label of a weapon rarity, e.g. `5 Estrellas`. */
 export function weaponRarityLabel(rarity: number): string {
   return (
