@@ -17,6 +17,12 @@ export const resonatorPassiveInput = createInsertSchema(resonatorPassives, {
 
 export type ResonatorPassiveInput = z.infer<typeof resonatorPassiveInput>
 
+/** Bulk create payload for the add dialog. */
+export const resonatorPassivesInput = z
+  .array(resonatorPassiveInput)
+  .min(1, "Selecciona al menos una pasiva")
+  .max(10, "Maximo 10 pasivas")
+
 export const resonatorPassiveUpdateInput = resonatorPassiveInput.extend({
   id: idInput.shape.id,
 })

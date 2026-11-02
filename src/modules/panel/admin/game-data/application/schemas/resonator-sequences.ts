@@ -21,6 +21,12 @@ export const resonatorSequenceInput = createInsertSchema(resonatorSequences, {
 
 export type ResonatorSequenceInput = z.infer<typeof resonatorSequenceInput>
 
+/** Bulk create payload for the add dialog. */
+export const resonatorSequencesInput = z
+  .array(resonatorSequenceInput)
+  .min(1, "Selecciona al menos una secuencia")
+  .max(6, "Maximo 6 secuencias")
+
 export const resonatorSequenceUpdateInput = resonatorSequenceInput.extend({
   id: idInput.shape.id,
 })

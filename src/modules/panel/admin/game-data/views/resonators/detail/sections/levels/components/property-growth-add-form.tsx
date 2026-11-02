@@ -49,9 +49,7 @@ export function PropertyGrowthAddForm({
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: (payloads: PropertyGrowthPayload[]) =>
-      Promise.all(
-        payloads.map((data) => createResonatorPropertyGrowth({ data }))
-      ),
+      createResonatorPropertyGrowth({ data: payloads }),
     onSuccess: async (_created, payloads) => {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.character(resonatorId),

@@ -7,7 +7,7 @@ import { DialogFooter } from "@/components/ui/dialog"
 import type { EncorePassive } from "@/modules/encore/domain/character"
 import type { ResonatorPassiveInput } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createResonatorPassive } from "@/modules/panel/admin/game-data/server/passives"
+import { createResonatorPassives } from "@/modules/panel/admin/game-data/server/passives"
 import { resonatorPassivePayloads } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
 
 type ResonatorPassiveAddFormProps = {
@@ -33,7 +33,7 @@ export function ResonatorPassiveAddForm({
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: (payloads: ResonatorPassiveInput[]) =>
-      Promise.all(payloads.map((data) => createResonatorPassive({ data }))),
+      createResonatorPassives({ data: payloads }),
     onSuccess: async (_created, payloads) => {
       console.log(payloads)
 

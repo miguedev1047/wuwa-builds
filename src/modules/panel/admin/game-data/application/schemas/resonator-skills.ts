@@ -24,6 +24,12 @@ export const resonatorSkillInput = createInsertSchema(resonatorSkills, {
 
 export type ResonatorSkillInput = z.infer<typeof resonatorSkillInput>
 
+/** Bulk create payload for the add dialog. */
+export const resonatorSkillsInput = z
+  .array(resonatorSkillInput)
+  .min(1, "Selecciona al menos una habilidad")
+  .max(10, "Maximo 10 habilidades")
+
 export const resonatorSkillUpdateInput = resonatorSkillInput.extend({
   id: idInput.shape.id,
 })

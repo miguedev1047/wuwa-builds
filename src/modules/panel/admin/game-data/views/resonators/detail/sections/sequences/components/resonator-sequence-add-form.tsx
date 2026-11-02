@@ -7,7 +7,7 @@ import { DialogFooter } from "@/components/ui/dialog"
 import type { EncoreSequence } from "@/modules/encore/domain/character"
 import type { ResonatorSequenceInput } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createResonatorSequence } from "@/modules/panel/admin/game-data/server/sequences"
+import { createResonatorSequences } from "@/modules/panel/admin/game-data/server/sequences"
 import { resonatorSequencePayloads } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-sequence-draft"
 
 type ResonatorSequenceAddFormProps = {
@@ -33,7 +33,7 @@ export function ResonatorSequenceAddForm({
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: (payloads: ResonatorSequenceInput[]) =>
-      Promise.all(payloads.map((data) => createResonatorSequence({ data }))),
+      createResonatorSequences({ data: payloads }),
     onSuccess: async (_created, payloads) => {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.character(resonatorId),

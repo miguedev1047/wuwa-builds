@@ -4,11 +4,15 @@ import { describe, expect, test } from "bun:test"
 import {
   resonatorInput,
   resonatorPassiveInput,
+  resonatorPassivesInput,
   resonatorPropertyGrowthInput,
+  resonatorPropertyGrowthInputs,
   resonatorPropertyLevelsSchema,
   resonatorSequenceInput,
+  resonatorSequencesInput,
   resonatorSkillFormInput,
   resonatorSkillInput,
+  resonatorSkillsInput,
   resonatorTagsInput,
   resonatorTagsSelectionInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
@@ -269,6 +273,81 @@ describe("resonatorPassiveInput", () => {
   test("requires a numeric value", () => {
     expect(
       resonatorPassiveInput.safeParse({ ...valid, valueNumber: "1.8" }).success
+    ).toBe(false)
+  })
+})
+
+describe("bulk input schemas", () => {
+  const skill = {
+    resonatorId: 1311,
+    skillId: 1006102,
+    sortOrder: 1,
+    type: "Habilidad de resonancia",
+    name: "Al corazon bajo la luna",
+    description: "<p>Descripcion</p>",
+    icon: "icon.webp",
+    media: "skill.mp4",
+  }
+  const sequence = {
+    resonatorId: 1311,
+    sequenceId: 355,
+    sortOrder: 1,
+    index: 1,
+    name: "Bote",
+    description: "<p>Descripcion</p>",
+  }
+  const passive = {
+    resonatorId: 1311,
+    passiveId: 155,
+    sortOrder: 1,
+    title: "ATQ+",
+    valueNumber: 1.8,
+    icon: "passive.webp",
+  }
+  const growth = {
+    propertyId: 1,
+    sortOrder: 1,
+    level: 1,
+    value: "824",
+  }
+
+  test("accept multiple items in one payload", () => {
+    expect(resonatorSkillsInput.safeParse([skill, skill]).success).toBe(true)
+    expect(
+      resonatorSequencesInput.safeParse([sequence, sequence]).success
+    ).toBe(true)
+    expect(resonatorPassivesInput.safeParse([passive, passive]).success).toBe(
+      true
+    )
+    expect(
+      resonatorPropertyGrowthInputs.safeParse([growth, growth]).success
+    ).toBe(true)
+  })
+
+  test("reject empty arrays", () => {
+    expect(resonatorSkillsInput.safeParse([]).success).toBe(false)
+    expect(resonatorSequencesInput.safeParse([]).success).toBe(false)
+    expect(resonatorPassivesInput.safeParse([]).success).toBe(false)
+    expect(resonatorPropertyGrowthInputs.safeParse([]).success).toBe(false)
+  })
+
+  test("reject the whole payload when one item is invalid", () => {
+    expect(
+      resonatorSkillsInput.safeParse([skill, { ...skill, name: " " }]).success
+    ).toBe(false)
+    expect(
+      resonatorSequencesInput.safeParse([sequence, { ...sequence, index: 7 }])
+        .success
+    ).toBe(false)
+    expect(
+      resonatorPassivesInput.safeParse([passive, { ...passive, title: " " }])
+        .success
+    ).toBe(false)
+    expect(
+      resonatorPropertyGrowthInputs.safeParse([
+        growth,
+        { ...growth, value: "abc" },
+      ]).success
     ).toBe(false)
   })
 })

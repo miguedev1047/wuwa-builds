@@ -5,20 +5,15 @@ import { adminMiddleware } from "@/functions/middlewares"
 import { resonatorPassives } from "@/db/schema"
 import {
   idInput,
-  resonatorPassiveInput,
+  resonatorPassivesInput,
   resonatorPassiveUpdateInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 
-export const createResonatorPassive = createServerFn({ method: "POST" })
+export const createResonatorPassives = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])
-  .validator(resonatorPassiveInput)
+  .validator(resonatorPassivesInput)
   .handler(async ({ data }) => {
-    const [passive] = await db
-      .insert(resonatorPassives)
-      .values(data)
-      .returning()
-
-    return passive
+    return await db.insert(resonatorPassives).values(data).returning()
   })
 
 export const updateResonatorPassive = createServerFn({ method: "POST" })

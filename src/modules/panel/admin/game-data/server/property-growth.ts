@@ -6,23 +6,21 @@ import { resonatorPropertyGrowth } from "@/db/schema"
 import { growthValueColumns } from "@/modules/panel/admin/game-data/application/property-growth"
 import {
   idInput,
-  resonatorPropertyGrowthInput,
+  resonatorPropertyGrowthInputs,
 } from "@/modules/panel/admin/game-data/application/schemas"
 
 export const createResonatorPropertyGrowth = createServerFn({
   method: "POST",
 })
   .middleware([adminMiddleware])
-  .validator(resonatorPropertyGrowthInput)
+  .validator(resonatorPropertyGrowthInputs)
   .handler(async ({ data }) => {
-    const { value, ...values } = data
+    const rows = data.map(({ value, ...values }) => ({
+      ...values,
+      ...growthValueColumns(value),
+    }))
 
-    const [growth] = await db
-      .insert(resonatorPropertyGrowth)
-      .values({ ...values, ...growthValueColumns(value) })
-      .returning()
-
-    return growth
+    return await db.insert(resonatorPropertyGrowth).values(rows).returning()
   })
 
 export const deleteResonatorPropertyGrowth = createServerFn({

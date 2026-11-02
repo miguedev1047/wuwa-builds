@@ -5,17 +5,15 @@ import { adminMiddleware } from "@/functions/middlewares"
 import { resonatorSkills } from "@/db/schema"
 import {
   idInput,
-  resonatorSkillInput,
+  resonatorSkillsInput,
   resonatorSkillUpdateInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 
-export const createResonatorSkill = createServerFn({ method: "POST" })
+export const createResonatorSkills = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])
-  .validator(resonatorSkillInput)
+  .validator(resonatorSkillsInput)
   .handler(async ({ data }) => {
-    const [skill] = await db.insert(resonatorSkills).values(data).returning()
-
-    return skill
+    return await db.insert(resonatorSkills).values(data).returning()
   })
 
 export const updateResonatorSkill = createServerFn({ method: "POST" })

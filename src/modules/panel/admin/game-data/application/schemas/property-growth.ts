@@ -20,3 +20,9 @@ export const resonatorPropertyGrowthInput = z.object({
 export type ResonatorPropertyGrowthInput = z.infer<
   typeof resonatorPropertyGrowthInput
 >
+
+/** Bulk create payload for the growth add dialog. */
+export const resonatorPropertyGrowthInputs = z
+  .array(resonatorPropertyGrowthInput)
+  .min(1, "Selecciona al menos un nivel")
+  .max(10, "Maximo 10 niveles")

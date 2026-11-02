@@ -5,20 +5,15 @@ import { adminMiddleware } from "@/functions/middlewares"
 import { resonatorSequences } from "@/db/schema"
 import {
   idInput,
-  resonatorSequenceInput,
+  resonatorSequencesInput,
   resonatorSequenceUpdateInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 
-export const createResonatorSequence = createServerFn({ method: "POST" })
+export const createResonatorSequences = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])
-  .validator(resonatorSequenceInput)
+  .validator(resonatorSequencesInput)
   .handler(async ({ data }) => {
-    const [sequence] = await db
-      .insert(resonatorSequences)
-      .values(data)
-      .returning()
-
-    return sequence
+    return await db.insert(resonatorSequences).values(data).returning()
   })
 
 export const updateResonatorSequence = createServerFn({ method: "POST" })
