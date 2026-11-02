@@ -85,3 +85,42 @@ export const WEAPON_PROPERTY_NAMES = [
     encorePercent: true,
   },
 ] as const
+
+export const WEAPON_STATS_NAMES = [
+  {
+    label: "Ataque %",
+    value: "Ataque %",
+    encoreName: "ATQ",
+    encorePercent: true,
+  },
+  {
+    label: "Vida %",
+    value: "Vida %",
+    encoreName: "PS",
+    encorePercent: true,
+  },
+  {
+    label: "Defensa %",
+    value: "Defensa %",
+    encoreName: "DEF",
+    encorePercent: true,
+  },
+  {
+    label: "Prob. Crit.",
+    value: "Prob. Crit.",
+    encoreName: "Prob. CRIT",
+    encorePercent: true,
+  },
+  {
+    label: "Daño Crit.",
+    value: "Daño Crit.",
+    encoreName: "Daño CRIT",
+    encorePercent: true,
+  },
+  {
+    label: "Recarga de energía",
+    value: "Recarga de energía",
+    encoreName: "Regen. de energía",
+    encorePercent: true,
+  },
+] as const
