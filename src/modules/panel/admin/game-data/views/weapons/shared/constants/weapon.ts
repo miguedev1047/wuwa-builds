@@ -33,3 +33,55 @@ export function weaponRarityLabel(rarity: number): string {
     `${rarity} Estrellas`
   )
 }
+
+/**
+ * Weapon stats the panel can store in `weapon_properties`.
+ *
+ * Encore reuses `ATQ` for the flat base attack and for the percentage attack
+ * substat, so `encorePercent` disambiguates both entries. Every other stat is
+ * always a percentage on a weapon.
+ */
+export const WEAPON_PROPERTY_NAMES = [
+  {
+    label: "Ataque",
+    value: "Ataque",
+    encoreName: "ATQ",
+    encorePercent: false,
+  },
+  {
+    label: "Ataque %",
+    value: "Ataque %",
+    encoreName: "ATQ",
+    encorePercent: true,
+  },
+  {
+    label: "Vida %",
+    value: "Vida %",
+    encoreName: "PS",
+    encorePercent: true,
+  },
+  {
+    label: "Defensa %",
+    value: "Defensa %",
+    encoreName: "DEF",
+    encorePercent: true,
+  },
+  {
+    label: "Prob. Crit.",
+    value: "Prob. Crit.",
+    encoreName: "Prob. CRIT",
+    encorePercent: true,
+  },
+  {
+    label: "Daño Crit.",
+    value: "Daño Crit.",
+    encoreName: "Daño CRIT",
+    encorePercent: true,
+  },
+  {
+    label: "Recarga de energía",
+    value: "Recarga de energía",
+    encoreName: "Regen. de energía",
+    encorePercent: true,
+  },
+] as const

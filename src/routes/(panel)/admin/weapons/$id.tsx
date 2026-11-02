@@ -1,4 +1,5 @@
 import { Spinner } from "@/components/ui/spinner"
+import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { weaponQueries } from "@/modules/panel/admin/game-data/queries/weapons"
 import { WeaponDetailPage } from "@/modules/panel/admin/game-data/views/weapons/detail/page"
@@ -18,7 +19,10 @@ export const Route = createFileRoute("/(panel)/admin/weapons/$id")({
       throw notFound()
     }
 
-    const weapon = await context.queryClient.query(weaponQueries.detail(id))
+    const [, weapon] = await Promise.all([
+      context.queryClient.query(encoreWeaponQueries.detail(id)),
+      context.queryClient.query(weaponQueries.detail(id)),
+    ])
 
     if (!weapon) {
       throw notFound()

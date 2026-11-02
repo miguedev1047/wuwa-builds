@@ -16,6 +16,9 @@ import {
   resonatorTagsInput,
   resonatorTagsSelectionInput,
   weaponInput,
+  weaponPropertyGrowthInput,
+  weaponPropertyGrowthInputs,
+  weaponPropertyInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 
 const valid = {
@@ -136,6 +139,93 @@ describe("weaponInput", () => {
     expect(parsed).not.toHaveProperty("typeName")
     expect(parsed).not.toHaveProperty("createdAt")
     expect(parsed).not.toHaveProperty("updatedAt")
+  })
+})
+
+describe("weaponPropertyInput", () => {
+  const valid = {
+    weaponId: 21050016,
+    sortOrder: 1,
+    name: "Ataque",
+    baseValue: 40,
+    icon: "https://api-v2.encore.moe/resource/Data/atk.webp",
+  }
+
+  test("accepts the property payload, including a zero base value", () => {
+    expect(weaponPropertyInput.parse(valid)).toEqual(valid)
+    expect(weaponPropertyInput.safeParse({ ...valid, baseValue: 0 }).success).toBe(
+      true
+    )
+  })
+
+  test("requires the name, the icon and a non negative base value", () => {
+    const result = weaponPropertyInput.safeParse({
+      ...valid,
+      name: "",
+      icon: "",
+      baseValue: -1,
+    })
+
+    expect(result.error?.issues.map((issue) => issue.path[0])).toEqual([
+      "name",
+      "icon",
+      "baseValue",
+    ])
+  })
+
+  test("requires the weapon id and the sort order", () => {
+    expect(
+      weaponPropertyInput.safeParse({ ...valid, weaponId: 0 }).success
+    ).toBe(false)
+    expect(
+      weaponPropertyInput.safeParse({ ...valid, sortOrder: 0 }).success
+    ).toBe(false)
+  })
+})
+
+describe("weaponPropertyGrowthInput", () => {
+  const valid = {
+    propertyId: 5,
+    sortOrder: 1,
+    level: 10,
+    value: "75.63",
+  }
+
+  test("accepts decimals and percentages", () => {
+    expect(weaponPropertyGrowthInput.parse(valid)).toEqual(valid)
+    expect(
+      weaponPropertyGrowthInput.safeParse({ ...valid, value: "16.05%" }).success
+    ).toBe(true)
+  })
+
+  test("rejects levels outside 1..90", () => {
+    expect(
+      weaponPropertyGrowthInput.safeParse({ ...valid, level: 0 }).success
+    ).toBe(false)
+    expect(
+      weaponPropertyGrowthInput.safeParse({ ...valid, level: 91 }).success
+    ).toBe(false)
+  })
+
+  test("rejects empty or non numeric values", () => {
+    expect(
+      weaponPropertyGrowthInput.safeParse({ ...valid, value: " " }).success
+    ).toBe(false)
+    expect(
+      weaponPropertyGrowthInput.safeParse({ ...valid, value: "abc" }).success
+    ).toBe(false)
+  })
+
+  test("bulk payloads require at least one level and cap at ten", () => {
+    expect(weaponPropertyGrowthInputs.safeParse([valid]).success).toBe(true)
+    expect(weaponPropertyGrowthInputs.safeParse([]).success).toBe(false)
+
+    const eleven = Array.from({ length: 11 }, (_, index) => ({
+      ...valid,
+      sortOrder: index + 1,
+    }))
+
+    expect(weaponPropertyGrowthInputs.safeParse(eleven).success).toBe(false)
   })
 })
 
