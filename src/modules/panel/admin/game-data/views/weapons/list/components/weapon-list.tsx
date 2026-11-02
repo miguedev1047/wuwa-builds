@@ -25,7 +25,7 @@ export function WeaponList() {
               description="Sin armas disponibles en esta seccion"
               action={{
                 label: "Agregar arma",
-                linkOptions: { to: "/admin/weapons" },
+                linkOptions: { to: "/admin/weapons/new" },
               }}
             />
           }

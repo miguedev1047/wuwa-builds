@@ -15,6 +15,7 @@ import {
   resonatorSkillsInput,
   resonatorTagsInput,
   resonatorTagsSelectionInput,
+  weaponInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 
 const valid = {
@@ -79,6 +80,60 @@ describe("resonatorInput", () => {
     })
 
     expect(parsed.id).toBe(1402)
+    expect(parsed).not.toHaveProperty("createdAt")
+    expect(parsed).not.toHaveProperty("updatedAt")
+  })
+})
+
+describe("weaponInput", () => {
+  const valid = {
+    id: 21050016,
+    name: "  Maestro de cuerdas  ",
+    rarity: 5,
+    type: 5,
+    icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
+    description: "El palmo de la marioneta se abre.",
+  }
+
+  test("trims text and accepts a valid weapon", () => {
+    const parsed = weaponInput.parse(valid)
+
+    expect(parsed.name).toBe("Maestro de cuerdas")
+    expect(parsed.type).toBe(5)
+  })
+
+  test("rejects an empty name", () => {
+    const result = weaponInput.safeParse({ ...valid, name: "   " })
+
+    expect(result.success).toBe(false)
+    expect(result.error?.issues[0]?.message).toBe("El nombre es obligatorio")
+  })
+
+  test("requires the id", () => {
+    const missing = weaponInput.safeParse({ ...valid, id: undefined })
+    const zero = weaponInput.safeParse({ ...valid, id: 0 })
+
+    expect(missing.success).toBe(false)
+    expect(zero.success).toBe(false)
+    expect(zero.error?.issues[0]?.message).toBe("El ID es requerido")
+  })
+
+  test("rejects a rarity or type outside 1..5", () => {
+    expect(weaponInput.safeParse({ ...valid, rarity: 0 }).success).toBe(false)
+    expect(weaponInput.safeParse({ ...valid, rarity: 6 }).success).toBe(false)
+    expect(weaponInput.safeParse({ ...valid, type: 0 }).success).toBe(false)
+    expect(weaponInput.safeParse({ ...valid, type: 6 }).success).toBe(false)
+  })
+
+  test("ignores the derived type name and the database timestamps", () => {
+    const parsed = weaponInput.parse({
+      ...valid,
+      typeName: "Rectificador",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    })
+
+    expect(parsed).not.toHaveProperty("typeName")
     expect(parsed).not.toHaveProperty("createdAt")
     expect(parsed).not.toHaveProperty("updatedAt")
   })

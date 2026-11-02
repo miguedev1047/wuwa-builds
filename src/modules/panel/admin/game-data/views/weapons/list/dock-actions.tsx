@@ -15,7 +15,7 @@ export const weaponListDockActions: DockItemData[] = [
   },
   {
     type: "link",
-    linkOptions: { to: "/admin/weapons" },
+    linkOptions: { to: "/admin/weapons/new" },
     icon: glyph(PlusIcon),
     label: "Agregar arma",
   },
