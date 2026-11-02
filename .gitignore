@@ -10,6 +10,7 @@ dist-ssr
 .agents
 .output
 .vinxi
+plans
 __unconfig*
 todos.json
 
