@@ -12,6 +12,15 @@ import {
 } from "@/components/ui/alert-dialog"
 import { Button } from "@/components/ui/button"
 import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -35,6 +44,7 @@ import {
   PlusIcon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
+import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 import {
   Fragment,
@@ -49,9 +59,9 @@ import {
  * Section whose content can be edited and deleted.
  *
  * A compound component built on shadcn primitives: `Content`/`Media`/`Body`
- * render a single editable block, `List`/`Item` render rows, and the actions
- * always end in a `Dialog` for create/edit and an `AlertDialog` for delete,
- * both at section level and inside list rows.
+ * render a single editable block, `List`/`Item` and `Card` render rows, and
+ * the actions always end in a `Dialog` for create/edit and an `AlertDialog`
+ * for delete, both at section level and inside list rows.
  */
 
 export function EditableSectionRoot({
@@ -144,14 +154,59 @@ export function EditableSectionContent({
   )
 }
 
+const editableSectionMediaVariants = cva(
+  "shrink-0 overflow-hidden rounded-md bg-muted-foreground dark:bg-muted",
+  {
+    variants: {
+      variant: {
+        default: "bg-transparent",
+        icon: "flex items-center justify-center [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
+        image:
+          "flex items-center justify-center overflow-hidden rounded-sm bg-muted-foreground dark:bg-muted [&_img]:size-full [&_img]:object-cover",
+      },
+      size: {
+        sm: "",
+        md: "",
+        lg: "",
+      },
+    },
+    compoundVariants: [
+      {
+        variant: "image",
+        size: "sm",
+        className: "size-6 p-0.5",
+      },
+      {
+        variant: "image",
+        size: "md",
+        className: "size-8 p-1",
+      },
+      {
+        variant: "image",
+        size: "lg",
+        className: "size-12 p-1.5",
+      },
+    ],
+    defaultVariants: {
+      variant: "default",
+      size: "md",
+    },
+  }
+)
+
+type EditableSectionMediaProps = ComponentProps<"div"> &
+  VariantProps<typeof editableSectionMediaVariants>
+
 export function EditableSectionMedia({
   className,
+  variant,
+  size,
   ...props
-}: ComponentProps<"div">) {
+}: EditableSectionMediaProps) {
   return (
     <div
       data-slot="editable-section-media"
-      className={cn("shrink-0 overflow-hidden rounded-md bg-accent", className)}
+      className={cn(editableSectionMediaVariants({ variant, size }), className)}
       {...props}
     />
   )
@@ -238,6 +293,106 @@ export function EditableSectionItem({
       data-slot="editable-section-item"
       variant="outline"
       className={cn("bg-card/50", className)}
+      {...props}
+    />
+  )
+}
+
+export function EditableSectionCard({
+  className,
+  ...props
+}: ComponentProps<typeof Card>) {
+  return (
+    <Card data-slot="editable-section-card" className={className} {...props} />
+  )
+}
+
+export function EditableSectionCardHeader({
+  className,
+  ...props
+}: ComponentProps<typeof CardHeader>) {
+  return (
+    <CardHeader
+      data-slot="editable-section-card-header"
+      className={className}
+      {...props}
+    />
+  )
+}
+
+export function EditableSectionCardTitle({
+  className,
+  ...props
+}: ComponentProps<typeof CardTitle>) {
+  return (
+    <CardTitle
+      data-slot="editable-section-card-title"
+      className={cn("text-xs/relaxed", className)}
+      {...props}
+    />
+  )
+}
+
+export function EditableSectionCardDescription({
+  className,
+  ...props
+}: ComponentProps<typeof CardDescription>) {
+  return (
+    <CardDescription
+      data-slot="editable-section-card-description"
+      className={className}
+      {...props}
+    />
+  )
+}
+
+export function EditableSectionCardAction({
+  className,
+  ...props
+}: ComponentProps<typeof CardAction>) {
+  return (
+    <CardAction
+      data-slot="editable-section-card-action"
+      className={className}
+      {...props}
+    />
+  )
+}
+
+export function EditableSectionCardContent({
+  className,
+  ...props
+}: ComponentProps<typeof CardContent>) {
+  return (
+    <CardContent
+      data-slot="editable-section-card-content"
+      className={className}
+      {...props}
+    />
+  )
+}
+
+export function EditableSectionCardFooter({
+  className,
+  ...props
+}: ComponentProps<typeof CardFooter>) {
+  return (
+    <CardFooter
+      data-slot="editable-section-card-footer"
+      className={className}
+      {...props}
+    />
+  )
+}
+
+export function EditableSectionItemMedia({
+  className,
+  ...props
+}: ComponentProps<typeof ItemMedia>) {
+  return (
+    <ItemMedia
+      data-slot="editable-section-item-media"
+      className={cn("bg-muted-foreground dark:bg-muted", className)}
       {...props}
     />
   )
@@ -443,13 +598,20 @@ export const EditableSection = {
   Heading: EditableSectionHeading,
   Text: EditableSectionText,
   List: EditableSectionList,
-  Item: EditableSectionItem,
   Image: EditableSectionImage,
-  ItemMedia: ItemMedia,
+  Item: EditableSectionItem,
+  ItemMedia: EditableSectionItemMedia,
   ItemContent: ItemContent,
   ItemTitle: ItemTitle,
   ItemDescription: ItemDescription,
   ItemActions: ItemActions,
+  Card: EditableSectionCard,
+  CardHeader: EditableSectionCardHeader,
+  CardTitle: EditableSectionCardTitle,
+  CardDescription: EditableSectionCardDescription,
+  CardAction: EditableSectionCardAction,
+  CardContent: EditableSectionCardContent,
+  CardFooter: EditableSectionCardFooter,
   EditAction: EditableSectionEditAction,
   AddAction: EditableSectionAddAction,
   DeleteAction: EditableSectionDeleteAction,

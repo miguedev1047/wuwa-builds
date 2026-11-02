@@ -1,21 +1,14 @@
 import type { ResonatorSkillRow } from "@/db/schema"
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Show } from "@/components/utility/show"
-import { ResonatorSkillDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-delete-action"
-import { ResonatorSkillEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-edit-action"
+import { Button } from "@/components/ui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { Button } from "@/components/ui/button"
+import { Show } from "@/components/utility/show"
+import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
+import { ResonatorSkillDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-delete-action"
+import { ResonatorSkillEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-edit-action"
 
 type ResonatorSkillCardProps = {
   skill: ResonatorSkillRow
@@ -28,37 +21,37 @@ export function ResonatorSkillCard({
   resonatorId,
 }: ResonatorSkillCardProps) {
   return (
-    <Card>
-      <CardHeader>
+    <EditableSection.Card>
+      <EditableSection.CardHeader>
         <div className="flex min-w-0 items-start gap-3">
           <Show when={skill.icon}>
             {(icon) => (
-              <div className="size-10 shrink-0 overflow-hidden rounded-md bg-accent">
-                <img
-                  src={icon}
-                  alt={skill.name}
-                  className="size-full object-cover"
-                />
-              </div>
+              <EditableSection.Media variant="image">
+                <EditableSection.Image src={icon} alt={skill.name} />
+              </EditableSection.Media>
             )}
           </Show>
 
           <div className="flex min-w-0 flex-col gap-1">
-            <CardTitle className="truncate">{skill.name}</CardTitle>
-            <CardDescription>{skill.type}</CardDescription>
+            <EditableSection.CardTitle className="truncate">
+              {skill.name}
+            </EditableSection.CardTitle>
+            <EditableSection.CardDescription>
+              {skill.type}
+            </EditableSection.CardDescription>
           </div>
         </div>
 
-        <CardAction className="flex items-center gap-1">
+        <EditableSection.CardAction className="flex items-center gap-1">
           <ResonatorSkillEditAction skill={skill} />
           <ResonatorSkillDeleteAction
             skillId={skill.id}
             resonatorId={resonatorId}
           />
-        </CardAction>
-      </CardHeader>
+        </EditableSection.CardAction>
+      </EditableSection.CardHeader>
 
-      <CardContent>
+      <EditableSection.CardContent>
         <Collapsible>
           <CollapsibleTrigger
             render={
@@ -74,7 +67,7 @@ export function ResonatorSkillCard({
             />
           </CollapsibleContent>
         </Collapsible>
-      </CardContent>
-    </Card>
+      </EditableSection.CardContent>
+    </EditableSection.Card>
   )
 }

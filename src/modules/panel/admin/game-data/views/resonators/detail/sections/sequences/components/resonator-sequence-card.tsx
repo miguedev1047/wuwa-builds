@@ -1,20 +1,13 @@
 import type { ResonatorSequenceRow } from "@/db/schema"
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { ResonatorSequenceDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-delete-action"
-import { ResonatorSequenceEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-edit-action"
+import { Button } from "@/components/ui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { Button } from "@/components/ui/button"
+import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
+import { ResonatorSequenceDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-delete-action"
+import { ResonatorSequenceEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-edit-action"
 
 type ResonatorSequenceCardProps = {
   sequence: ResonatorSequenceRow
@@ -27,29 +20,33 @@ export function ResonatorSequenceCard({
   resonatorId,
 }: ResonatorSequenceCardProps) {
   return (
-    <Card>
-      <CardHeader>
+    <EditableSection.Card>
+      <EditableSection.CardHeader>
         <div className="flex min-w-0 items-start gap-3">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent font-heading text-sm">
+          <EditableSection.Media variant="image">
             {sequence.index}
-          </div>
+          </EditableSection.Media>
 
           <div className="flex min-w-0 flex-col gap-1">
-            <CardTitle className="truncate">{sequence.name}</CardTitle>
-            <CardDescription>Secuencia {sequence.index}</CardDescription>
+            <EditableSection.CardTitle className="truncate">
+              {sequence.name}
+            </EditableSection.CardTitle>
+            <EditableSection.CardDescription>
+              Secuencia {sequence.index}
+            </EditableSection.CardDescription>
           </div>
         </div>
 
-        <CardAction className="flex items-center gap-1">
+        <EditableSection.CardAction className="flex items-center gap-1">
           <ResonatorSequenceEditAction sequence={sequence} />
           <ResonatorSequenceDeleteAction
             sequenceId={sequence.id}
             resonatorId={resonatorId}
           />
-        </CardAction>
-      </CardHeader>
+        </EditableSection.CardAction>
+      </EditableSection.CardHeader>
 
-      <CardContent>
+      <EditableSection.CardContent>
         <Collapsible>
           <CollapsibleTrigger
             render={
@@ -65,7 +62,7 @@ export function ResonatorSequenceCard({
             />
           </CollapsibleContent>
         </Collapsible>
-      </CardContent>
-    </Card>
+      </EditableSection.CardContent>
+    </EditableSection.Card>
   )
 }

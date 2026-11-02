@@ -82,6 +82,34 @@ describe("EditableSection", () => {
     expect(html).not.toContain('role="list"')
   })
 
+  test("renders the card parts through the compound", () => {
+    const html = renderToStaticMarkup(
+      <EditableSection.Card>
+        <EditableSection.CardHeader>
+          <EditableSection.CardTitle>Titulo</EditableSection.CardTitle>
+          <EditableSection.CardDescription>
+            Descripcion
+          </EditableSection.CardDescription>
+          <EditableSection.CardAction>
+            <button type="button">Editar</button>
+          </EditableSection.CardAction>
+        </EditableSection.CardHeader>
+
+        <EditableSection.CardContent>Contenido</EditableSection.CardContent>
+        <EditableSection.CardFooter>Pie</EditableSection.CardFooter>
+      </EditableSection.Card>
+    )
+
+    expect(html).toContain('data-slot="editable-section-card"')
+    expect(html).toContain('data-slot="editable-section-card-header"')
+    expect(html).toContain('data-slot="editable-section-card-title"')
+    expect(html).toContain('data-slot="editable-section-card-description"')
+    expect(html).toContain('data-slot="editable-section-card-action"')
+    expect(html).toContain('data-slot="editable-section-card-content"')
+    expect(html).toContain('data-slot="editable-section-card-footer"')
+    expect(html).toContain("text-xs/relaxed")
+  })
+
   test("add, edit and delete actions render their triggers", () => {
     const html = renderToStaticMarkup(
       <>
