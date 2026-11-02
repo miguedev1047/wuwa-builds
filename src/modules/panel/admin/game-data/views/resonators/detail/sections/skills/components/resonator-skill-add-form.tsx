@@ -32,8 +32,8 @@ export function ResonatorSkillAddForm({
   const queryClient = useQueryClient()
 
   const { mutateAsync, isPending } = useMutation({
-    mutationFn: (payloads: ResonatorSkillInput[]) =>
-      createResonatorSkills({ data: payloads }),
+    mutationFn: async (payloads: ResonatorSkillInput[]) =>
+      await createResonatorSkills({ data: payloads }),
     onSuccess: async (_created, payloads) => {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.character(resonatorId),
