@@ -10,11 +10,11 @@ import {
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { createWeapon } from "@/modules/panel/admin/game-data/server/weapons"
-import { weaponDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/new/application/weapon-draft"
+import { weaponDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/shared/application/weapon-draft"
 import {
   WeaponFields,
   weaponFormDefaults,
-} from "@/modules/panel/admin/game-data/views/weapons/new/components/weapon-fields"
+} from "@/modules/panel/admin/game-data/views/weapons/shared/components/weapon-fields"
 import { WeaponSearch } from "@/modules/panel/admin/game-data/views/weapons/new/components/weapon-search"
 import type { EncoreWeaponSummary } from "@/modules/encore/domain/weapon"
 import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
@@ -33,13 +33,16 @@ export function WeaponForm() {
 
   const { mutateAsync, isPending: isMutationPending } = useMutation({
     mutationFn: (value: WeaponInput) => createWeapon({ data: value }),
-    onSuccess: async () => {
+    onSuccess: async (weapon) => {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.weapons(),
       })
       toast.success("Arma creada")
 
-      await navigate({ to: "/admin/weapons" })
+      await navigate({
+        to: "/admin/weapons/$id",
+        params: { id: weapon.id.toString() },
+      })
     },
     onError: (error) => {
       toast.error(error.message)

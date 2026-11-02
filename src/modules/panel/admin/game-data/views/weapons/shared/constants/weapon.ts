@@ -25,3 +25,11 @@ export const WEAPON_RARITY = [
 
 /** Weapon type options shared by the form fields and future detail screens. */
 export const WEAPON_TYPE_OPTIONS = WEAPON_TYPES
+
+/** Display label of a weapon rarity, e.g. `5 Estrellas`. */
+export function weaponRarityLabel(rarity: number): string {
+  return (
+    WEAPON_RARITY.find((option) => option.value === rarity)?.label ??
+    `${rarity} Estrellas`
+  )
+}
