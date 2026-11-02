@@ -1,6 +1,8 @@
 import type { EncoreWeaponRefinement } from "@/modules/encore/domain/weapon"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { WeaponRefinementAddForm } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-add-form"
+import { PlusIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type WeaponRefinementAddActionProps = {
   weaponId: number
@@ -23,6 +25,12 @@ export function WeaponRefinementAddAction({
       disabled={isMaxRefinements}
       title="Agregar refinamiento"
       description="Elige un rango de Encore o escribe su efecto."
+      trigger={
+        <EditableSection.ButtonAction variant="default">
+          <HugeiconsIcon icon={PlusIcon} />
+          Agregar
+        </EditableSection.ButtonAction>
+      }
     >
       {({ close }) => (
         <WeaponRefinementAddForm

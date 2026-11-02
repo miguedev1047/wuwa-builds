@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { WeaponRefinementStatAddForm } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-add-form"
 import { PlusIcon } from "@hugeicons/core-free-icons"
@@ -22,9 +21,13 @@ export function WeaponRefinementStatAddAction({
       description="Selecciona una o más estadísticas y su valor."
       label="Agregar estadística"
       trigger={
-        <Button type="button" variant="outline" size="icon">
+        <EditableSection.ButtonAction
+          type="button"
+          variant="icon"
+          aria-label="Agregar estadística"
+        >
           <HugeiconsIcon icon={PlusIcon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

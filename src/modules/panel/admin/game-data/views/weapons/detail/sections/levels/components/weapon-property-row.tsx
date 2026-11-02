@@ -4,7 +4,6 @@ import type {
   WeaponPropertyGrowthRow,
   WeaponPropertyRow as WeaponPropertyRowData,
 } from "@/db/schema"
-import { Button } from "@/components/ui/button"
 import {
   Collapsible,
   CollapsibleContent,
@@ -54,14 +53,13 @@ export function WeaponPropertyRow({
         <EditableSection.ItemActions>
           <CollapsibleTrigger
             render={
-              <Button
+              <EditableSection.ButtonAction
                 type="button"
-                variant="outline"
-                size="icon"
+                variant="icon"
                 aria-label="Mostrar niveles"
               >
                 <HugeiconsIcon icon={ChevronDownIcon} />
-              </Button>
+              </EditableSection.ButtonAction>
             }
           />
 

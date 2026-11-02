@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import type { WeaponRefinementRow } from "@/db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
@@ -16,9 +15,13 @@ export function WeaponRefinementEditAction({
     <EditableSection.EditAction
       title="Editar refinamiento"
       trigger={
-        <Button type="button" variant="outline" size="icon">
+        <EditableSection.ButtonAction
+          type="button"
+          variant="icon"
+          aria-label="Editar refinamiento"
+        >
           <HugeiconsIcon icon={PencilEdit01Icon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

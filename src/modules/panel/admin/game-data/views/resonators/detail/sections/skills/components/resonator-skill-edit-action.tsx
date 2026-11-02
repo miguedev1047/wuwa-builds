@@ -1,7 +1,6 @@
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import type { ResonatorSkillRow } from "@/db/schema"
-import { Button } from "@/components/ui/button"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { ResonatorSkillEditForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-edit-form"
 
@@ -17,14 +16,13 @@ export function ResonatorSkillEditAction({
     <EditableSection.EditAction
       title="Editar habilidad"
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
-          variant="secondary"
-          size="icon"
+          variant="icon"
           aria-label="Editar habilidad"
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

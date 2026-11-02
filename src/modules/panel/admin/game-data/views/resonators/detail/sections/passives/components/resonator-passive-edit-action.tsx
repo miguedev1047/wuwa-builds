@@ -1,7 +1,6 @@
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import type { ResonatorPassiveRow } from "@/db/schema"
-import { Button } from "@/components/ui/button"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { ResonatorPassiveEditForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-edit-form"
 
@@ -17,14 +16,13 @@ export function ResonatorPassiveEditAction({
     <EditableSection.EditAction
       title="Editar pasiva"
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
-          variant="secondary"
-          size="icon"
+          variant="icon"
           aria-label="Editar pasiva"
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

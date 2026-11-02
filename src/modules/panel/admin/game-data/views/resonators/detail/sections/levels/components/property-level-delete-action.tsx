@@ -2,7 +2,6 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { deleteResonatorPropertyLevel } from "@/modules/panel/admin/game-data/server/resonators/properties"
@@ -48,15 +47,14 @@ export function PropertyLevelDeleteAction({
       onConfirm={handleRemoveProperty}
       isPending={isPending}
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
           variant="destructive"
-          size="icon"
           aria-label="Eliminar propiedad"
           disabled={isPending}
         >
           <HugeiconsIcon icon={DeleteIcon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     />
   )

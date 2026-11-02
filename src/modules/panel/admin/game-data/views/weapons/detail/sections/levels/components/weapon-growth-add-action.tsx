@@ -1,7 +1,6 @@
 import { PlusSignIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import type { WeaponPropertyGrowthRow } from "@/db/schema"
-import { Button } from "@/components/ui/button"
 import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { WeaponGrowthAddForm } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-add-form"
@@ -27,14 +26,13 @@ export function WeaponGrowthAddAction({
       title="Agregar nivel"
       description="Elige niveles de Encore o escribe su valor."
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
-          variant="outline"
-          size="icon"
+          variant="icon"
           aria-label="Agregar nivel"
         >
           <HugeiconsIcon icon={PlusSignIcon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

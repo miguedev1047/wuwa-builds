@@ -1,7 +1,6 @@
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import type { ResonatorTagRow } from "@/db/schema"
-import { Button } from "@/components/ui/button"
 import { Show } from "@/components/utility/show"
 import type { EncoreTag } from "@/modules/encore/domain/character"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
@@ -27,15 +26,14 @@ export function ResonatorTagsEditAction({
       title="Editar etiquetas"
       description="Selecciona los estilos de combate del resonador."
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
-          variant="secondary"
-          size={isMobile ? "icon-sm" : "sm"}
+          variant={isMobile ? "icon" : "default"}
           aria-label="Editar etiquetas"
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
           <Show when={!isMobile}>Editar</Show>
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

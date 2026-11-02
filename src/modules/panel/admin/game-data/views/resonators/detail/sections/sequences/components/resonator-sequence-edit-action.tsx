@@ -1,7 +1,6 @@
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import type { ResonatorSequenceRow } from "@/db/schema"
-import { Button } from "@/components/ui/button"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { ResonatorSequenceEditForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-edit-form"
 
@@ -17,14 +16,13 @@ export function ResonatorSequenceEditAction({
     <EditableSection.EditAction
       title="Editar secuencia"
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
-          variant="secondary"
-          size="icon"
+          variant="icon"
           aria-label="Editar secuencia"
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

@@ -1,6 +1,8 @@
 import type { EncoreProperty } from "@/modules/encore/domain/property"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { WeaponPropertyAddForm } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-property-add-form"
+import { PlusIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type WeaponPropertyAddActionProps = {
   weaponId: number
@@ -23,6 +25,12 @@ export function WeaponPropertyAddAction({
       disabled={isMaxProperties}
       title="Agregar propiedad"
       description="Elige una propiedad o escribe sus datos."
+      trigger={
+        <EditableSection.ButtonAction variant="default">
+          <HugeiconsIcon icon={PlusIcon} />
+          Agregar
+        </EditableSection.ButtonAction>
+      }
     >
       {({ close }) => (
         <WeaponPropertyAddForm

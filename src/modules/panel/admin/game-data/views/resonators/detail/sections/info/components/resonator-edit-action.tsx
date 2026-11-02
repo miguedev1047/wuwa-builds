@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import type { ResonatorRow } from "@/db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
@@ -18,14 +17,13 @@ export function ResonatorEditAction({ resonator }: ResonatorEditActionProps) {
     <EditableSection.EditAction
       title="Editar resonador"
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
-          variant="secondary"
-          size={isMobile ? "icon" : "default"}
+          variant={isMobile ? "icon" : "default"}
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
           <Show when={!isMobile}>Editar</Show>
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

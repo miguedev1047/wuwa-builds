@@ -1,6 +1,8 @@
 import type { EncorePassive } from "@/modules/encore/domain/character"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { ResonatorPassiveAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-add-form"
+import { PlusIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type ResonatorPassiveAddActionProps = {
   resonatorId: number
@@ -23,6 +25,12 @@ export function ResonatorPassiveAddAction({
       disabled={isMaxPassives}
       title="Agregar pasivas"
       description="Elige una o mas pasivas de Encore."
+      trigger={
+        <EditableSection.ButtonAction variant="default">
+          <HugeiconsIcon icon={PlusIcon} />
+          Agregar
+        </EditableSection.ButtonAction>
+      }
     >
       {({ close }) => (
         <ResonatorPassiveAddForm

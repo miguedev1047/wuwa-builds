@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { Show } from "@/components/utility/show"
 import type { WeaponRow } from "@/db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
@@ -18,14 +17,13 @@ export function WeaponEditAction({ weapon }: WeaponEditActionProps) {
     <EditableSection.EditAction
       title="Editar arma"
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
-          variant="secondary"
-          size={isMobile ? "icon" : "default"}
+          variant={isMobile ? "icon" : "default"}
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
           <Show when={!isMobile}>Editar</Show>
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

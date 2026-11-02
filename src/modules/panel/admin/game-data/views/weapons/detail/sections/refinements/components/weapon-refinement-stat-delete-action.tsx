@@ -2,7 +2,6 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
@@ -48,15 +47,14 @@ export function WeaponRefinementStatDeleteAction({
       isPending={isPending}
       onConfirm={handleRemoveStat}
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
           variant="destructive"
-          size="icon"
           aria-label="Eliminar estadística"
           disabled={isPending}
         >
           <HugeiconsIcon icon={DeleteIcon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     />
   )

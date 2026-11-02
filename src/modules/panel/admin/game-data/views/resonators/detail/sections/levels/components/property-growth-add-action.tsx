@@ -1,7 +1,6 @@
 import { PlusSignIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import type { ResonatorPropertyGrowthRow } from "@/db/schema"
-import { Button } from "@/components/ui/button"
 import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { PropertyGrowthAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-add-form"
@@ -27,14 +26,13 @@ export function PropertyGrowthAddAction({
       title="Agregar nivel"
       description="Elige un nivel de Encore o escribe su valor."
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
-          variant="outline"
-          size="icon"
+          variant="icon"
           aria-label="Agregar nivel"
         >
           <HugeiconsIcon icon={PlusSignIcon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

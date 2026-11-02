@@ -1,6 +1,8 @@
 import type { EncoreSkill } from "@/modules/encore/domain/character"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { ResonatorSkillAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-add-form"
+import { PlusIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type ResonatorSkillAddActionProps = {
   resonatorId: number
@@ -23,6 +25,12 @@ export function ResonatorSkillAddAction({
       disabled={isMaxSkills}
       title="Agregar habilidades"
       description="Elige una o mas habilidades de Encore."
+      trigger={
+        <EditableSection.ButtonAction variant="default">
+          <HugeiconsIcon icon={PlusIcon} />
+          Agregar
+        </EditableSection.ButtonAction>
+      }
     >
       {({ close }) => (
         <ResonatorSkillAddForm

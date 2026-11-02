@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import type { WeaponRefinementStatRow } from "@/db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
@@ -18,14 +17,13 @@ export function WeaponRefinementStatEditAction({
     <EditableSection.EditAction
       title="Editar estadística"
       trigger={
-        <Button
+        <EditableSection.ButtonAction
           type="button"
-          variant="outline"
-          size="icon"
+          variant="icon"
           aria-label="Editar estadística"
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     >
       {({ close }) => (

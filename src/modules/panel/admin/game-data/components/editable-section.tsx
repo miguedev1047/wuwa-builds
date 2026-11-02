@@ -55,6 +55,8 @@ import {
   type ReactNode,
 } from "react"
 
+const ICON_SIZE = "size-7 [&_svg:not([class*='size-'])]:size-3.5"
+
 /**
  * Section whose content can be edited and deleted.
  *
@@ -513,6 +515,42 @@ export function EditableSectionAddAction({
   )
 }
 
+export const editableSectionAddActionTriggerVariants = cva("", {
+  variants: {
+    variant: {
+      default:
+        "h-7 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+      icon: `${ICON_SIZE} bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground`,
+      destructive: `${ICON_SIZE} bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40`,
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+})
+
+type EditableSectionButtonActionProps = Omit<
+  ComponentProps<typeof Button>,
+  "variant" | "size"
+> &
+  VariantProps<typeof editableSectionAddActionTriggerVariants>
+
+export function EditableSectionButtonAction({
+  variant,
+  className,
+  ...props
+}: EditableSectionButtonActionProps) {
+  return (
+    <Button
+      className={cn(
+        editableSectionAddActionTriggerVariants({ variant }),
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
 type EditableSectionDeleteActionProps = {
   title: string
   description?: ReactNode
@@ -592,6 +630,7 @@ export const EditableSection = {
   Title: EditableSectionTitle,
   Description: EditableSectionDescription,
   Action: EditableSectionAction,
+  ButtonAction: EditableSectionButtonAction,
   Content: EditableSectionContent,
   Media: EditableSectionMedia,
   Body: EditableSectionBody,

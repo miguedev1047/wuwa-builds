@@ -1,6 +1,8 @@
 import type { EncoreSequence } from "@/modules/encore/domain/character"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { ResonatorSequenceAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-add-form"
+import { PlusIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type ResonatorSequenceAddActionProps = {
   resonatorId: number
@@ -23,6 +25,12 @@ export function ResonatorSequenceAddAction({
       disabled={isMaxSequences}
       title="Agregar secuencias"
       description="Elige una o mas secuencias de Encore."
+      trigger={
+        <EditableSection.ButtonAction variant="default">
+          <HugeiconsIcon icon={PlusIcon} />
+          Agregar
+        </EditableSection.ButtonAction>
+      }
     >
       {({ close }) => (
         <ResonatorSequenceAddForm

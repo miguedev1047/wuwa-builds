@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "@tanstack/react-router"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
@@ -46,9 +45,14 @@ export function WeaponDeleteAction() {
       isPending={isPending}
       onConfirm={handleRemoveWeapon}
       trigger={
-        <Button type="button" variant="destructive" size="icon">
+        <EditableSection.ButtonAction
+          type="button"
+          variant="destructive"
+          aria-label="Eliminar arma"
+          disabled={isPending}
+        >
           <HugeiconsIcon icon={DeleteIcon} />
-        </Button>
+        </EditableSection.ButtonAction>
       }
     />
   )
