@@ -16,19 +16,11 @@ export function ResonatorPassiveCard({
 }: ResonatorPassiveCardProps) {
   return (
     <EditableSection.Item>
-      <EditableSection.ItemMedia>
+      <EditableSection.Media variant="image">
         <Show when={passive.icon}>
-          {(icon) => (
-            <div className="size-10 shrink-0 overflow-hidden rounded-md bg-accent">
-              <img
-                src={icon}
-                alt={passive.title}
-                className="size-full object-cover"
-              />
-            </div>
-          )}
+          {(icon) => <EditableSection.Image src={icon} alt={passive.title} />}
         </Show>
-      </EditableSection.ItemMedia>
+      </EditableSection.Media>
       <EditableSection.ItemContent>
         <EditableSection.ItemTitle className="truncate">
           {passive.title}
