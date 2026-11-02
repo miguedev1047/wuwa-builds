@@ -22,8 +22,14 @@ export function ResonatorTagsContent({
       ) : (
         <div className="flex flex-wrap gap-2">
           {resonator.tags.map((tag) => (
-            <Badge key={tag.id} variant="secondary" title={tag.description}>
-              {tag.name}
+            <Badge
+              key={tag.id}
+              variant="secondary"
+              title={tag.description}
+              className="flex w-full items-center justify-start gap-2"
+            >
+              <div className="size-1" style={{ background: `#${tag.color}` }} />
+              <p>{tag.name}</p>
             </Badge>
           ))}
         </div>
