@@ -3,9 +3,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import type { ResonatorTagRow } from "@/db/schema"
 import { useAppForm } from "@/components/form"
+import { Button } from "@/components/ui/button"
+import { DialogFooter } from "@/components/ui/dialog"
 import type { EncoreTag } from "@/modules/encore/domain/character"
 import { resonatorTagsSelectionInput } from "@/modules/panel/admin/game-data/application/schemas"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { replaceResonatorTags } from "@/modules/panel/admin/game-data/server/tags"
 import { toTagInput } from "@/modules/panel/admin/game-data/views/resonators/detail/application/to-tag-input"
@@ -14,13 +15,17 @@ type ResonatorTagsFormProps = {
   resonatorId: number
   savedTags: ResonatorTagRow[]
   encoreTags: EncoreTag[]
+  onSaved: () => void
+  onCancel: () => void
 }
 
-/** Tags form of the resonator. */
+/** Tags form of the resonator, rendered inside the edit dialog. */
 export function ResonatorTagsForm({
   resonatorId,
   savedTags,
   encoreTags,
+  onSaved,
+  onCancel,
 }: ResonatorTagsFormProps) {
   const formId = `resonator-tags-form-${useId()}`
   const queryClient = useQueryClient()
@@ -43,6 +48,7 @@ export function ResonatorTagsForm({
         queryKey: wuwaBuildsKeys.character(resonatorId),
       })
       toast.success("Etiquetas guardadas")
+      onSaved()
     },
     onError: (error) => {
       toast.error(error.message)
@@ -59,10 +65,10 @@ export function ResonatorTagsForm({
   })
 
   return (
-    <EditableSection.Content>
+    <>
       <form
         id={formId}
-        className="space-y-2"
+        className="space-y-4"
         onSubmit={(event) => {
           event.preventDefault()
           form.handleSubmit()
@@ -81,16 +87,17 @@ export function ResonatorTagsForm({
             />
           )}
         </form.AppField>
+      </form>
+
+      <DialogFooter>
+        <Button type="button" size="xl" variant="secondary" onClick={onCancel}>
+          Cerrar
+        </Button>
 
         <form.AppForm>
-          <form.SubmitButton
-            label="Guardar"
-            formId={formId}
-            size="xl"
-            className="w-full"
-          />
+          <form.SubmitButton label="Guardar" formId={formId} />
         </form.AppForm>
-      </form>
-    </EditableSection.Content>
+      </DialogFooter>
+    </>
   )
 }
