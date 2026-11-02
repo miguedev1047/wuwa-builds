@@ -5,8 +5,8 @@ export function ResonatorSkillsSkeleton() {
   return (
     <EditableSection.Content>
       <div className="space-y-4">
-        <SkeletonBox width="100%" height={140} radius={8} />
-        <SkeletonBox width="100%" height={140} radius={8} />
+        <SkeletonBox width="100%" height={140} radius={0} />
+        <SkeletonBox width="100%" height={140} radius={0} />
       </div>
     </EditableSection.Content>
   )
