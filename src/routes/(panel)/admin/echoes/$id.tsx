@@ -1,4 +1,5 @@
 import { Spinner } from "@/components/ui/spinner"
+import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { echoQueries } from "@/modules/panel/admin/game-data/queries/echoes"
 import { EchoDetailPage } from "@/modules/panel/admin/game-data/views/echoes/detail/page"
@@ -18,7 +19,10 @@ export const Route = createFileRoute("/(panel)/admin/echoes/$id")({
       throw notFound()
     }
 
-    const echo = await context.queryClient.query(echoQueries.detail(id))
+    const [, echo] = await Promise.all([
+      context.queryClient.query(encoreEchoQueries.detail(id)),
+      context.queryClient.query(echoQueries.detail(id)),
+    ])
 
     if (!echo) {
       throw notFound()

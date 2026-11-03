@@ -3,6 +3,7 @@
 import { describe, expect, test } from "bun:test"
 import {
   echoInput,
+  echoSetInput,
   resonatorInput,
   resonatorPassiveInput,
   resonatorPassivesInput,
@@ -198,6 +199,35 @@ describe("echoInput", () => {
 
     expect(parsed).not.toHaveProperty("createdAt")
     expect(parsed).not.toHaveProperty("updatedAt")
+  })
+})
+
+describe("echoSetInput", () => {
+  test("accepts an echo and a set id", () => {
+    expect(echoSetInput.parse({ echoId: 6000201, setId: 32 })).toEqual({
+      echoId: 6000201,
+      setId: 32,
+    })
+  })
+
+  test("rejects a missing or invalid pair", () => {
+    expect(echoSetInput.safeParse({ echoId: 0, setId: 32 }).success).toBe(false)
+    expect(echoSetInput.safeParse({ echoId: 1, setId: 0 }).success).toBe(false)
+    expect(echoSetInput.safeParse({ setId: 32 }).success).toBe(false)
+  })
+
+  test("ignores the derived columns", () => {
+    const parsed = echoSetInput.parse({
+      echoId: 1,
+      setId: 2,
+      name: "Escarcha helada",
+      icon: "https://example.com/icon.webp",
+      sortOrder: 9,
+    })
+
+    expect(parsed).not.toHaveProperty("name")
+    expect(parsed).not.toHaveProperty("icon")
+    expect(parsed).not.toHaveProperty("sortOrder")
   })
 })
 

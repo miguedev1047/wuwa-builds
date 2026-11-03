@@ -24,6 +24,9 @@ export const getEcho = createServerFn({
       where: {
         id: data.id,
       },
+      with: {
+        sets: { orderBy: { sortOrder: "asc" } },
+      },
     })
 
     if (!echo) {
