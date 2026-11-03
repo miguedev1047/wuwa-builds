@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import type { EncoreEchoSummary } from "@/modules/encore/domain/echo"
 import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
 import { CatalogSearch } from "@/modules/panel/admin/game-data/components/catalog-search"
+import { Show } from "@/components/utility/show"
 
 type EchoSearchProps = {
   /** Id of the echo already applied to the form, if any. */
@@ -69,14 +70,14 @@ function EchoSearchResults({ selectedId, onSelect }: EchoSearchResultsProps) {
               alt={echo.name}
               width={28}
               height={28}
-              className="aspect-square size-7 shrink-0 rounded-sm bg-accent object-contain"
+              className="shrink-0 rounded-sm bg-accent object-contain"
             />
 
             <span className="truncate">{echo.name}</span>
 
-            {selectedId === echo.id ? (
+            <Show when={selectedId === echo.id}>
               <CatalogSearch.Shortcut>Actual</CatalogSearch.Shortcut>
-            ) : null}
+            </Show>
           </CatalogSearch.Item>
         ))}
       </CatalogSearch.Group>

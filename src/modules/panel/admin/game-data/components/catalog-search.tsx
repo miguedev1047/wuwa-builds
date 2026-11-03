@@ -145,7 +145,7 @@ export function CatalogSearchLoading({ count = 6 }: CatalogSearchLoadingProps) {
           key={index}
           className="flex min-h-7 items-center gap-2 rounded-md px-2.5 py-1.5"
         >
-          <SkeletonBox width={28} height={28} radius="0.125rem" />
+          <SkeletonBox width={28} height={28} radius={0} />
           <SkeletonBox width="45%" height={12} />
         </div>
       ))}
