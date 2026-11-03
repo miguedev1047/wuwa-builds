@@ -313,10 +313,19 @@ interface RawEchoSkill {
   DamageList?: unknown[]
 }
 
+interface RawEchoFetterMapEntry {
+  Key: number
+  Value: number
+}
+
 interface RawEchoGroupDetail {
   Group?: {
     Id: number
     FetterGroupName?: string
+    FetterElementColor?: string
+    FetterElementPath?: string
+    /** `Key` is the piece threshold: 1, 2, 3 or 5. */
+    FetterMap?: RawEchoFetterMapEntry[]
   }
 }
 

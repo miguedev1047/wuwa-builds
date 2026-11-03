@@ -3,6 +3,7 @@ import {
   buildsRelations,
   echoRelations,
   resonatorRelations,
+  sonataRelations,
   weaponRelations,
 } from "@/db/schema"
 
@@ -17,6 +18,7 @@ export const relations = {
   ...resonatorRelations,
   ...weaponRelations,
   ...echoRelations,
+  ...sonataRelations,
   user: {
     ...authRelations.user,
     ...buildsRelations.user,

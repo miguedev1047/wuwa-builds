@@ -1,5 +1,5 @@
 import type { DockItemData } from "@/components/ui/dock"
-import { Home02Icon, PlusIcon } from "@hugeicons/core-free-icons"
+import { CloudSyncIcon, Home02Icon, PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon, type IconSvgElement } from "@hugeicons/react"
 
 const glyph = (icon: IconSvgElement) => (
@@ -18,5 +18,11 @@ export const echoListDockActions: DockItemData[] = [
     linkOptions: { to: "/admin/echoes/new" },
     icon: glyph(PlusIcon),
     label: "Agregar eco",
+  },
+  {
+    type: "link",
+    linkOptions: { to: "/admin/echoes/sonatas" },
+    icon: glyph(CloudSyncIcon),
+    label: "Efectos de sonata",
   },
 ]

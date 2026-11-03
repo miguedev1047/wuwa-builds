@@ -109,6 +109,69 @@ export const echoSkills = sqliteTable("echo_skills", {
   ...getDate(),
 })
 
+/**
+ * Sonata sets as a first class catalog (`FetterGroupDetails[].Group`).
+ *
+ * The piece threshold lives on the effects, because a set can trigger at 1, 2,
+ * 3 or 5 pieces: `sonata_set_effects.pieces` holds it and `is_conditional`
+ * tells the builder whether the bonus can be added to a static stat sheet.
+ */
+export const sonataSets = sqliteTable("sonata_sets", {
+  /** `Group.Id` from Encore, typed by hand for manual sets. */
+  id: integer("id", { mode: "number" }).primaryKey(),
+  /** `Group.FetterGroupName` */
+  name: text("name").notNull(),
+  /** `Fetters[].Icon` from the list endpoint, or `Group.FetterElementPath`. */
+  icon: text("icon").notNull().default(""),
+  /** `Group.FetterElementColor`, kept for the panel accent. */
+  color: text("color").notNull().default(""),
+  /**
+   * `encore` rows are refreshed by the sync; `manual` rows are created by the
+   * admin and never touched by it.
+   */
+  source: text("source").notNull().default("encore"),
+
+  ...getDate(),
+})
+
+/** One row per piece threshold of a sonata set. */
+export const sonataSetEffects = sqliteTable(
+  "sonata_set_effects",
+  {
+    id: integer("id", { mode: "number" }).primaryKey({
+      autoIncrement: true,
+    }),
+    setId: integer("set_id", { mode: "number" })
+      .notNull()
+      .references(() => sonataSets.id, { onDelete: "cascade" }),
+    /** Pieces needed to trigger the bonus: 1, 2, 3 or 5. */
+    pieces: integer("pieces", { mode: "number" }).notNull(),
+    /** `EffectDescriptions[]`, already resolved by the detail endpoint. */
+    description: text("description").notNull().default(""),
+    /**
+     * Combat-only bonus. When `false` the builder adds `statId` + `value` to
+     * the static sheet; when `true` it only shows the description.
+     */
+    isConditional: integer("is_conditional", { mode: "boolean" })
+      .notNull()
+      .default(true),
+    /** Canonical builder key, only set on static effects. */
+    statId: text("stat_id"),
+    /** Bonus amount in percent, only set on static effects. */
+    value: real("value"),
+    /** Position inside the set. */
+    sortOrder: integer("sort_order", { mode: "number" }).notNull().default(0),
+
+    ...getDate(),
+  },
+  (table) => [
+    uniqueIndex("sonata_set_effects_set_pieces_idx").on(
+      table.setId,
+      table.pieces
+    ),
+  ]
+)
+
 export type EchoRow = typeof echoes.$inferSelect
 export type NewEchoRow = typeof echoes.$inferInsert
 export type EchoSetRow = typeof echoSets.$inferSelect
@@ -117,6 +180,10 @@ export type EchoSetEffectRow = typeof echoSetEffects.$inferSelect
 export type NewEchoSetEffectRow = typeof echoSetEffects.$inferInsert
 export type EchoSkillRow = typeof echoSkills.$inferSelect
 export type NewEchoSkillRow = typeof echoSkills.$inferInsert
+export type SonataSetRow = typeof sonataSets.$inferSelect
+export type NewSonataSetRow = typeof sonataSets.$inferInsert
+export type SonataSetEffectRow = typeof sonataSetEffects.$inferSelect
+export type NewSonataSetEffectRow = typeof sonataSetEffects.$inferInsert
 
 export const echoRelations = defineRelationsPart(
   { echoes, echoSets, echoSetEffects, echoSkills },
@@ -151,6 +218,24 @@ export const echoRelations = defineRelationsPart(
       echo: r.one.echoes({
         from: r.echoSkills.echoId,
         to: r.echoes.id,
+      }),
+    },
+  })
+)
+
+export const sonataRelations = defineRelationsPart(
+  { sonataSets, sonataSetEffects },
+  (r) => ({
+    sonataSets: {
+      effects: r.many.sonataSetEffects({
+        from: r.sonataSets.id,
+        to: r.sonataSetEffects.setId,
+      }),
+    },
+    sonataSetEffects: {
+      set: r.one.sonataSets({
+        from: r.sonataSetEffects.setId,
+        to: r.sonataSets.id,
       }),
     },
   })

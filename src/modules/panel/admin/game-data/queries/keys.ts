@@ -12,4 +12,5 @@ export const wuwaBuildsKeys = {
   weapon: (id: number) => [...wuwaBuildsKeys.all, "weapon", id] as const,
   echoes: () => [...wuwaBuildsKeys.all, "echoes"] as const,
   echo: (id: number) => [...wuwaBuildsKeys.all, "echo", id] as const,
+  sonatas: () => [...wuwaBuildsKeys.all, "sonatas"] as const,
 }

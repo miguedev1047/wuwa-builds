@@ -16,6 +16,7 @@ import {
   resonatorSkillsInput,
   resonatorTagsInput,
   resonatorTagsSelectionInput,
+  sonataInput,
   weaponInput,
   weaponPropertyGrowthInput,
   weaponPropertyGrowthInputs,
@@ -197,6 +198,99 @@ describe("echoInput", () => {
 
     expect(parsed).not.toHaveProperty("createdAt")
     expect(parsed).not.toHaveProperty("updatedAt")
+  })
+})
+
+describe("sonataInput", () => {
+  const staticEffect = {
+    pieces: 2,
+    description: "Daño Gelio +10%",
+    isConditional: false,
+    statId: "glacio_dmg",
+    value: 10,
+  }
+
+  const valid = {
+    id: 1,
+    name: "  Escarcha helada  ",
+    icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
+    color: "",
+    effects: [staticEffect],
+  }
+
+  test("trims the name and accepts a static effect", () => {
+    const parsed = sonataInput.parse(valid)
+
+    expect(parsed.name).toBe("Escarcha helada")
+    expect(parsed.effects[0].statId).toBe("glacio_dmg")
+  })
+
+  test("rejects a static effect without a stat or a value", () => {
+    expect(
+      sonataInput.safeParse({
+        ...valid,
+        effects: [{ ...staticEffect, statId: null }],
+      }).success
+    ).toBe(false)
+    expect(
+      sonataInput.safeParse({
+        ...valid,
+        effects: [{ ...staticEffect, value: null }],
+      }).success
+    ).toBe(false)
+  })
+
+  test("rejects a conditional effect that still carries a stat", () => {
+    expect(
+      sonataInput.safeParse({
+        ...valid,
+        effects: [{ ...staticEffect, isConditional: true }],
+      }).success
+    ).toBe(false)
+  })
+
+  test("requires at least one effect and caps them at two", () => {
+    expect(sonataInput.safeParse({ ...valid, effects: [] }).success).toBe(false)
+    expect(
+      sonataInput.safeParse({
+        ...valid,
+        effects: [staticEffect, staticEffect, staticEffect],
+      }).success
+    ).toBe(false)
+  })
+
+  test("rejects a piece threshold outside 1..5", () => {
+    expect(
+      sonataInput.safeParse({
+        ...valid,
+        effects: [{ ...staticEffect, pieces: 0 }],
+      }).success
+    ).toBe(false)
+    expect(
+      sonataInput.safeParse({
+        ...valid,
+        effects: [{ ...staticEffect, pieces: 6 }],
+      }).success
+    ).toBe(false)
+  })
+
+  test("accepts the 1 and 3 piece thresholds", () => {
+    for (const pieces of [1, 3, 5]) {
+      expect(
+        sonataInput.safeParse({
+          ...valid,
+          effects: [
+            {
+              pieces,
+              description: "Al aplicar Hackeo: Transición...",
+              isConditional: true,
+              statId: null,
+              value: null,
+            },
+          ],
+        }).success
+      ).toBe(true)
+    }
   })
 })
 
