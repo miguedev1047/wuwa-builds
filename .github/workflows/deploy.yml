@@ -70,15 +70,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           packageManager: bun
           command: deploy
-          # Worker runtime secrets. Uncomment after creating the GitHub
-          # secrets; the names must match the env block below.
-          # secrets: |
-          #   BETTER_AUTH_SECRET
-          #   BETTER_AUTH_URL
-          #   DISCORD_CLIENT_ID
-          #   DISCORD_CLIENT_SECRET
-        env:
-          BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }}
-          BETTER_AUTH_URL: ${{ secrets.BETTER_AUTH_URL }}
-          DISCORD_CLIENT_ID: ${{ secrets.DISCORD_CLIENT_ID }}
-          DISCORD_CLIENT_SECRET: ${{ secrets.DISCORD_CLIENT_SECRET }}
+          # Runtime secrets (BETTER_AUTH_SECRET, BETTER_AUTH_URL,
+          # DISCORD_CLIENT_ID, DISCORD_CLIENT_SECRET) already live in the
+          # Worker and survive every deploy. Set them once with
+          # `wrangler secret put <NAME>`; only re-set them when a name changes.
