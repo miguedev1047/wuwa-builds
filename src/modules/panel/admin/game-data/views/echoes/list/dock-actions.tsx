@@ -15,7 +15,7 @@ export const echoListDockActions: DockItemData[] = [
   },
   {
     type: "link",
-    linkOptions: { to: "/admin/echoes" },
+    linkOptions: { to: "/admin/echoes/new" },
     icon: glyph(PlusIcon),
     label: "Agregar eco",
   },

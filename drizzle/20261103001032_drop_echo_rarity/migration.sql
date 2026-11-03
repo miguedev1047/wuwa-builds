@@ -1,0 +1,1 @@
+ALTER TABLE `echoes` DROP COLUMN `rarity`;

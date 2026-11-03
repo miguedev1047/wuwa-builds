@@ -185,7 +185,7 @@ const rawEcho: RawEchoDetail = {
   MonsterId: 6000038,
   ItemId: 6000039,
   MonsterName: "Campemico",
-  Rarity: 5,
+  Rarity: 1,
   Icon: "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/echo.webp",
   Element: { Name: "Aero" },
   AttributesDescription: "Descripción del eco",
@@ -246,6 +246,26 @@ describe("encore catalog schema", () => {
     expect(await readEcho(db, echo.id)).toEqual(echo)
   })
 
+  test("maps the Encore tier to the echo class and cost", () => {
+    expect(toEchoDetail(rawEcho)).toMatchObject({ class: 1, cost: 3 })
+    expect(toEchoDetail({ ...rawEcho, Rarity: 0 })).toMatchObject({
+      class: 0,
+      cost: 1,
+    })
+    expect(toEchoDetail({ ...rawEcho, Rarity: 3 })).toMatchObject({
+      class: 3,
+      cost: 4,
+    })
+  })
+
+  test("drops the element and the attributes description of an echo", () => {
+    const echo = toEchoDetail(rawEcho)
+
+    expect(echo).not.toHaveProperty("element")
+    expect(echo).not.toHaveProperty("description")
+    expect(echo).not.toHaveProperty("rarity")
+  })
+
   test("rebuilds the list endpoints from the detail rows", async () => {
     await saveCharacter(db, toCharacterDetail(rawCharacter))
     await saveWeapon(db, toWeaponDetail(rawWeapon))
@@ -278,8 +298,8 @@ describe("encore catalog schema", () => {
       {
         id: 6000038,
         name: "Campemico",
-        rarity: 5,
-        element: "Aero",
+        class: 1,
+        cost: 3,
         icon: "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/echo.webp",
         sets: [
           {

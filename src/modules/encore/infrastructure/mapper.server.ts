@@ -8,10 +8,11 @@ import type {
   EncoreSkill,
   EncoreTag,
 } from "../domain/character"
-import type {
-  EncoreEchoDetail,
-  EncoreEchoSet,
-  EncoreEchoSummary,
+import {
+  echoTier,
+  type EncoreEchoDetail,
+  type EncoreEchoSet,
+  type EncoreEchoSummary,
 } from "../domain/echo"
 import { encoreAssetUrl } from "../domain/asset"
 import type { EncoreProperty } from "../domain/property"
@@ -302,7 +303,7 @@ interface RawEchoSummary {
 }
 
 export interface RawEchoList {
-  Echo?: RawEchoSummary[]
+  phantomsList?: RawEchoSummary[]
 }
 
 interface RawEchoSkill {
@@ -407,11 +408,13 @@ export function toWeaponDetail(raw: RawWeaponDetail): EncoreWeaponDetail {
 }
 
 export function toEchoSummary(raw: RawEchoSummary): EncoreEchoSummary {
+  const tier = echoTier(raw.Rarity ?? 0)
+
   return {
     id: raw.Id,
     name: raw.Name,
-    rarity: raw.Rarity ?? 0,
-    element: raw.Element?.Name ?? "",
+    class: tier.class,
+    cost: tier.cost,
     icon: raw.Icon ?? "",
     sets: (raw.FetterGroups ?? []).map((group) => ({
       id: group.Id,
@@ -458,14 +461,14 @@ function toEchoDetailSets(raw: RawEchoDetail): EncoreEchoSet[] {
 
 export function toEchoDetail(raw: RawEchoDetail): EncoreEchoDetail {
   const skill = raw.Skill
+  const tier = echoTier(raw.Rarity ?? 0)
 
   return {
     id: raw.MonsterId ?? raw.ItemId ?? 0,
     name: raw.MonsterName ?? "",
-    rarity: raw.Rarity ?? 0,
-    element: raw.Element?.Name ?? "",
+    class: tier.class,
+    cost: tier.cost,
     icon: encoreAssetUrl(raw.Icon),
-    description: raw.AttributesDescription ?? "",
     sets: toEchoDetailSets(raw),
     skill: skill
       ? {

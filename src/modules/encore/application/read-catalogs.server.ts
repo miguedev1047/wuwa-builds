@@ -24,7 +24,12 @@ export async function readWeapon(id: number): Promise<EncoreWeaponDetail> {
 
 export async function readEchoes(): Promise<EncoreEchoSummary[]> {
   const data = await fetchEncoreJson<RawEchoList>("echo")
-  return (data.Echo ?? []).map(toEchoSummary)
+
+  // `phantomsList` mixes echoes with cosmetic phantom skins and `Type` is the
+  // only discriminator (`Eco` vs `Apariencia Fantasma` in `es`).
+  return (data.phantomsList ?? [])
+    .filter((raw) => raw.Type === "Eco")
+    .map(toEchoSummary)
 }
 
 export async function readEcho(id: number): Promise<EncoreEchoDetail> {

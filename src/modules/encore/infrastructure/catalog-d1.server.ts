@@ -457,10 +457,9 @@ export async function saveEcho(
   await db.insert(echoes).values({
     id: echo.id,
     name: echo.name,
-    rarity: echo.rarity,
-    element: echo.element,
+    class: echo.class,
+    cost: echo.cost,
     icon: echo.icon,
-    description: echo.description,
   })
 
   if (echo.sets.length > 0) {
@@ -534,10 +533,9 @@ export async function readEcho(
   return {
     id: row.id,
     name: row.name,
-    rarity: row.rarity,
-    element: row.element,
+    class: row.class,
+    cost: row.cost,
     icon: row.icon,
-    description: row.description,
     sets,
     skill: row.skill
       ? {
@@ -563,8 +561,8 @@ export async function readEchoes(db: AppDb): Promise<EncoreEchoSummary[]> {
   return rows.map((row) => ({
     id: row.id,
     name: row.name,
-    rarity: row.rarity,
-    element: row.element,
+    class: row.class,
+    cost: row.cost,
     icon: row.icon,
     sets: row.sets.map((set) => ({
       id: set.setId,

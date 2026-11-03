@@ -2,6 +2,7 @@
 
 import { describe, expect, test } from "bun:test"
 import {
+  echoInput,
   resonatorInput,
   resonatorPassiveInput,
   resonatorPassivesInput,
@@ -142,6 +143,58 @@ describe("weaponInput", () => {
     })
 
     expect(parsed).not.toHaveProperty("typeName")
+    expect(parsed).not.toHaveProperty("createdAt")
+    expect(parsed).not.toHaveProperty("updatedAt")
+  })
+})
+
+describe("echoInput", () => {
+  const valid = {
+    id: 390080005,
+    name: "  Geochelone Portacampana  ",
+    class: 3,
+    cost: 4,
+    icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
+  }
+
+  test("trims text and accepts a valid echo", () => {
+    const parsed = echoInput.parse(valid)
+
+    expect(parsed.name).toBe("Geochelone Portacampana")
+    expect(parsed.cost).toBe(4)
+  })
+
+  test("rejects an empty name", () => {
+    const result = echoInput.safeParse({ ...valid, name: "   " })
+
+    expect(result.success).toBe(false)
+    expect(result.error?.issues[0]?.message).toBe("El nombre es obligatorio")
+  })
+
+  test("requires the id", () => {
+    expect(echoInput.safeParse({ ...valid, id: 0 }).success).toBe(false)
+  })
+
+  test("rejects a class outside 0..3", () => {
+    expect(echoInput.safeParse({ ...valid, class: -1 }).success).toBe(false)
+    expect(echoInput.safeParse({ ...valid, class: 4 }).success).toBe(false)
+  })
+
+  test("only accepts the build costs 1, 3 and 4", () => {
+    expect(echoInput.safeParse({ ...valid, cost: 2 }).success).toBe(false)
+
+    const result = echoInput.safeParse({ ...valid, cost: 2 })
+
+    expect(result.error?.issues[0]?.message).toBe("El coste debe ser 1, 3 o 4")
+  })
+
+  test("ignores the database timestamps", () => {
+    const parsed = echoInput.parse({
+      ...valid,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    })
+
     expect(parsed).not.toHaveProperty("createdAt")
     expect(parsed).not.toHaveProperty("updatedAt")
   })

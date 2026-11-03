@@ -10,15 +10,15 @@ import {
 import { getDate } from "@/db/helpers/gen-date"
 
 /**
- * Echo endpoint mirror (`echo?page=1` + `echo/{id}`).
+ * Echo endpoint mirror (`echo` + `echo/{id}`).
  *
- * Columns follow `EncoreEchoDetail` in `src/modules/encore/domain/echo.ts`
- * field by field; the comment on each column is the raw Encore JSON key. Mesh,
- * location, zoom and animation fields are dropped by the mapper and are not
- * stored here either.
+ * Columns follow `EncoreEchoDetail` in `src/modules/encore/domain/echo.ts` for
+ * the mapped fields. Cosmetic, lore, star and 3D fields (element, attributes
+ * description, star rating, mesh, location, zoom, animation) are dropped by the
+ * mapper and are not stored here either.
  */
 
-/** One row per echo (raw `Echo[]` + `echo/{id}`). */
+/** One row per echo (raw `phantomsList[]` + `echo/{id}`). */
 export const echoes = sqliteTable(
   "echoes",
   {
@@ -26,18 +26,19 @@ export const echoes = sqliteTable(
     id: integer("id", { mode: "number" }).primaryKey(),
     /** `MonsterName` (`Name` in the list endpoint) */
     name: text("name").notNull(),
-    /** `Rarity` */
-    rarity: integer("rarity", { mode: "number" }).notNull().default(0),
-    /** `Element.Name` */
-    element: text("element").notNull().default(""),
+    /** `Rarity` tier: 0 common, 1 elite, 2 boss, 3 calamity. */
+    class: integer("class", { mode: "number" }).notNull().default(0),
+    /** Build cost derived from the tier: 1, 3 or 4. */
+    cost: integer("cost", { mode: "number" }).notNull().default(1),
     /** `Icon` */
     icon: text("icon").notNull().default(""),
-    /** `AttributesDescription` */
-    description: text("description").notNull().default(""),
 
     ...getDate(),
   },
-  (table) => [index("echoes_element_idx").on(table.element)]
+  (table) => [
+    index("echoes_class_idx").on(table.class),
+    index("echoes_cost_idx").on(table.cost),
+  ]
 )
 
 /**
