@@ -1,9 +1,4 @@
-import {
-  ItemActions,
-  ItemContent,
-  ItemDescription,
-  ItemTitle,
-} from "@/components/ui/item"
+import { ItemActions, ItemContent, ItemTitle } from "@/components/ui/item"
 import { Show } from "@/components/utility/show"
 import type { EchoSetRow } from "@/db/schema"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
@@ -31,7 +26,6 @@ export function EchoSetCard({ echoSet }: EchoSetCardProps) {
 
       <ItemContent>
         <ItemTitle>{echoSet.name}</ItemTitle>
-        <ItemDescription>Set {echoSet.setId}</ItemDescription>
       </ItemContent>
 
       <ItemActions>
