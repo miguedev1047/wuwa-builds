@@ -38,7 +38,7 @@ export function WeaponInfoContent({ weaponId }: WeaponInfoContentProps) {
               <CatalogSection.Image
                 src={icon}
                 alt={weapon.name}
-                className="size-full object-contain p-2"
+                className="size-full object-contain"
               />
             </EditableSection.Media>
           )}

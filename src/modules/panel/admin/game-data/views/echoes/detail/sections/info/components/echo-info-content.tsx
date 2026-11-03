@@ -41,7 +41,7 @@ export function EchoInfoContent({ echoId }: EchoInfoContentProps) {
               <CatalogSection.Image
                 src={icon}
                 alt={echo.name}
-                className="size-full object-contain p-2"
+                className="size-full object-contain"
               />
             </EditableSection.Media>
           )}
