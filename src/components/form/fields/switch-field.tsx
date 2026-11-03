@@ -1,8 +1,17 @@
 import { useSelector } from "@tanstack/react-form"
 import type { ReactNode } from "react"
-import { FieldShell } from "@/components/form/field-shell"
 import { useFieldContext } from "@/components/form/form-context"
 import { Switch } from "@/components/ui/switch"
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldError,
+  FieldLabel,
+  FieldTitle,
+} from "@/components/ui/field"
+import { Show } from "@/components/utility/show"
+import { cn } from "cn"
 
 type SwitchFieldProps = {
   label: ReactNode
@@ -24,21 +33,28 @@ export function SwitchField({
   const invalid = meta.isTouched && !meta.isValid
 
   return (
-    <FieldShell
-      label={label}
-      description={description}
-      htmlFor={field.name}
-      invalid={invalid}
-      errors={meta.errors}
-      className={className}
+    <Field
+      orientation="horizontal"
+      data-invalid={invalid}
+      className={cn("border", className)}
     >
-      <Switch
-        id={field.name}
-        checked={value ?? false}
-        disabled={disabled}
-        onCheckedChange={(checked) => field.handleChange(checked)}
-        onBlur={field.handleBlur}
-      />
-    </FieldShell>
+      <FieldLabel htmlFor={field.name} className="p-2">
+        <FieldContent>
+          <FieldTitle>{label}</FieldTitle>
+          <FieldDescription>{description}</FieldDescription>
+          <Show when={meta.errors}>
+            <FieldError errors={meta.errors} />
+          </Show>
+        </FieldContent>
+
+        <Switch
+          id={field.name}
+          checked={value ?? false}
+          disabled={disabled}
+          onCheckedChange={(checked) => field.handleChange(checked)}
+          onBlur={field.handleBlur}
+        />
+      </FieldLabel>
+    </Field>
   )
 }

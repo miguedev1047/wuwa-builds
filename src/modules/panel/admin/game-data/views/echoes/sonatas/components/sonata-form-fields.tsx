@@ -3,6 +3,7 @@ import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
 import type { SonataFormInput } from "@/modules/panel/admin/game-data/application/schemas"
 import { STAT_OPTIONS } from "@/modules/panel/admin/game-data/application/stats/stats"
+import { Show } from "@/components/utility/show"
 
 /** Piece thresholds a set can use. There is no 4-piece threshold. */
 export const SONATA_PIECES_OPTIONS = [
@@ -71,6 +72,7 @@ const SonataEffectFields = withForm({
                 label="Piezas"
                 options={SONATA_PIECES_OPTIONS}
                 placeholder="Seleccionar piezas"
+                className="md:col-span-2"
                 disabled={isPending}
               />
             )}
@@ -81,24 +83,13 @@ const SonataEffectFields = withForm({
               <field.SwitchField
                 label="Condicional"
                 description="Solo se activa en combate; el builder no lo suma."
-                disabled={isPending}
-              />
-            )}
-          </form.AppField>
-
-          <form.AppField name={`${slot}.description`}>
-            {(field) => (
-              <field.TextareaField
-                label="Efecto"
-                placeholder="Daño Gelio +10%"
-                rows={3}
                 className="md:col-span-2"
                 disabled={isPending}
               />
             )}
           </form.AppField>
 
-          {isConditional ? null : (
+          <Show when={!isConditional}>
             <>
               <form.AppField name={`${slot}.statId`}>
                 {(field) => (
@@ -122,8 +113,20 @@ const SonataEffectFields = withForm({
                   />
                 )}
               </form.AppField>
-            </>
-          )}
+            </>{" "}
+          </Show>
+
+          <form.AppField name={`${slot}.description`}>
+            {(field) => (
+              <field.TextareaField
+                label="Efecto"
+                placeholder="Daño Gelio +10%"
+                rows={3}
+                className="md:col-span-2"
+                disabled={isPending}
+              />
+            )}
+          </form.AppField>
         </FieldGroup>
       </fieldset>
     )
@@ -140,23 +143,13 @@ export const SonataFields = withForm({
     return (
       <FieldGroup className="gap-4">
         <div className="grid gap-4 md:grid-cols-2">
-          <form.AppField name="id">
-            {(field) => (
-              <field.NumberField
-                label="ID"
-                placeholder="1"
-                min={1}
-                disabled={isPending}
-              />
-            )}
-          </form.AppField>
-
           <form.AppField name="name">
             {(field) => (
               <field.TextField
                 label="Nombre"
                 placeholder="Escarcha helada"
                 disabled={isPending}
+                className="md:col-span-2"
               />
             )}
           </form.AppField>
