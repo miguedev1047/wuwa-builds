@@ -162,12 +162,12 @@ interface RemoteEnv {
 
 function remoteEnv(fallback: DatabaseTarget): RemoteEnv {
   const accountId = Bun.env.CLOUDFLARE_ACCOUNT_ID
-  const token = Bun.env.CLOUDFLARE_D1_TOKEN
+  const token = Bun.env.CLOUDFLARE_D1_TOKEN ?? Bun.env.CLOUDFLARE_API_TOKEN
   const databaseId = Bun.env.CLOUDFLARE_DATABASE_ID ?? fallback.id
 
   if (!accountId || !token) {
     throw new Error(
-      "Set CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_D1_TOKEN in .env to migrate the remote database"
+      "Set CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_D1_TOKEN (or CLOUDFLARE_API_TOKEN) in .env to migrate the remote database"
     )
   }
 
