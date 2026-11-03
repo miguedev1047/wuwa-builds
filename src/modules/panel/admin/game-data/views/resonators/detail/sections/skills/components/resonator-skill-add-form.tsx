@@ -77,6 +77,7 @@ export function ResonatorSkillAddForm({
       label: `${skill.type} - ${skill.name}`,
       value: String(skill.id),
     }))
+    .slice(0, 9)
 
   return (
     <>
