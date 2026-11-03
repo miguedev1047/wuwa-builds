@@ -18,3 +18,19 @@ export const ECHO_CLASS_OPTIONS = [
   { label: "Jefe", value: 2 },
   { label: "Calamidad", value: 3 },
 ]
+
+/** Display label of an echo class, e.g. `Élite`. */
+export function echoClassLabel(value: number): string {
+  return (
+    ECHO_CLASS_OPTIONS.find((option) => option.value === value)?.label ??
+    `Clase ${value}`
+  )
+}
+
+/** Display label of an echo cost, e.g. `Coste 4`. */
+export function echoCostLabel(value: number): string {
+  return (
+    ECHO_COST_OPTIONS.find((option) => option.value === value)?.label ??
+    `Coste ${value}`
+  )
+}

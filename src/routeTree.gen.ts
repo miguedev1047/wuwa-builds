@@ -19,6 +19,7 @@ import { Route as panelPanelMyBuildsRouteImport } from './routes/(panel)/panel/m
 import { Route as panelPanelNewBuildRouteImport } from './routes/(panel)/panel/new-build'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as panelAdminEchoesIndexRouteImport } from './routes/(panel)/admin/echoes/index'
+import { Route as panelAdminEchoesIdRouteImport } from './routes/(panel)/admin/echoes/$id'
 import { Route as panelAdminEchoesNewRouteImport } from './routes/(panel)/admin/echoes/new'
 import { Route as panelAdminResonatorsIndexRouteImport } from './routes/(panel)/admin/resonators/index'
 import { Route as panelAdminResonatorsIdRouteImport } from './routes/(panel)/admin/resonators/$id'
@@ -77,6 +78,11 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 const panelAdminEchoesIndexRoute = panelAdminEchoesIndexRouteImport.update({
   id: '/echoes/',
   path: '/echoes/',
+  getParentRoute: () => panelAdminRouteRoute,
+} as any)
+const panelAdminEchoesIdRoute = panelAdminEchoesIdRouteImport.update({
+  id: '/echoes/$id',
+  path: '/echoes/$id',
   getParentRoute: () => panelAdminRouteRoute,
 } as any)
 const panelAdminEchoesNewRoute = panelAdminEchoesNewRouteImport.update({
@@ -138,6 +144,7 @@ export interface FileRoutesByFullPath {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin/': typeof panelAdminIndexRoute
   '/panel/': typeof panelPanelIndexRoute
+  '/admin/echoes/$id': typeof panelAdminEchoesIdRoute
   '/admin/echoes/new': typeof panelAdminEchoesNewRoute
   '/admin/resonators/$id': typeof panelAdminResonatorsIdRoute
   '/admin/resonators/new': typeof panelAdminResonatorsNewRoute
@@ -157,6 +164,7 @@ export interface FileRoutesByTo {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof panelAdminIndexRoute
   '/panel': typeof panelPanelIndexRoute
+  '/admin/echoes/$id': typeof panelAdminEchoesIdRoute
   '/admin/echoes/new': typeof panelAdminEchoesNewRoute
   '/admin/resonators/$id': typeof panelAdminResonatorsIdRoute
   '/admin/resonators/new': typeof panelAdminResonatorsNewRoute
@@ -179,6 +187,7 @@ export interface FileRoutesById {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/(panel)/admin/': typeof panelAdminIndexRoute
   '/(panel)/panel/': typeof panelPanelIndexRoute
+  '/(panel)/admin/echoes/$id': typeof panelAdminEchoesIdRoute
   '/(panel)/admin/echoes/new': typeof panelAdminEchoesNewRoute
   '/(panel)/admin/resonators/$id': typeof panelAdminResonatorsIdRoute
   '/(panel)/admin/resonators/new': typeof panelAdminResonatorsNewRoute
@@ -202,6 +211,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/admin/'
     | '/panel/'
+    | '/admin/echoes/$id'
     | '/admin/echoes/new'
     | '/admin/resonators/$id'
     | '/admin/resonators/new'
@@ -221,6 +231,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/admin'
     | '/panel'
+    | '/admin/echoes/$id'
     | '/admin/echoes/new'
     | '/admin/resonators/$id'
     | '/admin/resonators/new'
@@ -242,6 +253,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/(panel)/admin/'
     | '/(panel)/panel/'
+    | '/(panel)/admin/echoes/$id'
     | '/(panel)/admin/echoes/new'
     | '/(panel)/admin/resonators/$id'
     | '/(panel)/admin/resonators/new'
@@ -334,6 +346,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof panelAdminEchoesIndexRouteImport
       parentRoute: typeof panelAdminRouteRoute
     }
+    '/(panel)/admin/echoes/$id': {
+      id: '/(panel)/admin/echoes/$id'
+      path: '/echoes/$id'
+      fullPath: '/admin/echoes/$id'
+      preLoaderRoute: typeof panelAdminEchoesIdRouteImport
+      parentRoute: typeof panelAdminRouteRoute
+    }
     '/(panel)/admin/echoes/new': {
       id: '/(panel)/admin/echoes/new'
       path: '/echoes/new'
@@ -402,6 +421,7 @@ declare module '@tanstack/react-router' {
 
 interface panelAdminRouteRouteChildren {
   panelAdminIndexRoute: typeof panelAdminIndexRoute
+  panelAdminEchoesIdRoute: typeof panelAdminEchoesIdRoute
   panelAdminEchoesNewRoute: typeof panelAdminEchoesNewRoute
   panelAdminResonatorsIdRoute: typeof panelAdminResonatorsIdRoute
   panelAdminResonatorsNewRoute: typeof panelAdminResonatorsNewRoute
@@ -414,6 +434,7 @@ interface panelAdminRouteRouteChildren {
 
 const panelAdminRouteRouteChildren: panelAdminRouteRouteChildren = {
   panelAdminIndexRoute: panelAdminIndexRoute,
+  panelAdminEchoesIdRoute: panelAdminEchoesIdRoute,
   panelAdminEchoesNewRoute: panelAdminEchoesNewRoute,
   panelAdminResonatorsIdRoute: panelAdminResonatorsIdRoute,
   panelAdminResonatorsNewRoute: panelAdminResonatorsNewRoute,

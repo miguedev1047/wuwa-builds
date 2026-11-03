@@ -33,13 +33,16 @@ export function EchoForm() {
 
   const { mutateAsync, isPending: isMutationPending } = useMutation({
     mutationFn: (value: EchoInput) => createEcho({ data: value }),
-    onSuccess: async () => {
+    onSuccess: async (echo) => {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.echoes(),
       })
       toast.success("Eco creado")
 
-      await navigate({ to: "/admin/echoes" })
+      await navigate({
+        to: "/admin/echoes/$id",
+        params: { id: echo.id.toString() },
+      })
     },
     onError: (error) => {
       toast.error(error.message)
