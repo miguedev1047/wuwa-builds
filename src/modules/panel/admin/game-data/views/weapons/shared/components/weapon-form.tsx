@@ -15,7 +15,7 @@ import {
   WeaponFields,
   weaponFormDefaults,
 } from "@/modules/panel/admin/game-data/views/weapons/shared/components/weapon-fields"
-import { WeaponSearch } from "@/modules/panel/admin/game-data/views/weapons/new/components/weapon-search"
+import { WeaponSearch } from "@/modules/panel/admin/game-data/views/weapons/shared/components/weapon-search"
 import type { EncoreWeaponSummary } from "@/modules/encore/domain/weapon"
 import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
 
@@ -49,7 +49,7 @@ export function WeaponForm() {
     },
   })
 
-  const isPending = isMutationPending
+  const isPending = isMutationPending || isEncoreLoading
 
   const form = useAppForm({
     formId,
@@ -82,11 +82,15 @@ export function WeaponForm() {
         <WeaponSearch
           selectedId={selected?.id}
           onSelect={setSelected}
-          disabled={isPending || isEncoreLoading}
+          disabled={isPending}
         />
 
         <form.AppForm>
-          <form.SubmitButton label="Crear" formId={formId} />
+          <form.SubmitButton
+            label="Crear"
+            formId={formId}
+            disabled={isPending || !selected}
+          />
         </form.AppForm>
       </div>
     </CatalogSection.Content>

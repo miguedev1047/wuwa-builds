@@ -1,5 +1,5 @@
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { EchoForm } from "@/modules/panel/admin/game-data/views/echoes/new/components/echo-form"
+import { EchoForm } from "@/modules/panel/admin/game-data/views/echoes/shared/components/echo-form"
 import { echoNewDockActions } from "@/modules/panel/admin/game-data/views/echoes/new/dock-actions"
 
 export function EchoNewPage() {

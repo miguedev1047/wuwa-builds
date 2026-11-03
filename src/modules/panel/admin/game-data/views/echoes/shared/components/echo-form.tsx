@@ -15,7 +15,7 @@ import {
   EchoFields,
   echoFormDefaults,
 } from "@/modules/panel/admin/game-data/views/echoes/shared/components/echo-fields"
-import { EchoSearch } from "@/modules/panel/admin/game-data/views/echoes/new/components/echo-search"
+import { EchoSearch } from "@/modules/panel/admin/game-data/views/echoes/shared/components/echo-search"
 import type { EncoreEchoSummary } from "@/modules/encore/domain/echo"
 import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
 
@@ -46,7 +46,7 @@ export function EchoForm() {
     },
   })
 
-  const isPending = isMutationPending
+  const isPending = isMutationPending || isEncoreLoading
 
   const form = useAppForm({
     formId,
@@ -79,11 +79,15 @@ export function EchoForm() {
         <EchoSearch
           selectedId={selected?.id}
           onSelect={setSelected}
-          disabled={isPending || isEncoreLoading}
+          disabled={isPending}
         />
 
         <form.AppForm>
-          <form.SubmitButton label="Crear" formId={formId} />
+          <form.SubmitButton
+            label="Crear"
+            formId={formId}
+            disabled={isPending || !selected}
+          />
         </form.AppForm>
       </div>
     </CatalogSection.Content>

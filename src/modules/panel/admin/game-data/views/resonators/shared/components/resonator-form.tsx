@@ -49,7 +49,7 @@ export function ResonatorForm() {
     },
   })
 
-  const isPending = isMutationPending
+  const isPending = isMutationPending || isEncoreLoading
 
   const form = useAppForm({
     formId,
@@ -82,11 +82,15 @@ export function ResonatorForm() {
         <ResonatorSearch
           selectedId={selected?.id}
           onSelect={setSelected}
-          disabled={isPending || isEncoreLoading}
+          disabled={isPending}
         />
 
         <form.AppForm>
-          <form.SubmitButton label="Crear" formId={formId} />
+          <form.SubmitButton
+            label="Crear"
+            formId={formId}
+            disabled={isPending || !selected}
+          />
         </form.AppForm>
       </div>
     </CatalogSection.Content>
