@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "vite dev --port 3000",
     "generate-routes": "tsr generate",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "bun scripts/d1-migrations.ts local",
+    "db:migrate:remote": "bun scripts/d1-migrations.ts remote",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint",
