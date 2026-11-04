@@ -3,6 +3,7 @@
 import { describe, expect, test } from "bun:test"
 import {
   echoInput,
+  echoSetFormInput,
   echoSetInput,
   resonatorInput,
   resonatorPassiveInput,
@@ -228,6 +229,22 @@ describe("echoSetInput", () => {
     expect(parsed).not.toHaveProperty("name")
     expect(parsed).not.toHaveProperty("icon")
     expect(parsed).not.toHaveProperty("sortOrder")
+  })
+})
+
+describe("echoSetFormInput", () => {
+  test("starts with an empty select and rejects it", () => {
+    const empty = echoSetFormInput.safeParse({ echoId: 1, setId: null })
+
+    expect(empty.success).toBe(false)
+    expect(empty.error?.issues[0]?.message).toBe("Selecciona un set")
+  })
+
+  test("accepts a picked set", () => {
+    expect(echoSetFormInput.parse({ echoId: 1, setId: 32 })).toEqual({
+      echoId: 1,
+      setId: 32,
+    })
   })
 })
 

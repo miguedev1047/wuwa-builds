@@ -37,6 +37,8 @@ export function SelectField({
   const meta = useSelector(field.store, (state) => state.meta)
   const invalid = meta.isTouched && !meta.isValid
 
+  const isDisabled = disabled || options.length === 0
+
   return (
     <FieldShell
       label={label}
@@ -50,7 +52,7 @@ export function SelectField({
         name={field.name}
         items={[...options]}
         value={value === "" ? null : (value ?? null)}
-        disabled={disabled}
+        disabled={isDisabled}
         onValueChange={(next) => {
           if (next !== null) field.handleChange(next)
         }}

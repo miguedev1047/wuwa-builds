@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import { FieldGroup } from "@/components/ui/field"
 import {
-  echoSetInput,
+  echoSetFormInput,
+  type EchoSetFormInput,
   type EchoSetInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
@@ -45,10 +46,12 @@ export function EchoSetAddForm({
 
   const form = useAppForm({
     formId,
-    defaultValues: { echoId, setId: 0 },
-    validators: { onSubmit: echoSetInput },
+    defaultValues: { echoId, setId: null } as EchoSetFormInput,
+    validators: { onSubmit: echoSetFormInput },
     onSubmit: async ({ value }) => {
-      await mutateAsync(value)
+      if (value.setId === null) return
+
+      await mutateAsync({ echoId: value.echoId, setId: value.setId })
     },
   })
 
