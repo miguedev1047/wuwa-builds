@@ -8,12 +8,18 @@ import {
 } from "@/components/ui/empty"
 import { Show } from "@/components/utility/show"
 import { getSession } from "@/functions/auth"
+import {
+  RouteError,
+  RouteNotFound,
+} from "@/modules/panel/admin/game-data/components/route-state"
 import { SecurityIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { createFileRoute, Link, Outlet, redirect } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin")({
   component: RouteComponent,
+  errorComponent: RouteError,
+  notFoundComponent: RouteNotFound,
   beforeLoad: async () => {
     const session = await getSession()
 

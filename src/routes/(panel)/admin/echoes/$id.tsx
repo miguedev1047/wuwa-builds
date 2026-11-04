@@ -1,4 +1,4 @@
-import { Spinner } from "@/components/ui/spinner"
+import { CatalogDetailRouteSkeleton } from "@/modules/panel/admin/game-data/components/route-skeleton"
 import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
 import { isValidId } from "@/modules/panel/admin/game-data/application/id"
 import { echoQueries } from "@/modules/panel/admin/game-data/queries/echoes"
@@ -8,9 +8,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router"
 export const Route = createFileRoute("/(panel)/admin/echoes/$id")({
   component: () => <EchoDetailPage />,
 
-  pendingComponent: () => <Spinner />,
-  errorComponent: () => <Spinner />,
-  notFoundComponent: () => <Spinner />,
+  pendingComponent: () => <CatalogDetailRouteSkeleton sections={2} />,
 
   loader: async ({ context, params }) => {
     const id = Number(params.id)
