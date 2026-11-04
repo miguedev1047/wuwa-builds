@@ -3,6 +3,7 @@ import { encoreAssetUrl } from "../domain/asset"
 import type { EncoreWeaponDetail, EncoreWeaponSummary } from "../domain/weapon"
 import { fetchEncoreJson } from "../infrastructure/http.server"
 import {
+  echoListRows,
   toEchoDetail,
   toEchoSummary,
   toWeaponDetail,
@@ -36,9 +37,9 @@ export async function readWeapon(id: number): Promise<EncoreWeaponDetail> {
 export async function readEchoes(): Promise<EncoreEchoSummary[]> {
   const data = await fetchEncoreJson<RawEchoList>("echo")
 
-  // `phantomsList` mixes echoes with cosmetic phantom skins and `Type` is the
-  // only discriminator (`Eco` vs `Apariencia Fantasma` in `es`).
-  return (data.phantomsList ?? [])
+  // The list mixes echoes with cosmetic phantom skins and `Type` is the only
+  // discriminator (`Eco` vs `Apariencia Fantasma` in `es`).
+  return echoListRows(data)
     .filter((raw) => raw.Type === "Eco")
     .map(toEchoSummary)
 }
@@ -58,7 +59,7 @@ export async function readEcho(id: number): Promise<EncoreEchoDetail> {
  */
 export async function readSonataSets(): Promise<EncoreSonataSet[]> {
   const data = await fetchEncoreJson<RawEchoList>("echo")
-  const echoes = (data.phantomsList ?? []).filter((raw) => raw.Type === "Eco")
+  const echoes = echoListRows(data).filter((raw) => raw.Type === "Eco")
 
   const carriers = new Map<
     number,

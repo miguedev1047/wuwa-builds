@@ -58,29 +58,31 @@ function EchoSearchResults({ selectedId, onSelect }: EchoSearchResultsProps) {
     <>
       <CatalogSearch.Empty>Sin ecos con ese nombre.</CatalogSearch.Empty>
 
-      <CatalogSearch.Group heading="Ecos">
-        {echoes.map((echo) => (
-          <CatalogSearch.Item
-            key={echo.id}
-            value={`${echo.name} ${echo.id}`}
-            onSelect={() => onSelect(echo)}
-          >
-            <img
-              src={echo.icon}
-              alt={echo.name}
-              width={28}
-              height={28}
-              className="shrink-0 rounded-sm bg-accent object-contain"
-            />
+      <Show when={echoes.length > 0}>
+        <CatalogSearch.Group heading="Ecos">
+          {echoes.map((echo) => (
+            <CatalogSearch.Item
+              key={echo.id}
+              value={`${echo.name} ${echo.id}`}
+              onSelect={() => onSelect(echo)}
+            >
+              <img
+                src={echo.icon}
+                alt={echo.name}
+                width={28}
+                height={28}
+                className="shrink-0 rounded-sm bg-accent object-contain"
+              />
 
-            <span className="truncate">{echo.name}</span>
+              <span className="truncate">{echo.name}</span>
 
-            <Show when={selectedId === echo.id}>
-              <CatalogSearch.Shortcut>Actual</CatalogSearch.Shortcut>
-            </Show>
-          </CatalogSearch.Item>
-        ))}
-      </CatalogSearch.Group>
+              <Show when={selectedId === echo.id}>
+                <CatalogSearch.Shortcut>Actual</CatalogSearch.Shortcut>
+              </Show>
+            </CatalogSearch.Item>
+          ))}
+        </CatalogSearch.Group>
+      </Show>
     </>
   )
 }

@@ -11,6 +11,16 @@ describe("encoreAssetUrl", () => {
     expect(encoreAssetUrl(url)).toBe(url)
   })
 
+  test("drops the API segment Encore prefixes to absolute asset URLs", () => {
+    expect(
+      encoreAssetUrl(
+        "https://api-v2.encore.moe/api/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMonsterGoods/T_IconMonsterGoods_988_UI.webp"
+      )
+    ).toBe(
+      "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMonsterGoods/T_IconMonsterGoods_988_UI.webp"
+    )
+  })
+
   test("turns an Unreal asset path into a fetchable URL", () => {
     const assetPath =
       "/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010074_UI.T_IconWeapon21010074_UI"

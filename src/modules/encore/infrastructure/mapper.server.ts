@@ -303,7 +303,20 @@ interface RawEchoSummary {
 }
 
 export interface RawEchoList {
+  /** Current key of the echo list. */
+  Echo?: RawEchoSummary[]
+  /** Older key; Encore has flipped between both more than once. */
   phantomsList?: RawEchoSummary[]
+}
+
+/**
+ * Rows of the echo list, whichever key the API uses today.
+ *
+ * `Echo` wins when both are present; the endpoint has shipped `Echo`,
+ * `phantomsList` and back again, so the reader accepts both.
+ */
+export function echoListRows(data: RawEchoList): RawEchoSummary[] {
+  return data.Echo ?? data.phantomsList ?? []
 }
 
 interface RawEchoSkill {
@@ -424,7 +437,7 @@ export function toEchoSummary(raw: RawEchoSummary): EncoreEchoSummary {
     name: raw.Name,
     class: tier.class,
     cost: tier.cost,
-    icon: raw.Icon ?? "",
+    icon: encoreAssetUrl(raw.Icon),
     sets: (raw.FetterGroups ?? []).map((group) => ({
       id: group.Id,
       name: group.Name ?? "",

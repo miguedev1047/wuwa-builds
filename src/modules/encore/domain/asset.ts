@@ -13,13 +13,21 @@
 const ASSET_HOST = "https://api-v2.encore.moe/resource/Data"
 const ASSET_EXTENSION = ".webp"
 
+/**
+ * The list endpoints now prefix absolute asset URLs with the API segment, which
+ * serves the SPA fallback (`text/html`) instead of the image. The CDN path has
+ * no `/api`, so absolute URLs are normalized before they reach an `<img>`.
+ */
+const API_ASSET_PREFIX = "https://api-v2.encore.moe/api/resource"
+const ASSET_PREFIX = "https://api-v2.encore.moe/resource"
+
 export function encoreAssetUrl(value?: string | null): string {
   if (!value) {
     return ""
   }
 
   if (/^https?:\/\//i.test(value)) {
-    return value
+    return value.replace(API_ASSET_PREFIX, ASSET_PREFIX)
   }
 
   // Anything that is not rooted in the asset host is not an Unreal package
