@@ -2,7 +2,6 @@ import { eq } from "drizzle-orm"
 import type { AppDb } from "@/db/create"
 import { numberConverter } from "@/lib/number-converter"
 import {
-  echoSetEffects,
   echoSets,
   echoSkills,
   echoes,
@@ -463,34 +462,15 @@ export async function saveEcho(
   })
 
   if (echo.sets.length > 0) {
-    const inserted = (await db
-      .insert(echoSets)
-      .values(
-        echo.sets.map((set, sortOrder) => ({
-          echoId: echo.id,
-          sortOrder,
-          setId: set.id,
-          name: set.name,
-          icon: set.icon,
-        }))
-      )
-      .returning({
-        id: echoSets.id,
-        sortOrder: echoSets.sortOrder,
-      })) as InsertedId[]
-
-    const effects = inserted.flatMap((row) =>
-      echo.sets[row.sortOrder].effects.map((effect, sortOrder) => ({
-        setId: row.id,
+    await db.insert(echoSets).values(
+      echo.sets.map((set, sortOrder) => ({
+        echoId: echo.id,
         sortOrder,
-        key: effect.key,
-        description: effect.description,
+        setId: set.id,
+        name: set.name,
+        icon: set.icon,
       }))
     )
-
-    if (effects.length > 0) {
-      await db.insert(echoSetEffects).values(effects)
-    }
   }
 
   if (echo.skill) {
@@ -512,7 +492,7 @@ export async function readEcho(
     with: {
       sets: {
         orderBy: { sortOrder: "asc" },
-        with: { effects: { orderBy: { sortOrder: "asc" } } },
+        with: { sonataEffects: { orderBy: { pieces: "asc" } } },
       },
       skill: true,
     },
@@ -524,8 +504,8 @@ export async function readEcho(
     id: set.setId,
     name: set.name,
     icon: set.icon,
-    effects: set.effects.map((effect) => ({
-      key: effect.key,
+    effects: set.sonataEffects.map((effect) => ({
+      key: effect.pieces,
       description: effect.description,
     })),
   }))
@@ -553,7 +533,7 @@ export async function readEchoes(db: AppDb): Promise<EncoreEchoSummary[]> {
     with: {
       sets: {
         orderBy: { sortOrder: "asc" },
-        with: { effects: { orderBy: { sortOrder: "asc" } } },
+        with: { sonataEffects: { orderBy: { pieces: "asc" } } },
       },
     },
   })
@@ -568,8 +548,8 @@ export async function readEchoes(db: AppDb): Promise<EncoreEchoSummary[]> {
       id: set.setId,
       name: set.name,
       icon: set.icon,
-      effects: set.effects.map((effect) => ({
-        key: effect.key,
+      effects: set.sonataEffects.map((effect) => ({
+        key: effect.pieces,
         description: effect.description,
       })),
     })),

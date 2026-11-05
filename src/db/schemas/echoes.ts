@@ -69,31 +69,6 @@ export const echoSets = sqliteTable(
   ]
 )
 
-/**
- * `FetterGroups[].Fetters[]` / `FetterDetails[].EffectDescriptions[]`: the
- * 2-piece and 5-piece sonata bonuses.
- */
-export const echoSetEffects = sqliteTable(
-  "echo_set_effects",
-  {
-    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
-    setId: integer("set_id", { mode: "number" })
-      .notNull()
-      .references(() => echoSets.id, { onDelete: "cascade" }),
-    /** Position in `Fetters[]` / `EffectDescriptions[]`. */
-    sortOrder: integer("sort_order", { mode: "number" }).notNull(),
-    /** `Key`: 2 or 5 pieces. */
-    key: integer("key", { mode: "number" }).notNull(),
-    /** `EffectDescription` */
-    description: text("description").notNull().default(""),
-
-    ...getDate(),
-  },
-  (table) => [
-    index("echo_set_effects_set_idx").on(table.setId, table.sortOrder),
-  ]
-)
-
 /** `Skill`: the echo active skill (one per echo). */
 export const echoSkills = sqliteTable("echo_skills", {
   echoId: integer("echo_id", { mode: "number" })
@@ -176,8 +151,6 @@ export type EchoRow = typeof echoes.$inferSelect
 export type NewEchoRow = typeof echoes.$inferInsert
 export type EchoSetRow = typeof echoSets.$inferSelect
 export type NewEchoSetRow = typeof echoSets.$inferInsert
-export type EchoSetEffectRow = typeof echoSetEffects.$inferSelect
-export type NewEchoSetEffectRow = typeof echoSetEffects.$inferInsert
 export type EchoSkillRow = typeof echoSkills.$inferSelect
 export type NewEchoSkillRow = typeof echoSkills.$inferInsert
 export type SonataSetRow = typeof sonataSets.$inferSelect
@@ -186,7 +159,7 @@ export type SonataSetEffectRow = typeof sonataSetEffects.$inferSelect
 export type NewSonataSetEffectRow = typeof sonataSetEffects.$inferInsert
 
 export const echoRelations = defineRelationsPart(
-  { echoes, echoSets, echoSetEffects, echoSkills },
+  { echoes, echoSets, sonataSetEffects, echoSkills },
   (r) => ({
     echoes: {
       sets: r.many.echoSets({
@@ -203,15 +176,9 @@ export const echoRelations = defineRelationsPart(
         from: r.echoSets.echoId,
         to: r.echoes.id,
       }),
-      effects: r.many.echoSetEffects({
-        from: r.echoSets.id,
-        to: r.echoSetEffects.setId,
-      }),
-    },
-    echoSetEffects: {
-      set: r.one.echoSets({
-        from: r.echoSetEffects.setId,
-        to: r.echoSets.id,
+      sonataEffects: r.many.sonataSetEffects({
+        from: r.echoSets.setId,
+        to: r.sonataSetEffects.setId,
       }),
     },
     echoSkills: {

@@ -27,6 +27,7 @@ export const getEcho = createServerFn({
       with: {
         sets: {
           orderBy: { sortOrder: "asc" },
+          with: { sonataEffects: true },
         },
       },
     })

@@ -8,7 +8,13 @@ import { eq } from "drizzle-orm"
 import { drizzle } from "drizzle-orm/bun-sqlite"
 import type { AppDb } from "@/db/create"
 import { relations } from "@/db/relations"
-import { resonators, weaponRefinementStats, weapons } from "@/db/schema"
+import {
+  resonators,
+  sonataSetEffects,
+  sonataSets,
+  weaponRefinementStats,
+  weapons,
+} from "@/db/schema"
 import { numberConverter } from "@/lib/number-converter"
 import type { EncoreCharacterDetail } from "@/modules/encore/domain/character"
 import type { EncoreWeaponDetail } from "@/modules/encore/domain/weapon"
@@ -230,11 +236,42 @@ describe("encore catalog schema", () => {
     db = createTestDb()
   })
 
+  /**
+   * Sonata effects now live in the canonical `sonata_set_effects`, so the echo
+   * reads resolve them through `echo_sets.set_id` instead of a per-echo copy.
+   */
+  async function seedSonataSet() {
+    await db.insert(sonataSets).values({
+      id: 9,
+      name: "Melodías perdurables",
+      source: "encore",
+    })
+    await db.insert(sonataSetEffects).values([
+      {
+        setId: 9,
+        pieces: 2,
+        description: "2 piezas",
+        isConditional: false,
+        statId: "atk_percent",
+        value: 10,
+        sortOrder: 0,
+      },
+      {
+        setId: 9,
+        pieces: 5,
+        description: "5 piezas",
+        isConditional: true,
+        sortOrder: 1,
+      },
+    ])
+  }
+
   test("round-trips a character + weapon + echo without losing fields", async () => {
     const character = toCharacterDetail(rawCharacter)
     const weapon = toWeaponDetail(rawWeapon)
     const echo = toEchoDetail(rawEcho)
 
+    await seedSonataSet()
     await saveCharacter(db, character)
     await saveWeapon(db, weapon)
     await saveEcho(db, echo)
@@ -267,6 +304,7 @@ describe("encore catalog schema", () => {
   })
 
   test("rebuilds the list endpoints from the detail rows", async () => {
+    await seedSonataSet()
     await saveCharacter(db, toCharacterDetail(rawCharacter))
     await saveWeapon(db, toWeaponDetail(rawWeapon))
     await saveEcho(db, toEchoDetail(rawEcho))
