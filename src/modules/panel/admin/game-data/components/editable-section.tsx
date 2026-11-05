@@ -471,6 +471,7 @@ export function EditableSectionEditAction({
             <DialogDescription>{description}</DialogDescription>
           </Show>
         </DialogHeader>
+
         {children({ close })}
       </DialogContent>
     </Dialog>

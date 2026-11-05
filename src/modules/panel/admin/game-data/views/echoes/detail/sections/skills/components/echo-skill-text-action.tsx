@@ -15,13 +15,6 @@ export function EchoSkillTextAction({
   echoId,
   skill,
 }: EchoSkillTextActionProps) {
-  const trigger = (
-    <EditableSection.ButtonAction variant="default">
-      <HugeiconsIcon icon={skill ? PencilEdit01Icon : PlusIcon} />
-      {skill ? "Editar texto" : "Importar de Encore"}
-    </EditableSection.ButtonAction>
-  )
-
   const body = ({ close }: { close: () => void }) => (
     <SkeletonSuspense skeleton={<SkeletonBox width="100%" height={160} />}>
       <EchoSkillTextForm
@@ -35,14 +28,30 @@ export function EchoSkillTextAction({
 
   if (skill) {
     return (
-      <EditableSection.EditAction title="Editar habilidad" trigger={trigger}>
+      <EditableSection.EditAction
+        title="Editar habilidad"
+        trigger={
+          <EditableSection.ButtonAction variant="default">
+            <HugeiconsIcon icon={PencilEdit01Icon} />
+            Editar texto
+          </EditableSection.ButtonAction>
+        }
+      >
         {body}
       </EditableSection.EditAction>
     )
   }
 
   return (
-    <EditableSection.AddAction title="Importar habilidad" trigger={trigger}>
+    <EditableSection.AddAction
+      title="Importar habilidad"
+      trigger={
+        <EditableSection.ButtonAction variant="default">
+          <HugeiconsIcon icon={PlusIcon} />
+          Importar de Encore
+        </EditableSection.ButtonAction>
+      }
+    >
       {body}
     </EditableSection.AddAction>
   )

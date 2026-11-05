@@ -49,4 +49,5 @@ export {
 
 export { FieldShell } from "@/components/form/field-shell"
 export type { FormOption } from "@/components/form/fields/select-field"
+export type { ComboboxOption } from "@/components/form/fields/combobox-field"
 export type { MultiComboboxOption } from "@/components/form/fields/multi-combobox-field"

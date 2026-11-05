@@ -92,6 +92,7 @@ export function EchoSkillBonusForm({
     <>
       <form
         id={formId}
+        className="mb-4"
         onSubmit={(event) => {
           event.preventDefault()
           form.handleSubmit()

@@ -8,7 +8,7 @@ type EchoSkillTextProps = {
 /** Read-only skill text, split on the `<br>` Encore uses. */
 export function EchoSkillText({ skill }: EchoSkillTextProps) {
   return (
-    <div className="flex flex-col gap-4 md:flex-row">
+    <div className="space-y-4">
       <Show when={skill.icon}>
         {(icon) => (
           <div className="size-16 shrink-0 overflow-hidden rounded-lg bg-muted/40">
@@ -17,23 +17,10 @@ export function EchoSkillText({ skill }: EchoSkillTextProps) {
         )}
       </Show>
 
-      <div className="space-y-2">
-        {skill.description
-          .split("<br>")
-          .map((line) => line.trim())
-          .filter(Boolean)
-          .map((line, index) => (
-            <p key={index} className="text-sm/relaxed">
-              {line}
-            </p>
-          ))}
-
-        <Show when={skill.simpleDescription}>
-          <p className="text-xs/relaxed text-muted-foreground">
-            {skill.simpleDescription}
-          </p>
-        </Show>
-      </div>
+      <div
+        className="text-xs/relaxed text-muted-foreground"
+        dangerouslySetInnerHTML={{ __html: skill.description }}
+      />
     </div>
   )
 }

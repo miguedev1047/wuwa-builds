@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react"
 import { useSelector } from "@tanstack/react-form"
 import { withForm } from "@/components/form"
-import type { FormOption } from "@/components/form"
+import type { ComboboxOption } from "@/components/form"
+import { Show } from "@/components/utility/show"
 import { FieldGroup } from "@/components/ui/field"
 import {
   ECHO_SKILL_CONDITIONS,
@@ -35,7 +36,7 @@ export const EchoSkillBonusFields = withForm({
   props: {} as {
     isPending?: boolean
     /** Resonator options for the `resonator` condition. */
-    characterOptions: FormOption[]
+    characterOptions: ComboboxOption[]
   },
   render: function Render({ form, isPending, characterOptions }) {
     const condition = useSelector(
@@ -55,10 +56,10 @@ export const EchoSkillBonusFields = withForm({
       <FieldGroup className="gap-4">
         <form.AppField name="statId">
           {(field) => (
-            <field.SelectField
+            <field.ComboboxField
               label="Estadística"
               options={STAT_OPTIONS}
-              placeholder="Seleccionar estadística"
+              placeholder="Buscar estadística"
               disabled={isPending}
             />
           )}
@@ -87,20 +88,20 @@ export const EchoSkillBonusFields = withForm({
           )}
         </form.AppField>
 
-        {condition === "resonator" ? (
+        <Show when={condition === "resonator"}>
           <form.AppField name="conditionValue">
             {(field) => (
               <field.ComboboxField
                 label="Resonador"
                 options={characterOptions}
-                placeholder="Seleccionar resonador"
+                placeholder="Buscar resonador"
                 disabled={isPending}
               />
             )}
           </form.AppField>
-        ) : null}
+        </Show>
 
-        {condition === "element" ? (
+        <Show when={condition === "element"}>
           <form.AppField name="conditionValue">
             {(field) => (
               <field.SelectField
@@ -111,9 +112,9 @@ export const EchoSkillBonusFields = withForm({
               />
             )}
           </form.AppField>
-        ) : null}
+        </Show>
 
-        {condition === "weaponType" ? (
+        <Show when={condition === "weaponType"}>
           <form.AppField name="conditionValue">
             {(field) => (
               <field.SelectField
@@ -124,7 +125,7 @@ export const EchoSkillBonusFields = withForm({
               />
             )}
           </form.AppField>
-        ) : null}
+        </Show>
 
         <form.AppField name="requiresMainSlot">
           {(field) => (

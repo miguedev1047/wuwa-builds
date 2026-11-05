@@ -75,7 +75,7 @@ export function EchoSkillTextForm({
           event.preventDefault()
           form.handleSubmit()
         }}
-        className="-mx-4 no-scrollbar max-h-[60vh] overflow-y-auto px-4"
+        className="mb-4"
       >
         <FieldGroup className="gap-4">
           <form.AppField name="description">

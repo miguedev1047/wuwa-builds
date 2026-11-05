@@ -3,7 +3,6 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
-import { ItemActions, ItemContent, ItemTitle } from "@/components/ui/item"
 import { Show } from "@/components/utility/show"
 import type { EchoSetRow, SonataSetEffectRow } from "@/db/schema"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
@@ -16,7 +15,7 @@ type EchoSetCardProps = {
   }
 }
 
-/** One sonata set already linked to the echo. */
+/** One sonata set linked to the echo, with a hover preview of its effects. */
 export function EchoSetCard({ echoSet }: EchoSetCardProps) {
   return (
     <HoverCard>
@@ -37,13 +36,19 @@ export function EchoSetCard({ echoSet }: EchoSetCardProps) {
           )}
         </Show>
 
-        <ItemContent>
-          <HoverCardTrigger render={<ItemTitle>{echoSet.name}</ItemTitle>} />
-        </ItemContent>
+        <EditableSection.ItemContent>
+          <HoverCardTrigger
+            render={
+              <EditableSection.ItemTitle>
+                {echoSet.name}
+              </EditableSection.ItemTitle>
+            }
+          />
+        </EditableSection.ItemContent>
 
-        <ItemActions>
+        <EditableSection.ItemActions>
           <EchoSetDeleteAction echoSet={echoSet} />
-        </ItemActions>
+        </EditableSection.ItemActions>
       </EditableSection.Item>
 
       <HoverCardContent className="w-full max-w-150" align="start">
