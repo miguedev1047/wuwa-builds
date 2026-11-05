@@ -59,6 +59,19 @@ const SonataEffectFields = withForm({
         : state.values.effects[1].isConditional
     )
 
+    const hasThreePieces = useSelector(
+      form.store,
+      (state) => state.values.effects[0].pieces === 3
+    )
+    const hasOnePieces = useSelector(
+      form.store,
+      (state) => state.values.effects[0].pieces === 1
+    )
+
+    const isHidden = hasThreePieces || hasOnePieces
+
+    if (slot === "effects[1]" && isHidden) return null
+
     return (
       <fieldset className="space-y-4 rounded-lg border p-4">
         <legend className="px-1 text-xs font-medium text-muted-foreground">
