@@ -3,6 +3,7 @@ import {
   CatalogSection,
   type CatalogSectionAspect,
 } from "@/modules/panel/admin/game-data/components/catalog-section"
+import { Show } from "@/components/utility/show"
 
 type CatalogListRouteSkeletonProps = {
   /** Real page title, so the pending state does not shift when data arrives. */
@@ -32,13 +33,13 @@ export function CatalogListRouteSkeleton({
         <CatalogSection.Title>{title}</CatalogSection.Title>
         <CatalogSection.Description>{description}</CatalogSection.Description>
 
-        {actionCount > 0 ? (
+        <Show when={actionCount > 0}>
           <CatalogSection.Action>
             {Array.from({ length: actionCount }, (_, index) => (
               <SkeletonBox key={index} width={96} height={32} />
             ))}
           </CatalogSection.Action>
-        ) : null}
+        </Show>
       </CatalogSection.Header>
 
       <CatalogSection.Loading cols={cols} aspect={aspect} count={count} />
