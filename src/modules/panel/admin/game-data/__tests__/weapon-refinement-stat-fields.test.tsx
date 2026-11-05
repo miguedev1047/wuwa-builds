@@ -10,7 +10,7 @@ function Harness({ allowAdd }: { allowAdd: boolean }) {
     defaultValues: {
       refinementId: 1,
       sortOrder: 1,
-      stats: [{ statName: "Ataque %", value: 18 }],
+      stats: [{ statName: "atk_percent", value: 18 }],
     },
   })
 

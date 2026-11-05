@@ -1,6 +1,10 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
 import { resonators } from "@/db/schema"
+import {
+  isElementId,
+  isWeaponTypeId,
+} from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
 
 /**
  * Fields the admin panel can set when creating a resonator.
@@ -23,8 +27,22 @@ export const resonatorInput = createInsertSchema(resonators, {
   rarity: (schema) =>
     schema.min(1, "La rareza minima es 1").max(5, "La rareza maxima es 5"),
   introduction: (schema) => schema.trim().max(2000, "Maximo 2000 caracteres"),
-  element: (schema) => schema.trim().min(1, "Selecciona un elemento"),
-  weaponType: (schema) => schema.trim().min(1, "Selecciona un tipo de arma"),
+  element: (schema) =>
+    schema
+      .trim()
+      .min(1, "Selecciona un elemento")
+      .refine(
+        (value): boolean => value === "" || isElementId(value),
+        "Elemento invalido"
+      ),
+  weaponType: (schema) =>
+    schema
+      .trim()
+      .min(1, "Selecciona un tipo de arma")
+      .refine(
+        (value): boolean => value === "" || isWeaponTypeId(value),
+        "Tipo de arma invalido"
+      ),
   icon: (schema) => schema.trim(),
 }).omit({ createdAt: true, updatedAt: true })
 

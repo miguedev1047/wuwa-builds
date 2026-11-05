@@ -31,7 +31,7 @@ const statRow: WeaponRefinementStatRow = {
   id: 12,
   refinementId: 9,
   sortOrder: 1,
-  statName: "Ataque %",
+  statName: "atk_percent",
   statNumber: 18,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -62,7 +62,7 @@ describe("weaponRefinementDraftFromRow", () => {
 describe("weaponStatDraftFromRow", () => {
   test("maps the stored name and number to the form row", () => {
     expect(weaponStatDraftFromRow(statRow)).toEqual({
-      statName: "Ataque %",
+      statName: "atk_percent",
       value: 18,
     })
   })
@@ -75,21 +75,21 @@ describe("weaponStatPayloads", () => {
         refinementId: 9,
         sortOrder: 4,
         stats: [
-          { statName: "Ataque %", value: 18 },
-          { statName: "Bono de Eco", value: 20 },
+          { statName: "atk_percent", value: 18 },
+          { statName: "echo_skill_bonus", value: 20 },
         ],
       })
     ).toEqual([
       {
         refinementId: 9,
         sortOrder: 4,
-        statName: "Ataque %",
+        statName: "atk_percent",
         statNumber: 18,
       },
       {
         refinementId: 9,
         sortOrder: 5,
-        statName: "Bono de Eco",
+        statName: "echo_skill_bonus",
         statNumber: 20,
       },
     ])

@@ -14,17 +14,17 @@ function encoreProperty(
 }
 
 describe("propertyLevelDraftFromEncore", () => {
-  test("maps the Encore stat names to the panel labels", () => {
+  test("maps the Encore stat names to the canonical ids", () => {
     expect(propertyLevelDraftFromEncore(encoreProperty("ATQ", 35))).toEqual({
-      name: "Ataque",
+      name: "atk",
       baseValue: 35,
       icon: "icon.webp",
     })
     expect(propertyLevelDraftFromEncore(encoreProperty("PS", 831)).name).toBe(
-      "Vida"
+      "hp"
     )
     expect(propertyLevelDraftFromEncore(encoreProperty("DEF", 99)).name).toBe(
-      "Defensa"
+      "def"
     )
   })
 
@@ -32,14 +32,14 @@ describe("propertyLevelDraftFromEncore", () => {
     expect(
       propertyLevelDraftFromEncore(encoreProperty("Prob. CRIT", 500))
     ).toEqual({
-      name: "Prob. Crit.",
+      name: "crit_rate",
       baseValue: 5,
       icon: "icon.webp",
     })
     expect(
       propertyLevelDraftFromEncore(encoreProperty("Daño CRIT", 15000))
     ).toEqual({
-      name: "Daño Crit.",
+      name: "crit_dmg",
       baseValue: 150,
       icon: "icon.webp",
     })
@@ -48,7 +48,7 @@ describe("propertyLevelDraftFromEncore", () => {
         encoreProperty("Impulso de Ruptura de Tonalidad", 0)
       )
     ).toEqual({
-      name: "Impulso de Ruptura de Tonalidad",
+      name: "break_impulse",
       baseValue: 0,
       icon: "icon.webp",
     })
@@ -72,16 +72,9 @@ describe("findEncoreProperty", () => {
     encoreProperty("Prob. CRIT", 500),
   ]
 
-  test("matches a saved label with its Encore name", () => {
-    expect(findEncoreProperty(properties, "Ataque")?.name).toBe("ATQ")
-    expect(findEncoreProperty(properties, "Vida")?.name).toBe("PS")
-    expect(findEncoreProperty(properties, "Prob. Crit.")?.name).toBe(
-      "Prob. CRIT"
-    )
-  })
-
-  test("keeps working with the raw Encore name or an unknown one", () => {
-    expect(findEncoreProperty(properties, "PS")?.name).toBe("PS")
-    expect(findEncoreProperty(properties, "Desconocida")).toBeUndefined()
+  test("matches a saved stat id with its Encore name", () => {
+    expect(findEncoreProperty(properties, "atk")?.name).toBe("ATQ")
+    expect(findEncoreProperty(properties, "hp")?.name).toBe("PS")
+    expect(findEncoreProperty(properties, "crit_rate")?.name).toBe("Prob. CRIT")
   })
 })

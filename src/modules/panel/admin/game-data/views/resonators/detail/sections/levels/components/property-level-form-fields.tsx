@@ -4,7 +4,7 @@ import {
   resonatorPropertyLevelsSchema,
   type ResonatorPropertyLevelInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
-import { RESONATOR_PROPERTY_NAMES } from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+import { RESONATOR_PROPERTY_OPTIONS } from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
 
 /** Empty values shared by every property level form. */
 export const propertyLevelFormDefaults: ResonatorPropertyLevelInput = {
@@ -32,7 +32,7 @@ export const PropertyLevelFields = withForm({
           {(field) => (
             <field.SelectField
               label="Nombre"
-              options={RESONATOR_PROPERTY_NAMES}
+              options={RESONATOR_PROPERTY_OPTIONS}
               placeholder="Seleccionar propiedad"
               disabled={isPending}
             />

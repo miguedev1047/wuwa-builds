@@ -4,7 +4,7 @@ import {
   weaponPropertyInput,
   type WeaponPropertyInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
-import { WEAPON_PROPERTY_NAMES } from "@/modules/panel/admin/game-data/views/weapons/shared/constants/weapon"
+import { WEAPON_PROPERTY_OPTIONS } from "@/modules/panel/admin/game-data/views/weapons/shared/constants/weapon"
 
 /** Empty values shared by every weapon property form. */
 export const weaponPropertyFormDefaults: WeaponPropertyInput = {
@@ -32,7 +32,7 @@ export const WeaponPropertyFields = withForm({
           {(field) => (
             <field.SelectField
               label="Nombre"
-              options={WEAPON_PROPERTY_NAMES}
+              options={WEAPON_PROPERTY_OPTIONS}
               placeholder="Seleccionar propiedad"
               disabled={isPending}
             />

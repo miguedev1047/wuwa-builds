@@ -1,4 +1,5 @@
 import type { WeaponRefinementStatRow } from "@/db/schema"
+import { statLabel } from "@/modules/panel/admin/game-data/application/stats/stats"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { WeaponRefinementStatDeleteAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-delete-action"
 import { WeaponRefinementStatEditAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-edit-action"
@@ -26,7 +27,7 @@ export function WeaponRefinementStatsList({
         <EditableSection.Item size="sm">
           <EditableSection.ItemContent>
             <EditableSection.ItemTitle>
-              {stat.statName}
+              {statLabel(stat.statName)}
             </EditableSection.ItemTitle>
             <EditableSection.ItemDescription>
               <span className="tabular-nums">{stat.statNumber}</span>

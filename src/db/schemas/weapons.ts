@@ -57,7 +57,7 @@ export const weaponProperties = sqliteTable(
       .references(() => weapons.id, { onDelete: "cascade" }),
     /** Position in `Properties[]`. */
     sortOrder: integer("sort_order", { mode: "number" }).notNull(),
-    /** `Name` */
+    /** Canonical stat id (`atk`, `crit_rate`, ...), not the Encore label. */
     name: text("name").notNull().default(""),
     /** `Icon` */
     icon: text("icon").notNull().default(""),
@@ -156,7 +156,7 @@ export const weaponRefinementStats = sqliteTable(
       .references(() => weaponRefinements.id, { onDelete: "cascade" }),
     /** Position inside the refinement's stat list. */
     sortOrder: integer("sort_order", { mode: "number" }).notNull(),
-    /** Stat name as the builder knows it (`HP%`, `ATK`, `CRIT Rate`). */
+    /** Canonical stat id (`atk`, `crit_rate`, ...) the builder sums. */
     statName: text("stat_name").notNull().default(""),
     /** Amount as the game shows it, e.g. `20` for +20%. */
     statNumber: real("stat_number").notNull().default(0),

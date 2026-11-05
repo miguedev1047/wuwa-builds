@@ -1,55 +1,44 @@
-/**
- * Canonical builder stat keys.
- *
- * Every catalog that grants a percentage bonus (weapon refinements, sonata
- * effects) stores this `statId`, never the label, so the builder can sum them
- * without matching localized text. `label` is the panel copy and may differ
- * from the Encore wording, which lives in the sync aliases.
- */
-export const STATS = [
-  { label: "Ataque", statId: "atk" },
-  { label: "Ataque %", statId: "atk_percent" },
-  { label: "Vida", statId: "hp" },
-  { label: "Vida %", statId: "hp_percent" },
-  { label: "Defensa", statId: "def" },
-  { label: "Defensa %", statId: "def_percent" },
-  { label: "Prob. Crit.", statId: "crit_rate" },
-  { label: "Daño Crit.", statId: "crit_dmg" },
-  { label: "Recarga de energía", statId: "energy_regen" },
-  { label: "Bono de curación", statId: "healing_bonus" },
-  { label: "Bono de Daño de Ataque básico", statId: "basic_atk_bonus" },
-  { label: "Bono de Daño de Ataque cargado", statId: "heavy_atk_bonus" },
-  { label: "Bono de Daño de Habilidad", statId: "skill_bonus" },
-  { label: "Bono de Daño de Liberación", statId: "liberation_bonus" },
-  { label: "Bono de Daño Aero", statId: "aero_dmg" },
-  { label: "Bono de Daño Glacio", statId: "glacio_dmg" },
-  { label: "Bono de Daño Electro", statId: "electro_dmg" },
-  { label: "Bono de Daño Fusión", statId: "fusion_dmg" },
-  { label: "Bono de Daño Destrucción", statId: "havoc_dmg" },
-  { label: "Bono de Daño Espectro", statId: "spectro_dmg" },
-  { label: "Bono de Eco", statId: "echo_skill_bonus" },
-] as const
+import {
+  STAT_KEYS,
+  STAT_LABELS,
+  STAT_KINDS,
+  type BuildStatKey,
+} from "@/modules/builds/domain/stats"
+import type { SelectOption } from "@/modules/panel/admin/game-data/application/options"
 
-export type StatId = (typeof STATS)[number]["statId"]
+/**
+ * Panel view of the canonical stat vocabulary.
+ *
+ * The ids come from `STAT_KINDS`, shared with the builder, so an option can
+ * never point to a key the calculation does not know. `statId` and `value` are
+ * the same string on purpose: one identifier, no translation layer.
+ */
+export const STATS = STAT_KEYS.map((statId) => ({
+  statId,
+  label: STAT_LABELS[statId],
+}))
+
+export type StatId = BuildStatKey
 
 /** Non-empty tuple for `z.enum` and other APIs that need at least one key. */
-export const STAT_IDS = STATS.map((stat) => stat.statId) as [
-  StatId,
-  ...StatId[],
-]
+export const STAT_IDS = STAT_KEYS as [StatId, ...StatId[]]
 
 /** Options of every stat select. */
-export const STAT_OPTIONS = STATS.map(({ label, statId }) => ({
-  label,
-  value: statId,
-}))
+export const STAT_OPTIONS: SelectOption<StatId>[] = STATS.map(
+  ({ label, statId }) => ({ label, value: statId })
+)
+
+/** Options for a subset of stats, preserving the canonical order. */
+export function statOptions(ids: readonly StatId[]): SelectOption<StatId>[] {
+  return ids.map((statId) => ({ label: STAT_LABELS[statId], value: statId }))
+}
 
 /** Panel label of a stat, falling back to the raw id. */
 export function statLabel(statId: string): string {
-  return STATS.find((stat) => stat.statId === statId)?.label ?? statId
+  return STAT_LABELS[statId as StatId] ?? statId
 }
 
-/** Narrows a stored `stat_id` to the canonical union. */
+/** Narrows a stored string to the canonical stat union. */
 export function isStatId(value: string | null): value is StatId {
-  return value !== null && STATS.some((stat) => stat.statId === value)
+  return value !== null && value in STAT_KINDS
 }

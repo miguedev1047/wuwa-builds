@@ -1,5 +1,5 @@
 import type { EncoreProperty } from "@/modules/encore/domain/property"
-import { RESONATOR_PROPERTY_NAMES } from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+import { RESONATOR_PROPERTY_ALIASES } from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
 
 /** Visible fields of the property level form. */
 export type PropertyLevelDraft = {
@@ -8,15 +8,17 @@ export type PropertyLevelDraft = {
   icon: string
 }
 
-/** Resolves the Encore property that matches a saved property level name. */
+/** Resolves the Encore property that matches a saved property stat id. */
 export function findEncoreProperty(
   properties: EncoreProperty[],
-  name: string
+  statId: string
 ): EncoreProperty | undefined {
-  const option = RESONATOR_PROPERTY_NAMES.find((item) => item.value === name)
+  const alias = RESONATOR_PROPERTY_ALIASES.find(
+    (candidate) => candidate.statId === statId
+  )
 
   return properties.find(
-    (property) => property.name === (option?.encoreName ?? name)
+    (property) => property.name === (alias?.encoreName ?? statId)
   )
 }
 
@@ -24,19 +26,19 @@ export function findEncoreProperty(
  * Maps an Encore base stat to the values of the property level form.
  *
  * Encore names stats with abbreviations (`ATQ`, `PS`, ...) and scales
- * percentage stats by 100, so the label and the value are normalized before
+ * percentage stats by 100, so the id and the value are normalized before
  * filling the form. Unknown names are kept as-is.
  */
 export function propertyLevelDraftFromEncore(
   property: EncoreProperty
 ): PropertyLevelDraft {
-  const option = RESONATOR_PROPERTY_NAMES.find(
+  const alias = RESONATOR_PROPERTY_ALIASES.find(
     (candidate) => candidate.encoreName === property.name
   )
 
   return {
-    name: option?.value ?? property.name,
-    baseValue: property.baseValue / (option?.encoreScale ?? 1),
+    name: alias?.statId ?? property.name,
+    baseValue: property.baseValue / (alias?.scale ?? 1),
     icon: property.icon,
   }
 }

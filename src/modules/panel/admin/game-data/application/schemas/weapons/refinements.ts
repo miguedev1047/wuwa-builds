@@ -1,6 +1,7 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
 import { weaponRefinementStats, weaponRefinements } from "@/db/schema"
+import { isStatId } from "@/modules/panel/admin/game-data/application/stats/stats"
 import { idInput } from "../../id"
 
 /** Fields the admin panel sends when creating a weapon refinement. */
@@ -37,7 +38,14 @@ export const weaponRefinementFormInput = weaponRefinementUpdateInput.extend({
 export const weaponRefinementStatInput = createInsertSchema(
   weaponRefinementStats,
   {
-    statName: (schema) => schema.trim().min(1, "Selecciona una estadistica"),
+    statName: (schema) =>
+      schema
+        .trim()
+        .min(1, "Selecciona una estadistica")
+        .refine(
+          (value): boolean => value === "" || isStatId(value),
+          "Estadistica invalida"
+        ),
     statNumber: (schema) =>
       schema.refine(Number.isFinite, "El valor debe ser un numero"),
     refinementId: (schema) =>

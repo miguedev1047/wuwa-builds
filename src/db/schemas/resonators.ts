@@ -42,9 +42,9 @@ export const resonators = sqliteTable(
     introduction: text("introduction").notNull().default(""),
     /** `QualityId` */
     rarity: integer("rarity", { mode: "number" }).notNull(),
-    /** `ElementName` (`Element.Name` in the list endpoint) */
+    /** Canonical element id (`aero`, `glacio`, ...), not the Encore label. */
     element: text("element").notNull().default(""),
-    /** `WeaponTypeName` (`WeaponType.Name` in the list endpoint) */
+    /** Canonical weapon type id (`sword`, `broadblade`, ...). */
     weaponType: text("weapon_type").notNull().default(""),
     /** `RoleHeadIcon` (`images.icon`) */
     icon: text("icon").notNull().default(""),
@@ -101,7 +101,7 @@ export const resonatorPropertyLevels = sqliteTable(
       .references(() => resonators.id, { onDelete: "cascade" }),
     /** Position in `Properties[]`. */
     sortOrder: integer("sort_order", { mode: "number" }).notNull(),
-    /** `Name` */
+    /** Canonical stat id (`atk`, `crit_rate`, ...), not the Encore label. */
     name: text("name").notNull().default(""),
     /** `Icon` */
     icon: text("icon").notNull().default(""),

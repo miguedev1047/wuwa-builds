@@ -35,8 +35,8 @@ const valid = {
   name: "  Cartethyia  ",
   introduction: "Resonadora de Rinascita",
   rarity: 5,
-  element: "Aero",
-  weaponType: "Espada",
+  element: "aero",
+  weaponType: "sword",
   icon: "",
 }
 
@@ -345,7 +345,7 @@ describe("weaponPropertyInput", () => {
   const valid = {
     weaponId: 21050016,
     sortOrder: 1,
-    name: "Ataque",
+    name: "atk",
     baseValue: 40,
     icon: "https://api-v2.encore.moe/resource/Data/atk.webp",
   }
@@ -480,7 +480,7 @@ describe("weaponRefinementStatInput", () => {
   const valid = {
     refinementId: 9,
     sortOrder: 1,
-    statName: "Ataque %",
+    statName: "atk_percent",
     statNumber: 18,
   }
 
@@ -525,8 +525,8 @@ describe("weaponRefinementStatsFormInput", () => {
     refinementId: 9,
     sortOrder: 1,
     stats: [
-      { statName: "Ataque %", value: 18 },
-      { statName: "Bono de Eco", value: 20 },
+      { statName: "atk_percent", value: 18 },
+      { statName: "echo_skill_bonus", value: 20 },
     ],
   }
 
@@ -551,7 +551,7 @@ describe("resonatorPropertyLevelsSchema", () => {
   const valid = {
     resonatorId: 1104,
     sortOrder: 1,
-    name: "Vida",
+    name: "hp",
     baseValue: 831,
     icon: "https://api-v2.encore.moe/icon.webp",
   }

@@ -1,5 +1,8 @@
 import type { EncoreProperty } from "@/modules/encore/domain/property"
-import { WEAPON_PROPERTY_NAMES } from "@/modules/panel/admin/game-data/views/weapons/shared/constants/weapon"
+import {
+  WEAPON_PROPERTY_ALIASES,
+  weaponPropertyStatId,
+} from "@/modules/panel/admin/game-data/views/weapons/shared/constants/weapon"
 
 /** Visible fields of the weapon property form. */
 export type WeaponPropertyDraft = {
@@ -64,32 +67,29 @@ export function weaponPropertyDraftFromEncore(
   property: EncoreProperty
 ): WeaponPropertyDraft {
   const percent = isPercentWeaponProperty(property)
-  const option = WEAPON_PROPERTY_NAMES.find(
-    (item) =>
-      item.encoreName === property.name && item.encorePercent === percent
-  )
+  const statId = weaponPropertyStatId(property.name, percent)
 
   return {
-    name: option?.value ?? (percent ? `${property.name} %` : property.name),
+    name: statId ?? (percent ? `${property.name} %` : property.name),
     baseValue: normalizeBaseValue(property),
     icon: property.icon,
   }
 }
 
-/** Resolves the Encore stat that matches a saved weapon property name. */
+/** Resolves the Encore stat that matches a saved weapon property stat id. */
 export function findEncoreWeaponProperty(
   properties: EncoreProperty[],
-  name: string
+  statId: string
 ): EncoreProperty | undefined {
-  const option = WEAPON_PROPERTY_NAMES.find((item) => item.value === name)
+  const alias = WEAPON_PROPERTY_ALIASES.find((item) => item.statId === statId)
 
-  if (option) {
+  if (alias) {
     return properties.find(
       (property) =>
-        property.name === option.encoreName &&
-        isPercentWeaponProperty(property) === option.encorePercent
+        property.name === alias.encoreName &&
+        isPercentWeaponProperty(property) === alias.percent
     )
   }
 
-  return properties.find((property) => property.name === name)
+  return properties.find((property) => property.name === statId)
 }

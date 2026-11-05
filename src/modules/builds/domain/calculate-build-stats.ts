@@ -1,35 +1,8 @@
 import type { BuildPayload } from "./build"
+import { STAT_KINDS, type BuildStatKey, type StatKind } from "./stats"
 
-export type StatKind = "flat" | "percent"
-
-/**
- * Application-owned canonical stat keys. Values are display units:
- * percentage points for percent stats, flat values otherwise.
- */
-export const STAT_KINDS = {
-  hp: "flat",
-  atk: "flat",
-  def: "flat",
-  hp_percent: "percent",
-  atk_percent: "percent",
-  def_percent: "percent",
-  crit_rate: "percent",
-  crit_dmg: "percent",
-  energy_regen: "percent",
-  healing_bonus: "percent",
-  basic_atk_bonus: "percent",
-  heavy_atk_bonus: "percent",
-  skill_bonus: "percent",
-  liberation_bonus: "percent",
-  aero_dmg: "percent",
-  glacio_dmg: "percent",
-  electro_dmg: "percent",
-  fusion_dmg: "percent",
-  havoc_dmg: "percent",
-  spectro_dmg: "percent",
-} as const satisfies Record<string, StatKind>
-
-export type BuildStatKey = keyof typeof STAT_KINDS
+export { STAT_KINDS }
+export type { BuildStatKey, StatKind }
 
 export interface ResolvedStatBonus {
   statId: string

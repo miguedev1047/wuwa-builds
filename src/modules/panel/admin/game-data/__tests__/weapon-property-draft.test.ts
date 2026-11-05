@@ -26,7 +26,7 @@ describe("weaponPropertyDraftFromEncore", () => {
     expect(
       weaponPropertyDraftFromEncore(encoreProperty("ATQ", 33, "33.00"))
     ).toEqual({
-      name: "Ataque",
+      name: "atk",
       baseValue: 33,
       icon: "icon.webp",
     })
@@ -36,7 +36,7 @@ describe("weaponPropertyDraftFromEncore", () => {
     expect(
       weaponPropertyDraftFromEncore(encoreProperty("ATQ", 0.081, "8.10%"))
     ).toEqual({
-      name: "Ataque %",
+      name: "atk_percent",
       baseValue: 8.1,
       icon: "icon.webp",
     })
@@ -47,7 +47,7 @@ describe("weaponPropertyDraftFromEncore", () => {
       weaponPropertyDraftFromEncore(
         encoreProperty("PS", 0.16050000488758087, "16.05%")
       )
-    ).toEqual({ name: "Vida %", baseValue: 16.05, icon: "icon.webp" })
+    ).toEqual({ name: "hp_percent", baseValue: 16.05, icon: "icon.webp" })
 
     expect(
       weaponPropertyDraftFromEncore(
@@ -59,17 +59,17 @@ describe("weaponPropertyDraftFromEncore", () => {
   test("normalizes the percentages Encore sends multiplied by 100", () => {
     expect(
       weaponPropertyDraftFromEncore(encoreProperty("Prob. CRIT", 450, "4.50%"))
-    ).toMatchObject({ name: "Prob. Crit.", baseValue: 4.5 })
+    ).toMatchObject({ name: "crit_rate", baseValue: 4.5 })
 
     expect(
       weaponPropertyDraftFromEncore(encoreProperty("Daño CRIT", 900, "9.00%"))
-    ).toMatchObject({ name: "Daño Crit.", baseValue: 9 })
+    ).toMatchObject({ name: "crit_dmg", baseValue: 9 })
 
     expect(
       weaponPropertyDraftFromEncore(
         encoreProperty("Regen. de energía", 1152, "11.52%")
       )
-    ).toMatchObject({ name: "Recarga de energía", baseValue: 11.52 })
+    ).toMatchObject({ name: "energy_regen", baseValue: 11.52 })
   })
 
   test("keeps unknown stats with a percentage suffix", () => {
@@ -91,14 +91,14 @@ describe("findEncoreWeaponProperty", () => {
   ]
 
   test("distinguishes the flat attack from the attack percentage", () => {
-    expect(findEncoreWeaponProperty(properties, "Ataque")?.baseValue).toBe(33)
-    expect(findEncoreWeaponProperty(properties, "Ataque %")?.baseValue).toBe(
+    expect(findEncoreWeaponProperty(properties, "atk")?.baseValue).toBe(33)
+    expect(findEncoreWeaponProperty(properties, "atk_percent")?.baseValue).toBe(
       0.081
     )
   })
 
   test("matches a stored label with its Encore name", () => {
-    expect(findEncoreWeaponProperty(properties, "Vida %")?.name).toBe("PS")
+    expect(findEncoreWeaponProperty(properties, "hp_percent")?.name).toBe("PS")
   })
 
   test("falls back to the raw name and returns undefined for unknown stats", () => {
