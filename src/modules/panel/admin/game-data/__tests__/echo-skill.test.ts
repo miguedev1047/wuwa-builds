@@ -4,11 +4,11 @@ import { describe, expect, test } from "bun:test"
 import {
   isComputedCondition,
   isEchoSkillCondition,
-} from "@/modules/panel/admin/game-data/application/echoes/skills"
+} from "@/modules/game-data/application/echoes/skills"
 import {
   echoSkillBonusInput,
   echoSkillInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 
 const bonus = {
   echoId: 1,

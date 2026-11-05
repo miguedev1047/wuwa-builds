@@ -1,8 +1,8 @@
 import { Show } from "@/components/utility/show"
 import { useBuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
-import { createBuildDraftFromEncoreCharacter } from "@/modules/builds/infrastructure/encore/build-draft"
-import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+import { createBuildDraftFromCharacter } from "@/modules/builds/infrastructure/catalog/build-draft"
+import type { CharacterSummary } from "@/modules/game-data/domain/character"
+import { characterQueries } from "@/modules/game-data/queries/characters"
 import { useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
 import { cn } from "cn"
@@ -10,7 +10,7 @@ import { useTransition } from "react"
 import { toast } from "sonner"
 
 interface CharacterItemProps {
-  character: EncoreCharacterSummary
+  character: CharacterSummary
 }
 
 export function CharacterItem({ character }: CharacterItemProps) {
@@ -26,11 +26,11 @@ export function CharacterItem({ character }: CharacterItemProps) {
     startTransition(async () => {
       try {
         const characterDetail = await queryClient.query(
-          encoreCharacterQueries.detail(character.id)
+          characterQueries.detail(character.id)
         )
 
         const id = crypto.randomUUID()
-        const draft = createBuildDraftFromEncoreCharacter({
+        const draft = createBuildDraftFromCharacter({
           id,
           character: characterDetail,
           createdAt: new Date().toISOString(),
@@ -59,7 +59,7 @@ export function CharacterItem({ character }: CharacterItemProps) {
         "data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50"
       )}
     >
-      <Show when={character.icon}>
+      <Show when={character.iconLarge}>
         {(image) => (
           <img
             className="size-full object-cover transition-transform ease-in-out hover:scale-120"

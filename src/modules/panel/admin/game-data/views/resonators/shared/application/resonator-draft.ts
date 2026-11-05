@@ -1,10 +1,10 @@
 import type { EncoreCharacterDetail } from "@/modules/encore/domain/character"
 import type { ResonatorRow } from "@/db/schema"
-import type { ResonatorInput } from "@/modules/panel/admin/game-data/application/schemas"
+import type { ResonatorInput } from "@/modules/game-data/application/schemas"
 import {
   ELEMENT_BY_ENCORE,
   WEAPON_TYPE_BY_ENCORE,
-} from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+} from "@/modules/game-data/application/constants/resonator"
 
 /**
  * Fills the admin form with a full Encore character.

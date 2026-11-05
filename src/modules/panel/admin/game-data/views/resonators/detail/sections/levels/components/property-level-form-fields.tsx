@@ -3,8 +3,8 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   resonatorPropertyLevelsSchema,
   type ResonatorPropertyLevelInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { RESONATOR_PROPERTY_OPTIONS } from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+} from "@/modules/game-data/application/schemas"
+import { RESONATOR_PROPERTY_OPTIONS } from "@/modules/game-data/application/constants/resonator"
 
 /** Empty values shared by every property level form. */
 export const propertyLevelFormDefaults: ResonatorPropertyLevelInput = {

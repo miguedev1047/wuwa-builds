@@ -1,6 +1,6 @@
 import type { ResonatorTagRow } from "@/db/schema"
 import type { EncoreTag } from "@/modules/encore/domain/character"
-import type { ResonatorTagInput } from "@/modules/panel/admin/game-data/application/schemas"
+import type { ResonatorTagInput } from "@/modules/game-data/application/schemas"
 
 export function toTagInput(
   name: string,

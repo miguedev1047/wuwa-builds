@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { weaponQueries } from "@/modules/panel/admin/game-data/queries/weapons"
+import { weaponQueries } from "@/modules/game-data/queries/weapons"
 import { WeaponItem } from "@/modules/panel/admin/game-data/views/weapons/list/components/weapon-item"
 import { Skeleton } from "skullet/react"
 

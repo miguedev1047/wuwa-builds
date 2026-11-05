@@ -21,7 +21,7 @@ import {
   useBuildDraftCollection,
   type BuildDraftCollection,
 } from "@/modules/builds/client/build-drafts-provider"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+import { characterQueries } from "@/modules/game-data/queries/characters"
 import { DeleteIcon, ListIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { useLiveQuery } from "@tanstack/react-db"
@@ -48,7 +48,7 @@ function LocalBuildListContent({
   collection: BuildDraftCollection
 }) {
   const { data: drafts } = useLiveQuery((q) => q.from({ draft: collection }))
-  const { data: characters } = useSuspenseQuery(encoreCharacterQueries.list())
+  const { data: characters } = useSuspenseQuery(characterQueries.list())
 
   const characterById = new Map(
     characters.map((character) => [character.id, character])

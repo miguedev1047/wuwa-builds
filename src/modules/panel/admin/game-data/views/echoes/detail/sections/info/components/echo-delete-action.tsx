@@ -3,10 +3,10 @@ import { useNavigate, useParams } from "@tanstack/react-router"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
-import { isValidId } from "@/modules/panel/admin/game-data/application/id"
+import { isValidId } from "@/modules/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { deleteEcho } from "@/modules/panel/admin/game-data/server/echoes/echoes"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { deleteEcho } from "@/modules/game-data/server/echoes/echoes"
 
 export function EchoDeleteAction() {
   const { id } = useParams({ from: "/(panel)/admin/echoes/$id" })

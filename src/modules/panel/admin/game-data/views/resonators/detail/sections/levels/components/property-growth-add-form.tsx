@@ -13,9 +13,9 @@ import {
   growthMilestoneOptions,
   propertyGrowthPayloads,
   type PropertyGrowthPayload,
-} from "@/modules/panel/admin/game-data/application/resonators/property-growth"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createResonatorPropertyGrowth } from "@/modules/panel/admin/game-data/server/resonators/property-growth"
+} from "@/modules/game-data/application/resonators/property-growth"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { createResonatorPropertyGrowth } from "@/modules/game-data/server/resonators/property-growth"
 import {
   PropertyGrowthFields,
   propertyGrowthFormDefaults,

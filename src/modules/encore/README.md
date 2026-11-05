@@ -92,15 +92,15 @@ Every entity round-trips exactly: a one-off run of all 64 characters, 124
 weapons and 319 echoes (≈63k child rows) read back deep-equal to the mapper
 output.
 
-Nothing populates these tables yet: there is no scheduled sync or admin action,
-so the screens still read the live API.
+There is no scheduled sync yet: rows are created from the admin panel, and the
+admin and builder screens read the canonical catalog from D1.
 
 ## Usage
 
 Encore is a decoupled external source: it is read to search and prefill the
 admin forms, while the app itself reads its own catalog from D1
-(`@/modules/panel/admin/game-data/queries`). That is why every export here is
-prefixed with `encore`.
+(`@/modules/game-data/queries`). That is why every export here is prefixed with
+`encore`.
 
 ```tsx
 import { encoreCharacterQueries } from "@/modules/encore/queries/characters"

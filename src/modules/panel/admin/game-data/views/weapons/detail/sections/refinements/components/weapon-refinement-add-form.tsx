@@ -18,9 +18,9 @@ import type { EncoreWeaponRefinement } from "@/modules/encore/domain/weapon"
 import {
   weaponRefinementFormInput,
   type WeaponRefinementInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createWeaponRefinement } from "@/modules/panel/admin/game-data/server/weapons/refinements"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { createWeaponRefinement } from "@/modules/game-data/server/weapons/refinements"
 import { weaponRefinementDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
 import {
   WeaponRefinementFields,

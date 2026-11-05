@@ -1,6 +1,6 @@
 import { Spinner } from "@/components/ui/spinner"
 import { LocalBuildList } from "@/modules/panel/user/my-builds/components/local-build-list"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+import { characterQueries } from "@/modules/game-data/queries/characters"
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { Suspense } from "react"
 import { Button } from "@/components/ui/button"
@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 export const Route = createFileRoute("/(panel)/panel/my-builds")({
   component: RouteComponent,
   loader: async ({ context }) => {
-    await context.queryClient.query(encoreCharacterQueries.list())
+    await context.queryClient.query(characterQueries.list())
   },
 })
 

@@ -55,13 +55,20 @@ Rules:
 
 Current modules:
 
+- `src/modules/game-data`: canonical D1 catalog domain (types, input schemas,
+  server functions and shared query options) for characters, weapons and
+  echoes. Admin and builder screens both consume it; reads use
+  `authMiddleware` and mutations use `adminMiddleware`.
 - `src/modules/encore`: read-only game data from the public Encore API
-  (characters, weapons and echoes). Used by the admin and builder screens.
+  (characters, weapons and echoes). Used by the admin panel for search and
+  create prefill, never as the builder data source.
 - `src/modules/builds`: saved user builds (domain payload, ports, D1 adapter,
   authenticated server functions).
 - `src/modules/panel`: panel UI behavior only. It must not import
-  infrastructure directly.
-- `src/db`: Drizzle schema for auth, saved builds and the Encore catalog (D1).
+  infrastructure directly. Admin views stay in
+  `src/modules/panel/admin/game-data/views`.
+- `src/db`: Drizzle schema for auth, saved builds and the canonical catalog
+  tables (D1).
 
 ## Game data
 
@@ -80,15 +87,18 @@ Rules:
   dropped by the mapper.
 - There is no local game-data snapshot or scraper. Do not reintroduce committed
   character JSON without a concrete reason.
+- Builder screens read the canonical catalog from D1 through
+  `src/modules/game-data`; Encore is only an admin prefill helper.
 
 ## Caching
 
 - `src/providers/query-provider/query.tsx` uses `staleTime: "static"` for
   immutable data.
-- Shared query options live in `src/modules/encore/queries`. Screens must use
-  them instead of defining their own.
+- Shared query options live in `src/modules/encore/queries` (external API) and
+  `src/modules/game-data/queries` (canonical D1 catalog). Screens must use them
+  instead of defining their own.
 - Encore queries use a 6-hour `staleTime`; freshness is TTL-based, not tied to a
-  deploy.
+  deploy. Catalog queries use a 5-minute `staleTime` because admins edit D1.
 - Saved builds are scoped by user/build identity and payload `documentVersion`,
   never by catalog freshness.
 - TanStack DB build drafts are scoped by authenticated user ID and Local Storage
@@ -133,15 +143,15 @@ Rules:
 
 - Encore is a third-party public API. The 6-hour cache means a game patch can
   take up to 6h to appear.
-- The Encore catalog is also mirrored into normalized D1 tables
+- The canonical catalog lives in normalized D1 tables
   (`src/db/schemas/resonators.ts`, `weapons.ts`, `echoes.ts`) with a
   whole-document adapter (`src/modules/encore/infrastructure/catalog-d1.server.ts`).
-  Nothing populates those tables yet (no scheduled sync or admin action), so
-  screens keep reading the API.
+  The builder reads it through `src/modules/game-data`; rows still come from the
+  admin panel, since there is no scheduled Encore sync yet.
 - The saved-builds backend and local draft collection exist
   (`src/db/schemas/builds.ts`, `src/modules/builds`). Character selection creates
   a local draft, the builder route loads it and `/panel/my-builds` lists local
   drafts; editor sections, cloud saves and cloud build listing are still
   pending. See `BUILDER_UI.md`.
-- Weapon and echo queries are exposed; the builder editor that consumes them is
-  still pending.
+- Catalog weapon and echo queries are exposed; the builder editor that consumes
+  them is still pending.

@@ -13,9 +13,9 @@ import type { EchoSkillRow } from "@/db/schema"
 import {
   echoSkillInput,
   type EchoSkillInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { upsertEchoSkill } from "@/modules/panel/admin/game-data/server/echoes/skills"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { upsertEchoSkill } from "@/modules/game-data/server/echoes/skills"
 import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
 
 type EchoSkillTextFormProps = {

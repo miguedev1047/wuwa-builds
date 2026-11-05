@@ -1,8 +1,8 @@
 import { useSelector } from "@tanstack/react-form"
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
-import type { SonataFormInput } from "@/modules/panel/admin/game-data/application/schemas"
-import { STAT_OPTIONS } from "@/modules/panel/admin/game-data/application/stats/stats"
+import type { SonataFormInput } from "@/modules/game-data/application/schemas"
+import { STAT_OPTIONS } from "@/modules/game-data/application/stats/stats"
 import { Show } from "@/components/utility/show"
 
 /** Piece thresholds a set can use. There is no 4-piece threshold. */

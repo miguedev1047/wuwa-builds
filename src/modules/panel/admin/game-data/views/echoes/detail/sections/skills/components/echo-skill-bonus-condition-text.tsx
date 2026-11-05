@@ -3,7 +3,7 @@ import type { EchoSkillBonusRow } from "@/db/schema"
 import {
   RESONATOR_ELEMENTS,
   RESONATOR_WEAPON_TYPES,
-} from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+} from "@/modules/game-data/application/constants/resonator"
 import { EchoSkillResonatorName } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-resonator-name"
 
 type EchoSkillBonusConditionTextProps = {

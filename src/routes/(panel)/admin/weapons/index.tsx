@@ -1,5 +1,5 @@
 import { CatalogListRouteSkeleton } from "@/modules/panel/admin/game-data/components/route-skeleton"
-import { weaponQueries } from "@/modules/panel/admin/game-data/queries/weapons"
+import { weaponQueries } from "@/modules/game-data/queries/weapons"
 import { WeaponListPage } from "@/modules/panel/admin/game-data/views/weapons/list/page"
 import { createFileRoute } from "@tanstack/react-router"
 

@@ -1,6 +1,6 @@
 import type { WeaponRow } from "@/db/schema"
 import type { EncoreWeaponDetail } from "@/modules/encore/domain/weapon"
-import type { WeaponInput } from "@/modules/panel/admin/game-data/application/schemas"
+import type { WeaponInput } from "@/modules/game-data/application/schemas"
 
 /**
  * Fills the admin form with a full Encore weapon.

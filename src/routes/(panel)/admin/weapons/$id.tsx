@@ -1,7 +1,7 @@
 import { CatalogDetailRouteSkeleton } from "@/modules/panel/admin/game-data/components/route-skeleton"
 import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
-import { isValidId } from "@/modules/panel/admin/game-data/application/id"
-import { weaponQueries } from "@/modules/panel/admin/game-data/queries/weapons"
+import { isValidId } from "@/modules/game-data/application/id"
+import { weaponQueries } from "@/modules/game-data/queries/weapons"
 import { WeaponDetailPage } from "@/modules/panel/admin/game-data/views/weapons/detail/page"
 import { createFileRoute, notFound } from "@tanstack/react-router"
 

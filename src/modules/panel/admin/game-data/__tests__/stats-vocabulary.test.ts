@@ -10,7 +10,7 @@ import {
   STAT_OPTIONS,
   isStatId,
   statLabel,
-} from "@/modules/panel/admin/game-data/application/stats/stats"
+} from "@/modules/game-data/application/stats/stats"
 import {
   ELEMENT_BY_ENCORE,
   ELEMENT_IDS,
@@ -19,12 +19,12 @@ import {
   RESONATOR_WEAPON_TYPES,
   WEAPON_TYPE_BY_ENCORE,
   WEAPON_TYPE_IDS,
-} from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+} from "@/modules/game-data/application/constants/resonator"
 import {
   WEAPON_PROPERTY_ALIASES,
   WEAPON_PROPERTY_OPTIONS,
   isWeaponPropertyStatId,
-} from "@/modules/panel/admin/game-data/views/weapons/shared/constants/weapon"
+} from "@/modules/game-data/application/constants/weapon"
 
 describe("stat vocabulary", () => {
   test("every option points to a stat the builder knows", () => {

@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { echoQueries } from "@/modules/panel/admin/game-data/queries/echoes"
+import { echoQueries } from "@/modules/game-data/queries/echoes"
 import { EchoItem } from "@/modules/panel/admin/game-data/views/echoes/list/components/echo-item"
 
 export function EchoList() {

@@ -7,13 +7,13 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   ECHO_SKILL_CONDITIONS,
   type EchoSkillConditionId,
-} from "@/modules/panel/admin/game-data/application/echoes/skills"
-import type { EchoSkillBonusFormInput } from "@/modules/panel/admin/game-data/application/schemas"
-import { STAT_OPTIONS } from "@/modules/panel/admin/game-data/application/stats/stats"
+} from "@/modules/game-data/application/echoes/skills"
+import type { EchoSkillBonusFormInput } from "@/modules/game-data/application/schemas"
+import { STAT_OPTIONS } from "@/modules/game-data/application/stats/stats"
 import {
   RESONATOR_ELEMENTS,
   RESONATOR_WEAPON_TYPES,
-} from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+} from "@/modules/game-data/application/constants/resonator"
 
 /** Empty bonus values; `statId` stays empty so the select shows its placeholder. */
 export function echoSkillBonusFormDefaults(

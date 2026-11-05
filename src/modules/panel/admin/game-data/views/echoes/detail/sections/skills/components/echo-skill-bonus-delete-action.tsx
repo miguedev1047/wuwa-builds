@@ -3,10 +3,10 @@ import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
 import type { EchoSkillBonusRow } from "@/db/schema"
-import { isValidId } from "@/modules/panel/admin/game-data/application/id"
+import { isValidId } from "@/modules/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { deleteEchoSkillBonus } from "@/modules/panel/admin/game-data/server/echoes/skills"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { deleteEchoSkillBonus } from "@/modules/game-data/server/echoes/skills"
 
 type EchoSkillBonusDeleteActionProps = {
   echoId: number

@@ -6,10 +6,10 @@ import { useAppForm } from "@/components/form"
 import {
   echoInput,
   type EchoInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createEcho } from "@/modules/panel/admin/game-data/server/echoes/echoes"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { createEcho } from "@/modules/game-data/server/echoes/echoes"
 import { echoDraftFromEncore } from "@/modules/panel/admin/game-data/views/echoes/shared/application/echo-draft"
 import {
   EchoFields,

@@ -3,7 +3,7 @@ import type { EncoreSkill } from "@/modules/encore/domain/character"
 import type {
   ResonatorSkillInput,
   ResonatorSkillUpdateInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 
 /** Payloads for the selected Encore skills, in Encore order. */
 export function resonatorSkillPayloads(

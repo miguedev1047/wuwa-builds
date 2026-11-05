@@ -6,10 +6,10 @@ import { useAppForm } from "@/components/form"
 import {
   resonatorInput,
   type ResonatorInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createResonator } from "@/modules/panel/admin/game-data/server/resonators/resonators"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { createResonator } from "@/modules/game-data/server/resonators/resonators"
 import { resonatorDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
 import {
   ResonatorFields,

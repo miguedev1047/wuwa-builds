@@ -2,7 +2,7 @@ import type { EncoreProperty } from "@/modules/encore/domain/property"
 import {
   WEAPON_PROPERTY_ALIASES,
   weaponPropertyStatId,
-} from "@/modules/panel/admin/game-data/views/weapons/shared/constants/weapon"
+} from "@/modules/game-data/application/constants/weapon"
 
 /** Visible fields of the weapon property form. */
 export type WeaponPropertyDraft = {

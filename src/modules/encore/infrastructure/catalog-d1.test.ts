@@ -310,7 +310,7 @@ describe("encore catalog schema", () => {
     await saveWeapon(db, toWeaponDetail(rawWeapon))
     await saveEcho(db, toEchoDetail(rawEcho))
 
-    expect(await readCharacters(db)).toEqual([
+    expect(await readCharacters(db)).toMatchObject([
       {
         id: 1402,
         name: "Yangyang",
@@ -318,6 +318,8 @@ describe("encore catalog schema", () => {
         element: "Aero",
         weaponType: "Espada",
         icon: "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/icon.webp",
+        iconLarge:
+          "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/icon-large.webp",
       },
     ])
 

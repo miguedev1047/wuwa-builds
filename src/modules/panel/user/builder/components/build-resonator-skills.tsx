@@ -7,8 +7,8 @@ import { SKILL_LEVEL_MAX } from "@/modules/builds/domain/build"
 import {
   getUpgradeableSkills,
   type UpgradeableSkill,
-} from "@/modules/builds/infrastructure/encore/skill-levels"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+} from "@/modules/builds/infrastructure/catalog/skill-levels"
+import { characterQueries } from "@/modules/game-data/queries/characters"
 import { eq, useLiveQuery } from "@tanstack/react-db"
 import { useQuery } from "@tanstack/react-query"
 
@@ -29,7 +29,7 @@ export function BuildResonatorSkills({
   )
 
   const { data: character, isLoading } = useQuery({
-    ...encoreCharacterQueries.detail(draft?.characterId ?? 0),
+    ...characterQueries.detail(draft?.characterId ?? 0),
     enabled: draft?.characterId !== undefined,
   })
 

@@ -3,7 +3,9 @@ import { Slider } from "@/components/ui/slider"
 import { Spinner } from "@/components/ui/spinner"
 import { Show } from "@/components/utility/show"
 import type { BuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+import { statLabel } from "@/modules/game-data/application/stats/stats"
+import { growthValue } from "@/modules/game-data/domain/character"
+import { characterQueries } from "@/modules/game-data/queries/characters"
 import { eq, useLiveQuery } from "@tanstack/react-db"
 import { useQuery } from "@tanstack/react-query"
 
@@ -24,7 +26,7 @@ export function BuildResonatorLevel({
   )
 
   const { data: character, isLoading } = useQuery({
-    ...encoreCharacterQueries.detail(draft?.characterId ?? 0),
+    ...characterQueries.detail(draft?.characterId ?? 0),
     enabled: draft?.characterId !== undefined,
   })
 
@@ -33,12 +35,12 @@ export function BuildResonatorLevel({
   return (
     <Field>
       <FieldLabel className="text-lg">
-        Nivel - {draft.payload.resonator.level}
+        Nivel - {draft.payload.resonator.level * 10}
       </FieldLabel>
 
       <Slider
         value={draft.payload.resonator.level}
-        max={90}
+        max={10}
         min={1}
         onValueChange={(value) => {
           if (value) {
@@ -60,8 +62,10 @@ export function BuildResonatorLevel({
                 {properties.map((item) => (
                   <li key={item.name}>
                     <p className="text-xs">
-                      {item.name} -{" "}
-                      {item.growth[draft.payload.resonator.level - 1].value}
+                      {statLabel(item.name)} -{" "}
+                      {growthValue(
+                        item.growth[draft.payload.resonator.level - 1]
+                      )}
                     </p>
                   </li>
                 ))}

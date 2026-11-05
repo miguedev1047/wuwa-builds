@@ -3,8 +3,8 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   weaponRefinementUpdateInput,
   type WeaponRefinementUpdateInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { WEAPON_REFINEMENT_RANKS } from "@/modules/panel/admin/game-data/views/weapons/shared/constants/weapon"
+} from "@/modules/game-data/application/schemas"
+import { WEAPON_REFINEMENT_RANKS } from "@/modules/game-data/application/constants/weapon"
 
 /** Empty values shared by every refinement form. */
 export const weaponRefinementFormDefaults: WeaponRefinementUpdateInput = {

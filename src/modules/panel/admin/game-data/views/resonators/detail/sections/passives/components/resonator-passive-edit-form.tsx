@@ -8,9 +8,9 @@ import { DialogFooter } from "@/components/ui/dialog"
 import {
   resonatorPassiveUpdateInput,
   type ResonatorPassiveUpdateInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { updateResonatorPassive } from "@/modules/panel/admin/game-data/server/resonators/passives"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { updateResonatorPassive } from "@/modules/game-data/server/resonators/passives"
 import { resonatorPassiveDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
 import { ResonatorPassiveFields } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-form-fields"
 

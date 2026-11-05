@@ -4,7 +4,7 @@ import type {
   WeaponRefinementStatsFormValues,
   WeaponRefinementStatInput,
   WeaponRefinementUpdateInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 
 /** Visible fields of the refinement form that Encore can prefill. */
 export type WeaponRefinementDraft = {

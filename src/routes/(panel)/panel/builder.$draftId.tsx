@@ -4,8 +4,9 @@ import {
   useBuildDraftCollection,
   type BuildDraftCollection,
 } from "@/modules/builds/client/build-drafts-provider"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
-import { encoreEchoQueries, encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
+import { characterQueries } from "@/modules/game-data/queries/characters"
+import { echoQueries } from "@/modules/game-data/queries/echoes"
+import { weaponQueries } from "@/modules/game-data/queries/weapons"
 import { eq } from "@tanstack/db"
 import { useLiveQuery } from "@tanstack/react-db"
 import { useQuery } from "@tanstack/react-query"
@@ -15,17 +16,15 @@ import { BuildResonatorSequence } from "@/modules/panel/user/builder/components/
 import { BuildResonatorLevel } from "@/modules/panel/user/builder/components/build-resonator-level"
 import { BuildResonatorSkills } from "@/modules/panel/user/builder/components/build-resonator-skills"
 import { Spinner } from "@/components/ui/spinner"
-import { BuildWeapon } from "@/modules/panel/user/builder/components/build-weapon"
-import { Suspense } from "react"
 
 export const Route = createFileRoute("/(panel)/panel/builder/$draftId")({
   component: RouteComponent,
   ssr: false,
   loader: async ({ context }) => {
     await Promise.all([
-      context.queryClient.query(encoreCharacterQueries.list()),
-      context.queryClient.query(encoreWeaponQueries.list()),
-      context.queryClient.query(encoreEchoQueries.list()),
+      context.queryClient.query(characterQueries.list()),
+      context.queryClient.query(weaponQueries.list()),
+      context.queryClient.query(echoQueries.list()),
     ])
   },
 })
@@ -62,7 +61,7 @@ function Builder({
   const characterId = draft?.characterId
 
   const { data: character, isError } = useQuery({
-    ...encoreCharacterQueries.detail(characterId ?? 0),
+    ...characterQueries.detail(characterId ?? 0),
     enabled: characterId !== undefined,
   })
 
@@ -96,12 +95,6 @@ function Builder({
           <BuildResonatorSequence collection={collection} draftId={draftId} />
           <BuildResonatorLevel collection={collection} draftId={draftId} />
           <BuildResonatorSkills collection={collection} draftId={draftId} />
-        </FieldGroup>
-
-        <FieldGroup>
-          <Suspense fallback={<Spinner />}>
-            <BuildWeapon collection={collection} draftId={draftId} />
-          </Suspense>
         </FieldGroup>
       </div>
     </div>

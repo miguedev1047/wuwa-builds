@@ -3,11 +3,11 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   weaponInput,
   type WeaponInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 import {
   WEAPON_RARITY,
   WEAPON_TYPE_OPTIONS,
-} from "@/modules/panel/admin/game-data/views/weapons/shared/constants/weapon"
+} from "@/modules/game-data/application/constants/weapon"
 
 export const weaponFormDefaults: WeaponInput = {
   id: 0,

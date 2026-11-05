@@ -1,9 +1,9 @@
 import { CharacterItem } from "@/modules/panel/user/new-build/components/character-item"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+import { characterQueries } from "@/modules/game-data/queries/characters"
 import { useSuspenseQuery } from "@tanstack/react-query"
 
 export function CharacterList() {
-  const { data: characters } = useSuspenseQuery(encoreCharacterQueries.list())
+  const { data: characters } = useSuspenseQuery(characterQueries.list())
 
   return (
     <ul className="grid grid-cols-10 gap-4">

@@ -3,8 +3,8 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   resonatorSequenceUpdateInput,
   type ResonatorSequenceUpdateInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { RESONATOR_SEQUENCE } from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+} from "@/modules/game-data/application/schemas"
+import { RESONATOR_SEQUENCE } from "@/modules/game-data/application/constants/resonator"
 
 /** Empty values shared by every resonator sequence form. */
 export const resonatorSequenceFormDefaults: ResonatorSequenceUpdateInput = {

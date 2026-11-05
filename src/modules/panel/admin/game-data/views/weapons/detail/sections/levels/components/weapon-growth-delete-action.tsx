@@ -2,10 +2,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
-import { isValidId } from "@/modules/panel/admin/game-data/application/id"
+import { isValidId } from "@/modules/game-data/application/id"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { deleteWeaponPropertyGrowth } from "@/modules/panel/admin/game-data/server/weapons/property-growth"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { deleteWeaponPropertyGrowth } from "@/modules/game-data/server/weapons/property-growth"
 
 type WeaponGrowthDeleteActionProps = {
   growthId: number

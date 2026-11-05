@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Show } from "@/components/utility/show"
 import type { EchoSkillBonusRow } from "@/db/schema"
-import { statLabel } from "@/modules/panel/admin/game-data/application/stats/stats"
+import { statLabel } from "@/modules/game-data/application/stats/stats"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { EchoSkillBonusConditionText } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-condition-text"
 import { EchoSkillBonusDeleteAction } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-delete-action"

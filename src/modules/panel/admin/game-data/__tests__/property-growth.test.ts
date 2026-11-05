@@ -7,7 +7,7 @@ import {
   isGrowthValue,
   propertyGrowthPayloads,
   type GrowthMilestoneOption,
-} from "@/modules/panel/admin/game-data/application/resonators/property-growth"
+} from "@/modules/game-data/application/resonators/property-growth"
 
 const encoreGrowth: EncorePropertyGrowth[] = [
   { level: 1, value: 824 },

@@ -3,7 +3,7 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   echoInput,
   type EchoInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 import {
   ECHO_CLASS_OPTIONS,
   ECHO_COST_OPTIONS,

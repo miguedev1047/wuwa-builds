@@ -5,7 +5,7 @@ UI sin romper el contrato de datos.
 
 ## Flujo actual
 
-1. `/panel/new-build` lista personajes de Encore.
+1. `/panel/new-build` lista personajes del catálogo canónico en D1.
 2. Al hacer click en uno, se crea un `BuildDraft` local, se inserta en la
    colección de TanStack DB y se navega a `/panel/builder/$draftId`.
 3. `/panel/builder/$draftId` lee el borrador de la colección y permite editarlo.
@@ -250,11 +250,11 @@ if (record) {
 
 ## Reglas para no romper el contrato
 
-- IDs numéricos de Encore en todo el documento.
+- IDs numéricos del catálogo en todo el documento.
 - Nada de objetos completos de catálogo dentro del draft.
 - Nada de totales calculados persistidos.
-- No dupliques `queryOptions` de Encore; importa desde
-  `src/modules/encore/queries`.
+- El builder lee D1; no importes `src/modules/encore` desde sus pantallas.
+  Usa `src/modules/game-data/queries` para personajes, armas y ecos.
 - Mantén `documentVersion` y la versión de Local Storage separadas.
 - Los drafts locales pueden estar incompletos; el guardado exige nombre y
   payload válido.

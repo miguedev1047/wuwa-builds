@@ -1,5 +1,5 @@
 import { CatalogListRouteSkeleton } from "@/modules/panel/admin/game-data/components/route-skeleton"
-import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
+import { characterQueries } from "@/modules/game-data/queries/characters"
 import { ResonatorListPage } from "@/modules/panel/admin/game-data/views/resonators/list/page"
 import { createFileRoute } from "@tanstack/react-router"
 

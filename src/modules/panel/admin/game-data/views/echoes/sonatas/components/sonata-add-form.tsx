@@ -4,13 +4,13 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import { toSonataInput } from "@/modules/panel/admin/game-data/application/echoes/sonatas"
+import { toSonataInput } from "@/modules/game-data/application/echoes/sonatas"
 import {
   sonataFormInput,
   type SonataFormInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createSonata } from "@/modules/panel/admin/game-data/server/echoes/sonatas"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { createSonata } from "@/modules/game-data/server/echoes/sonatas"
 import {
   SonataFields,
   sonataFormDefaults,

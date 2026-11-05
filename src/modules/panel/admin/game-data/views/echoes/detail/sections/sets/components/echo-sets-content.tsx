@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { echoQueries } from "@/modules/panel/admin/game-data/queries/echoes"
+import { echoQueries } from "@/modules/game-data/queries/echoes"
 import { EchoSetCard } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/sets/components/echo-set-card"
 
 type EchoSetsContentProps = {

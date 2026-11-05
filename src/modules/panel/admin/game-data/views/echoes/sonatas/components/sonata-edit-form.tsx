@@ -8,13 +8,13 @@ import type { SonataSetEffectRow, SonataSetRow } from "@/db/schema"
 import {
   sonataDraftFromRow,
   toSonataInput,
-} from "@/modules/panel/admin/game-data/application/echoes/sonatas"
+} from "@/modules/game-data/application/echoes/sonatas"
 import {
   sonataFormInput,
   type SonataFormInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { updateSonata } from "@/modules/panel/admin/game-data/server/echoes/sonatas"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { updateSonata } from "@/modules/game-data/server/echoes/sonatas"
 import { SonataFields } from "@/modules/panel/admin/game-data/views/echoes/sonatas/components/sonata-form-fields"
 
 type SonataWithEffects = SonataSetRow & { effects: SonataSetEffectRow[] }

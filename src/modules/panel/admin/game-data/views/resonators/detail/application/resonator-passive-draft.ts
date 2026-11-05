@@ -4,7 +4,7 @@ import type { EncorePassive } from "@/modules/encore/domain/character"
 import type {
   ResonatorPassiveInput,
   ResonatorPassiveUpdateInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 
 /** Maps a saved passive row to the edit form values. */
 export function resonatorPassiveDraftFromRow(

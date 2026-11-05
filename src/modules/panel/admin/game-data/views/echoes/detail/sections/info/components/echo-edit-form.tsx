@@ -8,9 +8,9 @@ import type { EchoRow } from "@/db/schema"
 import {
   echoInput,
   type EchoInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { updateEcho } from "@/modules/panel/admin/game-data/server/echoes/echoes"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { updateEcho } from "@/modules/game-data/server/echoes/echoes"
 import { echoDraftFromRow } from "@/modules/panel/admin/game-data/views/echoes/shared/application/echo-draft"
 import { EchoFields } from "@/modules/panel/admin/game-data/views/echoes/shared/components/echo-fields"
 

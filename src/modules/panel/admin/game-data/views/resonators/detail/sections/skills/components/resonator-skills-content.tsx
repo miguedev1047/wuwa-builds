@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
+import { characterQueries } from "@/modules/game-data/queries/characters"
 import { ResonatorSkillCard } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-card"
 
 type ResonatorSkillsContentProps = {

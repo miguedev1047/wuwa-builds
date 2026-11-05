@@ -17,11 +17,9 @@ import {
   weaponProperties,
   weaponPropertyGrowth,
   weapons,
+  type ResonatorRow,
 } from "@/db/schema"
-import type {
-  EncoreCharacterDetail,
-  EncoreCharacterSummary,
-} from "../domain/character"
+import type { EncoreCharacterDetail } from "../domain/character"
 import type {
   EncoreEchoDetail,
   EncoreEchoSet,
@@ -253,21 +251,8 @@ export async function readCharacter(
   }
 }
 
-export async function readCharacters(
-  db: AppDb
-): Promise<EncoreCharacterSummary[]> {
-  const rows = await db.query.resonators.findMany({
-    orderBy: { id: "asc" },
-  })
-
-  return rows.map((row) => ({
-    id: row.id,
-    name: row.name,
-    rarity: row.rarity,
-    element: row.element,
-    weaponType: row.weaponType,
-    icon: row.icon,
-  }))
+export async function readCharacters(db: AppDb): Promise<ResonatorRow[]> {
+  return db.query.resonators.findMany({ orderBy: { id: "asc" } })
 }
 
 /**

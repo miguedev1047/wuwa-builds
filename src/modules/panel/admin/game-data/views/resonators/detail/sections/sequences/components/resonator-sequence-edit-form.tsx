@@ -8,9 +8,9 @@ import { DialogFooter } from "@/components/ui/dialog"
 import {
   resonatorSequenceUpdateInput,
   type ResonatorSequenceUpdateInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { updateResonatorSequence } from "@/modules/panel/admin/game-data/server/resonators/sequences"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { updateResonatorSequence } from "@/modules/game-data/server/resonators/sequences"
 import { resonatorSequenceDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-sequence-draft"
 import { ResonatorSequenceFields } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-form-fields"
 

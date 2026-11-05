@@ -1,5 +1,5 @@
 import type { WeaponPropertyGrowthRow } from "@/db/schema"
-import { formatWeaponGrowthValue } from "@/modules/panel/admin/game-data/application/weapons/property-growth"
+import { formatWeaponGrowthValue } from "@/modules/game-data/application/weapons/property-growth"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { WeaponGrowthDeleteAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-delete-action"
 

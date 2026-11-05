@@ -3,12 +3,12 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   resonatorInput,
   type ResonatorInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 import {
   RESONATOR_ELEMENTS,
   RESONATOR_RARITY,
   RESONATOR_WEAPON_TYPES,
-} from "@/modules/panel/admin/game-data/views/resonators/shared/constants/resonator"
+} from "@/modules/game-data/application/constants/resonator"
 
 export const resonatorFormDefaults: ResonatorInput = {
   id: 0,

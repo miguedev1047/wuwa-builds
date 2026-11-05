@@ -5,9 +5,9 @@ import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import type { EncoreSequence } from "@/modules/encore/domain/character"
-import type { ResonatorSequenceInput } from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createResonatorSequences } from "@/modules/panel/admin/game-data/server/resonators/sequences"
+import type { ResonatorSequenceInput } from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { createResonatorSequences } from "@/modules/game-data/server/resonators/sequences"
 import { resonatorSequencePayloads } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-sequence-draft"
 
 type ResonatorSequenceAddFormProps = {

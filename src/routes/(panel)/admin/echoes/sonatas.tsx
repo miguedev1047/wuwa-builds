@@ -1,5 +1,5 @@
 import { CatalogListRouteSkeleton } from "@/modules/panel/admin/game-data/components/route-skeleton"
-import { sonataQueries } from "@/modules/panel/admin/game-data/queries/sonatas"
+import { sonataQueries } from "@/modules/game-data/queries/sonatas"
 import { SonataListPage } from "@/modules/panel/admin/game-data/views/echoes/sonatas/page"
 import { createFileRoute } from "@tanstack/react-router"
 

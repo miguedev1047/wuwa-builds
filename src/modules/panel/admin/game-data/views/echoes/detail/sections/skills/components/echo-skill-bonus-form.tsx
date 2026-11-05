@@ -12,12 +12,12 @@ import type { EchoSkillBonusRow } from "@/db/schema"
 import {
   echoSkillBonusFormInput,
   type EchoSkillBonusFormInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
 import {
   createEchoSkillBonus,
   updateEchoSkillBonus,
-} from "@/modules/panel/admin/game-data/server/echoes/skills"
+} from "@/modules/game-data/server/echoes/skills"
 import {
   EchoSkillBonusFields,
   echoSkillBonusFormDefaults,

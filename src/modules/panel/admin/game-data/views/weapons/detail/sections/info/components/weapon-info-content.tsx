@@ -3,10 +3,10 @@ import { Badge } from "@/components/ui/badge"
 import { Show } from "@/components/utility/show"
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { weaponQueries } from "@/modules/panel/admin/game-data/queries/weapons"
+import { weaponQueries } from "@/modules/game-data/queries/weapons"
 import { WeaponDeleteAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/info/components/weapon-delete-action"
 import { WeaponEditAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/info/components/weapon-edit-action"
-import { weaponRarityLabel } from "@/modules/panel/admin/game-data/views/weapons/shared/constants/weapon"
+import { weaponRarityLabel } from "@/modules/game-data/application/constants/weapon"
 
 type WeaponInfoContentProps = {
   weaponId: number

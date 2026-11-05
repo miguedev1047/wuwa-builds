@@ -1,7 +1,7 @@
-import type { PropertyGrowthFormValues } from "@/modules/panel/admin/game-data/application/resonators/property-growth"
+import type { PropertyGrowthFormValues } from "@/modules/game-data/application/resonators/property-growth"
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
-import { resonatorPropertyGrowthInput } from "@/modules/panel/admin/game-data/application/schemas"
+import { resonatorPropertyGrowthInput } from "@/modules/game-data/application/schemas"
 
 /** Empty values shared by every property growth form. */
 export const propertyGrowthFormDefaults: PropertyGrowthFormValues = {

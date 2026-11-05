@@ -12,12 +12,12 @@ import { Field } from "@/components/ui/field"
 import { Spinner } from "@/components/ui/spinner"
 import { Show } from "@/components/utility/show"
 import type { BuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
-import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+import { characterQueries } from "@/modules/game-data/queries/characters"
+import { weaponQueries } from "@/modules/game-data/queries/weapons"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { eq, useLiveQuery } from "@tanstack/react-db"
-import { useSuspenseQuery } from "@tanstack/react-query"
+import { useQuery, useSuspenseQuery } from "@tanstack/react-query"
 import { cn } from "cn"
 import { Suspense, useState } from "react"
 
@@ -36,13 +36,14 @@ export function BuildWeapon({ collection, draftId }: BuildWeaponProps) {
       .findOne()
   )
 
-  const { data: weapons } = useSuspenseQuery(encoreWeaponQueries.list())
+  const { data: weapons } = useSuspenseQuery(weaponQueries.list())
 
-  const { data: character } = useSuspenseQuery({
-    ...encoreCharacterQueries.detail(draft?.characterId ?? 0),
+  const { data: character } = useQuery({
+    ...characterQueries.detail(draft?.characterId ?? 0),
+    enabled: draft?.characterId !== undefined,
   })
 
-  const weaponType = character.weaponType
+  const weaponType = character?.weaponType ?? ""
 
   const filteredWeaponsByType = weapons.filter(
     (item) => item.typeName === weaponType
@@ -164,15 +165,12 @@ interface WeaponActionsProps {
 }
 
 function WeaponActions({ weaponId, refinementRank }: WeaponActionsProps) {
-  const { data: weapon } = useSuspenseQuery(
-    encoreWeaponQueries.detail(weaponId)
-  )
-
-  if (!weaponId) return
+  const { data: weapon } = useSuspenseQuery(weaponQueries.detail(weaponId))
 
   const effect =
-    weapon.refinements.find((refinement) => refinement.rank === refinementRank)
-      ?.effect ?? ""
+    weapon.refinements.find(
+      (refinement) => refinement.sortOrder === refinementRank
+    )?.effect ?? ""
 
   return (
     <div>

@@ -3,7 +3,7 @@ import type { EncoreSequence } from "@/modules/encore/domain/character"
 import type {
   ResonatorSequenceInput,
   ResonatorSequenceUpdateInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 
 /** Maps a saved sequence row to the edit form values. */
 export function resonatorSequenceDraftFromRow(

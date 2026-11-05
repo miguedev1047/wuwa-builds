@@ -5,7 +5,7 @@ import { STAT_KINDS } from "@/modules/builds/domain/calculate-build-stats"
 import {
   WEAPON_REFINEMENT_STATS,
   WEAPON_REFINEMENT_STAT_OPTIONS,
-} from "@/modules/panel/admin/game-data/application/weapons/refinement-stats"
+} from "@/modules/game-data/application/weapons/refinement-stats"
 
 describe("WEAPON_REFINEMENT_STATS", () => {
   test("offers a single option per label", () => {

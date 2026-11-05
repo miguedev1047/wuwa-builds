@@ -8,9 +8,9 @@ import { DialogFooter } from "@/components/ui/dialog"
 import {
   resonatorSkillUpdateInput,
   type ResonatorSkillUpdateInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { updateResonatorSkill } from "@/modules/panel/admin/game-data/server/resonators/skills"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { updateResonatorSkill } from "@/modules/game-data/server/resonators/skills"
 import { resonatorSkillDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-skill-draft"
 import { ResonatorSkillFields } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-form-fields"
 

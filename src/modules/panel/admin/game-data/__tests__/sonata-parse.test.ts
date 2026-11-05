@@ -7,7 +7,7 @@ import {
   sonataDraftFromRow,
   toSonataEffectDraft,
   toSonataInput,
-} from "@/modules/panel/admin/game-data/application/echoes/sonatas"
+} from "@/modules/game-data/application/echoes/sonatas"
 
 describe("parseSonataStat", () => {
   test("maps every Encore alias to its canonical stat id", () => {

@@ -28,7 +28,7 @@ import {
   weaponRefinementStatInput,
   weaponRefinementStatsFormInput,
   weaponRefinementStatsInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
+} from "@/modules/game-data/application/schemas"
 
 const valid = {
   id: 1402,

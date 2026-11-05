@@ -16,10 +16,10 @@ import type { EncoreProperty } from "@/modules/encore/domain/property"
 import {
   resonatorPropertyLevelsSchema,
   type ResonatorPropertyLevelInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { statLabel } from "@/modules/panel/admin/game-data/application/stats/stats"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createResonatorPropertyLevels } from "@/modules/panel/admin/game-data/server/resonators/properties"
+} from "@/modules/game-data/application/schemas"
+import { statLabel } from "@/modules/game-data/application/stats/stats"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { createResonatorPropertyLevels } from "@/modules/game-data/server/resonators/properties"
 import { propertyLevelDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/detail/application/property-level-draft"
 import {
   PropertyLevelFields,

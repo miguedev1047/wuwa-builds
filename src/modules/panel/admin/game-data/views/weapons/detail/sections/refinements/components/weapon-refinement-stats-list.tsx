@@ -1,5 +1,5 @@
 import type { WeaponRefinementStatRow } from "@/db/schema"
-import { statLabel } from "@/modules/panel/admin/game-data/application/stats/stats"
+import { statLabel } from "@/modules/game-data/application/stats/stats"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
 import { WeaponRefinementStatDeleteAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-delete-action"
 import { WeaponRefinementStatEditAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-edit-action"

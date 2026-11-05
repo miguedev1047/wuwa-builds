@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { weaponQueries } from "@/modules/panel/admin/game-data/queries/weapons"
+import { weaponQueries } from "@/modules/game-data/queries/weapons"
 import { WeaponRefinementCard } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-card"
 
 type WeaponRefinementsContentProps = {

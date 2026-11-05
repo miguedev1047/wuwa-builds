@@ -7,9 +7,9 @@ import { DialogFooter } from "@/components/ui/dialog"
 import {
   weaponRefinementStatsFormInput,
   type WeaponRefinementStatInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createWeaponRefinementStats } from "@/modules/panel/admin/game-data/server/weapons/refinement-stats"
+} from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { createWeaponRefinementStats } from "@/modules/game-data/server/weapons/refinement-stats"
 import { weaponStatPayloads } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
 import {
   WeaponRefinementStatFields,

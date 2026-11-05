@@ -18,10 +18,10 @@ import type { EncoreProperty } from "@/modules/encore/domain/property"
 import {
   weaponPropertyInput,
   type WeaponPropertyInput,
-} from "@/modules/panel/admin/game-data/application/schemas"
-import { statLabel } from "@/modules/panel/admin/game-data/application/stats/stats"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { createWeaponProperty } from "@/modules/panel/admin/game-data/server/weapons/properties"
+} from "@/modules/game-data/application/schemas"
+import { statLabel } from "@/modules/game-data/application/stats/stats"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { createWeaponProperty } from "@/modules/game-data/server/weapons/properties"
 import { weaponPropertyDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-property-draft"
 import {
   WeaponPropertyFields,

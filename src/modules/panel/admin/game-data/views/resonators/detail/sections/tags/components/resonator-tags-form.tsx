@@ -6,9 +6,9 @@ import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import type { EncoreTag } from "@/modules/encore/domain/character"
-import { resonatorTagsSelectionInput } from "@/modules/panel/admin/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { replaceResonatorTags } from "@/modules/panel/admin/game-data/server/resonators/tags"
+import { resonatorTagsSelectionInput } from "@/modules/game-data/application/schemas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { replaceResonatorTags } from "@/modules/game-data/server/resonators/tags"
 import { toTagInput } from "@/modules/panel/admin/game-data/views/resonators/detail/application/to-tag-input"
 
 type ResonatorTagsFormProps = {

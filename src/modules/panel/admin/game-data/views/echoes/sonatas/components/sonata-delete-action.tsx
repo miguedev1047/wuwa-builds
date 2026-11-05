@@ -4,8 +4,8 @@ import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
 import type { SonataSetRow } from "@/db/schema"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
-import { deleteSonata } from "@/modules/panel/admin/game-data/server/echoes/sonatas"
+import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { deleteSonata } from "@/modules/game-data/server/echoes/sonatas"
 
 type SonataDeleteActionProps = {
   sonata: SonataSetRow

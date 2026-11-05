@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { characterQueries } from "@/modules/panel/admin/game-data/queries/characters"
+import { characterQueries } from "@/modules/game-data/queries/characters"
 import { findEncoreProperty } from "@/modules/panel/admin/game-data/views/resonators/detail/application/property-level-draft"
 import { PropertyLevelRow } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-row"
 
