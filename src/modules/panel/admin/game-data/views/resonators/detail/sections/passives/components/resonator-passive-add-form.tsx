@@ -35,8 +35,6 @@ export function ResonatorPassiveAddForm({
     mutationFn: (payloads: ResonatorPassiveInput[]) =>
       createResonatorPassives({ data: payloads }),
     onSuccess: async (_created, payloads) => {
-      console.log(payloads)
-
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.character(resonatorId),
       })
