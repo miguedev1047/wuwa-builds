@@ -9,6 +9,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
+import { statLabel } from "@/modules/panel/admin/game-data/application/stats/stats"
 import { Show } from "@/components/utility/show"
 import type { EncoreProperty } from "@/modules/encore/domain/property"
 import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
@@ -44,7 +45,9 @@ export function PropertyLevelRow({
         </Show>
 
         <EditableSection.ItemContent>
-          <EditableSection.ItemTitle>{property.name}</EditableSection.ItemTitle>
+          <EditableSection.ItemTitle>
+            {statLabel(property.name)}
+          </EditableSection.ItemTitle>
           <EditableSection.ItemDescription>
             Valor base: {property.baseValue} · {property.growth.length} niveles
           </EditableSection.ItemDescription>

@@ -19,6 +19,7 @@ import {
   weaponPropertyInput,
   type WeaponPropertyInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
+import { statLabel } from "@/modules/panel/admin/game-data/application/stats/stats"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { createWeaponProperty } from "@/modules/panel/admin/game-data/server/weapons/properties"
 import { weaponPropertyDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-property-draft"
@@ -83,7 +84,7 @@ export function WeaponPropertyAddForm({
       return []
     }
 
-    return [{ label: draft.name, value: String(index), draft }]
+    return [{ label: statLabel(draft.name), value: String(index), draft }]
   })
 
   return (

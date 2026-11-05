@@ -17,6 +17,7 @@ import {
   resonatorPropertyLevelsSchema,
   type ResonatorPropertyLevelInput,
 } from "@/modules/panel/admin/game-data/application/schemas"
+import { statLabel } from "@/modules/panel/admin/game-data/application/stats/stats"
 import { wuwaBuildsKeys } from "@/modules/panel/admin/game-data/queries/keys"
 import { createResonatorPropertyLevels } from "@/modules/panel/admin/game-data/server/resonators/properties"
 import { propertyLevelDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/detail/application/property-level-draft"
@@ -83,7 +84,7 @@ export function PropertyLevelAddForm({
       return []
     }
 
-    return [{ label: draft.name, value: property.name, draft }]
+    return [{ label: statLabel(draft.name), value: property.name, draft }]
   })
 
   return (
