@@ -41,8 +41,8 @@ export interface EncoreEchoSummary {
 
 export interface EncoreEchoSkill {
   description: string
-  cooldown: number
-  damage: unknown[]
+  simpleDescription: string
+  icon: string
 }
 
 export interface EncoreEchoDetail extends EncoreEchoSummary {

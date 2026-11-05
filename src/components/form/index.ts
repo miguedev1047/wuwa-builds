@@ -1,5 +1,6 @@
 import { createFormHook } from "@tanstack/react-form"
 import { fieldContext, formContext } from "@/components/form/form-context"
+import { ComboboxField } from "@/components/form/fields/combobox-field"
 import { MultiComboboxField } from "@/components/form/fields/multi-combobox-field"
 import { NumberField } from "@/components/form/fields/number-field"
 import { SelectField } from "@/components/form/fields/select-field"
@@ -29,6 +30,7 @@ export const { useAppForm, withForm, withFieldGroup, extendForm } =
       TextareaField,
       NumberField,
       MultiComboboxField,
+      ComboboxField,
       SelectField,
       SwitchField,
       ImageField,

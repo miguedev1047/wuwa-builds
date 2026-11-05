@@ -1,5 +1,6 @@
 export * from "./echoes/echoes"
 export * from "./echoes/sets"
+export * from "./echoes/skills"
 export * from "./echoes/sonatas"
 export * from "./resonators/passives"
 export * from "./resonators/properties"

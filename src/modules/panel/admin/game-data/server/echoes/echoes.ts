@@ -29,6 +29,8 @@ export const getEcho = createServerFn({
           orderBy: { sortOrder: "asc" },
           with: { sonataEffects: true },
         },
+        skill: true,
+        skillBonuses: { orderBy: { sortOrder: "asc" } },
       },
     })
 

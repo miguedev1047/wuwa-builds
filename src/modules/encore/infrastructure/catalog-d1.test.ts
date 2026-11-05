@@ -197,8 +197,9 @@ const rawEcho: RawEchoDetail = {
   AttributesDescription: "Descripción del eco",
   Skill: {
     DescriptionEx: "Habilidad del eco",
-    SkillCD: 12,
-    DamageList: [{ EntryNumber: 1, Id: 1, DmgType: "Aero" }],
+    SimplyDescription: "Resumen del eco",
+    BattleViewIcon:
+      "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/skill.webp",
   },
   FetterGroupDetails: [
     { Group: { Id: 9, FetterGroupName: "Melodías perdurables" } },

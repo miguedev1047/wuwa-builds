@@ -69,20 +69,62 @@ export const echoSets = sqliteTable(
   ]
 )
 
-/** `Skill`: the echo active skill (one per echo). */
+/** `Skill`: the echo active skill text (one per echo). */
 export const echoSkills = sqliteTable("echo_skills", {
   echoId: integer("echo_id", { mode: "number" })
     .primaryKey()
     .references(() => echoes.id, { onDelete: "cascade" }),
-  /** `DescriptionEx`, falling back to `SimplyDescription`. */
+  /** `DescriptionEx` */
   description: text("description").notNull().default(""),
-  /** `SkillCD` */
-  cooldown: real("cooldown").notNull().default(0),
-  /** `DamageList` (passthrough, `unknown[]`). */
-  damage: text("damage", { mode: "json" }).$type<unknown[]>().notNull(),
+  /** `SimplyDescription` */
+  simpleDescription: text("simple_description").notNull().default(""),
+  /** `BattleViewIcon` */
+  icon: text("icon").notNull().default(""),
 
   ...getDate(),
 })
+
+/**
+ * Stat bonuses the echo skill grants, curated by the admin.
+ *
+ * Encore only sends them as prose (`BuffIds` and `BuffEffects` are empty), so
+ * the stat, the amount and the condition are entered here. `condition` tells
+ * the builder whether it can add the value to a static sheet: `combat` cannot,
+ * `resonator`/`element`/`weaponType` can, and `requiresMainSlot` narrows any of
+ * them to the active slot.
+ */
+export const echoSkillBonuses = sqliteTable(
+  "echo_skill_bonuses",
+  {
+    id: integer("id", { mode: "number" }).primaryKey({
+      autoIncrement: true,
+    }),
+    echoId: integer("echo_id", { mode: "number" })
+      .notNull()
+      .references(() => echoes.id, { onDelete: "cascade" }),
+    /** Canonical builder stat key. */
+    statId: text("stat_id").notNull(),
+    /** Bonus amount in percent. */
+    value: real("value").notNull().default(0),
+    /** Only applies to the echo equipped in the main slot. */
+    requiresMainSlot: integer("requires_main_slot", { mode: "boolean" })
+      .notNull()
+      .default(false),
+    /**
+     * `none`, `resonator`, `element`, `weaponType` or `combat`. The first four
+     * are computable; `combat` is a trigger the builder only displays.
+     */
+    condition: text("condition").notNull().default("none"),
+    /** Character id, element id or weapon type id, depending on `condition`. */
+    conditionValue: text("condition_value"),
+    sortOrder: integer("sort_order", { mode: "number" }).notNull().default(0),
+
+    ...getDate(),
+  },
+  (table) => [
+    index("echo_skill_bonuses_echo_sort_idx").on(table.echoId, table.sortOrder),
+  ]
+)
 
 /**
  * Sonata sets as a first class catalog (`FetterGroupDetails[].Group`).
@@ -153,13 +195,15 @@ export type EchoSetRow = typeof echoSets.$inferSelect
 export type NewEchoSetRow = typeof echoSets.$inferInsert
 export type EchoSkillRow = typeof echoSkills.$inferSelect
 export type NewEchoSkillRow = typeof echoSkills.$inferInsert
+export type EchoSkillBonusRow = typeof echoSkillBonuses.$inferSelect
+export type NewEchoSkillBonusRow = typeof echoSkillBonuses.$inferInsert
 export type SonataSetRow = typeof sonataSets.$inferSelect
 export type NewSonataSetRow = typeof sonataSets.$inferInsert
 export type SonataSetEffectRow = typeof sonataSetEffects.$inferSelect
 export type NewSonataSetEffectRow = typeof sonataSetEffects.$inferInsert
 
 export const echoRelations = defineRelationsPart(
-  { echoes, echoSets, sonataSetEffects, echoSkills },
+  { echoes, echoSets, sonataSetEffects, echoSkills, echoSkillBonuses },
   (r) => ({
     echoes: {
       sets: r.many.echoSets({
@@ -169,6 +213,10 @@ export const echoRelations = defineRelationsPart(
       skill: r.one.echoSkills({
         from: r.echoes.id,
         to: r.echoSkills.echoId,
+      }),
+      skillBonuses: r.many.echoSkillBonuses({
+        from: r.echoes.id,
+        to: r.echoSkillBonuses.echoId,
       }),
     },
     echoSets: {
@@ -184,6 +232,12 @@ export const echoRelations = defineRelationsPart(
     echoSkills: {
       echo: r.one.echoes({
         from: r.echoSkills.echoId,
+        to: r.echoes.id,
+      }),
+    },
+    echoSkillBonuses: {
+      echo: r.one.echoes({
+        from: r.echoSkillBonuses.echoId,
         to: r.echoes.id,
       }),
     },

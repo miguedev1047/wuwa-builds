@@ -477,8 +477,8 @@ export async function saveEcho(
     await db.insert(echoSkills).values({
       echoId: echo.id,
       description: echo.skill.description,
-      cooldown: echo.skill.cooldown,
-      damage: echo.skill.damage,
+      simpleDescription: echo.skill.simpleDescription,
+      icon: echo.skill.icon,
     })
   }
 }
@@ -520,8 +520,8 @@ export async function readEcho(
     skill: row.skill
       ? {
           description: row.skill.description,
-          cooldown: row.skill.cooldown,
-          damage: row.skill.damage,
+          simpleDescription: row.skill.simpleDescription,
+          icon: row.skill.icon,
         }
       : null,
   }

@@ -322,8 +322,7 @@ export function echoListRows(data: RawEchoList): RawEchoSummary[] {
 interface RawEchoSkill {
   DescriptionEx?: string
   SimplyDescription?: string
-  SkillCD?: number
-  DamageList?: unknown[]
+  BattleViewIcon?: string
 }
 
 interface RawEchoFetterMapEntry {
@@ -495,8 +494,8 @@ export function toEchoDetail(raw: RawEchoDetail): EncoreEchoDetail {
     skill: skill
       ? {
           description: skill.DescriptionEx ?? skill.SimplyDescription ?? "",
-          cooldown: skill.SkillCD ?? 0,
-          damage: skill.DamageList ?? [],
+          simpleDescription: skill.SimplyDescription ?? "",
+          icon: encoreAssetUrl(skill.BattleViewIcon),
         }
       : null,
   }
