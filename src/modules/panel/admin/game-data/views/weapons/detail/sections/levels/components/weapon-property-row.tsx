@@ -15,6 +15,7 @@ import { EditableSection } from "@/modules/panel/admin/game-data/components/edit
 import { WeaponGrowthAddAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-add-action"
 import { WeaponGrowthList } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-list"
 import { WeaponPropertyDeleteAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-property-delete-action"
+import { statLabel } from "@/modules/game-data/application/stats/stats"
 
 type WeaponPropertyRowProps = {
   property: WeaponPropertyRowData & { growth: WeaponPropertyGrowthRow[] }
@@ -44,7 +45,9 @@ export function WeaponPropertyRow({
         </Show>
 
         <EditableSection.ItemContent>
-          <EditableSection.ItemTitle>{property.name}</EditableSection.ItemTitle>
+          <EditableSection.ItemTitle>
+            {statLabel(property.name)}
+          </EditableSection.ItemTitle>
           <EditableSection.ItemDescription>
             Valor base: {property.baseValue} · {property.growth.length} niveles
           </EditableSection.ItemDescription>
