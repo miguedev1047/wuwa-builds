@@ -5,10 +5,13 @@ UI sin romper el contrato de datos.
 
 ## Flujo actual
 
-1. `/panel/new-build` lista personajes del catálogo canónico en D1.
-2. Al hacer click en uno, se crea un `BuildDraft` local, se inserta en la
-   colección de TanStack DB y se navega a `/panel/builder/$draftId`.
-3. `/panel/builder/$draftId` lee el borrador de la colección y permite editarlo.
+1. `/panel/new-build` lista los resonadores del catálogo canónico en D1 y
+   muestra un preview en vivo.
+2. Al seleccionar uno, se crea o actualiza un `BuildDraft` local en la
+   colección de TanStack DB. El preview lo lee con `useLiveQuery`, así que se
+   actualiza sin esperar una query.
+3. `/panel/builder/$draftId` lee el borrador de la colección y permite editarlo
+   en detalle.
 4. El borrador vive en Local Storage, con scope por `session.user.id`.
 5. Guardar en D1 todavía no está conectado a la UI: usa los server functions que
    ya existen.
@@ -21,13 +24,17 @@ UI sin romper el contrato de datos.
 {
   id: string // clave local de la colección
   savedBuildId: string | null // null hasta guardar en D1
-  characterId: number // ID numérico de Encore
+  characterId: number // ID numérico del catálogo
+  characterSnapshot: CharacterSnapshot | null // solo local, no va a D1
   name: string // puede estar vacío en local
   documentVersion: 1
   payload: BuildPayload
   createdAt: string // ISO
   updatedAt: string // ISO
 }
+
+// CharacterSnapshot: id, name, icon, iconLarge, rarity, element, weaponType
+// y skills. Sirve para pintar el preview antes de que llegue el detalle.
 ```
 
 ### `BuildPayload` (V1)
@@ -251,7 +258,8 @@ if (record) {
 ## Reglas para no romper el contrato
 
 - IDs numéricos del catálogo en todo el documento.
-- Nada de objetos completos de catálogo dentro del draft.
+- El snapshot de catálogo es solo para UI local; el guardado en D1 manda
+  `characterId` + `payload`, nunca el snapshot.
 - Nada de totales calculados persistidos.
 - El builder lee D1; no importes `src/modules/encore` desde sus pantallas.
   Usa `src/modules/game-data/queries` para personajes, armas y ecos.

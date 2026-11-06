@@ -7,12 +7,14 @@ import {
 } from "@tanstack/react-router"
 import { Devtools } from "@/components/utility/devtools"
 import type { QueryClient } from "@tanstack/react-query"
+import type { DbClient } from "@tanstack/react-db"
 import { ThemeProvider } from "@/providers/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { SkulletProvider } from "skullet/react"
 
 export interface RouteContext {
+  dbClient: DbClient
   queryClient: QueryClient
 }
 

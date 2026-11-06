@@ -1,48 +1,52 @@
-import { Field, FieldLabel } from "@/components/ui/field"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
-import type { BuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
-import { eq, useLiveQuery } from "@tanstack/react-db"
+import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
+import { useParams, useRouteContext } from "@tanstack/react-router"
 
-interface BuildResonatorSequenceProps {
-  draftId: string
-  collection: BuildDraftCollection
-}
+export function BuildResonatorSequence() {
+  const { session } = useRouteContext({ from: "/(panel)/panel" })
 
-export function BuildResonatorSequence({
-  collection,
-  draftId,
-}: BuildResonatorSequenceProps) {
-  const { data: draft } = useLiveQuery((q) =>
+  const { buildId } = useParams({
+    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
+  })
+
+  const { data: build } = useLiveSuspenseQuery((q) =>
     q
-      .from({ draft: collection })
-      .where(({ draft }) => eq(draft.id, draftId))
+      .from({ build: buildCollection })
+      .where(({ build }) =>
+        and(eq(build.buildId, buildId), eq(build.sessionId, session.session.id))
+      )
       .findOne()
   )
 
-  if (!draft) return null
+  const handleSequencyChange = (value: number | readonly number[]) => {
+    if (value) {
+      buildCollection.update(buildId, (current) => {
+        current.resonator.sequency = value as number
+      })
+    } else {
+      buildCollection.update(buildId, (current) => {
+        current.resonator.sequency = 0
+      })
+    }
+  }
+
+  const sequency = build?.resonator.sequency ?? 0
 
   return (
-    <Field>
-      <FieldLabel className="text-lg">
-        Secuencia - {draft.payload.resonator.sequenceRank}
-      </FieldLabel>
-
-      <Slider
-        value={draft.payload.resonator.sequenceRank}
-        max={6}
-        min={0}
-        onValueChange={(value) => {
-          if (value) {
-            collection.update(draftId, (current) => {
-              current.payload.resonator.sequenceRank = value as number
-            })
-          } else {
-            collection.update(draftId, (current) => {
-              current.payload.resonator.sequenceRank = 0
-            })
-          }
-        }}
-      />
-    </Field>
+    <Card>
+      <CardHeader>
+        <CardTitle>Secuencia - {sequency}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Slider
+          value={sequency}
+          max={6}
+          min={0}
+          onValueChange={handleSequencyChange}
+        />
+      </CardContent>
+    </Card>
   )
 }

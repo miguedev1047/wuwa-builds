@@ -5,12 +5,13 @@ import { eq } from "drizzle-orm"
 import { idInput } from "@/modules/game-data/application/id"
 import { resonatorInput } from "@/modules/game-data/application/schemas"
 import { adminMiddleware, authMiddleware } from "@/functions/middlewares"
+import type { CharacterDetail } from "@/modules/game-data/domain/character"
 import { resonators } from "@/db/schema"
 
 export const getCharacters = createServerFn({ method: "GET" })
   .middleware([authMiddleware])
   .handler(async () => {
-    return await db.query.resonators.findMany()
+    return await db.query.resonators.findMany({ orderBy: { id: "asc" } })
   })
 
 /**
@@ -23,7 +24,7 @@ export const getCharacter = createServerFn({
 })
   .middleware([authMiddleware])
   .validator(idInput)
-  .handler(async ({ data }) => {
+  .handler(async ({ data }): Promise<CharacterDetail> => {
     const resonator = await db.query.resonators.findFirst({
       where: { id: data.id },
       with: {

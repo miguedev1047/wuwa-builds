@@ -16,6 +16,11 @@ function character(skills: CharacterSkill[]): BuildDraftCharacter {
   return {
     id: 42,
     name: "Aemeath",
+    icon: "character-icon",
+    iconLarge: "character-icon-large",
+    rarity: 5,
+    element: "fusion",
+    weaponType: "sword",
     skills,
   }
 }
@@ -33,6 +38,12 @@ describe("createBuildDraftFromCharacter", () => {
     })
 
     expect(draft.characterId).toBe(42)
+    expect(draft.characterSnapshot).toMatchObject({
+      id: 42,
+      name: "Aemeath",
+      iconLarge: "character-icon-large",
+      weaponType: "sword",
+    })
     expect(draft.payload.resonator.skillLevels).toEqual([
       { skillId: 1, level: SKILL_LEVEL_MAX },
       { skillId: 2, level: SKILL_LEVEL_MAX },

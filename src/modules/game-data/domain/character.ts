@@ -38,3 +38,30 @@ export function growthValue(
   if (row.valueNumber !== null) return row.valueNumber
   return row.valueText ?? 0
 }
+
+/**
+ * Growth value for a real game level.
+ *
+ * Growth rows are ordered by `sortOrder` and repeat ascension levels, so they
+ * cannot be indexed by array position. The first exact level wins; otherwise
+ * the latest lower level is used.
+ */
+export function growthValueAtLevel(
+  growth: Pick<
+    ResonatorPropertyGrowthRow,
+    "level" | "valueNumber" | "valueText"
+  >[],
+  level: number
+): number | string {
+  const exact = growth.find((entry) => entry.level === level)
+
+  if (exact) return growthValue(exact)
+
+  let fallback: (typeof growth)[number] | undefined
+
+  for (const entry of growth) {
+    if (entry.level <= level) fallback = entry
+  }
+
+  return fallback ? growthValue(fallback) : 0
+}

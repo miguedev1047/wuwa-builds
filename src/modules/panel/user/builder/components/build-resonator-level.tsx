@@ -1,79 +1,98 @@
-import { Field, FieldLabel } from "@/components/ui/field"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item"
 import { Slider } from "@/components/ui/slider"
-import { Spinner } from "@/components/ui/spinner"
-import { Show } from "@/components/utility/show"
-import type { BuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
+import {
+  LEVEL_MILESTONES,
+  levelFromStep,
+  stepFromLevel,
+} from "@/modules/builds/domain/build"
+import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
 import { statLabel } from "@/modules/game-data/application/stats/stats"
-import { growthValue } from "@/modules/game-data/domain/character"
+import { growthValueAtLevel } from "@/modules/game-data/domain/character"
 import { characterQueries } from "@/modules/game-data/queries/characters"
-import { eq, useLiveQuery } from "@tanstack/react-db"
-import { useQuery } from "@tanstack/react-query"
+import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { useParams, useRouteContext } from "@tanstack/react-router"
 
-interface BuildResonatorLevelProps {
-  draftId: string
-  collection: BuildDraftCollection
-}
+export function BuildResonatorLevel() {
+  const { session } = useRouteContext({ from: "/(panel)/panel" })
 
-export function BuildResonatorLevel({
-  collection,
-  draftId,
-}: BuildResonatorLevelProps) {
-  const { data: draft } = useLiveQuery((q) =>
+  const { buildId, rosterId } = useParams({
+    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
+  })
+  const resonatorId = parseInt(rosterId)
+
+  const { data: build } = useLiveSuspenseQuery((q) =>
     q
-      .from({ draft: collection })
-      .where(({ draft }) => eq(draft.id, draftId))
+      .from({ build: buildCollection })
+      .where(({ build }) =>
+        and(eq(build.buildId, buildId), eq(build.sessionId, session.session.id))
+      )
       .findOne()
   )
 
-  const { data: character, isLoading } = useQuery({
-    ...characterQueries.detail(draft?.characterId ?? 0),
-    enabled: draft?.characterId !== undefined,
-  })
+  const { data: resonator } = useSuspenseQuery(
+    characterQueries.detail(resonatorId)
+  )
 
-  if (!draft) return null
+  const handleLevelChange = (value: number | readonly number[]) => {
+    const step = Array.isArray(value) ? value[0] : value
+
+    if (typeof step !== "number") return
+
+    buildCollection.update(buildId, (draft) => {
+      draft.resonator.level = levelFromStep(step)
+    })
+  }
+
+  const resonatorLevel = build?.resonator.level ?? 0
+  const levelStep = stepFromLevel(resonatorLevel)
+
+  const levelProperties = resonator.properties
 
   return (
-    <Field>
-      <FieldLabel className="text-lg">
-        Nivel - {draft.payload.resonator.level * 10}
-      </FieldLabel>
+    <Card>
+      <CardHeader className="text-lg font-bold">
+        <CardTitle>Niveles</CardTitle>
+      </CardHeader>
 
-      <Slider
-        value={draft.payload.resonator.level}
-        max={10}
-        min={1}
-        onValueChange={(value) => {
-          if (value) {
-            collection.update(draftId, (current) => {
-              current.payload.resonator.level = value as number
-            })
-          }
-        }}
-      />
+      <CardContent>
+        <div className="space-y-4">
+          <Slider
+            value={levelStep}
+            max={LEVEL_MILESTONES.length - 1}
+            min={0}
+            onValueChange={handleLevelChange}
+          />
 
-      <Show when={!isLoading} fallback={<Spinner />}>
-        <Show
-          when={character?.properties}
-          fallback={<p>Este resonador no tiene niveles</p>}
-        >
-          {(properties) => (
-            <>
-              <ul className="mt-4 grid gap-2">
-                {properties.map((item) => (
-                  <li key={item.name}>
-                    <p className="text-xs">
-                      {statLabel(item.name)} -{" "}
-                      {growthValue(
-                        item.growth[draft.payload.resonator.level - 1]
-                      )}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </Show>
-      </Show>
-    </Field>
+          <ItemGroup>
+            {levelProperties.slice(0, 3).map((level) => (
+              <Item variant="muted" key={level.name}>
+                <ItemMedia variant="image">
+                  <img
+                    src={level.icon}
+                    alt={level.name}
+                    className="size-full object-contain"
+                  />
+                </ItemMedia>
+                <ItemContent>
+                  <ItemTitle>{statLabel(level.name)}</ItemTitle>
+                  <ItemDescription>
+                    Valor: {growthValueAtLevel(level.growth, resonatorLevel)}
+                  </ItemDescription>
+                </ItemContent>
+              </Item>
+            ))}
+          </ItemGroup>
+        </div>
+      </CardContent>
+    </Card>
   )
 }

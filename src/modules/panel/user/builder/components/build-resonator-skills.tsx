@@ -1,123 +1,78 @@
-import { Field, FieldLabel } from "@/components/ui/field"
-import { Slider } from "@/components/ui/slider"
-import { Spinner } from "@/components/ui/spinner"
-import { Show } from "@/components/utility/show"
-import type { BuildDraftCollection } from "@/modules/builds/client/build-drafts-provider"
-import { SKILL_LEVEL_MAX } from "@/modules/builds/domain/build"
-import {
-  getUpgradeableSkills,
-  type UpgradeableSkill,
-} from "@/modules/builds/infrastructure/catalog/skill-levels"
+import { ItemGroup } from "@/components/ui/item"
+import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
 import { characterQueries } from "@/modules/game-data/queries/characters"
-import { eq, useLiveQuery } from "@tanstack/react-db"
-import { useQuery } from "@tanstack/react-query"
+import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { useParams, useRouteContext } from "@tanstack/react-router"
+import { BuildResonatorSkillItem } from "@/modules/panel/user/builder/components/build-resonator-skill-item"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-interface BuildResonatorSkillsProps {
-  draftId: string
-  collection: BuildDraftCollection
-}
+export function BuildResonatorSkills() {
+  const { session } = useRouteContext({ from: "/(panel)/panel" })
 
-export function BuildResonatorSkills({
-  collection,
-  draftId,
-}: BuildResonatorSkillsProps) {
-  const { data: draft } = useLiveQuery((q) =>
+  const { buildId, rosterId } = useParams({
+    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
+  })
+  const resonatorId = parseInt(rosterId)
+
+  const { data: build } = useLiveSuspenseQuery((q) =>
     q
-      .from({ draft: collection })
-      .where(({ draft }) => eq(draft.id, draftId))
+      .from({ build: buildCollection })
+      .where(({ build }) =>
+        and(eq(build.buildId, buildId), eq(build.sessionId, session.session.id))
+      )
       .findOne()
   )
 
-  const { data: character, isLoading } = useQuery({
-    ...characterQueries.detail(draft?.characterId ?? 0),
-    enabled: draft?.characterId !== undefined,
+  const { data: resonator } = useSuspenseQuery(
+    characterQueries.detail(resonatorId)
+  )
+
+  const resonatorSkills = new Map(
+    resonator.skills.slice(0, 5).map((skill) => [skill.skillId, skill])
+  )
+
+  const skills = (build?.resonator.skills ?? []).flatMap((skill) => {
+    const resonatorSkill = resonatorSkills.get(skill.skillId)
+    return resonatorSkill ? [{ skill, resonatorSkill }] : []
   })
 
-  const resonatorSkills = getUpgradeableSkills(character?.skills ?? [])
-
-  if (!draft) return null
-
-  return (
-    <Field>
-      <FieldLabel className="text-xl">Habilidades</FieldLabel>
-
-      <Show when={!isLoading} fallback={<Spinner />}>
-        <Show
-          when={character?.skills}
-          fallback={<p>Este resonador no tiene habilidades</p>}
-        >
-          <ul className="grid grid-cols-5 gap-1">
-            {resonatorSkills.map((skill) => {
-              return (
-                <BuildResonatorSkillItem
-                  key={skill.skillId}
-                  collection={collection}
-                  draftId={draftId}
-                  skill={skill}
-                />
-              )
-            })}
-          </ul>
-        </Show>
-      </Show>
-    </Field>
-  )
-}
-
-interface BuildResonatorSkillItemProps {
-  draftId: string
-  collection: BuildDraftCollection
-  skill: UpgradeableSkill
-}
-
-export function BuildResonatorSkillItem({
-  collection,
-  draftId,
-  skill,
-}: BuildResonatorSkillItemProps) {
-  const { data: draft } = useLiveQuery((q) =>
-    q
-      .from({ draft: collection })
-      .where(({ draft }) => eq(draft.id, draftId))
-      .findOne()
-  )
-
-  if (!draft) return null
-
-  const skillLevel =
-    draft.payload.resonator.skillLevels.find(
-      (item) => item.skillId === skill.skillId
-    )?.level ?? SKILL_LEVEL_MAX
-
-  const handleSkillLevelChange = (value: number | readonly number[]) => {
-    const skillId = skill.skillId
-    const level = Array.isArray(value) ? value[0] : value
-    if (typeof level !== "number") return
-
-    collection.update(draftId, (current) => {
-      const skillLevels = current.payload.resonator.skillLevels
+  const handleLevelChange = (skillId: number, id: number, level: number) => {
+    buildCollection.update(buildId, (current) => {
+      const skillLevels = current.resonator.skills ?? []
       const existing = skillLevels.find((item) => item.skillId === skillId)
 
       if (existing) {
         existing.level = level
       } else {
-        skillLevels.push({ skillId, level })
+        skillLevels.push({ id, skillId, level })
       }
 
-      current.updatedAt = new Date().toISOString()
+      current.resonator.skills = skillLevels
+      current.updateAt = new Date().toISOString()
     })
   }
 
   return (
-    <li className="space-y-3">
-      <h2 className="text-xs">{skill.type}</h2>
-      <p className="text-xs">{skillLevel}</p>
-      <Slider
-        min={1}
-        max={SKILL_LEVEL_MAX}
-        value={skillLevel}
-        onValueChange={(value) => handleSkillLevelChange(value)}
-      />
-    </li>
+    <Card>
+      <CardHeader>
+        <CardTitle>Habilidades</CardTitle>
+      </CardHeader>
+
+      <CardContent>
+        <ItemGroup>
+          {skills.map(({ skill, resonatorSkill }) => (
+            <BuildResonatorSkillItem
+              key={skill.skillId}
+              skill={skill}
+              resonatorSkill={resonatorSkill}
+              onLevelChange={(level) =>
+                handleLevelChange(skill.skillId, skill.id, level)
+              }
+            />
+          ))}
+        </ItemGroup>
+      </CardContent>
+    </Card>
   )
 }

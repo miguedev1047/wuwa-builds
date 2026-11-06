@@ -16,6 +16,36 @@ export const REFINEMENT_RANK_MAX = 5
 export const ECHO_SLOT_COUNT = 5
 export const SUBSTATS_PER_ECHO_MAX = 5
 
+/**
+ * Selectable level milestones: level 1 and every 10 levels up to 90.
+ *
+ * The payload always stores the real game level, so saved builds stay valid and
+ * catalog growth entries can be looked up by `level`. Sliders use the 0-based
+ * index of this array as their step.
+ */
+export const LEVEL_MILESTONES = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90] as const
+
+/** Real game level for a 0-based slider step, clamped to the last milestone. */
+export function levelFromStep(step: number): number {
+  const index = Math.min(
+    Math.max(Math.trunc(step), 0),
+    LEVEL_MILESTONES.length - 1
+  )
+
+  return LEVEL_MILESTONES[index]
+}
+
+/** 0-based slider step for a real level, snapping down to the last milestone. */
+export function stepFromLevel(level: number): number {
+  let step = 0
+
+  for (let index = 1; index < LEVEL_MILESTONES.length; index += 1) {
+    if (LEVEL_MILESTONES[index] <= level) step = index
+  }
+
+  return step
+}
+
 const numericId = z.number().int().positive()
 
 export const skillLevelSchema = z.object({

@@ -20,6 +20,7 @@ export function buildRecordToDraft(record: BuildRecord): BuildDraft {
     id: record.id,
     savedBuildId: record.id,
     characterId: record.characterId,
+    characterSnapshot: null,
     name: record.name,
     documentVersion: record.documentVersion,
     payload: record.payload,

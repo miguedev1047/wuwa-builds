@@ -4,6 +4,7 @@ import {
   buildPayloadSchema,
   createEmptyBuildPayload,
 } from "./build"
+import { characterSnapshotSchema } from "./character-snapshot"
 
 /**
  * Local editor state. It contains catalog references and user selections, not
@@ -14,8 +15,13 @@ export const buildDraftSchema = z.object({
   id: z.string().min(1),
   /** Null until this draft has been saved to the server. */
   savedBuildId: z.string().min(1).nullable(),
-  /** Numeric Encore character ID. */
+  /** Numeric catalog character ID. */
   characterId: z.number().int().positive(),
+  /**
+   * Local-only display snapshot. It never reaches D1: the save contract only
+   * sends `characterId` and `payload`.
+   */
+  characterSnapshot: characterSnapshotSchema.nullable().default(null),
   /** Drafts may be unnamed; the save contract validates the final name. */
   name: z.string().max(80),
   documentVersion: z.literal(BUILD_DOCUMENT_VERSION),
@@ -41,6 +47,7 @@ export function createEmptyBuildDraft(
     id: input.id,
     savedBuildId: null,
     characterId: input.characterId,
+    characterSnapshot: null,
     name: input.name ?? "",
     documentVersion: BUILD_DOCUMENT_VERSION,
     payload: createEmptyBuildPayload(),

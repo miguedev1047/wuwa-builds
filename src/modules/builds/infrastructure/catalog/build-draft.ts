@@ -1,4 +1,7 @@
-import type { CharacterSkill } from "@/modules/game-data/domain/character"
+import {
+  toCharacterSnapshot,
+  type CharacterSnapshotSource,
+} from "../../domain/character-snapshot"
 import {
   buildDraftSchema,
   createEmptyBuildDraft,
@@ -7,11 +10,7 @@ import {
 import { createDefaultSkillLevels } from "./skill-levels"
 
 /** Minimal catalog record the draft needs; the full detail is not stored. */
-export interface BuildDraftCharacter {
-  id: number
-  name: string
-  skills: CharacterSkill[]
-}
+export type BuildDraftCharacter = CharacterSnapshotSource
 
 export interface CreateBuildDraftFromCharacterInput {
   id: string
@@ -36,11 +35,12 @@ export function createBuildDraftFromCharacter({
 
   return buildDraftSchema.parse({
     ...emptyDraft,
+    characterSnapshot: toCharacterSnapshot(character),
     payload: {
       ...emptyDraft.payload,
       resonator: {
         ...emptyDraft.payload.resonator,
-        skillLevels: createDefaultSkillLevels(character.skills),
+        skillLevels: createDefaultSkillLevels(character.skills ?? []),
       },
     },
   })
