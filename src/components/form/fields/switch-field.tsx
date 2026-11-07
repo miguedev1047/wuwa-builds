@@ -36,9 +36,9 @@ export function SwitchField({
     <Field
       orientation="horizontal"
       data-invalid={invalid}
-      className={cn("border", className)}
+      className={cn("overflow-hidden rounded-md border", className)}
     >
-      <FieldLabel htmlFor={field.name} className="p-2">
+      <FieldLabel htmlFor={field.name} className="p-4">
         <FieldContent>
           <FieldTitle>{label}</FieldTitle>
           <FieldDescription>{description}</FieldDescription>
