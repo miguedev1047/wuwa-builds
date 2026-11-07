@@ -1,13 +1,13 @@
-import { cn } from "cn"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Loading03Icon } from "@hugeicons/core-free-icons"
+import { cn } from "cn"
 
-function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
+type SpinnerProps = Omit<React.ComponentProps<typeof HugeiconsIcon>, "icon">
+
+function Spinner({ className, ...props }: SpinnerProps) {
   return (
     <HugeiconsIcon
       icon={Loading03Icon}
-      // @ts-expect-error
-      strokeWidth={2}
       data-slot="spinner"
       role="status"
       aria-label="Loading"
