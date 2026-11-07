@@ -26,7 +26,8 @@ const DEFAULT_REFINEMENT_RANK = 1
 export function createEmptyEchoes(): EchoesDataProps[] {
   return Array.from({ length: ECHO_SLOT_COUNT }).map((_, index) => ({
     data: null,
-    echoSet: "",
+    echoSetId: null,
+    mainStatStat: "",
     mainStatLabel: "",
     index,
     mainStatValue: 0,
@@ -35,6 +36,7 @@ export function createEmptyEchoes(): EchoesDataProps[] {
     substats: Array.from({ length: SUBSTATS_PER_ECHO_MAX }).map(
       (_, substatIndex) => ({
         index: substatIndex,
+        valueStat: "",
         valueLabel: "",
         valueNumber: 0,
       })

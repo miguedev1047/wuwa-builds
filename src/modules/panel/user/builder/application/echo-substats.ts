@@ -13,10 +13,10 @@ export function echoSubstatOptions(cost: number): EchoSubstatOption[] {
   return SUBSTATS_BY_COST[cost] ?? []
 }
 
-/** Possible roll values for one substat label. */
-export function echoSubstatValues(cost: number, label: string): number[] {
+/** Possible roll values for one substat key. */
+export function echoSubstatValues(cost: number, stat: string): number[] {
   return (
-    echoSubstatOptions(cost).find((option) => option.label === label)?.values ??
+    echoSubstatOptions(cost).find((option) => option.stat === stat)?.values ??
     []
   )
 }
@@ -24,17 +24,17 @@ export function echoSubstatValues(cost: number, label: string): number[] {
 /**
  * Options for one substat row.
  *
- * Hides labels already selected by the other rows while keeping the row's own
+ * Hides stats already selected by the other rows while keeping the row's own
  * selection so its select still has a valid value.
  */
 export function echoSubstatOptionsExcluding(
   options: EchoSubstatOption[],
-  selectedLabels: string[],
-  currentLabel: string
+  selectedStats: string[],
+  currentStat: string
 ): EchoSubstatOption[] {
   return options.filter(
     (option) =>
-      option.label === currentLabel || !selectedLabels.includes(option.label)
+      option.stat === currentStat || !selectedStats.includes(option.stat)
   )
 }
 

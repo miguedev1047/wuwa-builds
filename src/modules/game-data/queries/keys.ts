@@ -12,6 +12,13 @@ export const wuwaBuildsKeys = {
   weapons: () => [...wuwaBuildsKeys.all, "weapons"] as const,
   weapon: (id: number) => [...wuwaBuildsKeys.all, "weapon", id] as const,
   echoes: () => [...wuwaBuildsKeys.all, "echoes"] as const,
+  echoesDetailed: (ids: number[]) =>
+    [
+      ...wuwaBuildsKeys.all,
+      "echoes",
+      "details",
+      ...ids.slice().sort((left, right) => left - right),
+    ] as const,
   echo: (id: number) => [...wuwaBuildsKeys.all, "echo", id] as const,
   sonatas: () => [...wuwaBuildsKeys.all, "sonatas"] as const,
 }

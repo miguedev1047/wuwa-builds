@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
+import { JsonDevtool } from "@/components/utility/devtools"
 import { deleteBuild } from "@/modules/builds/client/build-store"
 import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { BuilderRoot } from "@/modules/panel/user/builder/components/builder-root"
@@ -59,6 +60,8 @@ function RouteComponent() {
       </div>
 
       <BuilderRoot build={build} />
+
+      <JsonDevtool title="Build response" data={build} />
     </div>
   )
 }

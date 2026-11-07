@@ -10,9 +10,11 @@ import {
 import { Spinner } from "@/components/ui/spinner"
 import { Show } from "@/components/utility/show"
 import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+import type { EchoDetail } from "@/modules/game-data/domain/echo"
 import { EchoesList } from "@/modules/panel/user/builder/components/echoes-list"
 import { EchoSlotLevelSelector } from "@/modules/panel/user/builder/components/echo-slot-level-selector"
 import { EchoSlotMainStatSelector } from "@/modules/panel/user/builder/components/echo-slot-main-stat-selector"
+import { EchoSlotSetSelector } from "@/modules/panel/user/builder/components/echo-slot-set-selector"
 import { EchoSlotSubstatsSelector } from "@/modules/panel/user/builder/components/echo-slot-substats-selector"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
@@ -21,10 +23,17 @@ import { Suspense, useState } from "react"
 interface EchoSlotProps {
   echo: EchoesDataProps
   buildId: string
+  echoDetail?: EchoDetail
+  isLoadingEchoDetail?: boolean
 }
 
 /** One echo slot: add button when empty, selected echo preview otherwise. */
-export function EchoSlot({ echo, buildId }: EchoSlotProps) {
+export function EchoSlot({
+  echo,
+  buildId,
+  echoDetail,
+  isLoadingEchoDetail,
+}: EchoSlotProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -67,6 +76,13 @@ export function EchoSlot({ echo, buildId }: EchoSlotProps) {
                 <Badge variant="outline">Slot: {echo.index + 1}</Badge>
                 <Badge variant="outline">Costo: {echo.cost}</Badge>
               </div>
+
+              <EchoSlotSetSelector
+                buildId={buildId}
+                echo={echo}
+                sets={echoDetail?.sets ?? []}
+                isLoading={isLoadingEchoDetail}
+              />
 
               <EchoSlotMainStatSelector buildId={buildId} echo={echo} />
 

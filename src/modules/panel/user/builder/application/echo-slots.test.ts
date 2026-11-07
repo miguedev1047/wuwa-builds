@@ -21,8 +21,9 @@ function slot(index: number, data: EchoSummary | null = null): EchoesDataProps {
   return {
     data,
     index,
-    echoSet: "none",
-    mainStatLabel: "none",
+    echoSetId: null,
+    mainStatStat: "",
+    mainStatLabel: "",
     mainStatValue: 0,
     level: 0,
     cost: data?.cost ?? 0,
@@ -45,9 +46,17 @@ describe("selectEchoSlot", () => {
   test("clears the main stat and substats when replacing an echo", () => {
     const target = {
       ...slot(0, echo(10)),
+      mainStatStat: "atk_percent",
       mainStatLabel: "Ataque %",
       mainStatValue: 33,
-      substats: [{ index: 0, valueLabel: "Vida", valueNumber: 320 }],
+      substats: [
+        {
+          index: 0,
+          valueStat: "hp",
+          valueLabel: "Vida",
+          valueNumber: 320,
+        },
+      ],
     }
     const next = selectEchoSlot({
       echoes: [target],
@@ -55,8 +64,10 @@ describe("selectEchoSlot", () => {
       echo: echo(20),
     })
 
+    expect(next[0].mainStatStat).toBe("")
     expect(next[0].mainStatLabel).toBe("")
     expect(next[0].mainStatValue).toBe(0)
+    expect(next[0].substats[0].valueStat).toBe("")
     expect(next[0].substats[0].valueLabel).toBe("")
     expect(next[0].substats[0].valueNumber).toBe(0)
   })

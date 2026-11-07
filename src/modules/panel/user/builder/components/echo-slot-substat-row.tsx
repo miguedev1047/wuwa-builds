@@ -14,7 +14,7 @@ import {
 interface EchoSlotSubstatRowProps {
   substat: EchoSubstatsDataProps
   options: EchoSubstatOption[]
-  onLabelChange: (label: string) => void
+  onStatChange: (stat: string) => void
   onValueChange: (value: number) => void
 }
 
@@ -22,31 +22,39 @@ interface EchoSlotSubstatRowProps {
 export function EchoSlotSubstatRow({
   substat,
   options,
-  onLabelChange,
+  onStatChange,
   onValueChange,
 }: EchoSlotSubstatRowProps) {
-  const values =
-    options.find((option) => option.label === substat.valueLabel)?.values ?? []
+  const selectedStat =
+    substat.valueStat ||
+    options.find((option) => option.label === substat.valueLabel)?.stat ||
+    null
+
+  const selectedOption = options.find((option) => option.stat === selectedStat)
+  const values = selectedOption?.values ?? []
 
   const statOptions = options.map((option) => ({
     label: option.label,
-    value: option.label,
+    value: option.stat,
   }))
 
   const valueOptions = values.map((value) => ({
-    label: formatEchoSubstatValue(substat.valueLabel, value),
+    label: formatEchoSubstatValue(
+      selectedOption?.label ?? substat.valueLabel,
+      value
+    ),
     value: String(value),
   }))
 
-  const selectedValue = substat.valueLabel ? String(substat.valueNumber) : null
+  const selectedValue = selectedStat ? String(substat.valueNumber) : null
 
   return (
     <div className="flex items-center gap-2">
       <Select
         items={statOptions}
-        value={substat.valueLabel || null}
+        value={selectedStat}
         onValueChange={(value) => {
-          if (value) onLabelChange(value)
+          if (value) onStatChange(value)
         }}
       >
         <SelectTrigger className="flex-1">

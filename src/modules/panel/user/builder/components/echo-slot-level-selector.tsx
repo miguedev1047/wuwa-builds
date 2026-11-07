@@ -7,7 +7,10 @@ import {
 } from "@/modules/builds/domain/build"
 import { buildCollection } from "@/modules/builds/client/build-store"
 import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
-import { echoMainStatValue } from "@/modules/panel/user/builder/application/echo-main-stat"
+import {
+  echoMainStatOptions,
+  echoMainStatValue,
+} from "@/modules/panel/user/builder/application/echo-main-stat"
 
 interface EchoSlotLevelSelectorProps {
   echo: EchoesDataProps
@@ -34,12 +37,15 @@ export function EchoSlotLevelSelector({
 
       if (!slot) return
 
+      const stat =
+        slot.mainStatStat ||
+        echoMainStatOptions(cost).find(
+          (option) => option.label === slot.mainStatLabel
+        )?.stat ||
+        ""
+
       slot.level = level
-      slot.mainStatValue = echoMainStatValue({
-        cost,
-        label: slot.mainStatLabel,
-        level,
-      })
+      slot.mainStatValue = echoMainStatValue({ cost, stat, level })
       current.updateAt = new Date().toISOString()
     })
   }

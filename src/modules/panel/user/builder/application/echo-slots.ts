@@ -36,10 +36,13 @@ export function selectEchoSlot({
       index: targetIndex,
       data: echo,
       cost: echo.cost,
+      echoSetId: null,
+      mainStatStat: "",
       mainStatLabel: "",
       mainStatValue: 0,
       substats: (target.substats ?? []).map((substat) => ({
         ...substat,
+        valueStat: "",
         valueLabel: "",
         valueNumber: 0,
       })),

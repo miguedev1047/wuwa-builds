@@ -3,14 +3,36 @@ import { createServerFn } from "@tanstack/react-start"
 import { notFound } from "@tanstack/react-router"
 import { eq } from "drizzle-orm"
 import { adminMiddleware, authMiddleware } from "@/functions/middlewares"
-import { idInput } from "@/modules/game-data/application/id"
+import { idInput, idsInput } from "@/modules/game-data/application/id"
 import { echoInput } from "@/modules/game-data/application/schemas"
+import type { EchoDetail } from "@/modules/game-data/domain/echo"
 import { echoes } from "@/db/schema"
 
 export const getEchoes = createServerFn({ method: "GET" })
   .middleware([authMiddleware])
   .handler(async () => {
     return await db.query.echoes.findMany({ orderBy: { id: "asc" } })
+  })
+
+/** Bulk detail read for the five equipped echoes. */
+export const getEchoesDetailed = createServerFn({
+  method: "GET",
+  strict: { output: false },
+})
+  .middleware([authMiddleware])
+  .validator(idsInput)
+  .handler(async ({ data }): Promise<EchoDetail[]> => {
+    return await db.query.echoes.findMany({
+      where: { id: { in: data.ids } },
+      with: {
+        sets: {
+          orderBy: { sortOrder: "asc" },
+          with: { sonataEffects: true },
+        },
+        skill: true,
+        skillBonuses: { orderBy: { sortOrder: "asc" } },
+      },
+    })
   })
 
 export const getEcho = createServerFn({

@@ -5,17 +5,19 @@ import { echoMainStatOptions, echoMainStatValue } from "./echo-main-stat"
 
 describe("echoMainStatValue", () => {
   test("returns the value at the echo level breakpoint", () => {
-    expect(echoMainStatValue({ cost: 4, label: "Ataque %", level: 0 })).toBe(
+    expect(echoMainStatValue({ cost: 4, stat: "atk_percent", level: 0 })).toBe(
       6.6
     )
-    expect(echoMainStatValue({ cost: 4, label: "Ataque %", level: 25 })).toBe(
+    expect(echoMainStatValue({ cost: 4, stat: "atk_percent", level: 25 })).toBe(
       33
     )
   })
 
-  test("returns 0 for an unknown label or cost", () => {
-    expect(echoMainStatValue({ cost: 4, label: "Nope", level: 25 })).toBe(0)
-    expect(echoMainStatValue({ cost: 2, label: "Ataque %", level: 25 })).toBe(0)
+  test("returns 0 for an unknown stat or cost", () => {
+    expect(echoMainStatValue({ cost: 4, stat: "nope", level: 25 })).toBe(0)
+    expect(echoMainStatValue({ cost: 2, stat: "atk_percent", level: 25 })).toBe(
+      0
+    )
   })
 })
 

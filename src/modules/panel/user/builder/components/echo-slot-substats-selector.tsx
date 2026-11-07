@@ -20,8 +20,8 @@ export function EchoSlotSubstatsSelector({
   const options = echoSubstatOptions(cost)
   const substats = echo.substats ?? []
 
-  const handleLabelChange = (index: number, label: string) => {
-    const option = options.find((item) => item.label === label)
+  const handleStatChange = (index: number, stat: string) => {
+    const option = options.find((item) => item.stat === stat)
 
     if (!option) return
 
@@ -31,6 +31,7 @@ export function EchoSlotSubstatsSelector({
 
       if (!substat) return
 
+      substat.valueStat = option.stat
       substat.valueLabel = option.label
       substat.valueNumber = option.values[0] ?? 0
       current.updateAt = new Date().toISOString()
@@ -53,14 +54,25 @@ export function EchoSlotSubstatsSelector({
     <div className="space-y-2">
       <h2>Substats</h2>
       {substats.map((substat) => {
-        const selectedLabels = substats
+        const currentStat =
+          substat.valueStat ||
+          options.find((option) => option.label === substat.valueLabel)?.stat ||
+          ""
+
+        const selectedStats = substats
           .filter((item) => item.index !== substat.index)
-          .map((item) => item.valueLabel)
+          .map(
+            (item) =>
+              item.valueStat ||
+              options.find((option) => option.label === item.valueLabel)
+                ?.stat ||
+              ""
+          )
 
         const availableOptions = echoSubstatOptionsExcluding(
           options,
-          selectedLabels,
-          substat.valueLabel
+          selectedStats,
+          currentStat
         )
 
         return (
@@ -68,7 +80,7 @@ export function EchoSlotSubstatsSelector({
             key={substat.index}
             substat={substat}
             options={availableOptions}
-            onLabelChange={(label) => handleLabelChange(substat.index, label)}
+            onStatChange={(stat) => handleStatChange(substat.index, stat)}
             onValueChange={(value) => handleValueChange(substat.index, value)}
           />
         )

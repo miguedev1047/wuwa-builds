@@ -17,31 +17,31 @@ describe("echoSubstatOptions", () => {
 
 describe("echoSubstatValues", () => {
   test("returns the rolls of a selected substat", () => {
-    expect(echoSubstatValues(4, "Defensa %")).toEqual([
+    expect(echoSubstatValues(4, "def_percent")).toEqual([
       8.1, 9.0, 10.0, 10.9, 11.8, 12.8, 13.8, 14.7,
     ])
   })
 
   test("returns an empty array for an unknown substat", () => {
-    expect(echoSubstatValues(4, "Nope")).toEqual([])
+    expect(echoSubstatValues(4, "nope")).toEqual([])
   })
 })
 
 describe("echoSubstatOptionsExcluding", () => {
   const options = [
-    { label: "Vida", values: [1] },
-    { label: "Ataque", values: [2] },
-    { label: "Defensa", values: [3] },
+    { stat: "hp", label: "Vida", values: [1] },
+    { stat: "atk", label: "Ataque", values: [2] },
+    { stat: "def", label: "Defensa", values: [3] },
   ]
 
-  test("hides labels selected by the other rows", () => {
-    const result = echoSubstatOptionsExcluding(options, ["Vida"], "Ataque")
+  test("hides stats selected by the other rows", () => {
+    const result = echoSubstatOptionsExcluding(options, ["hp"], "atk")
 
     expect(result.map((option) => option.label)).toEqual(["Ataque", "Defensa"])
   })
 
-  test("keeps the current label even when it is selected elsewhere", () => {
-    const result = echoSubstatOptionsExcluding(options, ["Vida"], "Vida")
+  test("keeps the current stat even when it is selected elsewhere", () => {
+    const result = echoSubstatOptionsExcluding(options, ["hp"], "hp")
 
     expect(result.map((option) => option.label)).toEqual([
       "Vida",

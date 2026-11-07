@@ -33,7 +33,9 @@ export function EchoSlotMainStatSelector({
   }))
 
   const selectedValue =
-    options.find((option) => option.label === echo.mainStatLabel)?.stat ?? null
+    echo.mainStatStat ||
+    options.find((option) => option.label === echo.mainStatLabel)?.stat ||
+    null
 
   const handleValueChange = (value: string | null) => {
     if (value === null) return
@@ -47,10 +49,11 @@ export function EchoSlotMainStatSelector({
 
       if (!slot) return
 
+      slot.mainStatStat = option.stat
       slot.mainStatLabel = option.label
       slot.mainStatValue = echoMainStatValue({
         cost,
-        label: option.label,
+        stat: option.stat,
         level: echo.level,
       })
       current.updateAt = new Date().toISOString()

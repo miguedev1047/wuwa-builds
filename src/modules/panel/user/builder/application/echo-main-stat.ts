@@ -16,14 +16,14 @@ export function echoMainStatOptions(cost: number): EchoMainStatOption[] {
 /** Value of a main stat at the echo level, using five-level breakpoints. */
 export function echoMainStatValue({
   cost,
-  label,
+  stat,
   level,
 }: {
   cost: number
-  label: string
+  stat: string
   level: number
 }): number {
-  const option = echoMainStatOptions(cost).find((item) => item.label === label)
+  const option = echoMainStatOptions(cost).find((item) => item.stat === stat)
 
   if (!option) return 0
 

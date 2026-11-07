@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { echoQueries } from "@/modules/game-data/queries/echoes"
 import { EchoSlot } from "@/modules/panel/user/builder/components/echo-slot"
 import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
+import { useQuery } from "@tanstack/react-query"
 import { useParams } from "@tanstack/react-router"
 
 export function EchoesSelectorDialog() {
@@ -13,6 +15,18 @@ export function EchoesSelectorDialog() {
   if (!build) return null
 
   const buildEchoes = build.echoes ?? []
+  const echoIds = [
+    ...new Set(
+      buildEchoes.flatMap((echo) => (echo.data ? [echo.data.id] : []))
+    ),
+  ]
+
+  const { data: echoDetails, isLoading: isLoadingEchoDetails } = useQuery(
+    echoQueries.details(echoIds)
+  )
+  const echoDetailById = new Map(
+    (echoDetails ?? []).map((echo) => [echo.id, echo])
+  )
 
   return (
     <Card>
@@ -24,7 +38,14 @@ export function EchoesSelectorDialog() {
         <ul className="grid grid-cols-1 gap-4">
           {buildEchoes.map((echo) => (
             <li key={echo.index}>
-              <EchoSlot echo={echo} buildId={buildId} />
+              <EchoSlot
+                echo={echo}
+                buildId={buildId}
+                echoDetail={
+                  echo.data ? echoDetailById.get(echo.data.id) : undefined
+                }
+                isLoadingEchoDetail={isLoadingEchoDetails}
+              />
             </li>
           ))}
         </ul>

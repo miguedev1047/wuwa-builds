@@ -21,13 +21,15 @@ export interface ResonatorSkillsDataProps {
 export interface EchoSubstatsDataProps {
   index: number
   valueLabel: string
+  valueStat: string
   valueNumber: number
 }
 
 export interface EchoesDataProps {
   data: EchoSummary | null
   index: number
-  echoSet: string
+  echoSetId: number | null
+  mainStatStat: string
   mainStatLabel: string
   mainStatValue: number
   level: number
