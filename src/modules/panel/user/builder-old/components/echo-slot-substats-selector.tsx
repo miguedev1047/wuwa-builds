@@ -3,8 +3,8 @@ import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
 import {
   echoSubstatOptions,
   echoSubstatOptionsExcluding,
-} from "@/modules/panel/user/builder/application/echo-substats"
-import { EchoSlotSubstatRow } from "@/modules/panel/user/builder/components/echo-slot-substat-row"
+} from "@/modules/panel/user/builder-old/application/echo-substats"
+import { EchoSlotSubstatRow } from "@/modules/panel/user/builder-old/components/echo-slot-substat-row"
 
 interface EchoSlotSubstatsSelectorProps {
   echo: EchoesDataProps

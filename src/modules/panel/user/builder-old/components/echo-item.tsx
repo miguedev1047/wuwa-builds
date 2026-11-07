@@ -6,7 +6,7 @@ import {
 import { buildCollection } from "@/modules/builds/client/build-store"
 import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
 import type { EchoSummary } from "@/modules/game-data/domain/echo"
-import { selectEchoSlot } from "@/modules/panel/user/builder/application/echo-slots"
+import { selectEchoSlot } from "@/modules/panel/user/builder-old/application/echo-slots"
 import { cn } from "cn"
 
 interface EchoItemProps {

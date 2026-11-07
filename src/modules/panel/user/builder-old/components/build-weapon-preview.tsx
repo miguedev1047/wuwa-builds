@@ -2,10 +2,10 @@ import { Badge } from "@/components/ui/badge"
 import { Show } from "@/components/utility/show"
 import { useParams } from "@tanstack/react-router"
 import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import { WeaponLevel } from "@/modules/panel/user/builder/components/build-weapon-level"
+import { WeaponLevel } from "@/modules/panel/user/builder-old/components/build-weapon-level"
 import { Suspense } from "react"
 import { Spinner } from "@/components/ui/spinner"
-import { BuildWeaponRefinaments } from "@/modules/panel/user/builder/components/build-weapon-refinaments"
+import { BuildWeaponRefinaments } from "@/modules/panel/user/builder-old/components/build-weapon-refinaments"
 
 export function BuildWeaponPreview() {
   const { buildId } = useParams({

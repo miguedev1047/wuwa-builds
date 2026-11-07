@@ -9,7 +9,7 @@ import type { EchoSubstatsDataProps } from "@/modules/builds/domain/build-record
 import {
   formatEchoSubstatValue,
   type EchoSubstatOption,
-} from "@/modules/panel/user/builder/application/echo-substats"
+} from "@/modules/panel/user/builder-old/application/echo-substats"
 
 interface EchoSlotSubstatRowProps {
   substat: EchoSubstatsDataProps

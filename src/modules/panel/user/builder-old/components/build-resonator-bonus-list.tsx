@@ -1,5 +1,5 @@
 import type { ResonatorPassivesDataProps } from "@/modules/builds/domain/build-record"
-import { BuildResonatorBonusPill } from "@/modules/panel/user/builder/components/build-resonator-bonus-pill"
+import { BuildResonatorBonusPill } from "@/modules/panel/user/builder-old/components/build-resonator-bonus-pill"
 
 interface BuildResonatorBonusListProps {
   passives: ResonatorPassivesDataProps[]

@@ -4,7 +4,7 @@ import { Spinner } from "@/components/ui/spinner"
 import { updateBuild } from "@/modules/builds/client/build-store"
 import { characterQueries } from "@/modules/game-data/queries/characters"
 import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import { BuildResonatorSkillItem } from "@/modules/panel/user/builder/components/build-resonator-skill-item"
+import { BuildResonatorSkillItem } from "@/modules/panel/user/builder-old/components/build-resonator-skill-item"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "@tanstack/react-router"
 

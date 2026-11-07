@@ -3,9 +3,9 @@ import { Spinner } from "@/components/ui/spinner"
 import { JsonDevtool } from "@/components/utility/devtools"
 import { normalizeElementId } from "@/modules/builds/application/calculation/normalize"
 import { RESONATOR_ELEMENTS } from "@/modules/game-data/application/constants/resonator"
-import { formatCharacterStats } from "@/modules/panel/user/builder/application/format-character-stats"
-import { BuildStatRowItem } from "@/modules/panel/user/builder/components/build-stat-row"
-import { buildStatRows } from "@/modules/panel/user/builder/components/build-stat-rows"
+import { formatCharacterStats } from "@/modules/panel/user/builder-old/application/format-character-stats"
+import { BuildStatRowItem } from "@/modules/panel/user/builder-old/components/build-stat-row"
+import { buildStatRows } from "@/modules/panel/user/builder-old/components/build-stat-rows"
 import { useBuildStats } from "@/modules/panel/user/builds/application/use-build-stats"
 
 interface BuildStatsProps {
