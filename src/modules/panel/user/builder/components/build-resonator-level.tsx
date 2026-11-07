@@ -59,10 +59,9 @@ export function BuildResonatorLevel() {
 
   return (
     <Card>
-      <CardHeader className="text-lg font-bold">
+      <CardHeader>
         <CardTitle>Niveles</CardTitle>
       </CardHeader>
-
       <CardContent>
         <div className="space-y-4">
           <Slider

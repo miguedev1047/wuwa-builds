@@ -1,51 +1,22 @@
 import { Show } from "@/components/utility/show"
 import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
-import type {
-  CharacterDetail,
-  CharacterSummary,
-} from "@/modules/game-data/domain/character"
+import type { CharacterSummary } from "@/modules/game-data/domain/character"
 import { characterQueries } from "@/modules/game-data/queries/characters"
 import { useQueryClient } from "@tanstack/react-query"
 import { useNavigate, useRouteContext, useRouter } from "@tanstack/react-router"
+import { toast } from "sonner"
+import {
+  genEchoes,
+  genResonatorPassives,
+  genResonatorSkills,
+} from "@/modules/panel/user/new-build/application/gen-build-data"
+import {
+  CHARACTER_LEVEL_MAX,
+  WEAPON_LEVEL_MAX,
+} from "@/modules/builds/domain/build"
 
 interface CharacterItemProps {
   character: CharacterSummary
-}
-
-const genResonatorSkills = (skills: CharacterDetail["skills"]) => {
-  const resonatorSkills = skills.map((skill) => ({
-    id: skill.id,
-    skillId: skill.skillId,
-    level: 10,
-  }))
-  return resonatorSkills
-}
-
-const genResonatorPassives = (resonator: CharacterDetail) => {
-  const ORDERED_INDEX = [0, 1, 8, 2, 3, 4, 5, 9, 6, 7]
-
-  const rawPassives = [
-    ...resonator.passives.map((p) => ({
-      id: p.id,
-      passiveId: p.passiveId,
-      name: p.title,
-      value: p.valueNumber,
-      icon: p.icon,
-      type: "passive" as const,
-    })),
-    ...resonator.skills.slice(5, 7).map((s) => ({
-      id: s.id,
-      passiveId: s.skillId,
-      name: s.name,
-      value: 0,
-      icon: s.icon,
-      type: "skill" as const,
-    })),
-  ]
-
-  return ORDERED_INDEX.map((index) => rawPassives[index])
-    .filter((item): item is NonNullable<typeof item> => item !== undefined)
-    .map((item) => ({ ...item, enabled: true }))
 }
 
 export function CharacterItem({ character }: CharacterItemProps) {
@@ -79,6 +50,7 @@ export function CharacterItem({ character }: CharacterItemProps) {
 
       const resonatorSkills = genResonatorSkills(resonator.skills)
       const resonatorPassives = genResonatorPassives(resonator)
+      const echoes = genEchoes()
 
       buildCollection.insert({
         buildId,
@@ -87,19 +59,27 @@ export function CharacterItem({ character }: CharacterItemProps) {
         createdAt: genDate,
         updateAt: genDate,
         resonator: {
-          level: 90,
+          level: CHARACTER_LEVEL_MAX,
           sequency: 0,
           data: character,
           skills: resonatorSkills,
           passives: resonatorPassives,
         },
+        weapon: {
+          level: WEAPON_LEVEL_MAX,
+          refinament: 1,
+          data: null,
+        },
+        echoes,
       })
 
       navigate({
         to: "/panel/builder/r/$rosterId/b/$buildId",
         params: { buildId, rosterId: resonatorId },
       })
-    } catch {}
+    } catch {
+      toast.error("Ha ocurrido un error al seleccionar el resonador")
+    }
   }
 
   return (

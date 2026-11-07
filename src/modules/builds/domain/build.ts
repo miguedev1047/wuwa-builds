@@ -25,25 +25,49 @@ export const SUBSTATS_PER_ECHO_MAX = 5
  */
 export const LEVEL_MILESTONES = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90] as const
 
+/** Echo milestones: every five levels from 0 to 25. */
+export const ECHO_LEVEL_MILESTONES = [0, 5, 10, 15, 20, 25] as const
+
+function levelFromMilestones(
+  milestones: readonly number[],
+  step: number
+): number {
+  const index = Math.min(Math.max(Math.trunc(step), 0), milestones.length - 1)
+
+  return milestones[index]
+}
+
+function stepFromMilestones(
+  milestones: readonly number[],
+  level: number
+): number {
+  let step = 0
+
+  for (let index = 1; index < milestones.length; index += 1) {
+    if (milestones[index] <= level) step = index
+  }
+
+  return step
+}
+
 /** Real game level for a 0-based slider step, clamped to the last milestone. */
 export function levelFromStep(step: number): number {
-  const index = Math.min(
-    Math.max(Math.trunc(step), 0),
-    LEVEL_MILESTONES.length - 1
-  )
-
-  return LEVEL_MILESTONES[index]
+  return levelFromMilestones(LEVEL_MILESTONES, step)
 }
 
 /** 0-based slider step for a real level, snapping down to the last milestone. */
 export function stepFromLevel(level: number): number {
-  let step = 0
+  return stepFromMilestones(LEVEL_MILESTONES, level)
+}
 
-  for (let index = 1; index < LEVEL_MILESTONES.length; index += 1) {
-    if (LEVEL_MILESTONES[index] <= level) step = index
-  }
+/** Real echo level for a 0-based slider step, clamped to 25. */
+export function echoLevelFromStep(step: number): number {
+  return levelFromMilestones(ECHO_LEVEL_MILESTONES, step)
+}
 
-  return step
+/** 0-based slider step for a real echo level, snapping down to a milestone. */
+export function echoStepFromLevel(level: number): number {
+  return stepFromMilestones(ECHO_LEVEL_MILESTONES, level)
 }
 
 const numericId = z.number().int().positive()

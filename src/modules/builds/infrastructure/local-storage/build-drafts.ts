@@ -3,6 +3,8 @@ import {
   localStorageCollectionOptions,
 } from "@tanstack/react-db"
 import type { CharacterSummary } from "@/modules/game-data/domain/character"
+import type { WeaponSummary } from "@/modules/game-data/domain/weapon"
+import type { EchoSummary } from "@/modules/game-data/domain/echo"
 
 export interface ResonatorPassivesDataProps {
   id: number
@@ -20,6 +22,29 @@ export interface ResonatorSkillsDataProps {
   level: number
 }
 
+export interface EchoSubstatsDataProps {
+  index: number
+  valueLabel: string
+  valueNumber: number
+}
+
+export interface EchoesDataProps {
+  data: EchoSummary | null
+  index: number
+  echoSet: string
+  mainStatLabel: string
+  mainStatValue: number
+  level: number
+  cost: number
+  substats: EchoSubstatsDataProps[]
+}
+
+export interface WeaponDataProps {
+  level: number
+  refinament: number
+  data: WeaponSummary | null
+}
+
 export interface ResonatorDataProps {
   level: number
   sequency: number
@@ -33,6 +58,8 @@ export interface BuildProps {
   sessionId: string
   name: string
   resonator: ResonatorDataProps
+  weapon: WeaponDataProps
+  echoes: EchoesDataProps[]
   createdAt: string
   updateAt: string
 }

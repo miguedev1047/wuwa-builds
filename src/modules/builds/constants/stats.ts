@@ -1,5 +1,5 @@
 export const SELECT_ECHO_MAIN_STATS = {
-  cost_4: [
+  4: [
     {
       stat: "atk_percent",
       label: "Ataque %",
@@ -31,7 +31,7 @@ export const SELECT_ECHO_MAIN_STATS = {
       values: [5.3, 9.5, 13.7, 18, 22.2, 26.4],
     },
   ],
-  cost_3: [
+  3: [
     {
       stat: "hp_percent",
       label: "Vida %",
@@ -83,7 +83,7 @@ export const SELECT_ECHO_MAIN_STATS = {
       values: [6, 10.8, 15.8, 20.4, 25.2, 30],
     },
   ],
-  cost_1: [
+  1: [
     {
       stat: "hp_percent",
       label: "Vida %",

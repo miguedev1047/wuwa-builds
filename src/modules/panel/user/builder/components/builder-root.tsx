@@ -8,6 +8,8 @@ import { BuildResonatorLevel } from "@/modules/panel/user/builder/components/bui
 import { BuildResonatorSequence } from "@/modules/panel/user/builder/components/build-resonator-sequence"
 import { BuildResonatorSkills } from "@/modules/panel/user/builder/components/build-resonator-skills"
 import { BuildResonatorBonus } from "@/modules/panel/user/builder/components/build-resonator-bonus"
+import { WeaponSelectorDialog } from "@/modules/panel/user/builder/components/weapon-selector"
+import { EchoesSelectorDialog } from "@/modules/panel/user/builder/components/echo-selector"
 
 export function BuilderRoot() {
   const { session } = useRouteContext({ from: "/(panel)/panel" })
@@ -75,6 +77,9 @@ export function BuilderRoot() {
           <BuildResonatorLevel />
           <BuildResonatorSkills />
           <BuildResonatorBonus />
+
+          <WeaponSelectorDialog />
+          <EchoesSelectorDialog />
         </div>
       )}
     </Show>
