@@ -464,7 +464,7 @@ export function EditableSectionEditAction({
         }
       />
 
-      <DialogContent {...contentProps}>
+      <DialogContent size="lg" {...contentProps}>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <Show when={description}>

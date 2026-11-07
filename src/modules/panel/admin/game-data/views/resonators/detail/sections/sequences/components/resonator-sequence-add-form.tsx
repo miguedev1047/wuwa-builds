@@ -74,7 +74,7 @@ export function ResonatorSequenceAddForm({
   const options = encoreSequences
     .filter((sequence) => !savedSequenceIds.includes(sequence.id))
     .map((sequence) => ({
-      label: `Secuencia ${sequence.index} - ${sequence.name}`,
+      label: `Secuencia ${sequence.index}`,
       value: String(sequence.id),
     }))
 

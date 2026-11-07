@@ -74,7 +74,7 @@ export function ResonatorSkillAddForm({
   const options = encoreSkills
     .filter((skill) => !savedSkillIds.includes(skill.id))
     .map((skill) => ({
-      label: `${skill.type} - ${skill.name}`,
+      label: `${skill.type}`,
       value: String(skill.id),
     }))
     .slice(0, 9)
