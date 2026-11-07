@@ -12,6 +12,7 @@ import { BuildResonatorLevel } from "@/modules/panel/user/builder/components/bui
 import { BuildResonatorSelector } from "@/modules/panel/user/builder/components/build-resonator-selector"
 import { BuildResonatorSequence } from "@/modules/panel/user/builder/components/build-resonator-sequence"
 import { BuildResonatorSkills } from "@/modules/panel/user/builder/components/build-resonator-skills"
+import { BuildStats } from "@/modules/panel/user/builder/components/build-stats"
 import { EchoesSelectorDialog } from "@/modules/panel/user/builder/components/echo-selector"
 import { WeaponSelectorDialog } from "@/modules/panel/user/builder/components/weapon-selector"
 import { useState, type ChangeEvent } from "react"
@@ -108,6 +109,8 @@ export function BuilderRoot({ build }: BuilderRootProps) {
 
             <WeaponSelectorDialog />
             <EchoesSelectorDialog />
+
+            <BuildStats buildId={buildId} element={resonator.element} />
           </>
         )}
       </Show>

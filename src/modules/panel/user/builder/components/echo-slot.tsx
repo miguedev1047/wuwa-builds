@@ -14,6 +14,7 @@ import type { EchoDetail } from "@/modules/game-data/domain/echo"
 import { EchoesList } from "@/modules/panel/user/builder/components/echoes-list"
 import { EchoSlotLevelSelector } from "@/modules/panel/user/builder/components/echo-slot-level-selector"
 import { EchoSlotMainStatSelector } from "@/modules/panel/user/builder/components/echo-slot-main-stat-selector"
+import { EchoSlotMainToggle } from "@/modules/panel/user/builder/components/echo-slot-main-toggle"
 import { EchoSlotSetSelector } from "@/modules/panel/user/builder/components/echo-slot-set-selector"
 import { EchoSlotSubstatsSelector } from "@/modules/panel/user/builder/components/echo-slot-substats-selector"
 import { PlusIcon } from "@hugeicons/core-free-icons"
@@ -23,6 +24,7 @@ import { Suspense, useState } from "react"
 interface EchoSlotProps {
   echo: EchoesDataProps
   buildId: string
+  isMain: boolean
   echoDetail?: EchoDetail
   isLoadingEchoDetail?: boolean
 }
@@ -31,6 +33,7 @@ interface EchoSlotProps {
 export function EchoSlot({
   echo,
   buildId,
+  isMain,
   echoDetail,
   isLoadingEchoDetail,
 }: EchoSlotProps) {
@@ -72,9 +75,14 @@ export function EchoSlot({
             <div className="w-full space-y-4">
               <h2 className="font-bold">{echoSelected.name}</h2>
 
-              <div className="flex items-center gap-1">
+              <div className="flex flex-wrap items-center gap-1">
                 <Badge variant="outline">Slot: {echo.index + 1}</Badge>
                 <Badge variant="outline">Costo: {echo.cost}</Badge>
+                <EchoSlotMainToggle
+                  buildId={buildId}
+                  slotIndex={echo.index}
+                  isMain={isMain}
+                />
               </div>
 
               <EchoSlotSetSelector
@@ -86,9 +94,7 @@ export function EchoSlot({
 
               <EchoSlotMainStatSelector buildId={buildId} echo={echo} />
 
-              <Show when={echo.mainStatLabel}>
-                <EchoSlotLevelSelector buildId={buildId} echo={echo} />
-              </Show>
+              <EchoSlotLevelSelector buildId={buildId} echo={echo} />
 
               <EchoSlotSubstatsSelector buildId={buildId} echo={echo} />
             </div>

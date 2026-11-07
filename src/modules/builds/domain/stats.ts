@@ -4,9 +4,9 @@ export type StatKind = "flat" | "percent"
  * Canonical stat keys shared by the builder and the panel.
  *
  * `statId` is the only identifier these keys have: it is what the catalog
- * stores, what a select binds to and what `calculateBuildStats` sums. Labels
- * live in `STAT_LABELS` and are presentation only, so a translation or a typo
- * in the copy can never break a calculation.
+ * stores, what a select binds to and what `calculateCharacterStats` sums.
+ * Labels live in `STAT_LABELS` and are presentation only, so a translation or
+ * a typo in the copy can never break a calculation.
  */
 export const STAT_KINDS = {
   hp: "flat",

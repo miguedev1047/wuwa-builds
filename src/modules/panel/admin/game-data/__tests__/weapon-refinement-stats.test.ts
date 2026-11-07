@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { STAT_KINDS } from "@/modules/builds/domain/calculate-build-stats"
+import { STAT_KINDS } from "@/modules/builds/domain/stats"
 import {
   WEAPON_REFINEMENT_STATS,
   WEAPON_REFINEMENT_STAT_OPTIONS,

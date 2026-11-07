@@ -12,7 +12,8 @@ import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
 import {
   echoMainStatOptions,
   echoMainStatValue,
-} from "@/modules/panel/user/builder/application/echo-main-stat"
+  echoPrimaryStat,
+} from "@/modules/builds/application/echo-main-stat"
 
 interface EchoSlotMainStatSelectorProps {
   echo: EchoesDataProps
@@ -26,6 +27,7 @@ export function EchoSlotMainStatSelector({
 }: EchoSlotMainStatSelectorProps) {
   const cost = echo.cost || echo.data?.cost || 0
   const options = echoMainStatOptions(cost)
+  const primaryStat = echoPrimaryStat({ cost, level: echo.level })
 
   const mainStatsOptions = options.map((option) => ({
     label: option.label,
@@ -62,27 +64,33 @@ export function EchoSlotMainStatSelector({
 
   return (
     <div className="space-y-2">
-      <div className="flex items-start gap-4">
-        <Select
-          items={mainStatsOptions}
-          value={selectedValue}
-          onValueChange={handleValueChange}
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Selecciona una estadistica" />
-          </SelectTrigger>
+      <Select
+        items={mainStatsOptions}
+        value={selectedValue}
+        onValueChange={handleValueChange}
+      >
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="Selecciona una estadistica" />
+        </SelectTrigger>
 
-          <SelectContent>
-            {mainStatsOptions.map((item) => (
-              <SelectItem key={item.value} value={item.value}>
-                {item.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <SelectContent>
+          {mainStatsOptions.map((item) => (
+            <SelectItem key={item.value} value={item.value}>
+              {item.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
+      <div className="flex flex-wrap items-center gap-1">
+        {primaryStat && (
+          <Badge variant="secondary">
+            Base: {primaryStat.label} +{primaryStat.value}
+          </Badge>
+        )}
 
         <Show when={echo.mainStatLabel}>
-          <Badge variant="outline" className="h-7">
+          <Badge variant="outline">
             {echo.mainStatLabel} +{echo.mainStatValue}
           </Badge>
         </Show>

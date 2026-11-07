@@ -10,7 +10,7 @@ import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
 import {
   echoMainStatOptions,
   echoMainStatValue,
-} from "@/modules/panel/user/builder/application/echo-main-stat"
+} from "@/modules/builds/application/echo-main-stat"
 
 interface EchoSlotLevelSelectorProps {
   echo: EchoesDataProps

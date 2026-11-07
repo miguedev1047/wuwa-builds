@@ -41,6 +41,7 @@ export function EchoesSelectorDialog() {
               <EchoSlot
                 echo={echo}
                 buildId={buildId}
+                isMain={build.mainEchoSlot === echo.index}
                 echoDetail={
                   echo.data ? echoDetailById.get(echo.data.id) : undefined
                 }

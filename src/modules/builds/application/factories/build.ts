@@ -85,6 +85,7 @@ export function createEmptyBuild({
     resonator: createEmptyResonator(),
     weapon: createEmptyWeapon(),
     echoes: createEmptyEchoes(),
+    mainEchoSlot: null,
     createdAt,
     updateAt: createdAt,
   }

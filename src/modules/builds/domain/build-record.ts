@@ -59,6 +59,7 @@ export interface BuildProps {
   resonator: ResonatorDataProps
   weapon: WeaponDataProps
   echoes: EchoesDataProps[]
+  mainEchoSlot: number | null
   createdAt: string
   updateAt: string
 }

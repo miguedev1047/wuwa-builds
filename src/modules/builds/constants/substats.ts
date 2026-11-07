@@ -144,6 +144,16 @@ export const SELECT_SUBSTATS_OPTIONS = {
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
+      stat: "basic_atk_bonus",
+      label: "Bono Ataque Básico",
+      values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
+    },
+    {
+      stat: "heavy_atk_bonus",
+      label: "Bono Ataque Cargado",
+      values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
+    },
+    {
       stat: "hp",
       label: "Vida",
       values: [320, 360, 390, 430, 470, 510, 540, 580],
