@@ -7,6 +7,8 @@ import { z } from "zod"
  */
 export const BUILD_DOCUMENT_VERSION = 1
 
+export const MAX_LOCAL_BUILDS = 15
+
 export const CHARACTER_LEVEL_MAX = 90
 export const WEAPON_LEVEL_MAX = 90
 export const ECHO_LEVEL_MAX = 25

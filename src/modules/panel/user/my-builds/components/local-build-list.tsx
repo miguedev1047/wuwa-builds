@@ -6,56 +6,15 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@/components/ui/item"
-import { buildCollection } from "@/modules/builds/client/build-store"
 import {
-  and,
-  count,
-  eq,
-  groupKeys,
-  isNull,
-  not,
-  useLiveSuspenseQuery,
-} from "@tanstack/react-db"
-import { Link, useRouteContext } from "@tanstack/react-router"
+  useSessionRosters,
+  useUnassignedBuilds,
+} from "@/modules/panel/user/builds/application/build-live-queries"
+import { Link } from "@tanstack/react-router"
 
 export function LocalBuildList() {
-  const { session } = useRouteContext({ from: "/(panel)/panel" })
-
-  const { data: rosters } = useLiveSuspenseQuery((q) =>
-    q
-      .from({ build: buildCollection })
-      .where(({ build }) =>
-        and(
-          eq(build.sessionId, session.session.id),
-          not(isNull(build.resonator.data))
-        )
-      )
-      .groupBy(
-        groupKeys(({ build }) => [
-          build.resonator.data!.id,
-          build.resonator.data!.name,
-          build.resonator.data!.icon,
-        ])
-      )
-      .select(({ build }) => ({
-        resonatorId: build.resonator.data!.id,
-        name: build.resonator.data!.name,
-        icon: build.resonator.data!.icon,
-        totalBuilds: count(build.buildId),
-      }))
-  )
-
-  const { data: unassigned } = useLiveSuspenseQuery((q) =>
-    q
-      .from({ build: buildCollection })
-      .where(({ build }) =>
-        and(
-          eq(build.sessionId, session.session.id),
-          isNull(build.resonator.data)
-        )
-      )
-      .orderBy(({ build }) => build.createdAt, "asc")
-  )
+  const { data: rosters } = useSessionRosters()
+  const { data: unassigned } = useUnassignedBuilds()
 
   if (rosters.length === 0 && unassigned.length === 0) {
     return (

@@ -21,7 +21,7 @@ import { useParams } from "@tanstack/react-router"
 import { useState } from "react"
 import { SkeletonSuspense } from "skullet/react"
 import { BuildWeaponPreview } from "@/modules/panel/user/builder/components/build-weapon-preview"
-import { useBuildCollection } from "@/modules/panel/user/builder/application/builder"
+import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { cn } from "cn"
 import { toast } from "sonner"
 

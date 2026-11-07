@@ -18,7 +18,7 @@ import {
 import { statLabel } from "@/modules/game-data/application/stats/stats"
 import { growthValueAtLevel } from "@/modules/game-data/domain/character"
 import { characterQueries } from "@/modules/game-data/queries/characters"
-import { useBuildCollection } from "@/modules/panel/user/builder/application/builder"
+import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "@tanstack/react-router"
 

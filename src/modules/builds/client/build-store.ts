@@ -20,3 +20,14 @@ export function updateBuild(
 export function deleteBuild(buildId: string): void {
   buildCollection.delete(buildId)
 }
+
+/** Synchronous count used by creation guards. */
+export function countSessionBuilds(sessionId: string): number {
+  let total = 0
+
+  for (const build of buildCollection.values()) {
+    if (build.sessionId === sessionId) total += 1
+  }
+
+  return total
+}

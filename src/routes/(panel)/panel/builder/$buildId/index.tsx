@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 import { deleteBuild } from "@/modules/builds/client/build-store"
-import { useBuildCollection } from "@/modules/panel/user/builder/application/builder"
+import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { BuilderRoot } from "@/modules/panel/user/builder/components/builder-root"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"

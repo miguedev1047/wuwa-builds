@@ -1,7 +1,7 @@
 import { ItemGroup } from "@/components/ui/item"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { updateBuild } from "@/modules/builds/client/build-store"
-import { useBuildCollection } from "@/modules/panel/user/builder/application/builder"
+import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { BuildResonatorBonusItem } from "@/modules/panel/user/builder/components/build-resonator-bonus-item"
 import { BuildResonatorBonusList } from "@/modules/panel/user/builder/components/build-resonator-bonus-list"
 import { useParams } from "@tanstack/react-router"

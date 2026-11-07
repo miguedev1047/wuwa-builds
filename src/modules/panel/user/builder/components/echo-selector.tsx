@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { EchoSlot } from "@/modules/panel/user/builder/components/echo-slot"
-import { useBuildCollection } from "@/modules/panel/user/builder/application/builder"
+import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { useParams } from "@tanstack/react-router"
 
 export function EchoesSelectorDialog() {

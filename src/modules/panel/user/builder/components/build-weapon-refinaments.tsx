@@ -1,5 +1,5 @@
 import { useParams } from "@tanstack/react-router"
-import { useBuildCollection } from "@/modules/panel/user/builder/application/builder"
+import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { weaponQueries } from "@/modules/game-data/queries/weapons"
 import { updateBuild } from "@/modules/builds/client/build-store"

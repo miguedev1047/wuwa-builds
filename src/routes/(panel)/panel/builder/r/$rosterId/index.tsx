@@ -7,9 +7,8 @@ import {
   ItemTitle,
 } from "@/components/ui/item"
 import { Spinner } from "@/components/ui/spinner"
-import { buildCollection } from "@/modules/builds/client/build-store"
-import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
-import { Link, useParams, useRouteContext } from "@tanstack/react-router"
+import { useRosterBuilds } from "@/modules/panel/user/builds/application/build-live-queries"
+import { Link, useParams } from "@tanstack/react-router"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/panel/builder/r/$rosterId/")({
@@ -19,21 +18,10 @@ export const Route = createFileRoute("/(panel)/panel/builder/r/$rosterId/")({
 })
 
 function RouteComponent() {
-  const { session } = useRouteContext({ from: "/(panel)/panel" })
   const params = useParams({ from: "/(panel)/panel/builder/r/$rosterId/" })
   const rosterId = parseInt(params.rosterId)
 
-  const { data: builds } = useLiveSuspenseQuery((q) =>
-    q
-      .from({ build: buildCollection })
-      .where(({ build }) =>
-        and(
-          eq(build.resonator.data?.id, rosterId),
-          eq(build.sessionId, session.session.id)
-        )
-      )
-      .orderBy(({ build }) => build.createdAt, "asc")
-  )
+  const { data: builds } = useRosterBuilds(rosterId)
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 py-20">
