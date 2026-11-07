@@ -21,7 +21,7 @@ export function BuildResonatorBonusPill({
       <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
         {name}
       </span>
-      <span className="text-xs font-semibold text-amber-400">
+      <span className="text-xs font-semibold text-brand-warning">
         +{formatBonusValue(value)}%
       </span>
     </li>

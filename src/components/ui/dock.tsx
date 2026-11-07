@@ -184,7 +184,7 @@ const FACE_TILE =
 const FACE_BARE = "[font-size:calc(var(--dock-base)*0.62)]"
 
 const BADGE =
-  "pointer-events-none absolute box-border text-center font-semibold tabular-nums text-white [background:var(--dock-badge)] [box-shadow:0_1px_3px_rgba(0,0,0,0.3)]"
+  "pointer-events-none absolute box-border text-center font-semibold tabular-nums text-white [background:var(--dock-badge)] [box-shadow:0_1px_3px_oklch(0_0_0_/_0.3)]"
 
 const BADGE_COUNT =
   "top-[calc(var(--dock-base)*(0.1465*var(--dock-round)_-_0.19))] right-[calc(var(--dock-base)*(0.1465*var(--dock-round)_-_0.19))] h-[calc(var(--dock-base)*0.38)] min-w-[calc(var(--dock-base)*0.38)] px-[calc(var(--dock-base)*0.1)] rounded-[calc(var(--dock-base)*0.19)] [font-size:calc(var(--dock-base)*0.22)] [line-height:calc(var(--dock-base)*0.38)]"
@@ -208,7 +208,7 @@ const SEPARATOR =
   "flex-none self-center rounded-[1px] [background:var(--dock-separator)]"
 
 const LABEL =
-  "pointer-events-none absolute whitespace-nowrap rounded-lg px-2.5 py-1.5 text-[12px] font-medium leading-none opacity-0 [background:var(--dock-label)] text-[color:var(--dock-label-ink)] [box-shadow:inset_0_0_0_1px_var(--dock-panel-edge),0_8px_20px_-8px_rgba(0,0,0,0.35)] [transition:opacity_0.16s_ease,transform_0.16s_ease] group-hover:opacity-100 group-focus-visible:opacity-100 group-data-[hop]:!opacity-0"
+  "pointer-events-none absolute whitespace-nowrap rounded-lg px-2.5 py-1.5 text-[12px] font-medium leading-none opacity-0 [background:var(--dock-label)] text-[color:var(--dock-label-ink)] [box-shadow:inset_0_0_0_1px_var(--dock-panel-edge),0_8px_20px_-8px_oklch(0_0_0_/_0.35)] [transition:opacity_0.16s_ease,transform_0.16s_ease] group-hover:opacity-100 group-focus-visible:opacity-100 group-data-[hop]:!opacity-0"
 
 const LABEL_SIDES = {
   bottom:

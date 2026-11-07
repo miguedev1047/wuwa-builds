@@ -21,9 +21,7 @@ export function BuildStatRowItem({ row }: BuildStatRowItemProps) {
       <dd
         className={cn(
           "shrink-0 text-xs font-semibold tabular-nums",
-          row.value === 0
-            ? "text-muted-foreground"
-            : "text-amber-500 dark:text-amber-300"
+          row.value === 0 ? "text-muted-foreground" : "text-brand-warning"
         )}
       >
         {formatValue(row)}

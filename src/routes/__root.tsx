@@ -59,7 +59,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <SkulletProvider
             mode="system"
             theme={{
-              radius: "0px",
+              radius: "20px",
               animation: "pulse",
               speed: "slow",
               text: {
