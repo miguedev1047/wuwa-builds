@@ -1,26 +1,17 @@
 import { ItemGroup } from "@/components/ui/item"
-import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
-import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
-import { useParams, useRouteContext } from "@tanstack/react-router"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { updateBuild } from "@/modules/builds/client/build-store"
+import { useBuildCollection } from "@/modules/panel/user/builder/application/builder"
 import { BuildResonatorBonusItem } from "@/modules/panel/user/builder/components/build-resonator-bonus-item"
 import { BuildResonatorBonusList } from "@/modules/panel/user/builder/components/build-resonator-bonus-list"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useParams } from "@tanstack/react-router"
 
 export function BuildResonatorBonus() {
-  const { session } = useRouteContext({ from: "/(panel)/panel" })
-
   const { buildId } = useParams({
-    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
+    from: "/(panel)/panel/builder/$buildId/",
   })
 
-  const { data: build } = useLiveSuspenseQuery((q) =>
-    q
-      .from({ build: buildCollection })
-      .where(({ build }) =>
-        and(eq(build.buildId, buildId), eq(build.sessionId, session.session.id))
-      )
-      .findOne()
-  )
+  const { data: build } = useBuildCollection({ buildId })
 
   const passives = build?.resonator.passives ?? []
   const enabledPassives = passives.filter(
@@ -28,7 +19,7 @@ export function BuildResonatorBonus() {
   )
 
   const handleEnabledChange = (id: number, enabled: boolean) => {
-    buildCollection.update(buildId, (current) => {
+    updateBuild(buildId, (current) => {
       const currentPassives = current.resonator.passives ?? []
       const passive = currentPassives.find((item) => item.id === id)
 

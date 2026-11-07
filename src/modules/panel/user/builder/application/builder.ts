@@ -1,4 +1,4 @@
-import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import { buildCollection } from "@/modules/builds/client/build-store"
 import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
 import { useRouteContext } from "@tanstack/react-router"
 

@@ -7,8 +7,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Show } from "@/components/utility/show"
-import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
-import type { EchoesDataProps } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import { buildCollection } from "@/modules/builds/client/build-store"
+import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
 import {
   echoMainStatOptions,
   echoMainStatValue,

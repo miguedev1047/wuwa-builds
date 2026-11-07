@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { EchoesDataProps } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
 import type { EchoSummary } from "@/modules/game-data/domain/echo"
 import { selectEchoSlot } from "./echo-slots"
 

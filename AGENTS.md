@@ -62,8 +62,8 @@ Current modules:
 - `src/modules/encore`: read-only game data from the public Encore API
   (characters, weapons and echoes). Used by the admin panel for search and
   create prefill, never as the builder data source.
-- `src/modules/builds`: saved user builds (domain payload, ports, D1 adapter,
-  authenticated server functions).
+- `src/modules/builds`: local TanStack DB build collection (LocalStorage) and
+  the D1 saved-build backend reserved for the future cloud save.
 - `src/modules/panel`: panel UI behavior only. It must not import
   infrastructure directly. Admin views stay in
   `src/modules/panel/admin/game-data/views`.
@@ -101,8 +101,9 @@ Rules:
   deploy. Catalog queries use a 5-minute `staleTime` because admins edit D1.
 - Saved builds are scoped by user/build identity and payload `documentVersion`,
   never by catalog freshness.
-- TanStack DB build drafts are scoped by authenticated user ID and Local Storage
-  schema version. Clear or switch the collection on sign-out/account changes.
+- TanStack DB builds are filtered by `sessionId` in every live query. The
+  LocalStorage collection itself is shared by origin, so never list or mutate a
+  build without checking the session.
 - The builder UI contract and pending screens are documented in
   `BUILDER_UI.md`.
 - If a query needs a different freshness (for example the builder), override
@@ -148,10 +149,10 @@ Rules:
   whole-document adapter (`src/modules/encore/infrastructure/catalog-d1.server.ts`).
   The builder reads it through `src/modules/game-data`; rows still come from the
   admin panel, since there is no scheduled Encore sync yet.
-- The saved-builds backend and local draft collection exist
-  (`src/db/schemas/builds.ts`, `src/modules/builds`). Character selection creates
-  a local draft, the builder route loads it and `/panel/my-builds` lists local
-  drafts; editor sections, cloud saves and cloud build listing are still
-  pending. See `BUILDER_UI.md`.
+- The saved-builds backend and local build collection exist
+  (`src/db/schemas/builds.ts`, `src/modules/builds`). Builds can start without a
+  resonator; `/panel/builder/$buildId` loads one by ID and `/panel/my-builds`
+  groups local builds by resonator. Cloud saves and cloud build listing are
+  still pending. See `BUILDER_UI.md`.
 - Catalog weapon and echo queries are exposed; the builder editor that consumes
   them is still pending.

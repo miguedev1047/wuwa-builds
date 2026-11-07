@@ -5,7 +5,7 @@ import { useParams } from "@tanstack/react-router"
 
 export function EchoesSelectorDialog() {
   const { buildId } = useParams({
-    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
+    from: "/(panel)/panel/builder/$buildId/",
   })
 
   const { data: build } = useBuildCollection({ buildId })

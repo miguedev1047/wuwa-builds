@@ -3,7 +3,7 @@ import { useSuspenseQuery } from "@tanstack/react-query"
 import { useParams } from "@tanstack/react-router"
 import { useBuildCollection } from "@/modules/panel/user/builder/application/builder"
 import { weaponQueries } from "@/modules/game-data/queries/weapons"
-import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import { updateBuild } from "@/modules/builds/client/build-store"
 import {
   LEVEL_MILESTONES,
   levelFromStep,
@@ -24,7 +24,7 @@ import { Badge } from "@/components/ui/badge"
 
 export function WeaponLevel() {
   const { buildId } = useParams({
-    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
+    from: "/(panel)/panel/builder/$buildId/",
   })
 
   const { data: build } = useBuildCollection({ buildId })
@@ -38,8 +38,9 @@ export function WeaponLevel() {
 
     if (typeof step !== "number") return
 
-    buildCollection.update(buildId, (draft) => {
+    updateBuild(buildId, (draft) => {
       draft.weapon.level = levelFromStep(step)
+      draft.updateAt = new Date().toISOString()
     })
   }
 

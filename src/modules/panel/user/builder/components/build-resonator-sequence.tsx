@@ -1,38 +1,27 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
-import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
-import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
-import { useParams, useRouteContext } from "@tanstack/react-router"
+import { updateBuild } from "@/modules/builds/client/build-store"
+import { useBuildCollection } from "@/modules/panel/user/builder/application/builder"
+import { useParams } from "@tanstack/react-router"
 
 export function BuildResonatorSequence() {
-  const { session } = useRouteContext({ from: "/(panel)/panel" })
-
   const { buildId } = useParams({
-    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
+    from: "/(panel)/panel/builder/$buildId/",
   })
 
-  const { data: build } = useLiveSuspenseQuery((q) =>
-    q
-      .from({ build: buildCollection })
-      .where(({ build }) =>
-        and(eq(build.buildId, buildId), eq(build.sessionId, session.session.id))
-      )
-      .findOne()
-  )
+  const { data: build } = useBuildCollection({ buildId })
+  const sequency = build?.resonator.sequency ?? 0
 
   const handleSequencyChange = (value: number | readonly number[]) => {
-    if (value) {
-      buildCollection.update(buildId, (current) => {
-        current.resonator.sequency = value as number
-      })
-    } else {
-      buildCollection.update(buildId, (current) => {
-        current.resonator.sequency = 0
-      })
-    }
-  }
+    const next = Array.isArray(value) ? value[0] : value
 
-  const sequency = build?.resonator.sequency ?? 0
+    if (typeof next !== "number") return
+
+    updateBuild(buildId, (current) => {
+      current.resonator.sequency = next
+      current.updateAt = new Date().toISOString()
+    })
+  }
 
   return (
     <Card>

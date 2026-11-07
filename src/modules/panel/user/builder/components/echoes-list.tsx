@@ -1,4 +1,4 @@
-import type { EchoesDataProps } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
 import type { EchoSummary } from "@/modules/game-data/domain/echo"
 import { echoQueries } from "@/modules/game-data/queries/echoes"
 import { EchoItem } from "@/modules/panel/user/builder/components/echo-item"
@@ -13,6 +13,14 @@ interface EchoesListProps {
 /** Echo picker content for one slot. */
 export function EchoesList({ echoSlot, buildId, onSelect }: EchoesListProps) {
   const { data: echoes } = useSuspenseQuery(echoQueries.list())
+
+  if (echoes.length === 0) {
+    return (
+      <p className="text-sm text-muted-foreground">
+        No hay ecos en el catálogo.
+      </p>
+    )
+  }
 
   return (
     <ul className="grid grid-cols-4 gap-4">

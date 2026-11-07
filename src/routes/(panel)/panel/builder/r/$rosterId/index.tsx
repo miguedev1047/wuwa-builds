@@ -6,14 +6,15 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@/components/ui/item"
-import { Show } from "@/components/utility/show"
-import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import { Spinner } from "@/components/ui/spinner"
+import { buildCollection } from "@/modules/builds/client/build-store"
 import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
 import { Link, useParams, useRouteContext } from "@tanstack/react-router"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/panel/builder/r/$rosterId/")({
   component: RouteComponent,
+  pendingComponent: () => <Spinner />,
   ssr: false,
 })
 
@@ -27,7 +28,7 @@ function RouteComponent() {
       .from({ build: buildCollection })
       .where(({ build }) =>
         and(
-          eq(build.resonator.data.id, rosterId),
+          eq(build.resonator.data?.id, rosterId),
           eq(build.sessionId, session.session.id)
         )
       )
@@ -39,33 +40,34 @@ function RouteComponent() {
       <Button nativeButton={false} render={<Link to="/panel/my-builds" />}>
         Volver
       </Button>
+
       <ItemGroup>
-        {builds.map((build, _) => (
-          <Show key={build.buildId} when={build.resonator}>
-            {({ data: resonator }) => (
-              <Link
-                to="/panel/builder/r/$rosterId/b/$buildId"
-                params={{
-                  rosterId: resonator.id.toString(),
-                  buildId: build.buildId,
-                }}
-              >
-                <Item variant="outline">
-                  <ItemMedia variant="image">
-                    <img
-                      src={resonator.icon}
-                      alt={resonator.name}
-                      className="size-full object-contain"
-                    />
-                  </ItemMedia>
-                  <ItemContent>
-                    <ItemTitle>{build.name}</ItemTitle>
-                  </ItemContent>
-                </Item>
-              </Link>
-            )}
-          </Show>
-        ))}
+        {builds.map((build) => {
+          const resonator = build.resonator.data
+
+          if (!resonator) return null
+
+          return (
+            <Link
+              key={build.buildId}
+              to="/panel/builder/$buildId"
+              params={{ buildId: build.buildId }}
+            >
+              <Item variant="outline">
+                <ItemMedia variant="image">
+                  <img
+                    src={resonator.icon}
+                    alt={resonator.name}
+                    className="size-full object-contain"
+                  />
+                </ItemMedia>
+                <ItemContent>
+                  <ItemTitle>{build.name}</ItemTitle>
+                </ItemContent>
+              </Item>
+            </Link>
+          )
+        })}
       </ItemGroup>
     </div>
   )

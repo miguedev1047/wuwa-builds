@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/item"
 import { Switch } from "@/components/ui/switch"
 import { Show } from "@/components/utility/show"
-import type { ResonatorPassivesDataProps } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import type { ResonatorPassivesDataProps } from "@/modules/builds/domain/build-record"
 
 interface BuildResonatorBonusItemProps {
   passive: ResonatorPassivesDataProps

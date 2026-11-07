@@ -13,12 +13,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Show } from "@/components/utility/show"
-import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import { updateBuild } from "@/modules/builds/client/build-store"
 import type { WeaponSummary } from "@/modules/game-data/domain/weapon"
 import { weaponQueries } from "@/modules/game-data/queries/weapons"
-import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
 import { useQueryClient, useSuspenseQuery } from "@tanstack/react-query"
-import { useParams, useRouteContext } from "@tanstack/react-router"
+import { useParams } from "@tanstack/react-router"
 import { useState } from "react"
 import { SkeletonSuspense } from "skullet/react"
 import { BuildWeaponPreview } from "@/modules/panel/user/builder/components/build-weapon-preview"
@@ -29,21 +28,11 @@ import { toast } from "sonner"
 export function WeaponSelectorDialog() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const { session } = useRouteContext({ from: "/(panel)/panel" })
-
   const { buildId } = useParams({
-    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
+    from: "/(panel)/panel/builder/$buildId/",
   })
 
-  const { data: build } = useLiveSuspenseQuery((q) =>
-    q
-      .from({ build: buildCollection })
-      .where(({ build }) =>
-        and(eq(build.buildId, buildId), eq(build.sessionId, session.session.id))
-      )
-      .findOne()
-  )
-
+  const { data: build } = useBuildCollection({ buildId })
   const buildWeapon = build?.weapon.data
 
   return (
@@ -68,7 +57,7 @@ export function WeaponSelectorDialog() {
               </DialogHeader>
 
               <SkeletonSuspense>
-                <WeaponList setIsOpen={setIsOpen} isOpen={isOpen} />
+                <WeaponList setIsOpen={setIsOpen} />
               </SkeletonSuspense>
             </DialogContent>
           </Dialog>
@@ -83,23 +72,24 @@ export function WeaponSelectorDialog() {
 }
 
 export function WeaponList({
-  isOpen,
   setIsOpen,
 }: {
-  isOpen: boolean
   setIsOpen: (value: boolean) => void
 }) {
   const { data: weapons } = useSuspenseQuery(weaponQueries.list())
 
+  if (weapons.length === 0) {
+    return (
+      <p className="text-sm text-muted-foreground">
+        No hay armas en el catálogo.
+      </p>
+    )
+  }
+
   return (
     <ul className="grid grid-cols-4 gap-4">
       {weapons.map((weapon) => (
-        <WeaponItem
-          weapon={weapon}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          key={weapon.id}
-        />
+        <WeaponItem weapon={weapon} setIsOpen={setIsOpen} key={weapon.id} />
       ))}
     </ul>
   )
@@ -107,15 +97,13 @@ export function WeaponList({
 
 export function WeaponItem({
   weapon,
-  isOpen,
   setIsOpen,
 }: {
   weapon: WeaponSummary
-  isOpen: boolean
   setIsOpen: (value: boolean) => void
 }) {
   const { buildId } = useParams({
-    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
+    from: "/(panel)/panel/builder/$buildId/",
   })
   const { data: build } = useBuildCollection({ buildId })
 
@@ -125,17 +113,15 @@ export function WeaponItem({
   const selectedWeapon = buildWeapon?.id === weapon.id
 
   const handleWeaponSelect = async () => {
-    setIsOpen(!isOpen)
-
     try {
       await queryClient.query(weaponQueries.detail(weapon.id))
 
-      buildCollection.update(buildId, (current) => {
-        const updated = new Date().toISOString()
-
+      updateBuild(buildId, (current) => {
         current.weapon.data = weapon
-        current.updateAt = updated
+        current.updateAt = new Date().toISOString()
       })
+
+      setIsOpen(false)
     } catch {
       toast.error("Ha ocurrido un error al seleccionar el arma")
     }

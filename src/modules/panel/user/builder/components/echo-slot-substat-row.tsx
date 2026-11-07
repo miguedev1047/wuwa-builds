@@ -5,7 +5,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import type { EchoSubstatsDataProps } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import type { EchoSubstatsDataProps } from "@/modules/builds/domain/build-record"
 import {
   formatEchoSubstatValue,
   type EchoSubstatOption,

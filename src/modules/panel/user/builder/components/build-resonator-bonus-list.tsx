@@ -1,4 +1,4 @@
-import type { ResonatorPassivesDataProps } from "@/modules/builds/infrastructure/local-storage/build-drafts"
+import type { ResonatorPassivesDataProps } from "@/modules/builds/domain/build-record"
 import { BuildResonatorBonusPill } from "@/modules/panel/user/builder/components/build-resonator-bonus-pill"
 
 interface BuildResonatorBonusListProps {

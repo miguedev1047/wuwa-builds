@@ -1,87 +1,116 @@
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Show } from "@/components/utility/show"
-import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
-import { and, eq, useLiveSuspenseQuery } from "@tanstack/react-db"
-import { useParams, useRouteContext } from "@tanstack/react-router"
-import { useState, type ChangeEvent } from "react"
+import {
+  createEmptyResonator,
+  createEmptyWeapon,
+} from "@/modules/builds/application/factories/build"
+import { updateBuild } from "@/modules/builds/client/build-store"
+import type { BuildProps } from "@/modules/builds/domain/build-record"
+import { BuildResonatorBonus } from "@/modules/panel/user/builder/components/build-resonator-bonus"
 import { BuildResonatorLevel } from "@/modules/panel/user/builder/components/build-resonator-level"
+import { BuildResonatorSelector } from "@/modules/panel/user/builder/components/build-resonator-selector"
 import { BuildResonatorSequence } from "@/modules/panel/user/builder/components/build-resonator-sequence"
 import { BuildResonatorSkills } from "@/modules/panel/user/builder/components/build-resonator-skills"
-import { BuildResonatorBonus } from "@/modules/panel/user/builder/components/build-resonator-bonus"
-import { WeaponSelectorDialog } from "@/modules/panel/user/builder/components/weapon-selector"
 import { EchoesSelectorDialog } from "@/modules/panel/user/builder/components/echo-selector"
+import { WeaponSelectorDialog } from "@/modules/panel/user/builder/components/weapon-selector"
+import { useState, type ChangeEvent } from "react"
 
-export function BuilderRoot() {
-  const { session } = useRouteContext({ from: "/(panel)/panel" })
+interface BuilderRootProps {
+  build: BuildProps
+}
 
-  const { buildId } = useParams({
-    from: "/(panel)/panel/builder/r/$rosterId/b/$buildId/",
-  })
-
+export function BuilderRoot({ build }: BuilderRootProps) {
   const [isEditing, setIsEditing] = useState(false)
-
-  const { data } = useLiveSuspenseQuery((q) =>
-    q
-      .from({ build: buildCollection })
-      .where(({ build }) =>
-        and(eq(build.buildId, buildId), eq(build.sessionId, session.session.id))
-      )
-      .findOne()
-  )
+  const buildId = build.buildId
 
   const handleChangeBuildName = (event: ChangeEvent<HTMLInputElement>) => {
-    buildCollection.update(buildId, (draft) => {
-      const updated = new Date().toISOString()
-
+    updateBuild(buildId, (draft) => {
       draft.name = event.target.value
-      draft.updateAt = updated
+      draft.updateAt = new Date().toISOString()
+    })
+  }
+
+  const handleRemoveResonator = () => {
+    updateBuild(buildId, (draft) => {
+      draft.resonator = createEmptyResonator()
+      draft.weapon = createEmptyWeapon()
+      draft.updateAt = new Date().toISOString()
     })
   }
 
   return (
-    <Show when={data}>
-      {(build) => (
-        <div className="space-y-4">
-          <Show
-            when={isEditing}
-            fallback={
-              <h2 onDoubleClick={() => setIsEditing(true)}>{build.name}</h2>
+    <div className="space-y-4">
+      <Show
+        when={isEditing}
+        fallback={
+          <h2 onDoubleClick={() => setIsEditing(true)}>{build.name}</h2>
+        }
+      >
+        <Input
+          value={build.name}
+          className="max-w-xs"
+          placeholder="Nombre de la build"
+          onChange={handleChangeBuildName}
+          onBlur={() => setIsEditing(false)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setIsEditing(false)
             }
-          >
-            <Input
-              value={build.name}
-              className="max-w-xs"
-              placeholder="Nombre de la build"
-              onChange={handleChangeBuildName}
-              onBlur={() => setIsEditing(false)}
-              onKeyDown={(event) => {
-                if (event.key === "Escape") {
-                  setIsEditing(false)
-                }
-                if (event.key === "Enter") {
-                  setIsEditing(false)
-                }
-              }}
-            />
-          </Show>
+            if (event.key === "Enter") {
+              setIsEditing(false)
+            }
+          }}
+        />
+      </Show>
 
-          <figure className="h-100 w-60 bg-accent">
-            <img
-              src={build.resonator.data.portrait}
-              alt={build.resonator.data.name}
-              className="size-full object-cover"
-            />
-          </figure>
+      <Show
+        when={build.resonator.data}
+        fallback={
+          <div className="space-y-3 rounded-lg border border-dashed p-6 text-center">
+            <p className="text-sm text-muted-foreground">
+              Esta build no tiene un resonador seleccionado.
+            </p>
+            <BuildResonatorSelector buildId={buildId} />
+          </div>
+        }
+      >
+        {(resonator) => (
+          <>
+            <div className="flex items-start gap-4">
+              <figure className="h-100 w-60 bg-accent">
+                <img
+                  src={resonator.portrait}
+                  alt={resonator.name}
+                  className="size-full object-cover"
+                />
+              </figure>
 
-          <BuildResonatorSequence />
-          <BuildResonatorLevel />
-          <BuildResonatorSkills />
-          <BuildResonatorBonus />
+              <div className="space-y-2">
+                <h3 className="text-lg font-medium">{resonator.name}</h3>
 
-          <WeaponSelectorDialog />
-          <EchoesSelectorDialog />
-        </div>
-      )}
-    </Show>
+                <div className="flex flex-wrap gap-2">
+                  <BuildResonatorSelector
+                    buildId={buildId}
+                    currentResonatorId={resonator.id}
+                  />
+                  <Button variant="outline" onClick={handleRemoveResonator}>
+                    Quitar resonador
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            <BuildResonatorSequence />
+            <BuildResonatorLevel />
+            <BuildResonatorSkills />
+            <BuildResonatorBonus />
+
+            <WeaponSelectorDialog />
+            <EchoesSelectorDialog />
+          </>
+        )}
+      </Show>
+    </div>
   )
 }
