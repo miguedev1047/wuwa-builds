@@ -305,7 +305,11 @@ export function EditableSectionCard({
   ...props
 }: ComponentProps<typeof Card>) {
   return (
-    <Card data-slot="editable-section-card" className={className} {...props} />
+    <Card
+      data-slot="editable-section-card"
+      className={cn("rounded-lg", className)}
+      {...props}
+    />
   )
 }
 
