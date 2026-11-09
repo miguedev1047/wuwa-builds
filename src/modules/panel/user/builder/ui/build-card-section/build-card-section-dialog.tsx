@@ -16,6 +16,7 @@ type BuildCardSectionDialogProps = {
   trigger: React.ReactNode
   title: string
   description?: string
+  dialogContent?: React.ComponentProps<typeof DialogContent>
   children: (controls: { close: () => void }) => React.ReactNode
 }
 
@@ -24,6 +25,7 @@ export function BuildCardSectionDialog({
   trigger,
   title,
   description,
+  dialogContent,
   children,
 }: BuildCardSectionDialogProps) {
   const [isOpen, setIsOpen] = useState(false)
@@ -34,7 +36,7 @@ export function BuildCardSectionDialog({
         nativeButton={false}
         render={<div className="contents">{trigger}</div>}
       />
-      <DialogContent>
+      <DialogContent {...dialogContent}>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <Show when={description}>

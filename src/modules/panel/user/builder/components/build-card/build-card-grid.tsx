@@ -1,6 +1,6 @@
 import { BuildCard } from "../../ui/build-card"
 import { BuildCardSection } from "../../ui/build-card-section"
-import { ResonatorInfoSection } from "./resonator"
+import { ResonatorInfoSection } from "./resonator-info-section"
 
 /** Grid layout that arranges the build card sections. */
 export function BuildCardGrid() {

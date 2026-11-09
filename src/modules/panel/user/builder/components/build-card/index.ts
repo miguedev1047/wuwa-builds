@@ -1,2 +1,2 @@
 export * from "./build-card-grid"
-export * from "./resonator"
+export * from "./resonator-info-section"

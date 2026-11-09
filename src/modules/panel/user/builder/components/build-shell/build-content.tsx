@@ -20,9 +20,9 @@ export function BuildContent() {
       fallback={
         <div className="space-y-3 rounded-2xl border border-dashed p-6">
           <SkeletonSuspense
-            skeleton={<ResonatorListLoading columns={8} aspect="portrait" />}
+            skeleton={<ResonatorListLoading columns={10} aspect="portrait" />}
           >
-            <ResonatorGrid buildId={buildId} columns={8} aspect="portrait" />
+            <ResonatorGrid buildId={buildId} columns={10} aspect="portrait" />
           </SkeletonSuspense>
         </div>
       }

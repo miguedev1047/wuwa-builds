@@ -53,6 +53,7 @@ export function ResonatorItem({
               src={resonator.iconLarge}
               alt={resonator.name}
               aspect={aspect}
+              background="accent"
               size="full"
               rounded="xl"
               hover="zoom"
