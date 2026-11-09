@@ -1,6 +1,9 @@
 import { BuildCard } from "../../ui/build-card"
-import { BuildCardSection } from "../../ui/build-card-section"
+import { EchoSlotsSection } from "./echo-slots-section"
 import { ResonatorInfoSection } from "./resonator-info-section"
+import { SkillsSection } from "./skills-section"
+import { StatsSection } from "./stats-section"
+import { WeaponSection } from "./weapon-section"
 
 /** Grid layout that arranges the build card sections. */
 export function BuildCardGrid() {
@@ -11,32 +14,16 @@ export function BuildCardGrid() {
           <ResonatorInfoSection />
         </div>
         <div className="col-start-1 col-end-7 row-start-2 row-end-7">
-          <BuildCardSection className="h-full w-full">Stats</BuildCardSection>
+          <StatsSection />
         </div>
         <div className="col-start-7 col-end-14 row-start-1 row-end-4">
-          <BuildCardSection className="h-full w-full">Skills</BuildCardSection>
+          <SkillsSection />
         </div>
         <div className="col-start-7 col-end-14 row-start-4 row-end-7">
-          <BuildCardSection className="h-full w-full">Weapon</BuildCardSection>
+          <WeaponSection />
         </div>
-        <div className="col-start-1 col-end-14 row-start-7 row-end-13 grid grid-cols-5 gap-4">
-          <div>
-            <BuildCardSection className="h-full w-full">
-              Eco Slot 1
-            </BuildCardSection>
-          </div>
-          <BuildCardSection className="h-full w-full">
-            Eco Slot 2
-          </BuildCardSection>
-          <BuildCardSection className="h-full w-full">
-            Eco Slot 3
-          </BuildCardSection>
-          <BuildCardSection className="h-full w-full">
-            Eco Slot 4
-          </BuildCardSection>
-          <BuildCardSection className="h-full w-full">
-            Eco Slot 5
-          </BuildCardSection>
+        <div className="col-start-1 col-end-14 row-start-7 row-end-13">
+          <EchoSlotsSection />
         </div>
       </div>
     </BuildCard>
