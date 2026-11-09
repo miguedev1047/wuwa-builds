@@ -127,6 +127,7 @@ export function characterDetail({
     iconLarge: "",
     circle: "",
     portrait: "",
+    media: [],
     tags: [],
     properties,
     skills: [],

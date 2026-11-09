@@ -62,6 +62,37 @@ export const resonators = sqliteTable(
   (table) => [index("resonators_element_idx").on(table.element)]
 )
 
+/**
+ * `images` object of the Encore character, one row per image.
+ *
+ * This is the editable source of the five resonator images. The same URLs are
+ * mirrored in the scalar columns of `resonators` so list queries do not need a
+ * join; keep both in sync when writing.
+ */
+export const resonatorsMedia = sqliteTable(
+  "resonators_media",
+  {
+    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+    resonatorId: integer("resonator_id", { mode: "number" })
+      .notNull()
+      .references(() => resonators.id, { onDelete: "cascade" }),
+    /** Canonical image key (`card`, `icon`, `iconLarge`, `circle`, `portrait`). */
+    kind: text("kind").notNull(),
+    /** Image URL. */
+    url: text("url").notNull().default(""),
+    /** Position in the images list. */
+    sortOrder: integer("sort_order", { mode: "number" }).notNull(),
+
+    ...getDate(),
+  },
+  (table) => [
+    uniqueIndex("resonators_media_resonator_kind_idx").on(
+      table.resonatorId,
+      table.kind
+    ),
+  ]
+)
+
 /** `Tags[]`: name, description, color and icon of each combat role tag. */
 export const resonatorTags = sqliteTable(
   "resonator_tags",
@@ -247,6 +278,8 @@ export const resonatorPassives = sqliteTable(
 
 export type ResonatorRow = typeof resonators.$inferSelect
 export type NewResonatorRow = typeof resonators.$inferInsert
+export type ResonatorMediaRow = typeof resonatorsMedia.$inferSelect
+export type NewResonatorMediaRow = typeof resonatorsMedia.$inferInsert
 export type ResonatorTagRow = typeof resonatorTags.$inferSelect
 export type NewResonatorTagRow = typeof resonatorTags.$inferInsert
 export type ResonatorPropertyRow = typeof resonatorPropertyLevels.$inferSelect
@@ -266,6 +299,7 @@ export type NewResonatorPassiveRow = typeof resonatorPassives.$inferInsert
 export const resonatorRelations = defineRelationsPart(
   {
     resonators,
+    resonatorsMedia,
     resonatorTags,
     resonatorPropertyLevels,
     resonatorPropertyGrowth,
@@ -275,6 +309,10 @@ export const resonatorRelations = defineRelationsPart(
   },
   (r) => ({
     resonators: {
+      media: r.many.resonatorsMedia({
+        from: r.resonators.id,
+        to: r.resonatorsMedia.resonatorId,
+      }),
       tags: r.many.resonatorTags({
         from: r.resonators.id,
         to: r.resonatorTags.resonatorId,
@@ -299,6 +337,12 @@ export const resonatorRelations = defineRelationsPart(
     resonatorTags: {
       resonator: r.one.resonators({
         from: r.resonatorTags.resonatorId,
+        to: r.resonators.id,
+      }),
+    },
+    resonatorsMedia: {
+      resonator: r.one.resonators({
+        from: r.resonatorsMedia.resonatorId,
         to: r.resonators.id,
       }),
     },

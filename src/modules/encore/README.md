@@ -49,7 +49,7 @@ Encore JSON key):
 | File            | Tables                                                                                   |
 | --------------- | ---------------------------------------------------------------------------------------- |
 | `resonators.ts` | `resonators`, `resonator_tags`, `resonator_property_levels`, `resonator_property_growth` |
-|                 | `resonator_skills`, `resonator_sequences`                                                |
+|                 | `resonators_media`, `resonator_skills`, `resonator_sequences`                            |
 |                 | `resonator_passives`                                                                     |
 | `weapons.ts`    | `weapons`, `weapon_properties`, `weapon_property_growth`                                 |
 |                 | `weapon_refinements`, `weapon_refinement_stats`                                          |

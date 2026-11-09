@@ -1,4 +1,5 @@
 import type {
+  ResonatorMediaRow,
   ResonatorPassiveRow,
   ResonatorPropertyGrowthRow,
   ResonatorPropertyRow,
@@ -19,6 +20,7 @@ export type CharacterSkill = Pick<
 
 /** Canonical detail with every relation the admin and builder screens read. */
 export interface CharacterDetail extends ResonatorRow {
+  media: ResonatorMediaRow[]
   tags: ResonatorTagRow[]
   properties: (ResonatorPropertyRow & {
     growth: ResonatorPropertyGrowthRow[]

@@ -12,6 +12,7 @@ import {
   resonatorSkills,
   resonatorTags,
   resonators,
+  resonatorsMedia,
   weaponRefinementStats,
   weaponRefinements,
   weaponProperties,
@@ -20,6 +21,10 @@ import {
   type ResonatorRow,
 } from "@/db/schema"
 import type { EncoreCharacterDetail } from "../domain/character"
+import {
+  isResonatorMediaKind,
+  RESONATOR_MEDIA_KINDS,
+} from "@/modules/game-data/application/constants/resonator"
 import type {
   EncoreEchoDetail,
   EncoreEchoSet,
@@ -86,6 +91,15 @@ export async function saveCharacter(
     circle: character.images.circle,
     portrait: character.images.portrait,
   })
+
+  await db.insert(resonatorsMedia).values(
+    RESONATOR_MEDIA_KINDS.map((kind, sortOrder) => ({
+      resonatorId: character.id,
+      kind,
+      url: character.images[kind],
+      sortOrder,
+    }))
+  )
 
   if (character.tags.length > 0) {
     await db.insert(resonatorTags).values(
@@ -180,6 +194,7 @@ export async function readCharacter(
   const row = await db.query.resonators.findFirst({
     where: { id },
     with: {
+      media: { orderBy: { sortOrder: "asc" } },
       tags: { orderBy: { sortOrder: "asc" } },
       properties: {
         orderBy: { sortOrder: "asc" },
@@ -193,6 +208,20 @@ export async function readCharacter(
 
   if (!row) return null
 
+  const images = {
+    card: row.card,
+    icon: row.icon,
+    iconLarge: row.iconLarge,
+    circle: row.circle,
+    portrait: row.portrait,
+  }
+
+  for (const media of row.media) {
+    if (isResonatorMediaKind(media.kind)) {
+      images[media.kind] = media.url
+    }
+  }
+
   return {
     id: row.id,
     name: row.name,
@@ -201,13 +230,7 @@ export async function readCharacter(
     element: row.element,
     weaponType: row.weaponType,
     icon: row.icon,
-    images: {
-      card: row.card,
-      icon: row.icon,
-      iconLarge: row.iconLarge,
-      circle: row.circle,
-      portrait: row.portrait,
-    },
+    images,
     tags: row.tags.map((tag) => ({
       name: tag.name,
       description: tag.description,

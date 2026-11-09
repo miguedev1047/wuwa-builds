@@ -83,6 +83,38 @@ export function isWeaponTypeId(value: string): value is WeaponTypeId {
   return (WEAPON_TYPE_IDS as readonly string[]).includes(value)
 }
 
+/** Canonical resonator image keys, in display order. */
+export const RESONATOR_MEDIA_KINDS = [
+  "card",
+  "icon",
+  "iconLarge",
+  "circle",
+  "portrait",
+] as const
+
+export type ResonatorMediaKind = (typeof RESONATOR_MEDIA_KINDS)[number]
+
+/** Panel label of each resonator image. */
+export const RESONATOR_MEDIA_LABELS: Record<ResonatorMediaKind, string> = {
+  card: "Card",
+  icon: "Icono",
+  iconLarge: "Icono grande",
+  circle: "Círculo",
+  portrait: "Retrato",
+}
+
+/** Narrows a stored string to a known resonator image key. */
+export function isResonatorMediaKind(
+  value: string
+): value is ResonatorMediaKind {
+  return (RESONATOR_MEDIA_KINDS as readonly string[]).includes(value)
+}
+
+/** Panel label of a resonator image, falling back to the raw key. */
+export function resonatorMediaLabel(kind: string): string {
+  return isResonatorMediaKind(kind) ? RESONATOR_MEDIA_LABELS[kind] : kind
+}
+
 /** Base stats a resonator can have in `resonator_property_levels`. */
 export const RESONATOR_PROPERTY_STATS = [
   "atk",

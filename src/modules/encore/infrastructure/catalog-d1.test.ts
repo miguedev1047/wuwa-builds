@@ -10,6 +10,7 @@ import type { AppDb } from "@/db/create"
 import { relations } from "@/db/relations"
 import {
   resonators,
+  resonatorsMedia,
   sonataSetEffects,
   sonataSets,
   weaponRefinementStats,
@@ -357,6 +358,38 @@ describe("encore catalog schema", () => {
     ])
   })
 
+  test("stores the character images as media rows", async () => {
+    const character = toCharacterDetail(rawCharacter)
+    await saveCharacter(db, character)
+
+    const media = await db
+      .select()
+      .from(resonatorsMedia)
+      .orderBy(resonatorsMedia.sortOrder)
+
+    expect(media.map((row) => [row.kind, row.url])).toEqual([
+      ["card", character.images.card],
+      ["icon", character.images.icon],
+      ["iconLarge", character.images.iconLarge],
+      ["circle", character.images.circle],
+      ["portrait", character.images.portrait],
+    ])
+  })
+
+  test("reads the edited media URL instead of the mirrored column", async () => {
+    const character = toCharacterDetail(rawCharacter)
+    await saveCharacter(db, character)
+
+    await db
+      .update(resonatorsMedia)
+      .set({ url: "https://example.com/portrait.png" })
+      .where(eq(resonatorsMedia.kind, "portrait"))
+
+    expect((await readCharacter(db, character.id))?.images.portrait).toBe(
+      "https://example.com/portrait.png"
+    )
+  })
+
   test("re-saving replaces child rows instead of duplicating them", async () => {
     const character = toCharacterDetail(rawCharacter)
     await saveCharacter(db, character)
@@ -371,6 +404,7 @@ describe("encore catalog schema", () => {
     expect(stored?.breaches).toEqual([])
     expect(stored?.tags).toHaveLength(1)
     expect(stored?.sequences).toHaveLength(1)
+    expect(await db.select().from(resonatorsMedia)).toHaveLength(5)
   })
 
   test("keeps colliding nested ids from different characters apart", async () => {
@@ -406,6 +440,7 @@ describe("encore catalog schema", () => {
     await db.delete(resonators).where(eq(resonators.id, character.id))
 
     expect(await readCharacter(db, character.id)).toBeNull()
+    expect(await db.select().from(resonatorsMedia)).toEqual([])
   })
 
   test("expands the weapon passive into one effect per refinement rank", () => {
