@@ -90,20 +90,6 @@ export const ResonatorFields = withForm({
         </form.AppField>
 
         <form.AppField
-          name="icon"
-          validators={{ onSubmit: resonatorInput.shape.icon }}
-        >
-          {(field) => (
-            <field.ImageField
-              label="Icono"
-              placeholder="https://api-v2.encore.moe/resource/..."
-              inputMode="url"
-              disabled={isPending}
-            />
-          )}
-        </form.AppField>
-
-        <form.AppField
           name="introduction"
           validators={{ onSubmit: resonatorInput.shape.introduction }}
         >

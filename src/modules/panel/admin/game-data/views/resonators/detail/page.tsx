@@ -1,6 +1,7 @@
 import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
 import { resonatorDetailDockActions } from "@/modules/panel/admin/game-data/views/resonators/detail/dock-actions"
 import { ResonatorInfoSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/info"
+import { ResonatorMediaSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/media"
 import { ResonatorSkillsSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills"
 import { ResonatorSequencesSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences"
 import { ResonatorPassivesSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives"
@@ -11,6 +12,7 @@ export function ResonatorDetailPage() {
   return (
     <div className="space-y-10">
       <ResonatorInfoSection />
+      <ResonatorMediaSection />
       <ResonatorSkillsSection />
       <ResonatorSequencesSection />
       <ResonatorPassivesSection />
