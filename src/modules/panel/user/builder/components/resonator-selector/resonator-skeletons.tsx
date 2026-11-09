@@ -1,16 +1,16 @@
 import { SkeletonBox } from "skullet/react"
 import { cn } from "cn"
 import {
-  resonatorGridVariants,
-  type ResonatorGridColumns,
-} from "@/modules/panel/user/builder/components/resonator-selector"
-import type { ResonatorAspect } from "@/modules/panel/user/builder/components/resonator-selector/resonator-item"
+  buildCatalogPickerVariants,
+  type BuildCatalogPickerColumns,
+} from "../../ui/build-catalog-picker"
+import type { ResonatorAspect } from "./resonator-item"
 
 const SKELETONS_ITEMS = 16
 
 interface ResonatorListLoadingProps {
   count?: number
-  columns?: ResonatorGridColumns
+  columns?: BuildCatalogPickerColumns
   aspect?: ResonatorAspect
 }
 
@@ -24,7 +24,7 @@ export function ResonatorListLoading({
   const aspectClass = aspect === "portrait" ? "aspect-2/3!" : "aspect-square!"
 
   return (
-    <ul className={cn(resonatorGridVariants({ columns }))}>
+    <ul className={cn(buildCatalogPickerVariants({ columns }))}>
       {skeletons.map((_, index) => (
         <li key={index} className="min-w-0">
           <SkeletonBox className={cn("size-full!", aspectClass)} />
