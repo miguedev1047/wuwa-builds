@@ -1,9 +1,11 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
+import { Show } from "../utility/show"
+import { errorPlaceholder } from "@/assets/icons"
 
 const imageVariants = cva(
-  "group relative block shrink-0 overflow-hidden bg-accent select-none",
+  "group relative block shrink-0 overflow-hidden select-none",
   {
     variants: {
       aspect: {
@@ -26,6 +28,10 @@ const imageVariants = cva(
         xl: "rounded-xl",
         full: "rounded-full",
       },
+      background: {
+        transparent: "bg-transparent",
+        accent: "bg-accent",
+      },
       hover: {
         none: "",
         zoom: "[&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-105",
@@ -37,6 +43,7 @@ const imageVariants = cva(
       aspect: "square",
       size: "md",
       rounded: "lg",
+      background: "transparent",
       hover: "none",
     },
   }
@@ -71,7 +78,8 @@ export interface ImageProps
  * Image with a fixed aspect ratio, lazy loading and an optional hover effect.
  *
  * The wrapper uses `aspect-square` or `aspect-2/3`, one of the preset sizes and
- * `group` so hover variants can target the image.
+ * `group` so hover variants can target the image. The background is
+ * transparent by default; use `background="accent"` to fill the frame.
  */
 export function Image({
   className,
@@ -79,22 +87,42 @@ export function Image({
   aspect,
   size,
   rounded,
+  background,
   hover,
   fit,
   loading = "lazy",
   decoding = "async",
   ...props
 }: ImageProps) {
+  const [error, setIsError] = React.useState(false)
+
   return (
     <figure
-      className={cn(imageVariants({ aspect, size, rounded, hover }), className)}
+      className={cn(
+        imageVariants({ aspect, size, rounded, background, hover }),
+        className
+      )}
     >
-      <img
-        {...props}
-        loading={loading}
-        decoding={decoding}
-        className={cn(imageFitVariants({ fit }), imgClassName)}
-      />
+      <Show
+        when={error}
+        fallback={
+          <img
+            {...props}
+            loading={loading}
+            decoding={decoding}
+            onError={() => setIsError(true)}
+            className={cn(imageFitVariants({ fit }), imgClassName)}
+          />
+        }
+      >
+        <img
+          {...props}
+          src={errorPlaceholder}
+          loading={loading}
+          decoding={decoding}
+          className={cn(imageFitVariants({ fit }), imgClassName)}
+        />
+      </Show>
     </figure>
   )
 }
