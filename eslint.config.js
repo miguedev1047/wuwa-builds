@@ -59,7 +59,7 @@ export default defineConfig([
               ],
             },
             {
-                  pattern: "^Button$",
+              pattern: "^Button$",
               allow: [
                 "layout",
                 "w-*",
