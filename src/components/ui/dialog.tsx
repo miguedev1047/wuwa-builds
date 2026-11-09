@@ -108,18 +108,34 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
+const dialogFooterVariants = cva("grid gap-2", {
+  variants: {
+    cols: {
+      1: "grid-cols-1",
+      2: "sm:grid-cols-2",
+    },
+  },
+  defaultVariants: {
+    cols: 2,
+  },
+})
+
+type DialogFooterProps = React.ComponentProps<"div"> &
+  VariantProps<typeof dialogFooterVariants> & {
+    showCloseButton?: boolean
+  }
+
 function DialogFooter({
   className,
+  cols,
   showCloseButton = false,
   children,
   ...props
-}: React.ComponentProps<"div"> & {
-  showCloseButton?: boolean
-}) {
+}: DialogFooterProps) {
   return (
     <div
       data-slot="dialog-footer"
-      className={cn("grid gap-2 sm:grid-cols-2", className)}
+      className={cn(dialogFooterVariants({ cols }), className)}
       {...props}
     >
       {children}

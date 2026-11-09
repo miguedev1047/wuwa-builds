@@ -1,5 +1,6 @@
 import * as React from "react"
 import { cn } from "cn"
+import { cva, type VariantProps } from "class-variance-authority"
 
 function Card({
   className,
@@ -32,11 +33,26 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+const cardTitleVariants = cva("font-heading font-medium", {
+  variants: {
+    size: {
+      default: "text-sm",
+      metric: "text-2xl font-semibold tabular-nums @[250px]/card:text-3xl",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+})
+
+export interface CardTitleProps
+  extends React.ComponentProps<"div">, VariantProps<typeof cardTitleVariants> {}
+
+function CardTitle({ className, size, ...props }: CardTitleProps) {
   return (
     <div
       data-slot="card-title"
-      className={cn("font-heading text-base font-medium", className)}
+      className={cn(cardTitleVariants({ size }), className)}
       {...props}
     />
   )
