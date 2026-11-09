@@ -22,6 +22,7 @@ export function BuildName() {
   return (
     <Input
       value={build.name}
+      aria-label="Nombre de la build"
       className="w-full text-xl placeholder:text-xl"
       placeholder="Nombre de la build"
       onChange={handleChangeBuildName}

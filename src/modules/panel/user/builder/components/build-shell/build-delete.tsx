@@ -15,7 +15,12 @@ export function BuildDelete() {
   }
 
   return (
-    <Button onClick={handleDeleteBuild} size="icon" variant="destructive">
+    <Button
+      onClick={handleDeleteBuild}
+      size="icon"
+      variant="destructive"
+      aria-label="Eliminar build"
+    >
       <HugeiconsIcon icon={DeleteIcon} />
     </Button>
   )
