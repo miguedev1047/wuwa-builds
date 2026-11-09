@@ -10,9 +10,17 @@ export function BuildResonatorPortrait() {
   return (
     <Show when={data?.resonator.data}>
       {(resonator) => (
-        <figure className="absolute -bottom-1/2 -left-150 hidden w-375 cursor-pointer transition-transform hover:scale-110 md:block">
-          <img className="h-auto w-375" src={resonator.portrait} />
-        </figure>
+        <button
+          type="button"
+          aria-label={`Cambiar resonador (${resonator.name})`}
+          className="absolute -bottom-1/2 -left-150 hidden w-375 cursor-pointer border-0 bg-transparent p-0 transition-transform hover:scale-110 md:block"
+        >
+          <img
+            className="h-auto w-full"
+            src={resonator.portrait}
+            alt={resonator.name}
+          />
+        </button>
       )}
     </Show>
   )

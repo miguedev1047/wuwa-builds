@@ -33,8 +33,14 @@ export function BuildCardSectionDialog({
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger
-        nativeButton={false}
-        render={<div className="contents">{trigger}</div>}
+        render={
+          <button
+            type="button"
+            className="block h-full w-full border-0 bg-transparent p-0 text-left outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            {trigger}
+          </button>
+        }
       />
       <DialogContent {...dialogContent}>
         <DialogHeader>
