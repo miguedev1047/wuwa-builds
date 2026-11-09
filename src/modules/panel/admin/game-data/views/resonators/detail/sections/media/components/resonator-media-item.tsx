@@ -22,7 +22,7 @@ export function ResonatorMediaItem({ media }: ResonatorMediaItemProps) {
 
       <EditableSection.ItemContent>
         <EditableSection.ItemTitle>{label}</EditableSection.ItemTitle>
-        <EditableSection.ItemDescription className="truncate">
+        <EditableSection.ItemDescription className="line-clamp-1">
           {media.url || "Sin imagen"}
         </EditableSection.ItemDescription>
       </EditableSection.ItemContent>
