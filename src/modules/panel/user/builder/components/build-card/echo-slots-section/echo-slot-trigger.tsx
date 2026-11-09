@@ -22,7 +22,7 @@ export function EchoSlotTrigger({ slot }: EchoSlotTriggerProps) {
   return (
     <BuildCardSection interactive>
       <div className="flex h-full flex-col gap-3">
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
             Eco {slot.index + 1}
           </p>

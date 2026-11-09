@@ -35,10 +35,11 @@ the variants instead of the section files.
 - `ui/build-card-section/build-card-section-dialog.tsx` hosts one section. The
   header and footer stay pinned while the body scrolls inside the viewport.
 - `ui/build-catalog-picker/build-catalog-picker-dialog.tsx` hosts a picker in a
-  nested dialog. The grid lives on a fixed 50vh area with `no-scrollbar`.
-- Sections open the picker from a compact selection row
-  (`echo-selection.tsx`, `weapon-selection.tsx`) instead of rendering the whole
-  catalog inside the section dialog.
+  standalone dialog. The grid lives on a fixed 50vh area with `no-scrollbar`.
+- Echo and weapon pickers live on the card itself: the card action
+  (`echo-picker-dialog.tsx`, `weapon-picker-dialog.tsx`) opens the selection
+  dialog, and an empty card opens it directly. Selection never nests inside the
+  property-editor dialog.
 
 ## Shared catalog picker
 

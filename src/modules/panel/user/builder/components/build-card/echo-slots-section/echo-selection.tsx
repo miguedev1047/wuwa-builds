@@ -1,13 +1,12 @@
 import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
-import { EchoPickerDialog } from "./echo-picker-dialog"
 
 type EchoSelectionProps = {
   slot: EchoesDataProps
 }
 
-/** Selected echo summary and the button that opens the echo picker. */
+/** Summary of the echo assigned to one slot. */
 export function EchoSelection({ slot }: EchoSelectionProps) {
   return (
     <div className="flex items-center gap-3 rounded-xl border bg-muted/30 p-3">
@@ -39,11 +38,6 @@ export function EchoSelection({ slot }: EchoSelectionProps) {
           </>
         )}
       </Show>
-
-      <EchoPickerDialog
-        slot={slot}
-        label={slot.data ? "Cambiar" : "Elegir eco"}
-      />
     </div>
   )
 }

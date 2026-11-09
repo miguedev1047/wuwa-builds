@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button"
 import { Show } from "@/components/utility/show"
 import { cn } from "cn"
 import { useState } from "react"
+import { BuildCardTrigger } from "./build-card-trigger"
 
 type BuildCardSectionDialogProps = {
   trigger: React.ReactNode
@@ -38,16 +39,7 @@ export function BuildCardSectionDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger
-        render={
-          <button
-            type="button"
-            className="block h-full w-full border-0 bg-transparent p-0 text-left outline-none"
-          >
-            {trigger}
-          </button>
-        }
-      />
+      <DialogTrigger render={<BuildCardTrigger>{trigger}</BuildCardTrigger>} />
       <DialogContent
         {...dialogContent}
         className={cn(
@@ -62,7 +54,7 @@ export function BuildCardSectionDialog({
           </Show>
         </DialogHeader>
 
-        <div className="-mx-1 no-scrollbar min-h-0 flex-1 overflow-y-auto overscroll-contain px-1">
+        <div className="-mx-1 no-scrollbar min-h-0 flex-1 scroll-fade-y overflow-y-auto overscroll-contain px-1">
           {children({ close: () => setIsOpen(false) })}
         </div>
 

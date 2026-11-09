@@ -43,7 +43,7 @@ export function BuildCatalogPickerDialog({
           </Show>
         </DialogHeader>
 
-        <div className="-m-1 no-scrollbar h-[50vh] overflow-y-auto overscroll-contain p-1">
+        <div className="-m-1 no-scrollbar h-[50vh] scroll-fade-y overflow-y-auto overscroll-contain p-1">
           {children({ close: () => setIsOpen(false) })}
         </div>
       </DialogContent>
