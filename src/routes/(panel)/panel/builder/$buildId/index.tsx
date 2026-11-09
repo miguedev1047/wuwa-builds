@@ -1,17 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
-import { JsonDevtool } from "@/components/utility/devtools"
-import { deleteBuild } from "@/modules/builds/client/build-store"
 import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import { BuilderRoot } from "@/modules/panel/user/builder/components/builder-root"
-import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import {
-  createFileRoute,
-  Link,
-  useNavigate,
-  useParams,
-} from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
+import { BuildShell } from "@/modules/panel/user/builder/components/build-shell"
+import { useBuilderId } from "@/modules/panel/user/builder/application/use-builder-id"
 
 export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
   component: RouteComponent,
@@ -20,16 +12,8 @@ export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
 })
 
 function RouteComponent() {
-  const { buildId } = useParams({
-    from: "/(panel)/panel/builder/$buildId/",
-  })
-  const navigate = useNavigate()
+  const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
-
-  const handleDeleteBuild = () => {
-    deleteBuild(buildId)
-    navigate({ to: "/panel/my-builds" })
-  }
 
   if (!build) {
     return (
@@ -46,22 +30,5 @@ function RouteComponent() {
     )
   }
 
-  return (
-    <div className="space-y-6 p-8">
-      <div className="flex items-center justify-between gap-4">
-        <Button
-          nativeButton={false}
-          render={<Link to="/panel/my-builds">Volver</Link>}
-        />
-
-        <Button variant="destructive" onClick={handleDeleteBuild} size="icon">
-          <HugeiconsIcon icon={DeleteIcon} />
-        </Button>
-      </div>
-
-      <BuilderRoot build={build} />
-
-      <JsonDevtool title="Build response" data={build} />
-    </div>
-  )
+  return <BuildShell />
 }
