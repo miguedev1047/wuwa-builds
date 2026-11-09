@@ -1,7 +1,6 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
-import { Show } from "../utility/show"
 import { errorPlaceholder } from "@/assets/icons"
 
 const imageVariants = cva(
@@ -77,13 +76,14 @@ export interface ImageProps
 /**
  * Image with a fixed aspect ratio, lazy loading and an optional hover effect.
  *
- * The wrapper uses `aspect-square` or `aspect-2/3`, one of the preset sizes and
- * `group` so hover variants can target the image. The background is
- * transparent by default; use `background="accent"` to fill the frame.
+ * Missing URLs and load errors fall back to the shared placeholder, so cards
+ * never render a broken image. The wrapper uses `aspect-square` or `aspect-2/3`
+ * and `group` so hover variants can target the image.
  */
 export function Image({
   className,
   imgClassName,
+  src,
   aspect,
   size,
   rounded,
@@ -94,7 +94,7 @@ export function Image({
   decoding = "async",
   ...props
 }: ImageProps) {
-  const [error, setIsError] = React.useState(false)
+  const [error, setIsError] = React.useState(!src)
 
   return (
     <figure
@@ -103,26 +103,14 @@ export function Image({
         className
       )}
     >
-      <Show
-        when={error}
-        fallback={
-          <img
-            {...props}
-            loading={loading}
-            decoding={decoding}
-            onError={() => setIsError(true)}
-            className={cn(imageFitVariants({ fit }), imgClassName)}
-          />
-        }
-      >
-        <img
-          {...props}
-          src={errorPlaceholder}
-          loading={loading}
-          decoding={decoding}
-          className={cn(imageFitVariants({ fit }), imgClassName)}
-        />
-      </Show>
+      <img
+        {...props}
+        src={error || !src ? errorPlaceholder : src}
+        loading={loading}
+        decoding={decoding}
+        onError={() => setIsError(true)}
+        className={cn(imageFitVariants({ fit }), imgClassName)}
+      />
     </figure>
   )
 }
