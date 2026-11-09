@@ -58,7 +58,7 @@ export function EchoSetSelect({ echo, slotIndex }: EchoSetSelectProps) {
         disabled={options.length === 0}
         onValueChange={handleSetChange}
       >
-        <SelectTrigger className="w-full">
+        <SelectTrigger className="w-full" aria-label="Set del eco">
           <SelectValue
             placeholder={
               options.length === 0 ? "Sin sets" : "Selecciona un set"

@@ -33,9 +33,9 @@ const imageVariants = cva(
       },
       hover: {
         none: "",
-        zoom: "[&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-105",
-        lift: "transition-transform duration-300 hover:-translate-y-1",
-        fade: "[&_img]:transition-opacity [&_img]:duration-300 hover:[&_img]:opacity-80",
+        zoom: "[&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-105 motion-reduce:[&_img]:transition-none motion-reduce:group-hover:[&_img]:scale-100",
+        lift: "transition-transform duration-300 hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0",
+        fade: "[&_img]:transition-opacity [&_img]:duration-300 hover:[&_img]:opacity-80 motion-reduce:[&_img]:transition-none",
       },
     },
     defaultVariants: {

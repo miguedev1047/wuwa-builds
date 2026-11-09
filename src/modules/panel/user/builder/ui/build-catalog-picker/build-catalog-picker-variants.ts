@@ -26,7 +26,7 @@ export type BuildCatalogPickerColumns = NonNullable<
 
 /** One selectable image inside a catalog picker. */
 export const buildCatalogPickerItemVariants = cva(
-  "group relative block w-full overflow-hidden rounded-xl transition-[translate,scale,opacity] duration-150 ease-out outline-none enabled:active:scale-[0.96] disabled:pointer-events-none disabled:opacity-40 motion-reduce:transition-none motion-reduce:enabled:active:scale-100",
+  "group relative block w-full overflow-hidden rounded-xl transition-[translate,scale,opacity] duration-150 ease-out outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background enabled:active:scale-[0.96] disabled:pointer-events-none disabled:opacity-40 motion-reduce:transition-none motion-reduce:enabled:active:scale-100",
   {
     variants: {
       selected: {
@@ -34,7 +34,7 @@ export const buildCatalogPickerItemVariants = cva(
         false: "",
       },
       hover: {
-        true: "hover:-translate-y-0.5",
+        true: "hover:-translate-y-0.5 motion-reduce:hover:translate-y-0",
         false: "",
       },
     },

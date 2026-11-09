@@ -47,6 +47,7 @@ export function SkillItem({
           max={SKILL_LEVEL_MAX}
           value={skill.level}
           onValueChange={handleLevelChange}
+          aria-label={`Nivel de ${catalogSkill.name}`}
         />
       </ItemContent>
     </Item>

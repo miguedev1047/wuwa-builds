@@ -13,7 +13,7 @@ export function BuildResonatorPortrait() {
         <button
           type="button"
           aria-label={`Cambiar resonador (${resonator.name})`}
-          className="absolute -bottom-1/2 -left-150 hidden w-375 cursor-pointer border-0 bg-transparent p-0 transition-transform hover:scale-110 md:block"
+          className="absolute -bottom-1/2 -left-150 hidden w-375 cursor-pointer border-0 bg-transparent p-0 transition-transform outline-none hover:scale-110 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background motion-reduce:transition-none motion-reduce:hover:scale-100 md:block"
         >
           <img
             className="h-auto w-full"

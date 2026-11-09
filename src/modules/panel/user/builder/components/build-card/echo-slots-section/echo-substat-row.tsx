@@ -57,7 +57,7 @@ export function EchoSubstatRow({
           if (value) onStatChange(value)
         }}
       >
-        <SelectTrigger className="flex-1">
+        <SelectTrigger className="flex-1" aria-label="Estadística del substat">
           <SelectValue placeholder="Substat" />
         </SelectTrigger>
 
@@ -78,7 +78,7 @@ export function EchoSubstatRow({
           if (value) onValueChange(Number(value))
         }}
       >
-        <SelectTrigger className="w-24">
+        <SelectTrigger className="w-24" aria-label="Valor del substat">
           <SelectValue placeholder="Valor" />
         </SelectTrigger>
 

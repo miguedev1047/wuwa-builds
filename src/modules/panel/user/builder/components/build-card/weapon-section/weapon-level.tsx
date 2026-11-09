@@ -51,6 +51,7 @@ export function WeaponLevel({ weapon }: WeaponLevelProps) {
         min={0}
         max={LEVEL_MILESTONES.length - 1}
         onValueChange={handleLevelChange}
+        aria-label="Nivel del arma"
       />
 
       <div className="grid gap-1 sm:grid-cols-2">

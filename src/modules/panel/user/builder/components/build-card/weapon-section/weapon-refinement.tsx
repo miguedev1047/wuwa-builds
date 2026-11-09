@@ -45,6 +45,7 @@ export function WeaponRefinement({ weapon }: WeaponRefinementProps) {
         min={1}
         max={REFINEMENT_RANK_MAX}
         onValueChange={handleRankChange}
+        aria-label="Refinamiento del arma"
       />
 
       <Show when={effect}>

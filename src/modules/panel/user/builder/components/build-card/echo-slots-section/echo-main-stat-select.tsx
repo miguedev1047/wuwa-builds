@@ -74,7 +74,10 @@ export function EchoMainStatSelect({ slotIndex }: EchoMainStatSelectProps) {
         disabled={statOptions.length === 0}
         onValueChange={handleStatChange}
       >
-        <SelectTrigger className="w-full">
+        <SelectTrigger
+          className="w-full"
+          aria-label="Estadística principal del eco"
+        >
           <SelectValue placeholder="Selecciona una estadística" />
         </SelectTrigger>
 

@@ -60,6 +60,7 @@ export function EchoLevel({ slotIndex }: EchoLevelProps) {
         min={0}
         max={ECHO_LEVEL_MILESTONES.length - 1}
         onValueChange={handleLevelChange}
+        aria-label={`Nivel del eco ${slotIndex + 1}`}
       />
     </section>
   )
