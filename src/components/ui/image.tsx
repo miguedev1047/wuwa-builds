@@ -96,6 +96,10 @@ export function Image({
 }: ImageProps) {
   const [error, setIsError] = React.useState(!src)
 
+  React.useEffect(() => {
+    setIsError(!src)
+  }, [src])
+
   return (
     <figure
       className={cn(
