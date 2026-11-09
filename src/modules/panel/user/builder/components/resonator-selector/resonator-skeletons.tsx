@@ -3,7 +3,7 @@ import { cn } from "cn"
 import {
   resonatorGridVariants,
   type ResonatorGridColumns,
-} from "@/modules/panel/user/builder/components/resonator-selector/resonator-grid-variants"
+} from "@/modules/panel/user/builder/components/resonator-selector"
 import type { ResonatorAspect } from "@/modules/panel/user/builder/components/resonator-selector/resonator-item"
 
 const SKELETONS_ITEMS = 16
