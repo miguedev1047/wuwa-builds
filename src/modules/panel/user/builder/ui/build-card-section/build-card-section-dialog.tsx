@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Show } from "@/components/utility/show"
+import { cn } from "cn"
 import { useState } from "react"
 
 type BuildCardSectionDialogProps = {
@@ -20,7 +21,12 @@ type BuildCardSectionDialogProps = {
   children: (controls: { close: () => void }) => React.ReactNode
 }
 
-/** Dialog primitive that edits one section of the build card. */
+/**
+ * Dialog primitive that edits one section of the build card.
+ *
+ * Header and footer stay pinned while the section body scrolls inside the
+ * viewport, so long editors never push the dialog off screen.
+ */
 export function BuildCardSectionDialog({
   trigger,
   title,
@@ -36,13 +42,19 @@ export function BuildCardSectionDialog({
         render={
           <button
             type="button"
-            className="block h-full w-full border-0 bg-transparent p-0 text-left outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="block h-full w-full border-0 bg-transparent p-0 text-left outline-none"
           >
             {trigger}
           </button>
         }
       />
-      <DialogContent {...dialogContent}>
+      <DialogContent
+        {...dialogContent}
+        className={cn(
+          "flex max-h-[calc(100dvh-2rem)] flex-col",
+          dialogContent?.className
+        )}
+      >
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <Show when={description}>
@@ -50,7 +62,9 @@ export function BuildCardSectionDialog({
           </Show>
         </DialogHeader>
 
-        {children({ close: () => setIsOpen(false) })}
+        <div className="-mx-1 no-scrollbar min-h-0 flex-1 overflow-y-auto overscroll-contain px-1">
+          {children({ close: () => setIsOpen(false) })}
+        </div>
 
         <DialogFooter cols={1}>
           <DialogClose render={<Button size="xl">Cerrar</Button>} />

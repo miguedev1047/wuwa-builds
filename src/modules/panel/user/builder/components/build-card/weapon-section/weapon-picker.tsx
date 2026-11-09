@@ -9,8 +9,13 @@ import {
   BuildCatalogPickerItem,
 } from "../../../ui/build-catalog-picker"
 
+type WeaponPickerProps = {
+  /** Called after the weapon is applied to the build. */
+  onSelected?: () => void
+}
+
 /** Weapons compatible with the selected resonator. */
-export function WeaponPicker() {
+export function WeaponPicker({ onSelected }: WeaponPickerProps) {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
   const { data: weapons } = useSuspenseQuery(weaponQueries.list())
@@ -36,7 +41,9 @@ export function WeaponPicker() {
           aspect="square"
           selected={weapon.id === selectedId}
           onSelect={() => {
-            void selectWeapon(weapon)
+            void selectWeapon(weapon).then((selected) => {
+              if (selected) onSelected?.()
+            })
           }}
         />
       )}

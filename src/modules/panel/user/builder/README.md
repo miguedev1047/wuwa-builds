@@ -6,15 +6,15 @@ presentation components.
 
 ## Where to change the design
 
-| What | File |
-| --- | --- |
-| Section placement in the grid | `components/build-card/build-card-grid-layout.ts` |
-| Card surface, padding and radius | `ui/build-card/build-card.tsx` |
-| Section fill/hover state | `ui/build-card-section/build-card-section-variants.ts` |
-| Picker grid and item state | `ui/build-catalog-picker/build-catalog-picker-variants.ts` |
-| Responsive base grid | `components/build-card/build-card-grid.tsx` |
-| Section content | `components/build-card/<section>/` |
-| Picker item content and controls | `ui/build-catalog-picker/` |
+| What                             | File                                                       |
+| -------------------------------- | ---------------------------------------------------------- |
+| Section placement in the grid    | `components/build-card/build-card-grid-layout.ts`          |
+| Card surface, padding and radius | `ui/build-card/build-card.tsx`                             |
+| Section fill/hover state         | `ui/build-card-section/build-card-section-variants.ts`     |
+| Picker grid and item state       | `ui/build-catalog-picker/build-catalog-picker-variants.ts` |
+| Responsive base grid             | `components/build-card/build-card-grid.tsx`                |
+| Section content                  | `components/build-card/<section>/`                         |
+| Picker item content and controls | `ui/build-catalog-picker/`                                 |
 
 Sections never define their own grid placement. To move or resize a section,
 change its entry in `build-card-grid-layout.ts`; to restyle every card, change
@@ -22,13 +22,23 @@ the variants instead of the section files.
 
 ## Sections
 
-| Section | Folder | Data |
-| --- | --- | --- |
-| Resonator info | `resonator-info-section/` | level and sequence |
-| Stats | `stats-section/` | `useBuildStats` |
-| Skills and passives | `skills-section/` | catalog detail and build passives |
-| Weapon | `weapon-section/` | compatible weapons, level and refinement |
-| Echo slots | `echo-slots-section/` | five slots, set, main stat and substats |
+| Section             | Folder                    | Data                                     |
+| ------------------- | ------------------------- | ---------------------------------------- |
+| Resonator info      | `resonator-info-section/` | level and sequence                       |
+| Stats               | `stats-section/`          | `useBuildStats`                          |
+| Skills and passives | `skills-section/`         | catalog detail and build passives        |
+| Weapon              | `weapon-section/`         | compatible weapons, level and refinement |
+| Echo slots          | `echo-slots-section/`     | five slots, set, main stat and substats  |
+
+## Dialogs
+
+- `ui/build-card-section/build-card-section-dialog.tsx` hosts one section. The
+  header and footer stay pinned while the body scrolls inside the viewport.
+- `ui/build-catalog-picker/build-catalog-picker-dialog.tsx` hosts a picker in a
+  nested dialog. The grid lives on a fixed 50vh area with `no-scrollbar`.
+- Sections open the picker from a compact selection row
+  (`echo-selection.tsx`, `weapon-selection.tsx`) instead of rendering the whole
+  catalog inside the section dialog.
 
 ## Shared catalog picker
 

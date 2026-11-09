@@ -9,6 +9,7 @@ interface ResonatorItemProps {
   resonator: CharacterSummary
   buildId: string
   aspect?: ResonatorAspect
+  selected?: boolean
   onSelect?: () => void
 }
 
@@ -17,6 +18,7 @@ export function ResonatorItem({
   resonator,
   buildId,
   aspect = "portrait",
+  selected = false,
   onSelect,
 }: ResonatorItemProps) {
   const { selectResonator, preloadResonator } = useSelectResonator(buildId)
@@ -41,6 +43,7 @@ export function ResonatorItem({
       label={resonator.name}
       image={resonator.iconLarge}
       aspect={aspect}
+      selected={selected}
       onSelect={handleSelect}
     />
   )

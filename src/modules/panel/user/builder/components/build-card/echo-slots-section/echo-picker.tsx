@@ -10,10 +10,12 @@ import {
 
 type EchoPickerProps = {
   slot: EchoesDataProps
+  /** Called after the echo is assigned to the slot. */
+  onSelected?: () => void
 }
 
 /** Catalog picker bound to one echo slot. */
-export function EchoPicker({ slot }: EchoPickerProps) {
+export function EchoPicker({ slot, onSelected }: EchoPickerProps) {
   const buildId = useBuilderId()
   const { data: echoes } = useSuspenseQuery(echoQueries.list())
   const { selectEcho } = useSelectEcho(buildId)
@@ -31,7 +33,10 @@ export function EchoPicker({ slot }: EchoPickerProps) {
           image={echo.icon}
           aspect="square"
           selected={slot.data?.id === echo.id}
-          onSelect={() => selectEcho(slot.index, echo)}
+          onSelect={() => {
+            selectEcho(slot.index, echo)
+            onSelected?.()
+          }}
         />
       )}
     </BuildCatalogPicker>

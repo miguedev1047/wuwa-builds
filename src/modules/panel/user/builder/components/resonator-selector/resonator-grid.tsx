@@ -1,4 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
+import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { characterQueries } from "@/modules/game-data/queries/characters"
 import {
   BuildCatalogPicker,
@@ -25,6 +26,8 @@ export function ResonatorGrid({
   className,
 }: ResonatorGridProps) {
   const { data: resonators } = useSuspenseQuery(characterQueries.list())
+  const { data: build } = useBuildCollection({ buildId })
+  const selectedId = build?.resonator.data?.id
 
   return (
     <BuildCatalogPicker
@@ -39,6 +42,7 @@ export function ResonatorGrid({
           buildId={buildId}
           resonator={resonator}
           aspect={aspect}
+          selected={selectedId === resonator.id}
           onSelect={onSelect}
         />
       )}
