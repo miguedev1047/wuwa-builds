@@ -11,7 +11,7 @@ export function WeaponTrigger() {
   const weapon = build?.weapon.data
 
   return (
-    <BuildCardSection hovered className="h-full w-full">
+    <BuildCardSection interactive>
       <div className="flex h-full flex-col gap-3">
         <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
           Arma

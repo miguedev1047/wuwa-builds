@@ -10,7 +10,7 @@ export function ResonatorInfoTrigger() {
   return (
     <Show when={build?.resonator.data}>
       {(resonator) => (
-        <BuildCardSection hovered className="relative h-full w-full">
+        <BuildCardSection interactive className="relative">
           <div className="absolute inset-0 flex items-start gap-4">
             <img
               src={resonator.iconLarge}

@@ -17,7 +17,7 @@ export function EchoSlotTrigger({ slot }: EchoSlotTriggerProps) {
   const isMain = build?.mainEchoSlot === slot.index
 
   return (
-    <BuildCardSection hovered className="h-full w-full">
+    <BuildCardSection interactive>
       <div className="flex h-full flex-col gap-3">
         <div className="flex items-center justify-between gap-2">
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">

@@ -24,7 +24,7 @@ export function SkillsTrigger() {
   const previewSkills = (resonator?.skills ?? []).slice(0, PREVIEW_SKILLS)
 
   return (
-    <BuildCardSection hovered className="h-full w-full">
+    <BuildCardSection interactive>
       <div className="flex h-full flex-col gap-4">
         <div className="flex items-center justify-between gap-3">
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
