@@ -127,10 +127,25 @@ export const RESONATOR_PROPERTY_ALIASES: {
 
 /** `GroupIndex` of the six Resonant Chain nodes. */
 export const RESONATOR_SEQUENCE: SelectOption<number>[] = [
+  { label: "Sin secuencia activa", value: 0 },
   { label: "Secuencia 1", value: 1 },
   { label: "Secuencia 2", value: 2 },
   { label: "Secuencia 3", value: 3 },
   { label: "Secuencia 4", value: 4 },
   { label: "Secuencia 5", value: 5 },
   { label: "Secuencia 6", value: 6 },
+]
+
+/** `GroupIndex` of the ten Resonant Level nodes. */
+export const RESONATOR_LEVELS: SelectOption<number>[] = [
+  { label: "Nivel 1", value: 1 },
+  { label: "Nivel 10", value: 10 },
+  { label: "Nivel 20", value: 20 },
+  { label: "Nivel 30", value: 30 },
+  { label: "Nivel 40", value: 40 },
+  { label: "Nivel 50", value: 50 },
+  { label: "Nivel 60", value: 60 },
+  { label: "Nivel 70", value: 70 },
+  { label: "Nivel 80", value: 80 },
+  { label: "Nivel 90", value: 90 },
 ]
