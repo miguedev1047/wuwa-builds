@@ -1,3 +1,5 @@
+import type { WeaponTypeId } from "@/modules/game-data/application/constants/resonator"
+
 /**
  * Weapon types shared by the admin form and the create server function.
  *
@@ -12,7 +14,37 @@ export const WEAPON_TYPES = [
   { label: "Rectificador", value: 5 },
 ] as const
 
+/** Numeric catalog type of each canonical resonator weapon type. */
+export const WEAPON_TYPE_NUMBER: Record<WeaponTypeId, number> = {
+  broadblade: 1,
+  sword: 2,
+  pistols: 3,
+  gauntlets: 4,
+  rectifier: 5,
+}
+
 /** Display name stored in `weapons.type_name` for a numeric weapon type. */
 export function weaponTypeName(type: number): string {
   return WEAPON_TYPES.find((item) => item.value === type)?.label ?? ""
+}
+
+/** Numeric catalog type of a canonical weapon id, or null when unknown. */
+export function weaponTypeNumber(typeId: string): number | null {
+  if (!Object.hasOwn(WEAPON_TYPE_NUMBER, typeId)) return null
+
+  return WEAPON_TYPE_NUMBER[typeId as WeaponTypeId]
+}
+
+/**
+ * Whether a catalog weapon matches the canonical type of a resonator.
+ *
+ * An unknown resonator type returns true so the picker does not hide every
+ * weapon when a new type is added before this map is updated.
+ */
+export function weaponTypeMatches(
+  resonatorType: string,
+  weaponType: number
+): boolean {
+  const expected = weaponTypeNumber(resonatorType)
+  return expected === null || expected === weaponType
 }
