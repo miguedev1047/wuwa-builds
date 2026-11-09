@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
+import { echoMainStatValue } from "@/modules/builds/application/echo-main-stat"
 import { updateBuild } from "@/modules/builds/client/build-store"
 import {
   ECHO_LEVEL_MAX,
@@ -34,6 +35,15 @@ export function EchoLevel({ slotIndex }: EchoLevelProps) {
       if (!target) return
 
       target.level = echoLevelFromStep(nextStep)
+
+      if (target.mainStatStat) {
+        target.mainStatValue = echoMainStatValue({
+          cost: target.cost,
+          stat: target.mainStatStat,
+          level: target.level,
+        })
+      }
+
       draft.updateAt = new Date().toISOString()
     })
   }
