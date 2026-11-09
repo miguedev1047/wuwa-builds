@@ -30,6 +30,24 @@ describe("encoreAssetUrl", () => {
     )
   })
 
+  test("fixes the UiResources segment Encore misspells", () => {
+    expect(
+      encoreAssetUrl(
+        "/Game/Aki/UI/UiResources/Common/Image/IconAttribute/T_IconpropertywpMastery_UI.T_IconpropertywpMastery_UI"
+      )
+    ).toBe(
+      "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconAttribute/T_IconpropertywpMastery_UI.webp"
+    )
+
+    expect(
+      encoreAssetUrl(
+        "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UiResources/Common/Image/IconAttribute/T_IconpropertywpMastery_UI.webp"
+      )
+    ).toBe(
+      "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconAttribute/T_IconpropertywpMastery_UI.webp"
+    )
+  })
+
   test("does not double the extension on a relative path", () => {
     expect(
       encoreAssetUrl(

@@ -21,13 +21,29 @@ const ASSET_EXTENSION = ".webp"
 const API_ASSET_PREFIX = "https://api-v2.encore.moe/api/resource"
 const ASSET_PREFIX = "https://api-v2.encore.moe/resource"
 
+/**
+ * Encore sends `UiResources` (lowercase `i`) for a few icons, but the CDN path
+ * is case-sensitive and only `UIResources` exists. Normalize the segment
+ * instead of letting the asset 404.
+ */
+const PATH_CASE_FIXES: ReadonlyArray<readonly [RegExp, string]> = [
+  [/\/uiresources\//gi, "/UIResources/"],
+]
+
+function normalizeAssetPath(value: string): string {
+  return PATH_CASE_FIXES.reduce(
+    (path, [pattern, replacement]) => path.replace(pattern, replacement),
+    value
+  )
+}
+
 export function encoreAssetUrl(value?: string | null): string {
   if (!value) {
     return ""
   }
 
   if (/^https?:\/\//i.test(value)) {
-    return value.replace(API_ASSET_PREFIX, ASSET_PREFIX)
+    return normalizeAssetPath(value.replace(API_ASSET_PREFIX, ASSET_PREFIX))
   }
 
   // Anything that is not rooted in the asset host is not an Unreal package
@@ -38,5 +54,5 @@ export function encoreAssetUrl(value?: string | null): string {
 
   const packagePath = value.replace(/\.[^./]+$/, "")
 
-  return `${ASSET_HOST}${packagePath}${ASSET_EXTENSION}`
+  return normalizeAssetPath(`${ASSET_HOST}${packagePath}${ASSET_EXTENSION}`)
 }
