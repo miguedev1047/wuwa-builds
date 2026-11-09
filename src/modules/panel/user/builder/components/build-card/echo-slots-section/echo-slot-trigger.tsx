@@ -15,6 +15,9 @@ export function EchoSlotTrigger({ slot }: EchoSlotTriggerProps) {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
   const isMain = build?.mainEchoSlot === slot.index
+  const substatCount = slot.substats.filter(
+    (substat) => substat.valueStat
+  ).length
 
   return (
     <BuildCardSection interactive>
@@ -50,6 +53,16 @@ export function EchoSlotTrigger({ slot }: EchoSlotTriggerProps) {
                 <p className="truncate text-sm font-medium">{echo.name}</p>
                 <p className="text-xs text-muted-foreground">
                   Nv. {slot.level} · Costo {slot.cost}
+                </p>
+                <Show when={slot.mainStatLabel}>
+                  {(label) => (
+                    <p className="truncate text-xs text-muted-foreground">
+                      {label} +{slot.mainStatValue}
+                    </p>
+                  )}
+                </Show>
+                <p className="text-xs text-muted-foreground">
+                  {substatCount}/5 substats
                 </p>
               </div>
             </div>
