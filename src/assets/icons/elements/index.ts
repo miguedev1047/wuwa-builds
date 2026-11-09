@@ -1,0 +1,6 @@
+export { default as aero } from "./aero.png"
+export { default as electro } from "./electro.png"
+export { default as fusion } from "./fusion.png"
+export { default as glacio } from "./glacio.png"
+export { default as havoc } from "./havoc.png"
+export { default as spectro } from "./spectro.png"
