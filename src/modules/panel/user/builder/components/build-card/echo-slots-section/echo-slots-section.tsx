@@ -8,7 +8,7 @@ export function EchoSlotsSection() {
   const { data: build } = useBuildCollection({ buildId })
 
   return (
-    <div className="grid h-full grid-cols-5 gap-4">
+    <div className="grid h-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-5">
       {(build?.echoes ?? []).map((slot) => (
         <EchoSlotSection key={slot.index} slot={slot} />
       ))}

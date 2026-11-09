@@ -33,7 +33,7 @@ export function SkillsTrigger() {
           <Badge variant="outline">{activePassives.length} activas</Badge>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {previewSkills.length > 0
             ? previewSkills.map((skill) => (
                 <Image
