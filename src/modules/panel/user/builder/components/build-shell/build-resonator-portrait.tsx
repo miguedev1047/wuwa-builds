@@ -10,7 +10,7 @@ export function BuildResonatorPortrait() {
   return (
     <Show when={data?.resonator.data}>
       {(resonator) => (
-        <figure className="absolute -bottom-1/2 -left-150 cursor-pointer transition-transform hover:scale-110">
+        <figure className="absolute -bottom-1/2 -left-150 hidden w-375 cursor-pointer transition-transform hover:scale-110 md:block">
           <img className="h-auto w-375" src={resonator.portrait} />
         </figure>
       )}
