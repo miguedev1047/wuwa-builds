@@ -6,7 +6,12 @@ export function WeaponPickerSkeleton() {
   return (
     <div className={buildCatalogPickerVariants({ columns: 6 })}>
       {Array.from({ length: 12 }).map((_, index) => (
-        <SkeletonBox key={index} className="aspect-square w-full" radius={12} />
+        <SkeletonBox
+          key={index}
+          className="aspect-square w-full"
+          width="100%"
+          height="100%"
+        />
       ))}
     </div>
   )

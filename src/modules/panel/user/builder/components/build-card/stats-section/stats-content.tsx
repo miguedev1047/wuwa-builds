@@ -24,7 +24,7 @@ export function StatsContent() {
   const rows = statsRows(result.stats, build?.resonator.data?.element ?? null)
 
   return (
-    <div className="flex h-full flex-col gap-4">
+    <div className="space-y-4">
       <h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
         Estadísticas
       </h2>

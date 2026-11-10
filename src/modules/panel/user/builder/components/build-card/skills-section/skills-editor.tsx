@@ -1,6 +1,8 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { SkeletonSuspense } from "skullet/react"
+import { Empty, EmptyTitle } from "@/components/ui/empty"
 import { ItemGroup } from "@/components/ui/item"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Show } from "@/components/utility/show"
 import {
   withPassiveEnabled,
@@ -85,15 +87,20 @@ function SkillsEditorLoaded({ buildId, resonatorId }: SkillsEditorLoadedProps) {
   }
 
   return (
-    <div className="space-y-6">
-      <section className="space-y-2">
-        <h3 className="text-sm font-medium">Habilidades</h3>
-
-        {skills.length === 0 ? (
-          <p className="text-sm text-muted-foreground">
-            Sin habilidades en el catálogo.
-          </p>
-        ) : (
+    <Tabs defaultValue="skills">
+      <TabsList className="grid w-full gap-2 md:grid-cols-2">
+        <TabsTrigger value="skills">Habilidades</TabsTrigger>
+        <TabsTrigger value="passives">Pasivas</TabsTrigger>
+      </TabsList>
+      <TabsContent value="skills">
+        <Show
+          when={skills.length > 0}
+          fallback={
+            <Empty>
+              <EmptyTitle>Sin habilidades en el catálogo.</EmptyTitle>
+            </Empty>
+          }
+        >
           <ItemGroup>
             {skills.map(({ skill, catalogSkill }) => (
               <SkillItem
@@ -106,16 +113,18 @@ function SkillsEditorLoaded({ buildId, resonatorId }: SkillsEditorLoadedProps) {
               />
             ))}
           </ItemGroup>
-        )}
-      </section>
-
-      <section className="space-y-2">
-        <h3 className="text-sm font-medium">Pasivas</h3>
-
-        {passives.length === 0 ? (
-          <p className="text-sm text-muted-foreground">Sin pasivas.</p>
-        ) : (
-          <ItemGroup>
+        </Show>
+      </TabsContent>
+      <TabsContent value="passives">
+        <Show
+          when={passives.length > 0}
+          fallback={
+            <Empty>
+              <EmptyTitle>Sin pasivas en el catálogo.</EmptyTitle>
+            </Empty>
+          }
+        >
+          <div className="grid gap-4 md:grid-cols-5">
             {passives.map((passive) => (
               <PassiveItem
                 key={passive.id}
@@ -125,9 +134,9 @@ function SkillsEditorLoaded({ buildId, resonatorId }: SkillsEditorLoadedProps) {
                 }
               />
             ))}
-          </ItemGroup>
-        )}
-      </section>
-    </div>
+          </div>
+        </Show>
+      </TabsContent>
+    </Tabs>
   )
 }

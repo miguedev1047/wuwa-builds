@@ -13,7 +13,7 @@ import {
   formatFlatStat,
   formatPercentStat,
 } from "@builder/components/build-card/stats-section"
-import { Empty, EmptyTitle } from "@/components/ui/empty"
+import { Empty } from "@/components/ui/empty"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 
