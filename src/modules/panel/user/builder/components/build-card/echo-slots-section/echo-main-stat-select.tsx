@@ -15,7 +15,7 @@ import {
 import { updateBuild } from "@builds/client/build-store"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { useBuilderId } from "@builder/application/use-builder-id"
-import { GameIcon } from "@/components/ui/game-icon"
+import { GameIcon, gameIconName } from "@/components/ui/game-icon"
 
 type EchoMainStatSelectProps = {
   slotIndex: number
@@ -86,7 +86,7 @@ export function EchoMainStatSelect({ slotIndex }: EchoMainStatSelectProps) {
           {statOptions.map((option) => (
             <SelectItem key={option.value} value={option.value}>
               <div className="flex items-center gap-1">
-                <GameIcon name={option.value} />
+                <GameIcon name={gameIconName(option.value)} />
                 <p>{option.label}</p>
               </div>
             </SelectItem>

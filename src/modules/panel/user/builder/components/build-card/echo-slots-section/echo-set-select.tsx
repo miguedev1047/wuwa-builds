@@ -6,6 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { Show } from "@/components/utility/show"
 import { updateBuild } from "@builds/client/build-store"
 import type { EchoSummary } from "@game-data/domain/echo"
 import { echoQueries } from "@game-data/queries/echoes"
@@ -71,11 +72,15 @@ export function EchoSetSelect({ echo, slotIndex }: EchoSetSelectProps) {
           {options.map((option) => (
             <SelectItem key={option.value} value={option.value}>
               <div className="flex items-center gap-2">
-                <img
-                  className="size-5 rounded-full"
-                  src={option.icon}
-                  alt={option.value}
-                />
+                <Show when={option.icon}>
+                  {(icon) => (
+                    <img
+                      className="size-5 rounded-full"
+                      src={icon}
+                      alt={option.label}
+                    />
+                  )}
+                </Show>
                 <p>{option.label}</p>
               </div>
             </SelectItem>

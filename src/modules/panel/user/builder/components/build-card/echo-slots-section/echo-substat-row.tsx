@@ -10,7 +10,7 @@ import {
   formatEchoSubstatValue,
   type EchoSubstatOption,
 } from "@builds/application/echo-substats"
-import { GameIcon } from "@/components/ui/game-icon"
+import { GameIcon, gameIconName } from "@/components/ui/game-icon"
 
 type EchoSubstatRowProps = {
   substat: EchoSubstatsDataProps
@@ -66,7 +66,7 @@ export function EchoSubstatRow({
           {statOptions.map((option) => (
             <SelectItem key={option.value} value={option.value}>
               <div className="flex items-center gap-1">
-                <GameIcon name={option.value} />
+                <GameIcon name={gameIconName(option.value)} />
                 <p>{option.label}</p>
               </div>
             </SelectItem>
