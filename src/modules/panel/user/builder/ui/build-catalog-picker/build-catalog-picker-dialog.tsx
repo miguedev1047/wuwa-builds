@@ -35,6 +35,7 @@ export function BuildCatalogPickerDialog({
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger
+        nativeButton={false}
         render={<div className="outline-0 outline-none">{trigger}</div>}
       />
       <DialogContent size="lg">

@@ -5,6 +5,7 @@ import {
   normalizeElementId,
   normalizeWeaponTypeId,
 } from "@builds/application/calculation/normalize"
+import { BuildCard } from "@panel/user/builder/ui/build-card"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { useBuilderId } from "@builder/application/use-builder-id"
 
@@ -14,7 +15,7 @@ export function ResonatorSelection() {
   const { data: build } = useBuildCollection({ buildId })
 
   return (
-    <div className="flex items-center gap-3 rounded-xl border bg-muted/30 p-3">
+    <BuildCard className="bg-input/30 p-3">
       <Show
         when={build?.resonator.data}
         fallback={
@@ -31,7 +32,7 @@ export function ResonatorSelection() {
           )
 
           return (
-            <div className="flex w-full items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
               <Image
                 src={resonator.icon}
                 alt={resonator.name}
@@ -51,6 +52,6 @@ export function ResonatorSelection() {
           )
         }}
       </Show>
-    </div>
+    </BuildCard>
   )
 }

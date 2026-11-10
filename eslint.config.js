@@ -83,6 +83,7 @@ export default defineConfig([
                 "mb-*",
                 "p-*",
                 "gap-*",
+                "bg-*",
                 "transition-*",
                 "duration-*",
               ],
@@ -131,6 +132,10 @@ export default defineConfig([
             {
               pattern: "^Spinner$",
               allow: ["layout", "size-*", "text-*", "shrink-*"],
+            },
+            {
+              pattern: "^BuildCard$",
+              allow: ["layout", "size-*", "text-*", "bg-*"],
             },
             {
               pattern: "^Tabs(Content|List|Trigger)?$",
@@ -231,7 +236,16 @@ export default defineConfig([
             {
               pattern:
                 "^Item(Group|Separator|Media|Content|Title|Description|Actions|Header|Footer)?$",
-              allow: ["layout", "w-*", "shrink-*", "gap-*", "cursor-*"],
+              allow: [
+                "layout",
+                "w-*",
+                "shrink-*",
+                "gap-*",
+                "space-y-*",
+                "space-x-*",
+                "space-*",
+                "cursor-*",
+              ],
             },
             {
               pattern:

@@ -1,4 +1,5 @@
 import type { EchoesDataProps } from "@builds/domain/build-record"
+import { BuildCard } from "@panel/user/builder/ui/build-card"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
 
@@ -9,7 +10,7 @@ type EchoSelectionProps = {
 /** Summary of the echo assigned to one slot. */
 export function EchoSelection({ slot }: EchoSelectionProps) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border bg-muted/30 p-3">
+    <BuildCard className="bg-input/50 p-3">
       <Show
         when={slot.data}
         fallback={
@@ -22,7 +23,7 @@ export function EchoSelection({ slot }: EchoSelectionProps) {
         }
       >
         {(echo) => (
-          <>
+          <div className="flex items-center gap-4">
             <Image
               src={echo.icon}
               alt={echo.name}
@@ -35,9 +36,9 @@ export function EchoSelection({ slot }: EchoSelectionProps) {
               <p className="truncate font-medium">{echo.name}</p>
               <p className="text-xs text-muted-foreground">Costo {echo.cost}</p>
             </div>
-          </>
+          </div>
         )}
       </Show>
-    </div>
+    </BuildCard>
   )
 }
