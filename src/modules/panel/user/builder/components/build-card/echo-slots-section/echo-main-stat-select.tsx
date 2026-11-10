@@ -97,7 +97,7 @@ export function EchoMainStatSelect({ slotIndex }: EchoMainStatSelectProps) {
       <div className="flex flex-wrap items-center gap-1">
         <Show when={primaryStat}>
           {(primary) => (
-            <Badge variant="secondary">
+            <Badge variant="outline">
               Base: {primary.label} +{primary.value}
             </Badge>
           )}
