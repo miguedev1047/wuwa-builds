@@ -4,9 +4,7 @@ import {
   BuildCardGrid,
   ResonatorGrid,
   ResonatorListLoading,
-  ResonatorSelectorDialog,
 } from "@builder/components/build-card"
-import { BuildResonatorPortrait } from "@builder/components/build-shell/build-resonator-portrait"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { Show } from "@/components/utility/show"
 
@@ -27,10 +25,7 @@ export function BuildContent() {
         </div>
       }
     >
-      <div className="relative h-full w-full">
-        <ResonatorSelectorDialog trigger={<BuildResonatorPortrait />} />
-        <BuildCardGrid />
-      </div>
+      <BuildCardGrid />
     </Show>
   )
 }

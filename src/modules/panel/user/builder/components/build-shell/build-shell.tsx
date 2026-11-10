@@ -10,7 +10,7 @@ export function BuildShell() {
   if (!build) return null
 
   return (
-    <div className="flex h-screen w-full flex-col gap-6 overflow-y-auto p-6 md:overflow-hidden">
+    <div className="flex w-full flex-col gap-6 p-6">
       <BuildHeader />
       <BuildContent />
     </div>
