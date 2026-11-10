@@ -6,33 +6,22 @@ import { Image } from "@/components/ui/image"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
 import type { EchoesDataProps } from "@builds/domain/build-record"
-import { STAT_KINDS } from "@builds/domain/stats"
-import { isStatId } from "@game-data/application/stats/stats"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { useBuilderId } from "@builder/application/use-builder-id"
 import { BuildCardSection } from "@builder/ui/build-card-section"
-import {
-  formatFlatStat,
-  formatPercentStat,
-} from "@builder/components/build-card/stats-section"
 import { Empty } from "@/components/ui/empty"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { PlusIcon } from "@hugeicons/core-free-icons"
+import {
+  formatEchoStat,
+  formatPercentStat,
+  statIconName,
+} from "@builder/application/stats-view-model"
 
 type EchoSlotTriggerProps = {
   slot: EchoesDataProps
   /** Icon of the selected sonata set, resolved by the slots grid. */
   setIcon?: string
-}
-
-function formatEchoStat(stat: string, value: number): string {
-  return isStatId(stat) && STAT_KINDS[stat] === "flat"
-    ? formatFlatStat(value)
-    : formatPercentStat(value)
-}
-
-function statIconName(stat: string) {
-  return isStatId(stat) ? stat : null
 }
 
 /** Card that previews one echo slot or its empty state. */

@@ -7,7 +7,7 @@ import {
   formatPercentStat,
   formatStatValue,
   statsRows,
-} from "@builder/components/build-card/stats-section/stats-view-model"
+} from "@/modules/panel/user/builder/application/stats-view-model"
 
 const stats: CharacterStats = {
   hp: 50732.4,

@@ -3,8 +3,9 @@ import type {
   CharacterStats,
 } from "@builds/domain/character-stats"
 import { normalizeElementId } from "@builds/application/calculation/normalize"
-import { elementStatKey } from "@builds/domain/stats"
+import { elementStatKey, STAT_KINDS } from "@builds/domain/stats"
 import { RESONATOR_ELEMENTS } from "@game-data/application/constants/resonator"
+import { isStatId } from "@/modules/game-data/application/stats/stats"
 
 export interface StatsRow {
   key: CharacterStatKey
@@ -102,4 +103,14 @@ export function statsRows(
       percent: true,
     },
   ]
+}
+
+export function formatEchoStat(stat: string, value: number): string {
+  return isStatId(stat) && STAT_KINDS[stat] === "flat"
+    ? formatFlatStat(value)
+    : formatPercentStat(value)
+}
+
+export function statIconName(stat: string) {
+  return isStatId(stat) ? stat : null
 }

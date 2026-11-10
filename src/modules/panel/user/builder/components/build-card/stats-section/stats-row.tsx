@@ -2,7 +2,7 @@ import { cn } from "cn"
 import {
   formatStatValue,
   type StatsRow,
-} from "@builder/components/build-card/stats-section/stats-view-model"
+} from "@/modules/panel/user/builder/application/stats-view-model"
 import { GameIcon } from "@/components/ui/game-icon"
 
 type StatsRowItemProps = {
