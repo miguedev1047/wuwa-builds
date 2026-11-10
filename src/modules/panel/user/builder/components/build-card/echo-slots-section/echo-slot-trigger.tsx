@@ -46,9 +46,7 @@ export function EchoSlotTrigger({ slot, setIcon }: EchoSlotTriggerProps) {
           when={slot.data}
           fallback={
             <Empty className="border border-dashed">
-              <EmptyTitle className="text-sm text-muted-foreground">
-                Seleccionar eco
-              </EmptyTitle>
+              <EmptyTitle>Seleccionar eco</EmptyTitle>
             </Empty>
           }
         >

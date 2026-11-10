@@ -27,9 +27,7 @@ export function WeaponTrigger() {
           when={weapon}
           fallback={
             <Empty className="border border-dashed">
-              <EmptyTitle className="text-sm text-muted-foreground">
-                Seleccionar arma
-              </EmptyTitle>
+              <EmptyTitle>Seleccionar arma</EmptyTitle>
             </Empty>
           }
         >
