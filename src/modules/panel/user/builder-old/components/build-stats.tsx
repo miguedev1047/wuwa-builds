@@ -5,7 +5,7 @@ import { normalizeElementId } from "@/modules/builds/application/calculation/nor
 import { RESONATOR_ELEMENTS } from "@/modules/game-data/application/constants/resonator"
 import { formatCharacterStats } from "@/modules/panel/user/builder-old/application/format-character-stats"
 import { BuildStatRowItem } from "@/modules/panel/user/builder-old/components/build-stat-row"
-import { buildStatRows } from "@/modules/panel/user/builder-old/components/build-stat-rows"
+import { buildStatRows } from "@/modules/panel/user/builder-old/application/build-stat-rows"
 import { useBuildStats } from "@/modules/panel/user/builds/application/use-build-stats"
 
 interface BuildStatsProps {

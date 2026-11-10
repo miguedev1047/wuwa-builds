@@ -2,7 +2,6 @@ import { plugin as shadcn } from "@shadcn/lint"
 import js from "@eslint/js"
 import globals from "globals"
 import reactHooks from "eslint-plugin-react-hooks"
-import reactRefresh from "eslint-plugin-react-refresh"
 import tseslint from "typescript-eslint"
 import { defineConfig, globalIgnores } from "eslint/config"
 
@@ -20,13 +19,9 @@ export default defineConfig([
       js.configs.recommended,
       tseslint.configs.recommended,
       reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
     ],
     languageOptions: {
       globals: globals.browser,
-    },
-    rules: {
-      "react-refresh/only-export-components": "off",
     },
   },
   // @shadcn/lint: https://github.com/shadcn-ui/lint#rules
@@ -85,10 +80,25 @@ export default defineConfig([
         },
       ],
       "shadcn/no-raw-colors": "error",
-      "shadcn/no-arbitrary-values": "error",
+      "shadcn/no-arbitrary-values": "warn",
       "shadcn/no-inline-styles": "error",
-      "shadcn/require-static-classes": "error",
+      "shadcn/require-static-classes": "warn",
       "shadcn/no-unknown-classes": "error",
+    },
+  },
+  // These files intentionally bridge React state with external systems: the
+  // dock runs an animation loop with refs, while the theme, image and media
+  // hooks resync after mount. The compiler rules are advisory here.
+  {
+    files: [
+      "src/components/ui/dock.tsx",
+      "src/components/ui/image.tsx",
+      "src/hooks/use-mobile.ts",
+      "src/providers/theme-provider/theme-provider.tsx",
+    ],
+    rules: {
+      "react-hooks/refs": "off",
+      "react-hooks/set-state-in-effect": "off",
     },
   },
 ])

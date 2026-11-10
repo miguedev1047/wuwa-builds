@@ -1,3 +1,4 @@
+import { Separator } from "@/components/ui/separator"
 import { WeaponControls } from "./weapon-controls"
 import { WeaponSelection } from "./weapon-selection"
 
@@ -6,6 +7,7 @@ export function WeaponEditor() {
   return (
     <div className="space-y-6">
       <WeaponSelection />
+      <Separator />
       <WeaponControls />
     </div>
   )

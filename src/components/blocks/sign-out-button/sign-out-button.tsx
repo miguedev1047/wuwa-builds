@@ -5,7 +5,7 @@ import { authClient } from "@/lib/auth-client"
 import { useTransition } from "react"
 import { toast } from "sonner"
 
-interface SignOutButtonProps extends React.ComponentProps<typeof Button> {}
+type SignOutButtonProps = React.ComponentProps<typeof Button>
 
 export function SignOutButton({ ...props }: SignOutButtonProps) {
   const [isPending, startTransition] = useTransition()

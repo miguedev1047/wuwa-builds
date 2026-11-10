@@ -1,4 +1,4 @@
-import type { BuildStatRow } from "@/modules/panel/user/builder-old/components/build-stat-rows"
+import type { BuildStatRow } from "@/modules/panel/user/builder-old/application/build-stat-rows"
 import {
   formatFlatStat,
   formatPercentStat,

@@ -7,6 +7,7 @@ import { useBuilderId } from "../../../application/use-builder-id"
 import { BuildCardSection } from "../../../ui/build-card-section"
 import { WeaponProperties } from "./weapon-properties"
 import { WeaponPropertiesSkeleton } from "./weapon-properties-skeleton"
+import { Empty, EmptyTitle } from "@/components/ui/empty"
 
 /** Card that shows the selected weapon, its level and its base stats. */
 export function WeaponTrigger() {
@@ -19,14 +20,17 @@ export function WeaponTrigger() {
   return (
     <BuildCardSection interactive>
       <div className="flex h-full flex-col gap-3">
-        <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+        <h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
           Arma
-        </p>
-
+        </h2>
         <Show
           when={weapon}
           fallback={
-            <p className="text-sm text-muted-foreground">Seleccionar arma</p>
+            <Empty className="border border-dashed">
+              <EmptyTitle className="text-sm text-muted-foreground">
+                Seleccionar arma
+              </EmptyTitle>
+            </Empty>
           }
         >
           {(selected) => (

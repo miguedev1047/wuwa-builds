@@ -11,27 +11,38 @@ import {
   RESONATOR_LEVELS,
   RESONATOR_SEQUENCE,
 } from "@/modules/game-data/application/constants/resonator"
-import type { BuildProps } from "@/modules/builds/domain/build-record"
 import { updateBuild } from "@/modules/builds/client/build-store"
+import { useBuilderId } from "../../../application/use-builder-id"
+import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
+import {
+  CHARACTER_LEVEL_MAX,
+  REFINEMENT_RANK_MIN,
+} from "@/modules/builds/domain/build"
 
-export function ResonatorInfoActions({ build }: { build: BuildProps }) {
+export function ResonatorInfoActions() {
+  const buildId = useBuilderId()
+  const { data } = useBuildCollection({ buildId })
+
+  const level = data?.resonator.level ?? CHARACTER_LEVEL_MAX
+  const sequency = data?.resonator.sequency ?? REFINEMENT_RANK_MIN
+
   const handleSelectLevel = (value: number | null) => {
     if (!value) return
 
-    updateBuild(build.buildId, (current) => {
+    updateBuild(buildId, (current) => {
       current.resonator.level = value
     })
   }
 
   const handleSelectSequency = (value: number | null) => {
     if (!value) {
-      updateBuild(build.buildId, (current) => {
+      updateBuild(buildId, (current) => {
         current.resonator.sequency = 0
       })
       return
     }
 
-    updateBuild(build.buildId, (current) => {
+    updateBuild(buildId, (current) => {
       current.resonator.sequency = value
     })
   }
@@ -42,7 +53,7 @@ export function ResonatorInfoActions({ build }: { build: BuildProps }) {
         <FieldLabel htmlFor="select-level">Seleccionar nivel</FieldLabel>
         <Select
           id="select-level"
-          value={build.resonator.level}
+          value={level}
           onValueChange={handleSelectLevel}
           items={RESONATOR_LEVELS}
         >
@@ -62,7 +73,7 @@ export function ResonatorInfoActions({ build }: { build: BuildProps }) {
         <FieldLabel htmlFor="select-sequency">Seleccionar secuencia</FieldLabel>
         <Select
           id="select-sequency"
-          value={build.resonator.sequency}
+          value={sequency}
           onValueChange={handleSelectSequency}
           items={RESONATOR_SEQUENCE}
         >

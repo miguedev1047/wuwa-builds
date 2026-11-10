@@ -1,20 +1,14 @@
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { Show } from "@/components/utility/show"
+import { Separator } from "@/components/ui/separator"
 import { ResonatorInfoActions } from "./resonator-info-actions"
+import { ResonatorSelection } from "./resonator-selection"
 
 /** Placeholder body of the resonator info dialog. */
 export function ResonatorInfoEditor() {
-  const buildId = useBuilderId()
-  const { data } = useBuildCollection({ buildId })
-
   return (
-    <Show when={data}>
-      {(build) => (
-        <Show when={build.resonator.data}>
-          <ResonatorInfoActions build={build} />
-        </Show>
-      )}
-    </Show>
+    <div className="space-y-6">
+      <ResonatorSelection />
+      <Separator />
+      <ResonatorInfoActions />
+    </div>
   )
 }

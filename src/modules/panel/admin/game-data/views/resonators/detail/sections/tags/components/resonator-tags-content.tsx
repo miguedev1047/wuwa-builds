@@ -28,7 +28,14 @@ export function ResonatorTagsContent({
               title={tag.description}
               className="flex w-full items-center justify-start gap-2"
             >
-              <div className="size-1" style={{ background: `#${tag.color}` }} />
+              <div
+                className="size-1 bg-(--tag-color)"
+                style={
+                  {
+                    "--tag-color": `#${tag.color}`,
+                  } as React.CSSProperties
+                }
+              />
               <p>{tag.name}</p>
             </Badge>
           ))}

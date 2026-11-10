@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge"
 import { useBuildStats } from "@/modules/panel/user/builds/application/use-build-stats"
 import { useBuilderId } from "../../../application/use-builder-id"
 import { StatsRowItem } from "./stats-row"
@@ -26,12 +25,11 @@ export function StatsContent() {
 
   return (
     <div className="flex h-full flex-col gap-4">
-      <div className="flex items-center justify-between gap-3">
-        <h2 className="text-sm font-medium">Estadísticas</h2>
-        <Badge variant="outline">Nv. {build?.resonator.level}</Badge>
-      </div>
+      <h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+        Estadísticas
+      </h2>
 
-      <dl className="grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-6">
+      <dl className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-6">
         {rows.map((row) => (
           <StatsRowItem key={row.key} row={row} />
         ))}

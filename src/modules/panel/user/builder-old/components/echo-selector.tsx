@@ -12,9 +12,7 @@ export function EchoesSelectorDialog() {
 
   const { data: build } = useBuildCollection({ buildId })
 
-  if (!build) return null
-
-  const buildEchoes = build.echoes ?? []
+  const buildEchoes = build?.echoes ?? []
   const echoIds = [
     ...new Set(
       buildEchoes.flatMap((echo) => (echo.data ? [echo.data.id] : []))
@@ -27,6 +25,8 @@ export function EchoesSelectorDialog() {
   const echoDetailById = new Map(
     (echoDetails ?? []).map((echo) => [echo.id, echo])
   )
+
+  if (!build) return null
 
   return (
     <Card>

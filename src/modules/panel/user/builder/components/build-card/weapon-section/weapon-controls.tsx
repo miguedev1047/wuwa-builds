@@ -4,6 +4,7 @@ import { useBuildCollection } from "../../../../builds/application/build-live-qu
 import { useBuilderId } from "../../../application/use-builder-id"
 import { WeaponLevel } from "./weapon-level"
 import { WeaponRefinement } from "./weapon-refinement"
+import { FieldGroup } from "@/components/ui/field"
 
 /** Level and refinement controls of the selected weapon. */
 export function WeaponControls() {
@@ -13,7 +14,7 @@ export function WeaponControls() {
   return (
     <Show when={build?.weapon.data}>
       {(weapon) => (
-        <div className="space-y-4 border-t pt-4">
+        <FieldGroup>
           <WeaponLevel />
 
           <SkeletonSuspense
@@ -21,7 +22,7 @@ export function WeaponControls() {
           >
             <WeaponRefinement weapon={weapon} />
           </SkeletonSuspense>
-        </div>
+        </FieldGroup>
       )}
     </Show>
   )

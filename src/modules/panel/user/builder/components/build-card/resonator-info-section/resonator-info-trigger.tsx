@@ -17,7 +17,7 @@ export function ResonatorInfoTrigger() {
               alt={resonator.name}
               className="h-full mask-r-from-90%"
             />
-            <div className="w-full py-4 pr-4">
+            <div className="w-full py-4 pr-12">
               <h2 className="text-xl font-bold uppercase">{resonator.name}</h2>
             </div>
           </div>

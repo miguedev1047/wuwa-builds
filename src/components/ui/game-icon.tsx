@@ -50,6 +50,15 @@ function gameIconSource(name: GameIconName | null | undefined) {
   return gameIcons[name as keyof typeof gameIcons] ?? null
 }
 
+/** Resolves a stored element, weapon type or stat id to an icon key. */
+function gameIconName(value: string | null | undefined): GameIconName | null {
+  if (!value) return null
+  if (value in gameIcons || value in STAT_ICON_SOURCES) {
+    return value as GameIconName
+  }
+  return null
+}
+
 function GameIcon({ name, alt = "", className, ...props }: GameIconProps) {
   const src = gameIconSource(name)
   if (!src) return null
@@ -65,6 +74,6 @@ function GameIcon({ name, alt = "", className, ...props }: GameIconProps) {
   )
 }
 
-export { GameIcon, STAT_ICON_SOURCES }
+export { GameIcon, gameIconName, STAT_ICON_SOURCES }
 
 export type { GameIconName }
