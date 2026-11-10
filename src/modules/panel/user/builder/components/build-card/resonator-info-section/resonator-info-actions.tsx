@@ -14,14 +14,17 @@ import {
 import { updateBuild } from "@builds/client/build-store"
 import { useBuilderId } from "@builder/application/use-builder-id"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
-import { CHARACTER_LEVEL_MAX, REFINEMENT_RANK_MIN } from "@builds/domain/build"
+import {
+  CHARACTER_LEVEL_MAX,
+  DEFAULT_REFINEMENT_RANK,
+} from "@builds/domain/build"
 
 export function ResonatorInfoActions() {
   const buildId = useBuilderId()
   const { data } = useBuildCollection({ buildId })
 
   const level = data?.resonator.level ?? CHARACTER_LEVEL_MAX
-  const sequency = data?.resonator.sequency ?? REFINEMENT_RANK_MIN
+  const sequency = data?.resonator.sequency ?? DEFAULT_REFINEMENT_RANK
 
   const handleSelectLevel = (value: number | null) => {
     if (!value) return

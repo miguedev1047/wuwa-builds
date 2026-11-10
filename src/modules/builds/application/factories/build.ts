@@ -9,6 +9,8 @@ import {
   SKILL_LEVEL_MAX,
   SUBSTATS_PER_ECHO_MAX,
   WEAPON_LEVEL_MAX,
+  DEFAULT_REFINEMENT_RANK,
+  DEFAULT_SEQUENCY_RANK,
 } from "@builds/domain/build"
 import type {
   BuildProps,
@@ -20,7 +22,6 @@ import type {
 } from "@builds/domain/build-record"
 
 const ORDERED_PASSIVE_INDEX = [0, 1, 8, 2, 3, 4, 5, 9, 6, 7]
-const DEFAULT_REFINEMENT_RANK = 1
 
 /** Five empty echo slots with five empty substats each. */
 export function createEmptyEchoes(): EchoesDataProps[] {
@@ -57,7 +58,7 @@ export function createEmptyWeapon(): WeaponDataProps {
 export function createEmptyResonator(): ResonatorDataProps {
   return {
     level: CHARACTER_LEVEL_MAX,
-    sequency: 0,
+    sequency: DEFAULT_SEQUENCY_RANK,
     data: null,
     skills: [],
     passives: [],
