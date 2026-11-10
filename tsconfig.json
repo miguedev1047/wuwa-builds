@@ -6,7 +6,6 @@
     "prettier.config.js",
     "vite.config.ts"
   ],
-  "exclude": ["src/modules/panel/user/builder-old"],
   "compilerOptions": {
     "target": "ES2022",
     "jsx": "react-jsx",
