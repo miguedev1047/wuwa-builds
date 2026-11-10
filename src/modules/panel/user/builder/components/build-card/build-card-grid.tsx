@@ -5,11 +5,13 @@ import { ResonatorInfoSection } from "@builder/components/build-card/resonator-i
 import { SkillsSection } from "@builder/components/build-card/skills-section"
 import { StatsSection } from "@builder/components/build-card/stats-section"
 import { WeaponSection } from "@builder/components/build-card/weapon-section"
+import { SequenciesSection } from "@builder/components/build-card/sequencies-section"
 
 /** Grid layout that arranges the build card sections. */
 export function BuildCardGrid() {
   return (
-    <BuildCard className="relative z-40 h-full max-h-227 w-auto md:ml-110">
+    <BuildCard className="relative z-40 h-full max-h-227 w-auto overflow-visible md:ml-110">
+      <SequenciesSection />
       <div className="grid h-full w-full grid-cols-1 gap-4 overflow-y-auto md:grid-cols-10 md:grid-rows-12 md:overflow-visible">
         <div className={buildCardSectionAreas.resonator}>
           <ResonatorInfoSection />
