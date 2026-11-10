@@ -4,11 +4,11 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import type { EncoreSkill } from "@/modules/encore/domain/character"
-import type { ResonatorSkillInput } from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createResonatorSkills } from "@/modules/game-data/server/resonators/skills"
-import { resonatorSkillPayloads } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-skill-draft"
+import type { EncoreSkill } from "@encore/domain/character"
+import type { ResonatorSkillInput } from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createResonatorSkills } from "@game-data/server/resonators/skills"
+import { resonatorSkillPayloads } from "@panel/admin/game-data/views/resonators/detail/application/resonator-skill-draft"
 
 type ResonatorSkillAddFormProps = {
   resonatorId: number

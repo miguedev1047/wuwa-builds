@@ -1,12 +1,9 @@
 import { useNavigate, useRouteContext } from "@tanstack/react-router"
 import { toast } from "sonner"
-import { createEmptyBuild } from "@/modules/builds/application/factories/build"
-import {
-  countSessionBuilds,
-  insertBuild,
-} from "@/modules/builds/client/build-store"
-import { MAX_LOCAL_BUILDS } from "@/modules/builds/domain/build"
-import { useSessionBuildCount } from "@/modules/panel/user/builds/application/build-live-queries"
+import { createEmptyBuild } from "@builds/application/factories/build"
+import { countSessionBuilds, insertBuild } from "@builds/client/build-store"
+import { MAX_LOCAL_BUILDS } from "@builds/domain/build"
+import { useSessionBuildCount } from "@panel/user/builds/application/build-live-queries"
 
 /** Creates an empty local build and opens its editor. */
 export function useCreateBuild() {

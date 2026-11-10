@@ -1,10 +1,10 @@
 import { describe, expect, test } from "bun:test"
-import type { ResonatorSequenceRow } from "@/db/schema"
-import type { EncoreSequence } from "@/modules/encore/domain/character"
+import type { ResonatorSequenceRow } from "@db/schema"
+import type { EncoreSequence } from "@encore/domain/character"
 import {
   resonatorSequenceDraftFromRow,
   resonatorSequencePayloads,
-} from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-sequence-draft"
+} from "@panel/admin/game-data/views/resonators/detail/application/resonator-sequence-draft"
 
 const sequenceRow: ResonatorSequenceRow = {
   id: 3,

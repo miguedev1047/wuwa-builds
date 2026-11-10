@@ -1,8 +1,8 @@
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { weaponDetailDockActions } from "@/modules/panel/admin/game-data/views/weapons/detail/dock-actions"
-import { WeaponInfoSection } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/info"
-import { WeaponLevelsSection } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels"
-import { WeaponRefinementsSection } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { weaponDetailDockActions } from "@panel/admin/game-data/views/weapons/detail/dock-actions"
+import { WeaponInfoSection } from "@panel/admin/game-data/views/weapons/detail/sections/info"
+import { WeaponLevelsSection } from "@panel/admin/game-data/views/weapons/detail/sections/levels"
+import { WeaponRefinementsSection } from "@panel/admin/game-data/views/weapons/detail/sections/refinements"
 
 export function WeaponDetailPage() {
   return (

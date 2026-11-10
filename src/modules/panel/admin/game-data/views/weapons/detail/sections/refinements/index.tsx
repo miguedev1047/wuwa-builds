@@ -1,9 +1,9 @@
 import { useParams } from "@tanstack/react-router"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { WeaponRefinementAddLoader } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-add-loader"
-import { WeaponRefinementsContent } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinements-content"
-import { WeaponRefinementsSkeleton } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinements-skeleton"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { WeaponRefinementAddLoader } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-add-loader"
+import { WeaponRefinementsContent } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinements-content"
+import { WeaponRefinementsSkeleton } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinements-skeleton"
 
 /** Refinements (`weapon_refinements`) of the weapon and their stats. */
 export function WeaponRefinementsSection() {

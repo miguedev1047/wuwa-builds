@@ -4,9 +4,9 @@ import { Show } from "@/components/utility/show"
 import {
   normalizeElementId,
   normalizeWeaponTypeId,
-} from "@/modules/builds/application/calculation/normalize"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import { useBuilderId } from "@/modules/panel/user/builder/application/use-builder-id"
+} from "@builds/application/calculation/normalize"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
 
 /** Summary of the resonator assigned to the build. */
 export function ResonatorSelection() {

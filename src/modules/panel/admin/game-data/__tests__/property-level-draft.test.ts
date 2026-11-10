@@ -1,9 +1,9 @@
 import { describe, expect, test } from "bun:test"
-import type { EncoreProperty } from "@/modules/encore/domain/property"
+import type { EncoreProperty } from "@encore/domain/property"
 import {
   findEncoreProperty,
   propertyLevelDraftFromEncore,
-} from "@/modules/panel/admin/game-data/views/resonators/detail/application/property-level-draft"
+} from "@panel/admin/game-data/views/resonators/detail/application/property-level-draft"
 
 function encoreProperty(
   name: string,

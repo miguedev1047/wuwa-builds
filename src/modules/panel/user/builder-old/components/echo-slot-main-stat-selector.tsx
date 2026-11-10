@@ -7,13 +7,13 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Show } from "@/components/utility/show"
-import { buildCollection } from "@/modules/builds/client/build-store"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+import { buildCollection } from "@builds/client/build-store"
+import type { EchoesDataProps } from "@builds/domain/build-record"
 import {
   echoMainStatOptions,
   echoMainStatValue,
   echoPrimaryStat,
-} from "@/modules/builds/application/echo-main-stat"
+} from "@builds/application/echo-main-stat"
 
 interface EchoSlotMainStatSelectorProps {
   echo: EchoesDataProps

@@ -1,9 +1,9 @@
 import { PlusSignIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import type { ResonatorPropertyGrowthRow } from "@/db/schema"
-import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { PropertyGrowthAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-add-form"
+import type { ResonatorPropertyGrowthRow } from "@db/schema"
+import type { EncorePropertyGrowth } from "@encore/domain/property"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { PropertyGrowthAddForm } from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-add-form"
 
 type PropertyGrowthAddActionProps = {
   propertyId: number

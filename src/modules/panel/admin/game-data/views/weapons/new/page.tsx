@@ -1,6 +1,6 @@
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { WeaponForm } from "@/modules/panel/admin/game-data/views/weapons/shared/components/weapon-form"
-import { weaponNewDockActions } from "@/modules/panel/admin/game-data/views/weapons/new/dock-actions"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { WeaponForm } from "@panel/admin/game-data/views/weapons/shared/components/weapon-form"
+import { weaponNewDockActions } from "@panel/admin/game-data/views/weapons/new/dock-actions"
 
 export function WeaponNewPage() {
   return (

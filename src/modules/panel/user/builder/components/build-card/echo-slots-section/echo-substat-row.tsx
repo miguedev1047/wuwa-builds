@@ -5,11 +5,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import type { EchoSubstatsDataProps } from "@/modules/builds/domain/build-record"
+import type { EchoSubstatsDataProps } from "@builds/domain/build-record"
 import {
   formatEchoSubstatValue,
   type EchoSubstatOption,
-} from "@/modules/builds/application/echo-substats"
+} from "@builds/application/echo-substats"
 
 type EchoSubstatRowProps = {
   substat: EchoSubstatsDataProps

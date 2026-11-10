@@ -1,7 +1,7 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
-import { resonatorSkills } from "@/db/schema"
-import { idInput } from "../../id"
+import { resonatorSkills } from "@db/schema"
+import { idInput } from "@game-data/application/id"
 
 /** Fields the admin panel can set for a resonator skill. */
 export const resonatorSkillInput = createInsertSchema(resonatorSkills, {

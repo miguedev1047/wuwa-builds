@@ -1,7 +1,7 @@
 import { createSelectSchema } from "drizzle-orm/zod"
 import { z } from "zod"
-import { builds } from "@/db/schemas/builds"
-import { buildPayloadSchema } from "../domain/build"
+import { builds } from "@db/schemas/builds"
+import { buildPayloadSchema } from "@builds/domain/build"
 
 /** Row contract for a saved build, with the JSON payload validated. */
 export const buildRowSchema = createSelectSchema(builds).extend({

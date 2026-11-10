@@ -3,13 +3,17 @@ import { GameIcon } from "@/components/ui/game-icon"
 import { Image } from "@/components/ui/image"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
-import { STAT_KINDS } from "@/modules/builds/domain/stats"
-import { isStatId } from "@/modules/game-data/application/stats/stats"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { BuildCardSection } from "../../../ui/build-card-section"
-import { formatFlatStat, formatPercentStat } from "../stats-section"
+import type { EchoesDataProps } from "@builds/domain/build-record"
+import { STAT_KINDS } from "@builds/domain/stats"
+import { isStatId } from "@game-data/application/stats/stats"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { BuildCardSection } from "@builder/ui/build-card-section"
+import {
+  formatFlatStat,
+  formatPercentStat,
+} from "@builder/components/build-card/stats-section"
+import { Empty, EmptyTitle } from "@/components/ui/empty"
 
 type EchoSlotTriggerProps = {
   slot: EchoesDataProps
@@ -41,9 +45,11 @@ export function EchoSlotTrigger({ slot, setIcon }: EchoSlotTriggerProps) {
         <Show
           when={slot.data}
           fallback={
-            <div className="flex flex-1 items-center justify-center rounded-xl border border-dashed p-4 text-center text-xs text-muted-foreground">
-              Seleccionar eco
-            </div>
+            <Empty className="border border-dashed">
+              <EmptyTitle className="text-sm text-muted-foreground">
+                Seleccionar eco
+              </EmptyTitle>
+            </Empty>
           }
         >
           {(echo) => (

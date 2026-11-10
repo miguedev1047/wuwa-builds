@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { ResonatorPassiveAddAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-add-action"
+import { encoreCharacterQueries } from "@encore/queries/characters"
+import { characterQueries } from "@game-data/queries/characters"
+import { ResonatorPassiveAddAction } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-add-action"
 
 type ResonatorPassiveAddLoaderProps = {
   resonatorId: number

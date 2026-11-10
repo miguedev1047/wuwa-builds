@@ -1,7 +1,7 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import type z from "zod"
-import { weaponProperties } from "@/db/schema"
-import { isWeaponPropertyStatId } from "@/modules/game-data/application/constants/weapon"
+import { weaponProperties } from "@db/schema"
+import { isWeaponPropertyStatId } from "@game-data/application/constants/weapon"
 
 /** Fields the admin panel sends when adding a weapon property. */
 export const weaponPropertyInput = createInsertSchema(weaponProperties, {

@@ -1,4 +1,4 @@
-import type { EncoreProperty } from "./property"
+import type { EncoreProperty } from "@encore/domain/property"
 
 export interface EncoreWeaponSummary {
   id: number

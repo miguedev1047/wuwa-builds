@@ -6,8 +6,8 @@ import {
   characterDetail,
   resonatorProperty,
   resonatorSequence,
-} from "./catalog-fixtures"
-import { resolveResonatorStats } from "./resonator"
+} from "@builds/application/calculation/catalog-fixtures"
+import { resolveResonatorStats } from "@builds/application/calculation/resonator"
 
 const baseProperties = [
   resonatorProperty({

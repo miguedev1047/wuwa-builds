@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { PropertyLevelAddAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-add-action"
+import { encoreCharacterQueries } from "@encore/queries/characters"
+import { characterQueries } from "@game-data/queries/characters"
+import { PropertyLevelAddAction } from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-add-action"
 
 type PropertyLevelAddLoaderProps = {
   resonatorId: number

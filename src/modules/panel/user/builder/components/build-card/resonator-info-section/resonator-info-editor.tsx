@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator"
-import { ResonatorInfoActions } from "./resonator-info-actions"
-import { ResonatorSelection } from "./resonator-selection"
+import { ResonatorInfoActions } from "@builder/components/build-card/resonator-info-section/resonator-info-actions"
+import { ResonatorSelection } from "@builder/components/build-card/resonator-info-section/resonator-selection"
 
 /** Placeholder body of the resonator info dialog. */
 export function ResonatorInfoEditor() {

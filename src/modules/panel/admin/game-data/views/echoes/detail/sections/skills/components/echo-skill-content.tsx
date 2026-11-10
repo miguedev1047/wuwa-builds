@@ -1,8 +1,8 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { EchoSkillBonusList } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-list"
-import { EchoSkillText } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-text"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { echoQueries } from "@game-data/queries/echoes"
+import { EchoSkillBonusList } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-list"
+import { EchoSkillText } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-text"
 import { Show } from "@/components/utility/show"
 
 type EchoSkillContentProps = {

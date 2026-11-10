@@ -1,6 +1,6 @@
-import { CatalogListRouteSkeleton } from "@/modules/panel/admin/game-data/components/route-skeleton"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { EchoListPage } from "@/modules/panel/admin/game-data/views/echoes/list/page"
+import { CatalogListRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
+import { echoQueries } from "@game-data/queries/echoes"
+import { EchoListPage } from "@panel/admin/game-data/views/echoes/list/page"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/echoes/")({

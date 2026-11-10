@@ -7,7 +7,7 @@ import {
   ItemTitle,
 } from "@/components/ui/item"
 import { Spinner } from "@/components/ui/spinner"
-import { useRosterBuilds } from "@/modules/panel/user/builds/application/build-live-queries"
+import { useRosterBuilds } from "@panel/user/builds/application/build-live-queries"
 import { Link, useParams } from "@tanstack/react-router"
 import { createFileRoute } from "@tanstack/react-router"
 

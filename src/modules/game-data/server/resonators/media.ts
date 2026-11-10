@@ -1,13 +1,13 @@
 import { db } from "@/db"
-import { resonators, resonatorsMedia, type NewResonatorRow } from "@/db/schema"
+import { resonators, resonatorsMedia, type NewResonatorRow } from "@db/schema"
 import { adminMiddleware } from "@/functions/middlewares"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import {
   isResonatorMediaKind,
   type ResonatorMediaKind,
-} from "@/modules/game-data/application/constants/resonator"
-import { resonatorMediaUpdateInput } from "@/modules/game-data/application/schemas"
+} from "@game-data/application/constants/resonator"
+import { resonatorMediaUpdateInput } from "@game-data/application/schemas"
 
 type ResonatorImageColumns = Pick<
   NewResonatorRow,

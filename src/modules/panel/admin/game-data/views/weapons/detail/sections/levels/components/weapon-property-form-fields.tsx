@@ -3,8 +3,8 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   weaponPropertyInput,
   type WeaponPropertyInput,
-} from "@/modules/game-data/application/schemas"
-import { WEAPON_PROPERTY_OPTIONS } from "@/modules/game-data/application/constants/weapon"
+} from "@game-data/application/schemas"
+import { WEAPON_PROPERTY_OPTIONS } from "@game-data/application/constants/weapon"
 
 /** Empty values shared by every weapon property form. */
 export const weaponPropertyFormDefaults: WeaponPropertyInput = {

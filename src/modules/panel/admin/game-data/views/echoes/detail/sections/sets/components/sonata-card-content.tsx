@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Show } from "@/components/utility/show"
-import type { EchoSetRow, SonataSetEffectRow } from "@/db/schema"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
+import type { EchoSetRow, SonataSetEffectRow } from "@db/schema"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 
 type SonataCardProps = {
   echoSet: EchoSetRow & {

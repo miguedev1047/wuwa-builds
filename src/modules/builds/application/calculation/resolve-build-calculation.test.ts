@@ -15,8 +15,8 @@ import {
   weaponDetail,
   weaponProperty,
   weaponRefinement,
-} from "./catalog-fixtures"
-import { resolveBuildCalculation } from "./resolve-build-calculation"
+} from "@builds/application/calculation/catalog-fixtures"
+import { resolveBuildCalculation } from "@builds/application/calculation/resolve-build-calculation"
 
 const resonator = characterDetail({
   properties: [

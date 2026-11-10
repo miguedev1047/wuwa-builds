@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { STAT_IDS } from "@/modules/game-data/application/stats/stats"
+import { STAT_IDS } from "@game-data/application/stats/stats"
 
 /** Canonical builder key of a sonata bonus. */
 export const sonataStatId = z.enum(STAT_IDS)

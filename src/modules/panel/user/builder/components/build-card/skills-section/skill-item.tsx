@@ -1,9 +1,9 @@
 import { Badge } from "@/components/ui/badge"
 import { Item, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item"
 import { Slider } from "@/components/ui/slider"
-import { SKILL_LEVEL_MAX } from "@/modules/builds/domain/build"
-import type { ResonatorSkillRow } from "@/db/schema"
-import type { ResonatorSkillsDataProps } from "@/modules/builds/domain/build-record"
+import { SKILL_LEVEL_MAX } from "@builds/domain/build"
+import type { ResonatorSkillRow } from "@db/schema"
+import type { ResonatorSkillsDataProps } from "@builds/domain/build-record"
 
 type SkillItemProps = {
   skill: ResonatorSkillsDataProps

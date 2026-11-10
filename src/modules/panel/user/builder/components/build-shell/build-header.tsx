@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
-import { BuildDelete } from "./build-delete"
-import { BuildName } from "./build-name"
-import { BuildResonatorAction } from "./build-resonator-action"
+import { BuildDelete } from "@builder/components/build-shell/build-delete"
+import { BuildName } from "@builder/components/build-shell/build-name"
+import { BuildResonatorAction } from "@builder/components/build-shell/build-resonator-action"
 import { Link } from "@tanstack/react-router"
 
 export function BuildHeader() {

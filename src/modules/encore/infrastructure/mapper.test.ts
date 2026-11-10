@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { echoListRows } from "@/modules/encore/infrastructure/mapper.server"
+import { echoListRows } from "@encore/infrastructure/mapper.server"
 
 const echo = {
   Id: 6000038,

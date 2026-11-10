@@ -1,8 +1,8 @@
 import { Badge } from "@/components/ui/badge"
 import { Item, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item"
-import type { ResonatorSkillRow } from "@/db/schema"
-import type { ResonatorSkillsDataProps } from "@/modules/builds/domain/build-record"
-import { BuildResonatorSkillLevel } from "@/modules/panel/user/builder-old/components/build-resonator-skill-level"
+import type { ResonatorSkillRow } from "@db/schema"
+import type { ResonatorSkillsDataProps } from "@builds/domain/build-record"
+import { BuildResonatorSkillLevel } from "@panel/user/builder-old/components/build-resonator-skill-level"
 
 interface BuildResonatorSkillItemProps {
   skill: ResonatorSkillsDataProps

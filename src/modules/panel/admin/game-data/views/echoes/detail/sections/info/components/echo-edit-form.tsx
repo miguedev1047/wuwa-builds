@@ -4,15 +4,12 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import type { EchoRow } from "@/db/schema"
-import {
-  echoInput,
-  type EchoInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { updateEcho } from "@/modules/game-data/server/echoes/echoes"
-import { echoDraftFromRow } from "@/modules/panel/admin/game-data/views/echoes/shared/application/echo-draft"
-import { EchoFields } from "@/modules/panel/admin/game-data/views/echoes/shared/components/echo-fields"
+import type { EchoRow } from "@db/schema"
+import { echoInput, type EchoInput } from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { updateEcho } from "@game-data/server/echoes/echoes"
+import { echoDraftFromRow } from "@panel/admin/game-data/views/echoes/shared/application/echo-draft"
+import { EchoFields } from "@panel/admin/game-data/views/echoes/shared/components/echo-fields"
 
 type EchoEditFormProps = {
   echo: EchoRow

@@ -2,13 +2,13 @@ import { z } from "zod"
 import {
   ECHO_SKILL_CONDITION_IDS,
   type EchoSkillConditionId,
-} from "@/modules/game-data/application/echoes/skills"
-import { isStatId } from "@/modules/game-data/application/stats/stats"
-import { idInput } from "@/modules/game-data/application/id"
+} from "@game-data/application/echoes/skills"
+import { isStatId } from "@game-data/application/stats/stats"
+import { idInput } from "@game-data/application/id"
 import {
   isElementId,
   isWeaponTypeId,
-} from "@/modules/game-data/application/constants/resonator"
+} from "@game-data/application/constants/resonator"
 
 /** Fields of the echo skill text block. */
 export const echoSkillInput = z.object({

@@ -1,11 +1,11 @@
 import { useMemo } from "react"
 import { useQuery } from "@tanstack/react-query"
-import { resolveBuildCalculation } from "@/modules/builds/application/calculation/resolve-build-calculation"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { sonataQueries } from "@/modules/game-data/queries/sonatas"
-import { weaponQueries } from "@/modules/game-data/queries/weapons"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
+import { resolveBuildCalculation } from "@builds/application/calculation/resolve-build-calculation"
+import { characterQueries } from "@game-data/queries/characters"
+import { echoQueries } from "@game-data/queries/echoes"
+import { sonataQueries } from "@game-data/queries/sonatas"
+import { weaponQueries } from "@game-data/queries/weapons"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 
 function unique(values: number[]): number[] {
   return [...new Set(values)]

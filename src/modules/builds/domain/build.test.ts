@@ -8,7 +8,7 @@ import {
   LEVEL_MILESTONES,
   levelFromStep,
   stepFromLevel,
-} from "./build"
+} from "@builds/domain/build"
 
 describe("level milestones", () => {
   test("exposes the 1 + tens progression", () => {

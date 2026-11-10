@@ -9,7 +9,7 @@ import {
   useLiveSuspenseQuery,
 } from "@tanstack/react-db"
 import { useRouteContext } from "@tanstack/react-router"
-import { buildCollection } from "@/modules/builds/client/build-store"
+import { buildCollection } from "@builds/client/build-store"
 
 function useSessionId() {
   const { session } = useRouteContext({ from: "/(panel)/panel" })

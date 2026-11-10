@@ -1,8 +1,8 @@
-import type { BuildStatRow } from "@/modules/panel/user/builder-old/application/build-stat-rows"
+import type { BuildStatRow } from "@panel/user/builder-old/application/build-stat-rows"
 import {
   formatFlatStat,
   formatPercentStat,
-} from "@/modules/panel/user/builder-old/application/format-character-stats"
+} from "@panel/user/builder-old/application/format-character-stats"
 import { cn } from "cn"
 
 interface BuildStatRowItemProps {

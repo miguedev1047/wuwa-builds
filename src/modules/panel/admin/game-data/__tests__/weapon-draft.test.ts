@@ -1,12 +1,12 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { WeaponRow } from "@/db/schema"
-import type { EncoreWeaponDetail } from "@/modules/encore/domain/weapon"
+import type { WeaponRow } from "@db/schema"
+import type { EncoreWeaponDetail } from "@encore/domain/weapon"
 import {
   weaponDraftFromEncore,
   weaponDraftFromRow,
-} from "@/modules/panel/admin/game-data/views/weapons/shared/application/weapon-draft"
+} from "@panel/admin/game-data/views/weapons/shared/application/weapon-draft"
 
 const weapon: EncoreWeaponDetail = {
   id: 21050016,

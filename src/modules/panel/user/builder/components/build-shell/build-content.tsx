@@ -3,12 +3,12 @@ import {
   ResonatorGrid,
   ResonatorListLoading,
   ResonatorSelectorDialog,
-} from "../resonator-selector"
-import { useBuilderId } from "../../application/use-builder-id"
-import { useBuildCollection } from "../../../builds/application/build-live-queries"
+} from "@builder/components/resonator-selector"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { Show } from "@/components/utility/show"
-import { BuildResonatorPortrait } from "./build-resonator-portrait"
-import { BuildCardGrid } from "../build-card"
+import { BuildResonatorPortrait } from "@builder/components/build-shell/build-resonator-portrait"
+import { BuildCardGrid } from "@builder/components/build-card"
 
 export function BuildContent() {
   const buildId = useBuilderId()

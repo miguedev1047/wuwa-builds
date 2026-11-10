@@ -1,7 +1,12 @@
 import { queryOptions } from "@tanstack/react-query"
-import { getEcho, getEchoes, getWeapon, getWeapons } from "../server/catalogs"
-import { ENCORE_GC_TIME, ENCORE_STALE_TIME } from "./cache"
-import { encoreKeys } from "./keys"
+import {
+  getEcho,
+  getEchoes,
+  getWeapon,
+  getWeapons,
+} from "@encore/server/catalogs"
+import { ENCORE_GC_TIME, ENCORE_STALE_TIME } from "@encore/queries/cache"
+import { encoreKeys } from "@encore/queries/keys"
 
 export const encoreWeaponQueries = {
   list: () =>

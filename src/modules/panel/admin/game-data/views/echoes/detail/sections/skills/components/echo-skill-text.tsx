@@ -1,4 +1,4 @@
-import type { EchoSkillRow } from "@/db/schema"
+import type { EchoSkillRow } from "@db/schema"
 import { Show } from "@/components/utility/show"
 
 type EchoSkillTextProps = {

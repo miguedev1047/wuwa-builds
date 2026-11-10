@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/tooltip"
 import { Show } from "@/components/utility/show"
 import { cn } from "cn"
-import { buildCatalogPickerItemVariants } from "./build-catalog-picker-variants"
+import { buildCatalogPickerItemVariants } from "@builder/ui/build-catalog-picker/build-catalog-picker-variants"
 
 type BuildCatalogPickerItemProps = {
   label: string

@@ -4,10 +4,10 @@ import { toast } from "sonner"
 import {
   createEmptyWeapon,
   createResonatorData,
-} from "@/modules/builds/application/factories/build"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import type { CharacterSummary } from "@/modules/game-data/domain/character"
-import { characterQueries } from "@/modules/game-data/queries/characters"
+} from "@builds/application/factories/build"
+import { updateBuild } from "@builds/client/build-store"
+import type { CharacterSummary } from "@game-data/domain/character"
+import { characterQueries } from "@game-data/queries/characters"
 
 /** Loads a resonator detail and applies it to an existing local build. */
 export function useSelectResonator(buildId: string) {

@@ -10,14 +10,11 @@ import {
 import {
   RESONATOR_LEVELS,
   RESONATOR_SEQUENCE,
-} from "@/modules/game-data/application/constants/resonator"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import {
-  CHARACTER_LEVEL_MAX,
-  REFINEMENT_RANK_MIN,
-} from "@/modules/builds/domain/build"
+} from "@game-data/application/constants/resonator"
+import { updateBuild } from "@builds/client/build-store"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { CHARACTER_LEVEL_MAX, REFINEMENT_RANK_MIN } from "@builds/domain/build"
 
 export function ResonatorInfoActions() {
   const buildId = useBuilderId()

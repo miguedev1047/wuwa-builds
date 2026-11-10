@@ -1,6 +1,6 @@
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { ResonatorForm } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-form"
-import { resonatorNewDockActions } from "@/modules/panel/admin/game-data/views/resonators/new/dock-actions"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { ResonatorForm } from "@panel/admin/game-data/views/resonators/shared/components/resonator-form"
+import { resonatorNewDockActions } from "@panel/admin/game-data/views/resonators/new/dock-actions"
 
 export function ResonatorNewPage() {
   return (

@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button"
 import { Show } from "@/components/utility/show"
 import { cn } from "cn"
 import { useState } from "react"
-import { BuildCardTrigger } from "./build-card-trigger"
+import { BuildCardTrigger } from "@builder/ui/build-card-section/build-card-trigger"
 
 type BuildCardSectionDialogProps = {
   trigger: React.ReactNode

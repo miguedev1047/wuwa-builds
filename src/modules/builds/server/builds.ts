@@ -5,7 +5,7 @@ import {
   characterGroupInputSchema,
   createBuildInputSchema,
   updateBuildInputSchema,
-} from "../application/schemas"
+} from "@builds/application/schemas"
 
 /**
  * Authenticated build server functions.
@@ -17,7 +17,7 @@ export const getMyBuilds = createServerFn({ method: "GET" })
   .middleware([authMiddleware])
   .handler(async ({ context }) => {
     const { d1BuildRepository } =
-      await import("../infrastructure/d1/build-repository.server")
+      await import("@builds/infrastructure/d1/build-repository.server")
     return d1BuildRepository.listByUser(context.session.user.id)
   })
 
@@ -26,7 +26,7 @@ export const getMyBuildsByCharacter = createServerFn({ method: "GET" })
   .validator(characterGroupInputSchema)
   .handler(async ({ context, data }) => {
     const { d1BuildRepository } =
-      await import("../infrastructure/d1/build-repository.server")
+      await import("@builds/infrastructure/d1/build-repository.server")
     return d1BuildRepository.listByUserAndCharacter(
       context.session.user.id,
       data.characterId
@@ -38,7 +38,7 @@ export const getBuild = createServerFn({ method: "GET" })
   .validator(buildIdInputSchema)
   .handler(async ({ context, data }) => {
     const { d1BuildRepository } =
-      await import("../infrastructure/d1/build-repository.server")
+      await import("@builds/infrastructure/d1/build-repository.server")
     return d1BuildRepository.getById(context.session.user.id, data.buildId)
   })
 
@@ -47,7 +47,7 @@ export const createBuild = createServerFn({ method: "POST" })
   .validator(createBuildInputSchema)
   .handler(async ({ context, data }) => {
     const { d1BuildRepository } =
-      await import("../infrastructure/d1/build-repository.server")
+      await import("@builds/infrastructure/d1/build-repository.server")
     return d1BuildRepository.create(context.session.user.id, data)
   })
 
@@ -56,7 +56,7 @@ export const updateBuild = createServerFn({ method: "POST" })
   .validator(updateBuildInputSchema)
   .handler(async ({ context, data }) => {
     const { d1BuildRepository } =
-      await import("../infrastructure/d1/build-repository.server")
+      await import("@builds/infrastructure/d1/build-repository.server")
 
     return d1BuildRepository.update(context.session.user.id, data.buildId, {
       name: data.name,
@@ -69,7 +69,7 @@ export const deleteBuild = createServerFn({ method: "POST" })
   .validator(buildIdInputSchema)
   .handler(async ({ context, data }) => {
     const { d1BuildRepository } =
-      await import("../infrastructure/d1/build-repository.server")
+      await import("@builds/infrastructure/d1/build-repository.server")
     return d1BuildRepository.delete(context.session.user.id, data.buildId)
   })
 
@@ -78,7 +78,7 @@ export const deleteBuildsByCharacter = createServerFn({ method: "POST" })
   .validator(characterGroupInputSchema)
   .handler(async ({ context, data }) => {
     const { d1BuildRepository } =
-      await import("../infrastructure/d1/build-repository.server")
+      await import("@builds/infrastructure/d1/build-repository.server")
     return d1BuildRepository.deleteByCharacter(
       context.session.user.id,
       data.characterId

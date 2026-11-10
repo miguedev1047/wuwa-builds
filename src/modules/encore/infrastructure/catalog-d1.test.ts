@@ -6,8 +6,8 @@ import { readFileSync, readdirSync } from "node:fs"
 import { join } from "node:path"
 import { eq } from "drizzle-orm"
 import { drizzle } from "drizzle-orm/bun-sqlite"
-import type { AppDb } from "@/db/create"
-import { relations } from "@/db/relations"
+import type { AppDb } from "@db/create"
+import { relations } from "@db/relations"
 import {
   resonators,
   resonatorsMedia,
@@ -15,10 +15,10 @@ import {
   sonataSets,
   weaponRefinementStats,
   weapons,
-} from "@/db/schema"
+} from "@db/schema"
 import { numberConverter } from "@/lib/number-converter"
-import type { EncoreCharacterDetail } from "@/modules/encore/domain/character"
-import type { EncoreWeaponDetail } from "@/modules/encore/domain/weapon"
+import type { EncoreCharacterDetail } from "@encore/domain/character"
+import type { EncoreWeaponDetail } from "@encore/domain/weapon"
 import {
   toCharacterDetail,
   toEchoDetail,
@@ -26,7 +26,7 @@ import {
   type RawCharacterDetail,
   type RawEchoDetail,
   type RawWeaponDetail,
-} from "../infrastructure/mapper.server"
+} from "@encore/infrastructure/mapper.server"
 import {
   readCharacter,
   readCharacters,
@@ -37,7 +37,7 @@ import {
   saveCharacter,
   saveEcho,
   saveWeapon,
-} from "./catalog-d1.server"
+} from "@encore/infrastructure/catalog-d1.server"
 
 const MIGRATIONS_DIR = join(import.meta.dir, "../../../../drizzle")
 

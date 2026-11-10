@@ -6,8 +6,8 @@ import { Show } from "@/components/utility/show"
 import {
   weaponRefinementStatRowInput,
   type WeaponRefinementStatsFormValues,
-} from "@/modules/game-data/application/schemas"
-import { WEAPON_REFINEMENT_STAT_OPTIONS } from "@/modules/game-data/application/weapons/refinement-stats"
+} from "@game-data/application/schemas"
+import { WEAPON_REFINEMENT_STAT_OPTIONS } from "@game-data/application/weapons/refinement-stats"
 
 /** Empty values shared by every refinement stat form. */
 export const weaponRefinementStatFormDefaults: WeaponRefinementStatsFormValues =

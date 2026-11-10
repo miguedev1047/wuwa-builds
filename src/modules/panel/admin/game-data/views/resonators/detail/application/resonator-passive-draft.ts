@@ -1,10 +1,10 @@
-import type { ResonatorPassiveRow } from "@/db/schema"
+import type { ResonatorPassiveRow } from "@db/schema"
 import { numberConverter } from "@/lib/number-converter"
-import type { EncorePassive } from "@/modules/encore/domain/character"
+import type { EncorePassive } from "@encore/domain/character"
 import type {
   ResonatorPassiveInput,
   ResonatorPassiveUpdateInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 /** Maps a saved passive row to the edit form values. */
 export function resonatorPassiveDraftFromRow(

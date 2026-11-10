@@ -11,10 +11,10 @@ import {
   echoMainStatOptions,
   echoMainStatValue,
   echoPrimaryStat,
-} from "@/modules/builds/application/echo-main-stat"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
+} from "@builds/application/echo-main-stat"
+import { updateBuild } from "@builds/client/build-store"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
 
 type EchoMainStatSelectProps = {
   slotIndex: number

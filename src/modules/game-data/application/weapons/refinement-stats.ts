@@ -1,7 +1,4 @@
-import {
-  STAT_OPTIONS,
-  STATS,
-} from "@/modules/game-data/application/stats/stats"
+import { STAT_OPTIONS, STATS } from "@game-data/application/stats/stats"
 
 /**
  * Stats a weapon refinement can grant.

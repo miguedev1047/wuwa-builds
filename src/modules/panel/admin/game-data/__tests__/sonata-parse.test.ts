@@ -1,13 +1,13 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { SonataSetEffectRow, SonataSetRow } from "@/db/schema"
+import type { SonataSetEffectRow, SonataSetRow } from "@db/schema"
 import {
   parseSonataStat,
   sonataDraftFromRow,
   toSonataEffectDraft,
   toSonataInput,
-} from "@/modules/game-data/application/echoes/sonatas"
+} from "@game-data/application/echoes/sonatas"
 
 describe("parseSonataStat", () => {
   test("maps every Encore alias to its canonical stat id", () => {

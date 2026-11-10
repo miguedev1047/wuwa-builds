@@ -14,19 +14,19 @@ import {
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
-import type { EncoreProperty } from "@/modules/encore/domain/property"
+import type { EncoreProperty } from "@encore/domain/property"
 import {
   weaponPropertyInput,
   type WeaponPropertyInput,
-} from "@/modules/game-data/application/schemas"
-import { statLabel } from "@/modules/game-data/application/stats/stats"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createWeaponProperty } from "@/modules/game-data/server/weapons/properties"
-import { weaponPropertyDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-property-draft"
+} from "@game-data/application/schemas"
+import { statLabel } from "@game-data/application/stats/stats"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createWeaponProperty } from "@game-data/server/weapons/properties"
+import { weaponPropertyDraftFromEncore } from "@panel/admin/game-data/views/weapons/detail/application/weapon-property-draft"
 import {
   WeaponPropertyFields,
   weaponPropertyFormDefaults,
-} from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-property-form-fields"
+} from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-property-form-fields"
 
 type WeaponPropertyAddFormProps = {
   weaponId: number

@@ -1,9 +1,9 @@
 import { PencilEdit01Icon, PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import type { EchoSkillRow } from "@/db/schema"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { EchoSkillTextForm } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-text-form"
+import type { EchoSkillRow } from "@db/schema"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { EchoSkillTextForm } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-text-form"
 
 type EchoSkillTextActionProps = {
   echoId: number

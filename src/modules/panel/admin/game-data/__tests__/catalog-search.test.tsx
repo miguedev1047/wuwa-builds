@@ -2,7 +2,7 @@
 
 import { describe, expect, test } from "bun:test"
 import { renderToStaticMarkup } from "react-dom/server"
-import { CatalogSearch } from "@/modules/panel/admin/game-data/components/catalog-search"
+import { CatalogSearch } from "@panel/admin/game-data/components/catalog-search"
 
 describe("CatalogSearch", () => {
   test("renders the trigger element", () => {

@@ -1,9 +1,9 @@
 import { Show } from "@/components/utility/show"
-import type { EchoRow } from "@/db/schema"
+import type { EchoRow } from "@db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { EchoEditForm } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/info/components/echo-edit-form"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { EchoEditForm } from "@panel/admin/game-data/views/echoes/detail/sections/info/components/echo-edit-form"
 import { useIsMobile } from "@/hooks/use-mobile"
 
 type EchoEditActionProps = {

@@ -1,9 +1,9 @@
-import type { ResonatorSkillRow } from "@/db/schema"
-import type { EncoreSkill } from "@/modules/encore/domain/character"
+import type { ResonatorSkillRow } from "@db/schema"
+import type { EncoreSkill } from "@encore/domain/character"
 import type {
   ResonatorSkillInput,
   ResonatorSkillUpdateInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 /** Payloads for the selected Encore skills, in Encore order. */
 export function resonatorSkillPayloads(

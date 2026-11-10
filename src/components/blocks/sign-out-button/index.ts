@@ -1,1 +1,1 @@
-export * from "./sign-out-button"
+export * from "@/components/blocks/sign-out-button/sign-out-button"

@@ -4,8 +4,11 @@ import { describe, expect, test } from "bun:test"
 import type {
   ResonatorPassivesDataProps,
   ResonatorSkillsDataProps,
-} from "../domain/build-record"
-import { withPassiveEnabled, withSkillLevel } from "./resonator-config"
+} from "@builds/domain/build-record"
+import {
+  withPassiveEnabled,
+  withSkillLevel,
+} from "@builds/application/resonator-config"
 
 const skills: ResonatorSkillsDataProps[] = [
   { id: 1, skillId: 101, level: 5 },

@@ -1,6 +1,6 @@
 import { Show } from "@/components/utility/show"
-import type { ResonatorRow } from "@/db/schema"
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
+import type { ResonatorRow } from "@db/schema"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
 import { Link } from "@tanstack/react-router"
 
 export function ResonatorItem({ character }: { character: ResonatorRow }) {

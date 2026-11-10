@@ -2,13 +2,13 @@ import type {
   CharacterBaseStats,
   CharacterConditionalEffect,
   CharacterStatBonus,
-} from "@/modules/builds/domain/character-stats"
-import type { ResonatorPassivesDataProps } from "@/modules/builds/domain/build-record"
-import { passiveStatId } from "@/modules/builds/application/calculation/passive-stats"
-import { RESONATOR_PROPERTY_ALIASES } from "@/modules/game-data/application/constants/resonator"
-import { isStatId } from "@/modules/game-data/application/stats/stats"
-import type { CharacterDetail } from "@/modules/game-data/domain/character"
-import { growthValueAtLevel } from "@/modules/game-data/domain/character"
+} from "@builds/domain/character-stats"
+import type { ResonatorPassivesDataProps } from "@builds/domain/build-record"
+import { passiveStatId } from "@builds/application/calculation/passive-stats"
+import { RESONATOR_PROPERTY_ALIASES } from "@game-data/application/constants/resonator"
+import { isStatId } from "@game-data/application/stats/stats"
+import type { CharacterDetail } from "@game-data/domain/character"
+import { growthValueAtLevel } from "@game-data/domain/character"
 
 export interface ResolvedResonatorStats {
   base: CharacterBaseStats

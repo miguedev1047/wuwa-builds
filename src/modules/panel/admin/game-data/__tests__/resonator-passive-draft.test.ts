@@ -1,10 +1,10 @@
 import { describe, expect, test } from "bun:test"
-import type { ResonatorPassiveRow } from "@/db/schema"
-import type { EncorePassive } from "@/modules/encore/domain/character"
+import type { ResonatorPassiveRow } from "@db/schema"
+import type { EncorePassive } from "@encore/domain/character"
 import {
   resonatorPassiveDraftFromRow,
   resonatorPassivePayloads,
-} from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
+} from "@panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
 
 const passiveRow: ResonatorPassiveRow = {
   id: 4,

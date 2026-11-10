@@ -3,7 +3,7 @@ import {
   isElementId,
   isWeaponTypeId,
   WEAPON_TYPE_BY_ENCORE,
-} from "@/modules/game-data/application/constants/resonator"
+} from "@game-data/application/constants/resonator"
 
 /** Canonical element id from a canonical id or an Encore label. */
 export function normalizeElementId(

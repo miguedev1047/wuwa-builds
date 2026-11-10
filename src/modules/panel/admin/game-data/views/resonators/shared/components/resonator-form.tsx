@@ -6,18 +6,18 @@ import { useAppForm } from "@/components/form"
 import {
   resonatorInput,
   type ResonatorInput,
-} from "@/modules/game-data/application/schemas"
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createResonator } from "@/modules/game-data/server/resonators/resonators"
-import { resonatorDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
+} from "@game-data/application/schemas"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createResonator } from "@game-data/server/resonators/resonators"
+import { resonatorDraftFromEncore } from "@panel/admin/game-data/views/resonators/shared/application/resonator-draft"
 import {
   ResonatorFields,
   resonatorFormDefaults,
-} from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-fields"
-import { ResonatorSearch } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-search"
-import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+} from "@panel/admin/game-data/views/resonators/shared/components/resonator-fields"
+import { ResonatorSearch } from "@panel/admin/game-data/views/resonators/shared/components/resonator-search"
+import type { EncoreCharacterSummary } from "@encore/domain/character"
+import { encoreCharacterQueries } from "@encore/queries/characters"
 
 export function ResonatorForm() {
   const formId = `new-resonator-form-${useId()}`

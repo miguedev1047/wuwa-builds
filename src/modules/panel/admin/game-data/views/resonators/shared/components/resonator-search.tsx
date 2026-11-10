@@ -1,9 +1,9 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { SkeletonSuspense } from "skullet/react"
 import { Button } from "@/components/ui/button"
-import type { EncoreCharacterSummary } from "@/modules/encore/domain/character"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
-import { CatalogSearch } from "@/modules/panel/admin/game-data/components/catalog-search"
+import type { EncoreCharacterSummary } from "@encore/domain/character"
+import { encoreCharacterQueries } from "@encore/queries/characters"
+import { CatalogSearch } from "@panel/admin/game-data/components/catalog-search"
 
 type ResonatorSearchProps = {
   /** Id of the character already applied to the form, if any. */

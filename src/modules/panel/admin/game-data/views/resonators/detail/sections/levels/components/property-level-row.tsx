@@ -3,19 +3,19 @@ import { HugeiconsIcon } from "@hugeicons/react"
 import type {
   ResonatorPropertyGrowthRow,
   ResonatorPropertyRow,
-} from "@/db/schema"
+} from "@db/schema"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { statLabel } from "@/modules/game-data/application/stats/stats"
+import { statLabel } from "@game-data/application/stats/stats"
 import { Show } from "@/components/utility/show"
-import type { EncoreProperty } from "@/modules/encore/domain/property"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { PropertyGrowthAddAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-add-action"
-import { PropertyGrowthList } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-list"
-import { PropertyLevelDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-delete-action"
+import type { EncoreProperty } from "@encore/domain/property"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { PropertyGrowthAddAction } from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-add-action"
+import { PropertyGrowthList } from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-list"
+import { PropertyLevelDeleteAction } from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-delete-action"
 
 type PropertyLevelRowProps = {
   property: ResonatorPropertyRow & { growth: ResonatorPropertyGrowthRow[] }

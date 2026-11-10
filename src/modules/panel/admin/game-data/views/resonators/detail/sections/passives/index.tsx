@@ -1,9 +1,9 @@
 import { useParams } from "@tanstack/react-router"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorPassiveAddLoader } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-add-loader"
-import { ResonatorPassivesContent } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passives-content"
-import { ResonatorPassivesSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passives-skeleton"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorPassiveAddLoader } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-add-loader"
+import { ResonatorPassivesContent } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passives-content"
+import { ResonatorPassivesSkeleton } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passives-skeleton"
 
 /** Passives (`resonator_passives`) of the resonator. */
 export function ResonatorPassivesSection() {

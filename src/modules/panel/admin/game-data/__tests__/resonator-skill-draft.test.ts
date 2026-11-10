@@ -1,10 +1,10 @@
 import { describe, expect, test } from "bun:test"
-import type { EncoreSkill } from "@/modules/encore/domain/character"
-import type { ResonatorSkillRow } from "@/db/schema"
+import type { EncoreSkill } from "@encore/domain/character"
+import type { ResonatorSkillRow } from "@db/schema"
 import {
   resonatorSkillDraftFromRow,
   resonatorSkillPayloads,
-} from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-skill-draft"
+} from "@panel/admin/game-data/views/resonators/detail/application/resonator-skill-draft"
 
 const encoreSkill: EncoreSkill = {
   id: 1006102,

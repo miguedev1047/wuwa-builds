@@ -1,4 +1,4 @@
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+import type { EchoesDataProps } from "@builds/domain/build-record"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
 

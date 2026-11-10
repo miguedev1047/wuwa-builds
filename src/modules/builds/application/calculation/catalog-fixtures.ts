@@ -1,12 +1,9 @@
-import type {
-  BuildProps,
-  EchoesDataProps,
-} from "@/modules/builds/domain/build-record"
-import type { ResonatorPassivesDataProps } from "@/modules/builds/domain/build-record"
-import type { CharacterDetail } from "@/modules/game-data/domain/character"
-import type { EchoDetail, EchoSummary } from "@/modules/game-data/domain/echo"
-import type { SonataCatalogEntry } from "@/modules/game-data/domain/sonata"
-import type { WeaponDetail } from "@/modules/game-data/domain/weapon"
+import type { BuildProps, EchoesDataProps } from "@builds/domain/build-record"
+import type { ResonatorPassivesDataProps } from "@builds/domain/build-record"
+import type { CharacterDetail } from "@game-data/domain/character"
+import type { EchoDetail, EchoSummary } from "@game-data/domain/echo"
+import type { SonataCatalogEntry } from "@game-data/domain/sonata"
+import type { WeaponDetail } from "@game-data/domain/weapon"
 import type {
   EchoSkillBonusRow,
   ResonatorPassiveRow,
@@ -18,7 +15,7 @@ import type {
   WeaponPropertyRow,
   WeaponRefinementRow,
   WeaponRefinementStatRow,
-} from "@/db/schema"
+} from "@db/schema"
 
 const dates = { createdAt: new Date(0), updatedAt: new Date(0) }
 

@@ -2,17 +2,17 @@ import { useId } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
-import type { ResonatorSkillRow } from "@/db/schema"
+import type { ResonatorSkillRow } from "@db/schema"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import {
   resonatorSkillUpdateInput,
   type ResonatorSkillUpdateInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { updateResonatorSkill } from "@/modules/game-data/server/resonators/skills"
-import { resonatorSkillDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-skill-draft"
-import { ResonatorSkillFields } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-form-fields"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { updateResonatorSkill } from "@game-data/server/resonators/skills"
+import { resonatorSkillDraftFromRow } from "@panel/admin/game-data/views/resonators/detail/application/resonator-skill-draft"
+import { ResonatorSkillFields } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-form-fields"
 
 type ResonatorSkillEditFormProps = {
   skill: ResonatorSkillRow

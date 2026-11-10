@@ -1,13 +1,13 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { CharacterStats } from "@/modules/builds/domain/character-stats"
+import type { CharacterStats } from "@builds/domain/character-stats"
 import {
   formatFlatStat,
   formatPercentStat,
   formatStatValue,
   statsRows,
-} from "./stats-view-model"
+} from "@builder/components/build-card/stats-section/stats-view-model"
 
 const stats: CharacterStats = {
   hp: 50732.4,

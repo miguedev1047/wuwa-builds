@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm"
-import type { AppDb } from "@/db/create"
+import type { AppDb } from "@db/create"
 import { numberConverter } from "@/lib/number-converter"
 import {
   echoSets,
@@ -19,22 +19,22 @@ import {
   weaponPropertyGrowth,
   weapons,
   type ResonatorRow,
-} from "@/db/schema"
-import type { EncoreCharacterDetail } from "../domain/character"
+} from "@db/schema"
+import type { EncoreCharacterDetail } from "@encore/domain/character"
 import {
   isResonatorMediaKind,
   RESONATOR_MEDIA_KINDS,
-} from "@/modules/game-data/application/constants/resonator"
+} from "@game-data/application/constants/resonator"
 import type {
   EncoreEchoDetail,
   EncoreEchoSet,
   EncoreEchoSummary,
-} from "../domain/echo"
+} from "@encore/domain/echo"
 import type {
   EncoreWeaponDetail,
   EncoreWeaponRefinementStat,
   EncoreWeaponSummary,
-} from "../domain/weapon"
+} from "@encore/domain/weapon"
 
 /**
  * D1 adapter for the Encore catalog (see `src/db/schemas/resonators.ts`,

@@ -1,7 +1,10 @@
-import type { EncoreEchoDetail, EncoreEchoSummary } from "../domain/echo"
-import { encoreAssetUrl } from "../domain/asset"
-import type { EncoreWeaponDetail, EncoreWeaponSummary } from "../domain/weapon"
-import { fetchEncoreJson } from "../infrastructure/http.server"
+import type { EncoreEchoDetail, EncoreEchoSummary } from "@encore/domain/echo"
+import { encoreAssetUrl } from "@encore/domain/asset"
+import type {
+  EncoreWeaponDetail,
+  EncoreWeaponSummary,
+} from "@encore/domain/weapon"
+import { fetchEncoreJson } from "@encore/infrastructure/http.server"
 import {
   echoListRows,
   toEchoDetail,
@@ -12,7 +15,7 @@ import {
   type RawEchoList,
   type RawWeaponDetail,
   type RawWeaponList,
-} from "../infrastructure/mapper.server"
+} from "@encore/infrastructure/mapper.server"
 
 /** A sonata set resolved from one of the echoes that carries it. */
 export interface EncoreSonataSet {

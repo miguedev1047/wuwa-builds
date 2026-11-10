@@ -1,4 +1,4 @@
-import type { WeaponTypeId } from "@/modules/game-data/application/constants/resonator"
+import type { WeaponTypeId } from "@game-data/application/constants/resonator"
 
 /**
  * Weapon types shared by the admin form and the create server function.

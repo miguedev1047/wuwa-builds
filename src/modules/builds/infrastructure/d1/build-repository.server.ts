@@ -1,13 +1,13 @@
 import { and, desc, eq } from "drizzle-orm"
 import { db, type AppDb } from "@/db"
-import { builds, type BuildRow } from "@/db/schemas/builds"
+import { builds, type BuildRow } from "@db/schemas/builds"
 import type {
   BuildRecord,
   BuildRepository,
   CreateBuildData,
   UpdateBuildData,
-} from "../../application/ports/build-repository"
-import { BUILD_DOCUMENT_VERSION } from "../../domain/build"
+} from "@builds/application/ports/build-repository"
+import { BUILD_DOCUMENT_VERSION } from "@builds/domain/build"
 
 function toRecord(row: BuildRow): BuildRecord {
   return {

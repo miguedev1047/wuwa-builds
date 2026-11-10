@@ -1,7 +1,7 @@
-import type { ResonatorPropertyGrowthRow } from "@/db/schema"
-import { formatGrowthValue } from "@/modules/game-data/application/resonators/property-growth"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { PropertyGrowthDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-delete-action"
+import type { ResonatorPropertyGrowthRow } from "@db/schema"
+import { formatGrowthValue } from "@game-data/application/resonators/property-growth"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { PropertyGrowthDeleteAction } from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-delete-action"
 
 type PropertyGrowthListProps = {
   growth: ResonatorPropertyGrowthRow[]

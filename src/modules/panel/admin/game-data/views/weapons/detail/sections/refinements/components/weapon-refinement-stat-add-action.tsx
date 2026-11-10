@@ -1,5 +1,5 @@
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { WeaponRefinementStatAddForm } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-add-form"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { WeaponRefinementStatAddForm } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-add-form"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 

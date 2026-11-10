@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { Show } from "@/components/utility/show"
-import { updateBuild } from "@/modules/builds/client/build-store"
+import { updateBuild } from "@builds/client/build-store"
 import { Field, FieldLabel } from "@/components/ui/field"
 import {
   Select,
@@ -9,11 +9,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import type { WeaponSummary } from "@/modules/game-data/domain/weapon"
-import { weaponQueries } from "@/modules/game-data/queries/weapons"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { WEAPON_REFINEMENT_RANKS } from "@/modules/game-data/application/constants/weapon"
+import type { WeaponSummary } from "@game-data/domain/weapon"
+import { weaponQueries } from "@game-data/queries/weapons"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { WEAPON_REFINEMENT_RANKS } from "@game-data/application/constants/weapon"
 
 type WeaponRefinementProps = {
   weapon: WeaponSummary

@@ -1,14 +1,14 @@
 import type {
   EncoreCharacterDetail,
   EncoreCharacterSummary,
-} from "../domain/character"
-import { fetchEncoreJson } from "../infrastructure/http.server"
+} from "@encore/domain/character"
+import { fetchEncoreJson } from "@encore/infrastructure/http.server"
 import {
   toCharacterDetail,
   toCharacterSummary,
   type RawCharacterDetail,
   type RawCharacterList,
-} from "../infrastructure/mapper.server"
+} from "@encore/infrastructure/mapper.server"
 
 /** Character roster with only the fields needed by lists and pickers. */
 export async function readCharacters(): Promise<EncoreCharacterSummary[]> {

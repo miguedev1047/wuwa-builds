@@ -11,7 +11,7 @@ import { getSession } from "@/functions/auth"
 import {
   RouteError,
   RouteNotFound,
-} from "@/modules/panel/admin/game-data/components/route-state"
+} from "@panel/admin/game-data/components/route-state"
 import { SecurityIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { createFileRoute, Link, Outlet, redirect } from "@tanstack/react-router"

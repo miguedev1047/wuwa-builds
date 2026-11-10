@@ -2,12 +2,12 @@ import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { adminMiddleware } from "@/functions/middlewares"
-import { resonatorSequences } from "@/db/schema"
-import { idInput } from "@/modules/game-data/application/id"
+import { resonatorSequences } from "@db/schema"
+import { idInput } from "@game-data/application/id"
 import {
   resonatorSequencesInput,
   resonatorSequenceUpdateInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 export const createResonatorSequences = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])

@@ -1,13 +1,13 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { weaponQueries } from "@/modules/game-data/queries/weapons"
-import { weaponTypeMatches } from "@/modules/game-data/application/weapons/types"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { useSelectWeapon } from "../../../application/use-select-weapon"
+import { weaponQueries } from "@game-data/queries/weapons"
+import { weaponTypeMatches } from "@game-data/application/weapons/types"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { useSelectWeapon } from "@builder/application/use-select-weapon"
 import {
   BuildCatalogPicker,
   BuildCatalogPickerItem,
-} from "../../../ui/build-catalog-picker"
+} from "@builder/ui/build-catalog-picker"
 
 type WeaponPickerProps = {
   /** Called after the weapon is applied to the build. */

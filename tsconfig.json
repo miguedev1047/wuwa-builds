@@ -14,7 +14,13 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@builder/*": ["./src/modules/panel/user/builder/*"],
+      "@panel/*": ["./src/modules/panel/*"],
+      "@builds/*": ["./src/modules/builds/*"],
+      "@game-data/*": ["./src/modules/game-data/*"],
+      "@encore/*": ["./src/modules/encore/*"],
+      "@db/*": ["./src/db/*"]
     },
 
     /* Bundler mode */

@@ -1,6 +1,6 @@
-import type { EchoSkillBonusRow } from "@/db/schema"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { EchoSkillBonusCard } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-card"
+import type { EchoSkillBonusRow } from "@db/schema"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { EchoSkillBonusCard } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-card"
 
 type EchoSkillBonusListProps = {
   echoId: number

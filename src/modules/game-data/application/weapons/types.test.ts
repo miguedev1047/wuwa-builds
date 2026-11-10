@@ -1,7 +1,10 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { weaponTypeMatches, weaponTypeNumber } from "./types"
+import {
+  weaponTypeMatches,
+  weaponTypeNumber,
+} from "@game-data/application/weapons/types"
 
 describe("weapon type normalization", () => {
   test("maps canonical ids to catalog numbers", () => {

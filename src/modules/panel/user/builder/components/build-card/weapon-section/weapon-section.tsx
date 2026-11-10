@@ -1,16 +1,16 @@
 import { SkeletonSuspense } from "skullet/react"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { BuildCatalogPickerDialog } from "../../../ui/build-catalog-picker"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { BuildCatalogPickerDialog } from "@builder/ui/build-catalog-picker"
 import {
   BuildCardSectionDialog,
   BuildCardTrigger,
-} from "../../../ui/build-card-section"
-import { WeaponEditor } from "./weapon-editor"
-import { WeaponPicker } from "./weapon-picker"
-import { WeaponPickerDialog } from "./weapon-picker-dialog"
-import { WeaponPickerSkeleton } from "./weapon-picker-skeleton"
-import { WeaponTrigger } from "./weapon-trigger"
+} from "@builder/ui/build-card-section"
+import { WeaponEditor } from "@builder/components/build-card/weapon-section/weapon-editor"
+import { WeaponPicker } from "@builder/components/build-card/weapon-section/weapon-picker"
+import { WeaponPickerDialog } from "@builder/components/build-card/weapon-section/weapon-picker-dialog"
+import { WeaponPickerSkeleton } from "@builder/components/build-card/weapon-section/weapon-picker-skeleton"
+import { WeaponTrigger } from "@builder/components/build-card/weapon-section/weapon-trigger"
 
 /** Editable card for the weapon of the resonator. */
 export function WeaponSection() {

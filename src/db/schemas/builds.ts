@@ -1,7 +1,7 @@
 import { defineRelationsPart, sql } from "drizzle-orm"
 import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core"
-import type { BuildPayload } from "../../modules/builds/domain/build"
-import { user } from "./auth-schema"
+import type { BuildPayload } from "@builds/domain/build"
+import { user } from "@db/schemas/auth-schema"
 
 /**
  * One row per saved build. Several rows may share (userId, characterId):
@@ -31,10 +31,10 @@ export const builds = sqliteTable(
     index("builds_user_character_idx").on(
       table.userId,
       table.characterId,
-      table.updatedAt,
+      table.updatedAt
     ),
     index("builds_user_updated_idx").on(table.userId, table.updatedAt),
-  ],
+  ]
 )
 
 export type BuildRow = typeof builds.$inferSelect

@@ -1,7 +1,7 @@
 import { queryOptions } from "@tanstack/react-query"
-import { getCharacter, getCharacters } from "../server/characters"
-import { ENCORE_GC_TIME, ENCORE_STALE_TIME } from "./cache"
-import { encoreKeys } from "./keys"
+import { getCharacter, getCharacters } from "@encore/server/characters"
+import { ENCORE_GC_TIME, ENCORE_STALE_TIME } from "@encore/queries/cache"
+import { encoreKeys } from "@encore/queries/keys"
 
 export const encoreCharacterQueries = {
   list: () =>

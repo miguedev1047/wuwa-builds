@@ -9,14 +9,14 @@ import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import { FieldGroup } from "@/components/ui/field"
-import type { EchoSkillRow } from "@/db/schema"
+import type { EchoSkillRow } from "@db/schema"
 import {
   echoSkillInput,
   type EchoSkillInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { upsertEchoSkill } from "@/modules/game-data/server/echoes/skills"
-import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { upsertEchoSkill } from "@game-data/server/echoes/skills"
+import { encoreEchoQueries } from "@encore/queries/catalogs"
 
 type EchoSkillTextFormProps = {
   echoId: number

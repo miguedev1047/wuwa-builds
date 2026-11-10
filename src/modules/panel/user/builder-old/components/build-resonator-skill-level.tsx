@@ -1,5 +1,5 @@
 import { Slider } from "@/components/ui/slider"
-import { SKILL_LEVEL_MAX } from "@/modules/builds/domain/build"
+import { SKILL_LEVEL_MAX } from "@builds/domain/build"
 
 interface BuildResonatorSkillLevelProps {
   level: number

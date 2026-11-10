@@ -1,12 +1,12 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { useSelectEcho } from "../../../application/use-select-echo"
+import type { EchoesDataProps } from "@builds/domain/build-record"
+import { echoQueries } from "@game-data/queries/echoes"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { useSelectEcho } from "@builder/application/use-select-echo"
 import {
   BuildCatalogPicker,
   BuildCatalogPickerItem,
-} from "../../../ui/build-catalog-picker"
+} from "@builder/ui/build-catalog-picker"
 
 type EchoPickerProps = {
   slot: EchoesDataProps

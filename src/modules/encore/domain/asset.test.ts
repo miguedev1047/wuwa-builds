@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { encoreAssetUrl } from "./asset"
+import { encoreAssetUrl } from "@encore/domain/asset"
 
 describe("encoreAssetUrl", () => {
   test("keeps absolute URLs untouched", () => {

@@ -5,8 +5,8 @@ import {
   weaponDetail,
   weaponProperty,
   weaponRefinement,
-} from "./catalog-fixtures"
-import { resolveWeaponStats } from "./weapon"
+} from "@builds/application/calculation/catalog-fixtures"
+import { resolveWeaponStats } from "@builds/application/calculation/weapon"
 
 const properties = [
   weaponProperty({

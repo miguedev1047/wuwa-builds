@@ -3,10 +3,10 @@ import { createServerFn } from "@tanstack/react-start"
 import { notFound } from "@tanstack/react-router"
 import { eq } from "drizzle-orm"
 import { adminMiddleware, authMiddleware } from "@/functions/middlewares"
-import { idInput, idsInput } from "@/modules/game-data/application/id"
-import { echoInput } from "@/modules/game-data/application/schemas"
-import type { EchoDetail } from "@/modules/game-data/domain/echo"
-import { echoes } from "@/db/schema"
+import { idInput, idsInput } from "@game-data/application/id"
+import { echoInput } from "@game-data/application/schemas"
+import type { EchoDetail } from "@game-data/domain/echo"
+import { echoes } from "@db/schema"
 
 export const getEchoes = createServerFn({ method: "GET" })
   .middleware([authMiddleware])

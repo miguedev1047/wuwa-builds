@@ -1,12 +1,15 @@
 import type {
   CharacterDetail,
   CharacterSummary,
-} from "@/modules/game-data/domain/character"
+} from "@game-data/domain/character"
 import type {
   ResonatorDataProps,
   WeaponDataProps,
-} from "../domain/build-record"
-import { createEmptyWeapon, createResonatorData } from "./factories/build"
+} from "@builds/domain/build-record"
+import {
+  createEmptyWeapon,
+  createResonatorData,
+} from "@builds/application/factories/build"
 
 interface ResonatorSelectionInput {
   current: ResonatorDataProps

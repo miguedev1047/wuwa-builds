@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { EchoSlot } from "@/modules/panel/user/builder-old/components/echo-slot"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
+import { echoQueries } from "@game-data/queries/echoes"
+import { EchoSlot } from "@panel/user/builder-old/components/echo-slot"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "@tanstack/react-router"
 

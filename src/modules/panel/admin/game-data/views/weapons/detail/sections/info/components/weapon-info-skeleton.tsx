@@ -1,5 +1,5 @@
 import { SkeletonBox } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 
 export function WeaponInfoSkeleton() {
   return (

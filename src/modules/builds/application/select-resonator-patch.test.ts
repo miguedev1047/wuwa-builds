@@ -1,9 +1,9 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { characterDetail } from "./calculation/catalog-fixtures"
-import { createEmptyResonator } from "./factories/build"
-import { selectResonatorPatch } from "./select-resonator-patch"
+import { characterDetail } from "@builds/application/calculation/catalog-fixtures"
+import { createEmptyResonator } from "@builds/application/factories/build"
+import { selectResonatorPatch } from "@builds/application/select-resonator-patch"
 
 const first = characterDetail({ id: 1, name: "Cartethyia" })
 const second = characterDetail({

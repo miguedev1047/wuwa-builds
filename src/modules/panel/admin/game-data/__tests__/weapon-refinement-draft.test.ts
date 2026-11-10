@@ -1,14 +1,14 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { WeaponRefinementRow, WeaponRefinementStatRow } from "@/db/schema"
-import type { EncoreWeaponRefinement } from "@/modules/encore/domain/weapon"
+import type { WeaponRefinementRow, WeaponRefinementStatRow } from "@db/schema"
+import type { EncoreWeaponRefinement } from "@encore/domain/weapon"
 import {
   weaponRefinementDraftFromEncore,
   weaponRefinementDraftFromRow,
   weaponStatDraftFromRow,
   weaponStatPayloads,
-} from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
+} from "@panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
 
 const encoreRefinement: EncoreWeaponRefinement = {
   rank: 3,

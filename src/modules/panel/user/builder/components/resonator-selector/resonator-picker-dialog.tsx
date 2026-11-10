@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
-import { ResonatorSelectorDialog } from "./resonator-selector-dialog"
+import { ResonatorSelectorDialog } from "@builder/components/resonator-selector/resonator-selector-dialog"
 
 /** Standalone dialog that replaces the resonator of the build. */
 export function ResonatorPickerDialog() {

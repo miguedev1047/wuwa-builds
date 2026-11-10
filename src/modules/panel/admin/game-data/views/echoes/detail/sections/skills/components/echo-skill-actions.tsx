@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { EchoSkillBonusAddAction } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-add-action"
-import { EchoSkillTextAction } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-text-action"
+import { echoQueries } from "@game-data/queries/echoes"
+import { EchoSkillBonusAddAction } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-add-action"
+import { EchoSkillTextAction } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-text-action"
 
 type EchoSkillActionsProps = {
   echoId: number

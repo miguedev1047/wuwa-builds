@@ -1,11 +1,11 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { STAT_KINDS } from "@/modules/builds/domain/stats"
+import { STAT_KINDS } from "@builds/domain/stats"
 import {
   WEAPON_REFINEMENT_STATS,
   WEAPON_REFINEMENT_STAT_OPTIONS,
-} from "@/modules/game-data/application/weapons/refinement-stats"
+} from "@game-data/application/weapons/refinement-stats"
 
 describe("WEAPON_REFINEMENT_STATS", () => {
   test("offers a single option per label", () => {

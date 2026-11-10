@@ -1,11 +1,11 @@
 import { Badge } from "@/components/ui/badge"
 import { Show } from "@/components/utility/show"
-import type { EchoSkillBonusRow } from "@/db/schema"
-import { statLabel } from "@/modules/game-data/application/stats/stats"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { EchoSkillBonusConditionText } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-condition-text"
-import { EchoSkillBonusDeleteAction } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-delete-action"
-import { EchoSkillBonusEditAction } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-edit-action"
+import type { EchoSkillBonusRow } from "@db/schema"
+import { statLabel } from "@game-data/application/stats/stats"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { EchoSkillBonusConditionText } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-condition-text"
+import { EchoSkillBonusDeleteAction } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-delete-action"
+import { EchoSkillBonusEditAction } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-edit-action"
 
 type EchoSkillBonusCardProps = {
   echoId: number

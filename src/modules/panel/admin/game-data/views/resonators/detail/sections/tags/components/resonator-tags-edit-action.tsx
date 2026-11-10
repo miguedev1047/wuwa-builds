@@ -1,10 +1,10 @@
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import type { ResonatorTagRow } from "@/db/schema"
+import type { ResonatorTagRow } from "@db/schema"
 import { Show } from "@/components/utility/show"
-import type { EncoreTag } from "@/modules/encore/domain/character"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorTagsForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-form"
+import type { EncoreTag } from "@encore/domain/character"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorTagsForm } from "@panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-form"
 import { useIsMobile } from "@/hooks/use-mobile"
 
 type ResonatorTagsEditActionProps = {

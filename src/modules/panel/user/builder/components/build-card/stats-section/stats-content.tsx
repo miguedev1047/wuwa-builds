@@ -1,8 +1,8 @@
-import { useBuildStats } from "@/modules/panel/user/builds/application/use-build-stats"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { StatsRowItem } from "./stats-row"
-import { StatsSkeleton } from "./stats-skeleton"
-import { statsRows } from "./stats-view-model"
+import { useBuildStats } from "@panel/user/builds/application/use-build-stats"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { StatsRowItem } from "@builder/components/build-card/stats-section/stats-row"
+import { StatsSkeleton } from "@builder/components/build-card/stats-section/stats-skeleton"
+import { statsRows } from "@builder/components/build-card/stats-section/stats-view-model"
 
 /** Derived stats of the current build. */
 export function StatsContent() {

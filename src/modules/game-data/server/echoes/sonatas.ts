@@ -2,11 +2,11 @@ import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { adminMiddleware, authMiddleware } from "@/functions/middlewares"
-import { idInput } from "@/modules/game-data/application/id"
-import { sonataInput } from "@/modules/game-data/application/schemas"
-import { toSonataEffectDraft } from "@/modules/game-data/application/echoes/sonatas"
-import { readSonataSets } from "@/modules/encore/application/read-catalogs.server"
-import { sonataSets, sonataSetEffects } from "@/db/schema"
+import { idInput } from "@game-data/application/id"
+import { sonataInput } from "@game-data/application/schemas"
+import { toSonataEffectDraft } from "@game-data/application/echoes/sonatas"
+import { readSonataSets } from "@encore/application/read-catalogs.server"
+import { sonataSets, sonataSetEffects } from "@db/schema"
 
 export const getSonatas = createServerFn({ method: "GET" })
   .middleware([authMiddleware])

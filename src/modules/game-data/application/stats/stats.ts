@@ -3,8 +3,8 @@ import {
   STAT_LABELS,
   STAT_KINDS,
   type BuildStatKey,
-} from "@/modules/builds/domain/stats"
-import type { SelectOption } from "@/modules/game-data/application/options"
+} from "@builds/domain/stats"
+import type { SelectOption } from "@game-data/application/options"
 
 /**
  * Panel view of the canonical stat vocabulary.

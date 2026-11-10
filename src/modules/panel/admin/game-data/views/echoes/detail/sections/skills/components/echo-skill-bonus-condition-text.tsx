@@ -1,10 +1,10 @@
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import type { EchoSkillBonusRow } from "@/db/schema"
+import type { EchoSkillBonusRow } from "@db/schema"
 import {
   RESONATOR_ELEMENTS,
   RESONATOR_WEAPON_TYPES,
-} from "@/modules/game-data/application/constants/resonator"
-import { EchoSkillResonatorName } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-resonator-name"
+} from "@game-data/application/constants/resonator"
+import { EchoSkillResonatorName } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-resonator-name"
 
 type EchoSkillBonusConditionTextProps = {
   bonus: EchoSkillBonusRow

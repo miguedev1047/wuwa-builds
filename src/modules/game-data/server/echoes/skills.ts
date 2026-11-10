@@ -2,13 +2,13 @@ import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { adminMiddleware } from "@/functions/middlewares"
-import { idInput } from "@/modules/game-data/application/id"
+import { idInput } from "@game-data/application/id"
 import {
   echoSkillBonusInput,
   echoSkillBonusUpdateInput,
   echoSkillInput,
-} from "@/modules/game-data/application/schemas"
-import { echoSkillBonuses, echoSkills } from "@/db/schema"
+} from "@game-data/application/schemas"
+import { echoSkillBonuses, echoSkills } from "@db/schema"
 
 /**
  * Creates or replaces the echo skill text.

@@ -1,8 +1,8 @@
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import type { ResonatorSkillRow } from "@/db/schema"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorSkillEditForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-edit-form"
+import type { ResonatorSkillRow } from "@db/schema"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorSkillEditForm } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-edit-form"
 
 type ResonatorSkillEditActionProps = {
   skill: ResonatorSkillRow

@@ -1,8 +1,8 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
-import { weaponRefinementStats, weaponRefinements } from "@/db/schema"
-import { isStatId } from "@/modules/game-data/application/stats/stats"
-import { idInput } from "../../id"
+import { weaponRefinementStats, weaponRefinements } from "@db/schema"
+import { isStatId } from "@game-data/application/stats/stats"
+import { idInput } from "@game-data/application/id"
 
 /** Fields the admin panel sends when creating a weapon refinement. */
 export const weaponRefinementInput = createInsertSchema(weaponRefinements, {

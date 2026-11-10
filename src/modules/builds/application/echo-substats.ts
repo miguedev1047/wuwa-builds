@@ -1,4 +1,4 @@
-import { SELECT_SUBSTATS_OPTIONS } from "../constants/substats"
+import { SELECT_SUBSTATS_OPTIONS } from "@builds/constants/substats"
 
 export type EchoSubstatOption = (typeof SELECT_SUBSTATS_OPTIONS)[1][number]
 

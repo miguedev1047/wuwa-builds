@@ -1,18 +1,18 @@
 import { useId } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
-import type { ResonatorMediaRow } from "@/db/schema"
+import type { ResonatorMediaRow } from "@db/schema"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import {
   resonatorMediaUpdateInput,
   type ResonatorMediaUpdateInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { updateResonatorMedia } from "@/modules/game-data/server/resonators/media"
-import { resonatorMediaDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-media-draft"
-import { ResonatorMediaFields } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-form-fields"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { updateResonatorMedia } from "@game-data/server/resonators/media"
+import { resonatorMediaDraftFromRow } from "@panel/admin/game-data/views/resonators/detail/application/resonator-media-draft"
+import { ResonatorMediaFields } from "@panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-form-fields"
 
 type ResonatorMediaEditFormProps = {
   media: ResonatorMediaRow

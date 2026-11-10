@@ -3,8 +3,8 @@ import { cn } from "cn"
 import {
   buildCatalogPickerVariants,
   type BuildCatalogPickerColumns,
-} from "../../ui/build-catalog-picker"
-import type { ResonatorAspect } from "./resonator-item"
+} from "@builder/ui/build-catalog-picker"
+import type { ResonatorAspect } from "@builder/components/resonator-selector/resonator-item"
 
 const SKELETONS_ITEMS = 16
 

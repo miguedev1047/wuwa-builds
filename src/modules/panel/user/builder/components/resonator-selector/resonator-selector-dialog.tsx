@@ -1,8 +1,8 @@
 import { SkeletonSuspense } from "skullet/react"
-import { ResonatorGrid } from "@/modules/panel/user/builder/components/resonator-selector/resonator-grid"
-import { ResonatorListLoading } from "@/modules/panel/user/builder/components/resonator-selector/resonator-skeletons"
-import { useBuilderId } from "@/modules/panel/user/builder/application/use-builder-id"
-import { BuildCatalogPickerDialog } from "../../ui/build-catalog-picker"
+import { ResonatorGrid } from "@builder/components/resonator-selector/resonator-grid"
+import { ResonatorListLoading } from "@builder/components/resonator-selector/resonator-skeletons"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { BuildCatalogPickerDialog } from "@builder/ui/build-catalog-picker"
 
 interface ResonatorSelectorDialogProps {
   /** Element that opens the resonator picker. */

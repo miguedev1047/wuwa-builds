@@ -1,9 +1,9 @@
-import type { ResonatorSequenceRow } from "@/db/schema"
-import type { EncoreSequence } from "@/modules/encore/domain/character"
+import type { ResonatorSequenceRow } from "@db/schema"
+import type { EncoreSequence } from "@encore/domain/character"
 import type {
   ResonatorSequenceInput,
   ResonatorSequenceUpdateInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 /** Maps a saved sequence row to the edit form values. */
 export function resonatorSequenceDraftFromRow(

@@ -1,11 +1,11 @@
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+import type { EchoesDataProps } from "@builds/domain/build-record"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
 import { Show } from "@/components/utility/show"
-import { EchoLevel } from "./echo-level"
-import { EchoMainStatSelect } from "./echo-main-stat-select"
-import { EchoMainToggle } from "./echo-main-toggle"
-import { EchoSetSelect } from "./echo-set-select"
-import { EchoSubstats } from "./echo-substats"
+import { EchoLevel } from "@builder/components/build-card/echo-slots-section/echo-level"
+import { EchoMainStatSelect } from "@builder/components/build-card/echo-slots-section/echo-main-stat-select"
+import { EchoMainToggle } from "@builder/components/build-card/echo-slots-section/echo-main-toggle"
+import { EchoSetSelect } from "@builder/components/build-card/echo-slots-section/echo-set-select"
+import { EchoSubstats } from "@builder/components/build-card/echo-slots-section/echo-substats"
 
 type EchoControlsProps = {
   slot: EchoesDataProps

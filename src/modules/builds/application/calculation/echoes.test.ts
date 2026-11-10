@@ -1,8 +1,8 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { echoSlot } from "./catalog-fixtures"
-import { resolveEchoBonuses } from "./echoes"
+import { echoSlot } from "@builds/application/calculation/catalog-fixtures"
+import { resolveEchoBonuses } from "@builds/application/calculation/echoes"
 
 describe("resolveEchoBonuses", () => {
   test("reads the selected main stats and substats of equipped echoes", () => {

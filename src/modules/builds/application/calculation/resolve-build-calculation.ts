@@ -1,19 +1,19 @@
-import type { CharacterCalculationResult } from "@/modules/builds/domain/character-stats"
-import type { BuildProps } from "@/modules/builds/domain/build-record"
-import type { CharacterDetail } from "@/modules/game-data/domain/character"
-import type { EchoDetail } from "@/modules/game-data/domain/echo"
-import type { SonataCatalogEntry } from "@/modules/game-data/domain/sonata"
-import type { WeaponDetail } from "@/modules/game-data/domain/weapon"
-import { calculateCharacterStats } from "@/modules/builds/domain/character-stats"
+import type { CharacterCalculationResult } from "@builds/domain/character-stats"
+import type { BuildProps } from "@builds/domain/build-record"
+import type { CharacterDetail } from "@game-data/domain/character"
+import type { EchoDetail } from "@game-data/domain/echo"
+import type { SonataCatalogEntry } from "@game-data/domain/sonata"
+import type { WeaponDetail } from "@game-data/domain/weapon"
+import { calculateCharacterStats } from "@builds/domain/character-stats"
 import {
   normalizeElementId,
   normalizeWeaponTypeId,
-} from "@/modules/builds/application/calculation/normalize"
-import { resolveEchoBonuses } from "@/modules/builds/application/calculation/echoes"
-import { resolveEchoSkillBonuses } from "@/modules/builds/application/calculation/echo-skill-bonuses"
-import { resolveResonatorStats } from "@/modules/builds/application/calculation/resonator"
-import { resolveSonataBonuses } from "@/modules/builds/application/calculation/sonata"
-import { resolveWeaponStats } from "@/modules/builds/application/calculation/weapon"
+} from "@builds/application/calculation/normalize"
+import { resolveEchoBonuses } from "@builds/application/calculation/echoes"
+import { resolveEchoSkillBonuses } from "@builds/application/calculation/echo-skill-bonuses"
+import { resolveResonatorStats } from "@builds/application/calculation/resonator"
+import { resolveSonataBonuses } from "@builds/application/calculation/sonata"
+import { resolveWeaponStats } from "@builds/application/calculation/weapon"
 
 export interface BuildCalculationSources {
   build: BuildProps

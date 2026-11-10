@@ -2,15 +2,15 @@ import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
 import { notFound } from "@tanstack/react-router"
 import { eq } from "drizzle-orm"
-import { idInput } from "@/modules/game-data/application/id"
+import { idInput } from "@game-data/application/id"
 import {
   resonatorInput,
   type ResonatorInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 import { adminMiddleware, authMiddleware } from "@/functions/middlewares"
-import type { CharacterDetail } from "@/modules/game-data/domain/character"
-import { resonators, resonatorsMedia } from "@/db/schema"
-import { RESONATOR_MEDIA_KINDS } from "@/modules/game-data/application/constants/resonator"
+import type { CharacterDetail } from "@game-data/domain/character"
+import { resonators, resonatorsMedia } from "@db/schema"
+import { RESONATOR_MEDIA_KINDS } from "@game-data/application/constants/resonator"
 
 type ResonatorImages = Pick<
   ResonatorInput,

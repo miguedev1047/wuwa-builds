@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { weaponRarityLabel } from "@/modules/game-data/application/constants/weapon"
+import { weaponRarityLabel } from "@game-data/application/constants/weapon"
 
 describe("weaponRarityLabel", () => {
   test("maps every catalog rarity to its label", () => {

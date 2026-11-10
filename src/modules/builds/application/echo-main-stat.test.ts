@@ -5,7 +5,7 @@ import {
   echoMainStatOptions,
   echoMainStatValue,
   echoPrimaryStat,
-} from "./echo-main-stat"
+} from "@builds/application/echo-main-stat"
 
 describe("echoMainStatValue", () => {
   test("returns the value at the echo level breakpoint", () => {

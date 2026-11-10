@@ -1,15 +1,15 @@
 import type {
   CharacterConditionalEffect,
   CharacterStatBonus,
-} from "@/modules/builds/domain/character-stats"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
-import { statLabel } from "@/modules/game-data/application/stats/stats"
-import { isStatId } from "@/modules/game-data/application/stats/stats"
-import type { EchoDetail } from "@/modules/game-data/domain/echo"
+} from "@builds/domain/character-stats"
+import type { EchoesDataProps } from "@builds/domain/build-record"
+import { statLabel } from "@game-data/application/stats/stats"
+import { isStatId } from "@game-data/application/stats/stats"
+import type { EchoDetail } from "@game-data/domain/echo"
 import {
   normalizeElementId,
   normalizeWeaponTypeId,
-} from "@/modules/builds/application/calculation/normalize"
+} from "@builds/application/calculation/normalize"
 
 export interface ResolvedEchoSkillBonuses {
   bonuses: CharacterStatBonus[]

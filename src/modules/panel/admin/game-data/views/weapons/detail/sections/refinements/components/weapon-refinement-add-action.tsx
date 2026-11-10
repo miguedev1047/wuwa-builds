@@ -1,6 +1,6 @@
-import type { EncoreWeaponRefinement } from "@/modules/encore/domain/weapon"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { WeaponRefinementAddForm } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-add-form"
+import type { EncoreWeaponRefinement } from "@encore/domain/weapon"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { WeaponRefinementAddForm } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-add-form"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 

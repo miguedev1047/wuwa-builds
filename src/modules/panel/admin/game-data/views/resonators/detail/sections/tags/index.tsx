@@ -1,9 +1,9 @@
 import { useParams } from "@tanstack/react-router"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorTagsContent } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-content"
-import { ResonatorTagsEditLoader } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-edit-loader"
-import { ResonatorTagsSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-skeleton"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorTagsContent } from "@panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-content"
+import { ResonatorTagsEditLoader } from "@panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-edit-loader"
+import { ResonatorTagsSkeleton } from "@panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-skeleton"
 
 /** Tags (`resonator_tags`) of the resonator. */
 export function ResonatorTagsSection() {

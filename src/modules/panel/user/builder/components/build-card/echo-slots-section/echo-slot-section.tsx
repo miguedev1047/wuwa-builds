@@ -1,15 +1,15 @@
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+import type { EchoesDataProps } from "@builds/domain/build-record"
 import { SkeletonSuspense } from "skullet/react"
-import { BuildCatalogPickerDialog } from "../../../ui/build-catalog-picker"
+import { BuildCatalogPickerDialog } from "@builder/ui/build-catalog-picker"
 import {
   BuildCardSectionDialog,
   BuildCardTrigger,
-} from "../../../ui/build-card-section"
-import { EchoPicker } from "./echo-picker"
-import { EchoPickerDialog } from "./echo-picker-dialog"
-import { EchoPickerSkeleton } from "./echo-picker-skeleton"
-import { EchoSlotEditor } from "./echo-slot-editor"
-import { EchoSlotTrigger } from "./echo-slot-trigger"
+} from "@builder/ui/build-card-section"
+import { EchoPicker } from "@builder/components/build-card/echo-slots-section/echo-picker"
+import { EchoPickerDialog } from "@builder/components/build-card/echo-slots-section/echo-picker-dialog"
+import { EchoPickerSkeleton } from "@builder/components/build-card/echo-slots-section/echo-picker-skeleton"
+import { EchoSlotEditor } from "@builder/components/build-card/echo-slots-section/echo-slot-editor"
+import { EchoSlotTrigger } from "@builder/components/build-card/echo-slots-section/echo-slot-trigger"
 
 type EchoSlotSectionProps = {
   slot: EchoesDataProps

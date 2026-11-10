@@ -1,10 +1,10 @@
 import type {
   CharacterStatKey,
   CharacterStats,
-} from "@/modules/builds/domain/character-stats"
-import { normalizeElementId } from "@/modules/builds/application/calculation/normalize"
-import { elementStatKey } from "@/modules/builds/domain/stats"
-import { RESONATOR_ELEMENTS } from "@/modules/game-data/application/constants/resonator"
+} from "@builds/domain/character-stats"
+import { normalizeElementId } from "@builds/application/calculation/normalize"
+import { elementStatKey } from "@builds/domain/stats"
+import { RESONATOR_ELEMENTS } from "@game-data/application/constants/resonator"
 
 export interface StatsRow {
   key: CharacterStatKey

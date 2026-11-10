@@ -3,19 +3,19 @@ import { HugeiconsIcon } from "@hugeicons/react"
 import type {
   WeaponPropertyGrowthRow,
   WeaponPropertyRow as WeaponPropertyRowData,
-} from "@/db/schema"
+} from "@db/schema"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { Show } from "@/components/utility/show"
-import type { EncoreProperty } from "@/modules/encore/domain/property"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { WeaponGrowthAddAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-add-action"
-import { WeaponGrowthList } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-list"
-import { WeaponPropertyDeleteAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-property-delete-action"
-import { statLabel } from "@/modules/game-data/application/stats/stats"
+import type { EncoreProperty } from "@encore/domain/property"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { WeaponGrowthAddAction } from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-add-action"
+import { WeaponGrowthList } from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-list"
+import { WeaponPropertyDeleteAction } from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-property-delete-action"
+import { statLabel } from "@game-data/application/stats/stats"
 
 type WeaponPropertyRowProps = {
   property: WeaponPropertyRowData & { growth: WeaponPropertyGrowthRow[] }

@@ -1,4 +1,4 @@
-import type { BuildPayload } from "../../domain/build"
+import type { BuildPayload } from "@builds/domain/build"
 
 export interface BuildRecord {
   id: string

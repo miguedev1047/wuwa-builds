@@ -1,10 +1,10 @@
 import { adminMiddleware } from "@/functions/middlewares"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
-import { idInput } from "@/modules/game-data/application/id"
-import { resonatorPropertyLevelsSchema } from "@/modules/game-data/application/schemas"
+import { idInput } from "@game-data/application/id"
+import { resonatorPropertyLevelsSchema } from "@game-data/application/schemas"
 import { db } from "@/db"
-import { resonatorPropertyLevels } from "@/db/schema"
+import { resonatorPropertyLevels } from "@db/schema"
 
 export const createResonatorPropertyLevels = createServerFn({
   method: "POST",

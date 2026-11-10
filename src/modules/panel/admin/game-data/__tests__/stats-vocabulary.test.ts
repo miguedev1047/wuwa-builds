@@ -1,16 +1,12 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import {
-  STAT_KINDS,
-  STAT_LABELS,
-  STAT_KEYS,
-} from "@/modules/builds/domain/stats"
+import { STAT_KINDS, STAT_LABELS, STAT_KEYS } from "@builds/domain/stats"
 import {
   STAT_OPTIONS,
   isStatId,
   statLabel,
-} from "@/modules/game-data/application/stats/stats"
+} from "@game-data/application/stats/stats"
 import {
   ELEMENT_BY_ENCORE,
   ELEMENT_IDS,
@@ -19,12 +15,12 @@ import {
   RESONATOR_WEAPON_TYPES,
   WEAPON_TYPE_BY_ENCORE,
   WEAPON_TYPE_IDS,
-} from "@/modules/game-data/application/constants/resonator"
+} from "@game-data/application/constants/resonator"
 import {
   WEAPON_PROPERTY_ALIASES,
   WEAPON_PROPERTY_OPTIONS,
   isWeaponPropertyStatId,
-} from "@/modules/game-data/application/constants/weapon"
+} from "@game-data/application/constants/weapon"
 
 describe("stat vocabulary", () => {
   test("every option points to a stat the builder knows", () => {

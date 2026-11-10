@@ -1,6 +1,6 @@
-import { updateBuild } from "@/modules/builds/client/build-store"
-import { useBuilderId } from "../../application/use-builder-id"
-import { useBuildCollection } from "../../../builds/application/build-live-queries"
+import { updateBuild } from "@builds/client/build-store"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { Input } from "@/components/ui/input"
 
 export function BuildName() {

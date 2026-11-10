@@ -159,9 +159,9 @@ Rules:
 
 ### Imports, icons and stat keys
 
-- **Use the `@/*` alias.** Import internal modules under `src/` through `@/*`;
-  do not add relative imports that climb directories (`../`). Migrate existing
-  ones when touching the file.
+- **Use the domain aliases.** Import internal modules through `@/*` or a domain
+  alias: `@builder/*`, `@panel/*`, `@builds/*`, `@game-data/*`, `@encore/*` and
+  `@db/*`. Do not add relative imports that climb directories (`../`).
 - **Let icons inherit their size.** Do not pass a hardcoded `size` to an icon;
   size it from the parent container with CSS.
 - **Use canonical stat keys.** Stats use the `BuildStatKey` ids from

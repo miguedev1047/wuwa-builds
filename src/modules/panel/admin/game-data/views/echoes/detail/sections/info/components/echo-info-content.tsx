@@ -1,15 +1,15 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { Badge } from "@/components/ui/badge"
 import { Show } from "@/components/utility/show"
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { EchoDeleteAction } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/info/components/echo-delete-action"
-import { EchoEditAction } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/info/components/echo-edit-action"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { echoQueries } from "@game-data/queries/echoes"
+import { EchoDeleteAction } from "@panel/admin/game-data/views/echoes/detail/sections/info/components/echo-delete-action"
+import { EchoEditAction } from "@panel/admin/game-data/views/echoes/detail/sections/info/components/echo-edit-action"
 import {
   echoClassLabel,
   echoCostLabel,
-} from "@/modules/panel/admin/game-data/views/echoes/shared/constants/echo"
+} from "@panel/admin/game-data/views/echoes/shared/constants/echo"
 
 type EchoInfoContentProps = {
   echoId: number

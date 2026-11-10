@@ -6,11 +6,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import type { EchoSummary } from "@/modules/game-data/domain/echo"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
+import { updateBuild } from "@builds/client/build-store"
+import type { EchoSummary } from "@game-data/domain/echo"
+import { echoQueries } from "@game-data/queries/echoes"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
 
 type EchoSetSelectProps = {
   echo: EchoSummary

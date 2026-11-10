@@ -1,12 +1,12 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { EchoRow } from "@/db/schema"
-import type { EncoreEchoDetail } from "@/modules/encore/domain/echo"
+import type { EchoRow } from "@db/schema"
+import type { EncoreEchoDetail } from "@encore/domain/echo"
 import {
   echoDraftFromEncore,
   echoDraftFromRow,
-} from "@/modules/panel/admin/game-data/views/echoes/shared/application/echo-draft"
+} from "@panel/admin/game-data/views/echoes/shared/application/echo-draft"
 
 const echo: EncoreEchoDetail = {
   id: 390080005,

@@ -1,9 +1,9 @@
 import { cn } from "cn"
-import { BuildCard } from "../build-card"
+import { BuildCard } from "@builder/ui/build-card"
 import {
   buildCardSectionVariants,
   type BuildCardSectionVariants,
-} from "./build-card-section-variants"
+} from "@builder/ui/build-card-section/build-card-section-variants"
 
 type BuildCardSectionProps = React.ComponentProps<typeof BuildCard> &
   BuildCardSectionVariants

@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
-import { weaponQueries } from "@/modules/game-data/queries/weapons"
-import { WeaponRefinementAddAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-add-action"
+import { encoreWeaponQueries } from "@encore/queries/catalogs"
+import { weaponQueries } from "@game-data/queries/weapons"
+import { WeaponRefinementAddAction } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-add-action"
 
 type WeaponRefinementAddLoaderProps = {
   weaponId: number

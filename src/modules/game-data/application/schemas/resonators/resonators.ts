@@ -1,10 +1,10 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
-import { resonators } from "@/db/schema"
+import { resonators } from "@db/schema"
 import {
   isElementId,
   isWeaponTypeId,
-} from "@/modules/game-data/application/constants/resonator"
+} from "@game-data/application/constants/resonator"
 
 /**
  * Fields the admin panel can set when creating a resonator.

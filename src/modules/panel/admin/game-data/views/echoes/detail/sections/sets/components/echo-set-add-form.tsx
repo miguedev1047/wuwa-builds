@@ -10,9 +10,9 @@ import {
   echoSetFormInput,
   type EchoSetFormInput,
   type EchoSetInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createEchoSet } from "@/modules/game-data/server/echoes/sets"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createEchoSet } from "@game-data/server/echoes/sets"
 
 type EchoSetAddFormProps = {
   echoId: number

@@ -1,12 +1,12 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { ResonatorRow } from "@/db/schema"
-import type { EncoreCharacterDetail } from "@/modules/encore/domain/character"
+import type { ResonatorRow } from "@db/schema"
+import type { EncoreCharacterDetail } from "@encore/domain/character"
 import {
   resonatorDraftFromEncore,
   resonatorDraftFromRow,
-} from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
+} from "@panel/admin/game-data/views/resonators/shared/application/resonator-draft"
 
 const character: EncoreCharacterDetail = {
   id: 1402,

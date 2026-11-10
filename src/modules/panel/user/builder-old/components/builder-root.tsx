@@ -4,17 +4,17 @@ import { Show } from "@/components/utility/show"
 import {
   createEmptyResonator,
   createEmptyWeapon,
-} from "@/modules/builds/application/factories/build"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import type { BuildProps } from "@/modules/builds/domain/build-record"
-import { BuildResonatorBonus } from "@/modules/panel/user/builder-old/components/build-resonator-bonus"
-import { BuildResonatorLevel } from "@/modules/panel/user/builder-old/components/build-resonator-level"
-import { BuildResonatorSelector } from "@/modules/panel/user/builder-old/components/build-resonator-selector"
-import { BuildResonatorSequence } from "@/modules/panel/user/builder-old/components/build-resonator-sequence"
-import { BuildResonatorSkills } from "@/modules/panel/user/builder-old/components/build-resonator-skills"
-import { BuildStats } from "@/modules/panel/user/builder-old/components/build-stats"
-import { EchoesSelectorDialog } from "@/modules/panel/user/builder-old/components/echo-selector"
-import { WeaponSelectorDialog } from "@/modules/panel/user/builder-old/components/weapon-selector"
+} from "@builds/application/factories/build"
+import { updateBuild } from "@builds/client/build-store"
+import type { BuildProps } from "@builds/domain/build-record"
+import { BuildResonatorBonus } from "@panel/user/builder-old/components/build-resonator-bonus"
+import { BuildResonatorLevel } from "@panel/user/builder-old/components/build-resonator-level"
+import { BuildResonatorSelector } from "@panel/user/builder-old/components/build-resonator-selector"
+import { BuildResonatorSequence } from "@panel/user/builder-old/components/build-resonator-sequence"
+import { BuildResonatorSkills } from "@panel/user/builder-old/components/build-resonator-skills"
+import { BuildStats } from "@panel/user/builder-old/components/build-stats"
+import { EchoesSelectorDialog } from "@panel/user/builder-old/components/echo-selector"
+import { WeaponSelectorDialog } from "@panel/user/builder-old/components/weapon-selector"
 import { useState, type ChangeEvent } from "react"
 
 interface BuilderRootProps {

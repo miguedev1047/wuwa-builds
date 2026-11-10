@@ -1,6 +1,6 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
-import { weapons } from "@/db/schema"
+import { weapons } from "@db/schema"
 
 /**
  * Fields the admin panel can set when creating a weapon.

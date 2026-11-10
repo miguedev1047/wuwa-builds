@@ -1,8 +1,8 @@
-import type { ResonatorPassiveRow } from "@/db/schema"
+import type { ResonatorPassiveRow } from "@db/schema"
 import { Show } from "@/components/utility/show"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorPassiveDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-delete-action"
-import { ResonatorPassiveEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-edit-action"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorPassiveDeleteAction } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-delete-action"
+import { ResonatorPassiveEditAction } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-edit-action"
 
 type ResonatorPassiveCardProps = {
   passive: ResonatorPassiveRow

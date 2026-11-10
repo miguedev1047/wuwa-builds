@@ -12,19 +12,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import type { EncoreProperty } from "@/modules/encore/domain/property"
+import type { EncoreProperty } from "@encore/domain/property"
 import {
   resonatorPropertyLevelsSchema,
   type ResonatorPropertyLevelInput,
-} from "@/modules/game-data/application/schemas"
-import { statLabel } from "@/modules/game-data/application/stats/stats"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createResonatorPropertyLevels } from "@/modules/game-data/server/resonators/properties"
-import { propertyLevelDraftFromEncore } from "@/modules/panel/admin/game-data/views/resonators/detail/application/property-level-draft"
+} from "@game-data/application/schemas"
+import { statLabel } from "@game-data/application/stats/stats"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createResonatorPropertyLevels } from "@game-data/server/resonators/properties"
+import { propertyLevelDraftFromEncore } from "@panel/admin/game-data/views/resonators/detail/application/property-level-draft"
 import {
   PropertyLevelFields,
   propertyLevelFormDefaults,
-} from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-form-fields"
+} from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-form-fields"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
 

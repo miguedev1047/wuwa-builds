@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { ResonatorSkillAddAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-add-action"
+import { encoreCharacterQueries } from "@encore/queries/characters"
+import { characterQueries } from "@game-data/queries/characters"
+import { ResonatorSkillAddAction } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-add-action"
 
 type ResonatorSkillAddLoaderProps = {
   resonatorId: number

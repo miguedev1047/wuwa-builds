@@ -1,6 +1,6 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
-import { echoes } from "@/db/schema"
+import { echoes } from "@db/schema"
 
 /** Costs a single echo can occupy in a build. */
 export const ECHO_COSTS = [1, 3, 4] as const

@@ -1,9 +1,9 @@
 import { useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
-import { selectResonatorPatch } from "@/modules/builds/application/select-resonator-patch"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import type { CharacterSummary } from "@/modules/game-data/domain/character"
-import { characterQueries } from "@/modules/game-data/queries/characters"
+import { selectResonatorPatch } from "@builds/application/select-resonator-patch"
+import { updateBuild } from "@builds/client/build-store"
+import type { CharacterSummary } from "@game-data/domain/character"
+import { characterQueries } from "@game-data/queries/characters"
 
 export type ResonatorSelectionResult = "selected" | "unchanged" | "error"
 

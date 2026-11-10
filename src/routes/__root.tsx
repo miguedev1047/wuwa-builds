@@ -1,4 +1,4 @@
-import appCss from "../styles.css?url"
+import appCss from "@/styles.css?url"
 
 import {
   HeadContent,

@@ -2,7 +2,7 @@ import { SkeletonBox } from "skullet/react"
 import {
   CatalogSection,
   type CatalogSectionAspect,
-} from "@/modules/panel/admin/game-data/components/catalog-section"
+} from "@panel/admin/game-data/components/catalog-section"
 import { Show } from "@/components/utility/show"
 
 type CatalogListRouteSkeletonProps = {

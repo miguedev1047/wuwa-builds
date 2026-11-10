@@ -7,9 +7,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Spinner } from "@/components/ui/spinner"
-import type { CharacterSummary } from "@/modules/game-data/domain/character"
-import { useSelectResonator } from "@/modules/panel/user/builder-old/application/use-select-resonator"
-import { ResonatorList } from "@/modules/panel/user/resonator-selector/components/resonator-list"
+import type { CharacterSummary } from "@game-data/domain/character"
+import { useSelectResonator } from "@panel/user/builder-old/application/use-select-resonator"
+import { ResonatorList } from "@panel/user/resonator-selector/components/resonator-list"
 import { Suspense, useState } from "react"
 
 interface BuildResonatorSelectorProps {

@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+import { encoreCharacterQueries } from "@encore/queries/characters"
 
 type EchoSkillResonatorNameProps = {
   /** Character id stored in `condition_value`. */

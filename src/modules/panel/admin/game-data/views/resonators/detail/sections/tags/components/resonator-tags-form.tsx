@@ -1,15 +1,15 @@
 import { useId } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
-import type { ResonatorTagRow } from "@/db/schema"
+import type { ResonatorTagRow } from "@db/schema"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import type { EncoreTag } from "@/modules/encore/domain/character"
-import { resonatorTagsSelectionInput } from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { replaceResonatorTags } from "@/modules/game-data/server/resonators/tags"
-import { toTagInput } from "@/modules/panel/admin/game-data/views/resonators/detail/application/to-tag-input"
+import type { EncoreTag } from "@encore/domain/character"
+import { resonatorTagsSelectionInput } from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { replaceResonatorTags } from "@game-data/server/resonators/tags"
+import { toTagInput } from "@panel/admin/game-data/views/resonators/detail/application/to-tag-input"
 
 type ResonatorTagsFormProps = {
   resonatorId: number

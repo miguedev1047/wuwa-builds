@@ -4,15 +4,15 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import type { WeaponRefinementStatRow } from "@/db/schema"
+import type { WeaponRefinementStatRow } from "@db/schema"
 import {
   weaponRefinementStatsFormInput,
   type WeaponRefinementStatsFormValues,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { updateWeaponRefinementStat } from "@/modules/game-data/server/weapons/refinement-stats"
-import { weaponStatDraftFromRow } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
-import { WeaponRefinementStatFields } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-form-fields"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { updateWeaponRefinementStat } from "@game-data/server/weapons/refinement-stats"
+import { weaponStatDraftFromRow } from "@panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
+import { WeaponRefinementStatFields } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-form-fields"
 
 type WeaponRefinementStatEditFormProps = {
   stat: WeaponRefinementStatRow

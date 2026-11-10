@@ -1,7 +1,7 @@
-import { useBuildCollection } from "../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../application/use-builder-id"
-import { BuildContent } from "./build-content"
-import { BuildHeader } from "./build-header"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { BuildContent } from "@builder/components/build-shell/build-content"
+import { BuildHeader } from "@builder/components/build-shell/build-header"
 
 export function BuildShell() {
   const buildId = useBuilderId()

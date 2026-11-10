@@ -1,10 +1,7 @@
 import { GameIcon } from "@/components/ui/game-icon"
-import {
-  isStatId,
-  statLabel,
-} from "@/modules/game-data/application/stats/stats"
-import { growthValueAtLevel } from "@/modules/game-data/domain/character"
-import type { WeaponDetail } from "@/modules/game-data/domain/weapon"
+import { isStatId, statLabel } from "@game-data/application/stats/stats"
+import { growthValueAtLevel } from "@game-data/domain/character"
+import type { WeaponDetail } from "@game-data/domain/weapon"
 
 type WeaponPropertyItemProps = {
   property: WeaponDetail["properties"][number]

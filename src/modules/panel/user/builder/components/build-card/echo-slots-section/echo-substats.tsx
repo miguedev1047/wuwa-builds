@@ -1,11 +1,11 @@
-import { updateBuild } from "@/modules/builds/client/build-store"
+import { updateBuild } from "@builds/client/build-store"
 import {
   echoSubstatOptions,
   echoSubstatOptionsExcluding,
-} from "@/modules/builds/application/echo-substats"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { EchoSubstatRow } from "./echo-substat-row"
+} from "@builds/application/echo-substats"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { EchoSubstatRow } from "@builder/components/build-card/echo-slots-section/echo-substat-row"
 
 type EchoSubstatsProps = {
   slotIndex: number

@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { ResonatorSequenceAddAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-add-action"
+import { encoreCharacterQueries } from "@encore/queries/characters"
+import { characterQueries } from "@game-data/queries/characters"
+import { ResonatorSequenceAddAction } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-add-action"
 
 type ResonatorSequenceAddLoaderProps = {
   resonatorId: number

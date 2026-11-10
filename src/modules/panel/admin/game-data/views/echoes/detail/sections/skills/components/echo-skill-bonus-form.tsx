@@ -8,21 +8,21 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import type { EchoSkillBonusRow } from "@/db/schema"
+import type { EchoSkillBonusRow } from "@db/schema"
 import {
   echoSkillBonusFormInput,
   type EchoSkillBonusFormInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
 import {
   createEchoSkillBonus,
   updateEchoSkillBonus,
-} from "@/modules/game-data/server/echoes/skills"
+} from "@game-data/server/echoes/skills"
 import {
   EchoSkillBonusFields,
   echoSkillBonusFormDefaults,
-} from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-form-fields"
-import { encoreCharacterQueries } from "@/modules/encore/queries/characters"
+} from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-form-fields"
+import { encoreCharacterQueries } from "@encore/queries/characters"
 
 type EchoSkillBonusFormProps = {
   echoId: number

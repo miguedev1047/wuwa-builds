@@ -1,11 +1,11 @@
-import type { SonataSetEffectRow, SonataSetRow } from "@/db/schema"
+import type { SonataSetEffectRow, SonataSetRow } from "@db/schema"
 import type {
   SonataEffectInput,
   SonataFormInput,
   SonataInput,
-} from "@/modules/game-data/application/schemas"
-import type { StatId } from "@/modules/game-data/application/stats/stats"
-import { isStatId } from "@/modules/game-data/application/stats/stats"
+} from "@game-data/application/schemas"
+import type { StatId } from "@game-data/application/stats/stats"
+import { isStatId } from "@game-data/application/stats/stats"
 
 /**
  * Encore labels (`es`) of every stat a sonata 2-piece can grant.

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
+import { updateBuild } from "@builds/client/build-store"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
 
 type EchoMainToggleProps = {
   slotIndex: number

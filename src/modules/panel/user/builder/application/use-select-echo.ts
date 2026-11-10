@@ -1,8 +1,8 @@
 import { useQueryClient } from "@tanstack/react-query"
-import { selectEchoSlot } from "@/modules/builds/application/select-echo-slot"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import type { EchoSummary } from "@/modules/game-data/domain/echo"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
+import { selectEchoSlot } from "@builds/application/select-echo-slot"
+import { updateBuild } from "@builds/client/build-store"
+import type { EchoSummary } from "@game-data/domain/echo"
+import { echoQueries } from "@game-data/queries/echoes"
 
 /** Assigns an echo to a slot and warms its detail query. */
 export function useSelectEcho(buildId: string) {

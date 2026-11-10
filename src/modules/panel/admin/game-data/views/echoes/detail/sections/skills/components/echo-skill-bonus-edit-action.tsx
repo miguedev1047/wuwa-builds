@@ -1,9 +1,9 @@
-import type { EchoSkillBonusRow } from "@/db/schema"
+import type { EchoSkillBonusRow } from "@db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { EchoSkillBonusForm } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-form"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { EchoSkillBonusForm } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-bonus-form"
 
 type EchoSkillBonusEditActionProps = {
   echoId: number

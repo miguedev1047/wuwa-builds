@@ -2,8 +2,8 @@ import {
   CHARACTER_STAT_KEYS,
   type CharacterStatKey,
   type CharacterStats,
-} from "@/modules/builds/domain/character-stats"
-import { STAT_KINDS } from "@/modules/builds/domain/stats"
+} from "@builds/domain/character-stats"
+import { STAT_KINDS } from "@builds/domain/stats"
 
 export type CharacterStatsDisplay = Record<CharacterStatKey, string>
 

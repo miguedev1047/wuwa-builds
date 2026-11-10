@@ -1,7 +1,7 @@
-import { resonatorPropertyLevels } from "@/db/schema"
+import { resonatorPropertyLevels } from "@db/schema"
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
-import { isResonatorPropertyStatId } from "@/modules/game-data/application/constants/resonator"
+import { isResonatorPropertyStatId } from "@game-data/application/constants/resonator"
 
 export const resonatorPropertyLevelsSchema = createInsertSchema(
   resonatorPropertyLevels,

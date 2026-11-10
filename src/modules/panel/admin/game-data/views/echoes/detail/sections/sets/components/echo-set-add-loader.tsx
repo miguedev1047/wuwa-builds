@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { EchoSetAddAction } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/sets/components/echo-set-add-action"
+import { encoreEchoQueries } from "@encore/queries/catalogs"
+import { echoQueries } from "@game-data/queries/echoes"
+import { EchoSetAddAction } from "@panel/admin/game-data/views/echoes/detail/sections/sets/components/echo-set-add-action"
 
 type EchoSetAddLoaderProps = {
   echoId: number

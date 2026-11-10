@@ -1,10 +1,10 @@
-import { BuildCard } from "../../ui/build-card"
-import { EchoSlotsSection } from "./echo-slots-section"
-import { buildCardSectionAreas } from "./build-card-grid-layout"
-import { ResonatorInfoSection } from "./resonator-info-section"
-import { SkillsSection } from "./skills-section"
-import { StatsSection } from "./stats-section"
-import { WeaponSection } from "./weapon-section"
+import { BuildCard } from "@builder/ui/build-card"
+import { EchoSlotsSection } from "@builder/components/build-card/echo-slots-section"
+import { buildCardSectionAreas } from "@builder/components/build-card/build-card-grid-layout"
+import { ResonatorInfoSection } from "@builder/components/build-card/resonator-info-section"
+import { SkillsSection } from "@builder/components/build-card/skills-section"
+import { StatsSection } from "@builder/components/build-card/stats-section"
+import { WeaponSection } from "@builder/components/build-card/weapon-section"
 
 /** Grid layout that arranges the build card sections. */
 export function BuildCardGrid() {

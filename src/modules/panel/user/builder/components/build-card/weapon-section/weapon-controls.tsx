@@ -1,9 +1,9 @@
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
 import { Show } from "@/components/utility/show"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { WeaponLevel } from "./weapon-level"
-import { WeaponRefinement } from "./weapon-refinement"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { WeaponLevel } from "@builder/components/build-card/weapon-section/weapon-level"
+import { WeaponRefinement } from "@builder/components/build-card/weapon-section/weapon-refinement"
 import { FieldGroup } from "@/components/ui/field"
 
 /** Level and refinement controls of the selected weapon. */

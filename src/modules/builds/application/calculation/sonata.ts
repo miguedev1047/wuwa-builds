@@ -1,9 +1,9 @@
 import type {
   CharacterConditionalEffect,
   CharacterStatBonus,
-} from "@/modules/builds/domain/character-stats"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
-import type { SonataCatalogEntry } from "@/modules/game-data/domain/sonata"
+} from "@builds/domain/character-stats"
+import type { EchoesDataProps } from "@builds/domain/build-record"
+import type { SonataCatalogEntry } from "@game-data/domain/sonata"
 
 export interface ResolvedSonataBonuses {
   bonuses: CharacterStatBonus[]

@@ -4,10 +4,10 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { Show } from "@/components/utility/show"
-import type { EchoSetRow, SonataSetEffectRow } from "@/db/schema"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { EchoSetDeleteAction } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/sets/components/echo-set-delete-action"
-import { SonataCardContent } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/sets/components/sonata-card-content"
+import type { EchoSetRow, SonataSetEffectRow } from "@db/schema"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { EchoSetDeleteAction } from "@panel/admin/game-data/views/echoes/detail/sections/sets/components/echo-set-delete-action"
+import { SonataCardContent } from "@panel/admin/game-data/views/echoes/detail/sections/sets/components/sonata-card-content"
 
 type EchoSetCardProps = {
   echoSet: EchoSetRow & {

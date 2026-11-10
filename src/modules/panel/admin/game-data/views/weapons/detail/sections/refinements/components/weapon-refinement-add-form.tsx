@@ -14,18 +14,18 @@ import {
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
-import type { EncoreWeaponRefinement } from "@/modules/encore/domain/weapon"
+import type { EncoreWeaponRefinement } from "@encore/domain/weapon"
 import {
   weaponRefinementFormInput,
   type WeaponRefinementInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createWeaponRefinement } from "@/modules/game-data/server/weapons/refinements"
-import { weaponRefinementDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createWeaponRefinement } from "@game-data/server/weapons/refinements"
+import { weaponRefinementDraftFromEncore } from "@panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
 import {
   WeaponRefinementFields,
   weaponRefinementFormDefaults,
-} from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-form-fields"
+} from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-form-fields"
 
 type WeaponRefinementAddFormProps = {
   weaponId: number

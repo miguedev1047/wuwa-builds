@@ -5,7 +5,7 @@ import {
   resonatorRelations,
   sonataRelations,
   weaponRelations,
-} from "@/db/schema"
+} from "@db/schema"
 
 /**
  * Every table part contributes its own key, so a plain spread merges them.

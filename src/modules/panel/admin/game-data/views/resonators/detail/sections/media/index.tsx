@@ -1,8 +1,8 @@
 import { useParams } from "@tanstack/react-router"
 import { SkeletonSuspense } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorMediaContent } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-content"
-import { ResonatorMediaSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-skeleton"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorMediaContent } from "@panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-content"
+import { ResonatorMediaSkeleton } from "@panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-skeleton"
 
 /** Images (`resonators_media`) of the resonator. */
 export function ResonatorMediaSection() {

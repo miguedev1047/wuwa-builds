@@ -1,5 +1,5 @@
-import type { WeaponPropertyGrowthRow } from "@/db/schema"
-import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
+import type { WeaponPropertyGrowthRow } from "@db/schema"
+import type { EncorePropertyGrowth } from "@encore/domain/property"
 
 type GrowthValueColumns = {
   valueNumber: number | null

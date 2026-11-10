@@ -7,7 +7,7 @@ import {
   text,
   uniqueIndex,
 } from "drizzle-orm/sqlite-core"
-import { getDate } from "@/db/helpers/gen-date"
+import { getDate } from "@db/helpers/gen-date"
 
 /**
  * Weapon endpoint mirror (`weapon?page=1` + `weapon/{id}`).

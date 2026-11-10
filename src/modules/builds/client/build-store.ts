@@ -1,5 +1,5 @@
-import { buildCollection } from "@/modules/builds/infrastructure/local-storage/build-drafts"
-import type { BuildProps } from "@/modules/builds/domain/build-record"
+import { buildCollection } from "@builds/infrastructure/local-storage/build-drafts"
+import type { BuildProps } from "@builds/domain/build-record"
 
 export { buildCollection }
 

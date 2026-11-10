@@ -1,14 +1,14 @@
 import type {
   CharacterConditionalEffect,
   CharacterStatBonus,
-} from "@/modules/builds/domain/character-stats"
+} from "@builds/domain/character-stats"
 import {
   isWeaponPropertyStatId,
   weaponPropertyStatId,
-} from "@/modules/game-data/application/constants/weapon"
-import { isStatId } from "@/modules/game-data/application/stats/stats"
-import { growthValueAtLevel } from "@/modules/game-data/domain/character"
-import type { WeaponDetail } from "@/modules/game-data/domain/weapon"
+} from "@game-data/application/constants/weapon"
+import { isStatId } from "@game-data/application/stats/stats"
+import { growthValueAtLevel } from "@game-data/domain/character"
+import type { WeaponDetail } from "@game-data/domain/weapon"
 
 export interface ResolvedWeaponStats {
   baseAtk: number

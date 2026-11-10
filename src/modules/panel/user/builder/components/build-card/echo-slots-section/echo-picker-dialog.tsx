@@ -1,11 +1,11 @@
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+import type { EchoesDataProps } from "@builds/domain/build-record"
 import { Button } from "@/components/ui/button"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
 import { SkeletonSuspense } from "skullet/react"
-import { BuildCatalogPickerDialog } from "../../../ui/build-catalog-picker"
-import { EchoPicker } from "./echo-picker"
-import { EchoPickerSkeleton } from "./echo-picker-skeleton"
+import { BuildCatalogPickerDialog } from "@builder/ui/build-catalog-picker"
+import { EchoPicker } from "@builder/components/build-card/echo-slots-section/echo-picker"
+import { EchoPickerSkeleton } from "@builder/components/build-card/echo-slots-section/echo-picker-skeleton"
 
 type EchoPickerDialogProps = {
   slot: EchoesDataProps

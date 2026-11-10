@@ -9,7 +9,7 @@ import {
 import {
   useSessionRosters,
   useUnassignedBuilds,
-} from "@/modules/panel/user/builds/application/build-live-queries"
+} from "@panel/user/builds/application/build-live-queries"
 import { Link } from "@tanstack/react-router"
 
 export function LocalBuildList() {

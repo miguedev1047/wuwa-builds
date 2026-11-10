@@ -1,8 +1,12 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { echoDetail, echoSkillBonus, echoSlot } from "./catalog-fixtures"
-import { resolveEchoSkillBonuses } from "./echo-skill-bonuses"
+import {
+  echoDetail,
+  echoSkillBonus,
+  echoSlot,
+} from "@builds/application/calculation/catalog-fixtures"
+import { resolveEchoSkillBonuses } from "@builds/application/calculation/echo-skill-bonuses"
 
 const echoes = [
   echoSlot({ index: 0, data: { ...echoSlot().data!, id: 1 } }),

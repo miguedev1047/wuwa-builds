@@ -2,24 +2,24 @@ import { useId } from "react"
 import { useSelector } from "@tanstack/react-form"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
-import type { ResonatorPropertyGrowthRow } from "@/db/schema"
+import type { ResonatorPropertyGrowthRow } from "@db/schema"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
-import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
+import type { EncorePropertyGrowth } from "@encore/domain/property"
 import {
   growthMilestoneOptions,
   propertyGrowthPayloads,
   type PropertyGrowthPayload,
-} from "@/modules/game-data/application/resonators/property-growth"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createResonatorPropertyGrowth } from "@/modules/game-data/server/resonators/property-growth"
+} from "@game-data/application/resonators/property-growth"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createResonatorPropertyGrowth } from "@game-data/server/resonators/property-growth"
 import {
   PropertyGrowthFields,
   propertyGrowthFormDefaults,
-} from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-form-fields"
+} from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-growth-form-fields"
 
 type PropertyGrowthAddFormProps = {
   propertyId: number

@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { EchoSlotSection } from "./echo-slot-section"
+import { echoQueries } from "@game-data/queries/echoes"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { EchoSlotSection } from "@builder/components/build-card/echo-slots-section/echo-slot-section"
 
 /** Five echo slots of the build, each with its own editor dialog. */
 export function EchoSlotsSection() {

@@ -1,8 +1,8 @@
-import { CatalogDetailRouteSkeleton } from "@/modules/panel/admin/game-data/components/route-skeleton"
-import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
-import { isValidId } from "@/modules/game-data/application/id"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { EchoDetailPage } from "@/modules/panel/admin/game-data/views/echoes/detail/page"
+import { CatalogDetailRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
+import { encoreEchoQueries } from "@encore/queries/catalogs"
+import { isValidId } from "@game-data/application/id"
+import { echoQueries } from "@game-data/queries/echoes"
+import { EchoDetailPage } from "@panel/admin/game-data/views/echoes/detail/page"
 import { createFileRoute, notFound } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/echoes/$id")({

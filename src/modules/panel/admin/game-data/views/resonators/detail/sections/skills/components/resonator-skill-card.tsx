@@ -1,4 +1,4 @@
-import type { ResonatorSkillRow } from "@/db/schema"
+import type { ResonatorSkillRow } from "@db/schema"
 import { Button } from "@/components/ui/button"
 import {
   Collapsible,
@@ -6,9 +6,9 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { Show } from "@/components/utility/show"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorSkillDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-delete-action"
-import { ResonatorSkillEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-edit-action"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorSkillDeleteAction } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-delete-action"
+import { ResonatorSkillEditAction } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-edit-action"
 
 type ResonatorSkillCardProps = {
   skill: ResonatorSkillRow

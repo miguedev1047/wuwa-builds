@@ -1,9 +1,9 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { SkeletonSuspense } from "skullet/react"
 import { Button } from "@/components/ui/button"
-import type { EncoreEchoSummary } from "@/modules/encore/domain/echo"
-import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
-import { CatalogSearch } from "@/modules/panel/admin/game-data/components/catalog-search"
+import type { EncoreEchoSummary } from "@encore/domain/echo"
+import { encoreEchoQueries } from "@encore/queries/catalogs"
+import { CatalogSearch } from "@panel/admin/game-data/components/catalog-search"
 import { Show } from "@/components/utility/show"
 
 type EchoSearchProps = {

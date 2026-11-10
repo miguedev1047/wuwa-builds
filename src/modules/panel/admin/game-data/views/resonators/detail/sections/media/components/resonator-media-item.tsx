@@ -1,8 +1,8 @@
-import type { ResonatorMediaRow } from "@/db/schema"
+import type { ResonatorMediaRow } from "@db/schema"
 import { Show } from "@/components/utility/show"
-import { resonatorMediaLabel } from "@/modules/game-data/application/constants/resonator"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorMediaEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-edit-action"
+import { resonatorMediaLabel } from "@game-data/application/constants/resonator"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorMediaEditAction } from "@panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-edit-action"
 
 type ResonatorMediaItemProps = {
   media: ResonatorMediaRow

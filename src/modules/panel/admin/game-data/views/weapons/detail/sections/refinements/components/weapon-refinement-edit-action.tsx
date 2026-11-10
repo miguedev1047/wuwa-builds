@@ -1,8 +1,8 @@
-import type { WeaponRefinementRow } from "@/db/schema"
+import type { WeaponRefinementRow } from "@db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { WeaponRefinementEditForm } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-edit-form"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { WeaponRefinementEditForm } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-edit-form"
 
 type WeaponRefinementEditActionProps = {
   refinement: WeaponRefinementRow

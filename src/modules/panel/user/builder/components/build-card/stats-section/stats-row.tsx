@@ -1,5 +1,8 @@
 import { cn } from "cn"
-import { formatStatValue, type StatsRow } from "./stats-view-model"
+import {
+  formatStatValue,
+  type StatsRow,
+} from "@builder/components/build-card/stats-section/stats-view-model"
 import { GameIcon } from "@/components/ui/game-icon"
 
 type StatsRowItemProps = {

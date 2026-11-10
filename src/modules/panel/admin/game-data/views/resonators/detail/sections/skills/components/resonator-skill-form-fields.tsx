@@ -3,7 +3,7 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   resonatorSkillUpdateInput,
   type ResonatorSkillUpdateInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 /** Empty values shared by every resonator skill form. */
 export const resonatorSkillFormDefaults: ResonatorSkillUpdateInput = {

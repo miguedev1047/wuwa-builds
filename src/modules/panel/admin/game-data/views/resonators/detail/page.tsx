@@ -1,12 +1,12 @@
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { resonatorDetailDockActions } from "@/modules/panel/admin/game-data/views/resonators/detail/dock-actions"
-import { ResonatorInfoSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/info"
-import { ResonatorMediaSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/media"
-import { ResonatorSkillsSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills"
-import { ResonatorSequencesSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences"
-import { ResonatorPassivesSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives"
-import { ResonatorTagsSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/tags"
-import { ResonatorLevelsSection } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { resonatorDetailDockActions } from "@panel/admin/game-data/views/resonators/detail/dock-actions"
+import { ResonatorInfoSection } from "@panel/admin/game-data/views/resonators/detail/sections/info"
+import { ResonatorMediaSection } from "@panel/admin/game-data/views/resonators/detail/sections/media"
+import { ResonatorSkillsSection } from "@panel/admin/game-data/views/resonators/detail/sections/skills"
+import { ResonatorSequencesSection } from "@panel/admin/game-data/views/resonators/detail/sections/sequences"
+import { ResonatorPassivesSection } from "@panel/admin/game-data/views/resonators/detail/sections/passives"
+import { ResonatorTagsSection } from "@panel/admin/game-data/views/resonators/detail/sections/tags"
+import { ResonatorLevelsSection } from "@panel/admin/game-data/views/resonators/detail/sections/levels"
 
 export function ResonatorDetailPage() {
   return (

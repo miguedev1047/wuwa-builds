@@ -1,8 +1,12 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { echoSlot, sonataEffect, sonataEntry } from "./catalog-fixtures"
-import { resolveSonataBonuses } from "./sonata"
+import {
+  echoSlot,
+  sonataEffect,
+  sonataEntry,
+} from "@builds/application/calculation/catalog-fixtures"
+import { resolveSonataBonuses } from "@builds/application/calculation/sonata"
 
 describe("resolveSonataBonuses", () => {
   test("counts equipped echoes and applies reached static thresholds", () => {

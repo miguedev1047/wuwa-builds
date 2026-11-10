@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ResonatorSelectorDialog } from "../resonator-selector"
+import { ResonatorSelectorDialog } from "@builder/components/resonator-selector"
 
 /** Compact resonator selector trigger for screens without the portrait. */
 export function BuildResonatorAction() {

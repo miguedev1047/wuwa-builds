@@ -14,11 +14,11 @@ import {
 import {
   RouteError,
   RouteNotFound,
-} from "@/modules/panel/admin/game-data/components/route-state"
+} from "@panel/admin/game-data/components/route-state"
 import {
   CatalogDetailRouteSkeleton,
   CatalogListRouteSkeleton,
-} from "@/modules/panel/admin/game-data/components/route-skeleton"
+} from "@panel/admin/game-data/components/route-skeleton"
 
 /** `<Link>` needs a router on the server, so the state renders inside one. */
 async function renderInRouter(node: ReactNode) {

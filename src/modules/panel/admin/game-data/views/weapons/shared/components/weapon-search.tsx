@@ -1,9 +1,9 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { SkeletonSuspense } from "skullet/react"
 import { Button } from "@/components/ui/button"
-import type { EncoreWeaponSummary } from "@/modules/encore/domain/weapon"
-import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
-import { CatalogSearch } from "@/modules/panel/admin/game-data/components/catalog-search"
+import type { EncoreWeaponSummary } from "@encore/domain/weapon"
+import { encoreWeaponQueries } from "@encore/queries/catalogs"
+import { CatalogSearch } from "@panel/admin/game-data/components/catalog-search"
 
 type WeaponSearchProps = {
   /** Id of the weapon already applied to the form, if any. */

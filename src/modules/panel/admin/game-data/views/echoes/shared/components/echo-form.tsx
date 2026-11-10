@@ -3,21 +3,18 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
 import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
-import {
-  echoInput,
-  type EchoInput,
-} from "@/modules/game-data/application/schemas"
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createEcho } from "@/modules/game-data/server/echoes/echoes"
-import { echoDraftFromEncore } from "@/modules/panel/admin/game-data/views/echoes/shared/application/echo-draft"
+import { echoInput, type EchoInput } from "@game-data/application/schemas"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createEcho } from "@game-data/server/echoes/echoes"
+import { echoDraftFromEncore } from "@panel/admin/game-data/views/echoes/shared/application/echo-draft"
 import {
   EchoFields,
   echoFormDefaults,
-} from "@/modules/panel/admin/game-data/views/echoes/shared/components/echo-fields"
-import { EchoSearch } from "@/modules/panel/admin/game-data/views/echoes/shared/components/echo-search"
-import type { EncoreEchoSummary } from "@/modules/encore/domain/echo"
-import { encoreEchoQueries } from "@/modules/encore/queries/catalogs"
+} from "@panel/admin/game-data/views/echoes/shared/components/echo-fields"
+import { EchoSearch } from "@panel/admin/game-data/views/echoes/shared/components/echo-search"
+import type { EncoreEchoSummary } from "@encore/domain/echo"
+import { encoreEchoQueries } from "@encore/queries/catalogs"
 
 export function EchoForm() {
   const formId = `new-echo-form-${useId()}`

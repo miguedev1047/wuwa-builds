@@ -1,9 +1,9 @@
 import { useParams } from "@tanstack/react-router"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorSequenceAddLoader } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-add-loader"
-import { ResonatorSequencesContent } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequences-content"
-import { ResonatorSequencesSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequences-skeleton"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorSequenceAddLoader } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-add-loader"
+import { ResonatorSequencesContent } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequences-content"
+import { ResonatorSequencesSkeleton } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequences-skeleton"
 
 /** Sequences (`resonator_sequences`) of the resonator. */
 export function ResonatorSequencesSection() {

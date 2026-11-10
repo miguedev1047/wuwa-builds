@@ -1,9 +1,9 @@
 import { useNavigate } from "@tanstack/react-router"
-import { deleteBuild } from "@/modules/builds/client/build-store"
+import { deleteBuild } from "@builds/client/build-store"
 import { Button } from "@/components/ui/button"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { useBuilderId } from "../../application/use-builder-id"
+import { useBuilderId } from "@builder/application/use-builder-id"
 
 export function BuildDelete() {
   const buildId = useBuilderId()

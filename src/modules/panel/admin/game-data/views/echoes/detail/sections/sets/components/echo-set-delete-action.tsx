@@ -3,11 +3,11 @@ import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { useParams } from "@tanstack/react-router"
 import { toast } from "sonner"
-import type { EchoSetRow } from "@/db/schema"
-import { isValidId } from "@/modules/game-data/application/id"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { deleteEchoSet } from "@/modules/game-data/server/echoes/sets"
+import type { EchoSetRow } from "@db/schema"
+import { isValidId } from "@game-data/application/id"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { deleteEchoSet } from "@game-data/server/echoes/sets"
 
 type EchoSetDeleteActionProps = {
   echoSet: EchoSetRow

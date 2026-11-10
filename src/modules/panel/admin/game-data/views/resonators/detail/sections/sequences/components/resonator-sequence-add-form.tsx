@@ -4,11 +4,11 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import type { EncoreSequence } from "@/modules/encore/domain/character"
-import type { ResonatorSequenceInput } from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createResonatorSequences } from "@/modules/game-data/server/resonators/sequences"
-import { resonatorSequencePayloads } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-sequence-draft"
+import type { EncoreSequence } from "@encore/domain/character"
+import type { ResonatorSequenceInput } from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createResonatorSequences } from "@game-data/server/resonators/sequences"
+import { resonatorSequencePayloads } from "@panel/admin/game-data/views/resonators/detail/application/resonator-sequence-draft"
 
 type ResonatorSequenceAddFormProps = {
   resonatorId: number

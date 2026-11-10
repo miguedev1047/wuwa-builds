@@ -2,17 +2,17 @@ import { useId } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
-import type { ResonatorSequenceRow } from "@/db/schema"
+import type { ResonatorSequenceRow } from "@db/schema"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import {
   resonatorSequenceUpdateInput,
   type ResonatorSequenceUpdateInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { updateResonatorSequence } from "@/modules/game-data/server/resonators/sequences"
-import { resonatorSequenceDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-sequence-draft"
-import { ResonatorSequenceFields } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-form-fields"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { updateResonatorSequence } from "@game-data/server/resonators/sequences"
+import { resonatorSequenceDraftFromRow } from "@panel/admin/game-data/views/resonators/detail/application/resonator-sequence-draft"
+import { ResonatorSequenceFields } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-form-fields"
 
 type ResonatorSequenceEditFormProps = {
   sequence: ResonatorSequenceRow

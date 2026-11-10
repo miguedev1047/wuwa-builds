@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { growthValueAtLevel } from "./character"
+import { growthValueAtLevel } from "@game-data/domain/character"
 
 function growth(level: number, value: number | string) {
   return {

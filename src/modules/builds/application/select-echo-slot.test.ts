@@ -1,9 +1,9 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
-import type { EchoSummary } from "@/modules/game-data/domain/echo"
-import { selectEchoSlot } from "./select-echo-slot"
+import type { EchoesDataProps } from "@builds/domain/build-record"
+import type { EchoSummary } from "@game-data/domain/echo"
+import { selectEchoSlot } from "@builds/application/select-echo-slot"
 
 function echo(id: number): EchoSummary {
   return {

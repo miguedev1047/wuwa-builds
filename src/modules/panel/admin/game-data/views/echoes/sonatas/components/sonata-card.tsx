@@ -1,9 +1,9 @@
 import { Badge } from "@/components/ui/badge"
 import { Show } from "@/components/utility/show"
-import type { SonataSetEffectRow, SonataSetRow } from "@/db/schema"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { SonataDeleteAction } from "@/modules/panel/admin/game-data/views/echoes/sonatas/components/sonata-delete-action"
-import { SonataEditAction } from "@/modules/panel/admin/game-data/views/echoes/sonatas/components/sonata-edit-action"
+import type { SonataSetEffectRow, SonataSetRow } from "@db/schema"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { SonataDeleteAction } from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-delete-action"
+import { SonataEditAction } from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-edit-action"
 
 type SonataWithEffects = SonataSetRow & { effects: SonataSetEffectRow[] }
 

@@ -2,10 +2,10 @@ import { adminMiddleware } from "@/functions/middlewares"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { db } from "@/db"
-import { resonatorPropertyGrowth } from "@/db/schema"
-import { growthValueColumns } from "@/modules/game-data/application/resonators/property-growth"
-import { idInput } from "@/modules/game-data/application/id"
-import { resonatorPropertyGrowthInputs } from "@/modules/game-data/application/schemas"
+import { resonatorPropertyGrowth } from "@db/schema"
+import { growthValueColumns } from "@game-data/application/resonators/property-growth"
+import { idInput } from "@game-data/application/id"
+import { resonatorPropertyGrowthInputs } from "@game-data/application/schemas"
 
 export const createResonatorPropertyGrowth = createServerFn({
   method: "POST",

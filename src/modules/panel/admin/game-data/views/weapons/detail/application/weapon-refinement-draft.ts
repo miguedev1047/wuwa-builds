@@ -1,10 +1,10 @@
-import type { WeaponRefinementRow, WeaponRefinementStatRow } from "@/db/schema"
-import type { EncoreWeaponRefinement } from "@/modules/encore/domain/weapon"
+import type { WeaponRefinementRow, WeaponRefinementStatRow } from "@db/schema"
+import type { EncoreWeaponRefinement } from "@encore/domain/weapon"
 import type {
   WeaponRefinementStatsFormValues,
   WeaponRefinementStatInput,
   WeaponRefinementUpdateInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 /** Visible fields of the refinement form that Encore can prefill. */
 export type WeaponRefinementDraft = {

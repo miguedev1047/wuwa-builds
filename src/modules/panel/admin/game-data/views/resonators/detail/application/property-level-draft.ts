@@ -1,5 +1,5 @@
-import type { EncoreProperty } from "@/modules/encore/domain/property"
-import { RESONATOR_PROPERTY_ALIASES } from "@/modules/game-data/application/constants/resonator"
+import type { EncoreProperty } from "@encore/domain/property"
+import { RESONATOR_PROPERTY_ALIASES } from "@game-data/application/constants/resonator"
 
 /** Visible fields of the property level form. */
 export type PropertyLevelDraft = {

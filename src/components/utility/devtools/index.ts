@@ -1,2 +1,2 @@
-export * from "./devtools"
-export * from "./json-devtool"
+export * from "@/components/utility/devtools/devtools"
+export * from "@/components/utility/devtools/json-devtool"

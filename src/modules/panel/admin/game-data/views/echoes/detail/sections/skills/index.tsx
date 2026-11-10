@@ -1,9 +1,9 @@
 import { useParams } from "@tanstack/react-router"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { EchoSkillActions } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-actions"
-import { EchoSkillContent } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-content"
-import { EchoSkillSkeleton } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-skeleton"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { EchoSkillActions } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-actions"
+import { EchoSkillContent } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-content"
+import { EchoSkillSkeleton } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-skeleton"
 
 /** Active skill of the echo: its text and the bonuses it grants. */
 export function EchoSkillsSection() {

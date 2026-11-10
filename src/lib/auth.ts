@@ -1,4 +1,4 @@
-import * as schema from "@/db/schemas/auth-schema"
+import * as schema from "@db/schemas/auth-schema"
 
 import { db } from "@/db"
 import { betterAuth } from "better-auth"

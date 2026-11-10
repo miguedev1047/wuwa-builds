@@ -1,8 +1,5 @@
-import type { SelectOption } from "@/modules/game-data/application/options"
-import {
-  statOptions,
-  type StatId,
-} from "@/modules/game-data/application/stats/stats"
+import type { SelectOption } from "@game-data/application/options"
+import { statOptions, type StatId } from "@game-data/application/stats/stats"
 
 export const RESONATOR_RARITY: SelectOption<number>[] = [
   { label: "5 Estrellas", value: 5 },

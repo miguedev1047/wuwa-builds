@@ -1,13 +1,13 @@
-import type { ResonatorSequenceRow } from "@/db/schema"
+import type { ResonatorSequenceRow } from "@db/schema"
 import { Button } from "@/components/ui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorSequenceDeleteAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-delete-action"
-import { ResonatorSequenceEditAction } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-edit-action"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorSequenceDeleteAction } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-delete-action"
+import { ResonatorSequenceEditAction } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-edit-action"
 
 type ResonatorSequenceCardProps = {
   sequence: ResonatorSequenceRow

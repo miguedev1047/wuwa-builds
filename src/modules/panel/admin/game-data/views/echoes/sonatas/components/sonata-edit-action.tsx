@@ -1,8 +1,8 @@
-import type { SonataSetEffectRow, SonataSetRow } from "@/db/schema"
+import type { SonataSetEffectRow, SonataSetRow } from "@db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { SonataEditForm } from "@/modules/panel/admin/game-data/views/echoes/sonatas/components/sonata-edit-form"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { SonataEditForm } from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-edit-form"
 
 type SonataWithEffects = SonataSetRow & { effects: SonataSetEffectRow[] }
 

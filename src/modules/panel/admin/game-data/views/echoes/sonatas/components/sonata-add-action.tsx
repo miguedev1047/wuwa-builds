@@ -1,7 +1,7 @@
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { SonataAddForm } from "@/modules/panel/admin/game-data/views/echoes/sonatas/components/sonata-add-form"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { SonataAddForm } from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-add-form"
 
 export function SonataAddAction() {
   return (

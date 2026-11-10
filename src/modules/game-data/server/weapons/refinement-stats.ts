@@ -1,13 +1,13 @@
 import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
-import { weaponRefinementStats } from "@/db/schema"
+import { weaponRefinementStats } from "@db/schema"
 import { adminMiddleware } from "@/functions/middlewares"
-import { idInput } from "@/modules/game-data/application/id"
+import { idInput } from "@game-data/application/id"
 import {
   weaponRefinementStatUpdateInput,
   weaponRefinementStatsInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 export const createWeaponRefinementStats = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])

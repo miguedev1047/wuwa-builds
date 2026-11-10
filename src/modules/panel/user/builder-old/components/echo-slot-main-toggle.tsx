@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { updateBuild } from "@/modules/builds/client/build-store"
+import { updateBuild } from "@builds/client/build-store"
 
 interface EchoSlotMainToggleProps {
   buildId: string

@@ -1,6 +1,6 @@
-import { CatalogListRouteSkeleton } from "@/modules/panel/admin/game-data/components/route-skeleton"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { ResonatorListPage } from "@/modules/panel/admin/game-data/views/resonators/list/page"
+import { CatalogListRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
+import { characterQueries } from "@game-data/queries/characters"
+import { ResonatorListPage } from "@panel/admin/game-data/views/resonators/list/page"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/resonators/")({

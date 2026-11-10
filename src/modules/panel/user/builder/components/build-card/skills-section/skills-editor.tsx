@@ -5,14 +5,14 @@ import { Show } from "@/components/utility/show"
 import {
   withPassiveEnabled,
   withSkillLevel,
-} from "@/modules/builds/application/resonator-config"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { PassiveItem } from "./passive-item"
-import { SkillItem } from "./skill-item"
-import { SkillsEditorSkeleton } from "./skills-editor-skeleton"
+} from "@builds/application/resonator-config"
+import { updateBuild } from "@builds/client/build-store"
+import { characterQueries } from "@game-data/queries/characters"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { PassiveItem } from "@builder/components/build-card/skills-section/passive-item"
+import { SkillItem } from "@builder/components/build-card/skills-section/skill-item"
+import { SkillsEditorSkeleton } from "@builder/components/build-card/skills-section/skills-editor-skeleton"
 
 const SKILL_COUNT = 5
 

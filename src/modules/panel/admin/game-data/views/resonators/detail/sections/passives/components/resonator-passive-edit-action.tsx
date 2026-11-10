@@ -1,8 +1,8 @@
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import type { ResonatorPassiveRow } from "@/db/schema"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorPassiveEditForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-edit-form"
+import type { ResonatorPassiveRow } from "@db/schema"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorPassiveEditForm } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-edit-form"
 
 type ResonatorPassiveEditActionProps = {
   passive: ResonatorPassiveRow

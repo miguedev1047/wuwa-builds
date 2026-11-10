@@ -3,7 +3,7 @@
 import { describe, expect, test } from "bun:test"
 import { renderToStaticMarkup } from "react-dom/server"
 import { useAppForm } from "@/components/form"
-import { WeaponRefinementStatFields } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-form-fields"
+import { WeaponRefinementStatFields } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-form-fields"
 
 function Harness({ allowAdd }: { allowAdd: boolean }) {
   const form = useAppForm({

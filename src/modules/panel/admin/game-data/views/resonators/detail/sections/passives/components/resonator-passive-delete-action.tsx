@@ -2,10 +2,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
-import { isValidId } from "@/modules/game-data/application/id"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { deleteResonatorPassive } from "@/modules/game-data/server/resonators/passives"
+import { isValidId } from "@game-data/application/id"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { deleteResonatorPassive } from "@game-data/server/resonators/passives"
 
 type ResonatorPassiveDeleteActionProps = {
   passiveId: number

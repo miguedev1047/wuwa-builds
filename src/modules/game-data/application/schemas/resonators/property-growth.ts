@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { isGrowthValue } from "@/modules/game-data/application/resonators/property-growth"
+import { isGrowthValue } from "@game-data/application/resonators/property-growth"
 
 /** Fields the admin panel sends when adding a property growth entry. */
 export const resonatorPropertyGrowthInput = z.object({

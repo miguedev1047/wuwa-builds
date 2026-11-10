@@ -1,8 +1,8 @@
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { echoDetailDockActions } from "@/modules/panel/admin/game-data/views/echoes/detail/dock-actions"
-import { EchoInfoSection } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/info"
-import { EchoSetsSection } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/sets"
-import { EchoSkillsSection } from "@/modules/panel/admin/game-data/views/echoes/detail/sections/skills"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { echoDetailDockActions } from "@panel/admin/game-data/views/echoes/detail/dock-actions"
+import { EchoInfoSection } from "@panel/admin/game-data/views/echoes/detail/sections/info"
+import { EchoSetsSection } from "@panel/admin/game-data/views/echoes/detail/sections/sets"
+import { EchoSkillsSection } from "@panel/admin/game-data/views/echoes/detail/sections/skills"
 
 export function EchoDetailPage() {
   return (

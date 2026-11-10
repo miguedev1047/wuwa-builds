@@ -1,8 +1,8 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { calculateCharacterStats } from "./character-stats"
-import type { CharacterBaseStats } from "./character-stats"
+import { calculateCharacterStats } from "@builds/domain/character-stats"
+import type { CharacterBaseStats } from "@builds/domain/character-stats"
 
 const base: CharacterBaseStats = {
   hp: 1000,

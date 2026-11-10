@@ -1,5 +1,5 @@
 import { SkeletonBox } from "skullet/react"
-import { buildCatalogPickerVariants } from "../../../ui/build-catalog-picker"
+import { buildCatalogPickerVariants } from "@builder/ui/build-catalog-picker"
 
 /** Square skeleton that mirrors the weapon picker grid. */
 export function WeaponPickerSkeleton() {

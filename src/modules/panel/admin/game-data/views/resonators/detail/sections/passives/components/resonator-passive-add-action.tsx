@@ -1,6 +1,6 @@
-import type { EncorePassive } from "@/modules/encore/domain/character"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorPassiveAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-add-form"
+import type { EncorePassive } from "@encore/domain/character"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorPassiveAddForm } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-add-form"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 

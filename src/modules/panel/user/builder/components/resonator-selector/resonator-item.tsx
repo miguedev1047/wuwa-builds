@@ -1,7 +1,7 @@
-import { updateBuild } from "@/modules/builds/client/build-store"
-import type { CharacterSummary } from "@/modules/game-data/domain/character"
-import { useSelectResonator } from "@/modules/panel/user/builder/application/use-select-resonator"
-import { BuildCatalogPickerItem } from "../../ui/build-catalog-picker"
+import { updateBuild } from "@builds/client/build-store"
+import type { CharacterSummary } from "@game-data/domain/character"
+import { useSelectResonator } from "@builder/application/use-select-resonator"
+import { BuildCatalogPickerItem } from "@builder/ui/build-catalog-picker"
 
 export type ResonatorAspect = "square" | "portrait"
 

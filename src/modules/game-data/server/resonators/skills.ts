@@ -2,12 +2,12 @@ import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { adminMiddleware } from "@/functions/middlewares"
-import { resonatorSkills } from "@/db/schema"
-import { idInput } from "@/modules/game-data/application/id"
+import { resonatorSkills } from "@db/schema"
+import { idInput } from "@game-data/application/id"
 import {
   resonatorSkillsInput,
   resonatorSkillUpdateInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 export const createResonatorSkills = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])

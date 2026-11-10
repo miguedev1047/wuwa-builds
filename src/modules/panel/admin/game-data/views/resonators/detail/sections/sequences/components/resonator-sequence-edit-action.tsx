@@ -1,8 +1,8 @@
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import type { ResonatorSequenceRow } from "@/db/schema"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorSequenceEditForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-edit-form"
+import type { ResonatorSequenceRow } from "@db/schema"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorSequenceEditForm } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-edit-form"
 
 type ResonatorSequenceEditActionProps = {
   sequence: ResonatorSequenceRow

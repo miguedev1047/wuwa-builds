@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
-import { MAX_LOCAL_BUILDS } from "@/modules/builds/domain/build"
-import { useCreateBuild } from "@/modules/panel/user/my-builds/application/use-create-build"
-import { LocalBuildList } from "@/modules/panel/user/my-builds/components/local-build-list"
+import { MAX_LOCAL_BUILDS } from "@builds/domain/build"
+import { useCreateBuild } from "@panel/user/my-builds/application/use-create-build"
+import { LocalBuildList } from "@panel/user/my-builds/components/local-build-list"
 import { createFileRoute } from "@tanstack/react-router"
 import { Suspense } from "react"
 

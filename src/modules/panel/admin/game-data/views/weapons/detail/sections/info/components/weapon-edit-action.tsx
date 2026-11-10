@@ -1,9 +1,9 @@
 import { Show } from "@/components/utility/show"
-import type { WeaponRow } from "@/db/schema"
+import type { WeaponRow } from "@db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { WeaponEditForm } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/info/components/weapon-edit-form"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { WeaponEditForm } from "@panel/admin/game-data/views/weapons/detail/sections/info/components/weapon-edit-form"
 import { useIsMobile } from "@/hooks/use-mobile"
 
 type WeaponEditActionProps = {

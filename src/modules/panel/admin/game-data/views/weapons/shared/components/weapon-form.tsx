@@ -3,21 +3,18 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
 import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
-import {
-  weaponInput,
-  type WeaponInput,
-} from "@/modules/game-data/application/schemas"
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createWeapon } from "@/modules/game-data/server/weapons/weapons"
-import { weaponDraftFromEncore } from "@/modules/panel/admin/game-data/views/weapons/shared/application/weapon-draft"
+import { weaponInput, type WeaponInput } from "@game-data/application/schemas"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createWeapon } from "@game-data/server/weapons/weapons"
+import { weaponDraftFromEncore } from "@panel/admin/game-data/views/weapons/shared/application/weapon-draft"
 import {
   WeaponFields,
   weaponFormDefaults,
-} from "@/modules/panel/admin/game-data/views/weapons/shared/components/weapon-fields"
-import { WeaponSearch } from "@/modules/panel/admin/game-data/views/weapons/shared/components/weapon-search"
-import type { EncoreWeaponSummary } from "@/modules/encore/domain/weapon"
-import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
+} from "@panel/admin/game-data/views/weapons/shared/components/weapon-fields"
+import { WeaponSearch } from "@panel/admin/game-data/views/weapons/shared/components/weapon-search"
+import type { EncoreWeaponSummary } from "@encore/domain/weapon"
+import { encoreWeaponQueries } from "@encore/queries/catalogs"
 
 export function WeaponForm() {
   const formId = `new-weapon-form-${useId()}`

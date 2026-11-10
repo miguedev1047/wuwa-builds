@@ -1,6 +1,9 @@
-import type { EncoreProperty } from "./property"
+import type { EncoreProperty } from "@encore/domain/property"
 
-export type { EncoreProperty, EncorePropertyGrowth } from "./property"
+export type {
+  EncoreProperty,
+  EncorePropertyGrowth,
+} from "@encore/domain/property"
 
 /** Localized text as returned by the Encore API. */
 export interface EncoreText {

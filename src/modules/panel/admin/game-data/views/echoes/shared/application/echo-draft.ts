@@ -1,6 +1,6 @@
-import type { EchoRow } from "@/db/schema"
-import type { EncoreEchoDetail } from "@/modules/encore/domain/echo"
-import type { EchoInput } from "@/modules/game-data/application/schemas"
+import type { EchoRow } from "@db/schema"
+import type { EncoreEchoDetail } from "@encore/domain/echo"
+import type { EchoInput } from "@game-data/application/schemas"
 
 /**
  * Fills the admin form with an Encore echo.

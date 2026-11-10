@@ -2,7 +2,7 @@ import { cn } from "cn"
 import {
   buildCatalogPickerVariants,
   type BuildCatalogPickerColumns,
-} from "./build-catalog-picker-variants"
+} from "@builder/ui/build-catalog-picker/build-catalog-picker-variants"
 
 type BuildCatalogPickerProps<T> = {
   items: readonly T[]

@@ -1,6 +1,6 @@
-import type { EncoreSequence } from "@/modules/encore/domain/character"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorSequenceAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-add-form"
+import type { EncoreSequence } from "@encore/domain/character"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorSequenceAddForm } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-add-form"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 

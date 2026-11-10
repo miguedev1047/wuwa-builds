@@ -3,7 +3,7 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   resonatorMediaUpdateInput,
   type ResonatorMediaUpdateInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 /** Empty values shared by every resonator media form. */
 export const resonatorMediaFormDefaults: ResonatorMediaUpdateInput = {

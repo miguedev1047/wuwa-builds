@@ -1,6 +1,6 @@
-import type { EncoreSkill } from "@/modules/encore/domain/character"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorSkillAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-add-form"
+import type { EncoreSkill } from "@encore/domain/character"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorSkillAddForm } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-add-form"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 

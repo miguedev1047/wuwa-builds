@@ -1,7 +1,7 @@
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
-import type { EchoSummary } from "@/modules/game-data/domain/echo"
-import { echoQueries } from "@/modules/game-data/queries/echoes"
-import { EchoItem } from "@/modules/panel/user/builder-old/components/echo-item"
+import type { EchoesDataProps } from "@builds/domain/build-record"
+import type { EchoSummary } from "@game-data/domain/echo"
+import { echoQueries } from "@game-data/queries/echoes"
+import { EchoItem } from "@panel/user/builder-old/components/echo-item"
 import { useSuspenseQuery } from "@tanstack/react-query"
 
 interface EchoesListProps {

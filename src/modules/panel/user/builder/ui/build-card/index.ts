@@ -1,1 +1,1 @@
-export * from "./build-card"
+export * from "@builder/ui/build-card/build-card"

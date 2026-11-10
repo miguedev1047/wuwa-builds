@@ -1,8 +1,8 @@
-import { CatalogDetailRouteSkeleton } from "@/modules/panel/admin/game-data/components/route-skeleton"
-import { encoreWeaponQueries } from "@/modules/encore/queries/catalogs"
-import { isValidId } from "@/modules/game-data/application/id"
-import { weaponQueries } from "@/modules/game-data/queries/weapons"
-import { WeaponDetailPage } from "@/modules/panel/admin/game-data/views/weapons/detail/page"
+import { CatalogDetailRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
+import { encoreWeaponQueries } from "@encore/queries/catalogs"
+import { isValidId } from "@game-data/application/id"
+import { weaponQueries } from "@game-data/queries/weapons"
+import { WeaponDetailPage } from "@panel/admin/game-data/views/weapons/detail/page"
 import { createFileRoute, notFound } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/weapons/$id")({

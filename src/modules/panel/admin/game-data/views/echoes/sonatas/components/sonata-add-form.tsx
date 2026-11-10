@@ -4,17 +4,17 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import { toSonataInput } from "@/modules/game-data/application/echoes/sonatas"
+import { toSonataInput } from "@game-data/application/echoes/sonatas"
 import {
   sonataFormInput,
   type SonataFormInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createSonata } from "@/modules/game-data/server/echoes/sonatas"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createSonata } from "@game-data/server/echoes/sonatas"
 import {
   SonataFields,
   sonataFormDefaults,
-} from "@/modules/panel/admin/game-data/views/echoes/sonatas/components/sonata-form-fields"
+} from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-form-fields"
 
 type SonataAddFormProps = {
   onSaved: () => void

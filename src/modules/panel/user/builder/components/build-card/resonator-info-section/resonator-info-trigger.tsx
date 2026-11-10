@@ -1,6 +1,6 @@
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import { BuildCardSection } from "../../../ui/build-card-section"
-import { useBuilderId } from "../../../application/use-builder-id"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { BuildCardSection } from "@builder/ui/build-card-section"
+import { useBuilderId } from "@builder/application/use-builder-id"
 import { Show } from "@/components/utility/show"
 
 export function ResonatorInfoTrigger() {

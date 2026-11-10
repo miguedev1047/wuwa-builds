@@ -1,7 +1,7 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
-import { resonatorsMedia } from "@/db/schema"
-import { idInput } from "../../id"
+import { resonatorsMedia } from "@db/schema"
+import { idInput } from "@game-data/application/id"
 
 /** Fields the admin panel can set for a resonator image. */
 export const resonatorMediaInput = createInsertSchema(resonatorsMedia, {

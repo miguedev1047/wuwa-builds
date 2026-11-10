@@ -1,8 +1,8 @@
 import type {
   CharacterStatKey,
   CharacterStats,
-} from "@/modules/builds/domain/character-stats"
-import { elementStatKey } from "@/modules/builds/domain/stats"
+} from "@builds/domain/character-stats"
+import { elementStatKey } from "@builds/domain/stats"
 
 export interface BuildStatRow {
   key: CharacterStatKey

@@ -1,11 +1,11 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { EncoreProperty } from "@/modules/encore/domain/property"
+import type { EncoreProperty } from "@encore/domain/property"
 import {
   findEncoreWeaponProperty,
   weaponPropertyDraftFromEncore,
-} from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-property-draft"
+} from "@panel/admin/game-data/views/weapons/detail/application/weapon-property-draft"
 
 function encoreProperty(
   name: string,

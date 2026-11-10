@@ -3,10 +3,10 @@ import { useNavigate, useParams } from "@tanstack/react-router"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { toast } from "sonner"
-import { isValidId } from "@/modules/game-data/application/id"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { deleteWeapon } from "@/modules/game-data/server/weapons/weapons"
+import { isValidId } from "@game-data/application/id"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { deleteWeapon } from "@game-data/server/weapons/weapons"
 
 export function WeaponDeleteAction() {
   const { id } = useParams({ from: "/(panel)/admin/weapons/$id" })

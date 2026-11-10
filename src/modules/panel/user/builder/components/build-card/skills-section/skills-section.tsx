@@ -1,6 +1,6 @@
-import { BuildCardSectionDialog } from "../../../ui/build-card-section"
-import { SkillsEditor } from "./skills-editor"
-import { SkillsTrigger } from "./skills-trigger"
+import { BuildCardSectionDialog } from "@builder/ui/build-card-section"
+import { SkillsEditor } from "@builder/components/build-card/skills-section/skills-editor"
+import { SkillsTrigger } from "@builder/components/build-card/skills-section/skills-trigger"
 
 /** Editable card for the resonator skills and passives. */
 export function SkillsSection() {

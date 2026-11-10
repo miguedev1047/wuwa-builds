@@ -1,9 +1,9 @@
 import { PlusSignIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import type { WeaponPropertyGrowthRow } from "@/db/schema"
-import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { WeaponGrowthAddForm } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-add-form"
+import type { WeaponPropertyGrowthRow } from "@db/schema"
+import type { EncorePropertyGrowth } from "@encore/domain/property"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { WeaponGrowthAddForm } from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-growth-add-form"
 
 type WeaponGrowthAddActionProps = {
   propertyId: number

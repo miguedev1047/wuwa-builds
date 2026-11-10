@@ -1,8 +1,8 @@
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { SonataAddAction } from "@/modules/panel/admin/game-data/views/echoes/sonatas/components/sonata-add-action"
-import { SonataList } from "@/modules/panel/admin/game-data/views/echoes/sonatas/components/sonata-list"
-import { SonataSyncAction } from "@/modules/panel/admin/game-data/views/echoes/sonatas/components/sonata-sync-action"
-import { sonataDockActions } from "@/modules/panel/admin/game-data/views/echoes/sonatas/dock-actions"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { SonataAddAction } from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-add-action"
+import { SonataList } from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-list"
+import { SonataSyncAction } from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-sync-action"
+import { sonataDockActions } from "@panel/admin/game-data/views/echoes/sonatas/dock-actions"
 import { SkeletonSuspense } from "skullet/react"
 
 export function SonataListPage() {

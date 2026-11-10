@@ -1,7 +1,7 @@
-import { updateBuild } from "@/modules/builds/client/build-store"
-import { WEAPON_LEVEL_MAX } from "@/modules/builds/domain/build"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
+import { updateBuild } from "@builds/client/build-store"
+import { WEAPON_LEVEL_MAX } from "@builds/domain/build"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
 import { Field, FieldLabel } from "@/components/ui/field"
 import {
   Select,
@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { WEAPON_LEVELS } from "@/modules/game-data/application/constants/weapon"
+import { WEAPON_LEVELS } from "@game-data/application/constants/weapon"
 
 /** Level slider and base properties of the selected weapon. */
 export function WeaponLevel() {

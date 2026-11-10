@@ -1,6 +1,6 @@
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
-import { EchoControls } from "./echo-controls"
-import { EchoSelection } from "./echo-selection"
+import type { EchoesDataProps } from "@builds/domain/build-record"
+import { EchoControls } from "@builder/components/build-card/echo-slots-section/echo-controls"
+import { EchoSelection } from "@builder/components/build-card/echo-slots-section/echo-selection"
 
 type EchoSlotEditorProps = {
   slot: EchoesDataProps

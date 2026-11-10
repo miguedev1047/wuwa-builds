@@ -1,9 +1,9 @@
 import { useParams } from "@tanstack/react-router"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { WeaponPropertiesList } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-properties-list"
-import { WeaponPropertiesSkeleton } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-properties-skeleton"
-import { WeaponPropertyAddLoader } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-property-add-loader"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { WeaponPropertiesList } from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-properties-list"
+import { WeaponPropertiesSkeleton } from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-properties-skeleton"
+import { WeaponPropertyAddLoader } from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-property-add-loader"
 
 /** Properties (`weapon_properties`) of the weapon. */
 export function WeaponLevelsSection() {

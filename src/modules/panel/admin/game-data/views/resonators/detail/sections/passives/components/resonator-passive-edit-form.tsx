@@ -2,17 +2,17 @@ import { useId } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
-import type { ResonatorPassiveRow } from "@/db/schema"
+import type { ResonatorPassiveRow } from "@db/schema"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import {
   resonatorPassiveUpdateInput,
   type ResonatorPassiveUpdateInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { updateResonatorPassive } from "@/modules/game-data/server/resonators/passives"
-import { resonatorPassiveDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
-import { ResonatorPassiveFields } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-form-fields"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { updateResonatorPassive } from "@game-data/server/resonators/passives"
+import { resonatorPassiveDraftFromRow } from "@panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
+import { ResonatorPassiveFields } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-form-fields"
 
 type ResonatorPassiveEditFormProps = {
   passive: ResonatorPassiveRow

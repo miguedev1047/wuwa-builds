@@ -7,14 +7,14 @@ import { DialogFooter } from "@/components/ui/dialog"
 import {
   weaponRefinementStatsFormInput,
   type WeaponRefinementStatInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createWeaponRefinementStats } from "@/modules/game-data/server/weapons/refinement-stats"
-import { weaponStatPayloads } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createWeaponRefinementStats } from "@game-data/server/weapons/refinement-stats"
+import { weaponStatPayloads } from "@panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
 import {
   WeaponRefinementStatFields,
   weaponRefinementStatFormDefaults,
-} from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-form-fields"
+} from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-form-fields"
 
 type WeaponRefinementStatAddFormProps = {
   refinementId: number

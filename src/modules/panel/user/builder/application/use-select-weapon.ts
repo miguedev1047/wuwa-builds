@@ -1,8 +1,8 @@
 import { useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import type { WeaponSummary } from "@/modules/game-data/domain/weapon"
-import { weaponQueries } from "@/modules/game-data/queries/weapons"
+import { updateBuild } from "@builds/client/build-store"
+import type { WeaponSummary } from "@game-data/domain/weapon"
+import { weaponQueries } from "@game-data/queries/weapons"
 
 /** Warms the weapon detail and applies the summary to the local build. */
 export function useSelectWeapon(buildId: string) {

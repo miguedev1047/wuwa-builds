@@ -1,4 +1,4 @@
-import { ECHO_COSTS } from "@/modules/game-data/application/schemas"
+import { ECHO_COSTS } from "@game-data/application/schemas"
 
 /** Build cost of an echo, in points. */
 export const ECHO_COST_OPTIONS = ECHO_COSTS.map((cost) => ({

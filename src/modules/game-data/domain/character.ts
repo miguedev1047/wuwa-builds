@@ -7,7 +7,7 @@ import type {
   ResonatorSequenceRow,
   ResonatorSkillRow,
   ResonatorTagRow,
-} from "@/db/schema"
+} from "@db/schema"
 
 /** List row: every scalar column of the canonical resonator table. */
 export type CharacterSummary = ResonatorRow

@@ -1,5 +1,5 @@
-import type { EchoesDataProps } from "../domain/build-record"
-import type { EchoSummary } from "@/modules/game-data/domain/echo"
+import type { EchoesDataProps } from "@builds/domain/build-record"
+import type { EchoSummary } from "@game-data/domain/echo"
 
 interface SelectEchoSlotInput {
   echoes: EchoesDataProps[]

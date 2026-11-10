@@ -1,6 +1,6 @@
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
-import { WeaponList } from "@/modules/panel/admin/game-data/views/weapons/list/components/weapon-list"
-import { weaponListDockActions } from "@/modules/panel/admin/game-data/views/weapons/list/dock-actions"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
+import { WeaponList } from "@panel/admin/game-data/views/weapons/list/components/weapon-list"
+import { weaponListDockActions } from "@panel/admin/game-data/views/weapons/list/dock-actions"
 
 export function WeaponListPage() {
   return (

@@ -9,16 +9,16 @@ import {
 } from "@/components/ui/item"
 import { Slider } from "@/components/ui/slider"
 import { Spinner } from "@/components/ui/spinner"
-import { updateBuild } from "@/modules/builds/client/build-store"
+import { updateBuild } from "@builds/client/build-store"
 import {
   LEVEL_MILESTONES,
   levelFromStep,
   stepFromLevel,
-} from "@/modules/builds/domain/build"
-import { statLabel } from "@/modules/game-data/application/stats/stats"
-import { growthValueAtLevel } from "@/modules/game-data/domain/character"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
+} from "@builds/domain/build"
+import { statLabel } from "@game-data/application/stats/stats"
+import { growthValueAtLevel } from "@game-data/domain/character"
+import { characterQueries } from "@game-data/queries/characters"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "@tanstack/react-router"
 

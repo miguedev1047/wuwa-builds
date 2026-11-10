@@ -3,7 +3,7 @@ import { FieldGroup } from "@/components/ui/field"
 import {
   resonatorPassiveUpdateInput,
   type ResonatorPassiveUpdateInput,
-} from "@/modules/game-data/application/schemas"
+} from "@game-data/application/schemas"
 
 /** Empty values shared by every resonator passive form. */
 export const resonatorPassiveFormDefaults: ResonatorPassiveUpdateInput = {

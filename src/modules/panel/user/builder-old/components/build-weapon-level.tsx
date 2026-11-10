@@ -1,14 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { useParams } from "@tanstack/react-router"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import { weaponQueries } from "@/modules/game-data/queries/weapons"
-import { updateBuild } from "@/modules/builds/client/build-store"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { weaponQueries } from "@game-data/queries/weapons"
+import { updateBuild } from "@builds/client/build-store"
 import {
   LEVEL_MILESTONES,
   levelFromStep,
   stepFromLevel,
-} from "@/modules/builds/domain/build"
+} from "@builds/domain/build"
 import { Slider } from "@/components/ui/slider"
 import {
   Item,
@@ -18,8 +18,8 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@/components/ui/item"
-import { statLabel } from "@/modules/game-data/application/stats/stats"
-import { growthValueAtLevel } from "@/modules/game-data/domain/character"
+import { statLabel } from "@game-data/application/stats/stats"
+import { growthValueAtLevel } from "@game-data/domain/character"
 import { Badge } from "@/components/ui/badge"
 
 export function WeaponLevel() {

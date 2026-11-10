@@ -4,11 +4,11 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import type { EncorePassive } from "@/modules/encore/domain/character"
-import type { ResonatorPassiveInput } from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { createResonatorPassives } from "@/modules/game-data/server/resonators/passives"
-import { resonatorPassivePayloads } from "@/modules/panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
+import type { EncorePassive } from "@encore/domain/character"
+import type { ResonatorPassiveInput } from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { createResonatorPassives } from "@game-data/server/resonators/passives"
+import { resonatorPassivePayloads } from "@panel/admin/game-data/views/resonators/detail/application/resonator-passive-draft"
 
 type ResonatorPassiveAddFormProps = {
   resonatorId: number

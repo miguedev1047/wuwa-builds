@@ -2,17 +2,17 @@ import { useId } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
-import type { ResonatorRow } from "@/db/schema"
+import type { ResonatorRow } from "@db/schema"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
 import {
   resonatorInput,
   type ResonatorInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { updateResonator } from "@/modules/game-data/server/resonators/resonators"
-import { resonatorDraftFromRow } from "@/modules/panel/admin/game-data/views/resonators/shared/application/resonator-draft"
-import { ResonatorFields } from "@/modules/panel/admin/game-data/views/resonators/shared/components/resonator-fields"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { updateResonator } from "@game-data/server/resonators/resonators"
+import { resonatorDraftFromRow } from "@panel/admin/game-data/views/resonators/shared/application/resonator-draft"
+import { ResonatorFields } from "@panel/admin/game-data/views/resonators/shared/components/resonator-fields"
 
 type ResonatorEditFormProps = {
   resonator: ResonatorRow

@@ -1,4 +1,4 @@
-import { SELECT_ECHO_MAIN_STATS } from "@/modules/builds/constants/stats"
+import { SELECT_ECHO_MAIN_STATS } from "@builds/constants/stats"
 
 export interface EchoMainStatOption {
   stat: string

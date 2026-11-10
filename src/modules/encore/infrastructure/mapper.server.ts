@@ -7,20 +7,20 @@ import type {
   EncoreSequence,
   EncoreSkill,
   EncoreTag,
-} from "../domain/character"
+} from "@encore/domain/character"
 import {
   echoTier,
   type EncoreEchoDetail,
   type EncoreEchoSet,
   type EncoreEchoSummary,
-} from "../domain/echo"
-import { encoreAssetUrl } from "../domain/asset"
-import type { EncoreProperty } from "../domain/property"
+} from "@encore/domain/echo"
+import { encoreAssetUrl } from "@encore/domain/asset"
+import type { EncoreProperty } from "@encore/domain/property"
 import type {
   EncoreWeaponDetail,
   EncoreWeaponRefinement,
   EncoreWeaponSummary,
-} from "../domain/weapon"
+} from "@encore/domain/weapon"
 
 interface RawText {
   Title?: string

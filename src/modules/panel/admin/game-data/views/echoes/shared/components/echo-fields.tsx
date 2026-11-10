@@ -1,13 +1,10 @@
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
-import {
-  echoInput,
-  type EchoInput,
-} from "@/modules/game-data/application/schemas"
+import { echoInput, type EchoInput } from "@game-data/application/schemas"
 import {
   ECHO_CLASS_OPTIONS,
   ECHO_COST_OPTIONS,
-} from "@/modules/panel/admin/game-data/views/echoes/shared/constants/echo"
+} from "@panel/admin/game-data/views/echoes/shared/constants/echo"
 
 export const echoFormDefaults: EchoInput = {
   id: 0,

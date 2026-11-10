@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { passiveStatId } from "./passive-stats"
+import { passiveStatId } from "@builds/application/calculation/passive-stats"
 
 describe("passiveStatId", () => {
   test("maps the stat passive titles used by the builder", () => {

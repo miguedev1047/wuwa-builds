@@ -1,7 +1,7 @@
 import type {
   CharacterDetail,
   CharacterSummary,
-} from "@/modules/game-data/domain/character"
+} from "@game-data/domain/character"
 import {
   CHARACTER_LEVEL_MAX,
   ECHO_LEVEL_MAX,
@@ -9,7 +9,7 @@ import {
   SKILL_LEVEL_MAX,
   SUBSTATS_PER_ECHO_MAX,
   WEAPON_LEVEL_MAX,
-} from "../../domain/build"
+} from "@builds/domain/build"
 import type {
   BuildProps,
   EchoesDataProps,
@@ -17,7 +17,7 @@ import type {
   ResonatorPassivesDataProps,
   ResonatorSkillsDataProps,
   WeaponDataProps,
-} from "../../domain/build-record"
+} from "@builds/domain/build-record"
 
 const ORDERED_PASSIVE_INDEX = [0, 1, 8, 2, 3, 4, 5, 9, 6, 7]
 const DEFAULT_REFINEMENT_RANK = 1

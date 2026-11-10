@@ -1,12 +1,12 @@
 import { SkeletonSuspense } from "skullet/react"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
-import { WEAPON_LEVEL_MAX } from "@/modules/builds/domain/build"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { BuildCardSection } from "../../../ui/build-card-section"
-import { WeaponProperties } from "./weapon-properties"
-import { WeaponPropertiesSkeleton } from "./weapon-properties-skeleton"
+import { WEAPON_LEVEL_MAX } from "@builds/domain/build"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { BuildCardSection } from "@builder/ui/build-card-section"
+import { WeaponProperties } from "@builder/components/build-card/weapon-section/weapon-properties"
+import { WeaponPropertiesSkeleton } from "@builder/components/build-card/weapon-section/weapon-properties-skeleton"
 import { Empty, EmptyTitle } from "@/components/ui/empty"
 
 /** Card that shows the selected weapon, its level and its base stats. */

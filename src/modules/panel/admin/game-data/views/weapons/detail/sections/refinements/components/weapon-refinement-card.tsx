@@ -3,18 +3,18 @@ import { HugeiconsIcon } from "@hugeicons/react"
 import type {
   WeaponRefinementRow as WeaponRefinementRowData,
   WeaponRefinementStatRow,
-} from "@/db/schema"
+} from "@db/schema"
 import { Button } from "@/components/ui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { WeaponRefinementDeleteAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-delete-action"
-import { WeaponRefinementEditAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-edit-action"
-import { WeaponRefinementStatAddAction } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-add-action"
-import { WeaponRefinementStatsList } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stats-list"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { WeaponRefinementDeleteAction } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-delete-action"
+import { WeaponRefinementEditAction } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-edit-action"
+import { WeaponRefinementStatAddAction } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stat-add-action"
+import { WeaponRefinementStatsList } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-stats-list"
 
 type WeaponRefinementCardProps = {
   refinement: WeaponRefinementRowData & {

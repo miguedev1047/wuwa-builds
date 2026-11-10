@@ -6,7 +6,7 @@ import {
   echoSubstatOptionsExcluding,
   echoSubstatValues,
   formatEchoSubstatValue,
-} from "./echo-substats"
+} from "@builds/application/echo-substats"
 
 describe("echoSubstatOptions", () => {
   test("returns options for a known cost", () => {

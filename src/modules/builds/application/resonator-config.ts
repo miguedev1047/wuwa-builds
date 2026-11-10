@@ -1,8 +1,8 @@
 import type {
   ResonatorPassivesDataProps,
   ResonatorSkillsDataProps,
-} from "../domain/build-record"
-import { SKILL_LEVEL_MAX } from "../domain/build"
+} from "@builds/domain/build-record"
+import { SKILL_LEVEL_MAX } from "@builds/domain/build"
 
 /** Returns a copy with one skill level clamped and replaced. */
 export function withSkillLevel(

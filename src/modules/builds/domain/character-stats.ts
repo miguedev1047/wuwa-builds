@@ -1,4 +1,8 @@
-import { STAT_KINDS, type BuildStatKey, type StatKind } from "./stats"
+import {
+  STAT_KINDS,
+  type BuildStatKey,
+  type StatKind,
+} from "@builds/domain/stats"
 
 /**
  * Final stat sheet of a build, keyed by the canonical stat ids.

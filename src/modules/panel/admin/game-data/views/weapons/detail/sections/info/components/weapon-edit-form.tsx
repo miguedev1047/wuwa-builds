@@ -4,15 +4,12 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import type { WeaponRow } from "@/db/schema"
-import {
-  weaponInput,
-  type WeaponInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { updateWeapon } from "@/modules/game-data/server/weapons/weapons"
-import { weaponDraftFromRow } from "@/modules/panel/admin/game-data/views/weapons/shared/application/weapon-draft"
-import { WeaponFields } from "@/modules/panel/admin/game-data/views/weapons/shared/components/weapon-fields"
+import type { WeaponRow } from "@db/schema"
+import { weaponInput, type WeaponInput } from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { updateWeapon } from "@game-data/server/weapons/weapons"
+import { weaponDraftFromRow } from "@panel/admin/game-data/views/weapons/shared/application/weapon-draft"
+import { WeaponFields } from "@panel/admin/game-data/views/weapons/shared/components/weapon-fields"
 
 type WeaponEditFormProps = {
   weapon: WeaponRow

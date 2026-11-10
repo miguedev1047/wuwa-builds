@@ -1,10 +1,10 @@
-import { buildCollection } from "@/modules/builds/client/build-store"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+import { buildCollection } from "@builds/client/build-store"
+import type { EchoesDataProps } from "@builds/domain/build-record"
 import {
   echoSubstatOptions,
   echoSubstatOptionsExcluding,
-} from "@/modules/panel/user/builder-old/application/echo-substats"
-import { EchoSlotSubstatRow } from "@/modules/panel/user/builder-old/components/echo-slot-substat-row"
+} from "@panel/user/builder-old/application/echo-substats"
+import { EchoSlotSubstatRow } from "@panel/user/builder-old/components/echo-slot-substat-row"
 
 interface EchoSlotSubstatsSelectorProps {
   echo: EchoesDataProps

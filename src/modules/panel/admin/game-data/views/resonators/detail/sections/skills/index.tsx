@@ -1,9 +1,9 @@
 import { useParams } from "@tanstack/react-router"
 import { SkeletonBox, SkeletonSuspense } from "skullet/react"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorSkillAddLoader } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-add-loader"
-import { ResonatorSkillsContent } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skills-content"
-import { ResonatorSkillsSkeleton } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skills-skeleton"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorSkillAddLoader } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-add-loader"
+import { ResonatorSkillsContent } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skills-content"
+import { ResonatorSkillsSkeleton } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skills-skeleton"
 
 /** Skills (`resonator_skills`) of the resonator. */
 export function ResonatorSkillsSection() {

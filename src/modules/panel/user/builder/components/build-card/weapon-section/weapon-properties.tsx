@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import type { WeaponSummary } from "@/modules/game-data/domain/weapon"
-import { weaponQueries } from "@/modules/game-data/queries/weapons"
-import { WeaponPropertyItem } from "./weapon-property-item"
+import type { WeaponSummary } from "@game-data/domain/weapon"
+import { weaponQueries } from "@game-data/queries/weapons"
+import { WeaponPropertyItem } from "@builder/components/build-card/weapon-section/weapon-property-item"
 
 type WeaponPropertiesProps = {
   weapon: WeaponSummary

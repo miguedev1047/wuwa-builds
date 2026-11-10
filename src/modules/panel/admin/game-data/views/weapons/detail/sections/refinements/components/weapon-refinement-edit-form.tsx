@@ -4,15 +4,15 @@ import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
 import { Button } from "@/components/ui/button"
 import { DialogFooter } from "@/components/ui/dialog"
-import type { WeaponRefinementRow } from "@/db/schema"
+import type { WeaponRefinementRow } from "@db/schema"
 import {
   weaponRefinementUpdateInput,
   type WeaponRefinementUpdateInput,
-} from "@/modules/game-data/application/schemas"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
-import { updateWeaponRefinement } from "@/modules/game-data/server/weapons/refinements"
-import { weaponRefinementDraftFromRow } from "@/modules/panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
-import { WeaponRefinementFields } from "@/modules/panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-form-fields"
+} from "@game-data/application/schemas"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
+import { updateWeaponRefinement } from "@game-data/server/weapons/refinements"
+import { weaponRefinementDraftFromRow } from "@panel/admin/game-data/views/weapons/detail/application/weapon-refinement-draft"
+import { WeaponRefinementFields } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-form-fields"
 
 type WeaponRefinementEditFormProps = {
   refinement: WeaponRefinementRow

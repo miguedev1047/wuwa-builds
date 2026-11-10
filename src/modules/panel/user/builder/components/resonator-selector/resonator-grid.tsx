@@ -1,11 +1,14 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import { characterQueries } from "@/modules/game-data/queries/characters"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { characterQueries } from "@game-data/queries/characters"
 import {
   BuildCatalogPicker,
   type BuildCatalogPickerColumns,
-} from "../../ui/build-catalog-picker"
-import { ResonatorItem, type ResonatorAspect } from "./resonator-item"
+} from "@builder/ui/build-catalog-picker"
+import {
+  ResonatorItem,
+  type ResonatorAspect,
+} from "@builder/components/resonator-selector/resonator-item"
 
 export type ResonatorGridColumns = BuildCatalogPickerColumns
 

@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test"
-import { isValidId } from "@/modules/game-data/application/id"
+import { isValidId } from "@game-data/application/id"
 
 describe("isValidId", () => {
   test("accepts positive integers", () => {

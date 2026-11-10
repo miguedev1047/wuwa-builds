@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query"
 import { Badge } from "@/components/ui/badge"
 import { Image } from "@/components/ui/image"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
-import { BuildCardSection } from "../../../ui/build-card-section"
+import { characterQueries } from "@game-data/queries/characters"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { BuildCardSection } from "@builder/ui/build-card-section"
 
 const PREVIEW_SKILLS = 5
 

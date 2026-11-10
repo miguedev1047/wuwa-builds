@@ -1,6 +1,6 @@
-import type { CharacterSummary } from "@/modules/game-data/domain/character"
-import type { EchoSummary } from "@/modules/game-data/domain/echo"
-import type { WeaponSummary } from "@/modules/game-data/domain/weapon"
+import type { CharacterSummary } from "@game-data/domain/character"
+import type { EchoSummary } from "@game-data/domain/echo"
+import type { WeaponSummary } from "@game-data/domain/weapon"
 
 export interface ResonatorPassivesDataProps {
   id: number

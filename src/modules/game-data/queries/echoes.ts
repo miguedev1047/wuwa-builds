@@ -2,13 +2,13 @@ import {
   getEcho,
   getEchoes,
   getEchoesDetailed,
-} from "@/modules/game-data/server/echoes/echoes"
+} from "@game-data/server/echoes/echoes"
 import { queryOptions } from "@tanstack/react-query"
-import { wuwaBuildsKeys } from "@/modules/game-data/queries/keys"
+import { wuwaBuildsKeys } from "@game-data/queries/keys"
 import {
   WUWA_BUILDS_GC_TIME,
   WUWA_BUILDS_STALE_TIME,
-} from "@/modules/game-data/queries/cache"
+} from "@game-data/queries/cache"
 
 export const echoQueries = {
   list: () =>

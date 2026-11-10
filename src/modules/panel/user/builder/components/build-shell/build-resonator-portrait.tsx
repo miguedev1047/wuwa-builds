@@ -1,7 +1,7 @@
 import { cn } from "cn"
 import { Show } from "@/components/utility/show"
-import { useBuildCollection } from "../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../application/use-builder-id"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
 
 type BuildResonatorPortraitProps = React.ComponentProps<"button">
 

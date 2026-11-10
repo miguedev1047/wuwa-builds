@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
+import { updateBuild } from "@builds/client/build-store"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { useParams } from "@tanstack/react-router"
 
 export function BuildResonatorSequence() {

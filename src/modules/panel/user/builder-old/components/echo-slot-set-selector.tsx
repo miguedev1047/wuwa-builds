@@ -5,9 +5,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { updateBuild } from "@/modules/builds/client/build-store"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
-import type { EchoDetail } from "@/modules/game-data/domain/echo"
+import { updateBuild } from "@builds/client/build-store"
+import type { EchoesDataProps } from "@builds/domain/build-record"
+import type { EchoDetail } from "@game-data/domain/echo"
 
 interface EchoSlotSetSelectorProps {
   echo: EchoesDataProps

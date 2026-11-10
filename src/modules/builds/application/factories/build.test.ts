@@ -4,7 +4,7 @@ import { describe, expect, test } from "bun:test"
 import type {
   CharacterDetail,
   CharacterSummary,
-} from "@/modules/game-data/domain/character"
+} from "@game-data/domain/character"
 import {
   CHARACTER_LEVEL_MAX,
   ECHO_LEVEL_MAX,
@@ -12,8 +12,11 @@ import {
   SKILL_LEVEL_MAX,
   SUBSTATS_PER_ECHO_MAX,
   WEAPON_LEVEL_MAX,
-} from "../../domain/build"
-import { createBuildFromCharacter, createEmptyBuild } from "./build"
+} from "@builds/domain/build"
+import {
+  createBuildFromCharacter,
+  createEmptyBuild,
+} from "@builds/application/factories/build"
 
 const character = { id: 42, name: "Cartethyia" } as CharacterSummary
 

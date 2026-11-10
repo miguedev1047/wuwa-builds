@@ -2,9 +2,9 @@ import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { adminMiddleware } from "@/functions/middlewares"
-import { idInput } from "@/modules/game-data/application/id"
-import { echoSetInput } from "@/modules/game-data/application/schemas"
-import { echoSets } from "@/db/schema"
+import { idInput } from "@game-data/application/id"
+import { echoSetInput } from "@game-data/application/schemas"
+import { echoSets } from "@db/schema"
 
 /**
  * Links one of the echo's sonata sets.

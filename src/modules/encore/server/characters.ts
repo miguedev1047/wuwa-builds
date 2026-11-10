@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start"
-import { idInput } from "../application/schemas"
+import { idInput } from "@encore/application/schemas"
 
 /**
  * Encore character server functions.
@@ -10,7 +10,7 @@ import { idInput } from "../application/schemas"
 export const getCharacters = createServerFn({ method: "GET" }).handler(
   async () => {
     const { readCharacters } =
-      await import("../application/read-characters.server")
+      await import("@encore/application/read-characters.server")
     return readCharacters()
   }
 )
@@ -27,6 +27,6 @@ export const getCharacter = createServerFn({
   .validator(idInput)
   .handler(async ({ data }) => {
     const { readCharacter } =
-      await import("../application/read-characters.server")
+      await import("@encore/application/read-characters.server")
     return readCharacter(data.id)
   })

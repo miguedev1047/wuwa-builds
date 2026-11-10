@@ -1,12 +1,12 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { CharacterStats } from "@/modules/builds/domain/character-stats"
+import type { CharacterStats } from "@builds/domain/character-stats"
 import {
   formatCharacterStats,
   formatFlatStat,
   formatPercentStat,
-} from "./format-character-stats"
+} from "@panel/user/builder-old/application/format-character-stats"
 
 describe("formatFlatStat", () => {
   test("rounds only at the display boundary", () => {

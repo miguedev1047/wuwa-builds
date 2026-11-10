@@ -1,6 +1,6 @@
-import type { EncoreProperty } from "@/modules/encore/domain/property"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { PropertyLevelAddForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-add-form"
+import type { EncoreProperty } from "@encore/domain/property"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { PropertyLevelAddForm } from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-add-form"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 

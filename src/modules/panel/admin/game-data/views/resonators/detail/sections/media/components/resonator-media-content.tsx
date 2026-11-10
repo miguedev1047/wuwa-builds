@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { characterQueries } from "@/modules/game-data/queries/characters"
-import { ResonatorMediaItem } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-item"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { characterQueries } from "@game-data/queries/characters"
+import { ResonatorMediaItem } from "@panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-item"
 
 type ResonatorMediaContentProps = {
   resonatorId: number

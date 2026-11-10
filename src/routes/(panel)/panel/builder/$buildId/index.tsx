@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { createFileRoute, Link } from "@tanstack/react-router"
-import { BuildShell } from "@/modules/panel/user/builder/components/build-shell"
-import { useBuilderId } from "@/modules/panel/user/builder/application/use-builder-id"
+import { BuildShell } from "@builder/components/build-shell"
+import { useBuilderId } from "@builder/application/use-builder-id"
 
 export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
   component: RouteComponent,

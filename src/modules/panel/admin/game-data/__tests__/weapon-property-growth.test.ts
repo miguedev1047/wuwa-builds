@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
+import type { EncorePropertyGrowth } from "@encore/domain/property"
 import {
   formatWeaponGrowthValue,
   isWeaponGrowthValue,
@@ -9,7 +9,7 @@ import {
   weaponGrowthPayloads,
   weaponGrowthValueColumns,
   type WeaponGrowthMilestoneOption,
-} from "@/modules/game-data/application/weapons/property-growth"
+} from "@game-data/application/weapons/property-growth"
 
 const encoreGrowth: EncorePropertyGrowth[] = [
   { level: 1, value: "33.00" },

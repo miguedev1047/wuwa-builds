@@ -13,7 +13,7 @@ import {
   RouterProvider,
 } from "@tanstack/react-router"
 import type { ReactNode } from "react"
-import { CatalogSection } from "@/modules/panel/admin/game-data/components/catalog-section"
+import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
 
 type Item = { id: number; name: string }
 

@@ -1,9 +1,9 @@
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import type { ResonatorMediaRow } from "@/db/schema"
-import { resonatorMediaLabel } from "@/modules/game-data/application/constants/resonator"
-import { EditableSection } from "@/modules/panel/admin/game-data/components/editable-section"
-import { ResonatorMediaEditForm } from "@/modules/panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-edit-form"
+import type { ResonatorMediaRow } from "@db/schema"
+import { resonatorMediaLabel } from "@game-data/application/constants/resonator"
+import { EditableSection } from "@panel/admin/game-data/components/editable-section"
+import { ResonatorMediaEditForm } from "@panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-edit-form"
 
 type ResonatorMediaEditActionProps = {
   media: ResonatorMediaRow

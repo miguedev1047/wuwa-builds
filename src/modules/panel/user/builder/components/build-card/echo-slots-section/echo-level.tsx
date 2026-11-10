@@ -1,15 +1,15 @@
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
-import { echoMainStatValue } from "@/modules/builds/application/echo-main-stat"
-import { updateBuild } from "@/modules/builds/client/build-store"
+import { echoMainStatValue } from "@builds/application/echo-main-stat"
+import { updateBuild } from "@builds/client/build-store"
 import {
   ECHO_LEVEL_MAX,
   ECHO_LEVEL_MILESTONES,
   echoLevelFromStep,
   echoStepFromLevel,
-} from "@/modules/builds/domain/build"
-import { useBuildCollection } from "../../../../builds/application/build-live-queries"
-import { useBuilderId } from "../../../application/use-builder-id"
+} from "@builds/domain/build"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { useBuilderId } from "@builder/application/use-builder-id"
 
 type EchoLevelProps = {
   slotIndex: number

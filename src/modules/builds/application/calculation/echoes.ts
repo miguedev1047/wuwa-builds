@@ -1,6 +1,6 @@
-import { echoPrimaryStat } from "@/modules/builds/application/echo-main-stat"
-import type { CharacterStatBonus } from "@/modules/builds/domain/character-stats"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+import { echoPrimaryStat } from "@builds/application/echo-main-stat"
+import type { CharacterStatBonus } from "@builds/domain/character-stats"
+import type { EchoesDataProps } from "@builds/domain/build-record"
 
 /** Flat primary stats, selected main stats and substats of equipped echoes. */
 export function resolveEchoBonuses(

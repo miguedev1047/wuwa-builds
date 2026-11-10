@@ -4,7 +4,7 @@ import type {
   WeaponRefinementRow,
   WeaponRefinementStatRow,
   WeaponRow,
-} from "@/db/schema"
+} from "@db/schema"
 
 /** List row: every scalar column of the canonical weapon table. */
 export type WeaponSummary = WeaponRow

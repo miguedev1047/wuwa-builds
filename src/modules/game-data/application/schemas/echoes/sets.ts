@@ -1,6 +1,6 @@
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
-import { echoSets } from "@/db/schema"
+import { echoSets } from "@db/schema"
 
 /**
  * Links a sonata set to an echo.

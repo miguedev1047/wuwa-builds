@@ -4,13 +4,13 @@ import {
   ECHO_LEVEL_MILESTONES,
   echoLevelFromStep,
   echoStepFromLevel,
-} from "@/modules/builds/domain/build"
-import { buildCollection } from "@/modules/builds/client/build-store"
-import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+} from "@builds/domain/build"
+import { buildCollection } from "@builds/client/build-store"
+import type { EchoesDataProps } from "@builds/domain/build-record"
 import {
   echoMainStatOptions,
   echoMainStatValue,
-} from "@/modules/builds/application/echo-main-stat"
+} from "@builds/application/echo-main-stat"
 
 interface EchoSlotLevelSelectorProps {
   echo: EchoesDataProps

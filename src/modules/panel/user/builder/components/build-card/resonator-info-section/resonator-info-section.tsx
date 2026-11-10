@@ -1,7 +1,7 @@
-import { ResonatorPickerDialog } from "@/modules/panel/user/builder/components/resonator-selector"
-import { BuildCardSectionDialog } from "../../../ui/build-card-section"
-import { ResonatorInfoEditor } from "./resonator-info-editor"
-import { ResonatorInfoTrigger } from "./resonator-info-trigger"
+import { ResonatorPickerDialog } from "@builder/components/resonator-selector"
+import { BuildCardSectionDialog } from "@builder/ui/build-card-section"
+import { ResonatorInfoEditor } from "@builder/components/build-card/resonator-info-section/resonator-info-editor"
+import { ResonatorInfoTrigger } from "@builder/components/build-card/resonator-info-section/resonator-info-trigger"
 
 /** Editable card for the resonator level and sequence. */
 export function ResonatorInfoSection() {

@@ -1,4 +1,4 @@
-import type { SelectOption } from "@/modules/game-data/application/options"
+import type { SelectOption } from "@game-data/application/options"
 
 /** Conditions an echo skill bonus can depend on. */
 export const ECHO_SKILL_CONDITION_IDS = [

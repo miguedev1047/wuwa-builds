@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test"
-import type { EncorePropertyGrowth } from "@/modules/encore/domain/property"
+import type { EncorePropertyGrowth } from "@encore/domain/property"
 import {
   formatGrowthValue,
   growthMilestoneOptions,
@@ -7,7 +7,7 @@ import {
   isGrowthValue,
   propertyGrowthPayloads,
   type GrowthMilestoneOption,
-} from "@/modules/game-data/application/resonators/property-growth"
+} from "@game-data/application/resonators/property-growth"
 
 const encoreGrowth: EncorePropertyGrowth[] = [
   { level: 1, value: 824 },
