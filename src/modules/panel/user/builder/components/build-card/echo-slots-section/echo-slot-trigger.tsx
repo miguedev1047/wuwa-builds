@@ -88,7 +88,9 @@ export function EchoSlotTrigger({ slot, setIcon }: EchoSlotTriggerProps) {
 
                     <div className="flex items-center justify-end gap-1 text-lg font-bold">
                       <GameIcon name={mainStat} className="size-5" />
-                      <p>{formatPercentStat(slot.mainStatValue)}</p>
+                      <p className="tabular-nums">
+                        {formatPercentStat(slot.mainStatValue)}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -111,7 +113,7 @@ export function EchoSlotTrigger({ slot, setIcon }: EchoSlotTriggerProps) {
                         )}
                       </Show>
 
-                      <p className="shrink-0 tabular-nums">
+                      <p className="shrink-0 font-bold text-brand-warning tabular-nums">
                         {formatEchoStat(substat.valueStat, substat.valueNumber)}
                       </p>
                     </li>
