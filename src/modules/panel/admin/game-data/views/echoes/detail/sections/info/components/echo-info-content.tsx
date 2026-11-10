@@ -37,13 +37,14 @@ export function EchoInfoContent({ echoId }: EchoInfoContentProps) {
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">
         <Show when={echo.icon}>
           {(icon) => (
-            <EditableSection.Media className="aspect-square w-32 bg-muted/40">
-              <CatalogSection.Image
-                src={icon}
-                alt={echo.name}
-                className="size-full object-contain"
-              />
-            </EditableSection.Media>
+            <CatalogSection.Image
+              src={icon}
+              alt={echo.name}
+              background="accent"
+              size="md"
+              aspect="square"
+              className="object-contain"
+            />
           )}
         </Show>
 
@@ -51,9 +52,9 @@ export function EchoInfoContent({ echoId }: EchoInfoContentProps) {
           <EditableSection.Heading>{echo.name}</EditableSection.Heading>
 
           <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="secondary">{echoClassLabel(echo.class)}</Badge>
+            <Badge variant="outline">{echoClassLabel(echo.class)}</Badge>
             <Badge variant="outline">{echoCostLabel(echo.cost)}</Badge>
-            <Badge variant="ghost">ID {echo.id}</Badge>
+            <Badge variant="outline">ID {echo.id}</Badge>
           </div>
         </EditableSection.Body>
       </EditableSection.Content>

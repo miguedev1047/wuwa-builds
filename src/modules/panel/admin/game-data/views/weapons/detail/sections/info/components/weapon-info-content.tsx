@@ -34,13 +34,14 @@ export function WeaponInfoContent({ weaponId }: WeaponInfoContentProps) {
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">
         <Show when={weapon.icon}>
           {(icon) => (
-            <EditableSection.Media className="aspect-square w-32 bg-muted/40">
-              <CatalogSection.Image
-                src={icon}
-                alt={weapon.name}
-                className="size-full object-contain"
-              />
-            </EditableSection.Media>
+            <CatalogSection.Image
+              src={icon}
+              alt={weapon.name}
+              background="accent"
+              size="md"
+              aspect="square"
+              className="object-contain"
+            />
           )}
         </Show>
 
@@ -48,11 +49,9 @@ export function WeaponInfoContent({ weaponId }: WeaponInfoContentProps) {
           <EditableSection.Heading>{weapon.name}</EditableSection.Heading>
 
           <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="secondary">
-              {weaponRarityLabel(weapon.rarity)}
-            </Badge>
+            <Badge variant="outline">{weaponRarityLabel(weapon.rarity)}</Badge>
             <Badge variant="outline">{weapon.typeName}</Badge>
-            <Badge variant="ghost">ID {weapon.id}</Badge>
+            <Badge variant="outline">ID {weapon.id}</Badge>
           </div>
 
           <Show when={weapon.description}>

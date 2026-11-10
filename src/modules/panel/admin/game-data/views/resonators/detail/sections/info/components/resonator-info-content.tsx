@@ -31,13 +31,14 @@ export function ResonatorInfoContent({
       </EditableSection.Header>
 
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">
-        <EditableSection.Media className="aspect-2/3 w-40">
-          <CatalogSection.Image
-            src={resonator.iconLarge}
-            alt={resonator.name}
-            className="size-full object-cover"
-          />
-        </EditableSection.Media>
+        <CatalogSection.Image
+          src={resonator.iconLarge}
+          alt={resonator.name}
+          background="accent"
+          size="md"
+          aspect="portrait"
+          className="object-contain"
+        />
 
         <EditableSection.Body>
           <EditableSection.Heading>{resonator.name}</EditableSection.Heading>

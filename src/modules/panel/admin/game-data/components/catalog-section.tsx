@@ -7,6 +7,7 @@ import {
   EmptyHeader,
   EmptyTitle,
 } from "@/components/ui/empty"
+import { Image } from "@/components/ui/image"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Link, type LinkOptions } from "@tanstack/react-router"
@@ -115,6 +116,7 @@ const listVariants = cva("grid grid-cols-1 gap-4 md:grid-cols-2", {
     cols: {
       4: "lg:grid-cols-4",
       6: "lg:grid-cols-6",
+      8: "lg:grid-cols-8",
       10: "lg:grid-cols-10",
     },
   },
@@ -249,23 +251,16 @@ export function CatalogSectionItem({
   )
 }
 
-interface CatalogSectionImage extends React.ComponentProps<"img"> {
-  animated?: boolean
-}
+type CatalogSectionImage = React.ComponentProps<typeof Image>
 
 export function CatalogSectionImage({
   className,
-  animated,
   ...props
 }: CatalogSectionImage) {
   return (
-    <img
+    <Image
       data-slot="catalog-section-image"
-      className={cn(
-        "pointer-events-none size-full! object-cover transition-transform ease-in-out select-none",
-        animated && "hover:scale-120",
-        className
-      )}
+      className={cn(className)}
       {...props}
     />
   )

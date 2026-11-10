@@ -12,13 +12,13 @@ export function ResonatorList() {
       data={data}
       label="Cargando resonadores"
       skeleton={
-        <CatalogSection.Loading cols={10} aspect="portrait" count={20} />
+        <CatalogSection.Loading cols={8} aspect="portrait" count={20} />
       }
     >
       {(characters) => (
         <CatalogSection.List
           items={characters}
-          cols={10}
+          cols={8}
           aspect="portrait"
           getItemKey={(character) => character.id}
           empty={
