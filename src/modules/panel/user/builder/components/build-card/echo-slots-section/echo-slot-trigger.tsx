@@ -1,3 +1,5 @@
+import React from "react"
+
 import { Badge } from "@/components/ui/badge"
 import { GameIcon } from "@/components/ui/game-icon"
 import { Image } from "@/components/ui/image"
@@ -97,28 +99,36 @@ export function EchoSlotTrigger({ slot, setIcon }: EchoSlotTriggerProps) {
                   </div>
                 </div>
 
-                <ul className="space-y-4">
-                  {slot.substats.map((substat) => (
-                    <li
-                      key={substat.index}
-                      className="flex items-center justify-between gap-3 text-xs"
-                    >
-                      <Show
-                        when={substat.valueStat}
-                        fallback={<GameIcon name="lock" />}
-                      >
-                        {(stat) => (
-                          <div className="flex min-w-0 items-center gap-2">
-                            <GameIcon name={statIconName(stat)} />
-                            <p className="line-clamp-1">{substat.valueLabel}</p>
-                          </div>
-                        )}
-                      </Show>
+                <ul className="space-y-2.5">
+                  {slot.substats.map((substat, index) => (
+                    <React.Fragment key={`${index || substat.index}-${index}`}>
+                      <li className="flex items-center justify-between gap-3 text-xs">
+                        <Show
+                          when={substat.valueStat}
+                          fallback={<GameIcon name="lock" />}
+                        >
+                          {(stat) => (
+                            <div className="flex min-w-0 items-center gap-2">
+                              <GameIcon name={statIconName(stat)} />
+                              <p className="line-clamp-1">
+                                {substat.valueLabel}
+                              </p>
+                            </div>
+                          )}
+                        </Show>
 
-                      <p className="shrink-0 font-bold text-brand-warning tabular-nums">
-                        {formatEchoStat(substat.valueStat, substat.valueNumber)}
-                      </p>
-                    </li>
+                        <p className="shrink-0 font-bold text-brand-warning tabular-nums">
+                          {formatEchoStat(
+                            substat.valueStat,
+                            substat.valueNumber
+                          )}
+                        </p>
+                      </li>
+
+                      <Show when={index < slot.substats.length - 1}>
+                        <Separator />
+                      </Show>
+                    </React.Fragment>
                   ))}
                 </ul>
               </div>
