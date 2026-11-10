@@ -77,6 +77,7 @@ export default defineConfig([
               allow: [
                 "layout",
                 "w-full",
+                "truncate",
                 "mt-*",
                 "mb-*",
                 "p-*",
@@ -273,6 +274,26 @@ export default defineConfig([
             },
             { pattern: "^Tooltip(Content)?$", allow: ["layout", "gap-*"] },
             { pattern: "^RadioGroup(Item)?$", allow: ["layout", "gap-*"] },
+            { pattern: "^Image$", allow: ["layout", "gap-*", "opacity-*"] },
+            {
+              pattern: "^Collapsible(Content|Button)?$",
+              allow: [
+                "layout",
+                "w-*",
+                "text-*",
+                "pr-*",
+                "px-*",
+                "pl-*",
+                "tabular-nums",
+                "uppercase",
+                "font-*",
+                "gap-*",
+                "flex-*",
+                "h-*",
+                "self-*",
+                "min-w-*",
+              ],
+            },
             {
               pattern: "^InputGroup(Input|Addon|Button)?$",
               allow: [
