@@ -140,6 +140,41 @@ Rules:
 - Run `bun run typecheck` before finishing. Run `bun run build` (and
   `wrangler deploy --dry-run` when relevant) for build-affecting changes.
 
+### Styling and conditional rendering
+
+- **Use `cn` for class names.** Pass conditional, dynamic and concatenated
+  `className` values through `cn` from `"cn"`. Do not build class strings with
+  template literals or manual concatenation.
+  ```tsx
+  <div className={cn("flex items-center gap-2", isActive && "bg-muted")} />
+  ```
+- **Render conditions with `Show`.** Do not use ternaries to choose JSX. Put
+  the alternative in `fallback` and use a render-prop child when the content
+  depends on a nullable value.
+  ```tsx
+  <Show when={user} fallback={<EmptyUser />}>
+    {(selected) => <UserProfile user={selected} />}
+  </Show>
+  ```
+
+### Imports, icons and stat keys
+
+- **Use the `@/*` alias.** Import internal modules under `src/` through `@/*`;
+  do not add relative imports that climb directories (`../`). Migrate existing
+  ones when touching the file.
+- **Let icons inherit their size.** Do not pass a hardcoded `size` to an icon;
+  size it from the parent container with CSS.
+- **Use canonical stat keys.** Stats use the `BuildStatKey` ids from
+  `src/modules/builds/domain/stats.ts` everywhere: catalog rows, calculation,
+  icons and UI. Do not introduce aliases such as `critRate` or `skill_dmg`.
+
+### Runtime
+
+- **Use Bun only.** Manage packages and run scripts with `bun` / `bunx`; npm,
+  pnpm and yarn are not allowed.
+- **Prefetch with `query`.** Use `queryClient.query(...)` to prefetch or
+  resolve cached data; `.ensureQuery(...)` is deprecated.
+
 ## Known limitations
 
 - Encore is a third-party public API. The 6-hour cache means a game patch can
