@@ -27,6 +27,7 @@ export function EchoSetSelect({ echo, slotIndex }: EchoSetSelectProps) {
   const options = detail.sets.map((set) => ({
     label: set.name,
     value: String(set.setId),
+    icon: set.icon,
   }))
 
   const selectedValue = slot?.echoSetId ? String(slot.echoSetId) : null
@@ -69,7 +70,14 @@ export function EchoSetSelect({ echo, slotIndex }: EchoSetSelectProps) {
         <SelectContent>
           {options.map((option) => (
             <SelectItem key={option.value} value={option.value}>
-              {option.label}
+              <div className="flex items-center gap-2">
+                <img
+                  className="size-5 rounded-full"
+                  src={option.icon}
+                  alt={option.value}
+                />
+                <p>{option.label}</p>
+              </div>
             </SelectItem>
           ))}
         </SelectContent>
