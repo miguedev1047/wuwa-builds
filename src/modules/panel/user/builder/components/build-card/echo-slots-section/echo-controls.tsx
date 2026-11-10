@@ -1,5 +1,4 @@
 import type { EchoesDataProps } from "@builds/domain/build-record"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
 import { Show } from "@/components/utility/show"
 import { EchoLevel } from "@builder/components/build-card/echo-slots-section/echo-level"
 import { EchoMainStatSelect } from "@builder/components/build-card/echo-slots-section/echo-main-stat-select"
@@ -17,12 +16,7 @@ export function EchoControls({ slot }: EchoControlsProps) {
     <Show when={slot.data}>
       {(echo) => (
         <div className="space-y-5 border-t pt-4">
-          <SkeletonSuspense
-            skeleton={<SkeletonBox width="100%" height={40} radius={8} />}
-          >
-            <EchoSetSelect echo={echo} slotIndex={slot.index} />
-          </SkeletonSuspense>
-
+          <EchoSetSelect echo={echo} slotIndex={slot.index} />
           <EchoMainStatSelect slotIndex={slot.index} />
           <EchoLevel slotIndex={slot.index} />
           <EchoSubstats slotIndex={slot.index} />

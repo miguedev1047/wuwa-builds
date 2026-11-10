@@ -12,7 +12,7 @@ export function BuildCardTrigger({
       {...props}
       type="button"
       className={cn(
-        "block h-full w-full border-0 bg-transparent p-0 text-left outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "block h-full w-full border-0 bg-transparent p-0 text-left outline-none focus-visible:rounded-2xl focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className
       )}
     />

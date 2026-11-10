@@ -12,14 +12,24 @@ import type { EchoSummary } from "@game-data/domain/echo"
 import { echoQueries } from "@game-data/queries/echoes"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { useBuilderId } from "@builder/application/use-builder-id"
+import { SkeletonSuspense } from "skullet/react"
+import { EchoSetSelectSkeleton } from "@builder/components/build-card/echo-slots-section"
 
 type EchoSetSelectProps = {
   echo: EchoSummary
   slotIndex: number
 }
 
+export function EchoSetSelect(props: EchoSetSelectProps) {
+  return (
+    <SkeletonSuspense skeleton={<EchoSetSelectSkeleton />}>
+      <EchoSetSelectLoaded {...props} />
+    </SkeletonSuspense>
+  )
+}
+
 /** Sonata set selector for one echo slot. */
-export function EchoSetSelect({ echo, slotIndex }: EchoSetSelectProps) {
+export function EchoSetSelectLoaded({ echo, slotIndex }: EchoSetSelectProps) {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
   const { data: detail } = useSuspenseQuery(echoQueries.detail(echo.id))

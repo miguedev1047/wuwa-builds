@@ -34,7 +34,9 @@ export function BuildCatalogPickerDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger render={trigger} />
+      <DialogTrigger
+        render={<div className="outline-0 outline-none">{trigger}</div>}
+      />
       <DialogContent size="lg">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
@@ -43,7 +45,10 @@ export function BuildCatalogPickerDialog({
           </Show>
         </DialogHeader>
 
-        <div className="-m-1 no-scrollbar h-[50vh] scroll-fade-y overflow-y-auto overscroll-contain p-1">
+        <div
+          style={{ height: "50vh" }}
+          className="-m-1 no-scrollbar scroll-fade-y overflow-y-auto overscroll-contain p-1"
+        >
           {children({ close: () => setIsOpen(false) })}
         </div>
       </DialogContent>

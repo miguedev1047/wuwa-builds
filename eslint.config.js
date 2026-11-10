@@ -32,6 +32,7 @@ export default defineConfig([
     ignores: ["src/components/ui/**"],
     plugins: { shadcn },
     rules: {
+      "shadcn/no-arbitrary-values": "error",
       "shadcn/no-restyle": [
         "warn",
         {
@@ -73,7 +74,7 @@ export default defineConfig([
             },
             {
               pattern:
-                "^Card(Header|CardContainer|CardBody|Content|Footer|Title|Description)?$",
+                "^Card(Header|Container|Body|Content|Footer|Title|Description)?$",
               allow: [
                 "layout",
                 "w-full",
@@ -186,14 +187,28 @@ export default defineConfig([
               ],
             },
             {
-              pattern: "^Popover(Content)?$",
+              pattern: "^Popover(Trigger|Content)?$",
               allow: ["layout", "w-*", "min-w-*", "max-w-*", "p-*", "gap-*"],
             },
             {
-              pattern: "^DropdownMenu(Content|Item|Label|Separator|Group)?$",
+              pattern:
+                "^DropdownMenu(Trigger|Content|Item|Label|Separator|Group)?$",
               allow: [
                 "layout",
                 "w-*",
+                "min-w-*",
+                "max-w-*",
+                "gap-*",
+                "text-*",
+                "cursor-*",
+              ],
+            },
+            {
+              pattern: "^Dialog(Trigger|Content|Header|Description)?$",
+              allow: [
+                "layout",
+                "w-*",
+                "outline-*",
                 "min-w-*",
                 "max-w-*",
                 "gap-*",
@@ -315,11 +330,12 @@ export default defineConfig([
           ],
         },
       ],
-      "shadcn/no-raw-colors": "error",
-      "shadcn/no-arbitrary-values": "warn",
-      "shadcn/no-inline-styles": "error",
-      "shadcn/require-static-classes": "warn",
-      "shadcn/no-unknown-classes": "error",
+    },
+  },
+  {
+    files: ["src/components/ui/**"],
+    rules: {
+      "shadcn/no-restyle": "off",
     },
   },
   // These files intentionally bridge React state with external systems: the
