@@ -5,7 +5,7 @@ import {
   echoSlot,
   sonataEffect,
   sonataEntry,
-} from "@builds/application/calculation/catalog-fixtures"
+} from "@builds/__tests__/catalog-fixtures"
 import { resolveSonataBonuses } from "@builds/application/calculation/sonata"
 
 describe("resolveSonataBonuses", () => {

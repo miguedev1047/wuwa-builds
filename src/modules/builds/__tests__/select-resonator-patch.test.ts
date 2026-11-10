@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { characterDetail } from "@builds/application/calculation/catalog-fixtures"
+import { characterDetail } from "@builds/__tests__/catalog-fixtures"
 import { createEmptyResonator } from "@builds/application/factories/build"
 import { selectResonatorPatch } from "@builds/application/select-resonator-patch"
 

@@ -5,7 +5,7 @@ import {
   echoDetail,
   echoSkillBonus,
   echoSlot,
-} from "@builds/application/calculation/catalog-fixtures"
+} from "@builds/__tests__/catalog-fixtures"
 import { resolveEchoSkillBonuses } from "@builds/application/calculation/echo-skill-bonuses"
 
 const echoes = [
