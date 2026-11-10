@@ -1,4 +1,4 @@
-import { ResonatorPickerDialog } from "@builder/components/resonator-selector"
+import { ResonatorPickerDialog } from "@builder/components/build-card/resonator-info-section/resonator-picker-dialog"
 import { BuildCardSectionDialog } from "@builder/ui/build-card-section"
 import { ResonatorInfoEditor } from "@builder/components/build-card/resonator-info-section/resonator-info-editor"
 import { ResonatorInfoTrigger } from "@builder/components/build-card/resonator-info-section/resonator-info-trigger"

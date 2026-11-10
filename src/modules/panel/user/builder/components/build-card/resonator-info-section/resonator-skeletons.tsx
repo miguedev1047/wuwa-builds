@@ -4,7 +4,7 @@ import {
   buildCatalogPickerVariants,
   type BuildCatalogPickerColumns,
 } from "@builder/ui/build-catalog-picker"
-import type { ResonatorAspect } from "@builder/components/resonator-selector/resonator-item"
+import type { ResonatorAspect } from "@builder/components/build-card/resonator-info-section/resonator-item"
 
 const SKELETONS_ITEMS = 16
 

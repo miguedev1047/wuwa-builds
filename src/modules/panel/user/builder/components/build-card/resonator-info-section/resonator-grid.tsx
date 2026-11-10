@@ -8,7 +8,7 @@ import {
 import {
   ResonatorItem,
   type ResonatorAspect,
-} from "@builder/components/resonator-selector/resonator-item"
+} from "@builder/components/build-card/resonator-info-section/resonator-item"
 
 export type ResonatorGridColumns = BuildCatalogPickerColumns
 

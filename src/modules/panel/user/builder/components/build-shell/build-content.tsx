@@ -1,14 +1,14 @@
 import { SkeletonSuspense } from "skullet/react"
+import { useBuilderId } from "@builder/application/use-builder-id"
 import {
+  BuildCardGrid,
   ResonatorGrid,
   ResonatorListLoading,
   ResonatorSelectorDialog,
-} from "@builder/components/resonator-selector"
-import { useBuilderId } from "@builder/application/use-builder-id"
+} from "@builder/components/build-card"
+import { BuildResonatorPortrait } from "@builder/components/build-shell/build-resonator-portrait"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { Show } from "@/components/utility/show"
-import { BuildResonatorPortrait } from "@builder/components/build-shell/build-resonator-portrait"
-import { BuildCardGrid } from "@builder/components/build-card"
 
 export function BuildContent() {
   const buildId = useBuilderId()
