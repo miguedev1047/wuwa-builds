@@ -64,7 +64,10 @@ export function EchoSlotSubstatRow({
         <SelectContent>
           {statOptions.map((option) => (
             <SelectItem key={option.value} value={option.value}>
-              {option.label}
+              <div className="flex items-center gap-1">
+                {/* <GameIcon name={row.key} /> */}
+                {option.label}
+              </div>
             </SelectItem>
           ))}
         </SelectContent>

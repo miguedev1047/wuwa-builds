@@ -1,74 +1,53 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
-import { Slider } from "@/components/ui/slider"
-import { Badge } from "@/components/ui/badge"
 import { updateBuild } from "@/modules/builds/client/build-store"
-import {
-  LEVEL_MILESTONES,
-  levelFromStep,
-  stepFromLevel,
-  WEAPON_LEVEL_MAX,
-} from "@/modules/builds/domain/build"
-import type { WeaponSummary } from "@/modules/game-data/domain/weapon"
-import { growthValueAtLevel } from "@/modules/game-data/domain/character"
-import { statLabel } from "@/modules/game-data/application/stats/stats"
-import { weaponQueries } from "@/modules/game-data/queries/weapons"
+import { WEAPON_LEVEL_MAX } from "@/modules/builds/domain/build"
 import { useBuildCollection } from "../../../../builds/application/build-live-queries"
 import { useBuilderId } from "../../../application/use-builder-id"
-
-type WeaponLevelProps = {
-  weapon: WeaponSummary
-}
+import { Field, FieldLabel } from "@/components/ui/field"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { WEAPON_LEVELS } from "@/modules/game-data/application/constants/weapon"
 
 /** Level slider and base properties of the selected weapon. */
-export function WeaponLevel({ weapon }: WeaponLevelProps) {
+export function WeaponLevel() {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
-  const { data: detail } = useSuspenseQuery(weaponQueries.detail(weapon.id))
 
   const level = build?.weapon.level ?? WEAPON_LEVEL_MAX
-  const step = stepFromLevel(level)
 
-  const handleLevelChange = (value: number | readonly number[]) => {
-    const nextStep = Array.isArray(value) ? value[0] : value
-
-    if (typeof nextStep !== "number") return
+  const handleLevelChange = (value: number | null) => {
+    if (!value) return
 
     updateBuild(buildId, (draft) => {
-      draft.weapon.level = levelFromStep(nextStep)
+      draft.weapon.level = value
       draft.updateAt = new Date().toISOString()
     })
   }
 
   return (
-    <section className="space-y-3">
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">Nivel del arma</p>
-        <Badge variant="outline">Nv. {level}</Badge>
-      </div>
-
-      <Slider
-        value={step}
-        min={0}
-        max={LEVEL_MILESTONES.length - 1}
+    <Field>
+      <FieldLabel htmlFor="select-level">Seleccionar nivel</FieldLabel>
+      <Select
+        id="select-level"
+        value={level}
         onValueChange={handleLevelChange}
-        aria-label="Nivel del arma"
-      />
-
-      <div className="grid gap-1 sm:grid-cols-2">
-        {detail.properties.map((property) => (
-          <div
-            key={property.name}
-            className="flex items-center justify-between gap-3 rounded-lg bg-muted/40 px-3 py-2 text-xs"
-          >
-            <span className="text-muted-foreground">
-              {statLabel(property.name)}
-            </span>
-            <span className="font-medium tabular-nums">
-              {growthValueAtLevel(property.growth, level)}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
+        items={WEAPON_LEVELS}
+      >
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          {WEAPON_LEVELS.map((level) => (
+            <SelectItem key={level.value} value={level.value}>
+              {level.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </Field>
   )
 }

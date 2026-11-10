@@ -14,11 +14,7 @@ export function WeaponControls() {
     <Show when={build?.weapon.data}>
       {(weapon) => (
         <div className="space-y-4 border-t pt-4">
-          <SkeletonSuspense
-            skeleton={<SkeletonBox width="100%" height={140} radius={0} />}
-          >
-            <WeaponLevel weapon={weapon} />
-          </SkeletonSuspense>
+          <WeaponLevel />
 
           <SkeletonSuspense
             skeleton={<SkeletonBox width="100%" height={120} radius={0} />}

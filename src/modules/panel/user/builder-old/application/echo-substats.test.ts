@@ -54,8 +54,8 @@ describe("echoSubstatOptionsExcluding", () => {
 describe("formatEchoSubstatValue", () => {
   test("adds a percent sign to percentage substats", () => {
     expect(formatEchoSubstatValue("Defensa %", 9)).toBe("9%")
-    expect(formatEchoSubstatValue("Regeneración de Energía", 10)).toBe("10%")
-    expect(formatEchoSubstatValue("Probabilidad Crítico", 6.3)).toBe("6.3%")
+    expect(formatEchoSubstatValue("Regen. de Energía", 10)).toBe("10%")
+    expect(formatEchoSubstatValue("Prob. Crít.", 6.3)).toBe("6.3%")
   })
 
   test("keeps flat substats as plain numbers", () => {

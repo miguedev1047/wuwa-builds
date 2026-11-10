@@ -1,5 +1,6 @@
 import { cn } from "cn"
 import { formatStatValue, type StatsRow } from "./stats-view-model"
+import { GameIcon } from "@/components/ui/game-icon"
 
 type StatsRowItemProps = {
   row: StatsRow
@@ -9,13 +10,14 @@ type StatsRowItemProps = {
 export function StatsRowItem({ row }: StatsRowItemProps) {
   return (
     <div className="flex items-center justify-between gap-3">
-      <dt className="min-w-0 truncate text-xs text-muted-foreground">
-        {row.label}
-      </dt>
+      <div className="flex items-center gap-1">
+        <GameIcon name={row.key} />
+        <dt className="min-w-0 truncate">{row.label}</dt>
+      </div>
       <dd
         className={cn(
-          "shrink-0 text-xs font-semibold tabular-nums",
-          row.value === 0 ? "text-muted-foreground" : "text-brand-warning"
+          "shrink-0 font-semibold tabular-nums",
+          row.value === 0 ? "" : "text-brand-warning"
         )}
       >
         {formatStatValue(row)}

@@ -24,7 +24,7 @@ export function EchoPicker({ slot, onSelected }: EchoPickerProps) {
     <BuildCatalogPicker
       items={echoes}
       getItemKey={(echo) => echo.id}
-      columns={4}
+      columns={6}
       emptyMessage="No hay ecos en el catálogo."
     >
       {(echo) => (

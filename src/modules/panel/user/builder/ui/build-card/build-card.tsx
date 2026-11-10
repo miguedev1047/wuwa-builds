@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card"
 import { cn } from "cn"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export const buildCardVariants = cva("bg-card/50 backdrop-blur-3xl", {
+export const buildCardVariants = cva("bg-muted/90 backdrop-blur-3xl", {
   variants: {
     padding: {
       none: "p-0",
@@ -21,7 +21,7 @@ export const buildCardVariants = cva("bg-card/50 backdrop-blur-3xl", {
       "4-xl": "rounded-4xl",
     },
     hovered: {
-      true: "transition-colors duration-200 ease-in-out hover:bg-card/70",
+      true: "transition-colors duration-200 ease-in-out hover:bg-muted/80",
       false: "",
     },
   },

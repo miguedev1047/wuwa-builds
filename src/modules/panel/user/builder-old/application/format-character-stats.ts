@@ -1,19 +1,11 @@
-import type { CharacterStats } from "@/modules/builds/domain/character-stats"
+import {
+  CHARACTER_STAT_KEYS,
+  type CharacterStatKey,
+  type CharacterStats,
+} from "@/modules/builds/domain/character-stats"
+import { STAT_KINDS } from "@/modules/builds/domain/stats"
 
-export interface CharacterStatsDisplay {
-  hp: string
-  atk: string
-  def: string
-  energyRegen: string
-  critRate: string
-  critDmg: string
-  skillDmg: string
-  basicDmg: string
-  heavyDmg: string
-  liberationDmg: string
-  healingBonus: string
-  elementDmgBonus: Record<string, string>
-}
+export type CharacterStatsDisplay = Record<CharacterStatKey, string>
 
 /** Display value of a flat stat: rounded once, at the UI boundary. */
 export function formatFlatStat(value: number): string {
@@ -29,23 +21,12 @@ export function formatPercentStat(value: number): string {
 export function formatCharacterStats(
   stats: CharacterStats
 ): CharacterStatsDisplay {
-  return {
-    hp: formatFlatStat(stats.hp),
-    atk: formatFlatStat(stats.atk),
-    def: formatFlatStat(stats.def),
-    energyRegen: formatPercentStat(stats.energyRegen),
-    critRate: formatPercentStat(stats.critRate),
-    critDmg: formatPercentStat(stats.critDmg),
-    skillDmg: formatPercentStat(stats.skillDmg),
-    basicDmg: formatPercentStat(stats.basicDmg),
-    heavyDmg: formatPercentStat(stats.heavyDmg),
-    liberationDmg: formatPercentStat(stats.liberationDmg),
-    healingBonus: formatPercentStat(stats.healingBonus),
-    elementDmgBonus: Object.fromEntries(
-      Object.entries(stats.elementDmgBonus).map(([element, value]) => [
-        element,
-        formatPercentStat(value),
-      ])
-    ),
-  }
+  return Object.fromEntries(
+    CHARACTER_STAT_KEYS.map((key) => [
+      key,
+      STAT_KINDS[key] === "percent"
+        ? formatPercentStat(stats[key])
+        : formatFlatStat(stats[key]),
+    ])
+  ) as CharacterStatsDisplay
 }

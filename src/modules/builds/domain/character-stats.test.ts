@@ -8,9 +8,9 @@ const base: CharacterBaseStats = {
   hp: 1000,
   atk: 100,
   def: 50,
-  critRate: 5,
-  critDmg: 150,
-  energyRegen: 100,
+  crit_rate: 5,
+  crit_dmg: 150,
+  energy_regen: 100,
 }
 
 describe("calculateCharacterStats", () => {
@@ -24,17 +24,15 @@ describe("calculateCharacterStats", () => {
     expect(result.stats.hp).toBe(1000)
     expect(result.stats.atk).toBe(150)
     expect(result.stats.def).toBe(50)
-    expect(result.stats.critRate).toBe(5)
-    expect(result.stats.critDmg).toBe(150)
-    expect(result.stats.energyRegen).toBe(100)
-    expect(result.stats.elementDmgBonus).toEqual({
-      glacio: 0,
-      fusion: 0,
-      electro: 0,
-      aero: 0,
-      spectro: 0,
-      havoc: 0,
-    })
+    expect(result.stats.crit_rate).toBe(5)
+    expect(result.stats.crit_dmg).toBe(150)
+    expect(result.stats.energy_regen).toBe(100)
+    expect(result.stats.aero_dmg).toBe(0)
+    expect(result.stats.glacio_dmg).toBe(0)
+    expect(result.stats.electro_dmg).toBe(0)
+    expect(result.stats.fusion_dmg).toBe(0)
+    expect(result.stats.havoc_dmg).toBe(0)
+    expect(result.stats.spectro_dmg).toBe(0)
     expect(result.diagnostics).toEqual([])
     expect(result.unmappedBonuses).toEqual([])
   })
@@ -67,9 +65,9 @@ describe("calculateCharacterStats", () => {
       ],
     })
 
-    expect(result.stats.critRate).toBe(27.4)
-    expect(result.stats.critDmg).toBe(194.8)
-    expect(result.stats.energyRegen).toBe(106.8)
+    expect(result.stats.crit_rate).toBe(27.4)
+    expect(result.stats.crit_dmg).toBe(194.8)
+    expect(result.stats.energy_regen).toBe(106.8)
   })
 
   test("adds energy regen bonuses to the 100% base", () => {
@@ -79,7 +77,7 @@ describe("calculateCharacterStats", () => {
       bonuses: [{ statId: "energy_regen", value: 18.4 }],
     })
 
-    expect(result.stats.energyRegen).toBe(118.4)
+    expect(result.stats.energy_regen).toBe(118.4)
   })
 
   test("maps damage and element keys to their contract fields", () => {
@@ -97,14 +95,14 @@ describe("calculateCharacterStats", () => {
       ],
     })
 
-    expect(result.stats.basicDmg).toBe(10)
-    expect(result.stats.heavyDmg).toBe(20)
-    expect(result.stats.skillDmg).toBe(30)
-    expect(result.stats.liberationDmg).toBe(40)
-    expect(result.stats.healingBonus).toBe(12)
-    expect(result.stats.elementDmgBonus.aero).toBe(15)
-    expect(result.stats.elementDmgBonus.havoc).toBe(5)
-    expect(result.stats.elementDmgBonus.glacio).toBe(0)
+    expect(result.stats.basic_atk_bonus).toBe(10)
+    expect(result.stats.heavy_atk_bonus).toBe(20)
+    expect(result.stats.skill_bonus).toBe(30)
+    expect(result.stats.liberation_bonus).toBe(40)
+    expect(result.stats.healing_bonus).toBe(12)
+    expect(result.stats.aero_dmg).toBe(15)
+    expect(result.stats.havoc_dmg).toBe(5)
+    expect(result.stats.glacio_dmg).toBe(0)
   })
 
   test("reports unknown and out-of-contract stats instead of dropping them", () => {
@@ -169,9 +167,9 @@ describe("calculateCharacterStats", () => {
         hp: 14800,
         atk: 312.5,
         def: 611.11,
-        critRate: 5,
-        critDmg: 150,
-        energyRegen: 100,
+        crit_rate: 5,
+        crit_dmg: 150,
+        energy_regen: 100,
       },
       weaponBaseAtk: 412.5,
       bonuses: [
@@ -229,9 +227,9 @@ describe("calculateCharacterStats", () => {
     expect(result.stats.hp).toBe(50722)
     expect(result.stats.atk).toBe(1143)
     expect(result.stats.def).toBe(671)
-    expect(result.stats.critRate).toBeCloseTo(65.6, 5)
-    expect(result.stats.critDmg).toBeCloseTo(270.2, 5)
-    expect(result.stats.energyRegen).toBe(118.4)
+    expect(result.stats.crit_rate).toBeCloseTo(65.6, 5)
+    expect(result.stats.crit_dmg).toBeCloseTo(270.2, 5)
+    expect(result.stats.energy_regen).toBe(118.4)
     expect(result.trace.effectiveBase.atk).toBe(312)
     expect(result.trace.effectiveWeaponBaseAtk).toBe(412)
   })

@@ -1,14 +1,20 @@
+import { SkeletonSuspense } from "skullet/react"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
+import { WEAPON_LEVEL_MAX } from "@/modules/builds/domain/build"
 import { useBuildCollection } from "../../../../builds/application/build-live-queries"
 import { useBuilderId } from "../../../application/use-builder-id"
 import { BuildCardSection } from "../../../ui/build-card-section"
+import { WeaponProperties } from "./weapon-properties"
+import { WeaponPropertiesSkeleton } from "./weapon-properties-skeleton"
 
-/** Card that shows the selected weapon or the empty state. */
+/** Card that shows the selected weapon, its level and its base stats. */
 export function WeaponTrigger() {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
+
   const weapon = build?.weapon.data
+  const level = build?.weapon.level ?? WEAPON_LEVEL_MAX
 
   return (
     <BuildCardSection interactive>
@@ -24,21 +30,29 @@ export function WeaponTrigger() {
           }
         >
           {(selected) => (
-            <div className="flex min-h-0 items-center gap-3">
-              <Image
-                src={selected.icon}
-                alt={selected.name}
-                size="sm"
-                rounded="xl"
-                background="accent"
-                className="w-16"
-              />
-              <div className="min-w-0">
-                <p className="truncate font-medium">{selected.name}</p>
-                <p className="text-xs text-muted-foreground">
-                  {selected.typeName} · Nv. {build?.weapon.level}
-                </p>
+            <div className="space-y-4">
+              <div className="flex min-h-0 items-center gap-3">
+                <Image
+                  src={selected.icon}
+                  alt={selected.name}
+                  size="sm"
+                  rounded="xl"
+                  background="accent"
+                  className="w-20"
+                />
+                <div className="min-w-0">
+                  <p className="truncate text-lg font-medium">
+                    {selected.name}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {selected.typeName} · Nv. {level}
+                  </p>
+                </div>
               </div>
+
+              <SkeletonSuspense skeleton={<WeaponPropertiesSkeleton />}>
+                <WeaponProperties weapon={selected} level={level} />
+              </SkeletonSuspense>
             </div>
           )}
         </Show>

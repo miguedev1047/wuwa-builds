@@ -40,9 +40,9 @@ export function echoSubstatOptionsExcluding(
 
 /** Percentage substats whose label does not include a `%` sign. */
 const PERCENT_SUBSTAT_LABELS = new Set([
-  "Probabilidad Crítico",
-  "Daño Crítico",
-  "Regeneración de Energía",
+  "Prob. Crít.",
+  "Daño Crít.",
+  "Regen. de Energía",
   "Bono Ataque Básico",
   "Bono Ataque Cargado",
   "Bono Habilidad",

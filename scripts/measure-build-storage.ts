@@ -85,7 +85,7 @@ function representativeBuild() {
     mainStatValue: 33,
     substats: slot.substats.map((substat) => ({
       ...substat,
-      valueLabel: "Daño Crítico",
+      valueLabel: "Daño Crít.",
       valueNumber: 21,
     })),
   }))

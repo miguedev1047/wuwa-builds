@@ -2,17 +2,17 @@ export const SELECT_SUBSTATS_OPTIONS = {
   1: [
     {
       stat: "crit_rate",
-      label: "Probabilidad Crítico",
+      label: "Prob. Crít.",
       values: [6.3, 6.9, 7.5, 8.1, 8.7, 9.3, 9.9, 10.5],
     },
     {
       stat: "crit_dmg",
-      label: "Daño Crítico",
+      label: "Daño Crít.",
       values: [12.6, 13.8, 15, 16.2, 17.4, 18.6, 19.8, 21],
     },
     {
       stat: "energy_regen",
-      label: "Regeneración de Energía",
+      label: "Regen. de Energía",
       values: [6.8, 7.6, 8.4, 9.2, 10, 10.8, 11.6, 12.4],
     },
     {
@@ -61,17 +61,17 @@ export const SELECT_SUBSTATS_OPTIONS = {
   3: [
     {
       stat: "crit_rate",
-      label: "Probabilidad Crítico",
+      label: "Prob. Crít.",
       values: [6.3, 6.9, 7.5, 8.1, 8.7, 9.3, 9.9, 10.5],
     },
     {
       stat: "crit_dmg",
-      label: "Daño Crítico",
+      label: "Daño Crít.",
       values: [12.6, 13.8, 15, 16.2, 17.4, 18.6, 19.8, 21],
     },
     {
       stat: "energy_regen",
-      label: "Regeneración de Energía",
+      label: "Regen. de Energía",
       values: [6.8, 7.6, 8.4, 9.2, 10, 10.8, 11.6, 12.4],
     },
     {
@@ -120,17 +120,17 @@ export const SELECT_SUBSTATS_OPTIONS = {
   4: [
     {
       stat: "crit_rate",
-      label: "Probabilidad Crítico",
+      label: "Prob. Crít.",
       values: [6.3, 6.9, 7.5, 8.1, 8.7, 9.3, 9.9, 10.5],
     },
     {
       stat: "crit_dmg",
-      label: "Daño Crítico",
+      label: "Daño Crít.",
       values: [12.6, 13.8, 15, 16.2, 17.4, 18.6, 19.8, 21],
     },
     {
       stat: "energy_regen",
-      label: "Regeneración de Energía",
+      label: "Regen. de Energía",
       values: [6.8, 7.6, 8.4, 9.2, 10, 10.8, 11.6, 12.4],
     },
     {

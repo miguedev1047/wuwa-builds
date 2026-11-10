@@ -33,6 +33,20 @@ export function weaponRarityLabel(rarity: number): string {
   )
 }
 
+/** `GroupIndex` of the ten Weapon Level nodes. */
+export const WEAPON_LEVELS: SelectOption<number>[] = [
+  { label: "Nivel 1", value: 1 },
+  { label: "Nivel 10", value: 10 },
+  { label: "Nivel 20", value: 20 },
+  { label: "Nivel 30", value: 30 },
+  { label: "Nivel 40", value: 40 },
+  { label: "Nivel 50", value: 50 },
+  { label: "Nivel 60", value: 60 },
+  { label: "Nivel 70", value: 70 },
+  { label: "Nivel 80", value: 80 },
+  { label: "Nivel 90", value: 90 },
+]
+
 /** Stats a weapon can store in `weapon_properties` (base + secondary). */
 export const WEAPON_PROPERTY_STATS = [
   "atk",

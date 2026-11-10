@@ -1,36 +1,43 @@
 import { Badge } from "@/components/ui/badge"
+import { GameIcon } from "@/components/ui/game-icon"
 import { Image } from "@/components/ui/image"
+import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
 import type { EchoesDataProps } from "@/modules/builds/domain/build-record"
+import { STAT_KINDS } from "@/modules/builds/domain/stats"
+import { isStatId } from "@/modules/game-data/application/stats/stats"
 import { useBuildCollection } from "../../../../builds/application/build-live-queries"
 import { useBuilderId } from "../../../application/use-builder-id"
 import { BuildCardSection } from "../../../ui/build-card-section"
+import { formatFlatStat, formatPercentStat } from "../stats-section"
 
 type EchoSlotTriggerProps = {
   slot: EchoesDataProps
+  /** Icon of the selected sonata set, resolved by the slots grid. */
+  setIcon?: string
+}
+
+function formatEchoStat(stat: string, value: number): string {
+  return isStatId(stat) && STAT_KINDS[stat] === "flat"
+    ? formatFlatStat(value)
+    : formatPercentStat(value)
+}
+
+function statIconName(stat: string) {
+  return isStatId(stat) ? stat : null
 }
 
 /** Card that previews one echo slot or its empty state. */
-export function EchoSlotTrigger({ slot }: EchoSlotTriggerProps) {
+export function EchoSlotTrigger({ slot, setIcon }: EchoSlotTriggerProps) {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
+
   const isMain = build?.mainEchoSlot === slot.index
-  const substatCount = slot.substats.filter(
-    (substat) => substat.valueStat
-  ).length
+  const mainStat = statIconName(slot.mainStatStat)
 
   return (
-    <BuildCardSection interactive>
+    <BuildCardSection className="p-4" interactive>
       <div className="flex h-full flex-col gap-3">
-        <div className="flex items-center gap-2">
-          <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-            Eco {slot.index + 1}
-          </p>
-          <Show when={isMain}>
-            <Badge variant="secondary">Principal</Badge>
-          </Show>
-        </div>
-
         <Show
           when={slot.data}
           fallback={
@@ -40,30 +47,72 @@ export function EchoSlotTrigger({ slot }: EchoSlotTriggerProps) {
           }
         >
           {(echo) => (
-            <div className="flex flex-1 flex-col items-center justify-center gap-3">
-              <Image
-                src={echo.icon}
-                alt={echo.name}
-                size="full"
-                rounded="xl"
-                background="accent"
-                className="mx-auto max-w-40"
-              />
-              <div className="w-full min-w-0 text-center">
-                <p className="truncate text-sm font-medium">{echo.name}</p>
-                <p className="text-xs text-muted-foreground">
-                  Nv. {slot.level} · Costo {slot.cost}
-                </p>
-                <Show when={slot.mainStatLabel}>
-                  {(label) => (
-                    <p className="truncate text-xs text-muted-foreground">
-                      {label} +{slot.mainStatValue}
-                    </p>
-                  )}
+            <div className="space-y-4">
+              <div className="flex w-full items-center justify-between gap-2">
+                <h2 className="truncate text-xs">{echo.name}</h2>
+                <Show when={isMain}>
+                  <Badge variant="outline">Eco Main</Badge>
                 </Show>
-                <p className="text-xs text-muted-foreground">
-                  {substatCount}/5 substats
-                </p>
+              </div>
+
+              <Separator />
+
+              <div className="space-y-8">
+                <div className="flex w-full items-center justify-between gap-3">
+                  <Image
+                    src={echo.icon}
+                    alt={echo.name}
+                    size="sm"
+                    rounded="xl"
+                    background="accent"
+                  />
+
+                  <div className="text-end">
+                    <Show when={setIcon}>
+                      {(icon) => (
+                        <Image
+                          src={icon}
+                          alt=""
+                          size="xs"
+                          rounded="full"
+                          className="mb-1 ml-auto w-6"
+                        />
+                      )}
+                    </Show>
+
+                    <p className="line-clamp-1">{slot.mainStatLabel}</p>
+
+                    <div className="flex items-center justify-end gap-1 text-lg font-bold">
+                      <GameIcon name={mainStat} className="size-5" />
+                      <p>{formatPercentStat(slot.mainStatValue)}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <ul className="space-y-4">
+                  {slot.substats.map((substat) => (
+                    <li
+                      key={substat.index}
+                      className="flex items-center justify-between gap-3 text-xs"
+                    >
+                      <Show
+                        when={substat.valueStat}
+                        fallback={<GameIcon name="lock" />}
+                      >
+                        {(stat) => (
+                          <div className="flex min-w-0 items-center gap-2">
+                            <GameIcon name={statIconName(stat)} />
+                            <p className="line-clamp-1">{substat.valueLabel}</p>
+                          </div>
+                        )}
+                      </Show>
+
+                      <p className="shrink-0 tabular-nums">
+                        {formatEchoStat(substat.valueStat, substat.valueNumber)}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           )}

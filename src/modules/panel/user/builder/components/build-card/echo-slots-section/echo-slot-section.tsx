@@ -13,10 +13,12 @@ import { EchoSlotTrigger } from "./echo-slot-trigger"
 
 type EchoSlotSectionProps = {
   slot: EchoesDataProps
+  /** Icon of the selected sonata set, resolved by the slots grid. */
+  setIcon?: string
 }
 
 /** Editable card for one echo slot. */
-export function EchoSlotSection({ slot }: EchoSlotSectionProps) {
+export function EchoSlotSection({ slot, setIcon }: EchoSlotSectionProps) {
   if (!slot.data) {
     return (
       <BuildCatalogPickerDialog
@@ -38,17 +40,17 @@ export function EchoSlotSection({ slot }: EchoSlotSectionProps) {
   }
 
   return (
-    <div className="relative h-full">
+    <div className="relative z-20">
       <BuildCardSectionDialog
         title={`Eco ${slot.index + 1}`}
         description="Ajusta el set, la estadística principal y las substats del eco."
         dialogContent={{ size: "lg" }}
-        trigger={<EchoSlotTrigger slot={slot} />}
+        trigger={<EchoSlotTrigger slot={slot} setIcon={setIcon} />}
       >
         {() => <EchoSlotEditor slot={slot} />}
       </BuildCardSectionDialog>
 
-      <div className="absolute top-3 right-3 z-10">
+      <div className="absolute inset-x-0 bottom-4 z-20 flex justify-center">
         <EchoPickerDialog slot={slot} />
       </div>
     </div>

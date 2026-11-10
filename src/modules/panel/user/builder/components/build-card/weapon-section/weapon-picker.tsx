@@ -31,7 +31,7 @@ export function WeaponPicker({ onSelected }: WeaponPickerProps) {
     <BuildCatalogPicker
       items={compatibleWeapons}
       getItemKey={(weapon) => weapon.id}
-      columns={4}
+      columns={6}
       emptyMessage="No hay armas compatibles con el resonador."
     >
       {(weapon) => (

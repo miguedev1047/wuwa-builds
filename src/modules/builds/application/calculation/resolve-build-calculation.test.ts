@@ -81,7 +81,7 @@ const echoes = [
       {
         index: 0,
         valueStat: "crit_dmg",
-        valueLabel: "Daño Crítico",
+        valueLabel: "Daño Crít.",
         valueNumber: 12.6,
       },
     ],
@@ -160,9 +160,9 @@ describe("resolveBuildCalculation", () => {
     expect(result!.stats.hp).toBe(816)
     expect(result!.stats.def).toBe(40)
     expect(result!.stats.atk).toBeCloseTo(1123, 5)
-    expect(result!.stats.critRate).toBeCloseTo(37.3, 5)
-    expect(result!.stats.critDmg).toBeCloseTo(182.6, 5)
-    expect(result!.stats.energyRegen).toBe(100)
+    expect(result!.stats.crit_rate).toBeCloseTo(37.3, 5)
+    expect(result!.stats.crit_dmg).toBeCloseTo(182.6, 5)
+    expect(result!.stats.energy_regen).toBe(100)
     expect(result!.diagnostics).toEqual([])
   })
 
@@ -186,7 +186,7 @@ describe("resolveBuildCalculation", () => {
     })
 
     expect(result!.stats.hp).toBeCloseTo(897, 5)
-    expect(result!.stats.critRate).toBe(10)
+    expect(result!.stats.crit_rate).toBe(10)
   })
 
   test("adds energy regen bonuses to the 100% base", () => {
@@ -208,7 +208,7 @@ describe("resolveBuildCalculation", () => {
       sonatas: [],
     })
 
-    expect(result!.stats.energyRegen).toBe(118.4)
+    expect(result!.stats.energy_regen).toBe(118.4)
   })
 
   test("golden: Cartethyia level 90 base and passives", () => {
@@ -275,24 +275,24 @@ describe("resolveBuildCalculation", () => {
     expect(result!.stats.hp).toBeCloseTo(16574, 5)
     expect(result!.stats.atk).toBe(312)
     expect(result!.stats.def).toBe(611)
-    expect(result!.stats.critRate).toBe(13)
-    expect(result!.stats.critDmg).toBe(150)
-    expect(result!.stats.energyRegen).toBe(100)
+    expect(result!.stats.crit_rate).toBe(13)
+    expect(result!.stats.crit_dmg).toBe(150)
+    expect(result!.stats.energy_regen).toBe(100)
     expect(result!.trace.base).toEqual({
       hp: 14800,
       atk: 312.5,
       def: 611.11,
-      critRate: 5,
-      critDmg: 150,
-      energyRegen: 100,
+      crit_rate: 5,
+      crit_dmg: 150,
+      energy_regen: 100,
     })
     expect(result!.trace.effectiveBase).toEqual({
       hp: 14800,
       atk: 312,
       def: 611,
-      critRate: 5,
-      critDmg: 150,
-      energyRegen: 100,
+      crit_rate: 5,
+      crit_dmg: 150,
+      energy_regen: 100,
     })
     expect(result!.trace.contributions).toHaveLength(8)
     expect(
@@ -309,7 +309,7 @@ describe("resolveBuildCalculation", () => {
       sonatas,
     })
 
-    expect(result!.stats.critDmg).toBeCloseTo(162.6, 5)
+    expect(result!.stats.crit_dmg).toBeCloseTo(162.6, 5)
     expect(result!.conditionalEffects).toEqual([
       {
         source: "Eco Dos",
@@ -328,7 +328,7 @@ describe("resolveBuildCalculation", () => {
     })
 
     expect(result!.stats.atk).toBe(32)
-    expect(result!.stats.critRate).toBe(5)
+    expect(result!.stats.crit_rate).toBe(5)
   })
 
   test("reports an unknown resonator element", () => {

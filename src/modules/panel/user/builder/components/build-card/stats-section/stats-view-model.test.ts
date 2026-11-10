@@ -13,22 +13,20 @@ const stats: CharacterStats = {
   hp: 50732.4,
   atk: 1145.2,
   def: 671.4,
-  energyRegen: 118.4,
-  critRate: 65.64,
-  critDmg: 270.2,
-  skillDmg: 24,
-  basicDmg: 0,
-  heavyDmg: 0,
-  liberationDmg: 0,
-  healingBonus: 0,
-  elementDmgBonus: {
-    glacio: 0,
-    fusion: 0,
-    electro: 0,
-    aero: 12,
-    spectro: 0,
-    havoc: 0,
-  },
+  energy_regen: 118.4,
+  crit_rate: 65.64,
+  crit_dmg: 270.2,
+  skill_bonus: 24,
+  basic_atk_bonus: 0,
+  heavy_atk_bonus: 0,
+  liberation_bonus: 0,
+  healing_bonus: 0,
+  aero_dmg: 12,
+  glacio_dmg: 0,
+  electro_dmg: 0,
+  fusion_dmg: 0,
+  havoc_dmg: 0,
+  spectro_dmg: 0,
 }
 
 describe("stats formatting", () => {
@@ -41,7 +39,7 @@ describe("stats formatting", () => {
     expect(formatPercentStat(118.4)).toBe("118.4%")
     expect(formatPercentStat(100)).toBe("100%")
     expect(
-      formatStatValue({ key: "x", label: "X", value: 0, percent: true })
+      formatStatValue({ key: "crit_rate", label: "X", value: 0, percent: true })
     ).toBe("0%")
   })
 })
@@ -50,7 +48,7 @@ describe("statsRows", () => {
   test("includes the bonus of the resonator element", () => {
     const rows = statsRows(stats, "aero")
 
-    expect(rows.find((row) => row.key === "element_aero")).toMatchObject({
+    expect(rows.find((row) => row.key === "aero_dmg")).toMatchObject({
       label: "Bono Aero",
       value: 12,
       percent: true,
@@ -60,6 +58,6 @@ describe("statsRows", () => {
   test("omits the element row when the element is unknown", () => {
     const rows = statsRows(stats, "")
 
-    expect(rows.some((row) => row.key.startsWith("element_"))).toBe(false)
+    expect(rows.some((row) => row.key === "aero_dmg")).toBe(false)
   })
 })

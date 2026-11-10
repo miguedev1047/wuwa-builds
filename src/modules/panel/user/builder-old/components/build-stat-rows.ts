@@ -1,10 +1,11 @@
 import type {
+  CharacterStatKey,
   CharacterStats,
-  ElementDmgBonus,
 } from "@/modules/builds/domain/character-stats"
+import { elementStatKey } from "@/modules/builds/domain/stats"
 
 export interface BuildStatRow {
-  key: string
+  key: CharacterStatKey
   label: string
   value: number
   percent: boolean
@@ -20,10 +21,7 @@ export function buildStatRows({
   elementId: string | null
   elementLabel: string | null
 }): BuildStatRow[] {
-  const elementBonus =
-    elementId && elementId in stats.elementDmgBonus
-      ? stats.elementDmgBonus[elementId as keyof ElementDmgBonus]
-      : null
+  const elementStat = elementStatKey(elementId)
 
   return [
     { key: "hp", label: "Vida", value: stats.hp, percent: false },
@@ -32,51 +30,51 @@ export function buildStatRows({
     {
       key: "energy_regen",
       label: "Regen. energía",
-      value: stats.energyRegen,
+      value: stats.energy_regen,
       percent: true,
     },
     {
       key: "crit_rate",
       label: "Prob. Crit.",
-      value: stats.critRate,
+      value: stats.crit_rate,
       percent: true,
     },
     {
       key: "crit_dmg",
       label: "Daño Crit.",
-      value: stats.critDmg,
+      value: stats.crit_dmg,
       percent: true,
     },
     {
-      key: "skill_dmg",
+      key: "skill_bonus",
       label: "Daño Habilidad",
-      value: stats.skillDmg,
+      value: stats.skill_bonus,
       percent: true,
     },
     {
-      key: "basic_dmg",
+      key: "basic_atk_bonus",
       label: "Daño Ataque Básico",
-      value: stats.basicDmg,
+      value: stats.basic_atk_bonus,
       percent: true,
     },
     {
-      key: "heavy_dmg",
+      key: "heavy_atk_bonus",
       label: "Daño Ataque Cargado",
-      value: stats.heavyDmg,
+      value: stats.heavy_atk_bonus,
       percent: true,
     },
     {
-      key: "liberation_dmg",
+      key: "liberation_bonus",
       label: "Daño Liberación",
-      value: stats.liberationDmg,
+      value: stats.liberation_bonus,
       percent: true,
     },
-    ...(elementLabel && elementBonus !== null
+    ...(elementLabel && elementStat
       ? [
           {
-            key: `element_${elementId}`,
+            key: elementStat,
             label: `Bono ${elementLabel}`,
-            value: elementBonus,
+            value: stats[elementStat],
             percent: true,
           },
         ]
@@ -84,7 +82,7 @@ export function buildStatRows({
     {
       key: "healing_bonus",
       label: "Bono Curación",
-      value: stats.healingBonus,
+      value: stats.healing_bonus,
       percent: true,
     },
   ]

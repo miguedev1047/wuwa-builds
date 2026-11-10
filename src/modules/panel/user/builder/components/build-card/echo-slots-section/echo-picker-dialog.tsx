@@ -23,10 +23,7 @@ export function EchoPickerDialog({ slot }: EchoPickerDialogProps) {
           aria-label={`Cambiar eco del slot ${slot.index + 1}`}
           title="Cambiar eco"
         >
-          <HugeiconsIcon
-            icon={ArrowDataTransferHorizontalIcon}
-            strokeWidth={2}
-          />
+          <HugeiconsIcon icon={ArrowDataTransferHorizontalIcon} />
         </Button>
       }
       title="Selecciona un eco"

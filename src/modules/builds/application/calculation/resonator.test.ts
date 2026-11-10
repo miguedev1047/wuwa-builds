@@ -75,8 +75,8 @@ describe("resolveResonatorStats", () => {
     })
 
     expect(result.base.hp).toBe(884.7072)
-    expect(result.base.critRate).toBe(5)
-    expect(result.base.critDmg).toBe(150)
+    expect(result.base.crit_rate).toBe(5)
+    expect(result.base.crit_dmg).toBe(150)
   })
 
   test("keeps the default crit and energy bases when the catalog omits them", () => {
@@ -95,9 +95,9 @@ describe("resolveResonatorStats", () => {
       sequence: 0,
     })
 
-    expect(result.base.critRate).toBe(5)
-    expect(result.base.critDmg).toBe(150)
-    expect(result.base.energyRegen).toBe(100)
+    expect(result.base.crit_rate).toBe(5)
+    expect(result.base.crit_dmg).toBe(150)
+    expect(result.base.energy_regen).toBe(100)
   })
 
   test("resolves Encore labels through the alias map", () => {
@@ -122,7 +122,7 @@ describe("resolveResonatorStats", () => {
     })
 
     expect(result.base.hp).toBe(1000)
-    expect(result.base.critRate).toBe(5)
+    expect(result.base.crit_rate).toBe(5)
     expect(result.diagnostics).toEqual([])
   })
 

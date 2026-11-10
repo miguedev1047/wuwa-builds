@@ -16,13 +16,13 @@ describe("resolveEchoBonuses", () => {
           {
             index: 0,
             valueStat: "crit_rate",
-            valueLabel: "Probabilidad Crítico",
+            valueLabel: "Prob. Crít.",
             valueNumber: 6.3,
           },
           {
             index: 1,
             valueStat: "crit_dmg",
-            valueLabel: "Daño Crítico",
+            valueLabel: "Daño Crít.",
             valueNumber: 12.6,
           },
         ],
@@ -52,7 +52,7 @@ describe("resolveEchoBonuses", () => {
         substats: [
           {
             index: 0,
-            valueLabel: "Probabilidad Crítico",
+            valueLabel: "Prob. Crít.",
             valueStat: "",
             valueNumber: 6.3,
           },
@@ -73,7 +73,7 @@ describe("resolveEchoBonuses", () => {
           {
             index: 0,
             valueStat: "crit_rate",
-            valueLabel: "Probabilidad Crítico",
+            valueLabel: "Prob. Crít.",
             valueNumber: 0,
           },
         ],

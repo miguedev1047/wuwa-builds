@@ -55,7 +55,7 @@ export const SELECT_ECHO_MAIN_STATS = {
       },
       {
         stat: "crit_dmg",
-        label: "Dano Crit.",
+        label: "Daño Crit.",
         values: [8.8, 15.8, 22.9, 29.9, 37, 44],
       },
       {
@@ -121,32 +121,32 @@ export const SELECT_ECHO_MAIN_STATS = {
       },
       {
         stat: "aero_dmg",
-        label: "Dano Aero",
+        label: "Daño Aero",
         values: [6, 10.8, 15.8, 20.4, 25.2, 30],
       },
       {
         stat: "electro_dmg",
-        label: "Dano Electro",
+        label: "Daño Electro",
         values: [6, 10.8, 15.8, 20.4, 25.2, 30],
       },
       {
         stat: "fusion_dmg",
-        label: "Dano Fusion",
+        label: "Daño Fusion",
         values: [6, 10.8, 15.8, 20.4, 25.2, 30],
       },
       {
         stat: "glacio_dmg",
-        label: "Dano Glacio",
+        label: "Daño Glacio",
         values: [6, 10.8, 15.8, 20.4, 25.2, 30],
       },
       {
         stat: "havoc_dmg",
-        label: "Dano Destruccion",
+        label: "Daño Destruccion",
         values: [6, 10.8, 15.8, 20.4, 25.2, 30],
       },
       {
         stat: "spectro_dmg",
-        label: "Dano Espectro",
+        label: "Daño Espectro",
         values: [6, 10.8, 15.8, 20.4, 25.2, 30],
       },
     ],

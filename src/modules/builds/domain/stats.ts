@@ -63,3 +63,24 @@ export const STAT_LABELS: Record<BuildStatKey, string> = {
 
 /** Every stat id, in the order the panel lists them. */
 export const STAT_KEYS = Object.keys(STAT_KINDS) as BuildStatKey[]
+
+/** Element id to its canonical damage-bonus stat key. */
+export const ELEMENT_STAT_KEYS = {
+  aero: "aero_dmg",
+  glacio: "glacio_dmg",
+  electro: "electro_dmg",
+  fusion: "fusion_dmg",
+  havoc: "havoc_dmg",
+  spectro: "spectro_dmg",
+} as const satisfies Record<string, BuildStatKey>
+
+export type ElementStatKey =
+  (typeof ELEMENT_STAT_KEYS)[keyof typeof ELEMENT_STAT_KEYS]
+
+/** Canonical damage-bonus key of an element id, or `null` if unknown. */
+export function elementStatKey(
+  element: string | null | undefined
+): ElementStatKey | null {
+  if (!element) return null
+  return ELEMENT_STAT_KEYS[element as keyof typeof ELEMENT_STAT_KEYS] ?? null
+}

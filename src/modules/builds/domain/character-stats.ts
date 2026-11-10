@@ -1,28 +1,43 @@
 import { STAT_KINDS, type BuildStatKey, type StatKind } from "./stats"
 
-export interface ElementDmgBonus {
-  glacio: number
-  fusion: number
-  electro: number
-  aero: number
-  spectro: number
-  havoc: number
-}
+/**
+ * Final stat sheet of a build, keyed by the canonical stat ids.
+ *
+ * These keys match the stat icon asset names in `src/assets/icons/stats`, so a
+ * stat has one spelling in the catalog, the calculator, the icons and the UI.
+ *
+ * Only the stats the calculator outputs are listed. Input-only stats
+ * (`hp_percent`, `echo_skill_bonus`, ...) stay in `STAT_KINDS` and in the
+ * contribution trace, but are not part of the final sheet.
+ */
+export const CHARACTER_STAT_KEYS = [
+  "hp",
+  "atk",
+  "def",
+  "crit_rate",
+  "crit_dmg",
+  "energy_regen",
+  "healing_bonus",
+  "basic_atk_bonus",
+  "heavy_atk_bonus",
+  "skill_bonus",
+  "liberation_bonus",
+  "aero_dmg",
+  "glacio_dmg",
+  "electro_dmg",
+  "fusion_dmg",
+  "havoc_dmg",
+  "spectro_dmg",
+] as const satisfies readonly BuildStatKey[]
 
-export interface CharacterStats {
-  hp: number
-  atk: number
-  def: number
-  energyRegen: number
-  critRate: number
-  critDmg: number
-  skillDmg: number
-  basicDmg: number
-  heavyDmg: number
-  liberationDmg: number
-  healingBonus: number
-  elementDmgBonus: ElementDmgBonus
-}
+export type CharacterStatKey = (typeof CHARACTER_STAT_KEYS)[number]
+
+export type CharacterStats = Record<CharacterStatKey, number>
+
+export type CharacterBaseStats = Pick<
+  CharacterStats,
+  "hp" | "atk" | "def" | "crit_rate" | "crit_dmg" | "energy_regen"
+>
 
 export interface CharacterStatBonus {
   statId: string
@@ -33,15 +48,6 @@ export interface CharacterStatBonus {
 export interface CharacterConditionalEffect {
   source: string
   description: string
-}
-
-export interface CharacterBaseStats {
-  hp: number
-  atk: number
-  def: number
-  critRate: number
-  critDmg: number
-  energyRegen: number
 }
 
 export interface CharacterCalculationInput {
@@ -78,38 +84,11 @@ export interface CharacterCalculationResult {
   trace: CharacterCalculationTrace
 }
 
-const DIRECT_STATS: Record<
-  string,
-  "critRate" | "critDmg" | "energyRegen" | "healingBonus"
-> = {
-  crit_rate: "critRate",
-  crit_dmg: "critDmg",
-  energy_regen: "energyRegen",
-  healing_bonus: "healingBonus",
+const CHARACTER_STAT_KEY_SET = new Set<string>(CHARACTER_STAT_KEYS)
+
+function isCharacterStatKey(value: string): value is CharacterStatKey {
+  return CHARACTER_STAT_KEY_SET.has(value)
 }
-
-const DAMAGE_STATS: Record<
-  string,
-  "basicDmg" | "heavyDmg" | "skillDmg" | "liberationDmg"
-> = {
-  basic_atk_bonus: "basicDmg",
-  heavy_atk_bonus: "heavyDmg",
-  skill_bonus: "skillDmg",
-  liberation_bonus: "liberationDmg",
-}
-
-const ELEMENT_STATS: Record<string, keyof ElementDmgBonus> = {
-  aero_dmg: "aero",
-  glacio_dmg: "glacio",
-  electro_dmg: "electro",
-  fusion_dmg: "fusion",
-  spectro_dmg: "spectro",
-  havoc_dmg: "havoc",
-}
-
-const PERCENT_BASE_STATS = new Set(["hp_percent", "atk_percent", "def_percent"])
-
-const FLAT_BASE_STATS = new Set(["hp", "atk", "def"])
 
 function unique(values: string[]): string[] {
   return [...new Set(values)]
@@ -130,31 +109,40 @@ function unique(values: string[]): string[] {
 export function calculateCharacterStats(
   input: CharacterCalculationInput
 ): CharacterCalculationResult {
-  const flat: Record<string, number> = {}
-  const direct = {
-    critRate: 0,
-    critDmg: 0,
-    energyRegen: 0,
-    healingBonus: 0,
-  }
-  const damage = {
-    basicDmg: 0,
-    heavyDmg: 0,
-    skillDmg: 0,
-    liberationDmg: 0,
-  }
-  const element: ElementDmgBonus = {
-    glacio: 0,
-    fusion: 0,
-    electro: 0,
-    aero: 0,
-    spectro: 0,
-    havoc: 0,
-  }
-
   const diagnostics = [...(input.diagnostics ?? [])]
   const unmappedBonuses: CharacterStatBonus[] = []
   const contributions: CharacterStatContribution[] = []
+
+  const effectiveBase: CharacterBaseStats = {
+    hp: Math.floor(input.base.hp),
+    atk: Math.floor(input.base.atk),
+    def: Math.floor(input.base.def),
+    crit_rate: input.base.crit_rate,
+    crit_dmg: input.base.crit_dmg,
+    energy_regen: input.base.energy_regen,
+  }
+  const effectiveWeaponBaseAtk = Math.floor(input.weaponBaseAtk)
+  const baseAtk = effectiveBase.atk + effectiveWeaponBaseAtk
+
+  const stats: CharacterStats = {
+    hp: effectiveBase.hp,
+    atk: baseAtk,
+    def: effectiveBase.def,
+    crit_rate: effectiveBase.crit_rate,
+    crit_dmg: effectiveBase.crit_dmg,
+    energy_regen: effectiveBase.energy_regen,
+    healing_bonus: 0,
+    basic_atk_bonus: 0,
+    heavy_atk_bonus: 0,
+    skill_bonus: 0,
+    liberation_bonus: 0,
+    aero_dmg: 0,
+    glacio_dmg: 0,
+    electro_dmg: 0,
+    fusion_dmg: 0,
+    havoc_dmg: 0,
+    spectro_dmg: 0,
+  }
 
   for (const bonus of input.bonuses) {
     const kind = STAT_KINDS[bonus.statId as BuildStatKey]
@@ -174,37 +162,31 @@ export function calculateCharacterStats(
       continue
     }
 
-    const directKey = DIRECT_STATS[bonus.statId]
-
-    if (directKey) {
-      direct[directKey] += bonus.value
+    if (bonus.statId === "hp_percent") {
+      stats.hp += Math.floor((effectiveBase.hp * bonus.value) / 100)
       contribution.applied = true
       continue
     }
 
-    const damageKey = DAMAGE_STATS[bonus.statId]
-
-    if (damageKey) {
-      damage[damageKey] += bonus.value
+    if (bonus.statId === "atk_percent") {
+      stats.atk += Math.floor((baseAtk * bonus.value) / 100)
       contribution.applied = true
       continue
     }
 
-    const elementKey = ELEMENT_STATS[bonus.statId]
-
-    if (elementKey) {
-      element[elementKey] += bonus.value
+    if (bonus.statId === "def_percent") {
+      stats.def += Math.floor((effectiveBase.def * bonus.value) / 100)
       contribution.applied = true
       continue
     }
 
-    if (FLAT_BASE_STATS.has(bonus.statId)) {
-      flat[bonus.statId] = (flat[bonus.statId] ?? 0) + bonus.value
-      contribution.applied = true
-      continue
-    }
-
-    if (PERCENT_BASE_STATS.has(bonus.statId)) {
+    if (
+      bonus.statId === "hp" ||
+      bonus.statId === "atk" ||
+      bonus.statId === "def" ||
+      isCharacterStatKey(bonus.statId)
+    ) {
+      stats[bonus.statId] += bonus.value
       contribution.applied = true
       continue
     }
@@ -213,39 +195,6 @@ export function calculateCharacterStats(
     unmappedBonuses.push(bonus)
   }
 
-  const effectiveBase: CharacterBaseStats = {
-    hp: Math.floor(input.base.hp),
-    atk: Math.floor(input.base.atk),
-    def: Math.floor(input.base.def),
-    critRate: input.base.critRate,
-    critDmg: input.base.critDmg,
-    energyRegen: input.base.energyRegen,
-  }
-  const effectiveWeaponBaseAtk = Math.floor(input.weaponBaseAtk)
-  const baseAtk = effectiveBase.atk + effectiveWeaponBaseAtk
-
-  let hpFromPercent = 0
-  let atkFromPercent = 0
-  let defFromPercent = 0
-
-  for (const contribution of contributions) {
-    if (!contribution.applied) continue
-
-    if (contribution.statId === "hp_percent") {
-      hpFromPercent += Math.floor((effectiveBase.hp * contribution.value) / 100)
-    } else if (contribution.statId === "atk_percent") {
-      atkFromPercent += Math.floor((baseAtk * contribution.value) / 100)
-    } else if (contribution.statId === "def_percent") {
-      defFromPercent += Math.floor(
-        (effectiveBase.def * contribution.value) / 100
-      )
-    }
-  }
-
-  const hp = effectiveBase.hp + hpFromPercent + (flat.hp ?? 0)
-  const atk = baseAtk + atkFromPercent + (flat.atk ?? 0)
-  const def = effectiveBase.def + defFromPercent + (flat.def ?? 0)
-
   const totalsByStat: Record<string, number> = {}
 
   for (const contribution of contributions) {
@@ -253,21 +202,6 @@ export function calculateCharacterStats(
 
     totalsByStat[contribution.statId] =
       (totalsByStat[contribution.statId] ?? 0) + contribution.value
-  }
-
-  const stats: CharacterStats = {
-    hp,
-    atk,
-    def,
-    energyRegen: effectiveBase.energyRegen + direct.energyRegen,
-    critRate: effectiveBase.critRate + direct.critRate,
-    critDmg: effectiveBase.critDmg + direct.critDmg,
-    skillDmg: damage.skillDmg,
-    basicDmg: damage.basicDmg,
-    heavyDmg: damage.heavyDmg,
-    liberationDmg: damage.liberationDmg,
-    healingBonus: direct.healingBonus,
-    elementDmgBonus: element,
   }
 
   return {
