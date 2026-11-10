@@ -14,14 +14,15 @@ const sequenceRow: ResonatorSequenceRow = {
   index: 1,
   name: "Bote, rompe la marea creciente",
   description: "<p>Descripcion</p>",
+  icon: "https://api-v2.encore.moe/resource/Data/sequence.webp",
   createdAt: new Date(0),
   updatedAt: new Date(0),
 }
 
 const encoreSequences: EncoreSequence[] = [
-  { id: 355, index: 1, name: "A", description: "d1" },
-  { id: 356, index: 2, name: "B", description: "d2" },
-  { id: 357, index: 3, name: "C", description: "d3" },
+  { id: 355, index: 1, name: "A", description: "d1", icon: "icon-a.webp" },
+  { id: 356, index: 2, name: "B", description: "d2", icon: "icon-b.webp" },
+  { id: 357, index: 3, name: "C", description: "d3", icon: "icon-c.webp" },
 ]
 
 describe("resonatorSequenceDraftFromRow", () => {
@@ -34,6 +35,7 @@ describe("resonatorSequenceDraftFromRow", () => {
       index: 1,
       name: "Bote, rompe la marea creciente",
       description: "<p>Descripcion</p>",
+      icon: "https://api-v2.encore.moe/resource/Data/sequence.webp",
     })
   })
 })
@@ -50,6 +52,7 @@ describe("resonatorSequencePayloads", () => {
         index: 1,
         name: "A",
         description: "d1",
+        icon: "icon-a.webp",
       },
       {
         resonatorId: 1311,
@@ -58,6 +61,7 @@ describe("resonatorSequencePayloads", () => {
         index: 3,
         name: "C",
         description: "d3",
+        icon: "icon-c.webp",
       },
     ])
   })

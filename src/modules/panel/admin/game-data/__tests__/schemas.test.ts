@@ -683,12 +683,17 @@ describe("resonatorSequenceInput", () => {
     index: 1,
     name: "  Bote, rompe la marea creciente  ",
     description: "<p>Descripcion</p>",
+    icon: "  sequence.webp  ",
   }
 
   test("trims the name and accepts a valid sequence", () => {
     expect(resonatorSequenceInput.parse(valid).name).toBe(
       "Bote, rompe la marea creciente"
     )
+  })
+
+  test("trims the icon", () => {
+    expect(resonatorSequenceInput.parse(valid).icon).toBe("sequence.webp")
   })
 
   test("rejects indexes outside 1..6", () => {
@@ -758,6 +763,7 @@ describe("bulk input schemas", () => {
     index: 1,
     name: "Bote",
     description: "<p>Descripcion</p>",
+    icon: "sequence.webp",
   }
   const passive = {
     resonatorId: 1311,

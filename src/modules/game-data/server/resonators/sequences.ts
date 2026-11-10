@@ -8,6 +8,7 @@ import {
   resonatorSequencesInput,
   resonatorSequenceUpdateInput,
 } from "@game-data/application/schemas"
+import { readCharacter } from "@encore/application/read-characters.server"
 
 export const createResonatorSequences = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])
@@ -49,4 +50,37 @@ export const deleteResonatorSequence = createServerFn({ method: "POST" })
     }
 
     return deleted[0].id
+  })
+
+/**
+ * Backfills the icons of the saved sequences from Encore.
+ *
+ * Rows added before the `icon` column existed have an empty icon. Only that
+ * column is written, so edited names and descriptions survive the sync.
+ */
+export const syncResonatorSequenceIcons = createServerFn({ method: "POST" })
+  .middleware([adminMiddleware])
+  .validator(idInput)
+  .handler(async ({ data }) => {
+    const character = await readCharacter(data.id)
+    const icons = new Map(
+      character.sequences.map((sequence) => [sequence.id, sequence.icon])
+    )
+    const saved = await db.query.resonatorSequences.findMany({
+      where: { resonatorId: data.id },
+    })
+    const pending = saved.filter((sequence) => {
+      const icon = icons.get(sequence.sequenceId)
+
+      return Boolean(icon) && icon !== sequence.icon
+    })
+
+    for (const sequence of pending) {
+      await db
+        .update(resonatorSequences)
+        .set({ icon: icons.get(sequence.sequenceId) ?? "" })
+        .where(eq(resonatorSequences.id, sequence.id))
+    }
+
+    return { updated: pending.length }
   })

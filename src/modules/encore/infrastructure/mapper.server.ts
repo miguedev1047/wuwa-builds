@@ -80,6 +80,7 @@ interface RawSequence {
   GroupIndex?: number
   NodeName?: string
   AttributesDescription?: string
+  NodeIcon?: string
 }
 
 interface RawCostItem {
@@ -183,6 +184,7 @@ function toSequence(raw: RawSequence): EncoreSequence {
     index: raw.GroupIndex ?? 0,
     name: raw.NodeName ?? "",
     description: raw.AttributesDescription ?? "",
+    icon: encoreAssetUrl(raw.NodeIcon),
   }
 }
 

@@ -1,0 +1,1 @@
+ALTER TABLE `resonator_sequences` ADD `icon` text DEFAULT '' NOT NULL;

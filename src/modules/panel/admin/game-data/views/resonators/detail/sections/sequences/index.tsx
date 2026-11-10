@@ -4,6 +4,7 @@ import { EditableSection } from "@panel/admin/game-data/components/editable-sect
 import { ResonatorSequenceAddLoader } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-add-loader"
 import { ResonatorSequencesContent } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequences-content"
 import { ResonatorSequencesSkeleton } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequences-skeleton"
+import { ResonatorSequenceSyncAction } from "@panel/admin/game-data/views/resonators/detail/sections/sequences/components/resonator-sequence-sync-action"
 
 /** Sequences (`resonator_sequences`) of the resonator. */
 export function ResonatorSequencesSection() {
@@ -19,6 +20,8 @@ export function ResonatorSequencesSection() {
         </EditableSection.Description>
 
         <EditableSection.Action>
+          <ResonatorSequenceSyncAction resonatorId={resonatorId} />
+
           <SkeletonSuspense skeleton={<SkeletonBox width="9rem" height={32} />}>
             <ResonatorSequenceAddLoader resonatorId={resonatorId} />
           </SkeletonSuspense>

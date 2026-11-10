@@ -169,6 +169,7 @@ export async function saveCharacter(
         index: sequence.index,
         name: sequence.name,
         description: sequence.description,
+        icon: sequence.icon,
       }))
     )
   }
@@ -262,6 +263,7 @@ export async function readCharacter(
       index: sequence.index,
       name: sequence.name,
       description: sequence.description,
+      icon: sequence.icon,
     })),
     passives: row.passives.map((passive) => ({
       id: passive.passiveId,

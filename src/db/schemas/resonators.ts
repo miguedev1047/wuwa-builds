@@ -236,6 +236,8 @@ export const resonatorSequences = sqliteTable(
     name: text("name").notNull().default(""),
     /** `AttributesDescription` */
     description: text("description").notNull().default(""),
+    /** `NodeIcon` */
+    icon: text("icon").notNull().default(""),
 
     ...getDate(),
   },

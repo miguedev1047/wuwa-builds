@@ -135,6 +135,8 @@ const rawCharacter: RawCharacterDetail = {
       GroupIndex: 1,
       NodeName: "Nodo",
       AttributesDescription: "Descripción del nodo",
+      NodeIcon:
+        "/Game/Aki/UI/UIResources/Common/Image/IconDevice/T_IconDevice_sequence_UI.webp",
     },
   ],
   SkillTree: [
@@ -303,6 +305,20 @@ describe("encore catalog schema", () => {
     expect(echo).not.toHaveProperty("element")
     expect(echo).not.toHaveProperty("description")
     expect(echo).not.toHaveProperty("rarity")
+  })
+
+  test("maps and stores the sequence node icon", async () => {
+    const character = toCharacterDetail(rawCharacter)
+    const icon =
+      "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconDevice/T_IconDevice_sequence_UI.webp"
+
+    expect(character.sequences[0].icon).toBe(icon)
+
+    await saveCharacter(db, character)
+
+    expect((await readCharacter(db, character.id))?.sequences[0].icon).toBe(
+      icon
+    )
   })
 
   test("rebuilds the list endpoints from the detail rows", async () => {

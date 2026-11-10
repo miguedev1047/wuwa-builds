@@ -74,6 +74,7 @@ export function resonatorSequence({
     index,
     name: `Secuencia ${index}`,
     description,
+    icon: "",
     ...dates,
   }
 }

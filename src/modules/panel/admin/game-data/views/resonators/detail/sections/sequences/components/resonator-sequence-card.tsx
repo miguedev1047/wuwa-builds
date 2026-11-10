@@ -1,5 +1,6 @@
 import type { ResonatorSequenceRow } from "@db/schema"
 import { Button } from "@/components/ui/button"
+import { Show } from "@/components/utility/show"
 import {
   Collapsible,
   CollapsibleContent,
@@ -24,7 +25,11 @@ export function ResonatorSequenceCard({
       <EditableSection.CardHeader>
         <div className="flex min-w-0 items-start gap-3">
           <EditableSection.Media variant="image">
-            {sequence.index}
+            <Show when={sequence.icon} fallback={sequence.index}>
+              {(icon) => (
+                <EditableSection.Image src={icon} alt={sequence.name} />
+              )}
+            </Show>
           </EditableSection.Media>
 
           <div className="flex min-w-0 flex-col gap-1">

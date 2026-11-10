@@ -44,6 +44,8 @@ export interface EncoreSequence {
   index: number
   name: string
   description: string
+  /** `NodeIcon`: the sequence node artwork. */
+  icon: string
 }
 
 export interface EncoreCostItem {

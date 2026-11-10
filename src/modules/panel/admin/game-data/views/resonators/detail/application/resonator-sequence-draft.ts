@@ -17,6 +17,7 @@ export function resonatorSequenceDraftFromRow(
     index: sequence.index,
     name: sequence.name,
     description: sequence.description,
+    icon: sequence.icon,
   }
 }
 
@@ -36,5 +37,6 @@ export function resonatorSequencePayloads(
       index: sequence.index,
       name: sequence.name,
       description: sequence.description,
+      icon: sequence.icon,
     }))
 }

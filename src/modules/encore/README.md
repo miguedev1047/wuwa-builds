@@ -93,7 +93,10 @@ weapons and 319 echoes (≈63k child rows) read back deep-equal to the mapper
 output.
 
 There is no scheduled sync yet: rows are created from the admin panel, and the
-admin and builder screens read the canonical catalog from D1.
+admin and builder screens read the canonical catalog from D1. Sequence nodes
+keep the icon Encore publishes (`NodeIcon`); rows saved before that column
+existed get it back with the sequences "sync icons" action, which only writes
+the `icon` column.
 
 ## Usage
 

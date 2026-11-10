@@ -15,6 +15,7 @@ export const resonatorSequenceFormDefaults: ResonatorSequenceUpdateInput = {
   index: 1,
   name: "",
   description: "",
+  icon: "",
 }
 
 /** Reusable fields of the resonator sequence form. */
@@ -65,6 +66,20 @@ export const ResonatorSequenceFields = withForm({
               label="Descripcion"
               placeholder="Descripcion de la secuencia"
               rows={6}
+              disabled={isPending}
+            />
+          )}
+        </form.AppField>
+
+        <form.AppField
+          name="icon"
+          validators={{ onSubmit: resonatorSequenceUpdateInput.shape.icon }}
+        >
+          {(field) => (
+            <field.ImageField
+              label="Icono"
+              placeholder="https://api.encore.moe/resource/..."
+              inputMode="url"
               disabled={isPending}
             />
           )}
