@@ -14,6 +14,8 @@ import {
   formatPercentStat,
 } from "@builder/components/build-card/stats-section"
 import { Empty, EmptyTitle } from "@/components/ui/empty"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { PlusIcon } from "@hugeicons/core-free-icons"
 
 type EchoSlotTriggerProps = {
   slot: EchoesDataProps
@@ -46,7 +48,7 @@ export function EchoSlotTrigger({ slot, setIcon }: EchoSlotTriggerProps) {
           when={slot.data}
           fallback={
             <Empty className="border border-dashed">
-              <EmptyTitle>Seleccionar eco</EmptyTitle>
+              <HugeiconsIcon icon={PlusIcon} className="size-20" />
             </Empty>
           }
         >
