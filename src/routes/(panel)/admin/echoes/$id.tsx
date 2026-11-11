@@ -1,5 +1,6 @@
 import { CatalogDetailRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
 import { encoreEchoQueries } from "@encore/queries/catalogs"
+import { softPreload } from "@encore/queries/preload"
 import { isValidId } from "@game-data/application/id"
 import { echoQueries } from "@game-data/queries/echoes"
 import { EchoDetailPage } from "@panel/admin/game-data/views/echoes/detail/page"
@@ -18,7 +19,7 @@ export const Route = createFileRoute("/(panel)/admin/echoes/$id")({
     }
 
     const [, echo] = await Promise.all([
-      context.queryClient.query(encoreEchoQueries.detail(id)),
+      softPreload(context.queryClient.query(encoreEchoQueries.detail(id))),
       context.queryClient.query(echoQueries.detail(id)),
     ])
 

@@ -7,6 +7,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty"
+import { Show } from "@/components/utility/show"
 import {
   Alert02Icon,
   ArrowLeft02Icon,
@@ -20,6 +21,24 @@ type RouteErrorProps = ErrorComponentProps & {
   title?: string
   /** Text shown when the error is not an `Error` instance. */
   description?: string
+}
+
+/**
+ * Readable text of a thrown value.
+ *
+ * `JSON.stringify(new Error("boom"))` is `"{}"`: `message` and `stack` are not
+ * enumerable, so the value must be read directly.
+ */
+function errorText(error: unknown, fallback: string): string {
+  if (error instanceof Error) return error.message || error.name
+  if (typeof error === "string") return error
+  if (error === null || error === undefined) return fallback
+
+  try {
+    return JSON.stringify(error) ?? fallback
+  } catch {
+    return String(error)
+  }
 }
 
 /** Full-page error state inherited by every admin catalog route. */
@@ -38,10 +57,20 @@ export function RouteError({
 
         <EmptyHeader>
           <EmptyTitle>{title}</EmptyTitle>
-          <EmptyDescription>
-            {error instanceof Error ? error.message : description}
-          </EmptyDescription>
+          <EmptyDescription>{errorText(error, description)}</EmptyDescription>
         </EmptyHeader>
+
+        <Show
+          when={
+            import.meta.env.DEV && error instanceof Error ? error.stack : null
+          }
+        >
+          {(stack) => (
+            <pre className="max-w-2xl overflow-x-auto rounded-xl border bg-muted/40 p-3 text-left text-xs whitespace-pre-wrap text-muted-foreground">
+              {stack}
+            </pre>
+          )}
+        </Show>
 
         <EmptyContent className="flex-row justify-center">
           <Button type="button" onClick={reset}>

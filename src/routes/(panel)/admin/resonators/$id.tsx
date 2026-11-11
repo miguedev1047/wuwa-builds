@@ -1,5 +1,6 @@
 import { CatalogDetailRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
 import { encoreCharacterQueries } from "@encore/queries/characters"
+import { softPreload } from "@encore/queries/preload"
 import { characterQueries } from "@game-data/queries/characters"
 import { ResonatorDetailPage } from "@panel/admin/game-data/views/resonators/detail/page"
 import { createFileRoute, notFound } from "@tanstack/react-router"
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/(panel)/admin/resonators/$id")({
     const id = Number(params.id)
 
     const [, resonator] = await Promise.all([
-      context.queryClient.query(encoreCharacterQueries.detail(id)),
+      softPreload(context.queryClient.query(encoreCharacterQueries.detail(id))),
       context.queryClient.query(characterQueries.detail(id)),
     ])
 

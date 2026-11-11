@@ -44,6 +44,10 @@ export function fetchEncoreJson<T>(path: string): Promise<T> {
     } as RequestInit)
 
     if (!response.ok) {
+      console.error(
+        `[encore] ${response.status} ${response.statusText} · ${path}`
+      )
+
       throw new Error(`Encore API ${response.status} for ${path}`)
     }
 
