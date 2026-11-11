@@ -51,7 +51,7 @@ export function SequenciesContentLoaded({
   return (
     <div className="grid gap-4">
       {sequences.map((sequency) => (
-        <HoverCard>
+        <HoverCard key={sequency.id}>
           <HoverCardTrigger
             render={
               <Image
