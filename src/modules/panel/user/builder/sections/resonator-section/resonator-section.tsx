@@ -6,7 +6,7 @@ import { useBuildCollection } from "@panel/user/builds/application/build-live-qu
 import { Suspense } from "react"
 
 /** Editable resonator section of the builder. */
-export function ResonatorSection() {
+export function ResonatorBuilderSection() {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
 

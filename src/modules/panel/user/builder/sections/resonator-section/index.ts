@@ -1,1 +1,1 @@
-export { ResonatorSection } from "@builder/sections/resonator-section/resonator-section"
+export * from "@builder/sections/resonator-section/resonator-section"
