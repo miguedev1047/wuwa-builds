@@ -1,21 +1,24 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
+import { WeaponInfoPropertyItem } from "@builder/components/build-card/weapon-info-section/weapon-info-property-item"
 import type { WeaponSummary } from "@game-data/domain/weapon"
 import { weaponQueries } from "@game-data/queries/weapons"
-import { WeaponPropertyItem } from "@builder/components/build-card/weapon-section/weapon-property-item"
 
-type WeaponPropertiesProps = {
+type WeaponInfoPropertiesProps = {
   weapon: WeaponSummary
   level: number
 }
 
 /** Base properties of the selected weapon at its current level. */
-export function WeaponProperties({ weapon, level }: WeaponPropertiesProps) {
+export function WeaponInfoProperties({
+  weapon,
+  level,
+}: WeaponInfoPropertiesProps) {
   const { data: detail } = useSuspenseQuery(weaponQueries.detail(weapon.id))
 
   return (
     <div className="grid grid-cols-2 gap-2">
       {detail.properties.map((property) => (
-        <WeaponPropertyItem
+        <WeaponInfoPropertyItem
           key={property.id}
           property={property}
           level={level}

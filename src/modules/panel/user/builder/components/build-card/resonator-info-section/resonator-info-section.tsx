@@ -12,7 +12,7 @@ export function ResonatorInfoSection() {
   return (
     <Show when={build?.resonator.data}>
       {(resonator) => (
-        <BuildCardSection className="relative p-0">
+        <BuildCardSection className="relative h-full p-0">
           <div className="flex items-center gap-4 pr-4">
             <img
               src={resonator.iconLarge}

@@ -13,10 +13,12 @@ props.
 
 | Part         | File                                                         |
 | ------------ | ------------------------------------------------------------ |
-| Root         | `resonator-section/resonator-section.tsx`                    |
-| Loaded body  | `resonator-section/components/resonator-section-content.tsx` |
-| Mutations    | `resonator-section/application/use-resonator-progress.ts`    |
-| Presentation | `resonator-section/components/resonator-*.tsx`               |
+| Root         | `<section>/<section>.tsx`                                    |
+| Loaded body  | `<section>/components/<section>-section-content.tsx`         |
+| Mutations    | `<section>/application/use-<section>-progress.ts`            |
+| Presentation | `<section>/components/<section>-*.tsx`                       |
+
+Current sections: `resonator-section/` and `weapon-section/`.
 
 Only the root and the content component read the build collection. Presentation
 components never import the store, LocalStorage or the catalog queries, so they
@@ -40,13 +42,16 @@ the variants instead of the section files.
 
 ## Sections
 
-| Section             | Folder                    | Data                                     |
-| ------------------- | ------------------------- | ---------------------------------------- |
-| Resonator info      | `resonator-info-section/` | level and sequence                       |
-| Stats               | `stats-section/`          | `useBuildStats`                          |
-| Skills and passives | `skills-section/`         | catalog detail and build passives        |
-| Weapon              | `weapon-section/`         | compatible weapons, level and refinement |
-| Echo slots          | `echo-slots-section/`     | five slots, set, main stat and substats  |
+| Section             | Folder                    | Data                                        |
+| ------------------- | ------------------------- | ------------------------------------------- |
+| Resonator info      | `resonator-info-section/` | the selected resonator summary              |
+| Stats               | `stats-section/`          | `useBuildStats`                             |
+| Skills and passives | `skills-section/`         | catalog detail and build passives           |
+| Weapon info         | `weapon-info-section/`    | weapon summary and base stats (read-only)   |
+| Echo slots          | `echo-slots-section/`     | five slots, set, main stat and substats     |
+
+The card only displays the weapon. The editable weapon section, its picker and
+its controls live under `sections/weapon-section/`.
 
 ## Dialogs
 
@@ -54,10 +59,11 @@ the variants instead of the section files.
   header and footer stay pinned while the body scrolls inside the viewport.
 - `ui/build-catalog-picker/build-catalog-picker-dialog.tsx` hosts a picker in a
   standalone dialog. The grid lives on a fixed 50vh area with `no-scrollbar`.
-- Echo and weapon pickers live on the card itself: the card action
-  (`echo-picker-dialog.tsx`, `weapon-picker-dialog.tsx`) opens the selection
-  dialog, and an empty card opens it directly. Selection never nests inside the
-  property-editor dialog.
+- Echo pickers live on the card itself: the card action
+  (`echo-picker-dialog.tsx`) opens the selection dialog, and an empty card opens
+  it directly. Selection never nests inside the property-editor dialog.
+- The weapon picker belongs to `sections/weapon-section/` and is not part of the
+  card.
 
 ## Shared catalog picker
 

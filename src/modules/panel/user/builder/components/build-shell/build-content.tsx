@@ -1,13 +1,9 @@
-import { SkeletonSuspense } from "skullet/react"
 import { Show } from "@/components/utility/show"
 import { useBuilderId } from "@builder/application/use-builder-id"
-import {
-  BuildCardGrid,
-  ResonatorGrid,
-  ResonatorListLoading,
-} from "@builder/components/build-card"
-import { ResonatorSection } from "@builder/sections/resonator-section"
+import { BuildCardGrid } from "@builder/components/build-card"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { ResonatorBuilderSection } from "@builder/sections/resonator-section"
+import { WeaponBuilderSection } from "@builder/sections/weapon-section"
 
 /**
  * Body of the builder route.
@@ -20,20 +16,12 @@ export function BuildContent() {
   const { data } = useBuildCollection({ buildId })
 
   return (
-    <Show
-      when={data?.resonator.data}
-      fallback={
-        <div className="space-y-3 rounded-2xl border border-dashed p-6">
-          <SkeletonSuspense
-            skeleton={<ResonatorListLoading columns={10} aspect="portrait" />}
-          >
-            <ResonatorGrid buildId={buildId} columns={10} aspect="portrait" />
-          </SkeletonSuspense>
-        </div>
-      }
-    >
-      <ResonatorSection />
-      <BuildCardGrid />
-    </Show>
+    <div className="space-y-12">
+      <Show when={data?.resonator.data}>
+        <ResonatorBuilderSection />
+        <WeaponBuilderSection />
+        <BuildCardGrid />
+      </Show>
+    </div>
   )
 }

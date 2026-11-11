@@ -1,7 +1,7 @@
 import { SkeletonBox } from "skullet/react"
 
 /** Two property pills that mirror the weapon properties grid. */
-export function WeaponPropertiesSkeleton() {
+export function WeaponInfoPropertiesSkeleton() {
   return (
     <div className="grid grid-cols-2 gap-2">
       {Array.from({ length: 2 }).map((_, index) => (

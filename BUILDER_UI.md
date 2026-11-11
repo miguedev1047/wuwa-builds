@@ -96,10 +96,10 @@ interface BuildProps {
 - **Stats derivados**: se calculan al vuelo; no se persisten.
 
 Las secciones nuevas viven en `src/modules/panel/user/builder/sections/` (hoy
-`resonator-section/`) y se dividen en raíz, cuerpo cargado, mutaciones y
-componentes de presentación. El lienzo de `components/build-card/` es una
-superficie aparte: comparte la colección local, no estado ni componentes de
-presentación con las secciones.
+`resonator-section/` y `weapon-section/`) y se dividen en raíz, cuerpo cargado,
+mutaciones y componentes de presentación. El lienzo de `components/build-card/`
+es una superficie aparte: comparte la colección local, no estado ni componentes
+de presentación con las secciones.
 
 ## Reglas
 

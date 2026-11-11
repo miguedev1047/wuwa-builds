@@ -8,7 +8,6 @@ import { ResonatorIdentity } from "@builder/sections/resonator-section/component
 import { ResonatorLevelControl } from "@builder/sections/resonator-section/components/resonator-level-control"
 import { ResonatorPortrait } from "@builder/sections/resonator-section/components/resonator-portrait"
 import { ResonatorSequences } from "@builder/sections/resonator-section/components/resonator-sequences"
-import { BuildCardSection } from "@builder/ui/build-card-section"
 
 type ResonatorSectionContentProps = {
   build: BuildProps
@@ -26,32 +25,30 @@ export function ResonatorSectionContent({
   const { setLevelStep, toggleSequence } = useResonatorProgress(build.buildId)
 
   return (
-    <BuildCardSection>
-      <div className="flex w-full flex-col items-start gap-4 md:flex-row">
-        <ResonatorPortrait resonator={resonator} />
+    <div className="flex w-full flex-col items-start gap-4 md:flex-row">
+      <ResonatorPortrait resonator={resonator} />
 
-        <div className="flex h-full w-full flex-col justify-between gap-6">
-          <ResonatorIdentity resonator={resonator} />
+      <div className="flex h-full w-full flex-col justify-between gap-6">
+        <ResonatorIdentity resonator={resonator} />
 
-          <ResonatorLevelControl
-            level={build.resonator.level}
-            step={stepFromLevel(build.resonator.level)}
-            maxStep={LEVEL_MILESTONES.length - 1}
-            onStepChange={setLevelStep}
-          />
+        <ResonatorLevelControl
+          level={build.resonator.level}
+          step={stepFromLevel(build.resonator.level)}
+          maxStep={LEVEL_MILESTONES.length - 1}
+          onStepChange={setLevelStep}
+        />
 
-          <ResonatorBaseStats
-            properties={resonator.properties}
-            level={build.resonator.level}
-          />
+        <ResonatorBaseStats
+          properties={resonator.properties}
+          level={build.resonator.level}
+        />
 
-          <ResonatorSequences
-            sequences={resonator.sequences}
-            rank={build.resonator.sequency}
-            onToggle={toggleSequence}
-          />
-        </div>
+        <ResonatorSequences
+          sequences={resonator.sequences}
+          rank={build.resonator.sequency}
+          onToggle={toggleSequence}
+        />
       </div>
-    </BuildCardSection>
+    </div>
   )
 }

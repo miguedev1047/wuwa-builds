@@ -1,15 +1,56 @@
 import { Skeleton } from "@/components/ui/skeleton"
+import { cn } from "cn"
+import {
+  buildCatalogPickerVariants,
+  type BuildCatalogPickerColumns,
+} from "@builder/ui/build-catalog-picker"
 
+interface ResonatorSkeletonProps {
+  columns?: BuildCatalogPickerColumns
+}
+
+const GRID_COLUMNS = 8
+const PICKER_COLUMNS = 6
 const BASE_STATS = 3
 const SEQUENCES = 6
 
+/** Grid skeleton with the section heading, used while the catalog resolves. */
+export function ResonatorGridLoading({
+  columns = GRID_COLUMNS,
+}: ResonatorSkeletonProps = {}) {
+  return (
+    <div className="space-y-2">
+      <Skeleton className="h-7 w-70" />
+
+      <ul className={cn(buildCatalogPickerVariants({ columns }))}>
+        {Array.from({ length: columns * 2 }).map((_, index) => (
+          <Skeleton key={index} className="aspect-square" />
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+/** Square skeleton that mirrors the resonator picker grid. */
+export function ResonatorPickerLoading({
+  columns = PICKER_COLUMNS,
+}: ResonatorSkeletonProps = {}) {
+  return (
+    <div className={cn(buildCatalogPickerVariants({ columns }))}>
+      {Array.from({ length: columns * 2 }).map((_, index) => (
+        <Skeleton key={index} className="aspect-square" />
+      ))}
+    </div>
+  )
+}
+
 /** Placeholder that mirrors the layout of the resonator section. */
-export function ResonatorSectionSkeleton() {
+export function ResonatorSectionLoading() {
   return (
     <div className="flex w-full flex-col items-start gap-4 md:h-96 md:flex-row">
       <Skeleton className="aspect-2/3 w-full shrink-0 sm:w-64" />
 
-      <div className="flex w-full flex-col justify-between gap-8">
+      <div className="flex w-full flex-col gap-6">
         <div className="flex items-center gap-2">
           <Skeleton className="h-7 w-7" />
           <Skeleton className="h-7 w-35" />

@@ -1,16 +1,16 @@
 import { SkeletonSuspense } from "skullet/react"
+import { Empty, EmptyTitle } from "@/components/ui/empty"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
 import { WEAPON_LEVEL_MAX } from "@builds/domain/build"
-import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { useBuilderId } from "@builder/application/use-builder-id"
+import { WeaponInfoProperties } from "@builder/components/build-card/weapon-info-section/weapon-info-properties"
+import { WeaponInfoPropertiesSkeleton } from "@builder/components/build-card/weapon-info-section/weapon-info-properties-skeleton"
 import { BuildCardSection } from "@builder/ui/build-card-section"
-import { WeaponProperties } from "@builder/components/build-card/weapon-section/weapon-properties"
-import { WeaponPropertiesSkeleton } from "@builder/components/build-card/weapon-section/weapon-properties-skeleton"
-import { Empty, EmptyTitle } from "@/components/ui/empty"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 
-/** Card that shows the selected weapon, its level and its base stats. */
-export function WeaponTrigger() {
+/** Read-only card with the weapon of the build and its base stats. */
+export function WeaponInfoSection() {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
 
@@ -18,16 +18,17 @@ export function WeaponTrigger() {
   const level = build?.weapon.level ?? WEAPON_LEVEL_MAX
 
   return (
-    <BuildCardSection className="cursor-pointer">
+    <BuildCardSection>
       <div className="flex h-full flex-col gap-3">
         <h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
           Arma
         </h2>
+
         <Show
           when={weapon}
           fallback={
             <Empty className="border border-dashed">
-              <EmptyTitle>Seleccionar arma</EmptyTitle>
+              <EmptyTitle>Sin arma</EmptyTitle>
             </Empty>
           }
         >
@@ -42,6 +43,7 @@ export function WeaponTrigger() {
                   background="accent"
                   className="w-20"
                 />
+
                 <div className="min-w-0">
                   <p className="truncate text-lg font-medium">
                     {selected.name}
@@ -52,8 +54,8 @@ export function WeaponTrigger() {
                 </div>
               </div>
 
-              <SkeletonSuspense skeleton={<WeaponPropertiesSkeleton />}>
-                <WeaponProperties weapon={selected} level={level} />
+              <SkeletonSuspense skeleton={<WeaponInfoPropertiesSkeleton />}>
+                <WeaponInfoProperties weapon={selected} level={level} />
               </SkeletonSuspense>
             </div>
           )}
