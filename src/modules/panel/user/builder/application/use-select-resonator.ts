@@ -48,7 +48,7 @@ export function useSelectResonator(buildId: string) {
   }
 
   const preloadResonator = (character: CharacterSummary) => {
-    void queryClient.prefetchQuery(characterQueries.detail(character.id))
+    void queryClient.query(characterQueries.detail(character.id))
   }
 
   return { selectResonator, preloadResonator }

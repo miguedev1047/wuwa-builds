@@ -18,7 +18,7 @@ export function useSelectEcho(buildId: string) {
       draft.updateAt = new Date().toISOString()
     })
 
-    void queryClient.prefetchQuery(echoQueries.detail(echo.id))
+    void queryClient.query(echoQueries.detail(echo.id))
   }
 
   return { selectEcho }
