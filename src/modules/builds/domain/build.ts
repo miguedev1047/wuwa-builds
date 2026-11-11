@@ -18,6 +18,7 @@ export const DEFAULT_SEQUENCY_RANK = 0
 export const SEQUENCE_RANK_MAX = 6
 export const SKILL_LEVEL_MAX = 10
 export const DEFAULT_REFINEMENT_RANK = 1
+export const REFINEMENT_RANK_MIN = 1
 export const REFINEMENT_RANK_MAX = 5
 export const ECHO_SLOT_COUNT = 5
 export const SUBSTATS_PER_ECHO_MAX = 5
@@ -108,15 +109,19 @@ export type EchoSubstat = z.infer<typeof echoSubstatSchema>
 
 export const buildPayloadSchema = z.object({
   resonator: z.object({
-    level: z.number().int().min(1).max(CHARACTER_LEVEL_MAX),
+    level: z.number().int().min(CHARACTER_LEVEL_MIN).max(CHARACTER_LEVEL_MAX),
     /** 0 = S0, 6 = S6. Sequences are linear, not independent toggles. */
     sequenceRank: z.number().int().min(0).max(SEQUENCE_RANK_MAX),
     skillLevels: z.array(skillLevelSchema).max(10),
   }),
   weapon: z.object({
     weaponId: numericId.nullable(),
-    level: z.number().int().min(1).max(WEAPON_LEVEL_MAX),
-    refinementRank: z.number().int().min(1).max(REFINEMENT_RANK_MAX),
+    level: z.number().int().min(WEAPON_LEVEL_MIN).max(WEAPON_LEVEL_MAX),
+    refinementRank: z
+      .number()
+      .int()
+      .min(REFINEMENT_RANK_MIN)
+      .max(REFINEMENT_RANK_MAX),
   }),
   echoLoadout: z.tuple([
     echoSlotSchema,
