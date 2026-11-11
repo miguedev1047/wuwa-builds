@@ -29,7 +29,7 @@ export function ResonatorSectionContent({
       <ResonatorPortrait resonator={resonator} />
 
       <div className="flex h-full w-full flex-col justify-between gap-6">
-        <ResonatorIdentity resonator={resonator} />
+        <ResonatorIdentity build={build} resonator={resonator} />
 
         <ResonatorLevelControl
           level={build.resonator.level}

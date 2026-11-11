@@ -51,35 +51,33 @@ export function ResonatorSequenceItem({
 
   return (
     <HoverCard>
+      <Show when={showConnector}>
+        <Separator
+          data-active={isActive}
+          className="h-2 data-[active=true]:bg-brand-warning sm:w-2! md:w-4! xl:w-8!"
+        />
+      </Show>
+
       <HoverCardTrigger
         render={
-          <>
-            <Show when={showConnector}>
-              <Separator
-                data-active={isActive}
-                className="h-2 data-[active=true]:bg-brand-warning sm:w-2! md:w-4! xl:w-8!"
-              />
+          <BuildCard
+            data-active={isActive}
+            onClick={() => onToggle(sequence.index)}
+            role="button"
+            className={sequenceCardVariants({ layout })}
+          >
+            <Image
+              src={sequence.icon}
+              alt={sequence.name}
+              className={cn(isGrid ? "size-full" : "sm:size-8 md:size-10")}
+            />
+
+            <Show when={isGrid}>
+              <Badge className="absolute -top-1 -left-1 z-20 size-5">
+                {sequence.index}
+              </Badge>
             </Show>
-
-            <BuildCard
-              data-active={isActive}
-              onClick={() => onToggle(sequence.index)}
-              role="button"
-              className={sequenceCardVariants({ layout })}
-            >
-              <Image
-                src={sequence.icon}
-                alt={sequence.name}
-                className={cn(isGrid ? "size-full" : "sm:size-8 md:size-10")}
-              />
-
-              <Show when={isGrid}>
-                <Badge className="absolute -top-1 -left-1 z-20 size-5">
-                  {sequence.index}
-                </Badge>
-              </Show>
-            </BuildCard>
-          </>
+          </BuildCard>
         }
       />
 

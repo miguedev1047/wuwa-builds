@@ -30,6 +30,16 @@ public Encore API and saved user builds in D1.
 | `bun run lint`             | ESLint                           |
 | `bun run format` / `check` | Prettier write/check             |
 
+Agents never own port `3000`. `bun run dev` binds it, but a dev server already
+there belongs to the user, so start your own on another port:
+
+```bash
+bunx vite dev --port 3100
+```
+
+Never stop a process by port number. Stop only the process you started, and
+expect the user's server to keep running on `3000` for the whole session.
+
 ## Architecture
 
 Modules follow a light DDD split under `src/modules/<domain>`:

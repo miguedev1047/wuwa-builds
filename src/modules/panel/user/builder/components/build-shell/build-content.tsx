@@ -1,9 +1,10 @@
 import { Show } from "@/components/utility/show"
 import { useBuilderId } from "@builder/application/use-builder-id"
 import { BuildCardGrid } from "@builder/components/build-card"
-import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { ResonatorGrid } from "@builder/sections/resonator-section/components/resonator-grid"
 import { ResonatorBuilderSection } from "@builder/sections/resonator-section"
 import { WeaponBuilderSection } from "@builder/sections/weapon-section"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 
 /**
  * Body of the builder route.
@@ -17,7 +18,14 @@ export function BuildContent() {
 
   return (
     <div className="space-y-12">
-      <Show when={data?.resonator.data}>
+      <Show
+        when={data?.resonator.data}
+        fallback={
+          <div className="space-y-3 rounded-2xl border border-dashed p-6">
+            <ResonatorGrid buildId={buildId} columns={10} aspect="portrait" />
+          </div>
+        }
+      >
         <ResonatorBuilderSection />
         <WeaponBuilderSection />
         <BuildCardGrid />
