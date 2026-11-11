@@ -11,12 +11,12 @@ They follow the admin detail split: a root resolves the build, a content
 component loads the catalog detail, and the remaining components receive plain
 props.
 
-| Part         | File                                                         |
-| ------------ | ------------------------------------------------------------ |
-| Root         | `<section>/<section>.tsx`                                    |
-| Loaded body  | `<section>/components/<section>-section-content.tsx`         |
-| Mutations    | `<section>/application/use-<section>-progress.ts`            |
-| Presentation | `<section>/components/<section>-*.tsx`                       |
+| Part         | File                                                 |
+| ------------ | ---------------------------------------------------- |
+| Root         | `<section>/<section>.tsx`                            |
+| Loaded body  | `<section>/components/<section>-section-content.tsx` |
+| Mutations    | `<section>/application/use-<section>-progress.ts`    |
+| Presentation | `<section>/components/<section>-*.tsx`               |
 
 Current sections: `resonator-section/` and `weapon-section/`.
 
@@ -42,13 +42,13 @@ the variants instead of the section files.
 
 ## Sections
 
-| Section             | Folder                    | Data                                        |
-| ------------------- | ------------------------- | ------------------------------------------- |
-| Resonator info      | `resonator-info-section/` | the selected resonator summary              |
-| Stats               | `stats-section/`          | `useBuildStats`                             |
-| Skills and passives | `skills-section/`         | catalog detail and build passives           |
-| Weapon info         | `weapon-info-section/`    | weapon summary and base stats (read-only)   |
-| Echo slots          | `echo-slots-section/`     | five slots, set, main stat and substats     |
+| Section             | Folder                    | Data                                      |
+| ------------------- | ------------------------- | ----------------------------------------- |
+| Resonator info      | `resonator-info-section/` | the selected resonator summary            |
+| Stats               | `stats-section/`          | `useBuildStats`                           |
+| Skills and passives | `skills-section/`         | catalog detail and build passives         |
+| Weapon info         | `weapon-info-section/`    | weapon summary and base stats (read-only) |
+| Echo slots          | `echo-slots-section/`     | five slots, set, main stat and substats   |
 
 The card only displays the weapon. The editable weapon section, its picker and
 its controls live under `sections/weapon-section/`.
@@ -64,6 +64,14 @@ its controls live under `sections/weapon-section/`.
   it directly. Selection never nests inside the property-editor dialog.
 - The weapon picker belongs to `sections/weapon-section/` and is not part of the
   card.
+
+## Forte tree
+
+The skills dialog of the resonator section renders the forte tree: five
+branches, each with two chained nodes and its skill underneath. The build stores
+the ten nodes in reading order, so the first five are the top row and the last
+five the bottom row; the skill of branch `i` is the skill at index `i`. Every
+skill level is edited with a two-button stepper, never a slider.
 
 ## Shared catalog picker
 

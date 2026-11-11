@@ -2,7 +2,7 @@ import type {
   ResonatorPassivesDataProps,
   ResonatorSkillsDataProps,
 } from "@builds/domain/build-record"
-import { SKILL_LEVEL_MAX } from "@builds/domain/build"
+import { SKILL_LEVEL_MAX, SKILL_LEVEL_MIN } from "@builds/domain/build"
 
 /** Returns a copy with one skill level clamped and replaced. */
 export function withSkillLevel(
@@ -10,11 +10,29 @@ export function withSkillLevel(
   skillId: number,
   level: number
 ): ResonatorSkillsDataProps[] {
-  const nextLevel = Math.min(Math.max(level, 1), SKILL_LEVEL_MAX)
+  const nextLevel = Math.min(Math.max(level, SKILL_LEVEL_MIN), SKILL_LEVEL_MAX)
 
   return skills.map((skill) =>
     skill.skillId === skillId ? { ...skill, level: nextLevel } : skill
   )
+}
+
+/**
+ * Returns a copy with one skill level moved by `delta`.
+ *
+ * The stepper works on steps, not on absolute levels, so the bounds stay in
+ * one place: unknown skills and out-of-range steps never mutate the document.
+ */
+export function withSkillStep(
+  skills: ResonatorSkillsDataProps[],
+  skillId: number,
+  delta: number
+): ResonatorSkillsDataProps[] {
+  const current = skills.find((skill) => skill.skillId === skillId)
+
+  if (!current) return skills
+
+  return withSkillLevel(skills, skillId, current.level + delta)
 }
 
 /** Returns a copy with one passive enabled or disabled. */

@@ -8,6 +8,7 @@ import type {
 import {
   withPassiveEnabled,
   withSkillLevel,
+  withSkillStep,
 } from "@builds/application/resonator-config"
 
 const skills: ResonatorSkillsDataProps[] = [
@@ -39,6 +40,27 @@ describe("withSkillLevel", () => {
   test("clamps levels to the allowed range", () => {
     expect(withSkillLevel(skills, 101, 0)[0].level).toBe(1)
     expect(withSkillLevel(skills, 101, 99)[0].level).toBe(10)
+  })
+})
+
+describe("withSkillStep", () => {
+  test("moves the target skill by one step", () => {
+    const next = withSkillStep(skills, 101, 1)
+
+    expect(next[0].level).toBe(6)
+    expect(next[1].level).toBe(5)
+    expect(skills[0].level).toBe(5)
+  })
+
+  test("keeps the level inside the allowed range", () => {
+    const atMax = [{ ...skills[0], level: 10 }]
+
+    expect(withSkillStep(atMax, 101, 1)[0].level).toBe(10)
+    expect(withSkillStep(skills, 101, -9)[0].level).toBe(1)
+  })
+
+  test("returns the same list for an unknown skill", () => {
+    expect(withSkillStep(skills, 999, 1)).toBe(skills)
   })
 })
 

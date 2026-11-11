@@ -16,6 +16,9 @@ export const WEAPON_LEVEL_MAX = 90
 export const ECHO_LEVEL_MAX = 25
 export const DEFAULT_SEQUENCY_RANK = 0
 export const SEQUENCE_RANK_MAX = 6
+/** Branches of the forte tree: attack, skill, circuit, liberation and intro. */
+export const SKILL_COUNT = 5
+export const SKILL_LEVEL_MIN = 1
 export const SKILL_LEVEL_MAX = 10
 export const DEFAULT_REFINEMENT_RANK = 1
 export const REFINEMENT_RANK_MIN = 1

@@ -32,7 +32,12 @@ const PASSIVE_STAT_IDS: Record<string, string> = {
   "Bono Liberación+": "liberation_bonus",
 }
 
+/** Title as the catalog writes it: trimmed with single spaces. */
+export function normalizePassiveTitle(title: string): string {
+  return title.trim().replace(/\s+/g, " ")
+}
+
 /** Canonical stat id of a passive title, or null when it is not a stat. */
 export function passiveStatId(title: string): string | null {
-  return PASSIVE_STAT_IDS[title.trim().replace(/\s+/g, " ")] ?? null
+  return PASSIVE_STAT_IDS[normalizePassiveTitle(title)] ?? null
 }

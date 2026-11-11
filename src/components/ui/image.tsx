@@ -113,7 +113,11 @@ export function Image({
         loading={loading}
         decoding={decoding}
         onError={() => setIsError(true)}
-        className={cn(imageFitVariants({ fit }), imgClassName)}
+        className={cn(
+          "pointer-events-none select-none",
+          imageFitVariants({ fit }),
+          imgClassName
+        )}
       />
     </figure>
   )

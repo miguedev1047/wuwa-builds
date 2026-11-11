@@ -6,6 +6,7 @@ import {
   CHARACTER_LEVEL_MAX,
   ECHO_LEVEL_MAX,
   ECHO_SLOT_COUNT,
+  SKILL_COUNT,
   SKILL_LEVEL_MAX,
   SUBSTATS_PER_ECHO_MAX,
   WEAPON_LEVEL_MAX,
@@ -21,6 +22,11 @@ import type {
   WeaponDataProps,
 } from "@builds/domain/build-record"
 
+/**
+ * Reading order of the ten tree nodes: five branches of two nodes each, top row
+ * first. The two `skill` nodes of the circuit branch land in the middle column,
+ * which is the layout the builder tree renders.
+ */
 const ORDERED_PASSIVE_INDEX = [0, 1, 8, 2, 3, 4, 5, 9, 6, 7]
 
 /** Five empty echo slots with five empty substats each. */
@@ -116,7 +122,7 @@ export function createResonatorPassives(
       icon: passive.icon,
       type: "passive" as const,
     })),
-    ...resonator.skills.slice(5, 7).map((skill) => ({
+    ...resonator.skills.slice(SKILL_COUNT, SKILL_COUNT + 2).map((skill) => ({
       id: skill.id,
       passiveId: skill.skillId,
       name: skill.name,
