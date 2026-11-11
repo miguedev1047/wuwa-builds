@@ -12,7 +12,7 @@ const PREVIEW_SKILLS = 5
 
 export function SkillsTrigger() {
   return (
-    <BuildCardSection interactive>
+    <BuildCardSection className="cursor-pointer">
       <SkeletonSuspense skeleton={<SkillsTriggerSkeleton />}>
         <SkillsTriggerLoaded />
       </SkeletonSuspense>

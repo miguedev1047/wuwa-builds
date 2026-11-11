@@ -86,6 +86,9 @@ export default defineConfig([
                 "bg-*",
                 "transition-*",
                 "duration-*",
+                "border",
+                "border-*",
+                "shadow-*",
               ],
             },
             {
@@ -134,8 +137,28 @@ export default defineConfig([
               allow: ["layout", "size-*", "text-*", "shrink-*"],
             },
             {
+              pattern: "^Separator$",
+              allow: [
+                "layout",
+                "size-*",
+                "text-*",
+                "shrink-*",
+                "border",
+                "border-*",
+                "bg-*",
+              ],
+            },
+            {
               pattern: "^BuildCard$",
-              allow: ["layout", "size-*", "text-*", "bg-*"],
+              allow: [
+                "layout",
+                "size-*",
+                "text-*",
+                "border",
+                "shadow-*",
+                "border-*",
+                "bg-*",
+              ],
             },
             {
               pattern: "^Tabs(Content|List|Trigger)?$",

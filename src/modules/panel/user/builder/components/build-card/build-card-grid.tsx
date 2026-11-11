@@ -10,7 +10,7 @@ import { SequenciesSection } from "@builder/components/build-card/sequencies-sec
 /** Grid layout that arranges the build card sections. */
 export function BuildCardGrid() {
   return (
-    <BuildCard className="relative z-40 w-auto scale-75 overflow-visible">
+    <BuildCard className="relative z-40 mt-100 w-auto scale-75 overflow-visible max-md:hidden">
       <SequenciesSection />
       <div className="grid h-full w-full grid-cols-1 gap-4 overflow-y-auto md:grid-cols-10 md:grid-rows-12 md:overflow-visible">
         <div className={buildCardSectionAreas.resonator}>

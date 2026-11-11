@@ -5,6 +5,5 @@ export * from "@builder/components/build-card/resonator-info-section/resonator-i
 export * from "@builder/components/build-card/resonator-info-section/resonator-selection"
 export * from "@builder/components/build-card/resonator-info-section/resonator-grid"
 export * from "@builder/components/build-card/resonator-info-section/resonator-item"
-export * from "@builder/components/build-card/resonator-info-section/resonator-picker-dialog"
 export * from "@builder/components/build-card/resonator-info-section/resonator-selector-dialog"
 export * from "@builder/components/build-card/resonator-info-section/resonator-skeletons"

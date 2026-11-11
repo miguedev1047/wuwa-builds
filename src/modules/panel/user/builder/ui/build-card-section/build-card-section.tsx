@@ -1,12 +1,7 @@
 import { cn } from "cn"
-import { BuildCard } from "@builder/ui/build-card"
-import {
-  buildCardSectionVariants,
-  type BuildCardSectionVariants,
-} from "@builder/ui/build-card-section/build-card-section-variants"
+import { Card } from "@/components/ui/card"
 
-type BuildCardSectionProps = React.ComponentProps<typeof BuildCard> &
-  BuildCardSectionVariants
+type BuildCardSectionProps = React.ComponentProps<typeof Card>
 
 /**
  * Card that hosts one section of the build card.
@@ -16,16 +11,12 @@ type BuildCardSectionProps = React.ComponentProps<typeof BuildCard> &
  */
 export function BuildCardSection({
   className,
-  fill,
-  interactive,
-  hovered,
   ...props
 }: BuildCardSectionProps) {
   return (
-    <BuildCard
+    <Card
       data-slot="build-card-section"
-      hovered={interactive || hovered}
-      className={cn(buildCardSectionVariants({ fill, interactive }), className)}
+      className={cn("p-2 md:p-4", className)}
       {...props}
     />
   )

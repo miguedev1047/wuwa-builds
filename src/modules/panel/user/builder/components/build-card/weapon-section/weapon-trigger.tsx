@@ -18,7 +18,7 @@ export function WeaponTrigger() {
   const level = build?.weapon.level ?? WEAPON_LEVEL_MAX
 
   return (
-    <BuildCardSection interactive>
+    <BuildCardSection className="cursor-pointer">
       <div className="flex h-full flex-col gap-3">
         <h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
           Arma

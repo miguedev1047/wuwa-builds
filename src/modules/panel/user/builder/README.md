@@ -4,6 +4,24 @@ The new builder composes one surface (`BuildCard`) from five sections. Each
 section follows the same shape: a trigger card, an optional dialog, and small
 presentation components.
 
+## Editor sections
+
+`sections/` holds the editor sections that live next to the downloadable card.
+They follow the admin detail split: a root resolves the build, a content
+component loads the catalog detail, and the remaining components receive plain
+props.
+
+| Part         | File                                                         |
+| ------------ | ------------------------------------------------------------ |
+| Root         | `resonator-section/resonator-section.tsx`                    |
+| Loaded body  | `resonator-section/components/resonator-section-content.tsx` |
+| Mutations    | `resonator-section/application/use-resonator-progress.ts`    |
+| Presentation | `resonator-section/components/resonator-*.tsx`               |
+
+Only the root and the content component read the build collection. Presentation
+components never import the store, LocalStorage or the catalog queries, so they
+can be rendered with a fixture.
+
 ## Where to change the design
 
 | What                             | File                                                       |

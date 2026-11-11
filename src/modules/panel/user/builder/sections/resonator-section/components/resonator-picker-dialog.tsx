@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
+import { Button } from "@/components/ui/button"
 import { ResonatorSelectorDialog } from "@builder/components/build-card/resonator-info-section/resonator-selector-dialog"
 
-/** Standalone dialog that replaces the resonator of the build. */
+/** Change action of the resonator section, hosted in a catalog picker dialog. */
 export function ResonatorPickerDialog() {
   return (
     <ResonatorSelectorDialog
@@ -15,10 +15,7 @@ export function ResonatorPickerDialog() {
           aria-label="Cambiar resonador"
           title="Cambiar resonador"
         >
-          <HugeiconsIcon
-            icon={ArrowDataTransferHorizontalIcon}
-            strokeWidth={2}
-          />
+          <HugeiconsIcon icon={ArrowDataTransferHorizontalIcon} />
         </Button>
       }
     />

@@ -1,24 +1,35 @@
-import { ResonatorPickerDialog } from "@builder/components/build-card/resonator-info-section/resonator-picker-dialog"
-import { BuildCardSectionDialog } from "@builder/ui/build-card-section"
-import { ResonatorInfoEditor } from "@builder/components/build-card/resonator-info-section/resonator-info-editor"
-import { ResonatorInfoTrigger } from "@builder/components/build-card/resonator-info-section/resonator-info-trigger"
+import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { BuildCardSection } from "@builder/ui/build-card-section"
+import { useBuilderId } from "@builder/application/use-builder-id"
+import { Show } from "@/components/utility/show"
+import { GameIcon, gameIconName } from "@/components/ui/game-icon"
 
 /** Editable card for the resonator level and sequence. */
 export function ResonatorInfoSection() {
-  return (
-    <div className="relative h-full">
-      <BuildCardSectionDialog
-        title="Info del resonador"
-        description="Ajusta el nivel y la secuencia del resonador."
-        dialogContent={{ size: "lg" }}
-        trigger={<ResonatorInfoTrigger />}
-      >
-        {() => <ResonatorInfoEditor />}
-      </BuildCardSectionDialog>
+  const buildId = useBuilderId()
+  const { data: build } = useBuildCollection({ buildId })
 
-      <div className="absolute top-3 right-3 z-10">
-        <ResonatorPickerDialog />
-      </div>
-    </div>
+  return (
+    <Show when={build?.resonator.data}>
+      {(resonator) => (
+        <BuildCardSection className="relative p-0">
+          <div className="flex items-center gap-4 pr-4">
+            <img
+              src={resonator.iconLarge}
+              alt={resonator.name}
+              className="h-15 mask-r-from-90%"
+            />
+            <h2 className="text-xl font-bold uppercase">{resonator.name}</h2>
+
+            <div className="ml-auto">
+              <GameIcon
+                className="size-8"
+                name={gameIconName(resonator.element)}
+              />
+            </div>
+          </div>
+        </BuildCardSection>
+      )}
+    </Show>
   )
 }

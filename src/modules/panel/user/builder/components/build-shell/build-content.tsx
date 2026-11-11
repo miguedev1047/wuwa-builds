@@ -1,13 +1,20 @@
 import { SkeletonSuspense } from "skullet/react"
+import { Show } from "@/components/utility/show"
 import { useBuilderId } from "@builder/application/use-builder-id"
 import {
   BuildCardGrid,
   ResonatorGrid,
   ResonatorListLoading,
 } from "@builder/components/build-card"
+import { ResonatorSection } from "@builder/sections/resonator-section"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
-import { Show } from "@/components/utility/show"
 
+/**
+ * Body of the builder route.
+ *
+ * A build without a resonator shows the catalog grid; once one is selected the
+ * editor sections and the downloadable card render together.
+ */
 export function BuildContent() {
   const buildId = useBuilderId()
   const { data } = useBuildCollection({ buildId })
@@ -25,6 +32,7 @@ export function BuildContent() {
         </div>
       }
     >
+      <ResonatorSection />
       <BuildCardGrid />
     </Show>
   )

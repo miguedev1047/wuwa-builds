@@ -33,7 +33,7 @@ export function EchoSlotTrigger({ slot, setIcon }: EchoSlotTriggerProps) {
   const mainStat = statIconName(slot.mainStatStat)
 
   return (
-    <BuildCardSection className="p-4" interactive>
+    <BuildCardSection className="cursor-pointer p-4">
       <div className="flex h-full flex-col gap-3">
         <Show
           when={slot.data}
