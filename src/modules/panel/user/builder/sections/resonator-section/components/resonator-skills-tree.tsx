@@ -1,3 +1,5 @@
+import { Empty, EmptyTitle } from "@/components/ui/empty"
+import { DragScroll } from "@/components/utility/drag-scroll"
 import { Show } from "@/components/utility/show"
 import {
   withPassiveEnabled,
@@ -10,7 +12,6 @@ import { characterQueries } from "@game-data/queries/characters"
 import { ResonatorSkillBranch } from "@builder/sections/resonator-section/components/resonator-skill-branch"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { ResonatorBonusList } from "./resonator-bonus-list"
-import { Empty, EmptyTitle } from "@/components/ui/empty"
 
 interface ResonatorSkillsTreeProps {
   build: BuildProps
@@ -93,20 +94,22 @@ export function ResonatorSkillsTree({
     >
       <div className="space-y-4 select-none">
         <ResonatorBonusList passives={passives} />
-        <ol className="mx-auto grid max-w-200 grid-cols-5 gap-1 px-2 py-6 sm:min-w-0 sm:gap-3 sm:px-6 sm:py-8">
-          {branches.map((branch) => (
-            <ResonatorSkillBranch
-              key={branch.index}
-              top={branch.top}
-              lift={branch.lift}
-              bottom={branch.bottom}
-              skill={branch.skill}
-              catalogSkill={branch.catalogSkill}
-              onPassiveToggle={handlePassiveToggle}
-              onSkillStep={handleSkillStep}
-            />
-          ))}
-        </ol>
+        <DragScroll label="Árbol de habilidades del resonador">
+          <ol className="mx-auto grid w-120 grid-cols-5 gap-1 px-2 py-6 sm:w-160 sm:gap-3 sm:px-6 sm:py-8 lg:w-200">
+            {branches.map((branch) => (
+              <ResonatorSkillBranch
+                key={branch.index}
+                top={branch.top}
+                lift={branch.lift}
+                bottom={branch.bottom}
+                skill={branch.skill}
+                catalogSkill={branch.catalogSkill}
+                onPassiveToggle={handlePassiveToggle}
+                onSkillStep={handleSkillStep}
+              />
+            ))}
+          </ol>
+        </DragScroll>
       </div>
     </Show>
   )

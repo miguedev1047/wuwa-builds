@@ -5,6 +5,8 @@ import { BuildCardSectionDialog } from "@builder/ui/build-card-section"
 import type { BuildProps } from "@builds/domain/build-record"
 import { StarIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
+import { useIsMobile } from "@/hooks/use-mobile"
+import { Show } from "@/components/utility/show"
 
 interface ResonatorSkillTreeDialogProps {
   build: BuildProps
@@ -21,6 +23,9 @@ export function ResonatorSkillTreeDialog({
   build,
   resonatorId,
 }: ResonatorSkillTreeDialogProps) {
+  const isMobile = useIsMobile()
+
+  const buttonSize = isMobile ? "icon" : ("default" as const)
   return (
     <BuildCardSectionDialog
       title="Habilidades"
@@ -29,12 +34,14 @@ export function ResonatorSkillTreeDialog({
       trigger={
         <span
           className={cn(
-            buttonVariants({ variant: "secondary" }),
+            buttonVariants({ variant: "secondary", size: buttonSize }),
             "pointer-events-none"
           )}
         >
           <HugeiconsIcon icon={StarIcon} />
-          Habilidades
+          <Show when={!isMobile} fallback>
+            Habilidades
+          </Show>
         </span>
       }
     >

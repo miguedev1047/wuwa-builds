@@ -70,7 +70,11 @@ export function ResonatorSkillNode({
             onClick={() => onToggle(!node.enabled)}
             className={skillNodeVariants({ kind, enabled: node.enabled })}
           >
-            <img src={node.icon} alt="" className="size-full object-contain" />
+            <img
+              src={node.icon}
+              alt={node.name}
+              className="pointer-events-none size-full object-contain select-none"
+            />
           </button>
         }
       />

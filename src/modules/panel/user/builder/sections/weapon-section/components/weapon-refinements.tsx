@@ -22,7 +22,7 @@ export function WeaponRefinements({
   const effect = refinements[rank - 1]?.effect
 
   return (
-    <div className="flex items-start gap-8">
+    <div className="flex flex-wrap items-start gap-8">
       <div className="flex shrink-0 items-center gap-4">
         <Button
           variant="outline"
@@ -50,7 +50,7 @@ export function WeaponRefinements({
       <Show when={effect}>
         {(text) => (
           <div
-            className="text-sm/relaxed text-muted-foreground"
+            className="text-sm/relaxed text-muted-foreground max-sm:max-w-100"
             dangerouslySetInnerHTML={{ __html: text }}
           />
         )}
