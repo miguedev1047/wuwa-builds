@@ -1,7 +1,7 @@
 import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
 import { Button } from "@/components/ui/button"
-import { ResonatorSelectorDialog } from "@builder/components/build-card/resonator-info-section/resonator-selector-dialog"
+import { ResonatorSelectorDialog } from "@builder/sections/resonator-section/components/resonator-selector-dialog"
 
 /** Change action of the resonator section, hosted in a catalog picker dialog. */
 export function ResonatorPickerDialog() {

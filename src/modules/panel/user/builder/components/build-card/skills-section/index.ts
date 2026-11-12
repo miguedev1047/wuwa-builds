@@ -1,6 +1,0 @@
-export * from "@builder/components/build-card/skills-section/passive-item"
-export * from "@builder/components/build-card/skills-section/skill-item"
-export * from "@builder/components/build-card/skills-section/skills-editor"
-export * from "@builder/components/build-card/skills-section/skills-editor-skeleton"
-export * from "@builder/components/build-card/skills-section/skills-section"
-export * from "@builder/components/build-card/skills-section/skills-trigger"

@@ -1,6 +1,0 @@
-export * from "@builder/components/build-card/build-card-grid"
-export * from "@builder/components/build-card/echo-slots-section"
-export * from "@builder/components/build-card/resonator-info-section"
-export * from "@builder/components/build-card/skills-section"
-export * from "@builder/components/build-card/stats-section"
-export * from "@builder/components/build-card/weapon-info-section"

@@ -10,6 +10,8 @@ const badgeVariants = cva(
       variant: {
         default:
           "bg-primary text-primary-foreground shadow-app-badge [a]:hover:bg-primary/80",
+        "brand-warning":
+          "bg-brand-warning text-primary-foreground shadow-app-badge [a]:hover:bg-primary/80",
         secondary:
           "bg-secondary text-secondary-foreground shadow-app-badge [a]:hover:bg-secondary/80",
         destructive:

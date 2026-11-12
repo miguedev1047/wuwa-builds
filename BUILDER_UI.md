@@ -89,17 +89,18 @@ interface BuildProps {
 
 ## Secciones del editor
 
-- **Resonador**: selector/portrait, skills, pasivas, nivel y secuencia.
+- **Resonador**: selector/portrait, nivel, secuencia y habilidades con el árbol
+  de pasivas.
 - **Arma**: selector, nivel y refinamiento.
-- **Ecos**: 5 slots con eco, main stat, nivel y 5 substats.
-- **Pasivas**: toggles y suma por stat.
+- **Ecos**: 5 slots con eco, set, main stat, nivel, substats y eco principal.
 - **Stats derivados**: se calculan al vuelo; no se persisten.
 
-Las secciones nuevas viven en `src/modules/panel/user/builder/sections/` (hoy
-`resonator-section/` y `weapon-section/`) y se dividen en raíz, cuerpo cargado,
-mutaciones y componentes de presentación. El lienzo de `components/build-card/`
-es una superficie aparte: comparte la colección local, no estado ni componentes
-de presentación con las secciones.
+Las secciones del editor viven en `src/modules/panel/user/builder/sections/`
+(hoy `resonator-section/`, `weapon-section/` y `echoes-section/`) y se
+dividen en raíz, cuerpo cargado, mutaciones y componentes de presentación. El
+lienzo de `components/build-canvas/` es una superficie de solo lectura: pinta
+la build y nunca abre diálogos, pickers ni escribe en la colección. Las dos capas
+comparten la presentación de `ui/` (por ejemplo `build-echo-card`).
 
 ## Reglas
 

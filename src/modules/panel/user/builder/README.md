@@ -1,14 +1,31 @@
 # Builder UI
 
-The new builder composes one surface (`BuildCard`) from five sections. Each
-section follows the same shape: a trigger card, an optional dialog, and small
-presentation components.
+The builder renders two surfaces over the same local build: the **canvas**, a
+read-only preview laid out on `BuildCard`, and the **editor sections**, which are
+the only places that open dialogs or write to the collection.
+
+## Canvas
+
+`components/build-canvas/` paints the build and nothing else: no triggers, no
+pickers, no `updateBuild`. The ESLint config enforces it.
+
+| Panel     | Folder             | Reads                              |
+| --------- | ------------------ | ---------------------------------- |
+| Resonator | `resonator-panel/` | resonator summary and element      |
+| Stats     | `stats-panel/`     | `useBuildStats`                    |
+| Skills    | `skills-panel/`    | catalog detail and build passives  |
+| Weapon    | `weapon-panel/`    | weapon summary and base stats      |
+| Echoes    | `echoes-panel/`    | five slots through `BuildEchoCard` |
+| Sequences | `sequences-panel/` | resonator sequences rail           |
+
+Panels never define their own grid placement: `build-canvas-layout.ts` holds the
+`md` areas. The canvas is hidden below `md`.
 
 ## Editor sections
 
-`sections/` holds the editor sections that live next to the downloadable card.
-They follow the admin detail split: a root resolves the build, a content
-component loads the catalog detail, and the remaining components receive plain
+`sections/` holds the editor surfaces. They follow the admin detail split: a
+root resolves the build, a content component loads the catalog detail, the
+mutations live in `application/`, and the remaining components receive plain
 props.
 
 | Part         | File                                                 |
@@ -18,52 +35,41 @@ props.
 | Mutations    | `<section>/application/use-<section>-progress.ts`    |
 | Presentation | `<section>/components/<section>-*.tsx`               |
 
-Current sections: `resonator-section/` and `weapon-section/`.
+Current sections: `resonator-section/`, `weapon-section/` and `echoes-section/`.
 
 Only the root and the content component read the build collection. Presentation
 components never import the store, LocalStorage or the catalog queries, so they
 can be rendered with a fixture.
 
+## Shared presentation
+
+`ui/` holds the surfaces both layers share: `build-card` (card surface),
+`build-card-section` (card, dialog and trigger), `build-catalog-picker`,
+`build-text-header` and `build-echo-card` (one read-only echo slot). Shared
+presentation takes everything it paints as props and never reads the build, so
+the canvas and the editor sections can reuse it.
+
 ## Where to change the design
 
-| What                             | File                                                       |
-| -------------------------------- | ---------------------------------------------------------- |
-| Section placement in the grid    | `components/build-card/build-card-grid-layout.ts`          |
-| Card surface, padding and radius | `ui/build-card/build-card.tsx`                             |
-| Section fill/hover state         | `ui/build-card-section/build-card-section-variants.ts`     |
-| Picker grid and item state       | `ui/build-catalog-picker/build-catalog-picker-variants.ts` |
-| Responsive base grid             | `components/build-card/build-card-grid.tsx`                |
-| Section content                  | `components/build-card/<section>/`                         |
-| Picker item content and controls | `ui/build-catalog-picker/`                                 |
-
-Sections never define their own grid placement. To move or resize a section,
-change its entry in `build-card-grid-layout.ts`; to restyle every card, change
-the variants instead of the section files.
-
-## Sections
-
-| Section             | Folder                    | Data                                      |
-| ------------------- | ------------------------- | ----------------------------------------- |
-| Resonator info      | `resonator-info-section/` | the selected resonator summary            |
-| Stats               | `stats-section/`          | `useBuildStats`                           |
-| Skills and passives | `skills-section/`         | catalog detail and build passives         |
-| Weapon info         | `weapon-info-section/`    | weapon summary and base stats (read-only) |
-| Echo slots          | `echo-slots-section/`     | five slots, set, main stat and substats   |
-
-The card only displays the weapon. The editable weapon section, its picker and
-its controls live under `sections/weapon-section/`.
+| What                       | File                                                       |
+| -------------------------- | ---------------------------------------------------------- |
+| Canvas panel placement     | `components/build-canvas/build-canvas-layout.ts`           |
+| Canvas surface and grid    | `components/build-canvas/build-canvas.tsx`                 |
+| Card surface               | `ui/build-card/build-card.tsx`                             |
+| Picker grid and item state | `ui/build-catalog-picker/build-catalog-picker-variants.ts` |
+| Echo slot card             | `ui/build-echo-card/build-echo-card.tsx`                   |
 
 ## Dialogs
 
-- `ui/build-card-section/build-card-section-dialog.tsx` hosts one section. The
+- `ui/build-card-section/build-card-section-dialog.tsx` hosts one editor. The
   header and footer stay pinned while the body scrolls inside the viewport.
 - `ui/build-catalog-picker/build-catalog-picker-dialog.tsx` hosts a picker in a
   standalone dialog. The grid lives on a fixed 50vh area with `no-scrollbar`.
-- Echo pickers live on the card itself: the card action
-  (`echo-picker-dialog.tsx`) opens the selection dialog, and an empty card opens
-  it directly. Selection never nests inside the property-editor dialog.
-- The weapon picker belongs to `sections/weapon-section/` and is not part of the
-  card.
+- Echo pickers belong to `sections/echoes-section/`: an empty card opens the
+  picker directly and a filled card opens the editor, with a separate change
+  action (`echo-picker-dialog.tsx`) for the selected echo.
+- The weapon picker belongs to `sections/weapon-section/` and the resonator
+  picker to `sections/resonator-section/`; neither is part of the canvas.
 
 ## Forte tree
 

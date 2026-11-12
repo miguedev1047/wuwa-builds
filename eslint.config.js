@@ -390,4 +390,35 @@ export default defineConfig([
       "react-hooks/set-state-in-effect": "off",
     },
   },
+  // The build canvas is a read-only surface: it paints the build but never
+  // opens an editor, a picker or writes to the local collection.
+  {
+    files: ["src/modules/panel/user/builder/components/build-canvas/**"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: [
+            {
+              name: "@builds/client/build-store",
+              message:
+                "The canvas reads the build; edits belong to an editor section.",
+            },
+            {
+              name: "@builder/ui/build-card-section",
+              importNames: ["BuildCardSectionDialog", "BuildCardTrigger"],
+              message:
+                "The canvas has no triggers; dialogs belong to an editor section.",
+            },
+            {
+              name: "@builder/ui/build-catalog-picker",
+              importNames: ["BuildCatalogPickerDialog"],
+              message:
+                "The canvas has no pickers; they belong to an editor section.",
+            },
+          ],
+        },
+      ],
+    },
+  },
 ])
