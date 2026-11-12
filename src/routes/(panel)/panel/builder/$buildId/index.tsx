@@ -4,11 +4,15 @@ import { useBuildCollection } from "@panel/user/builds/application/build-live-qu
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { BuildShell } from "@builder/components/build-shell"
 import { useBuilderId } from "@builder/application/use-builder-id"
+import { buildCollection } from "@/modules/builds/client/build-store"
 
 export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
   component: RouteComponent,
   pendingComponent: () => <Spinner />,
   ssr: false,
+  loader: async () => {
+    await buildCollection.preload()
+  },
 })
 
 function RouteComponent() {

@@ -7,6 +7,7 @@ import {
   ItemTitle,
 } from "@/components/ui/item"
 import { Spinner } from "@/components/ui/spinner"
+import { buildCollection } from "@/modules/builds/client/build-store"
 import { useRosterBuilds } from "@panel/user/builds/application/build-live-queries"
 import { Link, useParams } from "@tanstack/react-router"
 import { createFileRoute } from "@tanstack/react-router"
@@ -14,6 +15,9 @@ import { createFileRoute } from "@tanstack/react-router"
 export const Route = createFileRoute("/(panel)/panel/builder/r/$rosterId/")({
   component: RouteComponent,
   pendingComponent: () => <Spinner />,
+  loader: async () => {
+    await buildCollection.preload()
+  },
   ssr: false,
 })
 

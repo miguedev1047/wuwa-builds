@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
+import { buildCollection } from "@/modules/builds/client/build-store"
 import { MAX_LOCAL_BUILDS } from "@builds/domain/build"
 import { useCreateBuild } from "@panel/user/my-builds/application/use-create-build"
 import { LocalBuildList } from "@panel/user/my-builds/components/local-build-list"
@@ -9,6 +10,9 @@ import { Suspense } from "react"
 export const Route = createFileRoute("/(panel)/panel/my-builds")({
   component: RouteComponent,
   ssr: false,
+  loader: async () => {
+    await buildCollection.preload()
+  },
 })
 
 function RouteComponent() {
