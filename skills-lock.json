@@ -1,35 +1,41 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
     "better-ui": {
       "source": "jakubkrehel/skills",
       "sourceType": "github",
       "skillPath": "skills/better-ui/SKILL.md",
-      "computedHash": "4d6e56d526c674b1f21a5acfab1599627e9d829d225e728e52b5bd9fb1005b9d"
+      "computedHash": "36417d09a0d91fb8c8cbbbeeb14f0ac0c0d4399342d80bcec02c8c446ebadce3"
     },
     "cloudflare": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "skillPath": "skills/cloudflare/SKILL.md",
-      "computedHash": "b2728f312765a471f7cac26e3df02b97520c597adccaee943c7c373223b9a0f2"
+      "computedHash": "bbd0f6301eaa58d492940214ba9927debde03ce47b1c2fbd79f1162ab2bf07dd"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
       "skillPath": "skills/find-skills/SKILL.md",
-      "computedHash": "b146008599c31057cef1c145774cea5d5afb30e8f43fa802e47a4b461419aaaf"
+      "computedHash": ""
+    },
+    "panelui-web": {
+      "source": "panel-ui/PanelUI",
+      "sourceType": "github",
+      "skillPath": "skills/panelui-web/SKILL.md",
+      "computedHash": "7a2faf26ad5b2b8bb413f6f1064ab716fef4b54e61b4906b55c2f07c6fd577c2"
     },
     "stack-diagram": {
       "source": "caru-ini/stack-diagram",
       "sourceType": "github",
       "skillPath": "skills/stack-diagram/SKILL.md",
-      "computedHash": "9559d4755ed46bdd4d953ae96835b67c14e42672053c7bcb98f9966ba02bfaa8"
+      "computedHash": "5bf12dc02bf320e2012edfe7dc7c026d1e63f27f75eee7fcdc26eacc49820bed"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/react-best-practices/SKILL.md",
-      "computedHash": "3219a1944e404ffc14d1d9d6aef6dd2e3855b81387ee0a044ccbfe14d34c2357"
+      "computedHash": "7991ed4fbecdac23f47c1a40c243e00a212a9e7f3604db93959b3ae11dffe299"
     }
   }
 }
