@@ -99,10 +99,13 @@ Las secciones del editor viven en `src/modules/panel/user/builder/sections/`
 (hoy `resonator-section/`, `weapon-section/` y `echoes-section/`) y se
 dividen en raíz, cuerpo cargado, mutaciones y componentes de presentación. El
 lienzo de `components/build-canvas/` es una superficie de solo lectura: un grid
-de 10 x 10 con áreas nombradas y filas de 90px (`.build-canvas` en
+de 10 columnas × 8 filas con áreas nombradas y filas de 90px (`.build-canvas` en
 `src/styles.css`) que pinta la build y nunca abre diálogos, pickers ni escribe en
-la colección. Las dos capas comparten la presentación de `ui/` (por ejemplo
-`build-echo-card`).
+la colección. La UI se monta en `components/workspace/`: stage con fondo de
+puntos a la izquierda y rail de secciones a la derecha; por encima de `xl` cada
+panel scrollea por su cuenta, por debajo se apilan. El canvas se centra en el
+stage al 75 % (`.build-canvas-preview`). Las dos capas comparten la presentación
+de `ui/` (por ejemplo `build-echo-card`).
 
 ## Reglas
 
