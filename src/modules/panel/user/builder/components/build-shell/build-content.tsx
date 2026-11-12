@@ -33,8 +33,8 @@ export function BuildContent() {
       }
     >
       <BuildWorkspace.Root>
-        <BuildWorkspace.Stage>
-          <BuildWorkspace.Preview>
+        <BuildWorkspace.Canvas>
+          <BuildWorkspace.Content>
             <BuildCanvas.Root>
               <BuildCanvas.Sequences />
               <BuildCanvas.Resonator />
@@ -43,8 +43,8 @@ export function BuildContent() {
               <BuildCanvas.Weapon />
               <BuildCanvas.Echoes />
             </BuildCanvas.Root>
-          </BuildWorkspace.Preview>
-        </BuildWorkspace.Stage>
+          </BuildWorkspace.Content>
+        </BuildWorkspace.Canvas>
 
         <BuildWorkspace.Rail>
           <ResonatorBuilderSection />

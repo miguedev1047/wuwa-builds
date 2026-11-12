@@ -56,6 +56,9 @@
   --radius-2xl: calc(var(--radius) * 1.1);
   --radius-3xl: calc(var(--radius) * 1.2);
   --radius-4xl: calc(var(--radius) * 1.4);
+  --color-info: var(--info);
+  --color-warning: var(--warning);
+  --color-success: var(--success);
 }
 
 /* OpenCode palette: packages/tui/src/theme/assets/opencode.json. */
@@ -75,6 +78,9 @@
   --accent: oklch(0.9731 0.0069 304.24);
   --accent-foreground: oklch(0.2178 0 0);
   --destructive: oklch(0.5739 0.1896 23.91);
+  --success: oklch(0.696 0.17 162.48);
+  --warning: oklch(0.769 0.188 70.08);
+  --info: oklch(0.623 0.214 259.815);
   --border: oklch(0.8699 0 0);
   --input: oklch(0.7826 0 0);
   --ring: oklch(0.5457 0.1394 297.85);
@@ -127,6 +133,9 @@
   --accent: oklch(0.2712 0.0307 304.41);
   --accent-foreground: oklch(0.9491 0 0);
   --destructive: oklch(0.6709 0.1448 17);
+  --success: oklch(0.696 0.17 162.48);
+  --warning: oklch(0.769 0.188 70.08);
+  --info: oklch(0.623 0.214 259.815);
   --border: oklch(0.3562 0 0);
   --input: oklch(0.4017 0 0);
   --ring: oklch(0.6555 0.1367 299.14);
@@ -217,9 +226,9 @@
   }
 }
 
-/* Build workspace: preview stage + editor rail.
-   The stage keeps the canvas as the protagonist; the rail holds the editor
-   sections and scrolls on its own at xl. */
+/* Build workspace: PanelUI canvas + editor rail.
+   The canvas draws its own dot pattern; the rail holds the editor sections and
+   scrolls on its own at xl. The preview scale lives in `.build-canvas-preview`. */
 @layer components {
   .build-workspace {
     display: grid;
@@ -232,16 +241,6 @@
       grid-template-columns: minmax(0, 1fr) 22rem;
       grid-template-rows: minmax(0, 1fr);
     }
-  }
-
-  .build-workspace-stage {
-    background-image: radial-gradient(
-      circle,
-      color-mix(in oklab, var(--muted-foreground) 18%, transparent) 1px,
-      transparent 1px
-    );
-    background-position: center;
-    background-size: 1.5rem 1.5rem;
   }
 
   .build-canvas-preview {

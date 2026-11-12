@@ -22,7 +22,7 @@ pickers, no `updateBuild`. The ESLint config enforces it.
 The layout is a single 10 x 8 grid with 90px rows and named areas, declared in
 `.build-canvas` (`src/styles.css`); each panel only declares its area through
 `BuildCanvas.Card`. Panels never use column or row line numbers. The canvas is
-rendered inside the workspace stage and scaled there, so it is no longer hidden
+rendered inside the workspace canvas and scaled there, so it is no longer hidden
 below `md`.
 
 ```tsx
@@ -40,31 +40,33 @@ below `md`.
 
 `components/workspace/` frames the builder with four parts:
 
-| Part    | Role                                                             |
-| ------- | ---------------------------------------------------------------- |
-| Root    | Grid; two columns above `xl`, one column below.                  |
-| Stage   | Dotted frame; scrolls on its own at `xl`.                        |
-| Preview | Scale wrapper; `.build-canvas-preview` zooms the canvas to 75 %. |
-| Rail    | Editor column; above `xl` scrolls with a hidden scrollbar.       |
+| Part    | Role                                                                    |
+| ------- | ----------------------------------------------------------------------- |
+| Root    | Grid; two columns above `xl`, one column below.                         |
+| Canvas  | PanelUI canvas: dot pattern, pointer spotlight and frame.               |
+| Content | `Canvas.Content`; scrolls inside the canvas and centers the build card. |
+| Rail    | Editor column; above `xl` scrolls with a hidden scrollbar.              |
 
-The compound follows the same conventions as the admin `EditableSection`
-(parts, `data-slot`, native props) but it is independent: the builder does not
-import the admin system.
+The stage is the [PanelUI Canvas](../../../../components/panelui/canvas.tsx):
+`Canvas.Pattern` draws the dots, `Canvas.Spotlight` lights them, and
+`Canvas.Content` holds the preview. The compound follows the same conventions as
+the admin `EditableSection` (parts, `data-slot`, native props) but it is
+independent: the builder does not import the admin system.
 
 ```tsx
 <BuildWorkspace.Root>
-  <BuildWorkspace.Stage>
-    <BuildWorkspace.Preview>
+  <BuildWorkspace.Canvas>
+    <BuildWorkspace.Content>
       <BuildCanvas.Root>...</BuildCanvas.Root>
-    </BuildWorkspace.Preview>
-  </BuildWorkspace.Stage>
+    </BuildWorkspace.Content>
+  </BuildWorkspace.Canvas>
 
   <BuildWorkspace.Rail>...</BuildWorkspace.Rail>
 </BuildWorkspace.Root>
 ```
 
-Above `xl` the page does not scroll: the stage and the rail scroll
-independently. Below `xl` the rail falls under the stage and the page scrolls.
+Above `xl` the page does not scroll: the canvas and the rail scroll
+independently. Below `xl` the rail falls under the canvas and the page scrolls.
 The canvas scale is a CSS variable (`--build-canvas-preview-scale`, default
 0.75) declared in `.build-canvas-preview`.
 
@@ -101,16 +103,17 @@ the canvas and the editor sections can reuse it.
 
 ## Where to change the design
 
-| What                            | File                                                                 |
-| ------------------------------- | -------------------------------------------------------------------- |
-| Workspace shell                 | `components/workspace/build-workspace.tsx`                           |
-| Workspace dots and canvas scale | `src/styles.css` (`.build-workspace-stage`, `.build-canvas-preview`) |
-| Canvas grid and areas           | `src/styles.css` (`.build-canvas`)                                   |
-| Canvas panel card surface       | `components/build-canvas/build-canvas-card.tsx`                      |
-| Canvas surface and grid         | `components/build-canvas/build-canvas.tsx`                           |
-| Card surface                    | `ui/build-card/build-card.tsx`                                       |
-| Picker grid and item state      | `ui/build-catalog-picker/build-catalog-picker-variants.ts`           |
-| Echo slot card                  | `ui/build-echo-card/build-echo-card.tsx`                             |
+| What                           | File                                                       |
+| ------------------------------ | ---------------------------------------------------------- |
+| Workspace shell                | `components/workspace/build-workspace.tsx`                 |
+| Workspace canvas (dots, light) | `src/components/panelui/canvas.tsx`                        |
+| Preview scale                  | `src/styles.css` (`.build-canvas-preview`)                 |
+| Canvas grid and areas          | `src/styles.css` (`.build-canvas`)                         |
+| Canvas panel card surface      | `components/build-canvas/build-canvas-card.tsx`            |
+| Canvas surface and grid        | `components/build-canvas/build-canvas.tsx`                 |
+| Card surface                   | `ui/build-card/build-card.tsx`                             |
+| Picker grid and item state     | `ui/build-catalog-picker/build-catalog-picker-variants.ts` |
+| Echo slot card                 | `ui/build-echo-card/build-echo-card.tsx`                   |
 
 ## Dialogs
 

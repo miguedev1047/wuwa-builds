@@ -421,4 +421,15 @@ export default defineConfig([
       ],
     },
   },
+  // PanelUI components are copied from the registry and keep its styling and
+  // ref conventions; the project-specific component rules do not apply.
+  {
+    files: ["src/components/panelui/**"],
+    rules: {
+      "shadcn/no-arbitrary-values": "off",
+      "shadcn/no-restyle": "off",
+      "react-hooks/refs": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+    },
+  },
 ])

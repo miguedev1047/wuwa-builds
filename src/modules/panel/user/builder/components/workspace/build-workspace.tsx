@@ -1,3 +1,4 @@
+import { Canvas } from "@/components/panelui/canvas"
 import { cn } from "cn"
 import type { ComponentProps } from "react"
 
@@ -16,43 +17,55 @@ export function BuildWorkspaceRoot({
 }
 
 /**
- * Dotted frame that hosts the build preview.
+ * Stage of the workspace: the PanelUI canvas with its dot pattern and pointer
+ * spotlight.
  *
- * At `xl` it fills the workspace row and scrolls on its own; below `xl` it
- * grows with the canvas and the page scrolls instead.
+ * At `xl` it fills the workspace row and clips its layers; below `xl` it grows
+ * with the preview and the page scrolls. The preview itself scrolls inside
+ * `BuildWorkspace.Content`.
  */
-export function BuildWorkspaceStage({
+export function BuildWorkspaceCanvas({
   className,
+  children,
   ...props
-}: ComponentProps<"div">) {
+}: ComponentProps<typeof Canvas>) {
   return (
-    <div
-      data-slot="build-workspace-stage"
-      className={cn(
-        "build-workspace-stage no-scrollbar flex min-h-0 scroll-fade-y overflow-auto rounded-4xl bg-muted/20 p-4 ring-1 ring-foreground/5 xl:ps-12 dark:ring-foreground/10",
-        className
-      )}
+    <Canvas
+      data-slot="build-workspace-canvas"
+      className={cn("min-h-0 rounded-4xl border-8 border-card", className)}
       {...props}
-    />
+    >
+      <Canvas.Pattern variant="dots" />
+      <Canvas.Spotlight />
+      {children}
+    </Canvas>
   )
 }
 
 /**
- * Scaled wrapper around the read-only canvas.
+ * Scaled preview surface of the workspace.
  *
+ * It is the `Canvas.Content` layer: it sits above the dots, scrolls inside the
+ * stage when the preview is taller than the canvas, and centers the build card.
  * The scale lives in `.build-canvas-preview`; no zoom logic belongs here or in
  * the canvas panels.
  */
-export function BuildWorkspacePreview({
+export function BuildWorkspaceContent({
   className,
+  children,
   ...props
-}: ComponentProps<"div">) {
+}: ComponentProps<typeof Canvas.Content>) {
   return (
-    <div
-      data-slot="build-workspace-preview"
-      className={cn("build-canvas-preview m-auto", className)}
+    <Canvas.Content
+      data-slot="build-workspace-content"
+      className={cn(
+        "no-scrollbar flex min-h-0 overflow-auto p-8 xl:scroll-fade-y",
+        className
+      )}
       {...props}
-    />
+    >
+      <div className="build-canvas-preview m-auto w-full">{children}</div>
+    </Canvas.Content>
   )
 }
 
@@ -70,7 +83,7 @@ export function BuildWorkspaceRail({
     <aside
       data-slot="build-workspace-rail"
       className={cn(
-        "no-scrollbar min-h-0 scroll-fade-y space-y-6 xl:overflow-y-auto xl:overscroll-contain",
+        "no-scrollbar min-h-0 space-y-6 xl:scroll-fade-y xl:overflow-y-auto xl:overscroll-contain",
         className
       )}
       {...props}
@@ -79,14 +92,15 @@ export function BuildWorkspaceRail({
 }
 
 /**
- * Two-column workspace: dotted preview stage plus the editor rail.
+ * Two-column workspace: a PanelUI canvas with the scaled build preview and the
+ * editor rail.
  *
- * The composition is DOM-first: the stage comes before the rail, which is also
- * the mobile order. Below `xl` the rail collapses under the stage.
+ * The composition is DOM-first: the canvas comes before the rail, which is also
+ * the mobile order. Below `xl` the rail collapses under the canvas.
  */
 export const BuildWorkspace = {
   Root: BuildWorkspaceRoot,
-  Stage: BuildWorkspaceStage,
-  Preview: BuildWorkspacePreview,
+  Canvas: BuildWorkspaceCanvas,
+  Content: BuildWorkspaceContent,
   Rail: BuildWorkspaceRail,
 } as const
