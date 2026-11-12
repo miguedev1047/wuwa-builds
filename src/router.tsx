@@ -1,9 +1,13 @@
 import { routeTree } from "@/routeTree.gen"
-
+import { scan } from "react-scan"
 import { createRouter as createTanStackRouter } from "@tanstack/react-router"
 import { setupRouterSsrQueryIntegration } from "@tanstack/react-router-ssr-query"
 import { routerWithDbClient } from "@tanstack/react-router-with-db"
 import { getDb, getQuery, QueryProvider } from "@/providers/query-provider"
+
+if (import.meta.env.DEV) {
+  scan({ enabled: import.meta.env.DEV })
+}
 
 export function getRouter() {
   const { queryClient } = getQuery()
