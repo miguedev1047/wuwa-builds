@@ -216,3 +216,37 @@
     grid-area: echoes;
   }
 }
+
+/* Build workspace: preview stage + editor rail.
+   The stage keeps the canvas as the protagonist; the rail holds the editor
+   sections and scrolls on its own at xl. */
+@layer components {
+  .build-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  @media (min-width: 80rem) {
+    .build-workspace {
+      grid-template-columns: minmax(0, 1fr) 22rem;
+      grid-template-rows: minmax(0, 1fr);
+    }
+  }
+
+  .build-workspace-stage {
+    background-image: radial-gradient(
+      circle,
+      color-mix(in oklab, var(--muted-foreground) 18%, transparent) 1px,
+      transparent 1px
+    );
+    background-position: center;
+    background-size: 1.5rem 1.5rem;
+  }
+
+  .build-canvas-preview {
+    --build-canvas-preview-scale: 0.75;
+    width: 100%;
+    zoom: var(--build-canvas-preview-scale);
+  }
+}
