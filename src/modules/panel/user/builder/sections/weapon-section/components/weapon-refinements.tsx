@@ -22,7 +22,7 @@ export function WeaponRefinements({
   const effect = refinements[rank - 1]?.effect
 
   return (
-    <div className="flex flex-wrap items-start gap-8">
+    <div className="flex items-start gap-4 max-sm:flex-wrap md:gap-8">
       <div className="flex shrink-0 items-center gap-4">
         <Button
           variant="outline"
