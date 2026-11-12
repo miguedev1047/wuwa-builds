@@ -13,7 +13,7 @@ import { BuildTextHeader } from "../../ui/build-text-header"
  * Body of the builder route.
  *
  * A build without a resonator shows the catalog grid; once one is selected the
- * editor sections and the downloadable card render together.
+ * editor sections and the read-only canvas render together.
  */
 export function BuildContent() {
   const buildId = useBuilderId()
@@ -33,7 +33,15 @@ export function BuildContent() {
         <ResonatorBuilderSection />
         <WeaponBuilderSection />
         <EchoesBuilderSection />
-        <BuildCanvas />
+
+        <BuildCanvas.Root>
+          <BuildCanvas.Sequences />
+          <BuildCanvas.Resonator />
+          <BuildCanvas.Stats />
+          <BuildCanvas.Skills />
+          <BuildCanvas.Weapon />
+          <BuildCanvas.Echoes />
+        </BuildCanvas.Root>
       </Show>
     </div>
   )

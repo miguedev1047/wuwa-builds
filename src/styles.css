@@ -175,3 +175,44 @@
     @apply font-mono;
   }
 }
+
+/* Build canvas: 10 x 10 named-area grid.
+   Tailwind has no grid-area utilities and app code forbids arbitrary values,
+   so the template lives here and every panel only declares its area. */
+@layer components {
+  .build-canvas {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-rows: repeat(8, 5.625rem);
+    gap: calc(var(--spacing) * 3);
+    grid-template-areas:
+      "resonator resonator resonator resonator resonator resonator skills skills skills skills"
+      "stats stats stats stats stats stats skills skills skills skills"
+      "stats stats stats stats stats stats weapon weapon weapon weapon"
+      "stats stats stats stats stats stats weapon weapon weapon weapon"
+      "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes"
+      "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes"
+      "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes"
+      "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes";
+  }
+
+  .build-canvas > [data-canvas-area="resonator"] {
+    grid-area: resonator;
+  }
+
+  .build-canvas > [data-canvas-area="stats"] {
+    grid-area: stats;
+  }
+
+  .build-canvas > [data-canvas-area="skills"] {
+    grid-area: skills;
+  }
+
+  .build-canvas > [data-canvas-area="weapon"] {
+    grid-area: weapon;
+  }
+
+  .build-canvas > [data-canvas-area="echoes"] {
+    grid-area: echoes;
+  }
+}

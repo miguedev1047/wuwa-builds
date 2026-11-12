@@ -18,8 +18,21 @@ pickers, no `updateBuild`. The ESLint config enforces it.
 | Echoes    | `echoes-panel/`    | five slots through `BuildEchoCard` |
 | Sequences | `sequences-panel/` | resonator sequences rail           |
 
-Panels never define their own grid placement: `build-canvas-layout.ts` holds the
-`md` areas. The canvas is hidden below `md`.
+The layout is a single 10 x 10 grid with 90px rows and named areas, declared in
+`.build-canvas` (`src/styles.css`); each panel only declares its area through
+`BuildCanvas.Card`. Panels never use column or row line numbers, and the canvas
+is hidden below `md`.
+
+```tsx
+<BuildCanvas.Root>
+  <BuildCanvas.Sequences />
+  <BuildCanvas.Resonator />
+  <BuildCanvas.Stats />
+  <BuildCanvas.Skills />
+  <BuildCanvas.Weapon />
+  <BuildCanvas.Echoes />
+</BuildCanvas.Root>
+```
 
 ## Editor sections
 
@@ -53,7 +66,8 @@ the canvas and the editor sections can reuse it.
 
 | What                       | File                                                       |
 | -------------------------- | ---------------------------------------------------------- |
-| Canvas panel placement     | `components/build-canvas/build-canvas-layout.ts`           |
+| Canvas grid and areas      | `src/styles.css` (`.build-canvas`)                         |
+| Canvas panel card surface  | `components/build-canvas/build-canvas-card.tsx`            |
 | Canvas surface and grid    | `components/build-canvas/build-canvas.tsx`                 |
 | Card surface               | `ui/build-card/build-card.tsx`                             |
 | Picker grid and item state | `ui/build-catalog-picker/build-catalog-picker-variants.ts` |

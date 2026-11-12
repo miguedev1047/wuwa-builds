@@ -98,9 +98,11 @@ interface BuildProps {
 Las secciones del editor viven en `src/modules/panel/user/builder/sections/`
 (hoy `resonator-section/`, `weapon-section/` y `echoes-section/`) y se
 dividen en raíz, cuerpo cargado, mutaciones y componentes de presentación. El
-lienzo de `components/build-canvas/` es una superficie de solo lectura: pinta
-la build y nunca abre diálogos, pickers ni escribe en la colección. Las dos capas
-comparten la presentación de `ui/` (por ejemplo `build-echo-card`).
+lienzo de `components/build-canvas/` es una superficie de solo lectura: un grid
+de 10 x 10 con áreas nombradas y filas de 90px (`.build-canvas` en
+`src/styles.css`) que pinta la build y nunca abre diálogos, pickers ni escribe en
+la colección. Las dos capas comparten la presentación de `ui/` (por ejemplo
+`build-echo-card`).
 
 ## Reglas
 

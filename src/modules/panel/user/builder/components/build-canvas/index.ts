@@ -1,4 +1,5 @@
 export * from "@builder/components/build-canvas/build-canvas"
+export * from "@builder/components/build-canvas/build-canvas-card"
 export * from "@builder/components/build-canvas/echoes-panel"
 export * from "@builder/components/build-canvas/resonator-panel"
 export * from "@builder/components/build-canvas/skills-panel"

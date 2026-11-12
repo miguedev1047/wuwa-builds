@@ -34,7 +34,7 @@ export function SkillsPreviewLoaded() {
   const previewSkills = (resonator?.skills ?? []).slice(0, PREVIEW_SKILLS)
 
   return (
-    <div className="flex h-full flex-col gap-4">
+    <div className="flex h-full min-h-0 flex-col gap-2">
       <div className="flex items-center justify-between gap-3">
         <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
           Habilidades
@@ -42,11 +42,11 @@ export function SkillsPreviewLoaded() {
         <Badge variant="outline">{activePassives.length} activas</Badge>
       </div>
 
-      <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-5">
+      <div className="grid min-h-0 flex-1 grid-cols-5 content-center gap-2">
         <Show
           when={previewSkills.length > 0}
           fallback={Array.from({ length: PREVIEW_SKILLS }).map((_, index) => (
-            <div key={index} className="size-10 rounded-lg bg-muted" />
+            <div key={index} className="aspect-square rounded-lg bg-muted" />
           ))}
         >
           {previewSkills.map((skill) => (
@@ -57,6 +57,7 @@ export function SkillsPreviewLoaded() {
               size="full"
               rounded="lg"
               background="accent"
+              className="aspect-square"
             />
           ))}
         </Show>

@@ -3,13 +3,20 @@ import { useBuilderId } from "@builder/application/use-builder-id"
 import { StatsRowItem } from "@builder/components/build-canvas/stats-panel/stats-row"
 import { StatsSkeleton } from "@builder/components/build-canvas/stats-panel/stats-skeleton"
 import { statsRows } from "@/modules/panel/user/builder/application/stats-view-model"
+import { BuildTextHeader } from "../../../ui/build-text-header"
 
 /** Derived stats of the current build. */
 export function StatsContent() {
   const buildId = useBuilderId()
   const { build, result, isLoading, isError } = useBuildStats({ buildId })
 
-  if (isLoading) return <StatsSkeleton />
+  if (isLoading) {
+    return (
+      <div className="h-full min-h-0">
+        <StatsSkeleton />
+      </div>
+    )
+  }
 
   if (isError) {
     return (
@@ -24,12 +31,10 @@ export function StatsContent() {
   const rows = statsRows(result.stats, build?.resonator.data?.element ?? null)
 
   return (
-    <div className="space-y-4">
-      <h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-        Estadísticas
-      </h2>
+    <div className="flex h-full min-h-0 flex-col gap-4">
+      <BuildTextHeader size="lg">Estadísticas</BuildTextHeader>
 
-      <dl className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-6">
+      <dl className="grid min-h-0 content-between gap-x-6 gap-y-4 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-6">
         {rows.map((row) => (
           <StatsRowItem key={row.key} row={row} />
         ))}

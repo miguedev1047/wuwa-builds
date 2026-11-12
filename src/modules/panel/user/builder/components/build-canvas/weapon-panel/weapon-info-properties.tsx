@@ -16,7 +16,7 @@ export function WeaponInfoProperties({
   const { data: detail } = useSuspenseQuery(weaponQueries.detail(weapon.id))
 
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="grid grid-cols-1 gap-2">
       {detail.properties.map((property) => (
         <WeaponInfoPropertyItem
           key={property.id}

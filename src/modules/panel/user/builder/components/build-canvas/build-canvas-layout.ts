@@ -1,13 +1,15 @@
 /**
- * Grid placement of each build canvas panel.
+ * Areas of the build canvas grid.
  *
- * Change these classes to move or resize a section without touching its
- * component. Mobile uses one column; `md` restores the desktop layout.
+ * The grid template lives in `.build-canvas` (`src/styles.css`); this list only
+ * keeps the `data-canvas-area` values typed, so a typo fails the typecheck.
  */
-export const buildCanvasAreas = {
-  resonator: "md:col-start-1 md:col-end-7 md:row-start-1 md:row-end-2",
-  stats: "md:col-start-1 md:col-end-7 md:row-start-2 md:row-end-7",
-  skills: "md:col-start-7 md:col-end-14 md:row-start-1 md:row-end-4",
-  weapon: "md:col-start-7 md:col-end-14 md:row-start-4 md:row-end-7",
-  echoes: "md:col-start-1 md:col-end-14 md:row-start-7 md:row-end-13",
-} as const
+export const BUILD_CANVAS_AREAS = [
+  "resonator",
+  "stats",
+  "skills",
+  "weapon",
+  "echoes",
+] as const
+
+export type BuildCanvasArea = (typeof BUILD_CANVAS_AREAS)[number]

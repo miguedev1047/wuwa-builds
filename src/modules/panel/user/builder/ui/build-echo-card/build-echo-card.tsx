@@ -12,6 +12,7 @@ import {
 import type { EchoesDataProps } from "@builds/domain/build-record"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
+import { cn } from "cn"
 import { Fragment } from "react"
 import { BuildCard } from "../build-card"
 
@@ -21,6 +22,7 @@ type BuildEchoCardProps = {
   isMain: boolean
   /** Icon of the selected sonata set, resolved by the caller. */
   setIcon?: string
+  className?: string
 }
 
 /**
@@ -29,9 +31,14 @@ type BuildEchoCardProps = {
  * It receives everything it paints as props, so the reading canvas and the
  * editable section can share the same card without sharing state.
  */
-export function BuildEchoCard({ slot, isMain, setIcon }: BuildEchoCardProps) {
+export function BuildEchoCard({
+  slot,
+  isMain,
+  setIcon,
+  className,
+}: BuildEchoCardProps) {
   return (
-    <BuildCard className="h-91 p-4">
+    <BuildCard className={cn("p-4", className)}>
       <div className="flex h-full flex-col gap-3">
         <Show
           when={slot.data}
