@@ -21,7 +21,6 @@ describe("BuildWorkspace", () => {
     expect(html).toContain('data-slot="build-workspace-rail"')
     expect(html).toContain('data-slot="canvas-pattern"')
     expect(html).toContain('data-slot="canvas-spotlight"')
-    expect(html).toContain("build-canvas-preview")
     expect(html).toContain("<aside")
   })
 })

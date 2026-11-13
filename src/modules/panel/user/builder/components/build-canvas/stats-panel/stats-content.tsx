@@ -33,8 +33,7 @@ export function StatsContent() {
   return (
     <div className="flex h-full min-h-0 flex-col gap-4">
       <BuildTextHeader size="lg">Estadísticas</BuildTextHeader>
-
-      <dl className="grid min-h-0 content-between gap-x-6 gap-y-4 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-6">
+      <dl className="grid min-h-0 grid-flow-col grid-cols-2 grid-rows-6 content-between gap-x-6 gap-y-4">
         {rows.map((row) => (
           <StatsRowItem key={row.key} row={row} />
         ))}

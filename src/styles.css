@@ -231,7 +231,7 @@
 
 /* Build workspace: PanelUI canvas + editor rail.
    The canvas draws its own dot pattern; the rail holds the editor sections and
-   scrolls on its own at xl. The preview scale lives in `.build-canvas-preview`. */
+   scrolls on its own at xl. The stage itself never scrolls. */
 @layer components {
   .build-workspace {
     display: grid;
@@ -244,11 +244,5 @@
       grid-template-columns: minmax(0, 1fr) 22rem;
       grid-template-rows: minmax(0, 1fr);
     }
-  }
-
-  .build-canvas-preview {
-    --build-canvas-preview-scale: 0.75;
-    width: 100%;
-    zoom: var(--build-canvas-preview-scale);
   }
 }

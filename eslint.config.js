@@ -115,6 +115,7 @@ export default defineConfig([
                 "text-*",
                 "border-*",
                 "backdrop-blur-*",
+                "opacity-*",
                 "border",
                 "gap-*",
               ],

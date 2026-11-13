@@ -104,8 +104,9 @@ de 10 columnas × 8 filas con áreas nombradas y filas de 90px (`.build-canvas` 
 la colección. La UI se monta en `components/workspace/`: un Canvas de PanelUI
 (`src/components/panelui/canvas.tsx`) con patrón de puntos y spotlight a la
 izquierda, y el rail de secciones a la derecha; por encima de `xl` cada panel
-scrollea por su cuenta, por debajo se apilan. El canvas se centra en el
-`Canvas.Content` al 75 % (`.build-canvas-preview`). Las dos capas comparten la
+scrollea por su cuenta, por debajo se apilan. La tarjeta es un nodo de un `Flow`
+de PanelUI: el stage la encaja al montar y el Flow se encarga del pan, el zoom y
+el arrastre, sin scroll dentro del canvas. Las dos capas comparten la
 presentación de `ui/` (por ejemplo `build-echo-card`).
 
 ## Reglas

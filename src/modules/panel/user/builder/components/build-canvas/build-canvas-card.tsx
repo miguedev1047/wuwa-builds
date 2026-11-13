@@ -1,6 +1,6 @@
 import type { BuildCanvasArea } from "@builder/components/build-canvas/build-canvas-layout"
 import { cn } from "cn"
-import { BuildWorkspace } from "../workspace"
+import { BuildWorkspace } from "@builder/components/workspace"
 
 type BuildCanvasCardProps = React.ComponentProps<"div"> & {
   /** Area of the `.build-canvas` grid this card fills. */

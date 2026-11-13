@@ -25,9 +25,8 @@ export function BuildWorkspaceRoot({
  * Stage of the workspace: the PanelUI canvas with its dot pattern and pointer
  * spotlight.
  *
- * At `xl` it fills the workspace row and clips its layers; below `xl` it grows
- * with the preview and the page scrolls. The preview itself scrolls inside
- * `BuildWorkspace.Content`.
+ * At `xl` it fills the workspace row; below `xl` it keeps a fixed height. The
+ * content never scrolls: the Flow inside pans and zooms the build card.
  */
 export function BuildWorkspaceCanvas({
   className,
@@ -37,7 +36,10 @@ export function BuildWorkspaceCanvas({
   return (
     <Canvas
       data-slot="build-workspace-canvas"
-      className={cn("min-h-0 rounded-4xl border-8 border-card", className)}
+      className={cn(
+        "h-150 min-h-0 rounded-4xl border-8 border-card xl:h-full",
+        className
+      )}
       {...props}
     >
       <Canvas.Pattern variant="dots" />
@@ -48,12 +50,11 @@ export function BuildWorkspaceCanvas({
 }
 
 /**
- * Scaled preview surface of the workspace.
+ * Preview surface of the workspace.
  *
- * It is the `Canvas.Content` layer: it sits above the dots, scrolls inside the
- * stage when the preview is taller than the canvas, and centers the build card.
- * The scale lives in `.build-canvas-preview`; no zoom logic belongs here or in
- * the canvas panels.
+ * It is the `Canvas.Content` layer: it fills the fixed stage, clips what the
+ * Flow paints outside it and leaves the panning and zooming to the Flow. It
+ * never scrolls.
  */
 export function BuildWorkspaceContent({
   className,
@@ -63,13 +64,10 @@ export function BuildWorkspaceContent({
   return (
     <Canvas.Content
       data-slot="build-workspace-content"
-      className={cn(
-        "no-scrollbar flex min-h-0 overflow-auto p-8 xl:scroll-fade-y",
-        className
-      )}
+      className={cn("flex min-h-0 overflow-hidden p-4", className)}
       {...props}
     >
-      <div className="build-canvas-preview m-auto w-full">{children}</div>
+      {children}
     </Canvas.Content>
   )
 }

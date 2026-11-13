@@ -1,5 +1,5 @@
 import { SkeletonSuspense } from "skullet/react"
-import { Empty, EmptyTitle } from "@/components/ui/empty"
+import { Empty } from "@/components/ui/empty"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
 import { WEAPON_LEVEL_MAX } from "@builds/domain/build"
@@ -8,28 +8,27 @@ import { BuildCanvasCard } from "@builder/components/build-canvas/build-canvas-c
 import { WeaponInfoProperties } from "@builder/components/build-canvas/weapon-panel/weapon-info-properties"
 import { WeaponInfoPropertiesSkeleton } from "@builder/components/build-canvas/weapon-panel/weapon-info-properties-skeleton"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
+import { BuildWorkspace } from "@builder/components/workspace"
 
 /** Read-only card with the weapon of the build and its base stats. */
 export function WeaponPanel() {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
 
-  const weapon = build?.weapon.data
+  const noHasWeaponSelected = build?.weapon.data
   const level = build?.weapon.level ?? WEAPON_LEVEL_MAX
 
   return (
     <BuildCanvasCard area="weapon">
-      <h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-        Arma
-      </h2>
+      <Show when={noHasWeaponSelected}>
+        <BuildWorkspace.Text size="xs" family="semibold" textColor="muted">
+          Arma
+        </BuildWorkspace.Text>
+      </Show>
 
       <Show
-        when={weapon}
-        fallback={
-          <Empty className="min-h-0 flex-1 border border-dashed">
-            <EmptyTitle>Sin arma</EmptyTitle>
-          </Empty>
-        }
+        when={noHasWeaponSelected}
+        fallback={<Empty className="min-h-0 flex-1 border border-dashed" />}
       >
         {(selected) => (
           <div className="flex min-h-0 flex-1 flex-col gap-3">

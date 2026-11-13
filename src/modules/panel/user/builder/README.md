@@ -22,8 +22,8 @@ pickers, no `updateBuild`. The ESLint config enforces it.
 The layout is a single 10 x 8 grid with 90px rows and named areas, declared in
 `.build-canvas` (`src/styles.css`); each panel only declares its area through
 `BuildCanvas.Card`. Panels never use column or row line numbers. The canvas is
-rendered inside the workspace canvas and scaled there, so it is no longer hidden
-below `md`.
+rendered inside the workspace stage and fitted by the Flow, so it is no longer
+hidden below `md`.
 
 ```tsx
 <BuildCanvas.Root>
@@ -40,12 +40,12 @@ below `md`.
 
 `components/workspace/` frames the builder with four parts:
 
-| Part    | Role                                                                    |
-| ------- | ----------------------------------------------------------------------- |
-| Root    | Grid; two columns above `xl`, one column below.                         |
-| Canvas  | PanelUI canvas: dot pattern, pointer spotlight and frame.               |
-| Content | `Canvas.Content`; scrolls inside the canvas and centers the build card. |
-| Rail    | Editor column; above `xl` scrolls with a hidden scrollbar.              |
+| Part    | Role                                                                     |
+| ------- | ------------------------------------------------------------------------ |
+| Root    | Grid; two columns above `xl`, one column below.                          |
+| Canvas  | PanelUI canvas: dot pattern, pointer spotlight and a fixed-height stage. |
+| Content | `Canvas.Content`; fills the stage and clips the Flow. It never scrolls.  |
+| Rail    | Editor column; above `xl` scrolls with a hidden scrollbar.               |
 
 The stage is the [PanelUI Canvas](../../../../components/panelui/canvas.tsx):
 `Canvas.Pattern` draws the dots, `Canvas.Spotlight` lights them, and
@@ -65,10 +65,11 @@ independent: the builder does not import the admin system.
 </BuildWorkspace.Root>
 ```
 
-Above `xl` the page does not scroll: the canvas and the rail scroll
-independently. Below `xl` the rail falls under the canvas and the page scrolls.
-The canvas scale is a CSS variable (`--build-canvas-preview-scale`, default
-0.75) declared in `.build-canvas-preview`.
+Above `xl` the page does not scroll: the stage is fixed and the rail scrolls
+independently. Below `xl` the rail falls under the stage and the page scrolls.
+The build card is a single node of a PanelUI `Flow`; the stage fits it on mount
+and the Flow handles panning, zooming and dragging. The Flow also owns its
+controls, so they sit in the stage instead of needing a fixed parent.
 
 The editor sections render as-is in the rail; their compact, rail-aware UI is a
 pending pass, so expect visual breakage until that pass lands.
@@ -107,10 +108,9 @@ the canvas and the editor sections can reuse it.
 | ------------------------------ | ---------------------------------------------------------- |
 | Workspace shell                | `components/workspace/build-workspace.tsx`                 |
 | Workspace canvas (dots, light) | `src/components/panelui/canvas.tsx`                        |
-| Preview scale                  | `src/styles.css` (`.build-canvas-preview`)                 |
+| Canvas flow (card node)        | `components/build-canvas/build-canvas.tsx`                 |
 | Canvas grid and areas          | `src/styles.css` (`.build-canvas`)                         |
 | Canvas panel card surface      | `components/build-canvas/build-canvas-card.tsx`            |
-| Canvas surface and grid        | `components/build-canvas/build-canvas.tsx`                 |
 | Card surface                   | `ui/build-card/build-card.tsx`                             |
 | Picker grid and item state     | `ui/build-catalog-picker/build-catalog-picker-variants.ts` |
 | Echo slot card                 | `ui/build-echo-card/build-echo-card.tsx`                   |
