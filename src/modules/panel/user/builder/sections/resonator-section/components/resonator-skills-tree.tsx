@@ -30,7 +30,7 @@ export function ResonatorSkillsTree({
   const { data: catalog } = useSuspenseQuery(
     characterQueries.detail(resonatorId)
   )
-  const { setSkillLevel, togglePassive } = useResonatorProgress(build.buildId)
+  const { setSkillLevel, togglePassive } = useResonatorProgress(build)
 
   const skills = catalog.skills.slice(0, SKILL_COUNT)
   const levels = new Map(

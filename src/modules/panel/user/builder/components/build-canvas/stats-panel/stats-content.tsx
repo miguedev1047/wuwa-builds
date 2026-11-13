@@ -1,15 +1,22 @@
-import { useBuildStats } from "@panel/user/builds/application/use-build-stats"
-import { useBuilderId } from "@builder/application/use-builder-id"
+import type { BuildProps } from "@builds/domain/build-record"
+import type { CharacterCalculationResult } from "@builds/domain/character-stats"
 import { StatsRowItem } from "@builder/components/build-canvas/stats-panel/stats-row"
 import { StatsSkeleton } from "@builder/components/build-canvas/stats-panel/stats-skeleton"
 import { statsRows } from "@/modules/panel/user/builder/application/stats-view-model"
-import { BuildTextHeader } from "../../../ui/build-text-header"
+import { BuildTextHeader } from "@builder/ui/build-text-header"
 
 /** Derived stats of the current build. */
-export function StatsContent() {
-  const buildId = useBuilderId()
-  const { build, result, isLoading, isError } = useBuildStats({ buildId })
-
+export function StatsContent({
+  build,
+  result,
+  isLoading = false,
+  isError = false,
+}: {
+  build: BuildProps
+  result: CharacterCalculationResult | null
+  isLoading?: boolean
+  isError?: boolean
+}) {
   if (isLoading) {
     return (
       <div className="h-full min-h-0">
@@ -28,7 +35,7 @@ export function StatsContent() {
 
   if (!result) return null
 
-  const rows = statsRows(result.stats, build?.resonator.data?.element ?? null)
+  const rows = statsRows(result.stats, build.resonator.data?.element ?? null)
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-4">

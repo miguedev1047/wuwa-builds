@@ -4,7 +4,7 @@ import { useEchoProgress } from "@builder/sections/echoes-section/application/us
 import { EchoSlot } from "@builder/sections/echoes-section/components/echo-slot"
 import { BuildWorkspace } from "@builder/components/workspace"
 import { echoQueries } from "@game-data/queries/echoes"
-import { getEchoesIds } from "../application/get-echoes-ids"
+import { getEchoesIds } from "@builder/sections/echoes-section/application/get-echoes-ids"
 import { Show } from "@/components/utility/show"
 
 type EchoesSectionContentProps = {
@@ -13,7 +13,7 @@ type EchoesSectionContentProps = {
 
 /** Loaded echoes section: five editable slots. */
 export function EchoesSectionContent({ build }: EchoesSectionContentProps) {
-  const progress = useEchoProgress(build.buildId)
+  const progress = useEchoProgress(build)
   const echoIds = getEchoesIds(build.echoes)
   const { data: details } = useQuery(echoQueries.details(echoIds))
 

@@ -1,4 +1,3 @@
-import { updateBuild } from "@builds/client/build-store"
 import type { CharacterSummary } from "@game-data/domain/character"
 import { useSelectResonator } from "@builder/application/use-select-resonator"
 import { BuildCatalogPickerItem } from "@builder/ui/build-catalog-picker"
@@ -21,21 +20,12 @@ export function ResonatorItem({
   selected = false,
   onSelect,
 }: ResonatorItemProps) {
-  const { selectResonator, preloadResonator } = useSelectResonator(buildId)
+  const { selectResonator } = useSelectResonator(buildId)
 
   const handleSelect = async () => {
     const applied = await selectResonator(resonator)
 
-    if (applied === "error") return
-
-    if (applied === "selected") {
-      preloadResonator(resonator)
-      updateBuild(buildId, (current) => {
-        current.name = `Build de ${resonator.name}`
-      })
-    }
-
-    if (applied) onSelect?.()
+    if (applied === "selected" || applied === "unchanged") onSelect?.()
   }
 
   return (

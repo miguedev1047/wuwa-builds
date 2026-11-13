@@ -1,5 +1,6 @@
+import { buildEdits } from "@builds/application/build-edits"
+import { useSessionId } from "@panel/user/builds/application/build-live-queries"
 import { useQueryClient } from "@tanstack/react-query"
-import { selectEchoSlot } from "@builds/application/select-echo-slot"
 import { updateBuild } from "@builds/client/build-store"
 import type { EchoSummary } from "@game-data/domain/echo"
 import { echoQueries } from "@game-data/queries/echoes"
@@ -7,16 +8,13 @@ import { echoQueries } from "@game-data/queries/echoes"
 /** Assigns an echo to a slot and warms its detail query. */
 export function useSelectEcho(buildId: string) {
   const queryClient = useQueryClient()
+  const identity = { buildId, sessionId: useSessionId() }
 
   const selectEcho = (targetIndex: number, echo: EchoSummary) => {
-    updateBuild(buildId, (draft) => {
-      draft.echoes = selectEchoSlot({
-        echoes: draft.echoes,
-        targetIndex,
-        echo,
-      })
-      draft.updateAt = new Date().toISOString()
-    })
+    const updated = updateBuild(identity, (draft) =>
+      buildEdits.selectEcho(draft, targetIndex, echo)
+    )
+    if (!updated) return
 
     void queryClient.query(echoQueries.detail(echo.id))
   }

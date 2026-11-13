@@ -1,40 +1,19 @@
 # Builder UI
 
-The builder renders two surfaces over the same local build: the **canvas**, a
-read-only preview laid out on `BuildCard`, and the **editor sections**, which are
-the only places that open dialogs or write to the collection. Both live inside
-the workspace shell (`components/workspace/`).
+The editor route resolves the local draft for the current session and passes it
+to `BuildEditorWorkspace`. The workspace composes the header, preview stage and
+editor rail.
 
 ## Canvas
 
-`components/build-canvas/` paints the build and nothing else: no triggers, no
-pickers, no `updateBuild`. The ESLint config enforces it.
-
-| Panel     | Folder             | Reads                              |
-| --------- | ------------------ | ---------------------------------- |
-| Resonator | `resonator-panel/` | resonator summary and element      |
-| Stats     | `stats-panel/`     | `useBuildStats`                    |
-| Skills    | `skills-panel/`    | catalog detail and build passives  |
-| Weapon    | `weapon-panel/`    | weapon summary and base stats      |
-| Echoes    | `echoes-panel/`    | five slots through `BuildEchoCard` |
-| Sequences | `sequences-panel/` | resonator sequences rail           |
+`BuildCanvas` and its panels receive the draft and prepared content as props.
+`BuildWorkspacePreview` resolves catalog data and supplies the stats, sequences,
+skills, weapon properties and echo details. The preview keeps its per-panel
+loading states. The canvas grid can also render directly from fixtures.
 
 The layout is a single 10 x 8 grid with 90px rows and named areas, declared in
-`.build-canvas` (`src/styles.css`); each panel only declares its area through
-`BuildCanvas.Card`. Panels never use column or row line numbers. The canvas is
-rendered inside the workspace stage and fitted by the Flow, so it is no longer
-hidden below `md`.
-
-```tsx
-<BuildCanvas.Root>
-  <BuildCanvas.Sequences />
-  <BuildCanvas.Resonator />
-  <BuildCanvas.Stats />
-  <BuildCanvas.Skills />
-  <BuildCanvas.Weapon />
-  <BuildCanvas.Echoes />
-</BuildCanvas.Root>
-```
+`.build-canvas` (`src/styles.css`). Each panel declares its area through
+`BuildCanvasCard` or `data-canvas-area`.
 
 ## Workspace
 
@@ -57,7 +36,9 @@ independent: the builder does not import the admin system.
 <BuildWorkspace.Root>
   <BuildWorkspace.Canvas>
     <BuildWorkspace.Content>
-      <BuildCanvas.Root>...</BuildCanvas.Root>
+      <BuildWorkspaceStage>
+        <BuildWorkspacePreview build={build} resonatorId={resonator.id} />
+      </BuildWorkspaceStage>
     </BuildWorkspace.Content>
   </BuildWorkspace.Canvas>
 
@@ -77,9 +58,8 @@ pending pass, so expect visual breakage until that pass lands.
 ## Editor sections
 
 `sections/` holds the editor surfaces. They follow the admin detail split: a
-root resolves the build, a content component loads the catalog detail, the
-mutations live in `application/`, and the remaining components receive plain
-props.
+root receives the build, a content component loads the catalog detail, and
+progress handlers delegate to operations in `src/modules/builds/application`.
 
 | Part         | File                                                 |
 | ------------ | ---------------------------------------------------- |
@@ -90,9 +70,9 @@ props.
 
 Current sections: `resonator-section/`, `weapon-section/` and `echoes-section/`.
 
-Only the root and the content component read the build collection. Presentation
-components never import the store, LocalStorage or the catalog queries, so they
-can be rendered with a fixture.
+The editor route subscribes to the build collection. Sections receive the draft
+via props. Local writes verify the build ID and session ID against the current
+row before applying an edit.
 
 ## Shared presentation
 
@@ -108,7 +88,7 @@ the canvas and the editor sections can reuse it.
 | ------------------------------ | ---------------------------------------------------------- |
 | Workspace shell                | `components/workspace/build-workspace.tsx`                 |
 | Workspace canvas (dots, light) | `src/components/panelui/canvas.tsx`                        |
-| Canvas flow (card node)        | `components/build-canvas/build-canvas.tsx`                 |
+| Canvas flow (card node)        | `components/workspace/build-workspace-stage.tsx`           |
 | Canvas grid and areas          | `src/styles.css` (`.build-canvas`)                         |
 | Canvas panel card surface      | `components/build-canvas/build-canvas-card.tsx`            |
 | Card surface                   | `ui/build-card/build-card.tsx`                             |

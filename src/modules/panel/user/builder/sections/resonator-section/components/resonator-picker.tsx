@@ -1,5 +1,5 @@
+import type { BuildProps } from "@builds/domain/build-record"
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { characterQueries } from "@game-data/queries/characters"
 import {
   BuildCatalogPicker,
@@ -15,7 +15,7 @@ import { ResonatorPickerLoading } from "@builder/sections/resonator-section/ui-s
 export type ResonatorPickerColumns = BuildCatalogPickerColumns
 
 interface ResonatorPickerProps {
-  buildId: string
+  build: BuildProps
   onSelected?: () => void
   columns?: ResonatorPickerColumns
   aspect?: ResonatorAspect
@@ -33,15 +33,14 @@ export function ResonatorPicker(props: ResonatorPickerProps) {
 
 /** Resonator adapter of the shared catalog picker. */
 export function ResonatorPickerLoaded({
-  buildId,
+  build,
   onSelected,
   columns,
   aspect = "portrait",
   className,
 }: ResonatorPickerProps) {
   const { data: resonators } = useSuspenseQuery(characterQueries.list())
-  const { data: build } = useBuildCollection({ buildId })
-  const selectedId = build?.resonator.data?.id
+  const selectedId = build.resonator.data?.id
 
   return (
     <BuildCatalogPicker
@@ -53,7 +52,7 @@ export function ResonatorPickerLoaded({
     >
       {(resonator) => (
         <ResonatorItem
-          buildId={buildId}
+          buildId={build.buildId}
           resonator={resonator}
           aspect={aspect}
           selected={selectedId === resonator.id}

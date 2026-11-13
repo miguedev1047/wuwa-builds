@@ -22,7 +22,7 @@ export function ResonatorSectionContent({
   const { data: resonator } = useSuspenseQuery(
     characterQueries.detail(resonatorId)
   )
-  const { setLevelStep, toggleSequence } = useResonatorProgress(build.buildId)
+  const { setLevelStep, toggleSequence } = useResonatorProgress(build)
 
   return (
     <div className="flex w-full flex-col items-start gap-2">

@@ -1,17 +1,13 @@
-import { useBuilderId } from "../../../application/use-builder-id"
-import { BuildWorkspace } from "../../../components/workspace"
+import type { BuildProps } from "@builds/domain/build-record"
+import { BuildWorkspace } from "@builder/components/workspace"
 import { ResonatorPicker } from "./resonator-picker"
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { Button } from "@/components/ui/button"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
 
 /** Change action of the resonator section, hosted in a catalog picker dialog. */
-export function ResonatorPickerDialog() {
-  const buildId = useBuilderId()
-  const { data: build } = useBuildCollection({ buildId })
-
-  const hasResonatorSelected = !!build?.resonator.data
+export function ResonatorPickerDialog({ build }: { build: BuildProps }) {
+  const hasResonatorSelected = !!build.resonator.data
 
   return (
     <BuildWorkspace.Dialog
@@ -31,7 +27,7 @@ export function ResonatorPickerDialog() {
     >
       {({ close }) => (
         <ResonatorPicker
-          buildId={buildId}
+          build={build}
           columns={4}
           aspect="portrait"
           onSelected={close}

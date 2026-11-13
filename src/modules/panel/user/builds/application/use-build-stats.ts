@@ -1,3 +1,4 @@
+import type { BuildProps } from "@builds/domain/build-record"
 import { useMemo } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { resolveBuildCalculation } from "@builds/application/calculation/resolve-build-calculation"
@@ -5,25 +6,22 @@ import { characterQueries } from "@game-data/queries/characters"
 import { echoQueries } from "@game-data/queries/echoes"
 import { sonataQueries } from "@game-data/queries/sonatas"
 import { weaponQueries } from "@game-data/queries/weapons"
-import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 
 function unique(values: number[]): number[] {
   return [...new Set(values)]
 }
 
-/** Reactive adapter from the local build and catalog queries to CharacterStats. */
-export function useBuildStats({ buildId }: { buildId: string }) {
-  const { data: build } = useBuildCollection({ buildId })
-
-  const resonatorId = build?.resonator.data?.id
-  const weaponId = build?.weapon.data?.id
+/** Resolve catalog data and calculate stats for the current draft. */
+export function useBuildStats(build: BuildProps) {
+  const resonatorId = build.resonator.data?.id
+  const weaponId = build.weapon.data?.id
   const echoIds = unique(
-    build?.echoes.flatMap((echo) => (echo.data ? [echo.data.id] : [])) ?? []
+    build.echoes.flatMap((echo) => (echo.data ? [echo.data.id] : []))
   )
   const setIds = unique(
-    build?.echoes.flatMap((echo) =>
+    build.echoes.flatMap((echo) =>
       echo.echoSetId === null ? [] : [echo.echoSetId]
-    ) ?? []
+    )
   )
 
   const resonatorQuery = useQuery({
@@ -56,7 +54,7 @@ export function useBuildStats({ buildId }: { buildId: string }) {
     sonataQuery.isError
 
   const result = useMemo(() => {
-    if (!build || !resonatorQuery.data) return null
+    if (!resonatorQuery.data) return null
 
     return resolveBuildCalculation({
       build,
@@ -73,5 +71,5 @@ export function useBuildStats({ buildId }: { buildId: string }) {
     sonataQuery.data,
   ])
 
-  return { build, result, isLoading, isError }
+  return { result, isLoading, isError, echoDetails: echoQuery.data }
 }

@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
-import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
-import { createFileRoute, Link } from "@tanstack/react-router"
-import { BuildShell } from "@builder/components/build-shell"
+import {
+  useBuildCollection,
+  useSessionId,
+} from "@panel/user/builds/application/build-live-queries"
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router"
+import { BuildEditorWorkspace } from "@builder/components/workspace/build-editor-workspace"
+import { buildEdits } from "@builds/application/build-edits"
 import { useBuilderId } from "@builder/application/use-builder-id"
-import { buildCollection } from "@/modules/builds/client/build-store"
+import {
+  buildCollection,
+  deleteBuild,
+  updateBuild,
+} from "@builds/client/build-store"
 
 export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
   component: RouteComponent,
@@ -17,6 +25,8 @@ export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
 
 function RouteComponent() {
   const buildId = useBuilderId()
+  const sessionId = useSessionId()
+  const navigate = useNavigate()
   const { data: build } = useBuildCollection({ buildId })
 
   if (!build) {
@@ -34,5 +44,18 @@ function RouteComponent() {
     )
   }
 
-  return <BuildShell />
+  const identity = { buildId, sessionId }
+
+  return (
+    <BuildEditorWorkspace
+      build={build}
+      backLink={<Link to="/panel/my-builds" />}
+      onRename={(name) =>
+        updateBuild(identity, (draft) => buildEdits.rename(draft, name))
+      }
+      onDelete={() => {
+        if (deleteBuild(identity)) void navigate({ to: "/panel/my-builds" })
+      }}
+    />
+  )
 }

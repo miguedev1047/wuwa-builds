@@ -1,17 +1,13 @@
+import type { BuildProps } from "@builds/domain/build-record"
 import { GameIcon, gameIconName } from "@/components/ui/game-icon"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
-import { useBuilderId } from "@builder/application/use-builder-id"
 import { BuildCanvasCard } from "@builder/components/build-canvas/build-canvas-card"
-import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 
 /** Read-only card with the resonator portrait, name and element. */
-export function ResonatorPanel() {
-  const buildId = useBuilderId()
-  const { data: build } = useBuildCollection({ buildId })
-
+export function ResonatorPanel({ build }: { build: BuildProps }) {
   return (
-    <Show when={build?.resonator.data}>
+    <Show when={build.resonator.data}>
       {(resonator) => (
         <BuildCanvasCard
           area="resonator"

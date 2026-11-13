@@ -1,37 +1,22 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
-import { SkeletonSuspense } from "skullet/react"
+import type { BuildProps } from "@builds/domain/build-record"
+import type { CharacterDetail } from "@game-data/domain/character"
 import { Badge } from "@/components/ui/badge"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
-import { useBuilderId } from "@builder/application/use-builder-id"
-import { SkillsPreviewSkeleton } from "@builder/components/build-canvas/skills-panel/skills-preview-skeleton"
-import { characterQueries } from "@game-data/queries/characters"
-import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 
 const PREVIEW_SKILLS = 5
 
 /** Read-only preview of the resonator skills and passives. */
-export function SkillsPreview() {
-  return (
-    <SkeletonSuspense skeleton={<SkillsPreviewSkeleton />}>
-      <SkillsPreviewLoaded />
-    </SkeletonSuspense>
-  )
-}
-
-/** Loaded content of the skills and passives preview. */
-export function SkillsPreviewLoaded() {
-  const buildId = useBuilderId()
-  const { data: build } = useBuildCollection({ buildId })
-  const resonatorId = build?.resonator.data?.id ?? 0
-
-  const { data: resonator } = useSuspenseQuery(
-    characterQueries.detail(resonatorId)
-  )
-
-  const passives = build?.resonator.passives ?? []
+export function SkillsPreview({
+  resonator,
+  build,
+}: {
+  resonator: CharacterDetail
+  build: BuildProps
+}) {
+  const passives = build.resonator.passives
   const activePassives = passives.filter((passive) => passive.enabled)
-  const previewSkills = (resonator?.skills ?? []).slice(0, PREVIEW_SKILLS)
+  const previewSkills = resonator.skills.slice(0, PREVIEW_SKILLS)
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-2">
@@ -64,7 +49,7 @@ export function SkillsPreviewLoaded() {
       </div>
 
       <div className="mt-auto flex items-center justify-between gap-3 text-xs text-muted-foreground">
-        <span>{build?.resonator.skills.length ?? 0} habilidades</span>
+        <span>{build.resonator.skills.length} habilidades</span>
         <span>{passives.length} pasivas</span>
       </div>
     </div>

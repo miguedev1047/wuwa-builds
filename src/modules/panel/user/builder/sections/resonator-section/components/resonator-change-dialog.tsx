@@ -22,7 +22,7 @@ export function ResonatorChangeDialog({
     >
       {() => (
         <ResonatorPicker
-          buildId={build.buildId}
+          build={build}
           columns={4}
           aspect="portrait"
           onSelected={() => onOpenChange(!open)}

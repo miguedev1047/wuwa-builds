@@ -20,7 +20,7 @@ export function WeaponSectionContent({
   weaponId,
 }: WeaponSectionContentProps) {
   const { data: weapon } = useSuspenseQuery(weaponQueries.detail(weaponId))
-  const { setLevelStep, stepRefinement } = useWeaponProgress(build.buildId)
+  const { setLevelStep, stepRefinement } = useWeaponProgress(build)
 
   return (
     <div className="space-y-4">
@@ -28,7 +28,7 @@ export function WeaponSectionContent({
         <BuildWorkspace.Text family="bold" textColor="muted" size="xl">
           Arma
         </BuildWorkspace.Text>
-        <WeaponPickerDialog />
+        <WeaponPickerDialog build={build} />
       </div>
 
       <div className="flex h-full w-full flex-col justify-between gap-6">

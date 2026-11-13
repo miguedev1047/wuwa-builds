@@ -9,7 +9,7 @@ import {
 } from "@builder/application/stats-view-model"
 import type { EchoesDataProps } from "@builds/domain/build-record"
 import { cn } from "cn"
-import { BuildWorkspace } from "@builder/components/workspace"
+import { BuildWorkspaceCard } from "@builder/components/workspace/build-workspace"
 
 type BuildEchoCardProps = {
   slot: EchoesDataProps
@@ -32,7 +32,7 @@ export function BuildEchoCard({
   className,
 }: BuildEchoCardProps) {
   return (
-    <BuildWorkspace.Card cardColor="muted" className={cn(className)}>
+    <BuildWorkspaceCard cardColor="muted" className={cn(className)}>
       <div className="flex h-full flex-col gap-3">
         <Show
           when={slot.data}
@@ -106,6 +106,6 @@ export function BuildEchoCard({
           )}
         </Show>
       </div>
-    </BuildWorkspace.Card>
+    </BuildWorkspaceCard>
   )
 }

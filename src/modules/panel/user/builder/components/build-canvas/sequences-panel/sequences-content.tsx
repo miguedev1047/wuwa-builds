@@ -1,48 +1,21 @@
-import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
-import { useBuilderId } from "@builder/application/use-builder-id"
+import type { CharacterDetail } from "@game-data/domain/character"
 import { Show } from "@/components/utility/show"
-import { useSuspenseQuery } from "@tanstack/react-query"
-import { characterQueries } from "@/modules/game-data/queries/characters"
 import { Image } from "@/components/ui/image"
-import { DEFAULT_SEQUENCY_RANK } from "@/modules/builds/domain/build"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { CardDescription, CardTitle } from "@/components/ui/card"
-import { SequencesSkeleton } from "./sequences-skeleton"
-import { Suspense } from "react"
 
-export function SequencesContent() {
-  const buildId = useBuilderId()
-  const { data: build } = useBuildCollection({ buildId })
-
-  return (
-    <Suspense fallback={<SequencesSkeleton />}>
-      <Show when={build?.resonator.data}>
-        {(resonator) => <SequencesContentLoaded resonatorId={resonator.id} />}
-      </Show>
-    </Suspense>
-  )
-}
-
-export function SequencesContentLoaded({
-  resonatorId,
+/** Read-only sequences for the selected resonator. */
+export function SequencesContent({
+  sequences,
+  currentSequency,
 }: {
-  resonatorId: number
+  sequences: CharacterDetail["sequences"]
+  currentSequency: number
 }) {
-  const buildId = useBuilderId()
-  const { data: build } = useBuildCollection({ buildId })
-
-  const { data: resonator } = useSuspenseQuery(
-    characterQueries.detail(resonatorId)
-  )
-
-  const sequences = resonator.sequences
-
-  const currentSequency = build?.resonator.sequency ?? DEFAULT_SEQUENCY_RANK
-
   return (
     <div className="flex h-full items-center justify-between">
       {sequences.map((sequency) => (

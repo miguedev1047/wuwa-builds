@@ -192,7 +192,7 @@ export interface BuildWorkspaceTextProps
  * It always renders an `h2`, so the screen keeps one `h1` per route and every
  * section title stays at the same level.
  */
-function BuildWorkspaceText({
+export function BuildWorkspaceText({
   className,
   textColor,
   family,
@@ -231,7 +231,7 @@ export interface BuildWorkspaceCardProps
     React.ComponentProps<"div">,
     VariantProps<typeof buildWorkspaceCardVariants> {}
 
-function BuildWorkspaceCard({
+export function BuildWorkspaceCard({
   className,
   cardColor,
   ...props

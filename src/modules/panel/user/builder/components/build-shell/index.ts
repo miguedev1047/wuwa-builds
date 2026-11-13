@@ -1,5 +1,0 @@
-export * from "@builder/components/build-shell/build-content"
-export * from "@builder/components/build-shell/build-delete"
-export * from "@builder/components/build-shell/build-header"
-export * from "@builder/components/build-shell/build-name"
-export * from "@builder/components/build-shell/build-shell"

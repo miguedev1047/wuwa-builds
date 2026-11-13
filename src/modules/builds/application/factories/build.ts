@@ -71,6 +71,8 @@ export function createEmptyResonator(): ResonatorDataProps {
   }
 }
 
+export const DEFAULT_BUILD_NAME = "Nueva build"
+
 export interface CreateEmptyBuildInput {
   buildId: string
   sessionId: string
@@ -83,7 +85,7 @@ export function createEmptyBuild({
   buildId,
   sessionId,
   createdAt,
-  name = "Nueva build",
+  name = DEFAULT_BUILD_NAME,
 }: CreateEmptyBuildInput): BuildProps {
   return {
     buildId,

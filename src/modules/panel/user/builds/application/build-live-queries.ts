@@ -11,7 +11,8 @@ import {
 import { useRouteContext } from "@tanstack/react-router"
 import { buildCollection } from "@builds/client/build-store"
 
-function useSessionId() {
+/** Active panel session for local build operations. */
+export function useSessionId() {
   const { session } = useRouteContext({ from: "/(panel)/panel" })
 
   return session.session.id

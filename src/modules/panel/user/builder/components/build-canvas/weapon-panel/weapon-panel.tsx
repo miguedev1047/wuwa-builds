@@ -1,29 +1,28 @@
-import { SkeletonSuspense } from "skullet/react"
+import type { BuildProps } from "@builds/domain/build-record"
 import { Empty } from "@/components/ui/empty"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
 import { WEAPON_LEVEL_MAX } from "@builds/domain/build"
-import { useBuilderId } from "@builder/application/use-builder-id"
 import { BuildCanvasCard } from "@builder/components/build-canvas/build-canvas-card"
-import { WeaponInfoProperties } from "@builder/components/build-canvas/weapon-panel/weapon-info-properties"
-import { WeaponInfoPropertiesSkeleton } from "@builder/components/build-canvas/weapon-panel/weapon-info-properties-skeleton"
-import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
-import { BuildWorkspace } from "@builder/components/workspace"
+import { BuildWorkspaceText } from "@builder/components/workspace/build-workspace"
 
 /** Read-only card with the weapon of the build and its base stats. */
-export function WeaponPanel() {
-  const buildId = useBuilderId()
-  const { data: build } = useBuildCollection({ buildId })
-
-  const noHasWeaponSelected = build?.weapon.data
-  const level = build?.weapon.level ?? WEAPON_LEVEL_MAX
+export function WeaponPanel({
+  build,
+  properties,
+}: {
+  build: BuildProps
+  properties: React.ReactNode
+}) {
+  const noHasWeaponSelected = build.weapon.data
+  const level = build.weapon.level ?? WEAPON_LEVEL_MAX
 
   return (
     <BuildCanvasCard area="weapon">
       <Show when={noHasWeaponSelected}>
-        <BuildWorkspace.Text size="xs" family="semibold" textColor="muted">
+        <BuildWorkspaceText size="xs" family="semibold" textColor="muted">
           Arma
-        </BuildWorkspace.Text>
+        </BuildWorkspaceText>
       </Show>
 
       <Show
@@ -51,9 +50,7 @@ export function WeaponPanel() {
             </div>
 
             <div className="no-scrollbar min-h-0 flex-1 overflow-y-auto">
-              <SkeletonSuspense skeleton={<WeaponInfoPropertiesSkeleton />}>
-                <WeaponInfoProperties weapon={selected} level={level} />
-              </SkeletonSuspense>
+              {properties}
             </div>
           </div>
         )}

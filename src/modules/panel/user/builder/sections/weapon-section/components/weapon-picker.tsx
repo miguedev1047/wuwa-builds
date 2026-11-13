@@ -1,3 +1,4 @@
+import type { BuildProps } from "@builds/domain/build-record"
 import { useCompatibleWeapons } from "@builder/sections/weapon-section/application/use-compatible-weapons"
 import { WeaponItem } from "@builder/sections/weapon-section/components/weapon-item"
 import {
@@ -10,7 +11,7 @@ import { WeaponPickerLoading } from "@builder/sections/weapon-section/ui-states/
 export type WeaponPickerColumns = BuildCatalogPickerColumns
 
 type WeaponPickerProps = {
-  buildId: string
+  build: BuildProps
   onSelected?: () => void
   columns?: WeaponPickerColumns
   className?: string
@@ -26,11 +27,11 @@ export function WeaponPicker(props: WeaponPickerProps) {
 }
 
 export function WeaponPickerLoaded({
-  buildId,
+  build,
   columns,
   onSelected,
 }: WeaponPickerProps) {
-  const { items, selectedId } = useCompatibleWeapons(buildId)
+  const { items, selectedId } = useCompatibleWeapons(build)
 
   return (
     <BuildCatalogPicker
@@ -41,7 +42,7 @@ export function WeaponPickerLoaded({
     >
       {(weapon) => (
         <WeaponItem
-          buildId={buildId}
+          buildId={build.buildId}
           weapon={weapon}
           selected={weapon.id === selectedId}
           onSelect={onSelected}

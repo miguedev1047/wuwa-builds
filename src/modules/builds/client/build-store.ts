@@ -8,17 +8,28 @@ export function insertBuild(build: BuildProps): void {
   buildCollection.insert(build)
 }
 
-/** Update one local build. */
+export type LocalBuildIdentity = Pick<BuildProps, "buildId" | "sessionId">
+
+/** Update one local build owned by the current session. */
 export function updateBuild(
-  buildId: string,
+  { buildId, sessionId }: LocalBuildIdentity,
   updater: (draft: BuildProps) => void
-): void {
+): boolean {
+  if (buildCollection.get(buildId)?.sessionId !== sessionId) return false
+
   buildCollection.update(buildId, updater)
+  return true
 }
 
 /** Delete one local build. */
-export function deleteBuild(buildId: string): void {
+export function deleteBuild({
+  buildId,
+  sessionId,
+}: LocalBuildIdentity): boolean {
+  if (buildCollection.get(buildId)?.sessionId !== sessionId) return false
+
   buildCollection.delete(buildId)
+  return true
 }
 
 /** Synchronous count used by creation guards. */
