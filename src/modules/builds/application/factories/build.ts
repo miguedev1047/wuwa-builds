@@ -21,6 +21,7 @@ import type {
   ResonatorSkillsDataProps,
   WeaponDataProps,
 } from "@builds/domain/build-record"
+import { randomBackgroundIndex } from "@builds/application/backgrounds"
 
 /**
  * Reading order of the ten tree nodes: five branches of two nodes each, top row
@@ -90,6 +91,7 @@ export function createEmptyBuild({
   return {
     buildId,
     sessionId,
+    backgroundIndex: randomBackgroundIndex(),
     name,
     resonator: createEmptyResonator(),
     weapon: createEmptyWeapon(),

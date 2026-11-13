@@ -17,6 +17,7 @@ import {
   createBuildFromCharacter,
   createEmptyBuild,
 } from "@builds/application/factories/build"
+import { BACKGROUNDS } from "@builds/application/backgrounds"
 
 const character = { id: 42, name: "Cartethyia" } as CharacterSummary
 
@@ -64,6 +65,18 @@ describe("createEmptyBuild", () => {
         (echo) => echo.substats.length === SUBSTATS_PER_ECHO_MAX
       )
     ).toBe(true)
+  })
+
+  test("starts with a random background", () => {
+    const build = createEmptyBuild({
+      buildId: "build-1",
+      sessionId: "session-1",
+      createdAt: "2026-01-01T00:00:00.000Z",
+    })
+
+    expect(build.backgroundIndex).toBeTypeOf("number")
+    expect(build.backgroundIndex).toBeGreaterThanOrEqual(0)
+    expect(build.backgroundIndex).toBeLessThan(BACKGROUNDS.length)
   })
 
   test("gives each echo its own substat array", () => {

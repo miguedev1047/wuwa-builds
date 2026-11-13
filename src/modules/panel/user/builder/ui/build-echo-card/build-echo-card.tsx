@@ -32,7 +32,7 @@ export function BuildEchoCard({
   className,
 }: BuildEchoCardProps) {
   return (
-    <BuildWorkspaceCard cardColor="muted" className={cn(className)}>
+    <BuildWorkspaceCard cardColor="glass" className={cn(className)}>
       <div className="flex h-full flex-col gap-3">
         <Show
           when={slot.data}

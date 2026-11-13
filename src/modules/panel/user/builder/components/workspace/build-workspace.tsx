@@ -216,6 +216,7 @@ export const buildWorkspaceCardVariants = cva(
     variants: {
       cardColor: {
         default: "bg-card",
+        glass: "bg-card/70 backdrop-blur-2xl",
         input: "bg-input/50",
         muted: "bg-muted",
       },

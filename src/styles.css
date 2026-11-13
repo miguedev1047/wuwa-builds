@@ -49,6 +49,7 @@
   --color-brand-yellow: var(--brand-yellow);
   --shadow-app-surface: var(--app-shadow-surface);
   --shadow-app-badge: var(--app-shadow-badge);
+  --blur-app-backdrop: 2px;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);

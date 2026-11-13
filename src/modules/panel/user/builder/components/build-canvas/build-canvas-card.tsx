@@ -22,7 +22,7 @@ export function BuildCanvasCard({
   return (
     <BuildWorkspaceCard
       data-canvas-area={area}
-      cardColor="muted"
+      cardColor="glass"
       className={cn(
         "relative flex h-full min-h-0 flex-col gap-2 overflow-hidden rounded-xl text-sm",
         className

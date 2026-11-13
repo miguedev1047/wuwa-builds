@@ -1,6 +1,9 @@
 import { Flow } from "@/components/panelui/flow"
 import { buildCardFrameClassName } from "@builder/components/build-canvas/build-card-frame"
 import { cn } from "cn"
+import { useBuilderId } from "../../application/use-builder-id"
+import { useBuildCollection } from "../../../builds/application/build-live-queries"
+import { BACKGROUNDS } from "@/modules/builds/application/backgrounds"
 
 /** Interactive viewport of the builder canvas. */
 export function BuildWorkspaceStage({
@@ -8,6 +11,11 @@ export function BuildWorkspaceStage({
   children,
   ...props
 }: React.ComponentProps<"section">) {
+  const buildId = useBuilderId()
+  const { data: build } = useBuildCollection({ buildId })
+
+  const currentBackground = BACKGROUNDS[build?.backgroundIndex ?? 0]
+
   return (
     <section
       data-slot="build-canvas"
@@ -24,9 +32,20 @@ export function BuildWorkspaceStage({
         <Flow.Node
           id="build-card"
           position={{ x: 0, y: 0 }}
-          className={buildCardFrameClassName}
+          className={cn(buildCardFrameClassName, "overflow-hidden")}
         >
-          <Flow.NodeContent className="p-0">{children}</Flow.NodeContent>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0"
+          >
+            <div
+              className="absolute inset-0 scale-110 bg-cover bg-center bg-no-repeat blur-app-backdrop"
+              style={{ backgroundImage: `url(${currentBackground})` }}
+            />
+          </div>
+          <Flow.NodeContent className="relative p-0">
+            {children}
+          </Flow.NodeContent>
         </Flow.Node>
 
         <Flow.Controls />

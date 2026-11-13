@@ -1,15 +1,5 @@
 import { Button } from "@/components/ui/button"
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -20,10 +10,13 @@ import {
   DeleteIcon,
   Download01Icon,
   EllipsisIcon,
+  Image01Icon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { useState } from "react"
 import { Spinner } from "@/components/ui/spinner"
+import { BuildBackgrounds } from "./build-backgrounds-dialog"
+import { BuildDeleteDialog } from "./build-delete-dialog"
 
 type BuildActionsProps = {
   canDownload: boolean
@@ -40,6 +33,7 @@ export function BuildActions({
   onDelete,
 }: BuildActionsProps) {
   const [confirmDelete, setConfirmDelete] = useState(false)
+  const [backgroundOpen, setBackgroundOpen] = useState(false)
 
   return (
     <>
@@ -64,6 +58,10 @@ export function BuildActions({
             <HugeiconsIcon icon={Download01Icon} />
             {isDownloading ? "Preparando PNG…" : "Descargar PNG"}
           </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setBackgroundOpen(true)}>
+            <HugeiconsIcon icon={Image01Icon} />
+            Cambiar fondo
+          </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
             variant="destructive"
@@ -75,22 +73,16 @@ export function BuildActions({
         </DropdownMenuContent>
       </DropdownMenu>
 
-      <AlertDialog open={confirmDelete} onOpenChange={setConfirmDelete}>
-        <AlertDialogContent size="sm">
-          <AlertDialogHeader>
-            <AlertDialogTitle>¿Eliminar build?</AlertDialogTitle>
-            <AlertDialogDescription>
-              La build se eliminará de este navegador de forma permanente.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancelar</AlertDialogCancel>
-            <AlertDialogAction variant="destructive" onClick={onDelete}>
-              Eliminar
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+      <BuildBackgrounds
+        open={backgroundOpen}
+        onOpenChange={setBackgroundOpen}
+      />
+
+      <BuildDeleteDialog
+        open={confirmDelete}
+        onOpenChange={setConfirmDelete}
+        onDelete={onDelete}
+      />
     </>
   )
 }

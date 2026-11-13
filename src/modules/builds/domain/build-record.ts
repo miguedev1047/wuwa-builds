@@ -55,6 +55,7 @@ export interface ResonatorDataProps {
 export interface BuildProps {
   buildId: string
   sessionId: string
+  backgroundIndex: number | null
   name: string
   resonator: ResonatorDataProps
   weapon: WeaponDataProps
