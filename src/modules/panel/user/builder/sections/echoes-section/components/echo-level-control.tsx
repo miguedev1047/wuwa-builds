@@ -1,7 +1,11 @@
-import { Badge } from "@/components/ui/badge"
-import { Slider } from "@/components/ui/slider"
+import { Slider } from "@/components/panelui/slider"
+import { BuildWorkspace } from "@builder/components/workspace"
 import type { EchoesDataProps } from "@builds/domain/build-record"
-import { ECHO_LEVEL_MILESTONES, echoStepFromLevel } from "@builds/domain/build"
+import {
+  ECHO_LEVEL_MILESTONES,
+  echoLevelFromStep,
+  echoStepFromLevel,
+} from "@builds/domain/build"
 
 type EchoLevelControlProps = {
   slot: EchoesDataProps
@@ -19,19 +23,17 @@ export function EchoLevelControl({ slot, onChange }: EchoLevelControlProps) {
   }
 
   return (
-    <section className="space-y-3">
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">Nivel del eco</p>
-        <Badge variant="outline">Nv. {slot.level}</Badge>
-      </div>
+    <div className="space-y-2">
+      <BuildWorkspace.Text size="sm">Nivel del eco</BuildWorkspace.Text>
 
       <Slider
         value={step}
         min={0}
         max={ECHO_LEVEL_MILESTONES.length - 1}
         onValueChange={handleLevelChange}
+        format={(value) => `Nv. ${echoLevelFromStep(value)}`}
         aria-label={`Nivel del eco ${slot.index + 1}`}
       />
-    </section>
+    </div>
   )
 }

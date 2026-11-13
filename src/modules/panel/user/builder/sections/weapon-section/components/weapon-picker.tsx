@@ -1,23 +1,42 @@
-import { useBuilderId } from "@builder/application/use-builder-id"
 import { useCompatibleWeapons } from "@builder/sections/weapon-section/application/use-compatible-weapons"
 import { WeaponItem } from "@builder/sections/weapon-section/components/weapon-item"
-import { BuildCatalogPicker } from "@builder/ui/build-catalog-picker"
+import {
+  BuildCatalogPicker,
+  type BuildCatalogPickerColumns,
+} from "@builder/ui/build-catalog-picker"
+import { Suspense } from "react"
+import { WeaponPickerLoading } from "@builder/sections/weapon-section/ui-states/weapon-loading"
+
+export type WeaponPickerColumns = BuildCatalogPickerColumns
 
 type WeaponPickerProps = {
-  /** Called after the weapon is applied to the build. */
+  buildId: string
   onSelected?: () => void
+  columns?: WeaponPickerColumns
+  className?: string
 }
 
 /** Weapons compatible with the selected resonator, as a dialog grid. */
-export function WeaponPicker({ onSelected }: WeaponPickerProps) {
-  const buildId = useBuilderId()
+export function WeaponPicker(props: WeaponPickerProps) {
+  return (
+    <Suspense fallback={<WeaponPickerLoading columns={props.columns} />}>
+      <WeaponPickerLoaded {...props} />
+    </Suspense>
+  )
+}
+
+export function WeaponPickerLoaded({
+  buildId,
+  columns,
+  onSelected,
+}: WeaponPickerProps) {
   const { items, selectedId } = useCompatibleWeapons(buildId)
 
   return (
     <BuildCatalogPicker
       items={items}
       getItemKey={(weapon) => weapon.id}
-      columns={6}
+      columns={columns}
       emptyMessage="No hay armas compatibles con el resonador."
     >
       {(weapon) => (

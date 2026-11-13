@@ -24,18 +24,18 @@ export function ResonatorItem({
   const { selectResonator, preloadResonator } = useSelectResonator(buildId)
 
   const handleSelect = async () => {
-    const result = await selectResonator(resonator)
+    const applied = await selectResonator(resonator)
 
-    if (result === "error") return
+    if (applied === "error") return
 
-    if (result === "selected") {
+    if (applied === "selected") {
       preloadResonator(resonator)
       updateBuild(buildId, (current) => {
         current.name = `Build de ${resonator.name}`
       })
     }
 
-    onSelect?.()
+    if (applied) onSelect?.()
   }
 
   return (

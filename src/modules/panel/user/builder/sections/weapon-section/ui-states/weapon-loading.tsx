@@ -6,35 +6,17 @@ import {
 } from "@builder/ui/build-catalog-picker"
 import { Separator } from "@/components/ui/separator"
 
-interface WeaponSkeletonProps {
+interface WeaponLoadingProps {
   columns?: BuildCatalogPickerColumns
 }
 
-const GRID_COLUMNS = 8
-const PICKER_COLUMNS = 6
+const PICKER_COLUMNS = 4
 const BASE_STATS = 2
-
-/** Grid skeleton with the section heading, used while the catalog resolves. */
-export function WeaponGridLoading({
-  columns = GRID_COLUMNS,
-}: WeaponSkeletonProps = {}) {
-  return (
-    <div className="space-y-2">
-      <Skeleton className="h-7 w-70" />
-
-      <ul className={cn(buildCatalogPickerVariants({ columns }))}>
-        {Array.from({ length: columns * 2 }).map((_, index) => (
-          <Skeleton key={index} className="aspect-square" />
-        ))}
-      </ul>
-    </div>
-  )
-}
 
 /** Square skeleton that mirrors the weapon picker grid. */
 export function WeaponPickerLoading({
   columns = PICKER_COLUMNS,
-}: WeaponSkeletonProps = {}) {
+}: WeaponLoadingProps = {}) {
   return (
     <div className={cn(buildCatalogPickerVariants({ columns }))}>
       {Array.from({ length: columns * 2 }).map((_, index) => (

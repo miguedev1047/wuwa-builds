@@ -29,6 +29,9 @@ const imageVariants = cva(
       },
       background: {
         transparent: "bg-transparent",
+        muted: "bg-muted-foreground",
+        secondary: "bg-secondary",
+        input: "bg-input/50",
         accent: "bg-accent",
       },
       hover: {

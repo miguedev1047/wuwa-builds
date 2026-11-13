@@ -1,4 +1,3 @@
-import { BuildTextHeader } from "@builder/ui/build-text-header"
 import { ResonatorBaseStatItem } from "@builder/sections/resonator-section/components/resonator-base-stat-item"
 import type { CharacterDetail } from "@game-data/domain/character"
 
@@ -17,18 +16,14 @@ export function ResonatorBaseStats({
   level,
 }: ResonatorBaseStatsProps) {
   return (
-    <div className="space-y-2">
-      <BuildTextHeader size="lg">Estadísticas base</BuildTextHeader>
-
-      <div className="flex flex-wrap items-center gap-4">
-        {properties.slice(0, BASE_STAT_COUNT).map((property) => (
-          <ResonatorBaseStatItem
-            key={property.id}
-            property={property}
-            level={level}
-          />
-        ))}
-      </div>
+    <div className="flex flex-1 flex-col justify-center gap-2">
+      {properties.slice(0, BASE_STAT_COUNT).map((property) => (
+        <ResonatorBaseStatItem
+          key={property.id}
+          property={property}
+          level={level}
+        />
+      ))}
     </div>
   )
 }

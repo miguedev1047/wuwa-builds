@@ -1,11 +1,16 @@
+import {
+  withPassiveEnabled,
+  withSkillLevel,
+} from "@builds/application/resonator-config"
 import { updateBuild } from "@builds/client/build-store"
 import { levelFromStep } from "@builds/domain/build"
 
 /**
- * Level and sequence mutations of the resonator section.
+ * Level, sequence, skill and passive mutations of the resonator section.
  *
  * Sliders and sequence nodes work with a 0-based step; the build always stores
- * the real game level and the sequence rank.
+ * the real game level and the sequence rank. Skill sliders and passive toggles
+ * write directly to the build collection.
  */
 export function useResonatorProgress(buildId: string) {
   const setLevelStep = (step: number) => {
@@ -24,5 +29,27 @@ export function useResonatorProgress(buildId: string) {
     })
   }
 
-  return { setLevelStep, toggleSequence }
+  const setSkillLevel = (skillId: number, level: number) => {
+    updateBuild(buildId, (draft) => {
+      draft.resonator.skills = withSkillLevel(
+        draft.resonator.skills,
+        skillId,
+        level
+      )
+      draft.updateAt = new Date().toISOString()
+    })
+  }
+
+  const togglePassive = (id: number, enabled: boolean) => {
+    updateBuild(buildId, (draft) => {
+      draft.resonator.passives = withPassiveEnabled(
+        draft.resonator.passives,
+        id,
+        enabled
+      )
+      draft.updateAt = new Date().toISOString()
+    })
+  }
+
+  return { setLevelStep, toggleSequence, setSkillLevel, togglePassive }
 }

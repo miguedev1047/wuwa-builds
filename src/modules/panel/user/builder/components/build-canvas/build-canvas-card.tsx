@@ -1,5 +1,6 @@
 import type { BuildCanvasArea } from "@builder/components/build-canvas/build-canvas-layout"
 import { cn } from "cn"
+import { BuildWorkspace } from "../workspace"
 
 type BuildCanvasCardProps = React.ComponentProps<"div"> & {
   /** Area of the `.build-canvas` grid this card fills. */
@@ -19,10 +20,11 @@ export function BuildCanvasCard({
   ...props
 }: BuildCanvasCardProps) {
   return (
-    <div
+    <BuildWorkspace.Card
       data-canvas-area={area}
+      cardColor="muted"
       className={cn(
-        "relative flex h-full min-h-0 flex-col gap-2 overflow-hidden rounded-xl bg-card p-3 text-sm text-card-foreground shadow-app-surface ring-1 ring-foreground/5 dark:ring-foreground/10",
+        "relative flex h-full min-h-0 flex-col gap-2 overflow-hidden rounded-xl text-sm",
         className
       )}
       {...props}

@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Show } from "@/components/utility/show"
+import { BuildWorkspace } from "@builder/components/workspace"
 import {
   echoMainStatOptions,
   echoPrimaryStat,
@@ -49,7 +50,7 @@ export function EchoMainStatSelect({
 
   return (
     <div className="space-y-2">
-      <p className="text-xs text-muted-foreground">Estadística principal</p>
+      <BuildWorkspace.Text size="sm">Estadística principal</BuildWorkspace.Text>
 
       <Select
         items={statOptions}

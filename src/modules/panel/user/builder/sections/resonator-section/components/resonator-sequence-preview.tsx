@@ -1,4 +1,5 @@
-import { CardDescription, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { CardTitle } from "@/components/ui/card"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
 import type { CharacterDetail } from "@game-data/domain/character"
@@ -20,7 +21,7 @@ export function ResonatorSequencePreview({
 
         <div className="flex min-w-0 flex-col gap-1">
           <CardTitle className="truncate">{sequence.name}</CardTitle>
-          <CardDescription>Secuencia {sequence.index}</CardDescription>
+          <Badge>Secuencia {sequence.index}</Badge>
         </div>
       </div>
 

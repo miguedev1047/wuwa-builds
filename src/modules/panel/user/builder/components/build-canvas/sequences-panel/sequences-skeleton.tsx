@@ -1,15 +1,10 @@
-import { SkeletonBox } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export function SequencesSkeleton() {
   return (
-    <div className="grid gap-4">
+    <div className="grod-cols-4 grid gap-4">
       {Array.from({ length: 6 }).map((_, index) => (
-        <SkeletonBox
-          key={index}
-          width="100%"
-          height="100%"
-          className="size-12!"
-        />
+        <Skeleton key={index} className="size-12" />
       ))}
     </div>
   )

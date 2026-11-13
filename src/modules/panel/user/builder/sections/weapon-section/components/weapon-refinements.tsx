@@ -4,6 +4,7 @@ import { REFINEMENT_RANK_MAX, REFINEMENT_RANK_MIN } from "@builds/domain/build"
 import { MinusIcon, PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import type { WeaponDetail } from "@game-data/domain/weapon"
+import { BuildWorkspace } from "../../../components/workspace"
 
 type WeaponRefinementsProps = {
   refinements: WeaponDetail["refinements"]
@@ -22,35 +23,40 @@ export function WeaponRefinements({
   const effect = refinements[rank - 1]?.effect
 
   return (
-    <div className="flex items-start gap-4 max-sm:flex-wrap md:gap-8">
-      <div className="flex shrink-0 items-center gap-4">
-        <Button
-          variant="outline"
-          size="icon"
-          aria-label="Bajar refinamiento"
-          disabled={rank <= REFINEMENT_RANK_MIN}
-          onClick={() => onStep(-1)}
-        >
-          <HugeiconsIcon icon={MinusIcon} />
-        </Button>
+    <div className="space-y-2">
+      <div className="flex items-center justify-between">
+        <BuildWorkspace.Text size="sm">Refinamientos</BuildWorkspace.Text>
+        <div className="flex shrink-0 items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon-xs"
+            aria-label="Bajar refinamiento"
+            disabled={rank <= REFINEMENT_RANK_MIN}
+            onClick={() => onStep(-1)}
+          >
+            <HugeiconsIcon icon={MinusIcon} />
+          </Button>
 
-        <div className="text-brand-warning tabular-nums">{rank}</div>
+          <div className="text-xs font-bold text-brand-warning tabular-nums">
+            {rank}
+          </div>
 
-        <Button
-          variant="outline"
-          size="icon"
-          aria-label="Subir refinamiento"
-          disabled={rank >= REFINEMENT_RANK_MAX}
-          onClick={() => onStep(1)}
-        >
-          <HugeiconsIcon icon={PlusIcon} />
-        </Button>
+          <Button
+            variant="ghost"
+            size="icon-xs"
+            aria-label="Subir refinamiento"
+            disabled={rank >= REFINEMENT_RANK_MAX}
+            onClick={() => onStep(1)}
+          >
+            <HugeiconsIcon icon={PlusIcon} />
+          </Button>
+        </div>
       </div>
 
       <Show when={effect}>
         {(text) => (
           <div
-            className="text-sm/relaxed text-muted-foreground max-sm:max-w-100"
+            className="text-xs/relaxed text-pretty text-muted-foreground"
             dangerouslySetInnerHTML={{ __html: text }}
           />
         )}

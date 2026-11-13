@@ -6,16 +6,35 @@ import { useSelectEcho } from "@builder/application/use-select-echo"
 import {
   BuildCatalogPicker,
   BuildCatalogPickerItem,
+  type BuildCatalogPickerColumns,
 } from "@builder/ui/build-catalog-picker"
+import { Suspense } from "react"
+import { EchoPickerLoading } from "@builder/sections/echoes-section/ui-states"
+
+export type EchoPickerColumns = BuildCatalogPickerColumns
 
 type EchoPickerProps = {
   slot: EchoesDataProps
   /** Called after the echo is assigned to the slot. */
   onSelected?: () => void
+  columns?: EchoPickerColumns
+  className?: string
 }
 
 /** Catalog picker bound to one echo slot. */
-export function EchoPicker({ slot, onSelected }: EchoPickerProps) {
+export function EchoPicker(props: EchoPickerProps) {
+  return (
+    <Suspense fallback={<EchoPickerLoading columns={props.columns} />}>
+      <EchoPickerLoaded {...props} />
+    </Suspense>
+  )
+}
+
+export function EchoPickerLoaded({
+  slot,
+  columns,
+  onSelected,
+}: EchoPickerProps) {
   const buildId = useBuilderId()
   const { data: echoes } = useSuspenseQuery(echoQueries.list())
   const { selectEcho } = useSelectEcho(buildId)
@@ -24,7 +43,7 @@ export function EchoPicker({ slot, onSelected }: EchoPickerProps) {
     <BuildCatalogPicker
       items={echoes}
       getItemKey={(echo) => echo.id}
-      columns={6}
+      columns={columns}
       emptyMessage="No hay ecos en el catálogo."
     >
       {(echo) => (

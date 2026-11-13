@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { BuildDelete } from "@builder/components/build-shell/build-delete"
 import { BuildName } from "@builder/components/build-shell/build-name"
-import { BuildResonatorAction } from "@builder/components/build-shell/build-resonator-action"
 import { Link } from "@tanstack/react-router"
 
 export function BuildHeader() {
@@ -11,9 +10,6 @@ export function BuildHeader() {
         <Button nativeButton={false} render={<Link to="/panel/my-builds" />}>
           Volver
         </Button>
-        <div className="md:hidden">
-          <BuildResonatorAction />
-        </div>
       </div>
       <BuildName />
       <BuildDelete />

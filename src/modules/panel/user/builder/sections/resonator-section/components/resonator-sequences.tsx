@@ -1,6 +1,6 @@
-import { BuildTextHeader } from "@builder/ui/build-text-header"
 import { ResonatorSequenceItem } from "@builder/sections/resonator-section/components/resonator-sequence-item"
 import type { CharacterDetail } from "@game-data/domain/character"
+import { BuildWorkspace } from "@builder/components/workspace"
 
 type ResonatorSequencesProps = {
   sequences: CharacterDetail["sequences"]
@@ -22,22 +22,9 @@ export function ResonatorSequences({
 }: ResonatorSequencesProps) {
   return (
     <div className="space-y-2">
-      <BuildTextHeader size="lg">Secuencias</BuildTextHeader>
+      <BuildWorkspace.Text size="sm">Secuencias</BuildWorkspace.Text>
 
-      <div className="hidden flex-wrap items-center sm:flex">
-        {sequences.map((sequence, index) => (
-          <ResonatorSequenceItem
-            key={sequence.id}
-            sequence={sequence}
-            layout="row"
-            isActive={rank >= sequence.index}
-            showConnector={index > 0}
-            onToggle={onToggle}
-          />
-        ))}
-      </div>
-
-      <div className="grid grid-cols-3 items-center gap-4 sm:hidden">
+      <div className="grid grid-cols-3 items-center gap-2 sm:grid-cols-6 md:gap-4 xl:gap-1">
         {sequences.map((sequence) => (
           <ResonatorSequenceItem
             key={sequence.id}

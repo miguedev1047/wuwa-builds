@@ -1,5 +1,3 @@
-import { SkeletonSuspense } from "skullet/react"
-import { BuildCard } from "@builder/ui/build-card"
 import { useBuildCollection } from "@/modules/panel/user/builds/application/build-live-queries"
 import { useBuilderId } from "@builder/application/use-builder-id"
 import { Show } from "@/components/utility/show"
@@ -14,19 +12,18 @@ import {
 } from "@/components/ui/hover-card"
 import { CardDescription, CardTitle } from "@/components/ui/card"
 import { SequencesSkeleton } from "./sequences-skeleton"
+import { Suspense } from "react"
 
 export function SequencesContent() {
   const buildId = useBuilderId()
   const { data: build } = useBuildCollection({ buildId })
 
   return (
-    <BuildCard className="p-4!">
-      <SkeletonSuspense skeleton={<SequencesSkeleton />}>
-        <Show when={build?.resonator.data}>
-          {(resonator) => <SequencesContentLoaded resonatorId={resonator.id} />}
-        </Show>
-      </SkeletonSuspense>
-    </BuildCard>
+    <Suspense fallback={<SequencesSkeleton />}>
+      <Show when={build?.resonator.data}>
+        {(resonator) => <SequencesContentLoaded resonatorId={resonator.id} />}
+      </Show>
+    </Suspense>
   )
 }
 
@@ -47,7 +44,7 @@ export function SequencesContentLoaded({
   const currentSequency = build?.resonator.sequency ?? DEFAULT_SEQUENCY_RANK
 
   return (
-    <div className="grid gap-4">
+    <div className="flex h-full items-center justify-between">
       {sequences.map((sequency) => (
         <HoverCard key={sequency.id}>
           <HoverCardTrigger

@@ -2,7 +2,7 @@ import { GameIcon } from "@/components/ui/game-icon"
 import { isStatId, statLabel } from "@game-data/application/stats/stats"
 import { growthValueAtLevel } from "@game-data/domain/character"
 import type { CharacterDetail } from "@game-data/domain/character"
-import { BuildCard } from "@builder/ui/build-card"
+import { BuildWorkspace } from "@builder/components/workspace"
 
 type ResonatorBaseStatItemProps = {
   property: CharacterDetail["properties"][number]
@@ -23,16 +23,21 @@ export function ResonatorBaseStatItem({
   const value = growthValueAtLevel(property.growth, level)
 
   return (
-    <BuildCard className="flex min-w-64 flex-1 flex-row items-center justify-between gap-4">
-      <div className="flex items-center gap-2">
+    <BuildWorkspace.Card
+      cardColor="input"
+      className="flex flex-1 items-center justify-between px-3 py-2"
+    >
+      <div className="flex items-center gap-1 overflow-hidden">
         <GameIcon
-          className="size-7"
+          className="size-4 shrink-0"
           name={isStatId(property.name) ? property.name : null}
         />
-        <h2>{statLabel(property.name)}</h2>
+        <h2 className="truncate text-xs">{statLabel(property.name)}</h2>
       </div>
 
-      <p className="font-bold tabular-nums">{formatBaseValue(value)}</p>
-    </BuildCard>
+      <h2 className="shrink-0 text-xs font-bold tabular-nums">
+        {formatBaseValue(value)}
+      </h2>
+    </BuildWorkspace.Card>
   )
 }

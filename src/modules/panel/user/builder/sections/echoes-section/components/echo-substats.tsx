@@ -4,6 +4,7 @@ import {
   echoSubstatOptionsExcluding,
   type EchoSubstatOption,
 } from "@builds/application/echo-substats"
+import { BuildWorkspace } from "@builder/components/workspace"
 import { EchoSubstatRow } from "@builder/sections/echoes-section/components/echo-substat-row"
 
 type EchoSubstatsProps = {
@@ -30,7 +31,7 @@ export function EchoSubstats({
 
   return (
     <div className="space-y-2">
-      <p className="text-sm font-medium">Substats</p>
+      <BuildWorkspace.Text size="sm">Substats</BuildWorkspace.Text>
 
       {substats.map((substat) => {
         const currentStat =

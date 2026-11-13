@@ -127,16 +127,15 @@ the canvas and the editor sections can reuse it.
 - The weapon picker belongs to `sections/weapon-section/` and the resonator
   picker to `sections/resonator-section/`; neither is part of the canvas.
 
-## Forte tree
+## Skills dialog
 
-The skills dialog of the resonator section renders the forte tree: five
-branches, each with two chained nodes and its skill underneath. The build stores
-the ten nodes in reading order, so the first five are the top row and the last
-five the bottom row; the skill of branch `i` is the skill at index `i`. Every
-skill level is edited with a two-button stepper, never a slider.
+The skills dialog of the resonator section has two tabs. The skills tab edits
+one level per skill with the PanelUI slider (`ResonatorSkillRow`); the passives
+tab toggles each passive with `ResonatorSkillNode`, which dims and grays the
+unchecked card. Both write through `useResonatorProgress`.
 
 ## Shared catalog picker
 
 `BuildCatalogPicker<T>` only renders the grid and item shell. Each entity keeps
-its own adapter (`ResonatorGrid`, `WeaponPicker`, `EchoPicker`) with its queries,
+its own adapter (`ResonatorPicker`, `WeaponPicker`, `EchoPicker`) with its queries,
 filtering and selection rules. Do not move build or catalog logic into `ui/`.

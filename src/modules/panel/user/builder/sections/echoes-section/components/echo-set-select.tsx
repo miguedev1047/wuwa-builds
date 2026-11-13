@@ -6,6 +6,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Show } from "@/components/utility/show"
+import { BuildWorkspace } from "@builder/components/workspace"
 import type { EchoDetail } from "@game-data/domain/echo"
 
 type EchoSetSelectProps = {
@@ -39,7 +40,7 @@ export function EchoSetSelect({
 
   return (
     <div className="space-y-2">
-      <p className="text-xs text-muted-foreground">Set</p>
+      <BuildWorkspace.Text size="sm">Set</BuildWorkspace.Text>
 
       <Select
         items={options}

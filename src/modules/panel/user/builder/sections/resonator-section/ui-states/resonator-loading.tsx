@@ -9,27 +9,9 @@ interface ResonatorSkeletonProps {
   columns?: BuildCatalogPickerColumns
 }
 
-const GRID_COLUMNS = 8
 const PICKER_COLUMNS = 6
 const BASE_STATS = 3
 const SEQUENCES = 6
-
-/** Grid skeleton with the section heading, used while the catalog resolves. */
-export function ResonatorGridLoading({
-  columns = GRID_COLUMNS,
-}: ResonatorSkeletonProps = {}) {
-  return (
-    <div className="space-y-2">
-      <Skeleton className="h-7 w-70" />
-
-      <ul className={cn(buildCatalogPickerVariants({ columns }))}>
-        {Array.from({ length: columns * 2 }).map((_, index) => (
-          <Skeleton key={index} className="aspect-square" />
-        ))}
-      </ul>
-    </div>
-  )
-}
 
 /** Square skeleton that mirrors the resonator picker grid. */
 export function ResonatorPickerLoading({
@@ -38,7 +20,7 @@ export function ResonatorPickerLoading({
   return (
     <div className={cn(buildCatalogPickerVariants({ columns }))}>
       {Array.from({ length: columns * 2 }).map((_, index) => (
-        <Skeleton key={index} className="aspect-square" />
+        <Skeleton key={index} className="aspect-2/3" />
       ))}
     </div>
   )

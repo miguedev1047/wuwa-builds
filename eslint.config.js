@@ -108,6 +108,8 @@ export default defineConfig([
                 "layout",
                 "max-w-*",
                 "w-full",
+                "ease-in-out",
+                "transition",
                 "my-*",
                 "py-*",
                 "text-*",
@@ -324,7 +326,16 @@ export default defineConfig([
                 "border-*",
               ],
             },
-            { pattern: "^Tooltip(Content)?$", allow: ["layout", "gap-*"] },
+            {
+              pattern: "^Tooltip(Content|Trigger)?$",
+              allow: [
+                "layout",
+                "gap-*",
+                "opacity-*",
+                "grayscale",
+                "grayscale-*",
+              ],
+            },
             { pattern: "^RadioGroup(Item)?$", allow: ["layout", "gap-*"] },
             { pattern: "^Image$", allow: ["layout", "gap-*", "opacity-*"] },
             {

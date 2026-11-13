@@ -16,7 +16,7 @@ export function BuildCanvasRoot({
     <section
       data-slot="build-canvas"
       className={cn(
-        "build-canvas relative rounded-4xl bg-card p-4 text-sm text-card-foreground shadow-app-surface ring-1 ring-foreground/5 dark:ring-foreground/10",
+        "build-canvas pointer-events-none relative rounded-4xl bg-card p-4 text-sm text-card-foreground ring-1 ring-foreground/5 select-none dark:ring-foreground/10",
         className
       )}
       {...props}

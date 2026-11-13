@@ -1,5 +1,6 @@
-import { Slider } from "@/components/ui/slider"
-import { BuildTextHeader } from "@builder/ui/build-text-header"
+import { Slider } from "@/components/panelui/slider"
+import { BuildWorkspace } from "@builder/components/workspace"
+import { levelFromStep } from "@/modules/builds/domain/build"
 
 type WeaponLevelControlProps = {
   /** Real game level shown next to the header. */
@@ -13,7 +14,6 @@ type WeaponLevelControlProps = {
 
 /** Level label and milestone slider of the weapon. */
 export function WeaponLevelControl({
-  level,
   step,
   maxStep,
   onStepChange,
@@ -28,12 +28,13 @@ export function WeaponLevelControl({
 
   return (
     <div className="space-y-2">
-      <BuildTextHeader size="lg">Nivel {level}</BuildTextHeader>
+      <BuildWorkspace.Text size="sm">Nivel</BuildWorkspace.Text>
       <Slider
         value={step}
         min={0}
         max={maxStep}
         onValueChange={handleValueChange}
+        format={(v) => `Nv. ${levelFromStep(v)}`}
       />
     </div>
   )

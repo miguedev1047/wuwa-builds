@@ -7,6 +7,7 @@
 export const BUILD_CANVAS_AREAS = [
   "resonator",
   "stats",
+  "sequencies",
   "skills",
   "weapon",
   "echoes",

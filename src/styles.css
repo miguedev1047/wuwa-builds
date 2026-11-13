@@ -192,14 +192,13 @@
   .build-canvas {
     display: grid;
     grid-template-columns: repeat(10, minmax(0, 1fr));
-    grid-template-rows: repeat(8, 5.625rem);
+    grid-template-rows: repeat(7, 5.625rem);
     gap: calc(var(--spacing) * 3);
     grid-template-areas:
-      "resonator resonator resonator resonator resonator resonator skills skills skills skills"
+      "resonator resonator resonator sequencies sequencies sequencies skills skills skills skills"
       "stats stats stats stats stats stats skills skills skills skills"
       "stats stats stats stats stats stats weapon weapon weapon weapon"
       "stats stats stats stats stats stats weapon weapon weapon weapon"
-      "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes"
       "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes"
       "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes"
       "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes";
@@ -223,6 +222,10 @@
 
   .build-canvas > [data-canvas-area="echoes"] {
     grid-area: echoes;
+  }
+
+  .build-canvas > [data-canvas-area="sequencies"] {
+    grid-area: sequencies;
   }
 }
 

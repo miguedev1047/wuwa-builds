@@ -9,9 +9,9 @@ import {
 import { Show } from "@/components/utility/show"
 import { cn } from "cn"
 import { cva } from "class-variance-authority"
-import { BuildCard } from "@builder/ui/build-card"
 import { ResonatorSequencePreview } from "@builder/sections/resonator-section/components/resonator-sequence-preview"
 import type { CharacterDetail } from "@game-data/domain/character"
+import { BuildWorkspace } from "@builder/components/workspace"
 
 const sequenceCardVariants = cva(
   "shrink-0 border p-2 shadow-brand-warning data-[active=true]:border-brand-warning! data-[active=true]:shadow-lg/20",
@@ -60,8 +60,9 @@ export function ResonatorSequenceItem({
 
       <HoverCardTrigger
         render={
-          <BuildCard
+          <BuildWorkspace.Card
             data-active={isActive}
+            cardColor="input"
             onClick={() => onToggle(sequence.index)}
             role="button"
             className={sequenceCardVariants({ layout })}
@@ -73,11 +74,11 @@ export function ResonatorSequenceItem({
             />
 
             <Show when={isGrid}>
-              <Badge className="absolute -top-1 -left-1 z-20 size-5">
+              <Badge className="absolute -top-2 -left-2 z-20 size-5 scale-80">
                 {sequence.index}
               </Badge>
             </Show>
-          </BuildCard>
+          </BuildWorkspace.Card>
         }
       />
 

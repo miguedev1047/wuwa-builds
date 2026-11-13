@@ -89,8 +89,8 @@ interface BuildProps {
 
 ## Secciones del editor
 
-- **Resonador**: selector/portrait, nivel, secuencia y habilidades con el árbol
-  de pasivas.
+- **Resonador**: selector/portrait, nivel, secuencias y un diálogo de
+  habilidades con tabs y sliders.
 - **Arma**: selector, nivel y refinamiento.
 - **Ecos**: 5 slots con eco, set, main stat, nivel, substats y eco principal.
 - **Stats derivados**: se calculan al vuelo; no se persisten.

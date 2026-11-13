@@ -10,35 +10,35 @@ import {
   type ResonatorAspect,
 } from "@builder/sections/resonator-section/components/resonator-item"
 import { Suspense } from "react"
-import { ResonatorGridLoading } from "@builder/sections/resonator-section/ui-states"
+import { ResonatorPickerLoading } from "@builder/sections/resonator-section/ui-states"
 
-export type ResonatorGridColumns = BuildCatalogPickerColumns
+export type ResonatorPickerColumns = BuildCatalogPickerColumns
 
-interface ResonatorGridProps {
+interface ResonatorPickerProps {
   buildId: string
-  onSelect?: () => void
-  columns?: ResonatorGridColumns
+  onSelected?: () => void
+  columns?: ResonatorPickerColumns
   aspect?: ResonatorAspect
   className?: string
 }
 
 /** Resonator adapter of the shared catalog picker. */
-export function ResonatorGrid(props: ResonatorGridProps) {
+export function ResonatorPicker(props: ResonatorPickerProps) {
   return (
-    <Suspense fallback={<ResonatorGridLoading columns={props.columns} />}>
-      <ResonatorGridLoaded {...props} />
+    <Suspense fallback={<ResonatorPickerLoading columns={props.columns} />}>
+      <ResonatorPickerLoaded {...props} />
     </Suspense>
   )
 }
 
 /** Resonator adapter of the shared catalog picker. */
-export function ResonatorGridLoaded({
+export function ResonatorPickerLoaded({
   buildId,
-  onSelect,
+  onSelected,
   columns,
   aspect = "portrait",
   className,
-}: ResonatorGridProps) {
+}: ResonatorPickerProps) {
   const { data: resonators } = useSuspenseQuery(characterQueries.list())
   const { data: build } = useBuildCollection({ buildId })
   const selectedId = build?.resonator.data?.id
@@ -57,7 +57,7 @@ export function ResonatorGridLoaded({
           resonator={resonator}
           aspect={aspect}
           selected={selectedId === resonator.id}
-          onSelect={onSelect}
+          onSelect={onSelected}
         />
       )}
     </BuildCatalogPicker>

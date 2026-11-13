@@ -4,8 +4,8 @@ import { ResonatorSectionContent } from "@builder/sections/resonator-section/com
 import { ResonatorSectionLoading } from "@builder/sections/resonator-section/ui-states"
 import { useBuildCollection } from "@panel/user/builds/application/build-live-queries"
 import { Suspense } from "react"
-import { BuildCardSection } from "@builder/ui/build-card-section"
-import { ResonatorGrid } from "@builder/sections/resonator-section/components/resonator-grid"
+import { BuildWorkspace } from "@builder/components/workspace"
+import { ResonatorPickerDialog } from "@builder/sections/resonator-section/components/resonator-picker-dialog"
 
 /** Editable resonator section of the builder. */
 export function ResonatorBuilderSection() {
@@ -13,18 +13,12 @@ export function ResonatorBuilderSection() {
   const { data: build } = useBuildCollection({ buildId })
 
   return (
-    <BuildCardSection>
+    <BuildWorkspace.Card>
       <Show when={build}>
         {(currentBuild) => (
           <Show
             when={currentBuild.resonator.data}
-            fallback={
-              <ResonatorGrid
-                buildId={currentBuild.buildId}
-                columns={8}
-                aspect="portrait"
-              />
-            }
+            fallback={<ResonatorPickerDialog />}
           >
             {(resonator) => (
               <Suspense fallback={<ResonatorSectionLoading />}>
@@ -37,6 +31,6 @@ export function ResonatorBuilderSection() {
           </Show>
         )}
       </Show>
-    </BuildCardSection>
+    </BuildWorkspace.Card>
   )
 }

@@ -1,20 +1,32 @@
+import type { WeaponDetail } from "@game-data/domain/weapon"
+import type { BuildProps } from "@/modules/builds/domain/build-record"
+import { BuildWorkspace } from "@builder/components/workspace"
 import { Image } from "@/components/ui/image"
-import type { WeaponDetail } from "@/modules/game-data/domain/weapon"
+import { WeaponBaseStats } from "@builder/sections/weapon-section/components/weapon-base-stats"
 
-type WeaponPortraitProps = {
-  weapon: Pick<WeaponDetail, "name" | "icon">
+type WeaponIdentityProps = {
+  weapon: WeaponDetail
+  build: BuildProps
 }
 
-/** Portrait of the selected weapon, full width on narrow screens. */
-export function WeaponPortrait({ weapon }: WeaponPortraitProps) {
+/** Name and change action of the selected weapon. */
+export function WeaponPortrait({ weapon, build }: WeaponIdentityProps) {
   return (
-    <Image
-      src={weapon.icon}
-      alt={weapon.name}
-      size="xl"
-      background="accent"
-      aspect="square"
-      className="max-sm:w-full"
-    />
+    <div className="space-y-2">
+      <BuildWorkspace.Text size="sm">{weapon.name}</BuildWorkspace.Text>
+      <div className="flex min-h-28 items-stretch gap-2">
+        <Image
+          src={weapon.icon}
+          alt={weapon.name}
+          background="accent"
+          aspect="square"
+          className="h-auto w-28 shrink-0 object-cover"
+        />
+        <WeaponBaseStats
+          properties={weapon.properties}
+          level={build.weapon.level}
+        />
+      </div>
+    </div>
   )
 }

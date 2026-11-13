@@ -1,5 +1,5 @@
 import type { EchoesDataProps } from "@builds/domain/build-record"
-import { BuildCard } from "@panel/user/builder/ui/build-card"
+import { BuildWorkspace } from "@builder/components/workspace"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
 
@@ -10,7 +10,7 @@ type EchoSelectionProps = {
 /** Summary of the echo assigned to one slot. */
 export function EchoSelection({ slot }: EchoSelectionProps) {
   return (
-    <BuildCard className="bg-input/50 p-3">
+    <BuildWorkspace.Card cardColor="input" className="p-3">
       <Show
         when={slot.data}
         fallback={
@@ -33,12 +33,14 @@ export function EchoSelection({ slot }: EchoSelectionProps) {
               className="w-16"
             />
             <div className="min-w-0 flex-1">
-              <p className="truncate font-medium">{echo.name}</p>
+              <BuildWorkspace.Text size="sm" className="truncate">
+                {echo.name}
+              </BuildWorkspace.Text>
               <p className="text-xs text-muted-foreground">Costo {echo.cost}</p>
             </div>
           </div>
         )}
       </Show>
-    </BuildCard>
+    </BuildWorkspace.Card>
   )
 }
