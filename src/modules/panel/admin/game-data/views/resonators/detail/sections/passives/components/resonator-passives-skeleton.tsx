@@ -5,8 +5,8 @@ export function ResonatorPassivesSkeleton() {
   return (
     <EditableSection.Content>
       <div className="space-y-4">
-        <Skeleton className="h-35 w-full rounded-none" />
-        <Skeleton className="h-35 w-full rounded-none" />
+        <Skeleton className="h-35 w-full rounded-lg" />
+        <Skeleton className="h-35 w-full rounded-lg" />
       </div>
     </EditableSection.Content>
   )

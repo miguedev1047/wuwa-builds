@@ -5,8 +5,8 @@ export function WeaponPropertiesSkeleton() {
   return (
     <EditableSection.Content>
       <div className="space-y-2">
-        <Skeleton className="h-12 w-full rounded-none" />
-        <Skeleton className="h-12 w-full rounded-none" />
+        <Skeleton className="h-12 w-full rounded-lg" />
+        <Skeleton className="h-12 w-full rounded-lg" />
       </div>
     </EditableSection.Content>
   )

@@ -14,7 +14,7 @@ export function ResonatorInfoSkeleton() {
       </EditableSection.Header>
 
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">
-        <Skeleton className="h-60 w-40 rounded-none" />
+        <Skeleton className="h-60 w-40 rounded-lg" />
 
         <div className="flex flex-1 flex-col gap-3">
           <Skeleton className="h-8 w-2/5" />
