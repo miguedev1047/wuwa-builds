@@ -1,5 +1,5 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonSuspense } from "skullet/react"
+import { Suspense } from "react"
 import { WeaponInfoContent } from "@panel/admin/game-data/views/weapons/detail/sections/info/components/weapon-info-content"
 import { WeaponInfoSkeleton } from "@panel/admin/game-data/views/weapons/detail/sections/info/components/weapon-info-skeleton"
 
@@ -9,8 +9,8 @@ export function WeaponInfoSection() {
   const weaponId = Number(id)
 
   return (
-    <SkeletonSuspense skeleton={<WeaponInfoSkeleton />}>
+    <Suspense fallback={<WeaponInfoSkeleton />}>
       <WeaponInfoContent weaponId={weaponId} />
-    </SkeletonSuspense>
+    </Suspense>
   )
 }

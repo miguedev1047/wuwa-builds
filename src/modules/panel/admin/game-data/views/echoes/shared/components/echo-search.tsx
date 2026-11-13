@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { SkeletonSuspense } from "skullet/react"
+import { Suspense } from "react"
 import { Button } from "@/components/ui/button"
 import type { EncoreEchoSummary } from "@encore/domain/echo"
 import { encoreEchoQueries } from "@encore/queries/catalogs"
@@ -38,9 +38,9 @@ export function EchoSearch({
       <CatalogSearch.Input placeholder="Nombre o ID del eco" />
 
       <CatalogSearch.List>
-        <SkeletonSuspense skeleton={<CatalogSearch.Loading />}>
+        <Suspense fallback={<CatalogSearch.Loading />}>
           <EchoSearchResults selectedId={selectedId} onSelect={onSelect} />
-        </SkeletonSuspense>
+        </Suspense>
       </CatalogSearch.List>
     </CatalogSearch.Root>
   )

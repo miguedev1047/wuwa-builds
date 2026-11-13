@@ -14,7 +14,7 @@ import { Link, type LinkOptions } from "@tanstack/react-router"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 import { Fragment, type ComponentProps, type Key, type ReactNode } from "react"
-import { SkeletonBox } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
 
 /**
  * Presentational shell for the game-data screens: a titled section with an
@@ -201,7 +201,7 @@ type CatalogSectionLoadingProps = VariantProps<typeof listVariants> &
 
 /**
  * Loading state of the section: the same grid and card shape as the real list,
- * filled with `SkeletonBox` bars.
+ * filled with skeleton placeholders.
  */
 export function CatalogSectionLoading({
   cols,
@@ -221,7 +221,7 @@ export function CatalogSectionLoading({
             key={index}
             className={cn("overflow-hidden", aspectVariants({ aspect }))}
           >
-            <SkeletonBox width="100%" height="100%" />
+            <Skeleton className="size-full" />
           </li>
         ))}
       </ul>

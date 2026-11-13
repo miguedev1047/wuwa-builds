@@ -1,13 +1,13 @@
-import { SkeletonBox } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 
 export function ResonatorTagsSkeleton() {
   return (
     <EditableSection.Content>
       <div className="flex flex-wrap gap-2">
-        <SkeletonBox width="100%" height={20} radius={0} />
-        <SkeletonBox width="100%" height={20} radius={0} />
-        <SkeletonBox width="100%" height={20} radius={0} />
+        <Skeleton className="h-5 w-full rounded-none" />
+        <Skeleton className="h-5 w-full rounded-none" />
+        <Skeleton className="h-5 w-full rounded-none" />
       </div>
     </EditableSection.Content>
   )

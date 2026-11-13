@@ -1,5 +1,5 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonSuspense } from "skullet/react"
+import { Suspense } from "react"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { ResonatorMediaContent } from "@panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-content"
 import { ResonatorMediaSkeleton } from "@panel/admin/game-data/views/resonators/detail/sections/media/components/resonator-media-skeleton"
@@ -18,9 +18,9 @@ export function ResonatorMediaSection() {
         </EditableSection.Description>
       </EditableSection.Header>
 
-      <SkeletonSuspense skeleton={<ResonatorMediaSkeleton />}>
+      <Suspense fallback={<ResonatorMediaSkeleton />}>
         <ResonatorMediaContent resonatorId={resonatorId} />
-      </SkeletonSuspense>
+      </Suspense>
     </EditableSection.Root>
   )
 }

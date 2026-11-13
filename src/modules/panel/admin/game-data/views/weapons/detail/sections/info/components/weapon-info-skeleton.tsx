@@ -1,27 +1,27 @@
-import { SkeletonBox } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 
 export function WeaponInfoSkeleton() {
   return (
     <EditableSection.Root>
       <EditableSection.Header>
-        <SkeletonBox width="12rem" height={32} />
+        <Skeleton className="h-8 w-48" />
 
         <EditableSection.Action>
-          <SkeletonBox width={72} height={28} />
-          <SkeletonBox width={28} height={28} />
+          <Skeleton className="h-7 w-18" />
+          <Skeleton className="size-7" />
         </EditableSection.Action>
       </EditableSection.Header>
 
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">
-        <SkeletonBox width={128} height={128} radius={0} />
+        <Skeleton className="size-32 rounded-none" />
 
         <div className="flex flex-1 flex-col gap-3">
-          <SkeletonBox width="40%" height={32} />
-          <SkeletonBox width="30%" height={20} />
-          <SkeletonBox width="100%" height={12} />
-          <SkeletonBox width="90%" height={12} />
-          <SkeletonBox width="70%" height={12} />
+          <Skeleton className="h-8 w-2/5" />
+          <Skeleton className="h-5 w-3/10" />
+          <Skeleton className="h-3 w-full" />
+          <Skeleton className="h-3 w-9/10" />
+          <Skeleton className="h-3 w-7/10" />
         </div>
       </EditableSection.Content>
     </EditableSection.Root>

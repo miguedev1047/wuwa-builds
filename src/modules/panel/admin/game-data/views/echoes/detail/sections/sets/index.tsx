@@ -1,5 +1,6 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { EchoSetAddLoader } from "@panel/admin/game-data/views/echoes/detail/sections/sets/components/echo-set-add-loader"
 import { EchoSetsContent } from "@panel/admin/game-data/views/echoes/detail/sections/sets/components/echo-sets-content"
@@ -20,15 +21,15 @@ export function EchoSetsSection() {
         </EditableSection.Description>
 
         <EditableSection.Action>
-          <SkeletonSuspense skeleton={<SkeletonBox width={96} height={28} />}>
+          <Suspense fallback={<Skeleton className="h-7 w-24" />}>
             <EchoSetAddLoader echoId={echoId} />
-          </SkeletonSuspense>
+          </Suspense>
         </EditableSection.Action>
       </EditableSection.Header>
 
-      <SkeletonSuspense skeleton={<EchoSetsSkeleton />}>
+      <Suspense fallback={<EchoSetsSkeleton />}>
         <EchoSetsContent echoId={echoId} />
-      </SkeletonSuspense>
+      </Suspense>
     </EditableSection.Root>
   )
 }

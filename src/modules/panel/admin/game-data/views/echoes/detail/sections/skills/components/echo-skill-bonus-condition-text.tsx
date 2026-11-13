@@ -1,4 +1,5 @@
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import type { EchoSkillBonusRow } from "@db/schema"
 import {
   RESONATOR_ELEMENTS,
@@ -25,9 +26,11 @@ export function EchoSkillBonusConditionText({
     return (
       <>
         Solo si lo lleva{" "}
-        <SkeletonSuspense skeleton={<SkeletonBox width={70} height={12} />}>
+        <Suspense
+          fallback={<Skeleton as="span" className="inline-block h-3 w-17.5" />}
+        >
           <EchoSkillResonatorName value={bonus.conditionValue} />
-        </SkeletonSuspense>
+        </Suspense>
         .
       </>
     )

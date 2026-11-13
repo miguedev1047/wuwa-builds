@@ -1,7 +1,7 @@
 import { CatalogSection } from "@panel/admin/game-data/components/catalog-section"
 import { EchoList } from "@panel/admin/game-data/views/echoes/list/components/echo-list"
 import { echoListDockActions } from "@panel/admin/game-data/views/echoes/list/dock-actions"
-import { SkeletonSuspense } from "skullet/react"
+import { Suspense } from "react"
 
 export function EchoListPage() {
   return (
@@ -13,13 +13,13 @@ export function EchoListPage() {
         </CatalogSection.Description>
       </CatalogSection.Header>
 
-      <SkeletonSuspense
-        skeleton={
+      <Suspense
+        fallback={
           <CatalogSection.Loading cols={6} aspect="square" count={12} />
         }
       >
         <EchoList />
-      </SkeletonSuspense>
+      </Suspense>
 
       <CatalogSection.DockActions items={echoListDockActions} />
     </CatalogSection.Root>

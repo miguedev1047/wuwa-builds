@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { SkeletonSuspense } from "skullet/react"
+import { Suspense } from "react"
 import { Button } from "@/components/ui/button"
 import type { EncoreCharacterSummary } from "@encore/domain/character"
 import { encoreCharacterQueries } from "@encore/queries/characters"
@@ -37,9 +37,9 @@ export function ResonatorSearch({
       <CatalogSearch.Input placeholder="Nombre o ID del resonador" />
 
       <CatalogSearch.List>
-        <SkeletonSuspense skeleton={<CatalogSearch.Loading />}>
+        <Suspense fallback={<CatalogSearch.Loading />}>
           <ResonatorSearchResults selectedId={selectedId} onSelect={onSelect} />
-        </SkeletonSuspense>
+        </Suspense>
       </CatalogSearch.List>
     </CatalogSearch.Root>
   )

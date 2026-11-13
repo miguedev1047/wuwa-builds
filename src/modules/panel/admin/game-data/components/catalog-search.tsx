@@ -17,7 +17,7 @@ import {
   type ReactElement,
   type ReactNode,
 } from "react"
-import { SkeletonBox } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
 
 /**
  * Command palette used to pick external (Encore) data and prefill admin forms.
@@ -145,8 +145,8 @@ export function CatalogSearchLoading({ count = 6 }: CatalogSearchLoadingProps) {
           key={index}
           className="flex min-h-7 items-center gap-2 rounded-md px-2.5 py-1.5"
         >
-          <SkeletonBox width={28} height={28} radius={0} />
-          <SkeletonBox width="45%" height={12} />
+          <Skeleton className="size-7 rounded-none" />
+          <Skeleton className="h-3 w-9/20" />
         </div>
       ))}
     </div>

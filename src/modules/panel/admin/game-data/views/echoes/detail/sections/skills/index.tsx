@@ -1,5 +1,6 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { EchoSkillActions } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-actions"
 import { EchoSkillContent } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-content"
@@ -20,15 +21,15 @@ export function EchoSkillsSection() {
         </EditableSection.Description>
 
         <EditableSection.Action>
-          <SkeletonSuspense skeleton={<SkeletonBox width={220} height={28} />}>
+          <Suspense fallback={<Skeleton className="h-7 w-55" />}>
             <EchoSkillActions echoId={echoId} />
-          </SkeletonSuspense>
+          </Suspense>
         </EditableSection.Action>
       </EditableSection.Header>
 
-      <SkeletonSuspense skeleton={<EchoSkillSkeleton />}>
+      <Suspense fallback={<EchoSkillSkeleton />}>
         <EchoSkillContent echoId={echoId} />
-      </SkeletonSuspense>
+      </Suspense>
     </EditableSection.Root>
   )
 }

@@ -11,7 +11,6 @@ import type { DbClient } from "@tanstack/react-db"
 import { ThemeProvider } from "@/providers/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { SkulletProvider } from "skullet/react"
 
 export interface RouteContext {
   dbClient: DbClient
@@ -56,23 +55,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider defaultTheme="system" storageKey="theme">
-          <SkulletProvider
-            mode="system"
-            theme={{
-              radius: "20px",
-              animation: "pulse",
-              speed: "slow",
-              text: {
-                top: "ascender",
-                bottom: "descender",
-              },
-            }}
-          >
-            <TooltipProvider>
-              {children}
-              <Toaster />
-            </TooltipProvider>
-          </SkulletProvider>
+          <TooltipProvider>
+            {children}
+            <Toaster />
+          </TooltipProvider>
         </ThemeProvider>
         <Devtools />
         <Scripts />

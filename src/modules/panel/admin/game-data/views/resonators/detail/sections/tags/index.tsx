@@ -1,5 +1,6 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { ResonatorTagsContent } from "@panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-content"
 import { ResonatorTagsEditLoader } from "@panel/admin/game-data/views/resonators/detail/sections/tags/components/resonator-tags-edit-loader"
@@ -19,15 +20,15 @@ export function ResonatorTagsSection() {
         </EditableSection.Description>
 
         <EditableSection.Action>
-          <SkeletonSuspense skeleton={<SkeletonBox width="6rem" height={32} />}>
+          <Suspense fallback={<Skeleton className="h-8 w-24" />}>
             <ResonatorTagsEditLoader resonatorId={resonatorId} />
-          </SkeletonSuspense>
+          </Suspense>
         </EditableSection.Action>
       </EditableSection.Header>
 
-      <SkeletonSuspense skeleton={<ResonatorTagsSkeleton />}>
+      <Suspense fallback={<ResonatorTagsSkeleton />}>
         <ResonatorTagsContent resonatorId={resonatorId} />
-      </SkeletonSuspense>
+      </Suspense>
     </EditableSection.Root>
   )
 }

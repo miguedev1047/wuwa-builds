@@ -1,5 +1,6 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { WeaponRefinementAddLoader } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinement-add-loader"
 import { WeaponRefinementsContent } from "@panel/admin/game-data/views/weapons/detail/sections/refinements/components/weapon-refinements-content"
@@ -20,17 +21,15 @@ export function WeaponRefinementsSection() {
         </EditableSection.Description>
 
         <EditableSection.Action>
-          <SkeletonSuspense
-            skeleton={<SkeletonBox width="10rem" height={32} />}
-          >
+          <Suspense fallback={<Skeleton className="h-8 w-40" />}>
             <WeaponRefinementAddLoader weaponId={weaponId} />
-          </SkeletonSuspense>
+          </Suspense>
         </EditableSection.Action>
       </EditableSection.Header>
 
-      <SkeletonSuspense skeleton={<WeaponRefinementsSkeleton />}>
+      <Suspense fallback={<WeaponRefinementsSkeleton />}>
         <WeaponRefinementsContent weaponId={weaponId} />
-      </SkeletonSuspense>
+      </Suspense>
     </EditableSection.Root>
   )
 }

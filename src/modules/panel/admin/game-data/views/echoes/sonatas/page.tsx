@@ -3,7 +3,7 @@ import { SonataAddAction } from "@panel/admin/game-data/views/echoes/sonatas/com
 import { SonataList } from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-list"
 import { SonataSyncAction } from "@panel/admin/game-data/views/echoes/sonatas/components/sonata-sync-action"
 import { sonataDockActions } from "@panel/admin/game-data/views/echoes/sonatas/dock-actions"
-import { SkeletonSuspense } from "skullet/react"
+import { Suspense } from "react"
 
 export function SonataListPage() {
   return (
@@ -20,13 +20,13 @@ export function SonataListPage() {
         </CatalogSection.Action>
       </CatalogSection.Header>
 
-      <SkeletonSuspense
-        skeleton={
+      <Suspense
+        fallback={
           <CatalogSection.Loading cols={4} aspect="portrait" count={4} />
         }
       >
         <SonataList />
-      </SkeletonSuspense>
+      </Suspense>
 
       <CatalogSection.DockActions items={sonataDockActions} />
     </CatalogSection.Root>

@@ -48,7 +48,6 @@
     "react-dom": "^19.3.1",
     "react-scan": "^0.5.7",
     "shadcn": "^4.23.0",
-    "skullet": "^0.0.3",
     "sonner": "^2.0.8",
     "tailwind-variants": "^4.0.2",
     "tailwindcss": "^4",

@@ -1,5 +1,6 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { ResonatorPassiveAddLoader } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passive-add-loader"
 import { ResonatorPassivesContent } from "@panel/admin/game-data/views/resonators/detail/sections/passives/components/resonator-passives-content"
@@ -19,15 +20,15 @@ export function ResonatorPassivesSection() {
         </EditableSection.Description>
 
         <EditableSection.Action>
-          <SkeletonSuspense skeleton={<SkeletonBox width="9rem" height={32} />}>
+          <Suspense fallback={<Skeleton className="h-8 w-36" />}>
             <ResonatorPassiveAddLoader resonatorId={resonatorId} />
-          </SkeletonSuspense>
+          </Suspense>
         </EditableSection.Action>
       </EditableSection.Header>
 
-      <SkeletonSuspense skeleton={<ResonatorPassivesSkeleton />}>
+      <Suspense fallback={<ResonatorPassivesSkeleton />}>
         <ResonatorPassivesContent resonatorId={resonatorId} />
-      </SkeletonSuspense>
+      </Suspense>
     </EditableSection.Root>
   )
 }

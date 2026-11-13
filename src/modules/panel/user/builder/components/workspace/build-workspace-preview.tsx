@@ -1,6 +1,5 @@
 import { Suspense } from "react"
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { SkeletonSuspense } from "skullet/react"
 import { BuildCanvas } from "@builder/components/build-canvas/build-canvas"
 import { SequencesContent } from "@builder/components/build-canvas/sequences-panel/sequences-content"
 import { SequencesSkeleton } from "@builder/components/build-canvas/sequences-panel/sequences-skeleton"
@@ -74,20 +73,20 @@ export function BuildWorkspacePreview({
         </Suspense>
       }
       skills={
-        <SkeletonSuspense skeleton={<SkillsPreviewSkeleton />}>
+        <Suspense fallback={<SkillsPreviewSkeleton />}>
           <PreviewSkills build={build} resonatorId={resonatorId} />
-        </SkeletonSuspense>
+        </Suspense>
       }
       stats={<StatsContent build={build} {...stats} />}
       weaponProperties={
         <Show when={build.weapon.data}>
           {(weapon) => (
-            <SkeletonSuspense skeleton={<WeaponInfoPropertiesSkeleton />}>
+            <Suspense fallback={<WeaponInfoPropertiesSkeleton />}>
               <PreviewWeaponProperties
                 weaponId={weapon.id}
                 level={build.weapon.level ?? WEAPON_LEVEL_MAX}
               />
-            </SkeletonSuspense>
+            </Suspense>
           )}
         </Show>
       }

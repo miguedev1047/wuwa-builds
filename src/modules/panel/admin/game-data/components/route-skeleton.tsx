@@ -1,4 +1,4 @@
-import { SkeletonBox } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
 import {
   CatalogSection,
   type CatalogSectionAspect,
@@ -36,7 +36,7 @@ export function CatalogListRouteSkeleton({
         <Show when={actionCount > 0}>
           <CatalogSection.Action>
             {Array.from({ length: actionCount }, (_, index) => (
-              <SkeletonBox key={index} width={96} height={32} />
+              <Skeleton key={index} className="h-8 w-24" />
             ))}
           </CatalogSection.Action>
         </Show>
@@ -60,32 +60,32 @@ export function CatalogDetailRouteSkeleton({
     <div className="space-y-10">
       <div className="space-y-4">
         <div className="flex items-start justify-between gap-1">
-          <SkeletonBox width="12rem" height={32} />
+          <Skeleton className="h-8 w-48" />
 
           <div className="flex items-center gap-2">
-            <SkeletonBox width={72} height={28} />
-            <SkeletonBox width={28} height={28} />
+            <Skeleton className="h-7 w-18" />
+            <Skeleton className="size-7" />
           </div>
         </div>
 
         <div className="flex w-full flex-col items-start gap-4 md:flex-row">
-          <SkeletonBox width={160} height={240} radius={0} />
+          <Skeleton className="h-60 w-40 rounded-none" />
 
           <div className="flex flex-1 flex-col gap-3">
-            <SkeletonBox width="40%" height={32} />
-            <SkeletonBox width="100%" height={12} />
-            <SkeletonBox width="90%" height={12} />
-            <SkeletonBox width="70%" height={12} />
+            <Skeleton className="h-8 w-2/5" />
+            <Skeleton className="h-3 w-full" />
+            <Skeleton className="h-3 w-9/10" />
+            <Skeleton className="h-3 w-7/10" />
           </div>
         </div>
       </div>
 
       {Array.from({ length: sections }, (_, index) => (
         <div key={index} className="space-y-4">
-          <SkeletonBox width="10rem" height={20} />
-          <SkeletonBox width="16rem" height={12} />
-          <SkeletonBox width="100%" height={140} radius={8} />
-          <SkeletonBox width="100%" height={140} radius={8} />
+          <Skeleton className="h-5 w-40" />
+          <Skeleton className="h-3 w-64" />
+          <Skeleton className="h-35 w-full rounded-lg" />
+          <Skeleton className="h-35 w-full rounded-lg" />
         </div>
       ))}
     </div>

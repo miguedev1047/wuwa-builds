@@ -1,5 +1,5 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonSuspense } from "skullet/react"
+import { Suspense } from "react"
 import { EchoInfoContent } from "@panel/admin/game-data/views/echoes/detail/sections/info/components/echo-info-content"
 import { EchoInfoSkeleton } from "@panel/admin/game-data/views/echoes/detail/sections/info/components/echo-info-skeleton"
 
@@ -9,8 +9,8 @@ export function EchoInfoSection() {
   const echoId = Number(id)
 
   return (
-    <SkeletonSuspense skeleton={<EchoInfoSkeleton />}>
+    <Suspense fallback={<EchoInfoSkeleton />}>
       <EchoInfoContent echoId={echoId} />
-    </SkeletonSuspense>
+    </Suspense>
   )
 }

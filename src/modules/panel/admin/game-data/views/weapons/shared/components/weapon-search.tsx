@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { SkeletonSuspense } from "skullet/react"
+import { Suspense } from "react"
 import { Button } from "@/components/ui/button"
 import type { EncoreWeaponSummary } from "@encore/domain/weapon"
 import { encoreWeaponQueries } from "@encore/queries/catalogs"
@@ -37,9 +37,9 @@ export function WeaponSearch({
       <CatalogSearch.Input placeholder="Nombre, tipo o ID del arma" />
 
       <CatalogSearch.List>
-        <SkeletonSuspense skeleton={<CatalogSearch.Loading />}>
+        <Suspense fallback={<CatalogSearch.Loading />}>
           <WeaponSearchResults selectedId={selectedId} onSelect={onSelect} />
-        </SkeletonSuspense>
+        </Suspense>
       </CatalogSearch.List>
     </CatalogSearch.Root>
   )

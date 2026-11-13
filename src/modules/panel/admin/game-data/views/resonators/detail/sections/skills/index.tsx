@@ -1,5 +1,6 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { ResonatorSkillAddLoader } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skill-add-loader"
 import { ResonatorSkillsContent } from "@panel/admin/game-data/views/resonators/detail/sections/skills/components/resonator-skills-content"
@@ -19,15 +20,15 @@ export function ResonatorSkillsSection() {
         </EditableSection.Description>
 
         <EditableSection.Action>
-          <SkeletonSuspense skeleton={<SkeletonBox width="9rem" height={32} />}>
+          <Suspense fallback={<Skeleton className="h-8 w-36" />}>
             <ResonatorSkillAddLoader resonatorId={resonatorId} />
-          </SkeletonSuspense>
+          </Suspense>
         </EditableSection.Action>
       </EditableSection.Header>
 
-      <SkeletonSuspense skeleton={<ResonatorSkillsSkeleton />}>
+      <Suspense fallback={<ResonatorSkillsSkeleton />}>
         <ResonatorSkillsContent resonatorId={resonatorId} />
-      </SkeletonSuspense>
+      </Suspense>
     </EditableSection.Root>
   )
 }

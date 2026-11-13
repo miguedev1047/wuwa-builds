@@ -1,5 +1,5 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonSuspense } from "skullet/react"
+import { Suspense } from "react"
 import { ResonatorInfoContent } from "@panel/admin/game-data/views/resonators/detail/sections/info/components/resonator-info-content"
 import { ResonatorInfoSkeleton } from "@panel/admin/game-data/views/resonators/detail/sections/info/components/resonator-info-skeleton"
 
@@ -9,8 +9,8 @@ export function ResonatorInfoSection() {
   const resonatorId = Number(id)
 
   return (
-    <SkeletonSuspense skeleton={<ResonatorInfoSkeleton />}>
+    <Suspense fallback={<ResonatorInfoSkeleton />}>
       <ResonatorInfoContent resonatorId={resonatorId} />
-    </SkeletonSuspense>
+    </Suspense>
   )
 }

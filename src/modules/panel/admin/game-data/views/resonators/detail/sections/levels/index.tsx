@@ -1,5 +1,6 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { PropertyLevelAddLoader } from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-level-add-loader"
 import { PropertyLevelsList } from "@panel/admin/game-data/views/resonators/detail/sections/levels/components/property-levels-list"
@@ -19,15 +20,15 @@ export function ResonatorLevelsSection() {
         </EditableSection.Description>
 
         <EditableSection.Action>
-          <SkeletonSuspense skeleton={<SkeletonBox width="6rem" height={32} />}>
+          <Suspense fallback={<Skeleton className="h-8 w-24" />}>
             <PropertyLevelAddLoader resonatorId={resonatorId} />
-          </SkeletonSuspense>
+          </Suspense>
         </EditableSection.Action>
       </EditableSection.Header>
 
-      <SkeletonSuspense skeleton={<PropertyLevelsSkeleton />}>
+      <Suspense fallback={<PropertyLevelsSkeleton />}>
         <PropertyLevelsList resonatorId={resonatorId} />
-      </SkeletonSuspense>
+      </Suspense>
     </EditableSection.Root>
   )
 }

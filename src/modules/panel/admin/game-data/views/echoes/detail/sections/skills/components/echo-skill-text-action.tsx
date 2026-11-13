@@ -1,6 +1,7 @@
 import { PencilEdit01Icon, PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import type { EchoSkillRow } from "@db/schema"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { EchoSkillTextForm } from "@panel/admin/game-data/views/echoes/detail/sections/skills/components/echo-skill-text-form"
@@ -16,14 +17,14 @@ export function EchoSkillTextAction({
   skill,
 }: EchoSkillTextActionProps) {
   const body = ({ close }: { close: () => void }) => (
-    <SkeletonSuspense skeleton={<SkeletonBox width="100%" height={160} />}>
+    <Suspense fallback={<Skeleton className="h-40 w-full" />}>
       <EchoSkillTextForm
         echoId={echoId}
         skill={skill}
         onSaved={close}
         onCancel={close}
       />
-    </SkeletonSuspense>
+    </Suspense>
   )
 
   if (skill) {

@@ -1,5 +1,6 @@
 import { useParams } from "@tanstack/react-router"
-import { SkeletonBox, SkeletonSuspense } from "skullet/react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Suspense } from "react"
 import { EditableSection } from "@panel/admin/game-data/components/editable-section"
 import { WeaponPropertiesList } from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-properties-list"
 import { WeaponPropertiesSkeleton } from "@panel/admin/game-data/views/weapons/detail/sections/levels/components/weapon-properties-skeleton"
@@ -20,15 +21,15 @@ export function WeaponLevelsSection() {
         </EditableSection.Description>
 
         <EditableSection.Action>
-          <SkeletonSuspense skeleton={<SkeletonBox width="6rem" height={32} />}>
+          <Suspense fallback={<Skeleton className="h-8 w-24" />}>
             <WeaponPropertyAddLoader weaponId={weaponId} />
-          </SkeletonSuspense>
+          </Suspense>
         </EditableSection.Action>
       </EditableSection.Header>
 
-      <SkeletonSuspense skeleton={<WeaponPropertiesSkeleton />}>
+      <Suspense fallback={<WeaponPropertiesSkeleton />}>
         <WeaponPropertiesList weaponId={weaponId} />
-      </SkeletonSuspense>
+      </Suspense>
     </EditableSection.Root>
   )
 }
