@@ -1,4 +1,5 @@
 import { Flow } from "@/components/panelui/flow"
+import { buildCardFrameClassName } from "@builder/components/build-canvas/build-card-frame"
 import { cn } from "cn"
 
 /** Interactive viewport of the builder canvas. */
@@ -23,7 +24,7 @@ export function BuildWorkspaceStage({
         <Flow.Node
           id="build-card"
           position={{ x: 0, y: 0 }}
-          className="w-7xl rounded-4xl border-0 bg-card p-4 text-sm text-card-foreground shadow-none ring-1 ring-foreground/5 dark:ring-foreground/10"
+          className={buildCardFrameClassName}
         >
           <Flow.NodeContent className="p-0">{children}</Flow.NodeContent>
         </Flow.Node>

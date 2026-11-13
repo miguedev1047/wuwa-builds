@@ -13,7 +13,7 @@ import { DEFAULT_SEQUENCY_RANK, WEAPON_LEVEL_MAX } from "@builds/domain/build"
 import type { BuildProps } from "@builds/domain/build-record"
 import { characterQueries } from "@game-data/queries/characters"
 import { weaponQueries } from "@game-data/queries/weapons"
-import { useBuildStats } from "@panel/user/builds/application/use-build-stats"
+import type { useBuildStats } from "@panel/user/builds/application/use-build-stats"
 
 function PreviewSequences({
   build,
@@ -57,11 +57,13 @@ function PreviewWeaponProperties({
 export function BuildWorkspacePreview({
   build,
   resonatorId,
+  preview,
 }: {
   build: BuildProps
   resonatorId: number
+  preview: ReturnType<typeof useBuildStats>
 }) {
-  const { echoDetails, ...stats } = useBuildStats(build)
+  const { echoDetails, result, isLoading, isError } = preview
 
   return (
     <BuildCanvas
@@ -77,7 +79,14 @@ export function BuildWorkspacePreview({
           <PreviewSkills build={build} resonatorId={resonatorId} />
         </Suspense>
       }
-      stats={<StatsContent build={build} {...stats} />}
+      stats={
+        <StatsContent
+          build={build}
+          result={result}
+          isLoading={isLoading}
+          isError={isError}
+        />
+      }
       weaponProperties={
         <Show when={build.weapon.data}>
           {(weapon) => (

@@ -71,5 +71,12 @@ export function useBuildStats(build: BuildProps) {
     sonataQuery.data,
   ])
 
-  return { result, isLoading, isError, echoDetails: echoQuery.data }
+  return {
+    result,
+    isLoading,
+    isError,
+    resonator: resonatorQuery.data,
+    weapon: weaponQuery.data,
+    echoDetails: echoQuery.data,
+  }
 }

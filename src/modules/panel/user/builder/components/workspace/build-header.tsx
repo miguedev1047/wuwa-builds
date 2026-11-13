@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { BuildDelete } from "@builder/components/workspace/build-delete"
+import { BuildActions } from "@builder/components/workspace/build-actions"
 import { BuildName } from "@builder/components/workspace/build-name"
 import type { ReactElement } from "react"
 
@@ -8,11 +8,17 @@ export function BuildHeader({
   name,
   backLink,
   onRename,
+  canDownload,
+  isDownloading,
+  onDownload,
   onDelete,
 }: {
   name: string
   backLink: ReactElement
   onRename: (name: string) => void
+  canDownload: boolean
+  isDownloading: boolean
+  onDownload: () => void
   onDelete: () => void
 }) {
   return (
@@ -22,8 +28,15 @@ export function BuildHeader({
           Volver
         </Button>
       </div>
+
       <BuildName name={name} onRename={onRename} />
-      <BuildDelete onDelete={onDelete} />
+
+      <BuildActions
+        canDownload={canDownload}
+        isDownloading={isDownloading}
+        onDownload={onDownload}
+        onDelete={onDelete}
+      />
     </div>
   )
 }
