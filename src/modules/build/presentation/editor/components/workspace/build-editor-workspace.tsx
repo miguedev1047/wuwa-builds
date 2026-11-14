@@ -57,7 +57,7 @@ export function BuildEditorWorkspace({
   }
 
   return (
-    <div className="container mx-auto flex min-h-dvh w-full flex-col gap-6 p-3 md:p-6 xl:h-dvh xl:overflow-hidden">
+    <div className="flex min-h-dvh w-full flex-col gap-6 p-3 md:p-6 xl:h-dvh xl:overflow-hidden">
       <BuildHeader
         name={build.name}
         backLink={backLink}
