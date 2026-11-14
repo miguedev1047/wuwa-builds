@@ -33,6 +33,7 @@ const imageVariants = cva(
         secondary: "bg-secondary",
         input: "bg-input/50",
         accent: "bg-accent",
+        glass: "bg-accent/50 shadow-app-surface backdrop-blur-2xl",
       },
       hover: {
         none: "",

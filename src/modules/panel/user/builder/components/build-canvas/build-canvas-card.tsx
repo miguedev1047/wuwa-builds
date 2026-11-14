@@ -12,7 +12,7 @@ type BuildCanvasCardProps = React.ComponentProps<"div"> & {
  *
  * The named area comes from `data-canvas-area`, mapped once in `.build-canvas`,
  * so panels never use line numbers. The card fills its cell and clips its
- * content, which is what keeps the fixed 90px rows stable.
+ * content, which keeps the fixed canvas rows stable.
  */
 export function BuildCanvasCard({
   area,

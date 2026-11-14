@@ -193,7 +193,7 @@
   .build-canvas {
     display: grid;
     grid-template-columns: repeat(10, minmax(0, 1fr));
-    grid-template-rows: repeat(7, 5.625rem);
+    grid-template-rows: 5.625rem 10rem repeat(5, 5.625rem);
     gap: calc(var(--spacing) * 3);
     grid-template-areas:
       "resonator resonator resonator sequencies sequencies sequencies skills skills skills skills"

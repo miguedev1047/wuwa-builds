@@ -27,8 +27,8 @@ export function SequencesContent({
                 alt={sequency.name + sequency.index}
                 size="xs"
                 data-active={sequency.index > currentSequency}
-                background="accent"
-                imgClassName="data-[active=true]:opacity-50"
+                background="glass"
+                imgClassName="data-[active=true]:opacity-50 p-1"
               />
             }
           />

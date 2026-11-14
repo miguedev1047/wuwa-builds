@@ -48,7 +48,7 @@ export function BuildEchoCard({
                   alt={echo.name}
                   size="sm"
                   rounded="xl"
-                  background="accent"
+                  background="glass"
                 />
 
                 <div className="text-end">

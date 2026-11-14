@@ -338,7 +338,10 @@ export default defineConfig([
               ],
             },
             { pattern: "^RadioGroup(Item)?$", allow: ["layout", "gap-*"] },
-            { pattern: "^Image$", allow: ["layout", "gap-*", "opacity-*"] },
+            {
+              pattern: "^Image$",
+              allow: ["layout", "gap-*", "p-*", "opacity-*"],
+            },
             {
               pattern: "^Collapsible(Content|Button)?$",
               allow: [

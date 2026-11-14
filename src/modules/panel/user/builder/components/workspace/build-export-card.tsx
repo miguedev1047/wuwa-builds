@@ -7,6 +7,7 @@ import { StatsContent } from "@builder/components/build-canvas/stats-panel/stats
 import { WeaponInfoProperties } from "@builder/components/build-canvas/weapon-panel/weapon-info-properties"
 import { Show } from "@/components/utility/show"
 import { DEFAULT_SEQUENCY_RANK, WEAPON_LEVEL_MAX } from "@builds/domain/build"
+import { BuildBackground } from "@builder/components/workspace/build-background"
 import type { useBuildStats } from "@panel/user/builds/application/use-build-stats"
 import type { Ref } from "react"
 
@@ -30,7 +31,11 @@ export function BuildExportCard({
       inert
       className="pointer-events-none fixed top-0 right-full"
     >
-      <div ref={captureRef} className={buildCardFrameClassName}>
+      <BuildBackground
+        ref={captureRef}
+        backgroundIndex={build.backgroundIndex}
+        className={buildCardFrameClassName}
+      >
         <BuildCanvas
           build={build}
           echoDetails={echoDetails}
@@ -63,7 +68,7 @@ export function BuildExportCard({
             </Show>
           }
         />
-      </div>
+      </BuildBackground>
     </div>
   )
 }

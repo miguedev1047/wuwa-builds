@@ -2,8 +2,8 @@ import type { BuildProps } from "@builds/domain/build-record"
 import type { CharacterCalculationResult } from "@builds/domain/character-stats"
 import { StatsRowItem } from "@builder/components/build-canvas/stats-panel/stats-row"
 import { StatsSkeleton } from "@builder/components/build-canvas/stats-panel/stats-skeleton"
-import { statsRows } from "@/modules/panel/user/builder/application/stats-view-model"
-import { BuildTextHeader } from "@builder/ui/build-text-header"
+import { statsRows } from "@builder/application/stats-view-model"
+import { BuildWorkspace } from "@builder/components/workspace"
 
 /** Derived stats of the current build. */
 export function StatsContent({
@@ -39,7 +39,9 @@ export function StatsContent({
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-4">
-      <BuildTextHeader size="lg">Estadísticas</BuildTextHeader>
+      <BuildWorkspace.Text size="xs" textColor="muted" family="bold">
+        Estadísticas
+      </BuildWorkspace.Text>
       <dl className="grid min-h-0 grid-flow-col grid-cols-2 grid-rows-6 content-between gap-x-6 gap-y-4">
         {rows.map((row) => (
           <StatsRowItem key={row.key} row={row} />

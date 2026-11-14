@@ -1,12 +1,13 @@
 import type { BuildProps } from "@builds/domain/build-record"
 import type { CharacterDetail } from "@game-data/domain/character"
-import { Badge } from "@/components/ui/badge"
-import { Image } from "@/components/ui/image"
+import { createResonatorPassives } from "@builds/application/factories/build"
 import { Show } from "@/components/utility/show"
+import { BuildWorkspace } from "@builder/components/workspace"
+import { SkillsBranch } from "@builder/components/build-canvas/skills-panel/skills-branch"
 
 const PREVIEW_SKILLS = 5
 
-/** Read-only preview of the resonator skills and passives. */
+/** Five skill branches with their saved passive states and upgrade levels. */
 export function SkillsPreview({
   resonator,
   build,
@@ -14,43 +15,44 @@ export function SkillsPreview({
   resonator: CharacterDetail
   build: BuildProps
 }) {
-  const passives = build.resonator.passives
-  const activePassives = passives.filter((passive) => passive.enabled)
-  const previewSkills = resonator.skills.slice(0, PREVIEW_SKILLS)
+  const skills = resonator.skills.slice(0, PREVIEW_SKILLS)
+  const passives = createResonatorPassives(resonator).map((passive) => ({
+    ...passive,
+    enabled: build.resonator.passives.some(
+      (saved) =>
+        saved.passiveId === passive.passiveId &&
+        saved.type === passive.type &&
+        saved.enabled
+    ),
+  }))
 
   return (
-    <div className="flex h-full min-h-0 flex-col gap-2">
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-          Habilidades
-        </p>
-        <Badge variant="outline">{activePassives.length} activas</Badge>
-      </div>
-
-      <div className="grid min-h-0 flex-1 grid-cols-5 content-center gap-2">
+    <div className="flex h-full min-h-0 flex-col gap-3">
+      <BuildWorkspace.Text size="xs" textColor="muted" family="bold">
+        Habilidades y pasivas
+      </BuildWorkspace.Text>
+      <div className="grid min-h-0 flex-1 grid-cols-5 gap-3">
         <Show
-          when={previewSkills.length > 0}
-          fallback={Array.from({ length: PREVIEW_SKILLS }).map((_, index) => (
-            <div key={index} className="aspect-square rounded-lg bg-muted" />
-          ))}
+          when={skills.length > 0}
+          fallback={
+            <p className="col-span-5 self-center text-center text-xs text-muted-foreground">
+              Sin habilidades en el catálogo
+            </p>
+          }
         >
-          {previewSkills.map((skill) => (
-            <Image
+          {skills.map((skill, index) => (
+            <SkillsBranch
               key={skill.skillId}
-              src={skill.icon}
-              alt={skill.name}
-              size="full"
-              rounded="lg"
-              background="accent"
-              className="aspect-square"
+              skill={skill}
+              level={
+                build.resonator.skills.find(
+                  (saved) => saved.skillId === skill.skillId
+                )?.level
+              }
+              passives={[passives[index], passives[index + PREVIEW_SKILLS]]}
             />
           ))}
         </Show>
-      </div>
-
-      <div className="mt-auto flex items-center justify-between gap-3 text-xs text-muted-foreground">
-        <span>{build.resonator.skills.length} habilidades</span>
-        <span>{passives.length} pasivas</span>
       </div>
     </div>
   )

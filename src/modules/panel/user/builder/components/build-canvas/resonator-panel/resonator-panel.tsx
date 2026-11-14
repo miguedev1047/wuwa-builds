@@ -19,10 +19,9 @@ export function ResonatorPanel({ build }: { build: BuildProps }) {
             src={resonator.iconLarge}
             alt={resonator.name}
             aspect="square"
-            rounded="full"
-            background="accent"
-            size="xs"
-            className="size-14 shrink-0"
+            rounded="xl"
+            background="glass"
+            className="w-14 shrink-0"
           />
           <div>
             <h2 className="truncate text-lg font-bold uppercase">

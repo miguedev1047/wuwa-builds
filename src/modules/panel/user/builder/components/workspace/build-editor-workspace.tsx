@@ -48,8 +48,9 @@ export function BuildEditorWorkspace({
       const card = captureRef.current
       if (!card) throw new Error("Export card did not mount")
       await downloadBuildPng(card, build.name)
-    } catch {
+    } catch (err) {
       toast.error("No se pudo descargar la imagen de la build")
+      console.log(err)
     } finally {
       setExportSnapshot(null)
     }
