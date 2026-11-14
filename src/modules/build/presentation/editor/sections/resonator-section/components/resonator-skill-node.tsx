@@ -1,47 +1,50 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
-import type { ResonatorPassivesDataProps } from "@build/domain/build-record"
-import { BuildWorkspace } from "@/modules/build/presentation/editor/components/workspace"
+import { Image } from "@/components/ui/image"
+import { Slider } from "@/components/panelui/slider"
+import { SKILL_LEVEL_MAX, SKILL_LEVEL_MIN } from "@build/domain/build"
+import type { CharacterDetail } from "@catalog/domain/character"
+import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 
 type ResonatorSkillNodeProps = {
-  node: ResonatorPassivesDataProps
-  onToggle: (enabled: boolean) => void
+  skill: Pick<CharacterDetail["skills"][number], "name" | "icon">
+  level: number
+  onLevelChange: (level: number) => void
 }
 
-/**
- * One passive node of the skills dialog.
- *
- * Clicking it toggles the passive; the unchecked state dims and grays the card.
- */
+/** One skill row: icon, skill name and its level slider. */
 export function ResonatorSkillNode({
-  node,
-  onToggle,
+  skill,
+  level,
+  onLevelChange,
 }: ResonatorSkillNodeProps) {
   return (
-    <Tooltip>
-      <TooltipTrigger
-        render={
-          <BuildWorkspace.Card
-            role="switch"
-            cardColor="input"
-            data-checked={node.enabled}
-            aria-label={node.name}
-            onClick={() => onToggle(!node.enabled)}
-            className="aspect-square data-[checked=false]:opacity-50 data-[checked=false]:grayscale"
-          >
-            <img
-              src={node.icon}
-              alt={node.name}
-              className="pointer-events-none size-full object-contain select-none"
-            />
-          </BuildWorkspace.Card>
-        }
+    <div className="flex items-end gap-2">
+      <Image
+        src={skill.icon}
+        alt={skill.name}
+        aspect="square"
+        fit="contain"
+        className="size-14 p-1"
+        background="accent"
       />
-
-      <TooltipContent>{node.name}</TooltipContent>
-    </Tooltip>
+      <div className="w-full space-y-1">
+        <BuildWorkspace.Text
+          size="xs"
+          className="font-normal"
+          uppercase={false}
+          aria-label={skill.name}
+          title={skill.name}
+        >
+          {skill.name}
+        </BuildWorkspace.Text>
+        <Slider
+          value={level}
+          min={SKILL_LEVEL_MIN}
+          max={SKILL_LEVEL_MAX}
+          step={1}
+          format={(value) => `Lv. ${value}`}
+          onValueChange={onLevelChange}
+        />
+      </div>
+    </div>
   )
 }

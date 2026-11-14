@@ -51,7 +51,7 @@ export const WEAPON_TYPE_IDS = [
   "broadblade",
   "sword",
   "pistols",
-  "gauntlets",
+  "guantlets",
   "rectifier",
 ] as const
 
@@ -62,7 +62,7 @@ export const RESONATOR_WEAPON_TYPES: SelectOption<WeaponTypeId>[] = [
   { label: "Mandoble", value: "broadblade" },
   { label: "Espada", value: "sword" },
   { label: "Pistolas", value: "pistols" },
-  { label: "Brazales", value: "gauntlets" },
+  { label: "Brazales", value: "guantlets" },
   { label: "Rectificador", value: "rectifier" },
 ]
 
@@ -71,7 +71,7 @@ export const WEAPON_TYPE_BY_ENCORE: Record<string, WeaponTypeId> = {
   Mandoble: "broadblade",
   Espada: "sword",
   Pistolas: "pistols",
-  Brazales: "gauntlets",
+  Brazales: "guantlets",
   Rectificador: "rectifier",
 }
 

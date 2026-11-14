@@ -1,34 +1,48 @@
 import { Image } from "@/components/ui/image"
-import type { BuildProps } from "@build/domain/build-record"
 import type { CharacterDetail } from "@catalog/domain/character"
-import { ResonatorBaseStats } from "@build/presentation/editor/sections/resonator-section/components/resonator-base-stats"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
+import { optionLabel } from "@catalog/application/options"
+import {
+  RESONATOR_ELEMENTS,
+  RESONATOR_WEAPON_TYPES,
+} from "@catalog/application/constants/resonator"
+import { GameIcon, gameIconName } from "@/components/ui/game-icon"
 
 type ResonatorPortraitProps = {
   resonator: CharacterDetail
-  build: BuildProps
 }
 
 /** Portrait of the selected resonator, full width on narrow screens. */
-export function ResonatorPortrait({
-  resonator,
-  build,
-}: ResonatorPortraitProps) {
+export function ResonatorPortrait({ resonator }: ResonatorPortraitProps) {
   return (
-    <div className="space-y-2">
-      <BuildWorkspace.Text size="sm">{resonator.name}</BuildWorkspace.Text>
-      <div className="flex min-h-40 items-stretch gap-2 md:min-h-32">
-        <Image
-          src={resonator.iconLarge}
-          alt={resonator.name}
-          background="accent"
-          aspect="portrait"
-          className="h-auto w-28 shrink-0 object-cover md:w-24"
-        />
-        <ResonatorBaseStats
-          properties={resonator.properties}
-          level={build.resonator.level}
-        />
+    <div className="flex items-center gap-4">
+      <Image
+        src={resonator.iconLarge}
+        alt={resonator.name}
+        background="accent"
+        aspect="square"
+        size="md"
+      />
+
+      <div className="space-y-1">
+        <BuildWorkspace.Text size="xl" family="bold">
+          {resonator.name}
+        </BuildWorkspace.Text>
+        <div className="flex items-center gap-1">
+          <GameIcon className="size-4" name={gameIconName(resonator.element)} />
+          <p className="text-xs text-muted-foreground">
+            {optionLabel(RESONATOR_ELEMENTS, resonator.element as never)}
+          </p>
+        </div>
+        <div className="flex items-center gap-1">
+          <GameIcon
+            className="size-4"
+            name={gameIconName(resonator.weaponType)}
+          />
+          <p className="text-xs text-muted-foreground">
+            {optionLabel(RESONATOR_WEAPON_TYPES, resonator.weaponType as never)}
+          </p>
+        </div>
       </div>
     </div>
   )

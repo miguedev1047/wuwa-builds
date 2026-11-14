@@ -23,8 +23,7 @@ export function ResonatorSequences({
   return (
     <div className="space-y-2">
       <BuildWorkspace.Text size="sm">Secuencias</BuildWorkspace.Text>
-
-      <div className="grid grid-cols-3 items-center gap-2 sm:grid-cols-6 md:gap-4 xl:gap-1">
+      <div className="grid grid-cols-6 items-center gap-1">
         {sequences.map((sequence) => (
           <ResonatorSequenceItem
             key={sequence.id}

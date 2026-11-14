@@ -1,4 +1,5 @@
 export { default as broadblade } from "./broadblade.png"
-export { default as gauntlets } from "./gauntlets.png"
+export { default as gauntlets } from "./guantlets.png"
 export { default as pistols } from "./pistols.png"
 export { default as sword } from "./sword.png"
+export { default as rectifier } from "./rectifier.png"

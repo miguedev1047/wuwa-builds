@@ -6,8 +6,12 @@ import { useResonatorProgress } from "@build/presentation/editor/sections/resona
 import { ResonatorLevelControl } from "@build/presentation/editor/sections/resonator-section/components/resonator-level-control"
 import { ResonatorPortrait } from "@build/presentation/editor/sections/resonator-section/components/resonator-portrait"
 import { ResonatorSequences } from "@build/presentation/editor/sections/resonator-section/components/resonator-sequences"
+import { ResonatorSkills } from "@build/presentation/editor/sections/resonator-section/components/resonator-skills"
+import { ResonatorPassives } from "@build/presentation/editor/sections/resonator-section/components/resonator-passives"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { ResonatorActions } from "@build/presentation/editor/sections/resonator-section/components/resonator-actions"
+import { Separator } from "@/components/ui/separator"
+import { ResonatorBaseStats } from "./resonator-base-stats"
 
 type ResonatorSectionContentProps = {
   build: BuildProps
@@ -30,24 +34,30 @@ export function ResonatorSectionContent({
         <BuildWorkspace.Text family="bold" textColor="muted" size="xl">
           Resonador
         </BuildWorkspace.Text>
-        <ResonatorActions build={build} resonator={resonator} />
+        <ResonatorActions build={build} />
       </div>
 
-      <div className="flex h-full w-full flex-col justify-between gap-6">
-        <ResonatorPortrait resonator={resonator} build={build} />
-
+      <div className="flex h-full w-full flex-col justify-between gap-5">
+        <ResonatorPortrait resonator={resonator} />
         <ResonatorLevelControl
           level={build.resonator.level}
           step={stepFromLevel(build.resonator.level)}
           maxStep={LEVEL_MILESTONES.length - 1}
           onStepChange={setLevelStep}
         />
-
+        <ResonatorBaseStats
+          level={build.resonator.level}
+          properties={resonator.properties}
+        />
         <ResonatorSequences
           sequences={resonator.sequences}
           rank={build.resonator.sequency}
           onToggle={toggleSequence}
         />
+        <Separator />
+        <ResonatorSkills build={build} resonatorId={resonator.id} />
+        <Separator />
+        <ResonatorPassives build={build} resonatorId={resonator.id} />
       </div>
     </div>
   )

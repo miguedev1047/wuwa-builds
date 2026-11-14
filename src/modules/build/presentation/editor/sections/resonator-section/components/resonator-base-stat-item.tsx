@@ -25,7 +25,7 @@ export function ResonatorBaseStatItem({
   return (
     <BuildWorkspace.Card
       cardColor="input"
-      className="flex flex-1 items-center justify-between px-3 py-2"
+      className="flex flex-1 items-center justify-between p-2"
     >
       <div className="flex items-center gap-1 overflow-hidden">
         <GameIcon
