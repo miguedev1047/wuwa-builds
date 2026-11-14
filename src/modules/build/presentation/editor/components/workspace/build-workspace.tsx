@@ -72,28 +72,6 @@ export function BuildWorkspaceContent({
   )
 }
 
-/**
- * Editor rail of the workspace.
- *
- * At `xl` it scrolls inside the workspace with a hidden scrollbar; below `xl`
- * it flows under the stage and the page scrolls.
- */
-export function BuildWorkspaceRail({
-  className,
-  ...props
-}: ComponentProps<"aside">) {
-  return (
-    <aside
-      data-slot="build-workspace-rail"
-      className={cn(
-        "no-scrollbar min-h-0 space-y-6 xl:scroll-fade-y xl:overflow-y-auto xl:overscroll-contain",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
 interface BuildWorkspaceDialogProps {
   title: string
   description?: string
@@ -148,7 +126,7 @@ export function BuildWorkspaceDialog({
 
 /** Heading sizes available to the builder sections. */
 export const buildWorkspaceTextVariants = cva(
-  "line-clamp-1 font-bold text-muted-foreground uppercase",
+  "line-clamp-1 font-bold text-muted-foreground",
   {
     variants: {
       size: {
@@ -168,6 +146,10 @@ export const buildWorkspaceTextVariants = cva(
         semibold: "font-semibold",
         bold: "font-bold",
       },
+      uppercase: {
+        true: "uppercase",
+        false: "",
+      },
       textColor: {
         normal: "text-foreground",
         muted: "text-muted-foreground",
@@ -177,6 +159,7 @@ export const buildWorkspaceTextVariants = cva(
       size: "normal",
       family: "semibold",
       textColor: "normal",
+      uppercase: true,
     },
   }
 )
@@ -196,13 +179,14 @@ export function BuildWorkspaceText({
   className,
   textColor,
   family,
+  uppercase,
   size,
   ...props
 }: BuildWorkspaceTextProps) {
   return (
     <h2
       className={cn(
-        buildWorkspaceTextVariants({ size, textColor, family }),
+        buildWorkspaceTextVariants({ size, textColor, uppercase, family }),
         className
       )}
       {...props}
@@ -296,13 +280,7 @@ function BuildWorkspaceEmptyTitle({
   )
 }
 
-/**
- * Two-column workspace: a PanelUI canvas with the scaled build preview and the
- * editor rail.
- *
- * The composition is DOM-first: the canvas comes before the rail, which is also
- * the mobile order. Below `xl` the rail collapses under the canvas.
- */
+/** Workspace surface for the canvas shown beside the editor inspector. */
 export const BuildWorkspace = {
   Root: BuildWorkspaceRoot,
   Canvas: BuildWorkspaceCanvas,
@@ -311,6 +289,5 @@ export const BuildWorkspace = {
   Empty: BuildWorkspaceEmpty,
   EmptyTitle: BuildWorkspaceEmptyTitle,
   Text: BuildWorkspaceText,
-  Rail: BuildWorkspaceRail,
   Card: BuildWorkspaceCard,
 } as const

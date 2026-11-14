@@ -6,6 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --height-build-editor: calc(100dvh - 4rem);
   --font-heading: var(--font-mono);
   --font-mono: "Geist Mono Variable", monospace;
   --color-sidebar-ring: var(--sidebar-ring);
@@ -230,20 +231,11 @@
   }
 }
 
-/* Build workspace: PanelUI canvas + editor rail.
-   The canvas draws its own dot pattern; the rail holds the editor sections and
-   scrolls on its own at xl. The stage itself never scrolls. */
+/* Build workspace canvas. The inspector is owned by the application sidebar. */
 @layer components {
   .build-workspace {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
-  }
-
-  @media (min-width: 80rem) {
-    .build-workspace {
-      grid-template-columns: minmax(0, 1fr) 22rem;
-      grid-template-rows: minmax(0, 1fr);
-    }
   }
 }

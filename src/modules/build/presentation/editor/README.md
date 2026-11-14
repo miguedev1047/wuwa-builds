@@ -3,7 +3,7 @@
 The editor route supplies an explicit build/session identity and resolves the
 local draft for that session, then passes it
 to `BuildEditorWorkspace`. The workspace composes the header, preview stage and
-editor rail.
+sidebar inspector.
 
 ## Canvas
 
@@ -12,8 +12,8 @@ editor rail.
 skills, weapon properties and echo details. The preview keeps its per-panel
 loading states. The canvas grid can also render directly from fixtures.
 
-The layout is a single 10 x 7 grid with 90px rows, a 160px second row and named areas, declared in
-`.build-canvas` (`src/styles.css`). Each panel declares its area through
+The layout is a single 10 x 7 grid with 90px rows, a 160px second row and named
+areas, declared in `.build-canvas` (`src/styles.css`). Each panel declares its area through
 `BuildCanvasCard` or `data-canvas-area`.
 
 ## Workspace
@@ -42,19 +42,13 @@ independent: the builder does not import the admin system.
       </BuildWorkspaceStage>
     </BuildWorkspace.Content>
   </BuildWorkspace.Canvas>
-
-  <BuildWorkspace.Rail>...</BuildWorkspace.Rail>
 </BuildWorkspace.Root>
 ```
 
-Above `xl` the page does not scroll: the stage is fixed and the rail scrolls
-independently. Below `xl` the rail falls under the stage and the page scrolls.
-The build card is a single node of a PanelUI `Flow`; the stage fits it on mount
+The sidebar editor inspector owns the editing sections. The build card is a
+single node of a PanelUI `Flow`; the stage fits it on mount
 and the Flow handles panning, zooming and dragging. The Flow also owns its
 controls, so they sit in the stage instead of needing a fixed parent.
-
-The editor sections render as-is in the rail; their compact, rail-aware UI is a
-pending pass, so expect visual breakage until that pass lands.
 
 ## Editor sections
 

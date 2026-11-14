@@ -44,22 +44,19 @@ describe("BuildCanvas", () => {
 })
 
 describe("BuildWorkspace", () => {
-  test("renders the canvas, content and rail slots", () => {
+  test("renders the canvas and content slots", () => {
     const html = renderToStaticMarkup(
       <BuildWorkspace.Root>
         <BuildWorkspace.Canvas>
           <BuildWorkspace.Content>Canvas</BuildWorkspace.Content>
         </BuildWorkspace.Canvas>
-        <BuildWorkspace.Rail>Secciones</BuildWorkspace.Rail>
       </BuildWorkspace.Root>
     )
 
     expect(html).toContain('data-slot="build-workspace"')
     expect(html).toContain('data-slot="build-workspace-canvas"')
     expect(html).toContain('data-slot="build-workspace-content"')
-    expect(html).toContain('data-slot="build-workspace-rail"')
     expect(html).toContain('data-slot="canvas-pattern"')
     expect(html).toContain('data-slot="canvas-spotlight"')
-    expect(html).toContain("<aside")
   })
 })

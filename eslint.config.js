@@ -328,12 +328,28 @@ export default defineConfig([
               ],
             },
             {
+              pattern: "^HoverCard(Trigger|Content)?$",
+              allow: [
+                "layout",
+                "border",
+                "border-*",
+                "shadow",
+                "shadow-*",
+                "p-*",
+              ],
+            },
+            {
               pattern: "^Tooltip(Content|Trigger)?$",
               allow: [
                 "layout",
                 "gap-*",
                 "opacity-*",
                 "grayscale",
+                "border",
+                "border-*",
+                "shadow",
+                "shadow-*",
+                "p-*",
                 "grayscale-*",
               ],
             },

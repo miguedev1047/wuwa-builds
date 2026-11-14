@@ -91,6 +91,7 @@ export function createEmptyBuild({
   return {
     buildId,
     sessionId,
+    selectedEditorSection: "resonator",
     backgroundIndex: randomBackgroundIndex(),
     name,
     resonator: createEmptyResonator(),

@@ -51,16 +51,21 @@ export interface ResonatorDataProps {
   passives: ResonatorPassivesDataProps[]
 }
 
+export type BuildEditorSection = "resonator" | "weapon" | "echo" | "appareance"
+
 /** Local build document stored in the TanStack DB collection. */
 export interface BuildProps {
   buildId: string
   sessionId: string
+
+  selectedEditorSection: BuildEditorSection
   backgroundIndex: number | null
   name: string
   resonator: ResonatorDataProps
   weapon: WeaponDataProps
   echoes: EchoesDataProps[]
   mainEchoSlot: number | null
+
   createdAt: string
   updateAt: string
 }
