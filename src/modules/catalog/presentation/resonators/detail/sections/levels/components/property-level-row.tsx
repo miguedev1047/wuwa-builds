@@ -45,7 +45,7 @@ export function PropertyLevelRow({
         </Show>
 
         <EditableSection.ItemContent>
-          <EditableSection.ItemTitle>
+          <EditableSection.ItemTitle className="line-clamp-1">
             {statLabel(property.name)}
           </EditableSection.ItemTitle>
           <EditableSection.ItemDescription>
