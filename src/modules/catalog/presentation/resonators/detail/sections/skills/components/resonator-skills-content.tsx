@@ -1,0 +1,35 @@
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { EditableSection } from "@catalog/presentation/components/editable-section"
+import { characterQueries } from "@catalog/queries/characters"
+import { ResonatorSkillCard } from "@catalog/presentation/resonators/detail/sections/skills/components/resonator-skill-card"
+
+type ResonatorSkillsContentProps = {
+  resonatorId: number
+}
+
+/** Suspended list of resonator skills rendered as cards. */
+export function ResonatorSkillsContent({
+  resonatorId,
+}: ResonatorSkillsContentProps) {
+  const { data: resonator } = useSuspenseQuery(
+    characterQueries.detail(resonatorId)
+  )
+
+  return (
+    <EditableSection.Content>
+      <EditableSection.List
+        items={resonator.skills}
+        getItemKey={(skill) => skill.id}
+        empty={
+          <EditableSection.Text>
+            Sin habilidades agregadas.
+          </EditableSection.Text>
+        }
+      >
+        {(skill) => (
+          <ResonatorSkillCard skill={skill} resonatorId={resonatorId} />
+        )}
+      </EditableSection.List>
+    </EditableSection.Content>
+  )
+}

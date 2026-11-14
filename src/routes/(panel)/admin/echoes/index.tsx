@@ -1,10 +1,18 @@
-import { CatalogListRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
-import { echoQueries } from "@game-data/queries/echoes"
-import { EchoListPage } from "@panel/admin/game-data/views/echoes/list/page"
+import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { echoListDockActions } from "@/routing/catalog/echoes/list/dock-actions"
+import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
+import { CatalogListRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
+import { echoQueries } from "@catalog/queries/echoes"
+import { EchoListScreen } from "@catalog/presentation/echoes/list/echo-list-screen"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/echoes/")({
-  component: () => <EchoListPage />,
+  component: () => (
+    <CatalogNavigation entity="echoes">
+      <EchoListScreen />
+      <CatalogSectionDockActions items={echoListDockActions} />
+    </CatalogNavigation>
+  ),
   pendingComponent: () => (
     <CatalogListRouteSkeleton
       title="Ecos"

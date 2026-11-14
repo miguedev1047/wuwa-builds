@@ -71,8 +71,8 @@ interface BuildProps {
 ## Colección local
 
 - `buildCollection` es una colección de TanStack DB respaldada por LocalStorage
-  (`src/modules/builds/infrastructure/local-storage`).
-- Las pantallas usan `src/modules/builds/client/build-store` o el hook
+  (`src/modules/build/infrastructure/local-storage`).
+- Las pantallas usan `src/modules/build/client/build-store` o el hook
   `useBuildCollection`, nunca la implementación de infraestructura.
 - Las rutas que leen la colección usan `ssr: false`.
 - Las live queries filtran por `sessionId`; nunca confíes solo en `buildId`.
@@ -95,7 +95,7 @@ interface BuildProps {
 - **Ecos**: 5 slots con eco, set, main stat, nivel, substats y eco principal.
 - **Stats derivados**: se calculan al vuelo; no se persisten.
 
-Las secciones del editor viven en `src/modules/panel/user/builder/sections/`
+Las secciones del editor viven en `src/modules/build/presentation/editor/sections/`
 (hoy `resonator-section/`, `weapon-section/` y `echoes-section/`) y se
 dividen en raíz, cuerpo cargado, mutaciones y componentes de presentación. El
 lienzo de `components/build-canvas/` es una superficie de solo lectura: un grid
@@ -107,7 +107,7 @@ izquierda, y el rail de secciones a la derecha; por encima de `xl` cada panel
 scrollea por su cuenta, por debajo se apilan. La tarjeta es un nodo de un `Flow`
 de PanelUI: el stage la encaja al montar y el Flow se encarga del pan, el zoom y
 el arrastre, sin scroll dentro del canvas. Las dos capas comparten la
-presentación de `ui/` (por ejemplo `build-echo-card`).
+presentación de `build/presentation/components/` (por ejemplo `build-echo-card`).
 
 ## Reglas
 

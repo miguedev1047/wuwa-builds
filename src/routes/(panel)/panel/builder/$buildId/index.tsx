@@ -1,18 +1,15 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
-import {
-  useBuildCollection,
-  useSessionId,
-} from "@panel/user/builds/application/build-live-queries"
+import { useBuildCollection } from "@build/client/hooks/build-live-queries"
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router"
-import { BuildEditorWorkspace } from "@builder/components/workspace/build-editor-workspace"
-import { buildEdits } from "@builds/application/build-edits"
-import { useBuilderId } from "@builder/application/use-builder-id"
+import { BuildEditorWorkspace } from "@build/presentation/editor/components/workspace/build-editor-workspace"
+import { buildEdits } from "@build/application/build-edits"
+import { BuildIdentityProvider } from "@build/presentation/editor/build-identity"
 import {
   buildCollection,
   deleteBuild,
   updateBuild,
-} from "@builds/client/build-store"
+} from "@build/client/build-store"
 
 export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
   component: RouteComponent,
@@ -24,10 +21,11 @@ export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
 })
 
 function RouteComponent() {
-  const buildId = useBuilderId()
-  const sessionId = useSessionId()
+  const { buildId } = Route.useParams()
+  const { session } = Route.useRouteContext()
+  const sessionId = session.session.id
   const navigate = useNavigate()
-  const { data: build } = useBuildCollection({ buildId })
+  const { data: build } = useBuildCollection({ buildId, sessionId })
 
   if (!build) {
     return (
@@ -47,15 +45,17 @@ function RouteComponent() {
   const identity = { buildId, sessionId }
 
   return (
-    <BuildEditorWorkspace
-      build={build}
-      backLink={<Link to="/panel/my-builds" />}
-      onRename={(name) =>
-        updateBuild(identity, (draft) => buildEdits.rename(draft, name))
-      }
-      onDelete={() => {
-        if (deleteBuild(identity)) void navigate({ to: "/panel/my-builds" })
-      }}
-    />
+    <BuildIdentityProvider identity={identity}>
+      <BuildEditorWorkspace
+        build={build}
+        backLink={<Link to="/panel/my-builds" />}
+        onRename={(name) =>
+          updateBuild(identity, (draft) => buildEdits.rename(draft, name))
+        }
+        onDelete={() => {
+          if (deleteBuild(identity)) void navigate({ to: "/panel/my-builds" })
+        }}
+      />
+    </BuildIdentityProvider>
   )
 }

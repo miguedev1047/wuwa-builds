@@ -1,13 +1,17 @@
-import { CatalogDetailRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
+import { catalogResource } from "@/routing/catalog/catalog-resource"
+import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { echoDetailDockActions } from "@/routing/catalog/echoes/detail/dock-actions"
+import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
+import { CatalogDetailRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
 import { encoreEchoQueries } from "@encore/queries/catalogs"
 import { softPreload } from "@encore/queries/preload"
-import { isValidId } from "@game-data/application/id"
-import { echoQueries } from "@game-data/queries/echoes"
-import { EchoDetailPage } from "@panel/admin/game-data/views/echoes/detail/page"
+import { isValidId } from "@catalog/application/id"
+import { echoQueries } from "@catalog/queries/echoes"
+import { EchoDetail } from "@catalog/presentation/echoes/detail/echo-detail"
 import { createFileRoute, notFound } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/echoes/$id")({
-  component: () => <EchoDetailPage />,
+  component: RouteComponent,
 
   pendingComponent: () => <CatalogDetailRouteSkeleton sections={2} />,
 
@@ -20,7 +24,7 @@ export const Route = createFileRoute("/(panel)/admin/echoes/$id")({
 
     const [, echo] = await Promise.all([
       softPreload(context.queryClient.query(encoreEchoQueries.detail(id))),
-      context.queryClient.query(echoQueries.detail(id)),
+      catalogResource(context.queryClient.query(echoQueries.detail(id))),
     ])
 
     if (!echo) {
@@ -28,3 +32,13 @@ export const Route = createFileRoute("/(panel)/admin/echoes/$id")({
     }
   },
 })
+
+/** Binds route parameters to the catalog detail screen. */
+function RouteComponent() {
+  return (
+    <CatalogNavigation entity="echoes">
+      <EchoDetail echoId={Number(Route.useParams().id)} />
+      <CatalogSectionDockActions items={echoDetailDockActions} />
+    </CatalogNavigation>
+  )
+}

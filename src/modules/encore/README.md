@@ -9,14 +9,14 @@ lean payloads.
 Base: `https://api-v2.encore.moe/api/{lang}/...` (`es` by default, `en`
 available). No auth, CORS enabled.
 
-| Endpoint           | Contents                           |
-| ------------------ | ---------------------------------- |
-| `character?page=1` | 64 character summaries             |
-| `character/{id}`   | full character (lean mapped here)  |
-| `weapon`           | 124 weapons                        |
-| `weapon/{id}`      | weapon stats and refinement ranks  |
-| `echo`             | 319 echoes with their sonata sets  |
-| `echo/{id}`        | echo skill and set effects         |
+| Endpoint           | Contents                          |
+| ------------------ | --------------------------------- |
+| `character?page=1` | 64 character summaries            |
+| `character/{id}`   | full character (lean mapped here) |
+| `weapon`           | 124 weapons                       |
+| `weapon/{id}`      | weapon stats and refinement ranks |
+| `echo`             | 319 echoes with their sonata sets |
+| `echo/{id}`        | echo skill and set effects        |
 
 ## Cache
 
@@ -55,7 +55,7 @@ Encore JSON key):
 |                 | `weapon_refinements`, `weapon_refinement_stats`                                          |
 | `echoes.ts`     | `echoes`, `echo_sets`, `echo_set_effects`, `echo_skills`                                 |
 
-`src/modules/encore/infrastructure/catalog-d1.server.ts` writes and reads those
+`src/modules/catalog/infrastructure/catalog-d1.server.ts` writes and reads those
 tables as whole documents (`saveCharacter`/`readCharacter`, and the weapon and
 echo equivalents), returning the same `Encore*` types the API mapper produces.
 Skill attributes, consumes and damage, the passive consume list and both
@@ -102,7 +102,7 @@ the `icon` column.
 
 Encore is a decoupled external source: it is read to search and prefill the
 admin forms, while the app itself reads its own catalog from D1
-(`@/modules/game-data/queries`). That is why every export here is prefixed with
+(`@catalog/queries`). That is why every export here is prefixed with
 `encore`.
 
 ```tsx

@@ -8,10 +8,7 @@ import {
 } from "@/components/ui/empty"
 import { Show } from "@/components/utility/show"
 import { getSession } from "@/functions/auth"
-import {
-  RouteError,
-  RouteNotFound,
-} from "@panel/admin/game-data/components/route-state"
+import { RouteError, RouteNotFound } from "@/routing/catalog/route-state"
 import { SecurityIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { createFileRoute, Link, Outlet, redirect } from "@tanstack/react-router"

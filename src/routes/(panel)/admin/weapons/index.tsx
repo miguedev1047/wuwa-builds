@@ -1,10 +1,18 @@
-import { CatalogListRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
-import { weaponQueries } from "@game-data/queries/weapons"
-import { WeaponListPage } from "@panel/admin/game-data/views/weapons/list/page"
+import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { weaponListDockActions } from "@/routing/catalog/weapons/list/dock-actions"
+import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
+import { CatalogListRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
+import { weaponQueries } from "@catalog/queries/weapons"
+import { WeaponListScreen } from "@catalog/presentation/weapons/list/weapon-list-screen"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/weapons/")({
-  component: () => <WeaponListPage />,
+  component: () => (
+    <CatalogNavigation entity="weapons">
+      <WeaponListScreen />
+      <CatalogSectionDockActions items={weaponListDockActions} />
+    </CatalogNavigation>
+  ),
   pendingComponent: () => (
     <CatalogListRouteSkeleton
       title="Armas"

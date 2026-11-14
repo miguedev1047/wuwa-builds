@@ -1,5 +1,5 @@
 import * as gameIcons from "@/assets/icons"
-import type { BuildStatKey } from "@builds/domain/stats"
+import type { BuildStatKey } from "@build/domain/stats"
 import { cn } from "cn"
 
 /**

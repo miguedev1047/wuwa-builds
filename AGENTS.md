@@ -47,7 +47,9 @@ Modules follow a light DDD split under `src/modules/<domain>`:
 - `domain/`: pure types and rules. No I/O.
 - `application/`: use cases and input schemas.
 - `infrastructure/`: adapters (HTTP, D1).
-- `client/`: browser-only state and collections.
+- `client/`: browser-only state, collections and reactive query hooks.
+- `presentation/`: domain UI, organized by capability; interaction hooks live
+  in `hooks/`, not in `application/`.
 - `server/`: TanStack server functions; the only entry point for the UI.
 - `queries/`: shared query keys and TanStack Query options.
 
@@ -58,25 +60,33 @@ Rules:
 - Server functions load their implementation with a dynamic `import()` inside
   the handler so Node-only code never reaches the client bundle.
 - Validate server function inputs with zod through `.validator(...)`.
-- `src/modules/encore` is the reference implementation; follow its patterns.
+- Modules must not import TanStack Router, `src/routes` or `src/routing`.
+  Routes supply identifiers, session identity, navigation callbacks and link
+  slots. Shared router adapters belong in `src/routing`.
+- TanStack Start remains in module `server/` adapters. Query and DB integrations
+  remain in `queries/` and `client/`.
+- Use `build` for the domain, `editor` and `collection` for its UI capabilities.
+  Keep plural names for actual collections and preserve persistence keys.
+- `src/modules/encore` is the reference server adapter implementation.
 - `user.role` is `USER | ADMIN` (default `USER`, not client-settable). Any
   admin-only read/write must check the session role on the server; route guards
   are not authorization.
 
 Current modules:
 
-- `src/modules/game-data`: canonical D1 catalog domain (types, input schemas,
+- `src/modules/catalog`: canonical D1 catalog domain (types, input schemas,
   server functions and shared query options) for characters, weapons and
   echoes. Admin and builder screens both consume it; reads use
   `authMiddleware` and mutations use `adminMiddleware`.
 - `src/modules/encore`: read-only game data from the public Encore API
   (characters, weapons and echoes). Used by the admin panel for search and
   create prefill, never as the builder data source.
-- `src/modules/builds`: local TanStack DB build collection (LocalStorage) and
+- `src/modules/build`: local TanStack DB build collection (LocalStorage) and
   the D1 saved-build backend reserved for the future cloud save.
-- `src/modules/panel`: panel UI behavior only. It must not import
-  infrastructure directly. Admin views stay in
-  `src/modules/panel/admin/game-data/views`.
+- `src/modules/build/presentation`: build editor, collection and shared UI.
+- `src/modules/catalog/presentation`: catalog lists, details and forms, including
+  Encore-assisted prefill. It must not import infrastructure directly.
+- `src/routes` and `src/routing`: route composition and shared navigation adapters.
 - `src/db`: Drizzle schema for auth, saved builds and the canonical catalog
   tables (D1).
 
@@ -98,14 +108,14 @@ Rules:
 - There is no local game-data snapshot or scraper. Do not reintroduce committed
   character JSON without a concrete reason.
 - Builder screens read the canonical catalog from D1 through
-  `src/modules/game-data`; Encore is only an admin prefill helper.
+  `src/modules/catalog`; Encore is only an admin prefill helper.
 
 ## Caching
 
 - `src/providers/query-provider/query.tsx` uses `staleTime: "static"` for
   immutable data.
 - Shared query options live in `src/modules/encore/queries` (external API) and
-  `src/modules/game-data/queries` (canonical D1 catalog). Screens must use them
+  `src/modules/catalog/queries` (canonical D1 catalog). Screens must use them
   instead of defining their own.
 - Encore queries use a 6-hour `staleTime`; freshness is TTL-based, not tied to a
   deploy. Catalog queries use a 5-minute `staleTime` because admins edit D1.
@@ -170,12 +180,12 @@ Rules:
 ### Imports, icons and stat keys
 
 - **Use the domain aliases.** Import internal modules through `@/*` or a domain
-  alias: `@builder/*`, `@panel/*`, `@builds/*`, `@game-data/*`, `@encore/*` and
+  alias: `@build/*`, `@catalog/*`, `@encore/*` and
   `@db/*`. Do not add relative imports that climb directories (`../`).
 - **Let icons inherit their size.** Do not pass a hardcoded `size` to an icon;
   size it from the parent container with CSS.
 - **Use canonical stat keys.** Stats use the `BuildStatKey` ids from
-  `src/modules/builds/domain/stats.ts` everywhere: catalog rows, calculation,
+  `src/modules/build/domain/stats.ts` everywhere: catalog rows, calculation,
   icons and UI. Do not introduce aliases such as `critRate` or `skill_dmg`.
 
 ### Runtime
@@ -191,11 +201,11 @@ Rules:
   take up to 6h to appear.
 - The canonical catalog lives in normalized D1 tables
   (`src/db/schemas/resonators.ts`, `weapons.ts`, `echoes.ts`) with a
-  whole-document adapter (`src/modules/encore/infrastructure/catalog-d1.server.ts`).
-  The builder reads it through `src/modules/game-data`; rows still come from the
+  whole-document adapter (`src/modules/catalog/infrastructure/catalog-d1.server.ts`).
+  The builder reads it through `src/modules/catalog`; rows still come from the
   admin panel, since there is no scheduled Encore sync yet.
 - The saved-builds backend and local build collection exist
-  (`src/db/schemas/builds.ts`, `src/modules/builds`). Builds can start without a
+  (`src/db/schemas/builds.ts`, `src/modules/build`). Builds can start without a
   resonator; `/panel/builder/$buildId` loads one by ID and `/panel/my-builds`
   groups local builds by resonator. Cloud saves and cloud build listing are
   still pending. See `BUILDER_UI.md`.

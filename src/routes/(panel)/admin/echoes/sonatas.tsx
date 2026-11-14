@@ -1,10 +1,18 @@
-import { CatalogListRouteSkeleton } from "@panel/admin/game-data/components/route-skeleton"
-import { sonataQueries } from "@game-data/queries/sonatas"
-import { SonataListPage } from "@panel/admin/game-data/views/echoes/sonatas/page"
+import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { sonataDockActions } from "@/routing/catalog/echoes/sonatas/dock-actions"
+import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
+import { CatalogListRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
+import { sonataQueries } from "@catalog/queries/sonatas"
+import { SonataListScreen } from "@catalog/presentation/sonatas/sonata-list-screen"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/echoes/sonatas")({
-  component: () => <SonataListPage />,
+  component: () => (
+    <CatalogNavigation entity="echoes">
+      <SonataListScreen />
+      <CatalogSectionDockActions items={sonataDockActions} />
+    </CatalogNavigation>
+  ),
   pendingComponent: () => (
     <CatalogListRouteSkeleton
       title="Efectos de sonata"

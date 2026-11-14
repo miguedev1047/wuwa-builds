@@ -7,8 +7,8 @@ import {
   ItemTitle,
 } from "@/components/ui/item"
 import { Spinner } from "@/components/ui/spinner"
-import { buildCollection } from "@/modules/builds/client/build-store"
-import { useRosterBuilds } from "@panel/user/builds/application/build-live-queries"
+import { buildCollection } from "@build/client/build-store"
+import { useRosterBuilds } from "@build/client/hooks/build-live-queries"
 import { Link, useParams } from "@tanstack/react-router"
 import { createFileRoute } from "@tanstack/react-router"
 
@@ -25,7 +25,10 @@ function RouteComponent() {
   const params = useParams({ from: "/(panel)/panel/builder/r/$rosterId/" })
   const rosterId = parseInt(params.rosterId)
 
-  const { data: builds } = useRosterBuilds(rosterId)
+  const { data: builds } = useRosterBuilds(
+    rosterId,
+    Route.useRouteContext().session.session.id
+  )
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 py-20">

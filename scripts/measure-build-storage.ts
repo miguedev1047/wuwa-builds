@@ -1,13 +1,13 @@
 import type {
   CharacterDetail,
   CharacterSummary,
-} from "@/modules/game-data/domain/character"
-import type { EchoSummary } from "@/modules/game-data/domain/echo"
-import type { WeaponSummary } from "@/modules/game-data/domain/weapon"
+} from "@catalog/domain/character"
+import type { EchoSummary } from "@catalog/domain/echo"
+import type { WeaponSummary } from "@catalog/domain/weapon"
 import {
   createBuildFromCharacter,
   createEmptyBuild,
-} from "@/modules/builds/application/factories/build"
+} from "@build/application/factories/build"
 
 const character = {
   id: 1,

@@ -1,6 +1,6 @@
 import { defineRelationsPart, sql } from "drizzle-orm"
 import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core"
-import type { BuildPayload } from "@builds/domain/build"
+import type { BuildPayload } from "@build/domain/build"
 import { user } from "@db/schemas/auth-schema"
 
 /**

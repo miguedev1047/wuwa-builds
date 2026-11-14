@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
-import { buildCollection } from "@/modules/builds/client/build-store"
-import { MAX_LOCAL_BUILDS } from "@builds/domain/build"
-import { useCreateBuild } from "@panel/user/my-builds/application/use-create-build"
-import { LocalBuildList } from "@panel/user/my-builds/components/local-build-list"
-import { createFileRoute } from "@tanstack/react-router"
+import { buildCollection } from "@build/client/build-store"
+import { MAX_LOCAL_BUILDS } from "@build/domain/build"
+import { useCreateBuild } from "@build/presentation/collection/hooks/use-create-build"
+import { LocalBuildList } from "@build/presentation/collection/components/local-build-list"
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router"
 import { Suspense } from "react"
 
 export const Route = createFileRoute("/(panel)/panel/my-builds")({
@@ -18,7 +18,13 @@ export const Route = createFileRoute("/(panel)/panel/my-builds")({
 function RouteComponent() {
   const { session } = Route.useRouteContext()
   const user = session.user
-  const { buildCount, createBuild } = useCreateBuild()
+  const navigate = useNavigate()
+  const { buildCount, createBuild } = useCreateBuild(
+    session.session.id,
+    (buildId) => {
+      void navigate({ to: "/panel/builder/$buildId", params: { buildId } })
+    }
+  )
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 py-20">
@@ -39,9 +45,42 @@ function RouteComponent() {
         </div>
 
         <Suspense fallback={<Spinner />}>
-          <LocalBuildList />
+          <LocalBuildList
+            sessionId={session.session.id}
+            RosterLink={RosterLink}
+            BuildLink={BuildLink}
+          />
         </Suspense>
       </section>
     </div>
+  )
+}
+
+/** Route-owned link for a resonator group. */
+function RosterLink({
+  id,
+  children,
+}: {
+  id: number
+  children: React.ReactNode
+}) {
+  return (
+    <Link to="/panel/builder/r/$rosterId" params={{ rosterId: String(id) }}>
+      {children}
+    </Link>
+  )
+}
+/** Route-owned link for an individual build. */
+function BuildLink({
+  id,
+  children,
+}: {
+  id: string
+  children: React.ReactNode
+}) {
+  return (
+    <Link to="/panel/builder/$buildId" params={{ buildId: id }}>
+      {children}
+    </Link>
   )
 }

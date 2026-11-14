@@ -1,0 +1,61 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { toast } from "sonner"
+import { isValidId } from "@catalog/application/id"
+import { EditableSection } from "@catalog/presentation/components/editable-section"
+import { wuwaBuildsKeys } from "@catalog/queries/keys"
+import { deleteWeaponRefinementStat } from "@catalog/server/weapons/refinement-stats"
+
+type WeaponRefinementStatDeleteActionProps = {
+  statId: number
+  weaponId: number
+}
+
+/** Removes one refinement stat after confirmation. */
+export function WeaponRefinementStatDeleteAction({
+  statId,
+  weaponId,
+}: WeaponRefinementStatDeleteActionProps) {
+  const queryClient = useQueryClient()
+
+  const { mutate, isPending } = useMutation({
+    mutationFn: () => deleteWeaponRefinementStat({ data: { id: statId } }),
+    onSettled: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: wuwaBuildsKeys.weapon(weaponId),
+      })
+    },
+    onSuccess: () => {
+      toast.success("Estadística eliminada")
+    },
+    onError: (error) => {
+      toast.error(error.message)
+    },
+  })
+
+  const handleRemoveStat = () => {
+    if (!isValidId(statId)) return
+
+    mutate()
+  }
+
+  return (
+    <EditableSection.DeleteAction
+      title="Eliminar estadística"
+      description="Estas seguro que quieres eliminar esta estadística? Esta accion es irreversible."
+      isPending={isPending}
+      onConfirm={handleRemoveStat}
+      trigger={
+        <EditableSection.ButtonAction
+          type="button"
+          variant="destructive"
+          aria-label="Eliminar estadística"
+          disabled={isPending}
+        >
+          <HugeiconsIcon icon={DeleteIcon} />
+        </EditableSection.ButtonAction>
+      }
+    />
+  )
+}

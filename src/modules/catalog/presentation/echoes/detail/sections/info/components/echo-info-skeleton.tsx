@@ -1,0 +1,26 @@
+import { Skeleton } from "@/components/ui/skeleton"
+import { EditableSection } from "@catalog/presentation/components/editable-section"
+
+export function EchoInfoSkeleton() {
+  return (
+    <EditableSection.Root>
+      <EditableSection.Header>
+        <Skeleton className="h-8 w-48" />
+
+        <EditableSection.Action>
+          <Skeleton className="h-7 w-18" />
+          <Skeleton className="size-7" />
+        </EditableSection.Action>
+      </EditableSection.Header>
+
+      <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">
+        <Skeleton className="size-32 rounded-lg" />
+
+        <div className="flex flex-1 flex-col gap-3">
+          <Skeleton className="h-8 w-2/5" />
+          <Skeleton className="h-5 w-3/10" />
+        </div>
+      </EditableSection.Content>
+    </EditableSection.Root>
+  )
+}

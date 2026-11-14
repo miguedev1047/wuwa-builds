@@ -1,0 +1,88 @@
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { Suspense } from "react"
+import { Button } from "@/components/ui/button"
+import type { EncoreCharacterSummary } from "@encore/domain/character"
+import { encoreCharacterQueries } from "@encore/queries/characters"
+import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
+
+type ResonatorSearchProps = {
+  /** Id of the character already applied to the form, if any. */
+  selectedId?: number | null
+  onSelect: (character: EncoreCharacterSummary) => void
+  disabled?: boolean
+}
+
+/** Encore character picker used to prefill the resonator form. */
+export function ResonatorSearch({
+  selectedId,
+  onSelect,
+  disabled,
+}: ResonatorSearchProps) {
+  return (
+    <CatalogSearch.Root
+      trigger={
+        <Button
+          variant="secondary"
+          size="xl"
+          type="button"
+          className="w-full"
+          disabled={disabled}
+        >
+          Buscar resonador
+        </Button>
+      }
+      title="Buscar resonador"
+      description="Copia los datos de un resonador de Encore al formulario."
+    >
+      <CatalogSearch.Input placeholder="Nombre o ID del resonador" />
+
+      <CatalogSearch.List>
+        <Suspense fallback={<CatalogSearch.Loading />}>
+          <ResonatorSearchResults selectedId={selectedId} onSelect={onSelect} />
+        </Suspense>
+      </CatalogSearch.List>
+    </CatalogSearch.Root>
+  )
+}
+
+type ResonatorSearchResultsProps = {
+  selectedId?: number | null
+  onSelect: (character: EncoreCharacterSummary) => void
+}
+
+function ResonatorSearchResults({
+  selectedId,
+  onSelect,
+}: ResonatorSearchResultsProps) {
+  const { data: characters } = useSuspenseQuery(encoreCharacterQueries.list())
+
+  return (
+    <>
+      <CatalogSearch.Empty>Sin resonadores con ese nombre.</CatalogSearch.Empty>
+
+      <CatalogSearch.Group heading="Resonadores">
+        {characters.map((character) => (
+          <CatalogSearch.Item
+            key={character.id}
+            value={`${character.name} ${character.id}`}
+            onSelect={() => onSelect(character)}
+          >
+            <img
+              src={character.icon}
+              alt={character.name}
+              width={28}
+              height={28}
+              className="aspect-square size-7 shrink-0 rounded-sm bg-accent object-cover"
+            />
+
+            <span className="truncate">{character.name}</span>
+
+            {selectedId === character.id ? (
+              <CatalogSearch.Shortcut>Actual</CatalogSearch.Shortcut>
+            ) : null}
+          </CatalogSearch.Item>
+        ))}
+      </CatalogSearch.Group>
+    </>
+  )
+}
