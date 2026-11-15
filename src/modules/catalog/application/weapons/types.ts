@@ -19,8 +19,16 @@ export const WEAPON_TYPE_NUMBER: Record<WeaponTypeId, number> = {
   broadblade: 1,
   sword: 2,
   pistols: 3,
-  gauntlets: 4,
+  guantlets: 4,
   rectifier: 5,
+}
+
+export const WEAPON_TYPE_KEY: Record<number, WeaponTypeId> = {
+  1: "broadblade",
+  2: "sword",
+  3: "pistols",
+  4: "guantlets",
+  5: "rectifier",
 }
 
 /** Display name stored in `weapons.type_name` for a numeric weapon type. */
@@ -33,6 +41,11 @@ export function weaponTypeNumber(typeId: string): number | null {
   if (!Object.hasOwn(WEAPON_TYPE_NUMBER, typeId)) return null
 
   return WEAPON_TYPE_NUMBER[typeId as WeaponTypeId]
+}
+export function weaponTypeKey(typeKey: number): string | null {
+  if (!Object.hasOwn(WEAPON_TYPE_KEY, typeKey)) return null
+
+  return WEAPON_TYPE_KEY[typeKey as number]
 }
 
 /**

@@ -1,8 +1,12 @@
-import { Button } from "@/components/ui/button"
 import { Show } from "@/components/utility/show"
+import {
+  NumberField,
+  NumberFieldDecrement,
+  NumberFieldGroup,
+  NumberFieldIncrement,
+  NumberFieldInput,
+} from "@/components/ui/number-field"
 import { REFINEMENT_RANK_MAX, REFINEMENT_RANK_MIN } from "@build/domain/build"
-import { MinusIcon, PlusIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
 import type { WeaponDetail } from "@catalog/domain/weapon"
 import { BuildWorkspace } from "@/modules/build/presentation/editor/components/workspace"
 
@@ -23,44 +27,38 @@ export function WeaponRefinements({
   const effect = refinements[rank - 1]?.effect
 
   return (
-    <div className="space-y-2">
-      <div className="flex items-center justify-between">
+    <>
+      <div className="space-y-2">
         <BuildWorkspace.Text size="sm">Refinamientos</BuildWorkspace.Text>
-        <div className="flex shrink-0 items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon-xs"
-            aria-label="Bajar refinamiento"
-            disabled={rank <= REFINEMENT_RANK_MIN}
-            onClick={() => onStep(-1)}
-          >
-            <HugeiconsIcon icon={MinusIcon} />
-          </Button>
 
-          <div className="text-xs font-bold text-brand-warning tabular-nums">
-            {rank}
-          </div>
-
-          <Button
-            variant="ghost"
-            size="icon-xs"
-            aria-label="Subir refinamiento"
-            disabled={rank >= REFINEMENT_RANK_MAX}
-            onClick={() => onStep(1)}
-          >
-            <HugeiconsIcon icon={PlusIcon} />
-          </Button>
-        </div>
+        <NumberField
+          value={rank}
+          max={REFINEMENT_RANK_MAX}
+          min={REFINEMENT_RANK_MIN}
+          onValueChange={(value) => {
+            if (value !== null) onStep(value - rank)
+          }}
+        >
+          <NumberFieldGroup>
+            <NumberFieldDecrement />
+            <NumberFieldInput />
+            <NumberFieldIncrement />
+          </NumberFieldGroup>
+        </NumberField>
       </div>
-
-      <Show when={effect}>
-        {(text) => (
-          <div
-            className="text-xs/relaxed text-pretty text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: text }}
-          />
-        )}
-      </Show>
-    </div>
+      <div className="space-y-2">
+        <BuildWorkspace.Text size="sm">Descripcion</BuildWorkspace.Text>
+        <BuildWorkspace.Card cardColor="muted">
+          <Show when={effect}>
+            {(text) => (
+              <div
+                className="text-xs/relaxed text-pretty text-muted-foreground"
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
+            )}
+          </Show>
+        </BuildWorkspace.Card>
+      </div>
+    </>
   )
 }

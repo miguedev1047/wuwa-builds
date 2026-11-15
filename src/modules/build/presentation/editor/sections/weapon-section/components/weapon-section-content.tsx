@@ -8,6 +8,8 @@ import { WeaponRefinements } from "@build/presentation/editor/sections/weapon-se
 import { weaponQueries } from "@catalog/queries/weapons"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { WeaponPickerDialog } from "@build/presentation/editor/sections/weapon-section/components/weapon-picker-dialog"
+import { WeaponBaseStats } from "./weapon-base-stats"
+import { Separator } from "@/components/ui/separator"
 
 type WeaponSectionContentProps = {
   build: BuildProps
@@ -23,7 +25,7 @@ export function WeaponSectionContent({
   const { setLevelStep, stepRefinement } = useWeaponProgress(build)
 
   return (
-    <div className="space-y-4">
+    <div className="flex w-full flex-col items-start gap-2">
       <div className="flex w-full items-center justify-between">
         <BuildWorkspace.Text family="bold" textColor="muted" size="xl">
           Arma
@@ -31,16 +33,19 @@ export function WeaponSectionContent({
         <WeaponPickerDialog build={build} />
       </div>
 
-      <div className="flex h-full w-full flex-col justify-between gap-6">
-        <WeaponPortrait build={build} weapon={weapon} />
-
+      <div className="flex h-full w-full flex-col justify-between gap-5">
+        <WeaponPortrait weapon={weapon} />
         <WeaponLevelControl
           level={build.weapon.level}
           step={stepFromLevel(build.weapon.level)}
           maxStep={LEVEL_MILESTONES.length - 1}
           onStepChange={setLevelStep}
         />
-
+        <WeaponBaseStats
+          level={build.weapon.level}
+          properties={weapon.properties}
+        />
+        <Separator />
         <WeaponRefinements
           refinements={weapon.refinements}
           rank={build.weapon.refinament}

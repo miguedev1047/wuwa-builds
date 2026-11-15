@@ -1,6 +1,5 @@
 import { Badge } from "@/components/ui/badge"
 import { Image } from "@/components/ui/image"
-import { Separator } from "@/components/ui/separator"
 import {
   HoverCard,
   HoverCardContent,

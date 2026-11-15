@@ -13,6 +13,7 @@ interface ResonatorSkeletonProps {
 const PICKER_COLUMNS = 6
 const SKILLS = 5
 const PASSIVES = 10
+const BASE_STATS = 3
 const SEQUENCES = 6
 
 /** Square skeleton that mirrors the resonator picker grid. */
@@ -49,6 +50,14 @@ export function ResonatorSectionLoading() {
         <div className="space-y-2">
           <Skeleton className="h-5 w-18" />
           <Skeleton className="h-8 w-full" />
+        </div>
+        <div className="space-y-2">
+          <Skeleton className="h-5 w-30" />
+          <div className="grid grid-cols-1 items-center gap-1">
+            {Array.from({ length: BASE_STATS }).map((_, index) => (
+              <Skeleton key={index} className="h-8 w-full" />
+            ))}
+          </div>
         </div>
         <div className="space-y-2">
           <Skeleton className="h-5 w-30" />
