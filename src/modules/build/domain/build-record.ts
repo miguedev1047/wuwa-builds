@@ -60,6 +60,7 @@ export interface BuildProps {
 
   selectedEditorSection: BuildEditorSection
   backgroundIndex: number | null
+  backgroundUrl?: string | null
   name: string
   resonator: ResonatorDataProps
   weapon: WeaponDataProps

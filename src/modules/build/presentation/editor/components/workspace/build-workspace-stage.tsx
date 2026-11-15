@@ -32,7 +32,10 @@ export function BuildWorkspaceStage({
           position={{ x: 0, y: 0 }}
           className={cn(buildCardFrameClassName, "overflow-hidden")}
         >
-          <BuildBackground backgroundIndex={build?.backgroundIndex ?? null}>
+          <BuildBackground
+            backgroundIndex={build?.backgroundIndex ?? null}
+            backgroundUrl={build?.backgroundUrl}
+          >
             <Flow.NodeContent className="relative p-0">
               {children}
             </Flow.NodeContent>

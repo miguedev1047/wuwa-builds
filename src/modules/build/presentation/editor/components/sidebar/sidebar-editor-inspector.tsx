@@ -1,9 +1,10 @@
 import { useBuildCollection } from "@/modules/build/client/hooks/build-live-queries"
-import { useBuildIdentity } from "../../build-identity"
+import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import { Show } from "@/components/utility/show"
-import { ResonatorEditorSection } from "../../sections/resonator-section"
-import { WeaponEditorSection } from "../../sections/weapon-section"
-import { EchoesEditorSection } from "../../sections/echoes-section"
+import { ResonatorEditorSection } from "@build/presentation/editor/sections/resonator-section"
+import { WeaponEditorSection } from "@build/presentation/editor/sections/weapon-section"
+import { EchoesEditorSection } from "@build/presentation/editor/sections/echoes-section"
+import { AppearanceSection } from "@build/presentation/editor/sections/appearance-section"
 
 export function SidebarEditorInspector() {
   const { buildId, sessionId } = useBuildIdentity()
@@ -12,6 +13,7 @@ export function SidebarEditorInspector() {
   const selectedResonatorSection = data?.selectedEditorSection === "resonator"
   const selectedWeaponSection = data?.selectedEditorSection === "weapon"
   const selectedEchoSection = data?.selectedEditorSection === "echo"
+  const selectedAppearanceSection = data?.selectedEditorSection === "appareance"
 
   return (
     <Show when={data}>
@@ -28,6 +30,9 @@ export function SidebarEditorInspector() {
           </Show>
           <Show when={selectedEchoSection}>
             <EchoesEditorSection build={build} />
+          </Show>
+          <Show when={selectedAppearanceSection}>
+            <AppearanceSection build={build} />
           </Show>
         </div>
       )}

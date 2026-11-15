@@ -5,16 +5,19 @@ import { cn } from "cn"
 type BuildBackgroundProps = ComponentProps<"div"> & {
   /** Selected build background index. */
   backgroundIndex: number | null
+  /** Optional custom image URL overriding the selected background. */
+  backgroundUrl?: string | null
 }
 
 /** Shared blurred background layer for the workspace and PNG export cards. */
 export function BuildBackground({
   backgroundIndex,
+  backgroundUrl,
   className,
   children,
   ...props
 }: BuildBackgroundProps) {
-  const background = BACKGROUNDS[backgroundIndex ?? 0]
+  const background = backgroundUrl || BACKGROUNDS[backgroundIndex ?? 0]
 
   return (
     <div

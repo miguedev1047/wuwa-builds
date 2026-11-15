@@ -10,12 +10,10 @@ import {
   DeleteIcon,
   Download01Icon,
   EllipsisIcon,
-  Image01Icon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { useState } from "react"
 import { Spinner } from "@/components/ui/spinner"
-import { BuildBackgrounds } from "./build-backgrounds-dialog"
 import { BuildDeleteDialog } from "./build-delete-dialog"
 
 type BuildActionsProps = {
@@ -33,7 +31,6 @@ export function BuildActions({
   onDelete,
 }: BuildActionsProps) {
   const [confirmDelete, setConfirmDelete] = useState(false)
-  const [backgroundOpen, setBackgroundOpen] = useState(false)
 
   return (
     <>
@@ -58,10 +55,6 @@ export function BuildActions({
             <HugeiconsIcon icon={Download01Icon} />
             {isDownloading ? "Preparando PNG…" : "Descargar PNG"}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setBackgroundOpen(true)}>
-            <HugeiconsIcon icon={Image01Icon} />
-            Cambiar fondo
-          </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
             variant="destructive"
@@ -72,11 +65,6 @@ export function BuildActions({
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-
-      <BuildBackgrounds
-        open={backgroundOpen}
-        onOpenChange={setBackgroundOpen}
-      />
 
       <BuildDeleteDialog
         open={confirmDelete}
