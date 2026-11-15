@@ -1,7 +1,10 @@
 import { Show } from "@/components/utility/show"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { GameIcon } from "@/components/ui/game-icon"
-import { formatEchoStat, statIconName } from "../../../hooks/stats-view-model"
+import {
+  formatEchoStat,
+  statIconName,
+} from "@build/presentation/editor/hooks/stats-view-model"
 import type { EchoSubstatsDataProps } from "@/modules/build/domain/build-record"
 
 interface EchoSotSubstatCardProps {

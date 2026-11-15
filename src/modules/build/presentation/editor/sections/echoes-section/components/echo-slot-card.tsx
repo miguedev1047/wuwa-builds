@@ -3,7 +3,7 @@ import type { BuildProps, EchoesDataProps } from "@build/domain/build-record"
 import { Separator } from "@/components/ui/separator"
 import { EchoSlotPortrait } from "./echo-slot-portrait"
 import { EchoControls } from "./echo-controls"
-import { useEchoProgress } from "../hooks/use-echo-progress"
+import { useEchoProgress } from "@build/presentation/editor/sections/echoes-section/hooks/use-echo-progress"
 import type { EchoDetail } from "@catalog/domain/echo"
 
 type EchoSlotCardProps = {

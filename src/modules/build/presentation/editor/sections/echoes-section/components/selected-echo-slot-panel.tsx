@@ -9,7 +9,7 @@ import { EchoPicker } from "./echo-picker"
 import { echoQueries } from "@/modules/catalog/queries/echoes"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { Suspense } from "react"
-import { EchoSlotLoading } from "../ui-states"
+import { EchoSlotLoading } from "@build/presentation/editor/sections/echoes-section/ui-states"
 
 interface SelectedEchoSlotPanelProps {
   build: BuildProps

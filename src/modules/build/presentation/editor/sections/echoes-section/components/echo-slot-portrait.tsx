@@ -7,8 +7,8 @@ import { GameIcon } from "@/components/ui/game-icon"
 import {
   formatPercentStat,
   statIconName,
-} from "../../../hooks/stats-view-model"
-import { BuildWorkspace } from "../../../components/workspace"
+} from "@build/presentation/editor/hooks/stats-view-model"
+import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { EchoPicker } from "./echo-picker"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
