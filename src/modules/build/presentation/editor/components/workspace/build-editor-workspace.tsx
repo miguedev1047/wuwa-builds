@@ -17,7 +17,10 @@ type BuildEditorWorkspaceProps = {
 }
 
 /** Compose the editor sidebar and interactive preview. */
-export function BuildEditorWorkspace({ build }: BuildEditorWorkspaceProps) {
+export function BuildEditorWorkspace({
+  build,
+  onDelete,
+}: BuildEditorWorkspaceProps) {
   const preview = useBuildStats(build)
   const { canDownload, captureRef, exportSnapshot, handleDownload } =
     useDownloadBuild({ build, preview })
@@ -27,6 +30,7 @@ export function BuildEditorWorkspace({ build }: BuildEditorWorkspaceProps) {
       canDownload={canDownload}
       isDownloading={exportSnapshot !== null}
       onDownload={handleDownload}
+      onDelete={onDelete}
     >
       <BuildWorkspace.Root>
         <BuildWorkspace.Canvas>

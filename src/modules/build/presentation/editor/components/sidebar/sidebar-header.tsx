@@ -6,6 +6,7 @@ type SidebarAppHeaderProps = {
   canDownload: boolean
   isDownloading: boolean
   onDownload: () => void
+  onDelete: () => void
 }
 
 export function SidebarAppHeader(props: SidebarAppHeaderProps) {

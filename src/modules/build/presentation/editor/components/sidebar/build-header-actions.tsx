@@ -12,11 +12,13 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group"
 import { updateBuild } from "@/modules/build/client/build-store"
+import { BuildDelete } from "./build-delete"
 
 type BuildHeaderActionsProps = {
   canDownload: boolean
   isDownloading: boolean
   onDownload: () => void
+  onDelete: () => void
 }
 
 /** Rename and export actions for the active build. */
@@ -24,6 +26,7 @@ export function BuildHeaderActions({
   canDownload,
   isDownloading,
   onDownload,
+  onDelete,
 }: BuildHeaderActionsProps) {
   const [isEditing, setIsEditing] = useState(false)
 
@@ -73,14 +76,17 @@ export function BuildHeaderActions({
             </InputGroup>
           </Show>
 
-          <Button
-            size="xs"
-            disabled={!canDownload || isDownloading}
-            onClick={onDownload}
-          >
-            <HugeiconsIcon icon={DownloadIcon} />
-            {isDownloading ? "Exportando..." : "Exportar"}
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              size="xs"
+              disabled={!canDownload || isDownloading}
+              onClick={onDownload}
+            >
+              <HugeiconsIcon icon={DownloadIcon} />
+              {isDownloading ? "Exportando..." : "Exportar"}
+            </Button>
+            <BuildDelete onDelete={onDelete} />
+          </div>
         </div>
       )}
     </Show>

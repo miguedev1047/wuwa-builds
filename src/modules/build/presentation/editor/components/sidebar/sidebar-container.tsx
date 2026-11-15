@@ -10,6 +10,7 @@ interface SidebarContainerProps {
   canDownload: boolean
   isDownloading: boolean
   onDownload: () => void
+  onDelete: () => void
 }
 
 export function SidebarContainer({
@@ -17,6 +18,7 @@ export function SidebarContainer({
   canDownload,
   isDownloading,
   onDownload,
+  onDelete,
 }: SidebarContainerProps) {
   return (
     <SidebarProvider>
@@ -26,6 +28,7 @@ export function SidebarContainer({
           canDownload={canDownload}
           isDownloading={isDownloading}
           onDownload={onDownload}
+          onDelete={onDelete}
         />
         <div className="flex h-build-editor w-full flex-col gap-6 p-3 md:p-6 xl:overflow-hidden">
           {children}
