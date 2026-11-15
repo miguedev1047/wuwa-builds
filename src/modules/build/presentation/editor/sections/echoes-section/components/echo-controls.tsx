@@ -24,23 +24,20 @@ export function EchoControls({
 }: EchoControlsProps) {
   return (
     <Show when={slot.data}>
-      <div className="space-y-5 border-t pt-4">
+      <div className="space-y-5">
         <EchoSetSelect
           sets={sets}
           selectedSetId={slot.echoSetId}
           onChange={(setId) => progress.setSet(slot.index, setId)}
         />
-
         <EchoMainStatSelect
           slot={slot}
           onChange={(option) => progress.setMainStat(slot.index, option)}
         />
-
         <EchoLevelControl
           slot={slot}
           onChange={(step) => progress.setLevelStep(slot.index, step)}
         />
-
         <EchoSubstats
           slot={slot}
           onStatChange={(substatIndex, option) =>
@@ -50,7 +47,6 @@ export function EchoControls({
             progress.setSubstatValue(slot.index, substatIndex, value)
           }
         />
-
         <EchoMainToggle
           isMain={isMain}
           onToggle={() => progress.toggleMain(slot.index)}

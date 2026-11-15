@@ -51,7 +51,6 @@ export function EchoMainStatSelect({
   return (
     <div className="space-y-2">
       <BuildWorkspace.Text size="sm">Estadística principal</BuildWorkspace.Text>
-
       <Select
         items={statOptions}
         value={selectedValue}

@@ -41,7 +41,6 @@ export function EchoSetSelect({
   return (
     <div className="space-y-2">
       <BuildWorkspace.Text size="sm">Set</BuildWorkspace.Text>
-
       <Select
         items={options}
         value={selectedValue}

@@ -1,12 +1,12 @@
 import type { BuildProps } from "@build/domain/build-record"
 import { Show } from "@/components/utility/show"
-import { EchoesSectionContent } from "@build/presentation/editor/sections/echoes-section/components/echoes-section-content"
+import { EchoesEditorContent } from "@build/presentation/editor/sections/echoes-section/components/echoes-editor-content"
 
 /** Editable echoes section of the builder. */
 export function EchoesEditorSection({ build }: { build: BuildProps }) {
   return (
     <Show when={build}>
-      {(current) => <EchoesSectionContent build={current} />}
+      {(current) => <EchoesEditorContent build={current} />}
     </Show>
   )
 }
