@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import { BuildHeaderActions } from "./build-header-actions"
+import { BuildHeaderActions } from "@build/presentation/editor/components/sidebar"
 
 type SidebarAppHeaderProps = {
   canDownload: boolean

@@ -8,7 +8,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { useBuildCollection } from "@/modules/build/client/hooks/build-live-queries"
-import { useBuildIdentity } from "../../build-identity"
+import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import type { BuildEditorSection } from "@/modules/build/domain/build-record"
 import { updateBuild } from "@/modules/build/client/build-store"
 import {
@@ -18,7 +18,7 @@ import {
   UserIcon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { SidebarAppFooter } from "./sidebar-footer"
+import { SidebarAppFooter } from "@build/presentation/editor/components/sidebar"
 
 export const SECTIONS = [
   {

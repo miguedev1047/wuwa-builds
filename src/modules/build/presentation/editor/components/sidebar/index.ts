@@ -1,5 +1,6 @@
 export * from "@build/presentation/editor/components/sidebar/sidebar-container"
 export * from "@build/presentation/editor/components/sidebar/sidebar-panel"
 export * from "@build/presentation/editor/components/sidebar/sidebar-header"
+export * from "@build/presentation/editor/components/sidebar/build-header-actions"
 export * from "@build/presentation/editor/components/sidebar/sidebar-footer"
 export * from "@build/presentation/editor/components/sidebar/sidebar-editor-inspector"

@@ -1,5 +1,5 @@
 import { useBuildCollection } from "@/modules/build/client/hooks/build-live-queries"
-import { useBuildIdentity } from "../../build-identity"
+import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import { useState } from "react"
 import { Show } from "@/components/utility/show"
 import { Button } from "@/components/ui/button"
