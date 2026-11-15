@@ -5,6 +5,7 @@ import { useState } from "react"
 import { SelectedEchoSlotPanel } from "./selected-echo-slot-panel"
 import { Separator } from "@/components/ui/separator"
 import { EchoesTabs } from "./echoes-tabs"
+import { EchoSlotRemove } from "./echo-slot-remove"
 
 type EchoesEditorContentProps = {
   build: BuildProps
@@ -48,6 +49,7 @@ export function EchoesEditorContent({ build }: EchoesEditorContentProps) {
             build={build}
             slot={build.echoes[selectedEchoIndex]}
           />
+          <EchoSlotRemove build={build} slotIndex={selectedEchoIndex} />
         </div>
       </div>
     </Show>

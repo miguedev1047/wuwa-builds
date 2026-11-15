@@ -1,4 +1,7 @@
-import { DEFAULT_BUILD_NAME } from "@build/application/factories/build"
+import {
+  createEmptyEchoes,
+  DEFAULT_BUILD_NAME,
+} from "@build/application/factories/build"
 import { selectEchoSlot } from "@build/application/select-echo-slot"
 import { selectResonatorPatch } from "@build/application/select-resonator-patch"
 import type { BuildProps } from "@build/domain/build-record"
@@ -45,6 +48,15 @@ export const buildEdits = {
 
   selectEcho(draft: BuildProps, targetIndex: number, echo: EchoSummary) {
     draft.echoes = selectEchoSlot({ echoes: draft.echoes, targetIndex, echo })
+    draft.updateAt = new Date().toISOString()
+  },
+
+  removeEcho(draft: BuildProps, targetIndex: number) {
+    const emptySlot = createEmptyEchoes()[targetIndex]
+    if (!emptySlot || !draft.echoes[targetIndex]?.data) return
+
+    draft.echoes[targetIndex] = emptySlot
+    if (draft.mainEchoSlot === targetIndex) draft.mainEchoSlot = null
     draft.updateAt = new Date().toISOString()
   },
 }
