@@ -34,7 +34,6 @@ export function BuildExportCard({
       <BuildBackground
         ref={captureRef}
         backgroundIndex={build.backgroundIndex}
-        backgroundUrl={build.backgroundUrl}
         className={buildCardFrameClassName}
       >
         <BuildCanvas
