@@ -19,10 +19,15 @@ type BuildEditorWorkspaceProps = {
 /** Compose the editor sidebar and interactive preview. */
 export function BuildEditorWorkspace({ build }: BuildEditorWorkspaceProps) {
   const preview = useBuildStats(build)
-  const { captureRef, exportSnapshot } = useDownloadBuild({ build, preview })
+  const { canDownload, captureRef, exportSnapshot, handleDownload } =
+    useDownloadBuild({ build, preview })
 
   return (
-    <SidebarContainer>
+    <SidebarContainer
+      canDownload={canDownload}
+      isDownloading={exportSnapshot !== null}
+      onDownload={handleDownload}
+    >
       <BuildWorkspace.Root>
         <BuildWorkspace.Canvas>
           <BuildWorkspace.Content>
