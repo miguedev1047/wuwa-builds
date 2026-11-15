@@ -39,7 +39,7 @@ export function StatsContent({
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-4">
-      <BuildWorkspace.Text size="xs" textColor="muted" family="bold">
+      <BuildWorkspace.Text size="xs" family="bold">
         Estadísticas
       </BuildWorkspace.Text>
       <dl className="grid min-h-0 grid-flow-col grid-cols-2 grid-rows-6 content-between gap-x-6 gap-y-4">

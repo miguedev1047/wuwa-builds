@@ -28,7 +28,7 @@ export function SkillsPreview({
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-3">
-      <BuildWorkspace.Text size="xs" textColor="muted" family="bold">
+      <BuildWorkspace.Text size="xs" family="bold">
         Habilidades y pasivas
       </BuildWorkspace.Text>
       <div className="grid min-h-0 flex-1 grid-cols-5 gap-3">
