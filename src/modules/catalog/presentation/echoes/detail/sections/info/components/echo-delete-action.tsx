@@ -50,6 +50,7 @@ export function EchoDeleteAction({ echoId }: { echoId: number }) {
         <Button
           type="button"
           variant="destructive"
+          size="icon"
           aria-label="Eliminar eco"
           disabled={isPending}
         >

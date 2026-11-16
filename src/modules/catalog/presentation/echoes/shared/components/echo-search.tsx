@@ -1,10 +1,12 @@
 import { Button } from "@/components/panelui/button"
 import { Show } from "@/components/utility/show"
-import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
+import { CommandSearch } from "@/components/blocks/command-search"
 import type { EncoreEchoSummary } from "@encore/domain/echo"
-import { encoreEchoQueries } from "@encore/queries/catalogs"
-import { useSuspenseQuery } from "@tanstack/react-query"
 import { Suspense } from "react"
+import { EchoSearchFilters } from "@catalog/presentation/echoes/shared/components/search-filters"
+import { useEchoSearchParams } from "@catalog/presentation/echoes/shared/hooks/use-echo-search-params"
+import { useEchoesFiltered } from "@catalog/presentation/echoes/shared/hooks/use-echo-filtered"
+import { Separator } from "@/components/ui/separator"
 
 type EchoSearchProps = {
   /** Id of the echo already applied to the form, if any. */
@@ -19,8 +21,13 @@ export function EchoSearch({
   onSelect,
   disabled,
 }: EchoSearchProps) {
+  const { clearSearchParams, echoName, setEchoName } = useEchoSearchParams()
+
   return (
-    <CatalogSearch.Root
+    <CommandSearch.Root
+      clearSearchParams={clearSearchParams}
+      search={echoName ?? ""}
+      onSearchChange={(value) => void setEchoName(value || null)}
       trigger={
         <Button
           variant="secondary"
@@ -35,13 +42,19 @@ export function EchoSearch({
       title="Buscar eco"
       description="Copia los datos de un eco de Encore al formulario."
     >
-      <CatalogSearch.Input placeholder="Nombre o ID del eco" />
-      <CatalogSearch.List>
-        <Suspense fallback={<CatalogSearch.Loading />}>
+      <CommandSearch.Input placeholder="Nombre o ID del eco">
+        <CommandSearch.FilterTrigger />
+      </CommandSearch.Input>
+      <CommandSearch.FilterContent>
+        <EchoSearchFilters />
+      </CommandSearch.FilterContent>
+      <Separator />
+      <CommandSearch.List>
+        <Suspense fallback={<CommandSearch.Loading />}>
           <EchoSearchResults selectedId={selectedId} onSelect={onSelect} />
         </Suspense>
-      </CatalogSearch.List>
-    </CatalogSearch.Root>
+      </CommandSearch.List>
+    </CommandSearch.Root>
   )
 }
 
@@ -51,19 +64,21 @@ type EchoSearchResultsProps = {
 }
 
 function EchoSearchResults({ selectedId, onSelect }: EchoSearchResultsProps) {
-  const { data: echoes } = useSuspenseQuery(encoreEchoQueries.list())
+  const { filteredEchoes: echoes } = useEchoesFiltered()
 
   return (
     <>
-      <CatalogSearch.Empty>Sin ecos con ese nombre.</CatalogSearch.Empty>
-
+      <CommandSearch.Empty>Sin ecos con ese nombre.</CommandSearch.Empty>
       <Show when={echoes.length > 0}>
-        <CatalogSearch.Group heading="Ecos">
+        <CommandSearch.Group heading="Ecos">
           {echoes.map((echo) => (
-            <CatalogSearch.Item
+            <CommandSearch.Item
               key={echo.id}
               value={`${echo.name} ${echo.id}`}
-              onSelect={() => onSelect(echo)}
+              onSelect={() => {
+                onSelect(echo)
+              }}
+              subtitle={selectedId === echo.id ? "Actual" : ""}
               icon={
                 <img
                   src={echo.icon}
@@ -72,16 +87,10 @@ function EchoSearchResults({ selectedId, onSelect }: EchoSearchResultsProps) {
                 />
               }
             >
-              <span className="truncate">{echo.name}</span>
-
-              <Show when={selectedId === echo.id}>
-                <span className="ml-auto text-xs text-muted-foreground">
-                  Actual
-                </span>
-              </Show>
-            </CatalogSearch.Item>
+              {echo.name}
+            </CommandSearch.Item>
           ))}
-        </CatalogSearch.Group>
+        </CommandSearch.Group>
       </Show>
     </>
   )

@@ -74,7 +74,7 @@ export function EchoEditAction({ echo }: EchoEditActionProps) {
       open={open}
       onOpenChange={onOpenChange}
       trigger={
-        <Button type="button" variant="ghost" size={isMobile ? "icon" : "sm"}>
+        <Button type="button" variant="ghost" size={isMobile ? "icon" : "md"}>
           <HugeiconsIcon icon={PencilEdit01Icon} />
           <Show when={!isMobile}>Editar</Show>
         </Button>

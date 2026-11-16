@@ -1,9 +1,12 @@
 import { Button } from "@/components/panelui/button"
-import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
+import { CommandSearch } from "@/components/blocks/command-search"
 import type { EncoreCharacterSummary } from "@encore/domain/character"
-import { encoreCharacterQueries } from "@encore/queries/characters"
-import { useSuspenseQuery } from "@tanstack/react-query"
 import { Suspense } from "react"
+import { useResonatorSearchParams } from "../hooks/use-resonator-search-params"
+import { ResonatorSearchFilters } from "./search-filters"
+import { Separator } from "@/components/ui/separator"
+import { useResonatorsFiltered } from "../hooks/use-resonator-filtered"
+import { Show } from "@/components/utility/show"
 
 type ResonatorSearchProps = {
   /** Id of the character already applied to the form, if any. */
@@ -18,8 +21,15 @@ export function ResonatorSearch({
   onSelect,
   disabled,
 }: ResonatorSearchProps) {
+  const {
+    clearSearchParams,
+    hasActiveFilter,
+    resonatorName,
+    setResonatorName,
+  } = useResonatorSearchParams()
+
   return (
-    <CatalogSearch.Root
+    <CommandSearch.Root
       trigger={
         <Button
           variant="secondary"
@@ -31,17 +41,28 @@ export function ResonatorSearch({
           Buscar resonador
         </Button>
       }
+      search={resonatorName ?? ""}
+      onSearchChange={(value) => setResonatorName(value || null)}
+      clearSearchParams={clearSearchParams}
       title="Buscar resonador"
       description="Copia los datos de un resonador de Encore al formulario."
     >
-      <CatalogSearch.Input placeholder="Nombre o ID del resonador" />
-
-      <CatalogSearch.List>
-        <Suspense fallback={<CatalogSearch.Loading />}>
+      <CommandSearch.Input placeholder="Nombre o ID del resonador">
+        <CommandSearch.FilterTrigger />
+      </CommandSearch.Input>
+      <CommandSearch.FilterContent
+        hasActiveFilter={hasActiveFilter}
+        onClearFilters={clearSearchParams}
+      >
+        <ResonatorSearchFilters />
+      </CommandSearch.FilterContent>
+      <Separator />
+      <CommandSearch.List>
+        <Suspense fallback={<CommandSearch.Loading />}>
           <ResonatorSearchResults selectedId={selectedId} onSelect={onSelect} />
         </Suspense>
-      </CatalogSearch.List>
-    </CatalogSearch.Root>
+      </CommandSearch.List>
+    </CommandSearch.Root>
   )
 }
 
@@ -54,37 +75,32 @@ function ResonatorSearchResults({
   selectedId,
   onSelect,
 }: ResonatorSearchResultsProps) {
-  const { data: characters } = useSuspenseQuery(encoreCharacterQueries.list())
+  const { filteredResonators: characters } = useResonatorsFiltered()
 
   return (
     <>
-      <CatalogSearch.Empty>Sin resonadores con ese nombre.</CatalogSearch.Empty>
-
-      <CatalogSearch.Group heading="Resonadores">
-        {characters.map((character) => (
-          <CatalogSearch.Item
-            key={character.id}
-            value={`${character.name} ${character.id}`}
-            onSelect={() => onSelect(character)}
-          >
-            <img
-              src={character.icon}
-              alt={character.name}
-              width={28}
-              height={28}
-              className="aspect-square size-7 shrink-0 rounded-sm bg-accent object-cover"
-            />
-
-            <span className="truncate">{character.name}</span>
-
-            {selectedId === character.id ? (
-              <span className="ml-auto text-xs text-muted-foreground">
-                Actual
-              </span>
-            ) : null}
-          </CatalogSearch.Item>
-        ))}
-      </CatalogSearch.Group>
+      <CommandSearch.Empty>Sin resonadores con ese nombre.</CommandSearch.Empty>
+      <CommandSearch.Group heading="Resonadores">
+        <Show when={characters.length > 0}>
+          {characters.map((character) => (
+            <CommandSearch.Item
+              key={character.id}
+              value={`${character.name} ${character.id}`}
+              onSelect={() => onSelect(character)}
+              subtitle={selectedId === character.id ? "Actual" : ""}
+              icon={
+                <img
+                  src={character.icon}
+                  alt={character.name}
+                  className="shrink-0 rounded-sm bg-input/50 object-contain"
+                />
+              }
+            >
+              {character.name}
+            </CommandSearch.Item>
+          ))}
+        </Show>
+      </CommandSearch.Group>
     </>
   )
 }

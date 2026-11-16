@@ -12,7 +12,7 @@ export const WEAPON_TYPES = [
   { label: "Pistolas", value: 3 },
   { label: "Brazales", value: 4 },
   { label: "Rectificador", value: 5 },
-] as const
+]
 
 /** Numeric catalog type of each canonical resonator weapon type. */
 export const WEAPON_TYPE_NUMBER: Record<WeaponTypeId, number> = {

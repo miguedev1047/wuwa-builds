@@ -1,6 +1,8 @@
 import type { SelectOption } from "@catalog/application/options"
 import { statOptions, type StatId } from "@catalog/application/stats/stats"
 
+export const RESONATOR_RARITY_MAX_RANGE = 2
+
 export const RESONATOR_RARITY: SelectOption<number>[] = [
   { label: "5 Estrellas", value: 5 },
   { label: "4 Estrellas", value: 4 },

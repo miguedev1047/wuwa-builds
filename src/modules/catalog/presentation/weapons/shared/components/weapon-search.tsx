@@ -1,9 +1,12 @@
 import { Button } from "@/components/panelui/button"
-import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
+import { CommandSearch } from "@/components/blocks/command-search"
 import type { EncoreWeaponSummary } from "@encore/domain/weapon"
-import { encoreWeaponQueries } from "@encore/queries/catalogs"
-import { useSuspenseQuery } from "@tanstack/react-query"
 import { Suspense } from "react"
+import { Show } from "@/components/utility/show"
+import { Separator } from "@/components/ui/separator"
+import { WeaponSearchFilters } from "@catalog/presentation/weapons/shared/components/search-filters"
+import { useWeaponSearchParams } from "@catalog/presentation/weapons/shared/hooks/use-weapon-search-params"
+import { useWeaponFiltered } from "@catalog/presentation/weapons/shared/hooks/use-weapon-filtered"
 
 type WeaponSearchProps = {
   /** Id of the weapon already applied to the form, if any. */
@@ -18,8 +21,11 @@ export function WeaponSearch({
   onSelect,
   disabled,
 }: WeaponSearchProps) {
+  const { clearSearchParams, weaponName, setWeaponName, hasActiveFilter } =
+    useWeaponSearchParams()
+
   return (
-    <CatalogSearch.Root
+    <CommandSearch.Root
       trigger={
         <Button
           variant="secondary"
@@ -31,17 +37,28 @@ export function WeaponSearch({
           Buscar arma
         </Button>
       }
+      search={weaponName ?? ""}
+      onSearchChange={(value) => void setWeaponName(value || null)}
+      clearSearchParams={clearSearchParams}
       title="Buscar arma"
       description="Copia los datos de un arma de Encore al formulario."
     >
-      <CatalogSearch.Input placeholder="Nombre, tipo o ID del arma" />
-
-      <CatalogSearch.List>
-        <Suspense fallback={<CatalogSearch.Loading />}>
+      <CommandSearch.Input placeholder="Nombre, tipo o ID del arma">
+        <CommandSearch.FilterTrigger />
+      </CommandSearch.Input>
+      <CommandSearch.FilterContent
+        onClearFilters={clearSearchParams}
+        hasActiveFilter={hasActiveFilter}
+      >
+        <WeaponSearchFilters />
+      </CommandSearch.FilterContent>
+      <Separator />
+      <CommandSearch.List>
+        <Suspense fallback={<CommandSearch.Loading />}>
           <WeaponSearchResults selectedId={selectedId} onSelect={onSelect} />
         </Suspense>
-      </CatalogSearch.List>
-    </CatalogSearch.Root>
+      </CommandSearch.List>
+    </CommandSearch.Root>
   )
 }
 
@@ -54,37 +71,32 @@ function WeaponSearchResults({
   selectedId,
   onSelect,
 }: WeaponSearchResultsProps) {
-  const { data: weapons } = useSuspenseQuery(encoreWeaponQueries.list())
+  const { filteredWeapons: weapons } = useWeaponFiltered()
 
   return (
     <>
-      <CatalogSearch.Empty>Sin armas con ese nombre.</CatalogSearch.Empty>
-
-      <CatalogSearch.Group heading="Armas">
-        {weapons.map((weapon) => (
-          <CatalogSearch.Item
-            key={weapon.id}
-            value={`${weapon.name} ${weapon.id} ${weapon.typeName}`}
-            onSelect={() => onSelect(weapon)}
-          >
-            <img
-              src={weapon.icon}
-              alt={weapon.name}
-              width={28}
-              height={28}
-              className="aspect-square size-7 shrink-0 rounded-sm bg-accent object-contain"
-            />
-
-            <span className="truncate">{weapon.name}</span>
-
-            {selectedId === weapon.id ? (
-              <span className="ml-auto text-xs text-muted-foreground">
-                Actual
-              </span>
-            ) : null}
-          </CatalogSearch.Item>
-        ))}
-      </CatalogSearch.Group>
+      <CommandSearch.Empty>Sin armas con ese nombre.</CommandSearch.Empty>
+      <Show when={weapons.length > 0}>
+        <CommandSearch.Group heading="Armas">
+          {weapons.map((weapon) => (
+            <CommandSearch.Item
+              key={weapon.id}
+              value={`${weapon.name} ${weapon.id} ${weapon.typeName}`}
+              onSelect={() => onSelect(weapon)}
+              subtitle={selectedId === weapon.id ? "Actual" : ""}
+              icon={
+                <img
+                  src={weapon.icon}
+                  alt={weapon.name}
+                  className="shrink-0 rounded-sm bg-input/50 object-contain"
+                />
+              }
+            >
+              {weapon.name}
+            </CommandSearch.Item>
+          ))}
+        </CommandSearch.Group>
+      </Show>
     </>
   )
 }

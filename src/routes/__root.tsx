@@ -1,5 +1,6 @@
 import appCss from "@/styles/index.css?url"
 
+import { NuqsAdapter } from "nuqs/adapters/tanstack-router"
 import { Toast } from "@/components/panelui/toast"
 import { Tooltip } from "@/components/panelui/tooltip"
 import { Devtools } from "@/components/utility/devtools"
@@ -54,11 +55,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <ThemeProvider defaultTheme="system" storageKey="theme">
-          <Toast.Provider>
-            <Tooltip.Provider>{children}</Tooltip.Provider>
-          </Toast.Provider>
-        </ThemeProvider>
+        <NuqsAdapter>
+          <ThemeProvider defaultTheme="system" storageKey="theme">
+            <Toast.Provider>
+              <Tooltip.Provider>{children}</Tooltip.Provider>
+            </Toast.Provider>
+          </ThemeProvider>
+        </NuqsAdapter>
         <Devtools />
         <Scripts />
       </body>
