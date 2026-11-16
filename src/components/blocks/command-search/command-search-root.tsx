@@ -37,6 +37,7 @@ export function CommandSearchRoot({
   clearSearchParams,
   search,
   title = "Buscar",
+  onSearchChange,
   description = "Busca y selecciona un elemento.",
   className,
   children,
@@ -77,7 +78,7 @@ export function CommandSearchRoot({
           <Command
             aria-label={title}
             search={search}
-            // onSearchChange={onSearchChange}
+            onSearchChange={onSearchChange}
           >
             <p className="sr-only">{description}</p>
             {children}
