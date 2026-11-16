@@ -47,6 +47,35 @@ export async function readEchoes(): Promise<EncoreEchoSummary[]> {
     .map(toEchoSummary)
 }
 
+/** Reads echoes with Sonata effects resolved from each set's detail payload. */
+export async function readEchoesWithSonataEffects(): Promise<
+  EncoreEchoSummary[]
+> {
+  const [echoes, sonataSets] = await Promise.all([
+    readEchoes(),
+    readSonataSets(),
+  ])
+  const setsById = new Map(sonataSets.map((set) => [set.id, set]))
+
+  return echoes.map((echo) => ({
+    ...echo,
+    sets: echo.sets.map((set) => {
+      const resolvedSet = setsById.get(set.id)
+      if (!resolvedSet) return set
+
+      return {
+        ...set,
+        name: resolvedSet.name || set.name,
+        icon: resolvedSet.icon || set.icon,
+        effects: resolvedSet.effects.map(({ pieces, description }) => ({
+          key: pieces,
+          description,
+        })),
+      }
+    }),
+  }))
+}
+
 export async function readEcho(id: number): Promise<EncoreEchoDetail> {
   const data = await fetchEncoreJson<RawEchoDetail>(`echo/${id}`)
   return toEchoDetail(data)

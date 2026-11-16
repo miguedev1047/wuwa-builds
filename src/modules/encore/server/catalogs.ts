@@ -33,6 +33,14 @@ export const getEchoes = createServerFn({ method: "GET" }).handler(async () => {
   return readEchoes()
 })
 
+export const getEchoesWithSonataEffects = createServerFn({
+  method: "GET",
+}).handler(async () => {
+  const { readEchoesWithSonataEffects } =
+    await import("@encore/application/read-catalogs.server")
+  return readEchoesWithSonataEffects()
+})
+
 export const getEcho = createServerFn({
   method: "GET",
   strict: { output: false },

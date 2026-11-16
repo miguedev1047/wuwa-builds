@@ -11,5 +11,7 @@ export const encoreKeys = {
   weapons: () => [...encoreKeys.all, "weapons"] as const,
   weapon: (id: number) => [...encoreKeys.all, "weapon", id] as const,
   echoes: () => [...encoreKeys.all, "echoes"] as const,
+  echoesWithSonataEffects: () =>
+    [...encoreKeys.all, "echoes", "sonata-effects"] as const,
   echo: (id: number) => [...encoreKeys.all, "echo", id] as const,
 }

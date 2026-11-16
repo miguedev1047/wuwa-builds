@@ -2,6 +2,7 @@ import { queryOptions } from "@tanstack/react-query"
 import {
   getEcho,
   getEchoes,
+  getEchoesWithSonataEffects,
   getWeapon,
   getWeapons,
 } from "@encore/server/catalogs"
@@ -31,6 +32,14 @@ export const encoreEchoQueries = {
     queryOptions({
       queryKey: encoreKeys.echoes(),
       queryFn: () => getEchoes(),
+      staleTime: ENCORE_STALE_TIME,
+      gcTime: ENCORE_GC_TIME,
+    }),
+
+  withSonataEffects: () =>
+    queryOptions({
+      queryKey: encoreKeys.echoesWithSonataEffects(),
+      queryFn: () => getEchoesWithSonataEffects(),
       staleTime: ENCORE_STALE_TIME,
       gcTime: ENCORE_GC_TIME,
     }),
