@@ -68,7 +68,7 @@ export function CommandSearchFilterContent({
   return (
     <PopoverContent
       align="end"
-      className={cn("grid w-80 grid-cols-1 gap-2", className)}
+      className={cn("grid w-50 grid-cols-1 gap-2 md:w-80", className)}
     >
       {children}
       <Show when={hasActiveFilter}>
