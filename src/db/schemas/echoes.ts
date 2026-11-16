@@ -1,3 +1,7 @@
+import {
+  ECHO_CLASS_IDS,
+  type EchoCost,
+} from "@/modules/game-data/domain/categories"
 import { defineRelationsPart } from "drizzle-orm"
 import {
   index,
@@ -26,10 +30,13 @@ export const echoes = sqliteTable(
     id: integer("id", { mode: "number" }).primaryKey(),
     /** `MonsterName` (`Name` in the list endpoint) */
     name: text("name").notNull(),
-    /** `Rarity` tier: 0 common, 1 elite, 2 boss, 3 calamity. */
-    class: integer("class", { mode: "number" }).notNull().default(0),
+    /** Canonical class imported from the Encore `Rarity` tier. */
+    class: text("class", { enum: ECHO_CLASS_IDS }).notNull().default("common"),
     /** Build cost derived from the tier: 1, 3 or 4. */
-    cost: integer("cost", { mode: "number" }).notNull().default(1),
+    cost: integer("cost", { mode: "number" })
+      .$type<EchoCost>()
+      .notNull()
+      .default(1),
     /** `Icon` */
     icon: text("icon").notNull().default(""),
 

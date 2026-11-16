@@ -13,8 +13,8 @@ const character: EncoreCharacterDetail = {
   name: "Yangyang",
   introduction: "Resonadora de Jinzhou",
   rarity: 4,
-  element: "Aero",
-  weaponType: "Espada",
+  element: "aero",
+  weaponType: "sword",
   icon: "https://api.encore.moe/resource/Data/icon.webp",
   images: {
     card: "https://api.encore.moe/resource/Data/card.webp",

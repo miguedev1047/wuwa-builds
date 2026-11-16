@@ -1,3 +1,7 @@
+import {
+  weaponTypeParser,
+  elementParser,
+} from "@/modules/game-data/presentation/category-parsers"
 import { parseAsInteger, parseAsString, useQueryState } from "nuqs"
 import { useCallback } from "react"
 
@@ -13,11 +17,11 @@ export function useResonatorSearchParams() {
   )
   const [resonatorWeaponType, setResonatorWeaponType] = useQueryState(
     "resonator_weapon_type",
-    parseAsString.withOptions({ history: "replace" })
+    weaponTypeParser.withOptions({ history: "replace" })
   )
   const [resonatorElement, setResonatorElement] = useQueryState(
     "resonator_element",
-    parseAsString.withOptions({ history: "replace" })
+    elementParser.withOptions({ history: "replace" })
   )
 
   const hasActiveFilter =

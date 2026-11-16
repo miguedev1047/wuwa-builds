@@ -1,3 +1,4 @@
+import { weaponTypeParser } from "@/modules/game-data/presentation/category-parsers"
 import { parseAsInteger, parseAsString, useQueryState } from "nuqs"
 import { useCallback } from "react"
 
@@ -13,7 +14,7 @@ export function useWeaponSearchParams() {
   )
   const [weaponType, setWeaponType] = useQueryState(
     "weapon_type",
-    parseAsInteger.withOptions({ history: "replace" })
+    weaponTypeParser.withOptions({ history: "replace" })
   )
 
   const hasActiveFilter = !!weaponName || !!weaponRarity || !!weaponType

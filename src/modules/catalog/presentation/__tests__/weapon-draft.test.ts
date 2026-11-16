@@ -12,8 +12,7 @@ const weapon: EncoreWeaponDetail = {
   id: 21050016,
   name: "Maestro de cuerdas",
   rarity: 5,
-  type: 5,
-  typeName: "Rectificador",
+  type: "rectifier",
   icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
   description: "El palmo de la marioneta se abre.",
   properties: [
@@ -35,7 +34,7 @@ describe("weaponDraftFromEncore", () => {
       id: 21050016,
       name: "Maestro de cuerdas",
       rarity: 5,
-      type: 5,
+      type: "rectifier",
       icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
       description: "El palmo de la marioneta se abre.",
     })
@@ -54,8 +53,7 @@ describe("weaponDraftFromEncore", () => {
       id: 21050016,
       name: "Maestro de cuerdas",
       rarity: 5,
-      type: 5,
-      typeName: "Rectificador",
+      type: "rectifier",
       icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
       description: "El palmo de la marioneta se abre.",
       createdAt: new Date(),
@@ -66,7 +64,7 @@ describe("weaponDraftFromEncore", () => {
       id: 21050016,
       name: "Maestro de cuerdas",
       rarity: 5,
-      type: 5,
+      type: "rectifier",
       icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
       description: "El palmo de la marioneta se abre.",
     })

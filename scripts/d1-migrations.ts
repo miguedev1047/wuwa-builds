@@ -120,8 +120,9 @@ function runWrangler(args: string[]): string {
   })
 
   if (result.exitCode !== 0) {
-    const stderr = result.stderr.toString().trim()
-    throw new Error(`wrangler ${args.join(" ")} failed\n${stderr}`)
+    const detail =
+      result.stderr.toString().trim() || result.stdout.toString().trim()
+    throw new Error(`wrangler ${args.join(" ")} failed\n${detail}`)
   }
 
   return result.stdout.toString()
@@ -134,8 +135,7 @@ function localCommand(name: string, sql: string, json = false): string {
     name,
     "--local",
     ...(json ? ["--json"] : []),
-    "--command",
-    sql,
+    `--command=${sql}`,
   ])
 }
 

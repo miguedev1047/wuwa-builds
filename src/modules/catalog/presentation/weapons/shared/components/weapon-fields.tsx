@@ -11,7 +11,7 @@ export const weaponFormDefaults: WeaponInput = {
   id: 0,
   name: "",
   rarity: 5,
-  type: 1,
+  type: "broadblade",
   icon: "",
   description: "",
 }

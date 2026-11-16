@@ -320,7 +320,6 @@ export async function saveWeapon(
     name: weapon.name,
     rarity: weapon.rarity,
     type: weapon.type,
-    typeName: weapon.typeName,
     icon: weapon.icon,
     description: weapon.description,
   })
@@ -420,7 +419,6 @@ export async function readWeapon(
     name: row.name,
     rarity: row.rarity,
     type: row.type,
-    typeName: row.typeName,
     icon: row.icon,
     description: row.description,
     properties: row.properties.map((property) => ({
@@ -452,7 +450,6 @@ export async function readWeapons(db: AppDb): Promise<EncoreWeaponSummary[]> {
     name: row.name,
     rarity: row.rarity,
     type: row.type,
-    typeName: row.typeName,
     icon: row.icon,
   }))
 }

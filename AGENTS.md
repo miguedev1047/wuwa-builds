@@ -90,6 +90,19 @@ Current modules:
 - `src/db`: Drizzle schema for auth, saved builds and the canonical catalog
   tables (D1).
 
+## Category contracts
+
+- `src/modules/game-data/domain/categories.ts` owns category ids, Spanish labels,
+  types, validation and derived select options. Reuse it across modules.
+- Elements, weapon types and echo classes use stable English string ids.
+  Rarity and echo cost remain numeric. Display labels are never persisted as ids.
+- Only the Encore infrastructure adapter converts external codes and localized
+  names. Catalog writes, saved snapshots and URL filters use canonical ids only.
+- Category corrections may break old data. Do not add compatibility aliases,
+  snapshot migration or version markers for old category representations.
+- Weapon `type` and resonator `weaponType` share `WeaponTypeId`; weapon labels
+  are derived rather than stored. The canonical spelling is `gauntlets`.
+
 ## Game data
 
 Raw game data is read from `https://api-v2.encore.moe/api/{lang}/...` through

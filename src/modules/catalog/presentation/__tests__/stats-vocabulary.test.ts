@@ -8,12 +8,10 @@ import {
   statLabel,
 } from "@catalog/application/stats/stats"
 import {
-  ELEMENT_BY_ENCORE,
   ELEMENT_IDS,
   RESONATOR_ELEMENTS,
   RESONATOR_PROPERTY_OPTIONS,
   RESONATOR_WEAPON_TYPES,
-  WEAPON_TYPE_BY_ENCORE,
   WEAPON_TYPE_IDS,
 } from "@catalog/application/constants/resonator"
 import {
@@ -65,15 +63,13 @@ describe("stat vocabulary", () => {
     expect(isWeaponPropertyStatId("Ataque %")).toBe(false)
   })
 
-  test("element and weapon type aliases cover every option", () => {
+  test("element and weapon options use canonical ids", () => {
     for (const option of RESONATOR_ELEMENTS) {
       expect(ELEMENT_IDS).toContain(option.value)
-      expect(Object.values(ELEMENT_BY_ENCORE)).toContain(option.value)
     }
 
     for (const option of RESONATOR_WEAPON_TYPES) {
       expect(WEAPON_TYPE_IDS).toContain(option.value)
-      expect(Object.values(WEAPON_TYPE_BY_ENCORE)).toContain(option.value)
     }
 
     for (const option of RESONATOR_PROPERTY_OPTIONS) {

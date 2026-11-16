@@ -1,3 +1,4 @@
+import { echoClassParser } from "@/modules/game-data/presentation/category-parsers"
 import { parseAsInteger, parseAsString, useQueryState } from "nuqs"
 import { useCallback } from "react"
 
@@ -17,7 +18,7 @@ export function useEchoSearchParams() {
   )
   const [echoClass, setEchoClass] = useQueryState(
     "echo_class",
-    parseAsInteger.withOptions({ history: "replace" })
+    echoClassParser.withOptions({ history: "replace" })
   )
 
   const clearSearchParams = useCallback(() => {

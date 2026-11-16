@@ -48,8 +48,7 @@ const weapon: WeaponSummary = {
   id: 1,
   name: "Weapon",
   rarity: 5,
-  type: 2,
-  typeName: "Espada",
+  type: "sword",
   icon: "icon",
   description: "",
   createdAt: new Date(0),
@@ -59,7 +58,7 @@ const weapon: WeaponSummary = {
 const echo: EchoSummary = {
   id: 1,
   name: "Echo",
-  class: 2,
+  class: "boss",
   cost: 4,
   icon: "icon",
   createdAt: new Date(0),

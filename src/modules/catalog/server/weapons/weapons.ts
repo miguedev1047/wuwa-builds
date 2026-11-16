@@ -5,7 +5,6 @@ import { eq } from "drizzle-orm"
 import { adminMiddleware, authMiddleware } from "@/functions/middlewares"
 import { idInput } from "@catalog/application/id"
 import { weaponInput } from "@catalog/application/schemas"
-import { weaponTypeName } from "@catalog/application/weapons/types"
 import { weapons } from "@db/schema"
 
 export const getWeapons = createServerFn({ method: "GET" })
@@ -49,8 +48,7 @@ export const getWeapon = createServerFn({
 /**
  * Creates a weapon row from the admin form.
  *
- * `type_name` is derived from the numeric `type` instead of trusting the
- * client, so the two columns always describe the same weapon type.
+ * The weapon category is validated against the shared registry.
  */
 export const createWeapon = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])
@@ -65,10 +63,7 @@ export const createWeapon = createServerFn({ method: "POST" })
       throw new Error("Ya existe un arma con ese ID")
     }
 
-    const [weapon] = await db
-      .insert(weapons)
-      .values({ ...data, typeName: weaponTypeName(data.type) })
-      .returning()
+    const [weapon] = await db.insert(weapons).values(data).returning()
 
     return weapon
   })
@@ -81,7 +76,7 @@ export const updateWeapon = createServerFn({ method: "POST" })
 
     const [weapon] = await db
       .update(weapons)
-      .set({ ...values, typeName: weaponTypeName(values.type) })
+      .set(values)
       .where(eq(weapons.id, id))
       .returning()
 

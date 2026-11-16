@@ -1,3 +1,4 @@
+import { weaponTypeSchema } from "@/modules/game-data/domain/categories"
 import { QuerySelect } from "@/components/blocks/query-select"
 import { useWeaponSearchParams } from "@catalog/presentation/weapons/shared/hooks/use-weapon-search-params"
 import {
@@ -25,7 +26,7 @@ export function WeaponSearchFilters() {
         items={WEAPON_TYPES}
         value={weaponType}
         onValueChange={(value) =>
-          void setWeaponType(typeof value === "number" ? value : null)
+          void setWeaponType(weaponTypeSchema.safeParse(value).data ?? null)
         }
       />
     </>

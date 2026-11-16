@@ -9,7 +9,7 @@ function echo(id: number): EchoSummary {
   return {
     id,
     name: `Echo ${id}`,
-    class: 0,
+    class: "common",
     cost: 1,
     icon: "",
     createdAt: new Date(0),

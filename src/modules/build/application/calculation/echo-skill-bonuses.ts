@@ -6,10 +6,6 @@ import type { EchoesDataProps } from "@build/domain/build-record"
 import { statLabel } from "@catalog/application/stats/stats"
 import { isStatId } from "@catalog/application/stats/stats"
 import type { EchoDetail } from "@catalog/domain/echo"
-import {
-  normalizeElementId,
-  normalizeWeaponTypeId,
-} from "@build/application/calculation/normalize"
 
 export interface ResolvedEchoSkillBonuses {
   bonuses: CharacterStatBonus[]
@@ -61,14 +57,14 @@ export function resolveEchoSkillBonuses({
 
       if (
         bonus.condition === "element" &&
-        context.element !== normalizeElementId(bonus.conditionValue)
+        context.element !== bonus.conditionValue
       ) {
         continue
       }
 
       if (
         bonus.condition === "weaponType" &&
-        context.weaponType !== normalizeWeaponTypeId(bonus.conditionValue)
+        context.weaponType !== bonus.conditionValue
       ) {
         continue
       }

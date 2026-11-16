@@ -6,6 +6,7 @@ import {
   echoSetFormInput,
   echoSetInput,
   resonatorInput,
+  resonatorFormInput,
   resonatorPassiveInput,
   resonatorPassivesInput,
   resonatorPropertyGrowthInput,
@@ -61,7 +62,7 @@ describe("resonatorInput", () => {
 
     expect(low.success).toBe(false)
     expect(high.success).toBe(false)
-    expect(high.error?.issues[0]?.message).toBe("La rareza maxima es 5")
+    expect(high.error?.issues[0]?.path).toEqual(["rarity"])
   })
 
   test("requires element and weapon type", () => {
@@ -75,6 +76,14 @@ describe("resonatorInput", () => {
       "element",
       "weaponType",
     ])
+  })
+
+  test("allows empty select drafts but rejects them on form submission", () => {
+    expect(resonatorFormInput.safeParse(valid).success).toBe(true)
+    expect(
+      resonatorFormInput.safeParse({ ...valid, element: "", weaponType: "" })
+        .success
+    ).toBe(false)
   })
 
   test("requires a positive id", () => {
@@ -102,7 +111,7 @@ describe("weaponInput", () => {
     id: 21050016,
     name: "  Maestro de cuerdas  ",
     rarity: 5,
-    type: 5,
+    type: "rectifier",
     icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
     description: "El palmo de la marioneta se abre.",
   }
@@ -111,7 +120,7 @@ describe("weaponInput", () => {
     const parsed = weaponInput.parse(valid)
 
     expect(parsed.name).toBe("Maestro de cuerdas")
-    expect(parsed.type).toBe(5)
+    expect(parsed.type).toBe("rectifier")
   })
 
   test("rejects an empty name", () => {
@@ -155,7 +164,7 @@ describe("echoInput", () => {
   const valid = {
     id: 390080005,
     name: "  Geochelone Portacampana  ",
-    class: 3,
+    class: "calamity",
     cost: 4,
     icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
   }

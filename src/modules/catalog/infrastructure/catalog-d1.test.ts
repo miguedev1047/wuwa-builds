@@ -288,13 +288,13 @@ describe("encore catalog schema", () => {
   })
 
   test("maps the Encore tier to the echo class and cost", () => {
-    expect(toEchoDetail(rawEcho)).toMatchObject({ class: 1, cost: 3 })
+    expect(toEchoDetail(rawEcho)).toMatchObject({ class: "elite", cost: 3 })
     expect(toEchoDetail({ ...rawEcho, Rarity: 0 })).toMatchObject({
-      class: 0,
+      class: "common",
       cost: 1,
     })
     expect(toEchoDetail({ ...rawEcho, Rarity: 3 })).toMatchObject({
-      class: 3,
+      class: "calamity",
       cost: 4,
     })
   })
@@ -332,8 +332,8 @@ describe("encore catalog schema", () => {
         id: 1402,
         name: "Yangyang",
         rarity: 4,
-        element: "Aero",
-        weaponType: "Espada",
+        element: "aero",
+        weaponType: "sword",
         icon: "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/icon.webp",
         iconLarge:
           "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/icon-large.webp",
@@ -345,8 +345,7 @@ describe("encore catalog schema", () => {
         id: 21010074,
         name: "Rastro de otoño",
         rarity: 4,
-        type: 1,
-        typeName: "Mandoble",
+        type: "broadblade",
         // The Unreal asset path stored by Encore becomes a fetchable URL.
         icon: "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/Image/IconWeapon/weapon.webp",
       },
@@ -356,7 +355,7 @@ describe("encore catalog schema", () => {
       {
         id: 6000038,
         name: "Campemico",
-        class: 1,
+        class: "elite",
         cost: 3,
         icon: "https://api.encore.moe/resource/Data/Game/Aki/UI/Image/echo.webp",
         sets: [

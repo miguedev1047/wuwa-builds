@@ -1,3 +1,9 @@
+import { sql } from "drizzle-orm"
+import {
+  ELEMENT_IDS,
+  WEAPON_TYPE_IDS,
+  type Rarity,
+} from "@/modules/game-data/domain/categories"
 import { defineRelationsPart } from "drizzle-orm"
 import {
   index,
@@ -41,11 +47,15 @@ export const resonators = sqliteTable(
     /** `Introduction.Content` */
     introduction: text("introduction").notNull().default(""),
     /** `QualityId` */
-    rarity: integer("rarity", { mode: "number" }).notNull(),
+    rarity: integer("rarity", { mode: "number" }).$type<Rarity>().notNull(),
     /** Canonical element id (`aero`, `glacio`, ...), not the Encore label. */
-    element: text("element").notNull().default(""),
+    element: text("element", { enum: ELEMENT_IDS })
+      .notNull()
+      .default(sql`''`),
     /** Canonical weapon type id (`sword`, `broadblade`, ...). */
-    weaponType: text("weapon_type").notNull().default(""),
+    weaponType: text("weapon_type", { enum: WEAPON_TYPE_IDS })
+      .notNull()
+      .default(sql`''`),
     /** `RoleHeadIcon` (`images.icon`) */
     icon: text("icon").notNull().default(""),
     /** `Card` (`images.card`) */

@@ -1,18 +1,13 @@
 import type { EncoreCharacterDetail } from "@encore/domain/character"
 import type { ResonatorRow } from "@db/schema"
 import type { ResonatorInput } from "@catalog/application/schemas"
-import {
-  ELEMENT_BY_ENCORE,
-  WEAPON_TYPE_BY_ENCORE,
-} from "@catalog/application/constants/resonator"
 
 /**
  * Fills the admin form with a full Encore character.
  *
  * The list endpoint only carries a summary, so the form requests the detail
  * before prefilling: that is where `introduction` and the image fields live.
- * Encore sends element and weapon labels, so they are normalized to the
- * canonical ids the form and the catalog store.
+ * Encore has already normalized categories at its adapter boundary.
  */
 export function resonatorDraftFromEncore(
   character: EncoreCharacterDetail
@@ -22,8 +17,8 @@ export function resonatorDraftFromEncore(
     name: character.name,
     introduction: character.introduction,
     rarity: character.rarity,
-    element: ELEMENT_BY_ENCORE[character.element] ?? "",
-    weaponType: WEAPON_TYPE_BY_ENCORE[character.weaponType] ?? "",
+    element: character.element,
+    weaponType: character.weaponType,
     icon: character.icon || character.images.icon,
     card: character.images.card,
     circle: character.images.circle,

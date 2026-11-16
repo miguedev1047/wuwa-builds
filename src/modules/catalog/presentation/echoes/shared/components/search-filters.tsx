@@ -1,3 +1,4 @@
+import { echoClassSchema } from "@/modules/game-data/domain/categories"
 import { QuerySelect } from "@/components/blocks/query-select"
 import { Show } from "@/components/utility/show"
 import { sonataQueries } from "@/modules/catalog/queries/sonatas"
@@ -53,7 +54,7 @@ export function EchoSearchFilters() {
         items={ECHO_CLASS_OPTIONS}
         value={echoClass}
         onValueChange={(value) =>
-          void setEchoClass(typeof value === "number" ? value : null)
+          void setEchoClass(echoClassSchema.safeParse(value).data ?? null)
         }
       />
     </>

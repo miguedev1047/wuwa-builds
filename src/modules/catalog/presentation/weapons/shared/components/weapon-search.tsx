@@ -1,3 +1,4 @@
+import { weaponTypeName } from "@catalog/application/weapons/types"
 import { Button } from "@/components/panelui/button"
 import { CommandSearch } from "@/components/blocks/command-search"
 import type { EncoreWeaponSummary } from "@encore/domain/weapon"
@@ -81,7 +82,7 @@ function WeaponSearchResults({
           {weapons.map((weapon) => (
             <CommandSearch.Item
               key={weapon.id}
-              value={`${weapon.name} ${weapon.id} ${weapon.typeName}`}
+              value={`${weapon.name} ${weapon.id} ${weaponTypeName(weapon.type)}`}
               onSelect={() => onSelect(weapon)}
               subtitle={selectedId === weapon.id ? "Actual" : ""}
               icon={

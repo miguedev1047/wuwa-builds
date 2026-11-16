@@ -3,6 +3,7 @@ import { useToast } from "@/components/panelui/toast"
 import { resonatorDraftFromEncore } from "@catalog/application/resonators/resonator-draft"
 import {
   resonatorInput,
+  resonatorFormInput,
   type ResonatorInput,
 } from "@catalog/application/schemas"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
@@ -53,9 +54,9 @@ export function ResonatorForm() {
   const form = useAppForm({
     formId,
     defaultValues: resonatorFormDefaults,
-    validators: { onSubmit: resonatorInput },
+    validators: { onSubmit: resonatorFormInput },
     onSubmit: async ({ value }) => {
-      await mutateAsync(value)
+      await mutateAsync(resonatorInput.parse(value))
     },
   })
 

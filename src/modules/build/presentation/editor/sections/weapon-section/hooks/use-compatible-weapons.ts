@@ -12,11 +12,12 @@ import { weaponQueries } from "@catalog/queries/weapons"
 export function useCompatibleWeapons(build: BuildProps) {
   const { data: weapons } = useSuspenseQuery(weaponQueries.list())
 
-  const resonatorType = build.resonator.data?.weaponType ?? ""
+  const resonatorType = build.resonator.data?.weaponType
 
   return {
-    items: weapons.filter((weapon) =>
-      weaponTypeMatches(resonatorType, weapon.type)
+    items: weapons.filter(
+      (weapon) =>
+        !resonatorType || weaponTypeMatches(resonatorType, weapon.type)
     ),
     selectedId: build.weapon.data?.id,
   }

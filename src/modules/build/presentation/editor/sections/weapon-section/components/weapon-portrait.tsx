@@ -1,10 +1,7 @@
 import type { WeaponDetail } from "@catalog/domain/weapon"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { Image } from "@/components/ui/image"
-import {
-  weaponTypeKey,
-  weaponTypeNumber,
-} from "@/modules/catalog/application/weapons/types"
+import { weaponTypeName } from "@catalog/application/weapons/types"
 import { GameIcon, gameIconName } from "@/components/ui/game-icon"
 
 type WeaponIdentityProps = {
@@ -13,8 +10,6 @@ type WeaponIdentityProps = {
 
 /** Name and change action of the selected weapon. */
 export function WeaponPortrait({ weapon }: WeaponIdentityProps) {
-  const weapoKey = weaponTypeKey(weapon.type)
-
   return (
     <div className="flex items-center gap-4">
       <Image
@@ -35,9 +30,10 @@ export function WeaponPortrait({ weapon }: WeaponIdentityProps) {
           {weapon.name}
         </BuildWorkspace.Text>
         <div className="flex items-center gap-1">
-          {weaponTypeNumber(weapon.typeName)}
-          <GameIcon className="size-4" name={gameIconName(weapoKey)} />
-          <p className="text-xs text-muted-foreground">{weapon.typeName}</p>
+          <GameIcon className="size-4" name={gameIconName(weapon.type)} />
+          <p className="text-xs text-muted-foreground">
+            {weaponTypeName(weapon.type)}
+          </p>
         </div>
       </div>
     </div>

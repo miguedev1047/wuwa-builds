@@ -10,7 +10,7 @@ import {
 export const echoFormDefaults: EchoInput = {
   id: 0,
   name: "",
-  class: 0,
+  class: "common",
   cost: 1,
   icon: "",
 }

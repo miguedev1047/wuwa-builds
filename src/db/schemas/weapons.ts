@@ -1,3 +1,8 @@
+import { sql } from "drizzle-orm"
+import {
+  WEAPON_TYPE_IDS,
+  type Rarity,
+} from "@/modules/game-data/domain/categories"
 import { defineRelationsPart } from "drizzle-orm"
 import {
   index,
@@ -32,11 +37,14 @@ export const weapons = sqliteTable(
     /** `WeaponName` (`Name` in the list endpoint) */
     name: text("name").notNull(),
     /** `QualityId` */
-    rarity: integer("rarity", { mode: "number" }).notNull().default(0),
+    rarity: integer("rarity", { mode: "number" })
+      .$type<Rarity>()
+      .notNull()
+      .default(sql`0`),
     /** `WeaponType` (`Type` in the list endpoint) */
-    type: integer("type", { mode: "number" }).notNull().default(0),
-    /** `WeaponTypeName` (`TypeName` in the list endpoint) */
-    typeName: text("type_name").notNull().default(""),
+    type: text("type", { enum: WEAPON_TYPE_IDS })
+      .notNull()
+      .default(sql`''`),
     /** `Icon` */
     icon: text("icon").notNull().default(""),
     /** `AttributesDescription` (falls back to `BgDescription`). */

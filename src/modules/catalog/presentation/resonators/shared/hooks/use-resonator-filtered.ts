@@ -14,17 +14,13 @@ export function useResonatorsFiltered() {
         .includes(searchParams.resonatorName.toLocaleLowerCase())
     const matchesWeaponType =
       searchParams.resonatorWeaponType === null ||
-      item.weaponType
-        .toLocaleLowerCase()
-        .includes(searchParams.resonatorWeaponType.toLocaleLowerCase())
+      item.weaponType === searchParams.resonatorWeaponType
     const matchesRarity =
       searchParams.resonatorRarity === null ||
       item.rarity === searchParams.resonatorRarity
     const matchesElement =
       searchParams.resonatorElement === null ||
-      item.weaponType
-        .toLocaleLowerCase()
-        .includes(searchParams.resonatorElement.toLocaleLowerCase())
+      item.element === searchParams.resonatorElement
 
     return matchesName && matchesWeaponType && matchesRarity && matchesElement
   })

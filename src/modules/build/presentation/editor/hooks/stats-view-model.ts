@@ -2,7 +2,6 @@ import type {
   CharacterStatKey,
   CharacterStats,
 } from "@build/domain/character-stats"
-import { normalizeElementId } from "@build/application/calculation/normalize"
 import { elementStatKey, STAT_KINDS } from "@build/domain/stats"
 import { RESONATOR_ELEMENTS } from "@catalog/application/constants/resonator"
 import { isStatId } from "@catalog/application/stats/stats"
@@ -34,7 +33,7 @@ export function statsRows(
   stats: CharacterStats,
   element: string | null
 ): StatsRow[] {
-  const elementId = normalizeElementId(element)
+  const elementId = element
   const elementLabel =
     RESONATOR_ELEMENTS.find((option) => option.value === elementId)?.label ??
     elementId

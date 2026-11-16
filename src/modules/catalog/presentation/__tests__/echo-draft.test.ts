@@ -11,7 +11,7 @@ import {
 const echo: EncoreEchoDetail = {
   id: 390080005,
   name: "Geochelone Portacampana",
-  class: 3,
+  class: "calamity",
   cost: 4,
   icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
   sets: [],
@@ -23,7 +23,7 @@ describe("echoDraftFromEncore", () => {
     expect(echoDraftFromEncore(echo)).toEqual({
       id: 390080005,
       name: "Geochelone Portacampana",
-      class: 3,
+      class: "calamity",
       cost: 4,
       icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
     })
@@ -45,7 +45,7 @@ describe("echoDraftFromRow", () => {
   const row: EchoRow = {
     id: 390080005,
     name: "Geochelone Portacampana",
-    class: 3,
+    class: "calamity",
     cost: 4,
     icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
     createdAt: new Date(),
@@ -56,7 +56,7 @@ describe("echoDraftFromRow", () => {
     expect(echoDraftFromRow(row)).toEqual({
       id: 390080005,
       name: "Geochelone Portacampana",
-      class: 3,
+      class: "calamity",
       cost: 4,
       icon: "https://api-v2.encore.moe/resource/Data/icon.webp",
     })

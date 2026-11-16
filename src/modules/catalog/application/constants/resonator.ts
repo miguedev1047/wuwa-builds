@@ -3,84 +3,17 @@ import { statOptions, type StatId } from "@catalog/application/stats/stats"
 
 export const RESONATOR_RARITY_MAX_RANGE = 2
 
-export const RESONATOR_RARITY: SelectOption<number>[] = [
-  { label: "5 Estrellas", value: 5 },
-  { label: "4 Estrellas", value: 4 },
-  { label: "3 Estrellas", value: 3 },
-  { label: "2 Estrellas", value: 2 },
-  { label: "1 Estrella", value: 1 },
-]
-
-/** Canonical element keys. */
-export const ELEMENT_IDS = [
-  "aero",
-  "havoc",
-  "electro",
-  "spectro",
-  "fusion",
-  "glacio",
-] as const
-
-export type ElementId = (typeof ELEMENT_IDS)[number]
-
-/** Element options. `value` is the id stored in `resonators.element`. */
-export const RESONATOR_ELEMENTS: SelectOption<ElementId>[] = [
-  { label: "Aero", value: "aero" },
-  { label: "Destrucción", value: "havoc" },
-  { label: "Electro", value: "electro" },
-  { label: "Espectro", value: "spectro" },
-  { label: "Fusión", value: "fusion" },
-  { label: "Gelio", value: "glacio" },
-]
-
-/** Encore element name to canonical id. */
-export const ELEMENT_BY_ENCORE: Record<string, ElementId> = {
-  Aero: "aero",
-  Destrucción: "havoc",
-  Electro: "electro",
-  Espectro: "spectro",
-  Fusión: "fusion",
-  Gelio: "glacio",
-}
-
-/** Narrows a stored string to a known element id. */
-export function isElementId(value: string): value is ElementId {
-  return (ELEMENT_IDS as readonly string[]).includes(value)
-}
-
-/** Canonical resonator weapon type keys. */
-export const WEAPON_TYPE_IDS = [
-  "broadblade",
-  "sword",
-  "pistols",
-  "guantlets",
-  "rectifier",
-] as const
-
-export type WeaponTypeId = (typeof WEAPON_TYPE_IDS)[number]
-
-/** Weapon type options. `value` is the id stored in `resonators.weapon_type`. */
-export const RESONATOR_WEAPON_TYPES: SelectOption<WeaponTypeId>[] = [
-  { label: "Mandoble", value: "broadblade" },
-  { label: "Espada", value: "sword" },
-  { label: "Pistolas", value: "pistols" },
-  { label: "Brazales", value: "guantlets" },
-  { label: "Rectificador", value: "rectifier" },
-]
-
-/** Encore weapon type name to canonical id. */
-export const WEAPON_TYPE_BY_ENCORE: Record<string, WeaponTypeId> = {
-  Mandoble: "broadblade",
-  Espada: "sword",
-  Pistolas: "pistols",
-  Brazales: "guantlets",
-  Rectificador: "rectifier",
-}
-
-/** Narrows a stored string to a known weapon type id. */
-export function isWeaponTypeId(value: string): value is WeaponTypeId {
-  return (WEAPON_TYPE_IDS as readonly string[]).includes(value)
-}
+export {
+  RARITY_OPTIONS as RESONATOR_RARITY,
+  ELEMENT_IDS,
+  WEAPON_TYPE_IDS,
+  ELEMENT_OPTIONS as RESONATOR_ELEMENTS,
+  WEAPON_TYPE_OPTIONS as RESONATOR_WEAPON_TYPES,
+  isElementId,
+  isWeaponTypeId,
+  type ElementId,
+  type WeaponTypeId,
+} from "@/modules/game-data/domain/categories"
 
 /** Canonical resonator image keys, in display order. */
 export const RESONATOR_MEDIA_KINDS = [

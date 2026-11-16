@@ -4,13 +4,8 @@ import { WEAPON_TYPES } from "@catalog/application/weapons/types"
 
 export const WEAPON_RARITY_MAX_RANGE = 3
 
-export const WEAPON_RARITY: SelectOption<number>[] = [
-  { label: "5 Estrellas", value: 5 },
-  { label: "4 Estrellas", value: 4 },
-  { label: "3 Estrellas", value: 3 },
-  { label: "2 Estrellas", value: 2 },
-  { label: "1 Estrella", value: 1 },
-]
+export { RARITY_OPTIONS as WEAPON_RARITY } from "@/modules/game-data/domain/categories"
+import { RARITY_OPTIONS as WEAPON_RARITY } from "@/modules/game-data/domain/categories"
 
 /** Weapon type options shared by the form fields and future detail screens. */
 export const WEAPON_TYPE_OPTIONS = WEAPON_TYPES

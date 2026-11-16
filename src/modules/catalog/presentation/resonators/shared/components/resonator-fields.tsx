@@ -7,11 +7,11 @@ import {
   RESONATOR_WEAPON_TYPES,
 } from "@catalog/application/constants/resonator"
 import {
-  resonatorInput,
-  type ResonatorInput,
+  resonatorFormInput,
+  type ResonatorFormValues,
 } from "@catalog/application/schemas"
 
-export const resonatorFormDefaults: ResonatorInput = {
+export const resonatorFormDefaults: ResonatorFormValues = {
   id: 0,
   name: "",
   introduction: "",
@@ -36,7 +36,7 @@ export const ResonatorFields = withForm({
       <FieldGroup className="grid w-full gap-4 md:grid-cols-2">
         <form.AppField
           name="name"
-          validators={{ onSubmit: resonatorInput.shape.name }}
+          validators={{ onSubmit: resonatorFormInput.shape.name }}
         >
           {(field) => (
             <field.TextField
@@ -50,7 +50,7 @@ export const ResonatorFields = withForm({
 
         <form.AppField
           name="rarity"
-          validators={{ onSubmit: resonatorInput.shape.rarity }}
+          validators={{ onSubmit: resonatorFormInput.shape.rarity }}
         >
           {(field) => (
             <field.SelectField
@@ -64,7 +64,7 @@ export const ResonatorFields = withForm({
 
         <form.AppField
           name="element"
-          validators={{ onSubmit: resonatorInput.shape.element }}
+          validators={{ onSubmit: resonatorFormInput.shape.element }}
         >
           {(field) => (
             <field.SelectField
@@ -78,7 +78,7 @@ export const ResonatorFields = withForm({
 
         <form.AppField
           name="weaponType"
-          validators={{ onSubmit: resonatorInput.shape.weaponType }}
+          validators={{ onSubmit: resonatorFormInput.shape.weaponType }}
         >
           {(field) => (
             <field.SelectField
@@ -92,7 +92,7 @@ export const ResonatorFields = withForm({
 
         <form.AppField
           name="introduction"
-          validators={{ onSubmit: resonatorInput.shape.introduction }}
+          validators={{ onSubmit: resonatorFormInput.shape.introduction }}
         >
           {(field) => (
             <field.TextareaField

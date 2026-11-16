@@ -1,3 +1,10 @@
+import { raritySchema } from "@/modules/game-data/domain/categories"
+import {
+  encoreElementId,
+  encoreWeaponTypeId,
+  encoreWeaponTypeIdFromName,
+  encoreEchoTier,
+} from "@encore/infrastructure/categories.server"
 import type {
   EncoreBreach,
   EncoreCharacterDetail,
@@ -9,7 +16,6 @@ import type {
   EncoreTag,
 } from "@encore/domain/character"
 import {
-  echoTier,
   type EncoreEchoDetail,
   type EncoreEchoSet,
   type EncoreEchoSummary,
@@ -140,9 +146,9 @@ export function toCharacterSummary(
   return {
     id: raw.Id,
     name: raw.Name,
-    rarity: raw.QualityId,
-    element: raw.Element?.Name ?? "",
-    weaponType: raw.WeaponType?.Name ?? "",
+    rarity: raritySchema.parse(raw.QualityId),
+    element: encoreElementId(raw.Element?.Name),
+    weaponType: encoreWeaponTypeIdFromName(raw.WeaponType?.Name),
     icon: encoreAssetUrl(raw.RoleHeadIcon),
   }
 }
@@ -232,9 +238,9 @@ export function toCharacterDetail(
     id: raw.Id,
     name: text(raw.Name),
     introduction: text(raw.Introduction),
-    rarity: raw.QualityId ?? 0,
-    element: raw.ElementName ?? "",
-    weaponType: raw.WeaponTypeName ?? "",
+    rarity: raritySchema.parse(raw.QualityId),
+    element: encoreElementId(raw.ElementName),
+    weaponType: encoreWeaponTypeIdFromName(raw.WeaponTypeName),
     icon: encoreAssetUrl(raw.RoleHeadIcon),
     images: {
       card: encoreAssetUrl(raw.Card),
@@ -364,9 +370,8 @@ export function toWeaponSummary(raw: RawWeaponSummary): EncoreWeaponSummary {
   return {
     id: raw.Id,
     name: raw.Name,
-    rarity: raw.QualityId ?? 0,
-    type: raw.Type ?? 0,
-    typeName: raw.TypeName ?? "",
+    rarity: raritySchema.parse(raw.QualityId),
+    type: encoreWeaponTypeId(raw.Type),
     icon: encoreAssetUrl(raw.Icon),
   }
 }
@@ -420,9 +425,8 @@ export function toWeaponDetail(raw: RawWeaponDetail): EncoreWeaponDetail {
   return {
     id: raw.ItemId,
     name: raw.WeaponName ?? "",
-    rarity: raw.QualityId ?? 0,
-    type: raw.WeaponType ?? 0,
-    typeName: raw.WeaponTypeName ?? "",
+    rarity: raritySchema.parse(raw.QualityId),
+    type: encoreWeaponTypeId(raw.WeaponType),
     icon: encoreAssetUrl(raw.Icon),
     description: raw.AttributesDescription || raw.BgDescription || "",
     properties: (raw.Properties ?? []).map(toProperty),
@@ -431,7 +435,7 @@ export function toWeaponDetail(raw: RawWeaponDetail): EncoreWeaponDetail {
 }
 
 export function toEchoSummary(raw: RawEchoSummary): EncoreEchoSummary {
-  const tier = echoTier(raw.Rarity ?? 0)
+  const tier = encoreEchoTier(raw.Rarity)
 
   return {
     id: raw.Id,
@@ -484,7 +488,7 @@ function toEchoDetailSets(raw: RawEchoDetail): EncoreEchoSet[] {
 
 export function toEchoDetail(raw: RawEchoDetail): EncoreEchoDetail {
   const skill = raw.Skill
-  const tier = echoTier(raw.Rarity ?? 0)
+  const tier = encoreEchoTier(raw.Rarity)
 
   return {
     id: raw.MonsterId ?? raw.ItemId ?? 0,

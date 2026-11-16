@@ -1,36 +1,19 @@
-import { ECHO_COSTS } from "@catalog/application/schemas"
+import {
+  categoryLabel,
+  ECHO_CLASSES,
+  ECHO_COST_OPTIONS,
+} from "@/modules/game-data/domain/categories"
+export {
+  ECHO_CLASS_OPTIONS,
+  ECHO_COST_OPTIONS,
+} from "@/modules/game-data/domain/categories"
 
-/** Build cost of an echo, in points. */
-export const ECHO_COST_OPTIONS = ECHO_COSTS.map((cost) => ({
-  label: `Coste ${cost}`,
-  value: cost,
-}))
-
-/**
- * Echo classes, matching the Encore `Rarity` tier.
- *
- * `0` is a common 1-cost enemy, `1` an elite 3-cost one, `2` a 4-cost boss and
- * `3` a 4-cost calamity.
- */
-export const ECHO_CLASS_OPTIONS = [
-  { label: "Común", value: 0 },
-  { label: "Élite", value: 1 },
-  { label: "Jefe", value: 2 },
-  { label: "Calamidad", value: 3 },
-]
-
-/** Display label of an echo class, e.g. `Élite`. */
-export function echoClassLabel(value: number): string {
-  return (
-    ECHO_CLASS_OPTIONS.find((option) => option.value === value)?.label ??
-    `Clase ${value}`
-  )
+/** Spanish label of a canonical echo class. */
+export function echoClassLabel(value: string): string {
+  return categoryLabel(ECHO_CLASSES, value)
 }
 
-/** Display label of an echo cost, e.g. `Coste 4`. */
+/** Display label of an echo cost. */
 export function echoCostLabel(value: number): string {
-  return (
-    ECHO_COST_OPTIONS.find((option) => option.value === value)?.label ??
-    `Coste ${value}`
-  )
+  return categoryLabel(ECHO_COST_OPTIONS, value)
 }

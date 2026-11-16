@@ -107,8 +107,8 @@ export function characterDetail({
 }: {
   id?: number
   name?: string
-  element?: string
-  weaponType?: string
+  element?: CharacterDetail["element"]
+  weaponType?: CharacterDetail["weaponType"]
   properties?: CharacterDetail["properties"]
   sequences?: ResonatorSequenceRow[]
   passives?: ResonatorPassiveRow[]
@@ -209,8 +209,7 @@ export function weaponDetail({
     id: 1,
     name: "Arma",
     rarity: 5,
-    type: 1,
-    typeName: "Espada",
+    type: "broadblade",
     icon: "",
     description: "",
     properties,
@@ -246,13 +245,13 @@ export function echoDetail({
 }: {
   id?: number
   name?: string
-  cost?: number
+  cost?: EchoSummary["cost"]
   skillBonuses?: EchoSkillBonusRow[]
 } = {}): EchoDetail {
   return {
     id,
     name,
-    class: 0,
+    class: "common",
     cost,
     icon: "",
     sets: [],
@@ -309,9 +308,9 @@ export function echoSummary({
 }: {
   id?: number
   name?: string
-  cost?: number
+  cost?: EchoSummary["cost"]
 } = {}): EchoSummary {
-  return { id, name, class: 0, cost, icon: "", ...dates }
+  return { id, name, class: "common", cost, icon: "", ...dates }
 }
 
 /** Equipped echo slot fixture. */

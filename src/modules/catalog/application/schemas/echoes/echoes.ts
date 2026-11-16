@@ -1,9 +1,12 @@
+import {
+  echoClassSchema,
+  echoCostSchema,
+} from "@/modules/game-data/domain/categories"
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
 import { echoes } from "@db/schema"
 
-/** Costs a single echo can occupy in a build. */
-export const ECHO_COSTS = [1, 3, 4] as const
+export { ECHO_COSTS } from "@/modules/game-data/domain/categories"
 
 /**
  * Fields the admin panel can set when creating an echo.
@@ -19,15 +22,8 @@ export const echoInput = createInsertSchema(echoes, {
       .trim()
       .min(1, "El nombre es obligatorio")
       .max(80, "Maximo 80 caracteres"),
-  class: (schema) =>
-    schema.int().min(0, "Clase invalida").max(3, "Clase invalida"),
-  cost: (schema) =>
-    schema
-      .int()
-      .refine(
-        (cost) => ECHO_COSTS.includes(cost as (typeof ECHO_COSTS)[number]),
-        "El coste debe ser 1, 3 o 4"
-      ),
+  class: echoClassSchema,
+  cost: echoCostSchema,
   icon: (schema) => schema.trim(),
 })
   .omit({ createdAt: true, updatedAt: true })

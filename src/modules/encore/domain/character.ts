@@ -1,3 +1,8 @@
+import type {
+  ElementId,
+  WeaponTypeId,
+  Rarity,
+} from "@/modules/game-data/domain/categories"
 import type { EncoreProperty } from "@encore/domain/property"
 
 export type {
@@ -14,9 +19,9 @@ export interface EncoreText {
 export interface EncoreCharacterSummary {
   id: number
   name: string
-  rarity: number
-  element: string
-  weaponType: string
+  rarity: Rarity
+  element: ElementId
+  weaponType: WeaponTypeId
   icon: string
 }
 

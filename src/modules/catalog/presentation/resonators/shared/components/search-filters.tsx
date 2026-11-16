@@ -1,3 +1,7 @@
+import {
+  elementSchema,
+  weaponTypeSchema,
+} from "@/modules/game-data/domain/categories"
 import { QuerySelect } from "@/components/blocks/query-select"
 import {
   RESONATOR_ELEMENTS,
@@ -32,7 +36,7 @@ export function ResonatorSearchFilters() {
         items={RESONATOR_ELEMENTS}
         value={resonatorElement}
         onValueChange={(value) =>
-          void setResonatorElement(typeof value === "string" ? value : null)
+          void setResonatorElement(elementSchema.safeParse(value).data ?? null)
         }
       />
       <QuerySelect
@@ -40,7 +44,9 @@ export function ResonatorSearchFilters() {
         items={RESONATOR_WEAPON_TYPES}
         value={resonatorWeaponType}
         onValueChange={(value) =>
-          void setResonatorWeaponType(typeof value === "string" ? value : null)
+          void setResonatorWeaponType(
+            weaponTypeSchema.safeParse(value).data ?? null
+          )
         }
       />
     </>

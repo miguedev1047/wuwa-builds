@@ -1,3 +1,4 @@
+import { isElementId } from "@/modules/game-data/domain/categories"
 import type { CharacterCalculationResult } from "@build/domain/character-stats"
 import type { BuildProps } from "@build/domain/build-record"
 import type { CharacterDetail } from "@catalog/domain/character"
@@ -5,10 +6,6 @@ import type { EchoDetail } from "@catalog/domain/echo"
 import type { SonataCatalogEntry } from "@catalog/domain/sonata"
 import type { WeaponDetail } from "@catalog/domain/weapon"
 import { calculateCharacterStats } from "@build/domain/character-stats"
-import {
-  normalizeElementId,
-  normalizeWeaponTypeId,
-} from "@build/application/calculation/normalize"
 import { resolveEchoBonuses } from "@build/application/calculation/echoes"
 import { resolveEchoSkillBonuses } from "@build/application/calculation/echo-skill-bonuses"
 import { resolveResonatorStats } from "@build/application/calculation/resonator"
@@ -57,10 +54,10 @@ export function resolveBuildCalculation({
 
   const sonataBonuses = resolveSonataBonuses(build.echoes, sonatas)
 
-  const element = normalizeElementId(build.resonator.data?.element)
+  const element = build.resonator.data?.element ?? null
   const elementDiagnostics =
-    build.resonator.data?.element && element === null
-      ? [`Unknown resonator element: ${build.resonator.data.element}`]
+    element && !isElementId(element)
+      ? [`Unknown resonator element: ${element}`]
       : []
 
   const echoSkillBonuses = resolveEchoSkillBonuses({
@@ -69,7 +66,7 @@ export function resolveBuildCalculation({
     context: {
       resonatorId: build.resonator.data?.id ?? null,
       element,
-      weaponType: normalizeWeaponTypeId(build.resonator.data?.weaponType),
+      weaponType: build.resonator.data?.weaponType ?? null,
       mainEchoSlot: build.mainEchoSlot ?? null,
     },
   })

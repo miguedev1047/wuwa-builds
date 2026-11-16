@@ -1,3 +1,4 @@
+import { weaponTypeName } from "@catalog/application/weapons/types"
 import { Badge } from "@/components/panelui/badge"
 import { Show } from "@/components/utility/show"
 import { weaponRarityLabel } from "@catalog/application/constants/weapon"
@@ -50,7 +51,7 @@ export function WeaponInfoContent({ weaponId }: WeaponInfoContentProps) {
 
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline">{weaponRarityLabel(weapon.rarity)}</Badge>
-            <Badge variant="outline">{weapon.typeName}</Badge>
+            <Badge variant="outline">{weaponTypeName(weapon.type)}</Badge>
             <Badge variant="outline">ID {weapon.id}</Badge>
           </div>
 

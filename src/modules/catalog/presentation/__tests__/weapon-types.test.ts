@@ -7,7 +7,7 @@ import {
 } from "@catalog/application/weapons/types"
 
 describe("weaponTypeName", () => {
-  test("maps every known type id to its stored display name", () => {
+  test("maps every known type id to its display label", () => {
     expect(WEAPON_TYPES.map((item) => weaponTypeName(item.value))).toEqual([
       "Mandoble",
       "Espada",
@@ -17,8 +17,8 @@ describe("weaponTypeName", () => {
     ])
   })
 
-  test("returns an empty name for an unknown type", () => {
-    expect(weaponTypeName(0)).toBe("")
-    expect(weaponTypeName(9)).toBe("")
+  test("resolves canonical gauntlet and sword labels", () => {
+    expect(weaponTypeName("gauntlets")).toBe("Brazales")
+    expect(weaponTypeName("sword")).toBe("Espada")
   })
 })

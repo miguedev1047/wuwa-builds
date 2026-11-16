@@ -332,7 +332,10 @@ describe("resolveBuildCalculation", () => {
   })
 
   test("reports an unknown resonator element", () => {
-    const unknown = { ...resonator, element: "Mystery" }
+    const unknown = {
+      ...resonator,
+      element: "Mystery",
+    } as unknown as typeof resonator
     const result = resolveBuildCalculation({
       build: {
         ...build,

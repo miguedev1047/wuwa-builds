@@ -3,7 +3,9 @@ import { useToast } from "@/components/panelui/toast"
 import { resonatorDraftFromRow } from "@catalog/application/resonators/resonator-draft"
 import {
   resonatorInput,
+  resonatorFormInput,
   type ResonatorInput,
+  type ResonatorFormValues,
 } from "@catalog/application/schemas"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { updateResonator } from "@catalog/server/resonators/resonators"
@@ -46,12 +48,13 @@ export function useResonatorEditForm({
     },
   })
 
+  const defaultValues: ResonatorFormValues = resonatorDraftFromRow(resonator)
   const form = useAppForm({
     formId,
-    defaultValues: resonatorDraftFromRow(resonator),
-    validators: { onSubmit: resonatorInput },
+    defaultValues,
+    validators: { onSubmit: resonatorFormInput },
     onSubmit: async ({ value }) => {
-      await mutateAsync(value)
+      await mutateAsync(resonatorInput.parse(value))
     },
   })
 
