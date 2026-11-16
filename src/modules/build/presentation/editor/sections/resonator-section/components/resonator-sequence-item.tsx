@@ -52,7 +52,6 @@ export function ResonatorSequenceItem({
           </BuildWorkspace.Card>
         }
       />
-
       <HoverCardContent className="w-120">
         <ResonatorSequencePreview sequence={sequence} />
       </HoverCardContent>

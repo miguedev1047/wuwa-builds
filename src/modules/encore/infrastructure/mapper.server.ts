@@ -184,6 +184,14 @@ function toSkill(raw: RawSkill): EncoreSkill {
   }
 }
 
+function orderCharacterSkills(skills: EncoreSkill[]): EncoreSkill[] {
+  const order = [0, 1, 6, 2, 5, 3, 4]
+  const orderedSkills = order.flatMap((index) =>
+    skills[index] ? [skills[index]] : []
+  )
+  return [...orderedSkills, ...skills.slice(order.length)]
+}
+
 function toSequence(raw: RawSequence): EncoreSequence {
   return {
     id: raw.Id,
@@ -251,7 +259,7 @@ export function toCharacterDetail(
     },
     tags: (raw.Tags ?? []).map(toTag),
     properties: (raw.Properties ?? []).map(toProperty),
-    skills: (raw.Skills ?? []).map(toSkill),
+    skills: orderCharacterSkills((raw.Skills ?? []).map(toSkill)),
     sequences: (raw.ResonantChain ?? []).map(toSequence),
     passives: (raw.SkillTree ?? []).map(toPassive),
     breaches: (raw.Breaches ?? []).map(toBreach),

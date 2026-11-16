@@ -3,9 +3,15 @@ import { Slider } from "@/components/panelui/slider"
 import { SKILL_LEVEL_MAX, SKILL_LEVEL_MIN } from "@build/domain/build"
 import type { CharacterDetail } from "@catalog/domain/character"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+import { ResonatorSkillCardPreview } from "@build/presentation/editor/sections/resonator-section/components/resonator-skill-card-preview"
 
 type ResonatorSkillNodeProps = {
-  skill: Pick<CharacterDetail["skills"][number], "name" | "icon">
+  skill: CharacterDetail["skills"][number]
   level: number
   onLevelChange: (level: number) => void
 }
@@ -18,14 +24,26 @@ export function ResonatorSkillNode({
 }: ResonatorSkillNodeProps) {
   return (
     <div className="flex items-end gap-2">
-      <Image
-        src={skill.icon}
-        alt={skill.name}
-        aspect="square"
-        fit="contain"
-        className="size-14 p-1"
-        background="accent"
-      />
+      <HoverCard>
+        <HoverCardTrigger
+          render={
+            <BuildWorkspace.Card
+              cardColor="input"
+              className="relative size-14 shrink-0 p-1"
+            >
+              <Image
+                src={skill.icon}
+                alt={skill.name}
+                className="size-full object-contain"
+              />
+            </BuildWorkspace.Card>
+          }
+        />
+        <HoverCardContent className="no-scrollbar max-h-100 w-200 scroll-fade-y overflow-y-scroll">
+          <ResonatorSkillCardPreview skill={skill} />
+        </HoverCardContent>
+      </HoverCard>
+
       <div className="w-full space-y-1">
         <BuildWorkspace.Text
           size="xs"

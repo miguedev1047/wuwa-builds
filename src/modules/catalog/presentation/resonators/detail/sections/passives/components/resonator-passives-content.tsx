@@ -23,6 +23,7 @@ export function ResonatorPassivesContent({
     <EditableSection.Content>
       <EditableSection.List
         items={orderedPassives}
+        className="grid md:grid-cols-2"
         getItemKey={(passive) => passive.id}
         empty={
           <EditableSection.Text>Sin pasivas agregadas.</EditableSection.Text>
