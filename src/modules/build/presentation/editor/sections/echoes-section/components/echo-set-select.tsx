@@ -1,10 +1,4 @@
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import { Select } from "@/components/panelui/select"
 import { Show } from "@/components/utility/show"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import type { EchoDetail } from "@catalog/domain/echo"
@@ -47,17 +41,17 @@ export function EchoSetSelect({
         disabled={options.length === 0}
         onValueChange={handleSetChange}
       >
-        <SelectTrigger className="w-full" aria-label="Set del eco">
-          <SelectValue
+        <Select.Trigger className="w-full" aria-label="Set del eco">
+          <Select.Value
             placeholder={
               options.length === 0 ? "Sin sets" : "Selecciona un set"
             }
           />
-        </SelectTrigger>
+        </Select.Trigger>
 
-        <SelectContent>
+        <Select.Content>
           {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
+            <Select.Item key={option.value} value={option.value}>
               <div className="flex items-center gap-2">
                 <Show when={option.icon}>
                   {(icon) => (
@@ -70,9 +64,9 @@ export function EchoSetSelect({
                 </Show>
                 <p>{option.label}</p>
               </div>
-            </SelectItem>
+            </Select.Item>
           ))}
-        </SelectContent>
+        </Select.Content>
       </Select>
     </div>
   )

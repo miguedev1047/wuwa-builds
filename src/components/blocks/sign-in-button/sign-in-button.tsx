@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
+import { useToast } from "@/components/panelui/toast"
 import { authClient } from "@/lib/auth-client"
 import { useTransition } from "react"
-import { toast } from "sonner"
 
 type SignInProvider = "discord" | "google"
 
@@ -11,6 +11,7 @@ interface SignInButtonProps {
 }
 
 export function SignInButton({ children, provider }: SignInButtonProps) {
+  const toast = useToast()
   const [isPending, startTransition] = useTransition()
 
   const handleSignIn = () => {
@@ -22,10 +23,10 @@ export function SignInButton({ children, provider }: SignInButtonProps) {
         })
 
         if (result.error) {
-          toast.error("Sign in failed.")
+          toast.add({ title: "Sign in failed.", type: "destructive" })
         }
       } catch {
-        toast.error("Sign in failed.")
+        toast.add({ title: "Sign in failed.", type: "destructive" })
       }
     })
   }

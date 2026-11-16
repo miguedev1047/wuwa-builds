@@ -1,10 +1,7 @@
-import {
-  Field,
-  FieldContent,
-  FieldLabel,
-  FieldTitle,
-} from "@/components/ui/field"
-import { Switch } from "@/components/ui/switch"
+import { Field } from "@/components/panelui/field"
+import { Switch } from "@/components/panelui/switch"
+import { FieldContent, FieldTitle } from "@/components/ui/field"
+
 import { useId } from "react"
 
 type EchoMainToggleProps = {
@@ -17,8 +14,11 @@ export function EchoMainToggle({ isMain, onToggle }: EchoMainToggleProps) {
   const id = useId()
 
   return (
-    <Field orientation="horizontal">
-      <FieldLabel htmlFor={id} className="overflow-hidden rounded-lg p-4">
+    <Field>
+      <Field.Label
+        htmlFor={id}
+        className="flex items-center justify-between gap-4 overflow-hidden rounded-lg p-4"
+      >
         <FieldContent>
           <FieldTitle>
             {isMain ? "Quitar eco principal" : "Marcar eco principal"}
@@ -26,7 +26,7 @@ export function EchoMainToggle({ isMain, onToggle }: EchoMainToggleProps) {
         </FieldContent>
 
         <Switch id={id} checked={isMain} onCheckedChange={() => onToggle()} />
-      </FieldLabel>
+      </Field.Label>
     </Field>
   )
 }

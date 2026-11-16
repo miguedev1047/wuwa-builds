@@ -1,13 +1,4 @@
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
+import { AlertDialog } from "@/components/panelui/alert-dialog"
 
 type BuildDeleteDialogProps = {
   open: boolean
@@ -23,20 +14,20 @@ export function BuildDeleteDialog({
 }: BuildDeleteDialogProps) {
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
-      <AlertDialogContent size="sm">
-        <AlertDialogHeader>
-          <AlertDialogTitle>¿Eliminar build?</AlertDialogTitle>
-          <AlertDialogDescription>
+      <AlertDialog.Content size="sm">
+        <div>
+          <AlertDialog.Title>¿Eliminar build?</AlertDialog.Title>
+          <AlertDialog.Description>
             La build se eliminará de este navegador de forma permanente.
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>Cancelar</AlertDialogCancel>
-          <AlertDialogAction variant="destructive" onClick={onDelete}>
+          </AlertDialog.Description>
+        </div>
+        <AlertDialog.Footer>
+          <AlertDialog.Cancel>Cancelar</AlertDialog.Cancel>
+          <AlertDialog.Action tone="destructive" onClick={onDelete}>
             Eliminar
-          </AlertDialogAction>
-        </AlertDialogFooter>
-      </AlertDialogContent>
+          </AlertDialog.Action>
+        </AlertDialog.Footer>
+      </AlertDialog.Content>
     </AlertDialog>
   )
 }

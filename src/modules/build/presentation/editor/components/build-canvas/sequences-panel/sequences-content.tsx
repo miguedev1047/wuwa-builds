@@ -1,12 +1,12 @@
-import type { CharacterDetail } from "@catalog/domain/character"
-import { Show } from "@/components/utility/show"
-import { Image } from "@/components/ui/image"
+import { Card } from "@/components/panelui/card"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
-import { CardDescription, CardTitle } from "@/components/ui/card"
+import { Image } from "@/components/ui/image"
+import { Show } from "@/components/utility/show"
+import type { CharacterDetail } from "@catalog/domain/character"
 
 /** Read-only sequences for the selected resonator. */
 export function SequencesContent({
@@ -39,8 +39,10 @@ export function SequencesContent({
                   {(icon) => <Image size="xs" src={icon} alt={sequency.name} />}
                 </Show>
                 <div className="flex min-w-0 flex-col gap-1">
-                  <CardTitle className="truncate">{sequency.name}</CardTitle>
-                  <CardDescription>Secuencia {sequency.index}</CardDescription>
+                  <Card.Title className="truncate">{sequency.name}</Card.Title>
+                  <Card.Description>
+                    Secuencia {sequency.index}
+                  </Card.Description>
                 </div>
               </div>
               <div

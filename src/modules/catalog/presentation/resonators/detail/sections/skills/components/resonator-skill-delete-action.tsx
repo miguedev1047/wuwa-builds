@@ -1,11 +1,12 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { toast } from "sonner"
+import { Button } from "@/components/panelui/button"
+import { useToast } from "@/components/panelui/toast"
 import { isValidId } from "@catalog/application/id"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { deleteResonatorSkill } from "@catalog/server/resonators/skills"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 type ResonatorSkillDeleteActionProps = {
   skillId: number
@@ -17,9 +18,11 @@ export function ResonatorSkillDeleteAction({
   skillId,
   resonatorId,
 }: ResonatorSkillDeleteActionProps) {
+  const toast = useToast()
+
   const queryClient = useQueryClient()
 
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: () => deleteResonatorSkill({ data: { id: skillId } }),
     onSettled: async () => {
       await queryClient.invalidateQueries({
@@ -27,34 +30,36 @@ export function ResonatorSkillDeleteAction({
       })
     },
     onSuccess: () => {
-      toast.success("Habilidad eliminada")
+      toast.add({ title: "Habilidad eliminada", type: "success" })
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 
   const handleRemoveSkill = () => {
     if (!isValidId(skillId)) return
 
-    mutate()
+    return mutateAsync()
   }
 
   return (
-    <EditableSection.DeleteAction
+    <EditableSection.Action
+      mode="destructive"
       title="Eliminar habilidad"
       description="Estas seguro que quieres eliminar esta habilidad? Esta accion es irreversible."
       isPending={isPending}
       onConfirm={handleRemoveSkill}
       trigger={
-        <EditableSection.ButtonAction
+        <Button
           type="button"
           variant="destructive"
+          size="icon"
           aria-label="Eliminar habilidad"
           disabled={isPending}
         >
           <HugeiconsIcon icon={DeleteIcon} />
-        </EditableSection.ButtonAction>
+        </Button>
       }
     />
   )

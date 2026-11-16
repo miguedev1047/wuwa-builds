@@ -1,5 +1,4 @@
-import type { ResonatorSkillRow } from "@db/schema"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
 import {
   Collapsible,
   CollapsibleContent,
@@ -9,6 +8,9 @@ import { Show } from "@/components/utility/show"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { ResonatorSkillDeleteAction } from "@catalog/presentation/resonators/detail/sections/skills/components/resonator-skill-delete-action"
 import { ResonatorSkillEditAction } from "@catalog/presentation/resonators/detail/sections/skills/components/resonator-skill-edit-action"
+import type { ResonatorSkillRow } from "@db/schema"
+import { ChevronDownIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type ResonatorSkillCardProps = {
   skill: ResonatorSkillRow
@@ -55,8 +57,9 @@ export function ResonatorSkillCard({
         <Collapsible>
           <CollapsibleTrigger
             render={
-              <Button variant="outline" className="w-full">
+              <Button variant="secondary" className="w-full">
                 Ver descripción
+                <HugeiconsIcon icon={ChevronDownIcon} className="ml-auto" />
               </Button>
             }
           />

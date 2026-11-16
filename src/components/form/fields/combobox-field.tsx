@@ -1,15 +1,8 @@
-import { useSelector } from "@tanstack/react-form"
-import type { ReactNode } from "react"
-import {
-  Combobox,
-  ComboboxContent,
-  ComboboxEmpty,
-  ComboboxInput,
-  ComboboxItem,
-  ComboboxList,
-} from "@/components/ui/combobox"
 import { FieldShell } from "@/components/form/field-shell"
 import { useFieldContext } from "@/components/form/form-context"
+import { Combobox } from "@/components/panelui/combobox"
+import { useSelector } from "@tanstack/react-form"
+import type { ReactNode } from "react"
 
 export type ComboboxOption = {
   label: string
@@ -21,7 +14,7 @@ type ComboboxFieldProps = {
   description?: ReactNode
   options: readonly ComboboxOption[]
   placeholder?: string
-  emptyMessage?: ReactNode
+  emptyMessage?: string
   disabled?: boolean
   className?: string
 }
@@ -51,9 +44,6 @@ export function ComboboxField({
   const meta = useSelector(field.store, (state) => state.meta)
   const invalid = meta.isTouched && !meta.isValid
 
-  const selected =
-    options.find((option) => String(option.value) === value) ?? null
-
   return (
     <FieldShell
       label={label}
@@ -63,34 +53,26 @@ export function ComboboxField({
       errors={meta.errors}
       className={className}
     >
-      <Combobox<ComboboxOption>
-        autoHighlight
-        items={[...options]}
-        value={selected}
-        onValueChange={(next) =>
-          field.handleChange(next ? String(next.value) : "")
-        }
-        isItemEqualToValue={(item, current) => item.value === current.value}
+      <Combobox
+        mode="single"
+        id={field.name}
+        name={field.name}
+        value={value || undefined}
+        onValueChange={(next) => field.handleChange(next ?? "")}
+        onBlur={field.handleBlur}
+        aria-invalid={invalid}
+        placeholder={placeholder}
+        emptyMessage={emptyMessage}
         disabled={disabled}
+        clearable
       >
-        <ComboboxInput
-          id={field.name}
-          placeholder={placeholder}
-          showClear
-          aria-invalid={invalid}
-          onBlur={field.handleBlur}
-        />
-
-        <ComboboxContent>
-          <ComboboxEmpty>{emptyMessage}</ComboboxEmpty>
-          <ComboboxList>
-            {(option: ComboboxOption) => (
-              <ComboboxItem key={String(option.value)} value={option}>
-                {option.label}
-              </ComboboxItem>
-            )}
-          </ComboboxList>
-        </ComboboxContent>
+        {options.map((option) => (
+          <Combobox.Item
+            key={String(option.value)}
+            value={String(option.value)}
+            label={option.label}
+          />
+        ))}
       </Combobox>
     </FieldShell>
   )

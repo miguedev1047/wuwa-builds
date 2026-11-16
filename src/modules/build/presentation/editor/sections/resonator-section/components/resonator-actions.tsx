@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
 
 import type { BuildProps } from "@build/domain/build-record"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
-import { useState } from "react"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { ResonatorPicker } from "@build/presentation/editor/sections/resonator-section/components/resonator-picker"
+import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useState } from "react"
 
 type ResonatorActionsProps = {
   build: BuildProps

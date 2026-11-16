@@ -1,9 +1,9 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
-import { Suspense } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
+import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
 import type { EncoreCharacterSummary } from "@encore/domain/character"
 import { encoreCharacterQueries } from "@encore/queries/characters"
-import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { Suspense } from "react"
 
 type ResonatorSearchProps = {
   /** Id of the character already applied to the form, if any. */
@@ -23,7 +23,7 @@ export function ResonatorSearch({
       trigger={
         <Button
           variant="secondary"
-          size="xl"
+          size="lg"
           type="button"
           className="w-full"
           disabled={disabled}
@@ -78,7 +78,9 @@ function ResonatorSearchResults({
             <span className="truncate">{character.name}</span>
 
             {selectedId === character.id ? (
-              <CatalogSearch.Shortcut>Actual</CatalogSearch.Shortcut>
+              <span className="ml-auto text-xs text-muted-foreground">
+                Actual
+              </span>
             ) : null}
           </CatalogSearch.Item>
         ))}

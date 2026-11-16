@@ -1,13 +1,14 @@
-import { Button } from "@/components/ui/button"
-import { Spinner } from "@/components/ui/spinner"
+import { Button } from "@/components/panelui/button"
+import { Spinner } from "@/components/panelui/spinner"
+import { useToast } from "@/components/panelui/toast"
 import { Show } from "@/components/utility/show"
 import { authClient } from "@/lib/auth-client"
 import { useTransition } from "react"
-import { toast } from "sonner"
 
 type SignOutButtonProps = React.ComponentProps<typeof Button>
 
 export function SignOutButton({ ...props }: SignOutButtonProps) {
+  const toast = useToast()
   const [isPending, startTransition] = useTransition()
 
   const handleSignOut = () => {
@@ -17,7 +18,7 @@ export function SignOutButton({ ...props }: SignOutButtonProps) {
           callbackURL: "/",
         })
       } catch {
-        toast.error("Sign out failed.")
+        toast.add({ title: "Sign out failed.", type: "destructive" })
       }
     })
   }

@@ -1,9 +1,9 @@
+import { Button } from "@/components/panelui/button"
 import type { BuildProps } from "@build/domain/build-record"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
-import { ResonatorPicker } from "./resonator-picker"
-import { Button } from "@/components/ui/button"
-import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { ResonatorPicker } from "./resonator-picker"
 
 /** Change action of the resonator section, hosted in a catalog picker dialog. */
 export function ResonatorPickerDialog({ build }: { build: BuildProps }) {

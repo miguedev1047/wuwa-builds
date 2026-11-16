@@ -1,6 +1,6 @@
-import { Card } from "@/components/ui/card"
-import { cn } from "cn"
+import { Card } from "@/components/panelui/card"
 import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "cn"
 
 export const buildCardVariants = cva("bg-muted/70 backdrop-blur-3xl", {
   variants: {

@@ -1,11 +1,11 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { CloudSyncIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { toast } from "sonner"
+import { Button } from "@/components/panelui/button"
+import { useToast } from "@/components/panelui/toast"
 import { Show } from "@/components/utility/show"
-import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { syncSonatas } from "@catalog/server/echoes/sonatas"
+import { CloudSyncIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 /**
  * Imports the sonata sets Encore publishes.
@@ -13,6 +13,8 @@ import { syncSonatas } from "@catalog/server/echoes/sonatas"
  * Manual sets are reported separately because the sync never touches them.
  */
 export function SonataSyncAction() {
+  const toast = useToast()
+
   const queryClient = useQueryClient()
 
   const { mutate, isPending } = useMutation({
@@ -21,17 +23,18 @@ export function SonataSyncAction() {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.sonatas(),
       })
-      toast.success(
-        `Encore: ${result.created} nuevos, ${result.updated} actualizados, ${result.skipped} manuales`
-      )
+      toast.add({
+        title: `Encore: ${result.created} nuevos, ${result.updated} actualizados, ${result.skipped} manuales`,
+        type: "success",
+      })
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 
   return (
-    <EditableSection.ButtonAction
+    <Button
       type="button"
       variant="default"
       disabled={isPending}
@@ -41,6 +44,6 @@ export function SonataSyncAction() {
       <Show when={isPending} fallback="Sincronizar">
         Sincronizando
       </Show>
-    </EditableSection.ButtonAction>
+    </Button>
   )
 }

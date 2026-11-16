@@ -1,10 +1,6 @@
+import { Field } from "@/components/panelui/field"
+import { Show } from "@/components/utility/show"
 import type { ReactNode } from "react"
-import {
-  Field,
-  FieldDescription,
-  FieldError,
-  FieldLabel,
-} from "@/components/ui/field"
 
 type FieldShellProps = {
   label?: ReactNode
@@ -33,11 +29,21 @@ export function FieldShell({
   children,
 }: FieldShellProps) {
   return (
-    <Field data-invalid={invalid} className={className}>
-      {label ? <FieldLabel htmlFor={htmlFor}>{label}</FieldLabel> : null}
+    <Field name={htmlFor} invalid={invalid} className={className}>
+      <Show when={label}>
+        <Field.Label htmlFor={htmlFor}>{label}</Field.Label>
+      </Show>
       {children}
-      {description ? <FieldDescription>{description}</FieldDescription> : null}
-      <FieldError errors={errors} />
+      <Show when={description}>
+        <Field.Description>{description}</Field.Description>
+      </Show>
+      <Show when={invalid && errors?.length}>
+        <Field.Error match>
+          {[
+            ...new Set(errors?.map((error) => error?.message).filter(Boolean)),
+          ].join(". ")}
+        </Field.Error>
+      </Show>
     </Field>
   )
 }

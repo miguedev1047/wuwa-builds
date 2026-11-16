@@ -1,17 +1,12 @@
-import { useSelector } from "@tanstack/react-form"
-import type { ReactNode } from "react"
 import { useFieldContext } from "@/components/form/form-context"
-import { Switch } from "@/components/ui/switch"
-import {
-  Field,
-  FieldContent,
-  FieldDescription,
-  FieldError,
-  FieldLabel,
-  FieldTitle,
-} from "@/components/ui/field"
+import { Field } from "@/components/panelui/field"
+import { Switch } from "@/components/panelui/switch"
+import { FieldContent, FieldTitle } from "@/components/ui/field"
+
 import { Show } from "@/components/utility/show"
+import { useSelector } from "@tanstack/react-form"
 import { cn } from "cn"
+import type { ReactNode } from "react"
 
 type SwitchFieldProps = {
   label: ReactNode
@@ -33,17 +28,18 @@ export function SwitchField({
   const invalid = meta.isTouched && !meta.isValid
 
   return (
-    <Field
-      orientation="horizontal"
-      data-invalid={invalid}
-      className={cn("overflow-hidden rounded-md border", className)}
-    >
-      <FieldLabel htmlFor={field.name} className="p-4">
+    <Field invalid={invalid} className={cn("overflow-hidden", className)}>
+      <Field.Label htmlFor={field.name}>
         <FieldContent>
           <FieldTitle>{label}</FieldTitle>
-          <FieldDescription>{description}</FieldDescription>
+          <Field.Description>{description}</Field.Description>
           <Show when={meta.errors}>
-            <FieldError errors={meta.errors} />
+            <Field.Error match={invalid}>
+              {meta.errors
+                .map((error) => error?.message)
+                .filter(Boolean)
+                .join(". ")}
+            </Field.Error>
           </Show>
         </FieldContent>
 
@@ -54,7 +50,7 @@ export function SwitchField({
           onCheckedChange={(checked) => field.handleChange(checked)}
           onBlur={field.handleBlur}
         />
-      </FieldLabel>
+      </Field.Label>
     </Field>
   )
 }

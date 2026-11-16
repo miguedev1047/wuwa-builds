@@ -1,19 +1,15 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { Tooltip } from "@/components/panelui/tooltip"
 import { Show } from "@/components/utility/show"
-import type { ResonatorRow } from "@db/schema"
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
+import { CatalogSection } from "@catalog/presentation/components/catalog-section"
+import type { ResonatorRow } from "@db/schema"
 
 export function ResonatorItem({ character }: { character: ResonatorRow }) {
   const { DetailLink } = useCatalogActions()
 
   return (
     <Tooltip>
-      <TooltipTrigger
+      <Tooltip.Trigger
         render={
           <DetailLink id={character.id}>
             <Show when={character.iconLarge}>
@@ -32,7 +28,7 @@ export function ResonatorItem({ character }: { character: ResonatorRow }) {
           </DetailLink>
         }
       />
-      <TooltipContent>{character.name}</TooltipContent>
+      <Tooltip.Content>{character.name}</Tooltip.Content>
     </Tooltip>
   )
 }

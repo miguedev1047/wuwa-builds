@@ -1,21 +1,16 @@
-import { useSelector } from "@tanstack/react-form"
-import type { ComponentProps, ReactNode } from "react"
-import { Input } from "@/components/ui/input"
 import { FieldShell } from "@/components/form/field-shell"
 import { useFieldContext } from "@/components/form/form-context"
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButton,
-  InputGroupInput,
-} from "@/components/ui/input-group"
+import { Button } from "@/components/panelui/button"
+import { Input } from "@/components/panelui/input"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { HugeiconsIcon } from "@hugeicons/react"
 import { ImageIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useSelector } from "@tanstack/react-form"
+import type { ComponentProps, ReactNode } from "react"
 
 type ImageFieldProps = {
   label: ReactNode
@@ -43,8 +38,8 @@ export function ImageField({
       errors={meta.errors}
       className={className}
     >
-      <InputGroup>
-        <InputGroupInput
+      <Input.Group>
+        <Input
           id={field.name}
           name={field.name}
           value={value ?? ""}
@@ -54,13 +49,18 @@ export function ImageField({
           autoComplete="off"
           {...props}
         />
-        <InputGroupAddon align="inline-end">
+        <Input.Addon align="end">
           <Popover>
             <PopoverTrigger
               render={
-                <InputGroupButton disabled={!value} variant="ghost">
+                <Button
+                  size="icon-sm"
+                  aria-label="Previsualizar imagen"
+                  disabled={!value}
+                  variant="ghost"
+                >
                   <HugeiconsIcon icon={ImageIcon} />
-                </InputGroupButton>
+                </Button>
               }
             />
             <PopoverContent className="size-40 p-4">
@@ -71,8 +71,8 @@ export function ImageField({
               />
             </PopoverContent>
           </Popover>
-        </InputGroupAddon>
-      </InputGroup>
+        </Input.Addon>
+      </Input.Group>
     </FieldShell>
   )
 }

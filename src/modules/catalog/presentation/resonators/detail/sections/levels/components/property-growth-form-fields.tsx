@@ -1,6 +1,8 @@
-import type { PropertyGrowthFormValues } from "@catalog/application/resonators/property-growth"
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
+
+import type { PropertyGrowthFormValues } from "@catalog/application/resonators/property-growth"
+
 import { resonatorPropertyGrowthInput } from "@catalog/application/schemas"
 
 /** Empty values shared by every property growth form. */

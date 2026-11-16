@@ -1,8 +1,18 @@
-import type { EncoreProperty } from "@encore/domain/property"
+import { Button } from "@/components/panelui/button"
+import { Field } from "@/components/panelui/field"
+import { Select } from "@/components/panelui/select"
+import { Separator } from "@/components/ui/separator"
+import { Show } from "@/components/utility/show"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
-import { PropertyLevelAddForm } from "@catalog/presentation/resonators/detail/sections/levels/components/property-level-add-form"
+import {
+  PropertyLevelFields,
+  propertyLevelFormDefaults,
+} from "@catalog/presentation/resonators/detail/sections/levels/components/property-level-form-fields"
+import { usePropertyLevelAddForm } from "@catalog/presentation/resonators/detail/sections/levels/hooks/property-level-add-form"
+import type { EncoreProperty } from "@encore/domain/property"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
+import { useState } from "react"
 
 type PropertyLevelAddActionProps = {
   resonatorId: number
@@ -20,28 +30,122 @@ export function PropertyLevelAddAction({
   isMaxProperties,
   savedNames,
 }: PropertyLevelAddActionProps) {
+  const [open, setOpen] = useState(false)
+  const {
+    encoreFieldId,
+    encoreName,
+    setEncoreName,
+    encoreOptions,
+    formId,
+    isPending,
+    form,
+    onCancel,
+  } = usePropertyLevelAddForm({
+    resonatorId: resonatorId,
+    sortOrder: sortOrder,
+    encoreProperties: encoreProperties,
+    savedNames: savedNames,
+    onSaved: () => setOpen(false),
+    onCancel: () => setOpen(false),
+  })
+  const onOpenChange = (next: boolean) => {
+    if (isPending) return
+    if (next) form.reset()
+    setOpen(next)
+  }
+
   return (
-    <EditableSection.AddAction
+    <EditableSection.Action
+      open={open}
+      onOpenChange={onOpenChange}
+      isPending={isPending}
+      footer={
+        <>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={onCancel}
+            disabled={isPending}
+          >
+            Cerrar
+          </Button>
+
+          <form.AppForm>
+            <form.SubmitButton label="Agregar" formId={formId} />
+          </form.AppForm>
+        </>
+      }
+      mode="default"
       disabled={isMaxProperties}
       title="Agregar propiedad"
       description="Elige una propiedad o escribe sus datos."
       trigger={
-        <EditableSection.ButtonAction variant="default">
+        <Button variant="default">
           <HugeiconsIcon icon={PlusIcon} />
           Agregar
-        </EditableSection.ButtonAction>
+        </Button>
       }
     >
-      {({ close }) => (
-        <PropertyLevelAddForm
-          resonatorId={resonatorId}
-          sortOrder={sortOrder}
-          encoreProperties={encoreProperties}
-          savedNames={savedNames}
-          onSaved={close}
-          onCancel={close}
-        />
+      {() => (
+        <>
+          <Show when={encoreOptions.length > 0}>
+            <Field>
+              <Field.Label>Autocompletado inteligente</Field.Label>
+
+              <Select
+                items={encoreOptions}
+                value={encoreName}
+                disabled={isPending}
+                onValueChange={(value) => {
+                  if (value === null) return
+
+                  const option = encoreOptions.find(
+                    (item) => item.value === value
+                  )
+
+                  if (!option) return
+
+                  form.reset({
+                    ...propertyLevelFormDefaults,
+                    resonatorId,
+                    sortOrder,
+                    ...option.draft,
+                  })
+
+                  setEncoreName(null)
+                }}
+              >
+                <Select.Trigger id={encoreFieldId} className="w-full">
+                  <Select.Value placeholder="Elegir propiedad de Encore" />
+                </Select.Trigger>
+
+                <Select.Content>
+                  {encoreOptions.map((option) => (
+                    <Select.Item key={option.value} value={option.value}>
+                      {option.label}
+                    </Select.Item>
+                  ))}
+                </Select.Content>
+              </Select>
+
+              <Field.Description>
+                Copia el valor base y el icono del resonador.
+              </Field.Description>
+            </Field>
+          </Show>
+          <Separator />
+          <form
+            id={formId}
+            onSubmit={(event) => {
+              event.preventDefault()
+              void form.handleSubmit().catch(() => undefined)
+            }}
+            className="space-y-4"
+          >
+            <PropertyLevelFields form={form} isPending={isPending} />
+          </form>
+        </>
       )}
-    </EditableSection.AddAction>
+    </EditableSection.Action>
   )
 }

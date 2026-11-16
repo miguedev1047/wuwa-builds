@@ -1,5 +1,4 @@
-import { isCatalogNotFound } from "@catalog/domain/catalog-error"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
 import {
   Empty,
   EmptyContent,
@@ -9,6 +8,7 @@ import {
   EmptyTitle,
 } from "@/components/ui/empty"
 import { Show } from "@/components/utility/show"
+import { isCatalogNotFound } from "@catalog/domain/catalog-error"
 import {
   Alert02Icon,
   ArrowLeft02Icon,

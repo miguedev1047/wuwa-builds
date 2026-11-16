@@ -1,15 +1,15 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/panelui/badge"
 import { Show } from "@/components/utility/show"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
-import { echoQueries } from "@catalog/queries/echoes"
 import { EchoDeleteAction } from "@catalog/presentation/echoes/detail/sections/info/components/echo-delete-action"
 import { EchoEditAction } from "@catalog/presentation/echoes/detail/sections/info/components/echo-edit-action"
 import {
   echoClassLabel,
   echoCostLabel,
 } from "@catalog/presentation/echoes/shared/constants/echo"
+import { echoQueries } from "@catalog/queries/echoes"
+import { useSuspenseQuery } from "@tanstack/react-query"
 
 type EchoInfoContentProps = {
   echoId: number
@@ -28,10 +28,10 @@ export function EchoInfoContent({ echoId }: EchoInfoContentProps) {
           Información básica del eco y sus datos de catálogo.
         </EditableSection.Description>
 
-        <EditableSection.Action>
+        <EditableSection.Actions>
           <EchoEditAction echo={echo} />
           <EchoDeleteAction echoId={echoId} />
-        </EditableSection.Action>
+        </EditableSection.Actions>
       </EditableSection.Header>
 
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">

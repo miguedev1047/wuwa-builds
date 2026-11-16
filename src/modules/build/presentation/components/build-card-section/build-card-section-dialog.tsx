@@ -1,24 +1,15 @@
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
+import { Dialog } from "@/components/panelui/dialog"
 import { Show } from "@/components/utility/show"
+import { BuildCardTrigger } from "@build/presentation/components/build-card-section/build-card-trigger"
 import { cn } from "cn"
 import { useState } from "react"
-import { BuildCardTrigger } from "@build/presentation/components/build-card-section/build-card-trigger"
 
 type BuildCardSectionDialogProps = {
   trigger: React.ReactNode
   title: string
   description?: string
-  dialogContent?: React.ComponentProps<typeof DialogContent>
+  dialogContent?: React.ComponentProps<typeof Dialog.Content>
   children: (controls: { close: () => void }) => React.ReactNode
 }
 
@@ -39,29 +30,29 @@ export function BuildCardSectionDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger render={<BuildCardTrigger>{trigger}</BuildCardTrigger>} />
-      <DialogContent
+      <Dialog.Trigger render={<BuildCardTrigger>{trigger}</BuildCardTrigger>} />
+      <Dialog.Content
         {...dialogContent}
         className={cn(
           "flex max-h-[calc(100dvh-2rem)] flex-col",
           dialogContent?.className
         )}
       >
-        <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
+        <Dialog.Header>
+          <Dialog.Title>{title}</Dialog.Title>
           <Show when={description}>
-            <DialogDescription>{description}</DialogDescription>
+            <Dialog.Description>{description}</Dialog.Description>
           </Show>
-        </DialogHeader>
+        </Dialog.Header>
 
         <div className="-mx-1 no-scrollbar min-h-0 flex-1 scroll-fade-y overflow-y-auto overscroll-contain px-1">
           {children({ close: () => setIsOpen(false) })}
         </div>
 
-        <DialogFooter cols={1}>
-          <DialogClose render={<Button size="xl">Cerrar</Button>} />
-        </DialogFooter>
-      </DialogContent>
+        <Dialog.Footer>
+          <Dialog.Close render={<Button size="lg">Cerrar</Button>} />
+        </Dialog.Footer>
+      </Dialog.Content>
     </Dialog>
   )
 }

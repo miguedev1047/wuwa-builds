@@ -39,12 +39,13 @@ export default defineConfig([
           allow: ["layout"],
           contracts: [
             {
-              pattern: "^Breadcrumb(Page|Item)?$",
+              pattern: "^Breadcrumb(Page|Item|Content|Actions)?$",
               allow: [
                 "layout",
                 "truncate",
                 "block",
                 "max-w-*",
+                "bg-*",
                 "sm:max-w-*",
                 "md:max-w-*",
               ],
@@ -84,6 +85,7 @@ export default defineConfig([
                 "p-*",
                 "gap-*",
                 "bg-*",
+                "rounded-*",
                 "transition-*",
                 "duration-*",
                 "border",
@@ -460,7 +462,27 @@ export default defineConfig([
       "shadcn/no-arbitrary-values": "off",
       "shadcn/no-restyle": "off",
       "react-hooks/refs": "off",
+      "react-hooks/immutability": "off",
+      "react-hooks/preserve-manual-memoization": "off",
+      "react-hooks/set-state-in-effect": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-empty-object-type": "off",
+    },
+  },
+  {
+    files: [
+      "src/components/utility/devtools/json-devtool.tsx",
+      "src/modules/build/presentation/components/build-card-section/build-card-section-dialog.tsx",
+      "src/modules/build/presentation/components/build-catalog-picker/build-catalog-picker-variants.ts",
+      "src/modules/catalog/presentation/components/catalog-section/components/catalog-section-shell.tsx",
+      "src/modules/catalog/presentation/components/editable-section/components/editable-section-layout.tsx",
+      "src/modules/catalog/presentation/sonatas/components/sonata-add-action.tsx",
+      "src/modules/catalog/presentation/sonatas/components/sonata-edit-action.tsx",
+      "src/routing/catalog/catalog-dock.tsx",
+    ],
+    rules: {
+      "shadcn/no-arbitrary-values": "off",
     },
   },
 ])

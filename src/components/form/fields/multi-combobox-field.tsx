@@ -1,19 +1,8 @@
-import { useSelector } from "@tanstack/react-form"
-import type { ReactNode } from "react"
-import {
-  Combobox,
-  ComboboxChip,
-  ComboboxChips,
-  ComboboxChipsInput,
-  ComboboxContent,
-  ComboboxEmpty,
-  ComboboxItem,
-  ComboboxList,
-  ComboboxValue,
-  useComboboxAnchor,
-} from "@/components/ui/combobox"
 import { FieldShell } from "@/components/form/field-shell"
 import { useFieldContext } from "@/components/form/form-context"
+import { Combobox } from "@/components/panelui/combobox"
+import { useSelector } from "@tanstack/react-form"
+import type { ReactNode } from "react"
 
 export type MultiComboboxOption = {
   label: string
@@ -25,7 +14,7 @@ type MultiComboboxFieldProps = {
   description?: ReactNode
   options: readonly MultiComboboxOption[]
   placeholder?: string
-  emptyMessage?: ReactNode
+  emptyMessage?: string
   disabled?: boolean
   className?: string
 }
@@ -43,11 +32,6 @@ export function MultiComboboxField({
   const value = useSelector(field.store, (state) => state.value) ?? []
   const meta = useSelector(field.store, (state) => state.meta)
   const invalid = meta.isTouched && !meta.isValid
-  const anchor = useComboboxAnchor()
-
-  const labelOf = (name: string) =>
-    options.find((option) => option.value === name)?.label ?? name
-
   return (
     <FieldShell
       label={label}
@@ -57,41 +41,26 @@ export function MultiComboboxField({
       errors={meta.errors}
       className={className}
     >
-      <Combobox<string, true>
-        multiple
-        autoHighlight
-        items={options.map((option) => option.value)}
+      <Combobox
+        mode="multiple"
+        id={field.name}
+        name={field.name}
         value={value}
         onValueChange={(next) => field.handleChange(next)}
+        onBlur={field.handleBlur}
+        aria-invalid={invalid}
+        placeholder={placeholder}
+        emptyMessage={emptyMessage}
         disabled={disabled}
+        clearable
       >
-        <ComboboxChips ref={anchor} className="w-full" aria-invalid={invalid}>
-          <ComboboxValue>
-            {(values: string[]) => (
-              <>
-                {values.map((name) => (
-                  <ComboboxChip key={name}>{labelOf(name)}</ComboboxChip>
-                ))}
-                <ComboboxChipsInput
-                  id={field.name}
-                  placeholder={values.length === 0 ? placeholder : undefined}
-                  onBlur={field.handleBlur}
-                />
-              </>
-            )}
-          </ComboboxValue>
-        </ComboboxChips>
-
-        <ComboboxContent anchor={anchor}>
-          <ComboboxEmpty>{emptyMessage}</ComboboxEmpty>
-          <ComboboxList>
-            {(name: string) => (
-              <ComboboxItem key={name} value={name}>
-                {labelOf(name)}
-              </ComboboxItem>
-            )}
-          </ComboboxList>
-        </ComboboxContent>
+        {options.map((option) => (
+          <Combobox.Item
+            key={String(option.value)}
+            value={String(option.value)}
+            label={option.label}
+          />
+        ))}
       </Combobox>
     </FieldShell>
   )

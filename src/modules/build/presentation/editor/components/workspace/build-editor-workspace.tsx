@@ -19,6 +19,7 @@ type BuildEditorWorkspaceProps = {
 /** Compose the editor sidebar and interactive preview. */
 export function BuildEditorWorkspace({
   build,
+  backLink,
   onDelete,
 }: BuildEditorWorkspaceProps) {
   const preview = useBuildStats(build)
@@ -27,6 +28,7 @@ export function BuildEditorWorkspace({
 
   return (
     <SidebarContainer
+      backLink={backLink}
       canDownload={canDownload}
       isDownloading={exportSnapshot !== null}
       onDownload={handleDownload}

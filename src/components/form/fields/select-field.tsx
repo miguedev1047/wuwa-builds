@@ -1,14 +1,8 @@
-import { useSelector } from "@tanstack/react-form"
-import type { ReactNode } from "react"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { FieldShell } from "@/components/form/field-shell"
 import { useFieldContext } from "@/components/form/form-context"
+import { Select } from "@/components/panelui/select"
+import { useSelector } from "@tanstack/react-form"
+import type { ReactNode } from "react"
 
 export type FormOption = {
   label: ReactNode
@@ -57,21 +51,21 @@ export function SelectField({
           if (next !== null) field.handleChange(next)
         }}
       >
-        <SelectTrigger
+        <Select.Trigger
           id={field.name}
           className="w-full"
           aria-invalid={invalid}
           disabled={disabled}
         >
-          <SelectValue placeholder={placeholder} />
-        </SelectTrigger>
-        <SelectContent>
+          <Select.Value placeholder={placeholder} />
+        </Select.Trigger>
+        <Select.Content>
           {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
+            <Select.Item key={option.value} value={option.value}>
               {option.label}
-            </SelectItem>
+            </Select.Item>
           ))}
-        </SelectContent>
+        </Select.Content>
       </Select>
     </FieldShell>
   )

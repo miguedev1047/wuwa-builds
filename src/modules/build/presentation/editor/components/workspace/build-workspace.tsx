@@ -1,11 +1,11 @@
+import { Button } from "@/components/panelui/button"
 import { Canvas } from "@/components/panelui/canvas"
-import { Button } from "@/components/ui/button"
 import { Dialog } from "@/components/panelui/dialog"
+import { Empty, EmptyTitle } from "@/components/ui/empty"
 import { Show } from "@/components/utility/show"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 import { useState, type ComponentProps, type ReactNode } from "react"
-import { Empty, EmptyTitle } from "@/components/ui/empty"
 
 /** Grid surface of the builder workspace. */
 export function BuildWorkspaceRoot({

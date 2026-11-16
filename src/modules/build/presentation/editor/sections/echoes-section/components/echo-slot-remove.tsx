@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
 import type { BuildProps } from "@/modules/build/domain/build-record"

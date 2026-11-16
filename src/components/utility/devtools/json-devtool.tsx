@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/panelui/card"
 
 interface JsonDevtoolProps {
   data: unknown
@@ -11,15 +11,15 @@ export function JsonDevtool({ data, title = "Response" }: JsonDevtoolProps) {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-      </CardHeader>
+      <Card.Header>
+        <Card.Title>{title}</Card.Title>
+      </Card.Header>
 
-      <CardContent className="min-w-0">
+      <Card.Content className="min-w-0">
         <pre className="max-h-[60vh] overflow-auto rounded-md bg-muted p-4 text-xs">
           <code>{JSON.stringify(data, null, 2)}</code>
         </pre>
-      </CardContent>
+      </Card.Content>
     </Card>
   )
 }

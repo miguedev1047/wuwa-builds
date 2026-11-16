@@ -1,18 +1,21 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { useCatalogActions } from "@catalog/presentation/catalog-actions"
-import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { toast } from "sonner"
+import { Button } from "@/components/panelui/button"
+import { useToast } from "@/components/panelui/toast"
 import { isValidId } from "@catalog/application/id"
+import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { deleteEcho } from "@catalog/server/echoes/echoes"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 export function EchoDeleteAction({ echoId }: { echoId: number }) {
+  const toast = useToast()
+
   const queryClient = useQueryClient()
   const { onDeleted } = useCatalogActions()
 
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: () => deleteEcho({ data: { id: echoId } }),
     onSuccess: async () => {
       await queryClient.invalidateQueries({
@@ -21,36 +24,37 @@ export function EchoDeleteAction({ echoId }: { echoId: number }) {
       queryClient.removeQueries({
         queryKey: wuwaBuildsKeys.echo(echoId),
       })
-      toast.success("Eco eliminado")
+      toast.add({ title: "Eco eliminado", type: "success" })
 
       await onDeleted()
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 
   const handleRemoveEcho = () => {
     if (!isValidId(echoId)) return
 
-    mutate()
+    return mutateAsync()
   }
 
   return (
-    <EditableSection.DeleteAction
+    <EditableSection.Action
+      mode="destructive"
       title="Eliminar eco"
       description="Estas seguro que quieres eliminar este eco"
       isPending={isPending}
       onConfirm={handleRemoveEcho}
       trigger={
-        <EditableSection.ButtonAction
+        <Button
           type="button"
           variant="destructive"
           aria-label="Eliminar eco"
           disabled={isPending}
         >
           <HugeiconsIcon icon={DeleteIcon} />
-        </EditableSection.ButtonAction>
+        </Button>
       }
     />
   )

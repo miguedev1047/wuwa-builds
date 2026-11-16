@@ -1,10 +1,11 @@
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
-import { weaponInput, type WeaponInput } from "@catalog/application/schemas"
+
 import {
   WEAPON_RARITY,
   WEAPON_TYPE_OPTIONS,
 } from "@catalog/application/constants/weapon"
+import { weaponInput, type WeaponInput } from "@catalog/application/schemas"
 
 export const weaponFormDefaults: WeaponInput = {
   id: 0,

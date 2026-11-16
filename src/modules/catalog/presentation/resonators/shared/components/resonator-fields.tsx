@@ -1,14 +1,15 @@
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
-import {
-  resonatorInput,
-  type ResonatorInput,
-} from "@catalog/application/schemas"
+
 import {
   RESONATOR_ELEMENTS,
   RESONATOR_RARITY,
   RESONATOR_WEAPON_TYPES,
 } from "@catalog/application/constants/resonator"
+import {
+  resonatorInput,
+  type ResonatorInput,
+} from "@catalog/application/schemas"
 
 export const resonatorFormDefaults: ResonatorInput = {
   id: 0,

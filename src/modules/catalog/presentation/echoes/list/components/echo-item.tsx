@@ -1,19 +1,15 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { Tooltip } from "@/components/panelui/tooltip"
 import { Show } from "@/components/utility/show"
-import type { EchoRow } from "@db/schema"
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
+import { CatalogSection } from "@catalog/presentation/components/catalog-section"
+import type { EchoRow } from "@db/schema"
 
 export function EchoItem({ echo }: { echo: EchoRow }) {
   const { DetailLink } = useCatalogActions()
 
   return (
     <Tooltip>
-      <TooltipTrigger
+      <Tooltip.Trigger
         render={
           <DetailLink id={echo.id}>
             <CatalogSection.Item
@@ -37,7 +33,7 @@ export function EchoItem({ echo }: { echo: EchoRow }) {
           </DetailLink>
         }
       />
-      <TooltipContent>{echo.name}</TooltipContent>
+      <Tooltip.Content>{echo.name}</Tooltip.Content>
     </Tooltip>
   )
 }

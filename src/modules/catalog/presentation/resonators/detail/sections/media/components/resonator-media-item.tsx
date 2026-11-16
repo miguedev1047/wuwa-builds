@@ -1,8 +1,8 @@
-import type { ResonatorMediaRow } from "@db/schema"
 import { Show } from "@/components/utility/show"
 import { resonatorMediaLabel } from "@catalog/application/constants/resonator"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { ResonatorMediaEditAction } from "@catalog/presentation/resonators/detail/sections/media/components/resonator-media-edit-action"
+import type { ResonatorMediaRow } from "@db/schema"
 
 type ResonatorMediaItemProps = {
   media: ResonatorMediaRow
@@ -14,9 +14,15 @@ export function ResonatorMediaItem({ media }: ResonatorMediaItemProps) {
 
   return (
     <EditableSection.Item>
-      <EditableSection.Media variant="image" size="lg" className="size-16">
+      <EditableSection.Media variant="image" className="p-0">
         <Show when={media.url}>
-          {(url) => <EditableSection.Image src={url} alt={label} />}
+          {(url) => (
+            <EditableSection.Image
+              src={url}
+              alt={label}
+              className="size-full"
+            />
+          )}
         </Show>
       </EditableSection.Media>
 

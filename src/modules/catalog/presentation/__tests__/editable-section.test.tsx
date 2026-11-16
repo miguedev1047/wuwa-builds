@@ -1,8 +1,8 @@
 /// <reference types="bun" />
 
+import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { describe, expect, test } from "bun:test"
 import { renderToStaticMarkup } from "react-dom/server"
-import { EditableSection } from "@catalog/presentation/components/editable-section"
 
 type Row = { id: number; name: string }
 
@@ -20,9 +20,9 @@ describe("EditableSection", () => {
           <EditableSection.Description>
             Datos de la base de datos
           </EditableSection.Description>
-          <EditableSection.Action>
+          <EditableSection.Actions>
             <button type="button">Editar</button>
-          </EditableSection.Action>
+          </EditableSection.Actions>
         </EditableSection.Header>
 
         <EditableSection.Content className="flex gap-4">
@@ -113,13 +113,14 @@ describe("EditableSection", () => {
   test("add, edit and delete actions render their triggers", () => {
     const html = renderToStaticMarkup(
       <>
-        <EditableSection.AddAction title="Agregar propiedad">
+        <EditableSection.Action mode="default" title="Agregar propiedad">
           {() => null}
-        </EditableSection.AddAction>
-        <EditableSection.EditAction title="Editar resonador">
+        </EditableSection.Action>
+        <EditableSection.Action mode="edit" title="Editar resonador">
           {() => null}
-        </EditableSection.EditAction>
-        <EditableSection.DeleteAction
+        </EditableSection.Action>
+        <EditableSection.Action
+          mode="destructive"
           title="Eliminar resonador"
           onConfirm={() => {}}
         />

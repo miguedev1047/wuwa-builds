@@ -1,21 +1,22 @@
-import { ChevronDownIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import type {
-  WeaponPropertyGrowthRow,
-  WeaponPropertyRow as WeaponPropertyRowData,
-} from "@db/schema"
+import { Button } from "@/components/panelui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { Show } from "@/components/utility/show"
-import type { EncoreProperty } from "@encore/domain/property"
+import { statLabel } from "@catalog/application/stats/stats"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { WeaponGrowthAddAction } from "@catalog/presentation/weapons/detail/sections/levels/components/weapon-growth-add-action"
 import { WeaponGrowthList } from "@catalog/presentation/weapons/detail/sections/levels/components/weapon-growth-list"
 import { WeaponPropertyDeleteAction } from "@catalog/presentation/weapons/detail/sections/levels/components/weapon-property-delete-action"
-import { statLabel } from "@catalog/application/stats/stats"
+import type {
+  WeaponPropertyGrowthRow,
+  WeaponPropertyRow as WeaponPropertyRowData,
+} from "@db/schema"
+import type { EncoreProperty } from "@encore/domain/property"
+import { ChevronDownIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type WeaponPropertyRowProps = {
   property: WeaponPropertyRowData & { growth: WeaponPropertyGrowthRow[] }
@@ -56,13 +57,14 @@ export function WeaponPropertyRow({
         <EditableSection.ItemActions>
           <CollapsibleTrigger
             render={
-              <EditableSection.ButtonAction
+              <Button
                 type="button"
-                variant="icon"
+                variant="ghost"
+                size="icon"
                 aria-label="Mostrar niveles"
               >
                 <HugeiconsIcon icon={ChevronDownIcon} />
-              </EditableSection.ButtonAction>
+              </Button>
             }
           />
 

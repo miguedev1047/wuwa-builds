@@ -1,14 +1,16 @@
-import type { ResonatorSequenceRow } from "@db/schema"
-import { Button } from "@/components/ui/button"
-import { Show } from "@/components/utility/show"
+import { Button } from "@/components/panelui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
+import { Show } from "@/components/utility/show"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { ResonatorSequenceDeleteAction } from "@catalog/presentation/resonators/detail/sections/sequences/components/resonator-sequence-delete-action"
 import { ResonatorSequenceEditAction } from "@catalog/presentation/resonators/detail/sections/sequences/components/resonator-sequence-edit-action"
+import type { ResonatorSequenceRow } from "@db/schema"
+import { ChevronDownIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type ResonatorSequenceCardProps = {
   sequence: ResonatorSequenceRow
@@ -55,8 +57,9 @@ export function ResonatorSequenceCard({
         <Collapsible>
           <CollapsibleTrigger
             render={
-              <Button variant="outline" className="w-full">
+              <Button variant="secondary" className="w-full">
                 Ver descripción
+                <HugeiconsIcon icon={ChevronDownIcon} className="ml-auto" />
               </Button>
             }
           />

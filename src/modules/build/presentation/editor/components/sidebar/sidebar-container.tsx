@@ -1,4 +1,5 @@
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
+import type { ReactElement } from "react"
 import {
   SidebarPanel,
   SidebarAppHeader,
@@ -7,6 +8,7 @@ import {
 
 interface SidebarContainerProps {
   children: React.ReactNode
+  backLink: ReactElement
   canDownload: boolean
   isDownloading: boolean
   onDownload: () => void
@@ -15,6 +17,7 @@ interface SidebarContainerProps {
 
 export function SidebarContainer({
   children,
+  backLink,
   canDownload,
   isDownloading,
   onDownload,
@@ -22,7 +25,7 @@ export function SidebarContainer({
 }: SidebarContainerProps) {
   return (
     <SidebarProvider>
-      <SidebarPanel variant="inset" />
+      <SidebarPanel variant="inset" backLink={backLink} />
       <SidebarInset>
         <SidebarAppHeader
           canDownload={canDownload}

@@ -1,4 +1,4 @@
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/panelui/input"
 
 /** Editable name of the current build. */
 export function BuildName({

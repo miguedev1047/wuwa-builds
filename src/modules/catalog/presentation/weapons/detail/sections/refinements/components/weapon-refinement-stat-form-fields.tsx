@@ -1,13 +1,13 @@
 import { withForm } from "@/components/form"
-import { Button } from "@/components/ui/button"
-import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
+import { Button } from "@/components/panelui/button"
 import { Show } from "@/components/utility/show"
 import {
   weaponRefinementStatRowInput,
   type WeaponRefinementStatsFormValues,
 } from "@catalog/application/schemas"
 import { WEAPON_REFINEMENT_STAT_OPTIONS } from "@catalog/application/weapons/refinement-stats"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 /** Empty values shared by every refinement stat form. */
 export const weaponRefinementStatFormDefaults: WeaponRefinementStatsFormValues =

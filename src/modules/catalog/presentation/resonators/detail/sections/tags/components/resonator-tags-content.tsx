@@ -1,7 +1,7 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/panelui/badge"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { characterQueries } from "@catalog/queries/characters"
+import { useSuspenseQuery } from "@tanstack/react-query"
 
 type ResonatorTagsContentProps = {
   resonatorId: number

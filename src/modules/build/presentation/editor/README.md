@@ -13,7 +13,7 @@ skills, weapon properties and echo details. The preview keeps its per-panel
 loading states. The canvas grid can also render directly from fixtures.
 
 The layout is a single 10 x 7 grid with 90px rows, a 160px second row and named
-areas, declared in `.build-canvas` (`src/styles.css`). Each panel declares its area through
+areas, declared in `.build-canvas` (`src/styles/components.css`). Each panel declares its area through
 `BuildCanvasCard` or `data-canvas-area`.
 
 ## Workspace
@@ -84,7 +84,7 @@ the canvas and the editor sections can reuse it.
 | Workspace shell                | `components/workspace/build-workspace.tsx`                            |
 | Workspace canvas (dots, light) | `src/components/panelui/canvas.tsx`                                   |
 | Canvas flow (card node)        | `components/workspace/build-workspace-stage.tsx`                      |
-| Canvas grid and areas          | `src/styles.css` (`.build-canvas`)                                    |
+| Canvas grid and areas          | `src/styles/components.css` (`.build-canvas`)                         |
 | Canvas panel card surface      | `components/build-canvas/build-canvas-card.tsx`                       |
 | Card surface                   | `../components/build-card/build-card.tsx`                             |
 | Picker grid and item state     | `../components/build-catalog-picker/build-catalog-picker-variants.ts` |

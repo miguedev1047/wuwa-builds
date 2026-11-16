@@ -1,22 +1,25 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { useCatalogActions } from "@catalog/presentation/catalog-actions"
-import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { toast } from "sonner"
+import { Button } from "@/components/panelui/button"
+import { useToast } from "@/components/panelui/toast"
 import { isValidId } from "@catalog/application/id"
+import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { deleteResonator } from "@catalog/server/resonators/resonators"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 export function ResonatorDeleteAction({
   resonatorId,
 }: {
   resonatorId: number
 }) {
+  const toast = useToast()
+
   const queryClient = useQueryClient()
   const { onDeleted } = useCatalogActions()
 
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: () => deleteResonator({ data: { id: resonatorId } }),
     onSuccess: async () => {
       await queryClient.invalidateQueries({
@@ -25,31 +28,32 @@ export function ResonatorDeleteAction({
       queryClient.removeQueries({
         queryKey: wuwaBuildsKeys.character(resonatorId),
       })
-      toast.success("Resonador eliminado")
+      toast.add({ title: "Resonador eliminado", type: "success" })
 
       await onDeleted()
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 
   const handleRemoveResonator = () => {
     if (!isValidId(resonatorId)) return
 
-    mutate()
+    return mutateAsync()
   }
 
   return (
-    <EditableSection.DeleteAction
+    <EditableSection.Action
+      mode="destructive"
       title="Eliminar resonador"
       description="Estas seguro que quieres eliminar este resonador"
       isPending={isPending}
       onConfirm={handleRemoveResonator}
       trigger={
-        <EditableSection.ButtonAction type="button" variant="destructive">
+        <Button size="icon" type="button" variant="destructive">
           <HugeiconsIcon icon={DeleteIcon} />
-        </EditableSection.ButtonAction>
+        </Button>
       }
     />
   )

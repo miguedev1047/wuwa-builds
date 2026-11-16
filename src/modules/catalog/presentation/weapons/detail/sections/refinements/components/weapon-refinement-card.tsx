@@ -1,10 +1,4 @@
-import { ChevronDownIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import type {
-  WeaponRefinementRow as WeaponRefinementRowData,
-  WeaponRefinementStatRow,
-} from "@db/schema"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
 import {
   Collapsible,
   CollapsibleContent,
@@ -15,6 +9,12 @@ import { WeaponRefinementDeleteAction } from "@catalog/presentation/weapons/deta
 import { WeaponRefinementEditAction } from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-edit-action"
 import { WeaponRefinementStatAddAction } from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-stat-add-action"
 import { WeaponRefinementStatsList } from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-stats-list"
+import type {
+  WeaponRefinementRow as WeaponRefinementRowData,
+  WeaponRefinementStatRow,
+} from "@db/schema"
+import { ChevronDownIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type WeaponRefinementCardProps = {
   refinement: WeaponRefinementRowData & {
@@ -61,9 +61,9 @@ export function WeaponRefinementCard({
         <Collapsible>
           <CollapsibleTrigger
             render={
-              <Button variant="outline" className="w-full">
-                <HugeiconsIcon icon={ChevronDownIcon} />
+              <Button variant="secondary" className="w-full">
                 Ver efecto
+                <HugeiconsIcon icon={ChevronDownIcon} className="ml-auto" />
               </Button>
             }
           />
@@ -78,9 +78,9 @@ export function WeaponRefinementCard({
         <Collapsible>
           <CollapsibleTrigger
             render={
-              <Button variant="outline" className="w-full">
-                <HugeiconsIcon icon={ChevronDownIcon} />
+              <Button variant="secondary" className="w-full">
                 Ver estadísticas
+                <HugeiconsIcon icon={ChevronDownIcon} className="ml-auto" />
               </Button>
             }
           />

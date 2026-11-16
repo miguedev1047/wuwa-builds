@@ -1,17 +1,17 @@
-import { Image } from "@/components/ui/image"
-import type { EchoSummary } from "@/modules/catalog/domain/echo"
-import type { EchoesDataProps } from "@/modules/build/domain/build-record"
-import { Badge } from "@/components/ui/badge"
-import { Show } from "@/components/utility/show"
+import { Badge } from "@/components/panelui/badge"
 import { GameIcon } from "@/components/ui/game-icon"
+import { Image } from "@/components/ui/image"
+import { Show } from "@/components/utility/show"
+import type { EchoesDataProps } from "@/modules/build/domain/build-record"
+import type { EchoSummary } from "@/modules/catalog/domain/echo"
+import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import {
   formatPercentStat,
   statIconName,
 } from "@build/presentation/editor/hooks/stats-view-model"
-import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
-import { EchoPicker } from "./echo-picker"
-import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { EchoPicker } from "./echo-picker"
 
 interface EchoSlotPortraitProps {
   echo: EchoSummary

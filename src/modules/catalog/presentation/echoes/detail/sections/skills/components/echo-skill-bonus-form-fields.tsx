@@ -1,19 +1,21 @@
-import { useEffect, useRef } from "react"
-import { useSelector } from "@tanstack/react-form"
-import { withForm } from "@/components/form"
 import type { ComboboxOption } from "@/components/form"
-import { Show } from "@/components/utility/show"
+import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
+
+import { Show } from "@/components/utility/show"
+import { useSelector } from "@tanstack/react-form"
+import { useEffect, useRef } from "react"
+
+import {
+  RESONATOR_ELEMENTS,
+  RESONATOR_WEAPON_TYPES,
+} from "@catalog/application/constants/resonator"
 import {
   ECHO_SKILL_CONDITIONS,
   type EchoSkillConditionId,
 } from "@catalog/application/echoes/skills"
 import type { EchoSkillBonusFormInput } from "@catalog/application/schemas"
 import { STAT_OPTIONS } from "@catalog/application/stats/stats"
-import {
-  RESONATOR_ELEMENTS,
-  RESONATOR_WEAPON_TYPES,
-} from "@catalog/application/constants/resonator"
 
 /** Empty bonus values; `statId` stays empty so the select shows its placeholder. */
 export function echoSkillBonusFormDefaults(

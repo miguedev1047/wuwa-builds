@@ -1,11 +1,6 @@
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import { Button } from "@/components/panelui/button"
+import { Menu } from "@/components/panelui/menu"
+import { Spinner } from "@/components/panelui/spinner"
 import {
   DeleteIcon,
   Download01Icon,
@@ -13,7 +8,6 @@ import {
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { useState } from "react"
-import { Spinner } from "@/components/ui/spinner"
 import { BuildDeleteDialog } from "./build-delete-dialog"
 
 type BuildActionsProps = {
@@ -34,8 +28,8 @@ export function BuildActions({
 
   return (
     <>
-      <DropdownMenu>
-        <DropdownMenuTrigger
+      <Menu>
+        <Menu.Trigger
           render={
             <Button
               size="icon"
@@ -46,25 +40,25 @@ export function BuildActions({
           }
         >
           {isDownloading ? <Spinner /> : <HugeiconsIcon icon={EllipsisIcon} />}
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuItem
+        </Menu.Trigger>
+        <Menu.Content align="end">
+          <Menu.Item
             disabled={!canDownload || isDownloading}
             onClick={onDownload}
           >
             <HugeiconsIcon icon={Download01Icon} />
             {isDownloading ? "Preparando PNG…" : "Descargar PNG"}
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem
+          </Menu.Item>
+          <Menu.Separator />
+          <Menu.Item
             variant="destructive"
             onClick={() => setConfirmDelete(true)}
           >
             <HugeiconsIcon icon={DeleteIcon} />
             Eliminar build
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+          </Menu.Item>
+        </Menu.Content>
+      </Menu>
 
       <BuildDeleteDialog
         open={confirmDelete}

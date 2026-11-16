@@ -1,11 +1,7 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
-import type { ResonatorPassivesDataProps } from "@build/domain/build-record"
-import { BuildWorkspace } from "@/modules/build/presentation/editor/components/workspace"
+import { Tooltip } from "@/components/panelui/tooltip"
 import { Image } from "@/components/ui/image"
+import { BuildWorkspace } from "@/modules/build/presentation/editor/components/workspace"
+import type { ResonatorPassivesDataProps } from "@build/domain/build-record"
 
 type ResonatorSkillNodeProps = {
   node: ResonatorPassivesDataProps
@@ -23,7 +19,7 @@ export function ResonatorSkillNode({
 }: ResonatorSkillNodeProps) {
   return (
     <Tooltip>
-      <TooltipTrigger
+      <Tooltip.Trigger
         render={
           <BuildWorkspace.Card
             data-active={node.enabled}
@@ -40,7 +36,7 @@ export function ResonatorSkillNode({
           </BuildWorkspace.Card>
         }
       />
-      <TooltipContent>{node.name}</TooltipContent>
+      <Tooltip.Content>{node.name}</Tooltip.Content>
     </Tooltip>
   )
 }

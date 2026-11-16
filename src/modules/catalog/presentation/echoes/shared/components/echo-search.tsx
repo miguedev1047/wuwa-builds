@@ -1,10 +1,10 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
-import { Suspense } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
+import { Show } from "@/components/utility/show"
+import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
 import type { EncoreEchoSummary } from "@encore/domain/echo"
 import { encoreEchoQueries } from "@encore/queries/catalogs"
-import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
-import { Show } from "@/components/utility/show"
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { Suspense } from "react"
 
 type EchoSearchProps = {
   /** Id of the echo already applied to the form, if any. */
@@ -24,7 +24,7 @@ export function EchoSearch({
       trigger={
         <Button
           variant="secondary"
-          size="xl"
+          size="lg"
           type="button"
           className="w-full"
           disabled={disabled}
@@ -36,7 +36,6 @@ export function EchoSearch({
       description="Copia los datos de un eco de Encore al formulario."
     >
       <CatalogSearch.Input placeholder="Nombre o ID del eco" />
-
       <CatalogSearch.List>
         <Suspense fallback={<CatalogSearch.Loading />}>
           <EchoSearchResults selectedId={selectedId} onSelect={onSelect} />
@@ -65,19 +64,20 @@ function EchoSearchResults({ selectedId, onSelect }: EchoSearchResultsProps) {
               key={echo.id}
               value={`${echo.name} ${echo.id}`}
               onSelect={() => onSelect(echo)}
+              icon={
+                <img
+                  src={echo.icon}
+                  alt={echo.name}
+                  className="shrink-0 rounded-sm bg-input/50 object-contain"
+                />
+              }
             >
-              <img
-                src={echo.icon}
-                alt={echo.name}
-                width={28}
-                height={28}
-                className="shrink-0 rounded-sm bg-accent object-contain"
-              />
-
               <span className="truncate">{echo.name}</span>
 
               <Show when={selectedId === echo.id}>
-                <CatalogSearch.Shortcut>Actual</CatalogSearch.Shortcut>
+                <span className="ml-auto text-xs text-muted-foreground">
+                  Actual
+                </span>
               </Show>
             </CatalogSearch.Item>
           ))}

@@ -1,8 +1,8 @@
+import { Button } from "@/components/panelui/button"
+import { CatalogActionsProvider } from "@catalog/presentation/catalog-actions"
 import { PlusIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Link, useNavigate } from "@tanstack/react-router"
-import { CatalogActionsProvider } from "@catalog/presentation/catalog-actions"
-import { Button } from "@/components/ui/button"
 import type { ReactNode } from "react"
 
 type Entity = "weapons" | "resonators" | "echoes"

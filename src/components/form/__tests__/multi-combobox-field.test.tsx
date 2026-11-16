@@ -1,8 +1,8 @@
 /// <reference types="bun" />
 
+import { useAppForm } from "@/components/form"
 import { describe, expect, test } from "bun:test"
 import { renderToStaticMarkup } from "react-dom/server"
-import { useAppForm } from "@/components/form"
 
 const options = [
   { label: "Curación", value: "Curación" },
@@ -32,8 +32,8 @@ describe("MultiComboboxField", () => {
     const html = renderToStaticMarkup(<Harness tags={["Curación"]} />)
 
     expect(html).toContain("Etiquetas de rol")
-    expect(html).toContain('data-slot="combobox-chips"')
-    expect(html).toContain('data-slot="combobox-chip"')
+    expect(html).toContain('data-slot="combobox-field"')
+    expect(html).toContain('aria-label="Remove Curación"')
     expect(html).toContain("Curación")
   })
 

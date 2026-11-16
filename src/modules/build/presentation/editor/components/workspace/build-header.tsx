@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
 import { BuildActions } from "@build/presentation/editor/components/workspace/build-actions"
 import { BuildName } from "@build/presentation/editor/components/workspace/build-name"
 import type { ReactElement } from "react"

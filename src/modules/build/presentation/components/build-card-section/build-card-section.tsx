@@ -1,5 +1,5 @@
+import { Card } from "@/components/panelui/card"
 import { cn } from "cn"
-import { Card } from "@/components/ui/card"
 
 type BuildCardSectionProps = React.ComponentProps<typeof Card>
 

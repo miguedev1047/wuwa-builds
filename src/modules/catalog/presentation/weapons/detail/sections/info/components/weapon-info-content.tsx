@@ -1,12 +1,12 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/panelui/badge"
 import { Show } from "@/components/utility/show"
+import { weaponRarityLabel } from "@catalog/application/constants/weapon"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
-import { weaponQueries } from "@catalog/queries/weapons"
 import { WeaponDeleteAction } from "@catalog/presentation/weapons/detail/sections/info/components/weapon-delete-action"
 import { WeaponEditAction } from "@catalog/presentation/weapons/detail/sections/info/components/weapon-edit-action"
-import { weaponRarityLabel } from "@catalog/application/constants/weapon"
+import { weaponQueries } from "@catalog/queries/weapons"
+import { useSuspenseQuery } from "@tanstack/react-query"
 
 type WeaponInfoContentProps = {
   weaponId: number
@@ -25,10 +25,10 @@ export function WeaponInfoContent({ weaponId }: WeaponInfoContentProps) {
           Información básica del arma y sus datos de catálogo.
         </EditableSection.Description>
 
-        <EditableSection.Action>
+        <EditableSection.Actions>
           <WeaponEditAction weapon={weapon} />
           <WeaponDeleteAction weaponId={weaponId} />
-        </EditableSection.Action>
+        </EditableSection.Actions>
       </EditableSection.Header>
 
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">

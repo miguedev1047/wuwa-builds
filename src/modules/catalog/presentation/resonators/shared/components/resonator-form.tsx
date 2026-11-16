@@ -1,25 +1,27 @@
-import { useEffect, useId, useState } from "react"
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { useCatalogActions } from "@catalog/presentation/catalog-actions"
-import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
+import { useToast } from "@/components/panelui/toast"
+import { resonatorDraftFromEncore } from "@catalog/application/resonators/resonator-draft"
 import {
   resonatorInput,
   type ResonatorInput,
 } from "@catalog/application/schemas"
+import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
-import { wuwaBuildsKeys } from "@catalog/queries/keys"
-import { createResonator } from "@catalog/server/resonators/resonators"
-import { resonatorDraftFromEncore } from "@catalog/application/resonators/resonator-draft"
 import {
   ResonatorFields,
   resonatorFormDefaults,
 } from "@catalog/presentation/resonators/shared/components/resonator-fields"
 import { ResonatorSearch } from "@catalog/presentation/resonators/shared/components/resonator-search"
+import { wuwaBuildsKeys } from "@catalog/queries/keys"
+import { createResonator } from "@catalog/server/resonators/resonators"
 import type { EncoreCharacterSummary } from "@encore/domain/character"
 import { encoreCharacterQueries } from "@encore/queries/characters"
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import { useEffect, useId, useState } from "react"
 
 export function ResonatorForm() {
+  const toast = useToast()
+
   const formId = `new-resonator-form-${useId()}`
   const { onCreated } = useCatalogActions()
   const queryClient = useQueryClient()
@@ -37,12 +39,12 @@ export function ResonatorForm() {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.characters(),
       })
-      toast.success("Resonador creado")
+      toast.add({ title: "Resonador creado", type: "success" })
 
       await onCreated(resonator.id)
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 

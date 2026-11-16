@@ -1,16 +1,10 @@
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import type { EchoSubstatsDataProps } from "@build/domain/build-record"
+import { Select } from "@/components/panelui/select"
+import { GameIcon, gameIconName } from "@/components/ui/game-icon"
 import {
   formatEchoSubstatValue,
   type EchoSubstatOption,
 } from "@build/application/echo-substats"
-import { GameIcon, gameIconName } from "@/components/ui/game-icon"
+import type { EchoSubstatsDataProps } from "@build/domain/build-record"
 
 type EchoSubstatRowProps = {
   substat: EchoSubstatsDataProps
@@ -58,20 +52,20 @@ export function EchoSubstatRow({
           if (value) onStatChange(value)
         }}
       >
-        <SelectTrigger className="flex-1" aria-label="Estadística del substat">
-          <SelectValue placeholder="Substat" />
-        </SelectTrigger>
+        <Select.Trigger className="flex-1" aria-label="Estadística del substat">
+          <Select.Value placeholder="Substat" />
+        </Select.Trigger>
 
-        <SelectContent>
+        <Select.Content>
           {statOptions.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
+            <Select.Item key={option.value} value={option.value}>
               <div className="flex items-center gap-1">
                 <GameIcon name={gameIconName(option.value)} />
                 <p>{option.label}</p>
               </div>
-            </SelectItem>
+            </Select.Item>
           ))}
-        </SelectContent>
+        </Select.Content>
       </Select>
 
       <Select
@@ -82,17 +76,17 @@ export function EchoSubstatRow({
           if (value) onValueChange(Number(value))
         }}
       >
-        <SelectTrigger className="w-24" aria-label="Valor del substat">
-          <SelectValue placeholder="Valor" />
-        </SelectTrigger>
+        <Select.Trigger className="w-24" aria-label="Valor del substat">
+          <Select.Value placeholder="Valor" />
+        </Select.Trigger>
 
-        <SelectContent>
+        <Select.Content>
           {valueOptions.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
+            <Select.Item key={option.value} value={option.value}>
               {option.label}
-            </SelectItem>
+            </Select.Item>
           ))}
-        </SelectContent>
+        </Select.Content>
       </Select>
     </div>
   )

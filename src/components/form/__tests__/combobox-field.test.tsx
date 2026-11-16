@@ -1,8 +1,8 @@
 /// <reference types="bun" />
 
+import { useAppForm, withForm } from "@/components/form"
 import { describe, expect, test } from "bun:test"
 import { renderToStaticMarkup } from "react-dom/server"
-import { useAppForm, withForm } from "@/components/form"
 
 const options = [
   { label: "Cartethyia", value: 1203 },
@@ -37,7 +37,7 @@ describe("ComboboxField", () => {
     const html = renderToStaticMarkup(<Harness character={null} />)
 
     expect(html).toContain("Buscar resonador")
-    expect(html).toContain('data-slot="input-group-control"')
+    expect(html).toContain('role="combobox"')
   })
 
   test("shows the option label for the stored id", () => {

@@ -1,10 +1,11 @@
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
+
+import { WEAPON_REFINEMENT_RANKS } from "@catalog/application/constants/weapon"
 import {
   weaponRefinementUpdateInput,
   type WeaponRefinementUpdateInput,
 } from "@catalog/application/schemas"
-import { WEAPON_REFINEMENT_RANKS } from "@catalog/application/constants/weapon"
 
 /** Empty values shared by every refinement form. */
 export const weaponRefinementFormDefaults: WeaponRefinementUpdateInput = {

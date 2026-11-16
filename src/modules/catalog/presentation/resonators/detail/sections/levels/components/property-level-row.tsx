@@ -1,21 +1,22 @@
-import { ChevronDownIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import type {
-  ResonatorPropertyGrowthRow,
-  ResonatorPropertyRow,
-} from "@db/schema"
+import { Button } from "@/components/panelui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { statLabel } from "@catalog/application/stats/stats"
 import { Show } from "@/components/utility/show"
-import type { EncoreProperty } from "@encore/domain/property"
+import { statLabel } from "@catalog/application/stats/stats"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { PropertyGrowthAddAction } from "@catalog/presentation/resonators/detail/sections/levels/components/property-growth-add-action"
 import { PropertyGrowthList } from "@catalog/presentation/resonators/detail/sections/levels/components/property-growth-list"
 import { PropertyLevelDeleteAction } from "@catalog/presentation/resonators/detail/sections/levels/components/property-level-delete-action"
+import type {
+  ResonatorPropertyGrowthRow,
+  ResonatorPropertyRow,
+} from "@db/schema"
+import type { EncoreProperty } from "@encore/domain/property"
+import { ChevronDownIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type PropertyLevelRowProps = {
   property: ResonatorPropertyRow & { growth: ResonatorPropertyGrowthRow[] }
@@ -56,13 +57,14 @@ export function PropertyLevelRow({
         <EditableSection.ItemActions>
           <CollapsibleTrigger
             render={
-              <EditableSection.ButtonAction
+              <Button
                 type="button"
-                variant="icon"
+                variant="ghost"
+                size="icon"
                 aria-label="Mostrar niveles"
               >
                 <HugeiconsIcon icon={ChevronDownIcon} />
-              </EditableSection.ButtonAction>
+              </Button>
             }
           />
 

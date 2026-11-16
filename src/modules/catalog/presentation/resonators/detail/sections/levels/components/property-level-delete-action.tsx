@@ -1,11 +1,12 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { toast } from "sonner"
+import { Button } from "@/components/panelui/button"
+import { useToast } from "@/components/panelui/toast"
 import { isValidId } from "@catalog/application/id"
+import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { deleteResonatorPropertyLevel } from "@catalog/server/resonators/properties"
-import { EditableSection } from "@catalog/presentation/components/editable-section"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 type PropertyLevelDeleteActionProps = {
   propertyLevelId: number
@@ -17,9 +18,11 @@ export function PropertyLevelDeleteAction({
   propertyLevelId,
   resonatorId,
 }: PropertyLevelDeleteActionProps) {
+  const toast = useToast()
+
   const queryClient = useQueryClient()
 
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: () =>
       deleteResonatorPropertyLevel({ data: { id: propertyLevelId } }),
     onSettled: async () => {
@@ -28,33 +31,35 @@ export function PropertyLevelDeleteAction({
       })
     },
     onSuccess: () => {
-      toast.success("Propiedad eliminada")
+      toast.add({ title: "Propiedad eliminada", type: "success" })
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 
   const handleRemoveProperty = () => {
     if (!isValidId(propertyLevelId)) return
-    mutate()
+    return mutateAsync()
   }
 
   return (
-    <EditableSection.DeleteAction
+    <EditableSection.Action
+      mode="destructive"
       title="Eliminar propiedad. Esta accion es irreversible."
       description="Estas seguro que quieres eliminar esta propiedad. Esta accion es irreversible."
       onConfirm={handleRemoveProperty}
       isPending={isPending}
       trigger={
-        <EditableSection.ButtonAction
+        <Button
           type="button"
           variant="destructive"
+          size="icon"
           aria-label="Eliminar propiedad"
           disabled={isPending}
         >
           <HugeiconsIcon icon={DeleteIcon} />
-        </EditableSection.ButtonAction>
+        </Button>
       }
     />
   )

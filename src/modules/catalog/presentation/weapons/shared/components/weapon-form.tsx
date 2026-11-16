@@ -1,22 +1,24 @@
-import { useEffect, useId, useState } from "react"
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { useCatalogActions } from "@catalog/presentation/catalog-actions"
-import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
+import { useToast } from "@/components/panelui/toast"
 import { weaponInput, type WeaponInput } from "@catalog/application/schemas"
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
-import { wuwaBuildsKeys } from "@catalog/queries/keys"
-import { createWeapon } from "@catalog/server/weapons/weapons"
 import { weaponDraftFromEncore } from "@catalog/application/weapons/weapon-draft"
+import { useCatalogActions } from "@catalog/presentation/catalog-actions"
+import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import {
   WeaponFields,
   weaponFormDefaults,
 } from "@catalog/presentation/weapons/shared/components/weapon-fields"
 import { WeaponSearch } from "@catalog/presentation/weapons/shared/components/weapon-search"
+import { wuwaBuildsKeys } from "@catalog/queries/keys"
+import { createWeapon } from "@catalog/server/weapons/weapons"
 import type { EncoreWeaponSummary } from "@encore/domain/weapon"
 import { encoreWeaponQueries } from "@encore/queries/catalogs"
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import { useEffect, useId, useState } from "react"
 
 export function WeaponForm() {
+  const toast = useToast()
+
   const formId = `new-weapon-form-${useId()}`
   const { onCreated } = useCatalogActions()
   const queryClient = useQueryClient()
@@ -34,12 +36,12 @@ export function WeaponForm() {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.weapons(),
       })
-      toast.success("Arma creada")
+      toast.add({ title: "Arma creada", type: "success" })
 
       await onCreated(weapon.id)
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 

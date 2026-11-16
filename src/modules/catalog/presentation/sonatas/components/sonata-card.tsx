@@ -1,9 +1,9 @@
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/panelui/badge"
 import { Show } from "@/components/utility/show"
-import type { SonataSetEffectRow, SonataSetRow } from "@db/schema"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { SonataDeleteAction } from "@catalog/presentation/sonatas/components/sonata-delete-action"
 import { SonataEditAction } from "@catalog/presentation/sonatas/components/sonata-edit-action"
+import type { SonataSetEffectRow, SonataSetRow } from "@db/schema"
 
 type SonataWithEffects = SonataSetRow & { effects: SonataSetEffectRow[] }
 

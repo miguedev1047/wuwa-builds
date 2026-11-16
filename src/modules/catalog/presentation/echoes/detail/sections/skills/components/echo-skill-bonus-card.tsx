@@ -1,11 +1,11 @@
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/panelui/badge"
 import { Show } from "@/components/utility/show"
-import type { EchoSkillBonusRow } from "@db/schema"
 import { statLabel } from "@catalog/application/stats/stats"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { EchoSkillBonusConditionText } from "@catalog/presentation/echoes/detail/sections/skills/components/echo-skill-bonus-condition-text"
 import { EchoSkillBonusDeleteAction } from "@catalog/presentation/echoes/detail/sections/skills/components/echo-skill-bonus-delete-action"
 import { EchoSkillBonusEditAction } from "@catalog/presentation/echoes/detail/sections/skills/components/echo-skill-bonus-edit-action"
+import type { EchoSkillBonusRow } from "@db/schema"
 
 type EchoSkillBonusCardProps = {
   echoId: number

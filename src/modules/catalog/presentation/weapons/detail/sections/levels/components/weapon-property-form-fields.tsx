@@ -1,10 +1,11 @@
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
+
+import { WEAPON_PROPERTY_OPTIONS } from "@catalog/application/constants/weapon"
 import {
   weaponPropertyInput,
   type WeaponPropertyInput,
 } from "@catalog/application/schemas"
-import { WEAPON_PROPERTY_OPTIONS } from "@catalog/application/constants/weapon"
 
 /** Empty values shared by every weapon property form. */
 export const weaponPropertyFormDefaults: WeaponPropertyInput = {

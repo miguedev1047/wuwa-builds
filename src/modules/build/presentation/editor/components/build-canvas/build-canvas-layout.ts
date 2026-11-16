@@ -1,7 +1,7 @@
 /**
  * Areas of the build canvas grid.
  *
- * The grid template lives in `.build-canvas` (`src/styles.css`); this list only
+ * The grid template lives in `.build-canvas` (`src/styles/components.css`); this list only
  * keeps the `data-canvas-area` values typed, so a typo fails the typecheck.
  */
 export const BUILD_CANVAS_AREAS = [

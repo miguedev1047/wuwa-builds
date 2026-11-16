@@ -1,18 +1,13 @@
+import { Button } from "@/components/panelui/button"
+import { Input } from "@/components/panelui/input"
+import { Show } from "@/components/utility/show"
+import { updateBuild } from "@/modules/build/client/build-store"
 import { useBuildCollection } from "@/modules/build/client/hooks/build-live-queries"
 import { useBuildIdentity } from "@build/presentation/editor/build-identity"
-import { useState } from "react"
-import { Show } from "@/components/utility/show"
-import { Button } from "@/components/ui/button"
-import { HugeiconsIcon } from "@hugeicons/react"
 import { CheckIcon, DownloadIcon } from "@hugeicons/core-free-icons"
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButton,
-  InputGroupInput,
-} from "@/components/ui/input-group"
-import { updateBuild } from "@/modules/build/client/build-store"
-import { BuildDelete } from "./build-delete"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useState } from "react"
+import { BuildDelete } from "@build/presentation/editor/components/sidebar"
 
 type BuildHeaderActionsProps = {
   canDownload: boolean
@@ -54,8 +49,8 @@ export function BuildHeaderActions({
               </h2>
             }
           >
-            <InputGroup className="h-6 max-w-48">
-              <InputGroupInput
+            <Input.Group className="h-6 max-w-48">
+              <Input
                 autoFocus
                 value={build.name}
                 onBlur={() => setIsEditing(false)}
@@ -68,17 +63,23 @@ export function BuildHeaderActions({
                   }
                 }}
               />
-              <InputGroupAddon align="inline-end">
-                <InputGroupButton onClick={() => setIsEditing(false)}>
+              <Input.Addon align="end">
+                <Button
+                  variant="ghost"
+                  size="icon-sm"
+                  aria-label="Guardar nombre"
+                  className="size-4"
+                  onClick={() => setIsEditing(false)}
+                >
                   <HugeiconsIcon icon={CheckIcon} />
-                </InputGroupButton>
-              </InputGroupAddon>
-            </InputGroup>
+                </Button>
+              </Input.Addon>
+            </Input.Group>
           </Show>
 
           <div className="flex items-center gap-2">
             <Button
-              size="xs"
+              size="sm"
               disabled={!canDownload || isDownloading}
               onClick={onDownload}
             >

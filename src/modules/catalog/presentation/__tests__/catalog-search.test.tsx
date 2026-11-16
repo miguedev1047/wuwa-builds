@@ -1,8 +1,8 @@
 /// <reference types="bun" />
 
+import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
 import { describe, expect, test } from "bun:test"
 import { renderToStaticMarkup } from "react-dom/server"
-import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
 
 describe("CatalogSearch", () => {
   test("renders the trigger element", () => {
@@ -16,7 +16,7 @@ describe("CatalogSearch", () => {
     )
 
     expect(html).toContain("Buscar resonador")
-    expect(html).toContain('data-slot="dialog-trigger"')
+    expect(html).toContain('aria-haspopup="dialog"')
   })
 
   test("items must be rendered inside the root", () => {

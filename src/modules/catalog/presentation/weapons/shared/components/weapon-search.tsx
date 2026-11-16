@@ -1,9 +1,9 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
-import { Suspense } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
+import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
 import type { EncoreWeaponSummary } from "@encore/domain/weapon"
 import { encoreWeaponQueries } from "@encore/queries/catalogs"
-import { CatalogSearch } from "@catalog/presentation/components/catalog-search"
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { Suspense } from "react"
 
 type WeaponSearchProps = {
   /** Id of the weapon already applied to the form, if any. */
@@ -23,7 +23,7 @@ export function WeaponSearch({
       trigger={
         <Button
           variant="secondary"
-          size="xl"
+          size="lg"
           type="button"
           className="w-full"
           disabled={disabled}
@@ -78,7 +78,9 @@ function WeaponSearchResults({
             <span className="truncate">{weapon.name}</span>
 
             {selectedId === weapon.id ? (
-              <CatalogSearch.Shortcut>Actual</CatalogSearch.Shortcut>
+              <span className="ml-auto text-xs text-muted-foreground">
+                Actual
+              </span>
             ) : null}
           </CatalogSearch.Item>
         ))}

@@ -1,10 +1,10 @@
-import type { BuildProps } from "@build/domain/build-record"
+import { Badge } from "@/components/panelui/badge"
 import { Empty } from "@/components/ui/empty"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
 import { WEAPON_LEVEL_MAX } from "@build/domain/build"
+import type { BuildProps } from "@build/domain/build-record"
 import { BuildCanvasCard } from "@build/presentation/editor/components/build-canvas/build-canvas-card"
-import { Badge } from "@/components/ui/badge"
 
 /** Read-only card with the weapon of the build and its base stats. */
 export function WeaponPanel({

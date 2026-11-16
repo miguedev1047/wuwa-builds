@@ -1,16 +1,16 @@
-import appCss from "@/styles.css?url"
+import appCss from "@/styles/index.css?url"
 
+import { Toast } from "@/components/panelui/toast"
+import { Tooltip } from "@/components/panelui/tooltip"
+import { Devtools } from "@/components/utility/devtools"
+import { ThemeProvider } from "@/providers/theme-provider"
+import type { DbClient } from "@tanstack/react-db"
+import type { QueryClient } from "@tanstack/react-query"
 import {
   HeadContent,
   Scripts,
   createRootRouteWithContext,
 } from "@tanstack/react-router"
-import { Devtools } from "@/components/utility/devtools"
-import type { QueryClient } from "@tanstack/react-query"
-import type { DbClient } from "@tanstack/react-db"
-import { ThemeProvider } from "@/providers/theme-provider"
-import { Toaster } from "@/components/ui/sonner"
-import { TooltipProvider } from "@/components/ui/tooltip"
 
 export interface RouteContext {
   dbClient: DbClient
@@ -55,10 +55,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider defaultTheme="system" storageKey="theme">
-          <TooltipProvider>
-            {children}
-            <Toaster />
-          </TooltipProvider>
+          <Toast.Provider>
+            <Tooltip.Provider>{children}</Tooltip.Provider>
+          </Toast.Provider>
         </ThemeProvider>
         <Devtools />
         <Scripts />

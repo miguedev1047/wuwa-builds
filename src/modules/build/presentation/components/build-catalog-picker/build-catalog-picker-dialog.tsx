@@ -1,11 +1,4 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+import { Dialog } from "@/components/panelui/dialog"
 import { Show } from "@/components/utility/show"
 import { useState } from "react"
 
@@ -34,17 +27,14 @@ export function BuildCatalogPickerDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger
-        nativeButton={false}
-        render={<div className="outline-0 outline-none">{trigger}</div>}
-      />
-      <DialogContent size="lg">
-        <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
+      <Dialog.Trigger render={trigger} />
+      <Dialog.Content size="lg">
+        <Dialog.Header>
+          <Dialog.Title>{title}</Dialog.Title>
           <Show when={description}>
-            <DialogDescription>{description}</DialogDescription>
+            <Dialog.Description>{description}</Dialog.Description>
           </Show>
-        </DialogHeader>
+        </Dialog.Header>
 
         <div
           style={{ height: "50vh" }}
@@ -52,7 +42,7 @@ export function BuildCatalogPickerDialog({
         >
           {children({ close: () => setIsOpen(false) })}
         </div>
-      </DialogContent>
+      </Dialog.Content>
     </Dialog>
   )
 }

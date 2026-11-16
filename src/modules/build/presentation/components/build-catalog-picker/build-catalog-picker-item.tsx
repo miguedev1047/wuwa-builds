@@ -1,13 +1,9 @@
+import { Spinner } from "@/components/panelui/spinner"
+import { Tooltip } from "@/components/panelui/tooltip"
 import { Image } from "@/components/ui/image"
-import { Spinner } from "@/components/ui/spinner"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import { Show } from "@/components/utility/show"
-import { cn } from "cn"
 import { buildCatalogPickerItemVariants } from "@build/presentation/components/build-catalog-picker/build-catalog-picker-variants"
+import { cn } from "cn"
 
 type BuildCatalogPickerItemProps = {
   label: string
@@ -33,7 +29,7 @@ export function BuildCatalogPickerItem({
 }: BuildCatalogPickerItemProps) {
   return (
     <Tooltip>
-      <TooltipTrigger
+      <Tooltip.Trigger
         render={
           <button
             type="button"
@@ -82,7 +78,7 @@ export function BuildCatalogPickerItem({
           </button>
         }
       />
-      <TooltipContent>{label}</TooltipContent>
+      <Tooltip.Content>{label}</Tooltip.Content>
     </Tooltip>
   )
 }

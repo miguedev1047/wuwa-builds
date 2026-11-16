@@ -7,10 +7,10 @@ export function WeaponInfoSkeleton() {
       <EditableSection.Header>
         <Skeleton className="h-8 w-48" />
 
-        <EditableSection.Action>
+        <EditableSection.Actions>
           <Skeleton className="h-7 w-18" />
           <Skeleton className="size-7" />
-        </EditableSection.Action>
+        </EditableSection.Actions>
       </EditableSection.Header>
 
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">

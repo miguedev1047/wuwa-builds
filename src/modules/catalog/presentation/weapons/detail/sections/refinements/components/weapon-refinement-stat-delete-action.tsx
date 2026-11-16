@@ -1,11 +1,12 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { toast } from "sonner"
+import { Button } from "@/components/panelui/button"
+import { useToast } from "@/components/panelui/toast"
 import { isValidId } from "@catalog/application/id"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { deleteWeaponRefinementStat } from "@catalog/server/weapons/refinement-stats"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 type WeaponRefinementStatDeleteActionProps = {
   statId: number
@@ -17,9 +18,11 @@ export function WeaponRefinementStatDeleteAction({
   statId,
   weaponId,
 }: WeaponRefinementStatDeleteActionProps) {
+  const toast = useToast()
+
   const queryClient = useQueryClient()
 
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: () => deleteWeaponRefinementStat({ data: { id: statId } }),
     onSettled: async () => {
       await queryClient.invalidateQueries({
@@ -27,34 +30,36 @@ export function WeaponRefinementStatDeleteAction({
       })
     },
     onSuccess: () => {
-      toast.success("Estadística eliminada")
+      toast.add({ title: "Estadística eliminada", type: "success" })
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 
   const handleRemoveStat = () => {
     if (!isValidId(statId)) return
 
-    mutate()
+    return mutateAsync()
   }
 
   return (
-    <EditableSection.DeleteAction
+    <EditableSection.Action
+      mode="destructive"
       title="Eliminar estadística"
       description="Estas seguro que quieres eliminar esta estadística? Esta accion es irreversible."
       isPending={isPending}
       onConfirm={handleRemoveStat}
       trigger={
-        <EditableSection.ButtonAction
+        <Button
           type="button"
           variant="destructive"
+          size="icon"
           aria-label="Eliminar estadística"
           disabled={isPending}
         >
           <HugeiconsIcon icon={DeleteIcon} />
-        </EditableSection.ButtonAction>
+        </Button>
       }
     />
   )

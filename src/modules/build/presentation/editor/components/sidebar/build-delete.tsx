@@ -1,5 +1,5 @@
 import { AlertDialog } from "@/components/panelui/alert-dialog"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
@@ -13,7 +13,7 @@ export function BuildDelete({ onDelete }: BuildDeleteProps) {
     <AlertDialog>
       <AlertDialog.Trigger
         render={
-          <Button size="icon-xs" variant="destructive">
+          <Button size="icon-sm" variant="destructive">
             <HugeiconsIcon icon={DeleteIcon} />
           </Button>
         }

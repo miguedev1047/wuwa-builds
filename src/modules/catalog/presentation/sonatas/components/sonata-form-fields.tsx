@@ -1,9 +1,11 @@
-import { useSelector } from "@tanstack/react-form"
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
+
+import { useSelector } from "@tanstack/react-form"
+
+import { Show } from "@/components/utility/show"
 import type { SonataFormInput } from "@catalog/application/schemas"
 import { STAT_OPTIONS } from "@catalog/application/stats/stats"
-import { Show } from "@/components/utility/show"
 
 /** Piece thresholds a set can use. There is no 4-piece threshold. */
 export const SONATA_PIECES_OPTIONS = [

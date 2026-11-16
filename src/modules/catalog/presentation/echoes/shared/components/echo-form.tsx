@@ -1,22 +1,24 @@
-import { useEffect, useId, useState } from "react"
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { useCatalogActions } from "@catalog/presentation/catalog-actions"
-import { toast } from "sonner"
 import { useAppForm } from "@/components/form"
-import { echoInput, type EchoInput } from "@catalog/application/schemas"
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
-import { wuwaBuildsKeys } from "@catalog/queries/keys"
-import { createEcho } from "@catalog/server/echoes/echoes"
+import { useToast } from "@/components/panelui/toast"
 import { echoDraftFromEncore } from "@catalog/application/echoes/echo-draft"
+import { echoInput, type EchoInput } from "@catalog/application/schemas"
+import { useCatalogActions } from "@catalog/presentation/catalog-actions"
+import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import {
   EchoFields,
   echoFormDefaults,
 } from "@catalog/presentation/echoes/shared/components/echo-fields"
 import { EchoSearch } from "@catalog/presentation/echoes/shared/components/echo-search"
+import { wuwaBuildsKeys } from "@catalog/queries/keys"
+import { createEcho } from "@catalog/server/echoes/echoes"
 import type { EncoreEchoSummary } from "@encore/domain/echo"
 import { encoreEchoQueries } from "@encore/queries/catalogs"
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import { useEffect, useId, useState } from "react"
 
 export function EchoForm() {
+  const toast = useToast()
+
   const formId = `new-echo-form-${useId()}`
   const { onCreated } = useCatalogActions()
   const queryClient = useQueryClient()
@@ -34,12 +36,12 @@ export function EchoForm() {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.echoes(),
       })
-      toast.success("Eco creado")
+      toast.add({ title: "Eco creado", type: "success" })
 
       await onCreated(echo.id)
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 

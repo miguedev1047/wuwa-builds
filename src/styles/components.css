@@ -1,0 +1,52 @@
+/* Build canvas: 10 x 10 named-area grid.
+   Tailwind has no grid-area utilities and app code forbids arbitrary values,
+   so the template lives here and every panel only declares its area. */
+@layer components {
+  .build-canvas {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-rows: 5.625rem 10rem repeat(5, 5.625rem);
+    gap: calc(var(--spacing) * 3);
+    grid-template-areas:
+      "resonator resonator resonator sequencies sequencies sequencies skills skills skills skills"
+      "stats stats stats stats stats stats skills skills skills skills"
+      "stats stats stats stats stats stats weapon weapon weapon weapon"
+      "stats stats stats stats stats stats weapon weapon weapon weapon"
+      "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes"
+      "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes"
+      "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes";
+  }
+
+  .build-canvas > [data-canvas-area="resonator"] {
+    grid-area: resonator;
+  }
+
+  .build-canvas > [data-canvas-area="stats"] {
+    grid-area: stats;
+  }
+
+  .build-canvas > [data-canvas-area="skills"] {
+    grid-area: skills;
+  }
+
+  .build-canvas > [data-canvas-area="weapon"] {
+    grid-area: weapon;
+  }
+
+  .build-canvas > [data-canvas-area="echoes"] {
+    grid-area: echoes;
+  }
+
+  .build-canvas > [data-canvas-area="sequencies"] {
+    grid-area: sequencies;
+  }
+}
+
+/* Build workspace canvas. The inspector is owned by the application sidebar. */
+@layer components {
+  .build-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+}

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/panelui/button"
 import { createFileRoute, Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/")({

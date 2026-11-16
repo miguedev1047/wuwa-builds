@@ -1,18 +1,21 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { useCatalogActions } from "@catalog/presentation/catalog-actions"
-import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { toast } from "sonner"
+import { Button } from "@/components/panelui/button"
+import { useToast } from "@/components/panelui/toast"
 import { isValidId } from "@catalog/application/id"
+import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { deleteWeapon } from "@catalog/server/weapons/weapons"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 export function WeaponDeleteAction({ weaponId }: { weaponId: number }) {
+  const toast = useToast()
+
   const queryClient = useQueryClient()
   const { onDeleted } = useCatalogActions()
 
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: () => deleteWeapon({ data: { id: weaponId } }),
     onSuccess: async () => {
       await queryClient.invalidateQueries({
@@ -21,36 +24,38 @@ export function WeaponDeleteAction({ weaponId }: { weaponId: number }) {
       queryClient.removeQueries({
         queryKey: wuwaBuildsKeys.weapon(weaponId),
       })
-      toast.success("Arma eliminada")
+      toast.add({ title: "Arma eliminada", type: "success" })
 
       await onDeleted()
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 
   const handleRemoveWeapon = () => {
     if (!isValidId(weaponId)) return
 
-    mutate()
+    return mutateAsync()
   }
 
   return (
-    <EditableSection.DeleteAction
+    <EditableSection.Action
+      mode="destructive"
       title="Eliminar arma"
       description="Estas seguro que quieres eliminar esta arma"
       isPending={isPending}
       onConfirm={handleRemoveWeapon}
       trigger={
-        <EditableSection.ButtonAction
+        <Button
           type="button"
           variant="destructive"
+          size="icon"
           aria-label="Eliminar arma"
           disabled={isPending}
         >
           <HugeiconsIcon icon={DeleteIcon} />
-        </EditableSection.ButtonAction>
+        </Button>
       }
     />
   )

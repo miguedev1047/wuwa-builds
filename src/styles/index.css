@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist-mono";
+
+@import "./theme.css";
+@import "./base.css";
+@import "./components.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+    --success: oklch(0.696 0.17 162.48);
+    --warning: oklch(0.769 0.188 70.08);
+    --info: oklch(0.623 0.214 259.815);
+}
+
+.dark {
+    --success: oklch(0.696 0.17 162.48);
+    --warning: oklch(0.769 0.188 70.08);
+    --info: oklch(0.623 0.214 259.815);
+}
+
+@theme inline {
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-info: var(--info);
+}

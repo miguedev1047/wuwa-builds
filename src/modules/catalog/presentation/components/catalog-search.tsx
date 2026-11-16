@@ -1,13 +1,5 @@
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "@/components/ui/command"
+import { Command } from "@/components/panelui/command"
+import { Skeleton } from "@/components/ui/skeleton"
 import {
   createContext,
   useCallback,
@@ -17,7 +9,6 @@ import {
   type ReactElement,
   type ReactNode,
 } from "react"
-import { Skeleton } from "@/components/ui/skeleton"
 
 /**
  * Command palette used to pick external (Encore) data and prefill admin forms.
@@ -98,21 +89,24 @@ export function CatalogSearchRoot({
 
   return (
     <CatalogSearchContext.Provider value={{ close }}>
-      <CommandDialog
+      <Command.Dialog
         open={open}
         onOpenChange={setOpen}
         trigger={trigger}
-        title={title}
-        description={description}
+        label={title}
+        hotkey={null}
         className={className}
       >
-        {children}
-      </CommandDialog>
+        <Command aria-label={title}>
+          <p className="sr-only">{description}</p>
+          {children}
+        </Command>
+      </Command.Dialog>
     </CatalogSearchContext.Provider>
   )
 }
 
-type CatalogSearchItemProps = ComponentProps<typeof CommandItem>
+type CatalogSearchItemProps = ComponentProps<typeof Command.Item>
 
 /** Selects an item and closes the palette. */
 export function CatalogSearchItem({
@@ -122,10 +116,10 @@ export function CatalogSearchItem({
   const { close } = useCatalogSearch()
 
   return (
-    <CommandItem
+    <Command.Item
       {...props}
-      onSelect={(value) => {
-        onSelect?.(value)
+      onSelect={() => {
+        onSelect?.()
         close()
       }}
     />
@@ -155,12 +149,12 @@ export function CatalogSearchLoading({ count = 6 }: CatalogSearchLoadingProps) {
 
 export const CatalogSearch = {
   Root: CatalogSearchRoot,
-  Input: CommandInput,
-  List: CommandList,
-  Empty: CommandEmpty,
-  Group: CommandGroup,
+  Input: Command.Input,
+  List: Command.List,
+  Empty: Command.Empty,
+  Group: Command.Group,
   Item: CatalogSearchItem,
-  Separator: CommandSeparator,
-  Shortcut: CommandShortcut,
+  Separator: Command.Separator,
+
   Loading: CatalogSearchLoading,
 } as const

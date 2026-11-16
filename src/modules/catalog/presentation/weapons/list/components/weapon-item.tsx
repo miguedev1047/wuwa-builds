@@ -1,19 +1,15 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { Tooltip } from "@/components/panelui/tooltip"
 import { Show } from "@/components/utility/show"
-import type { WeaponRow } from "@db/schema"
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
+import { CatalogSection } from "@catalog/presentation/components/catalog-section"
+import type { WeaponRow } from "@db/schema"
 
 export function WeaponItem({ weapon }: { weapon: WeaponRow }) {
   const { DetailLink } = useCatalogActions()
 
   return (
     <Tooltip>
-      <TooltipTrigger
+      <Tooltip.Trigger
         render={
           <DetailLink id={weapon.id}>
             <CatalogSection.Item
@@ -37,7 +33,7 @@ export function WeaponItem({ weapon }: { weapon: WeaponRow }) {
           </DetailLink>
         }
       />
-      <TooltipContent>{weapon.name}</TooltipContent>
+      <Tooltip.Content>{weapon.name}</Tooltip.Content>
     </Tooltip>
   )
 }

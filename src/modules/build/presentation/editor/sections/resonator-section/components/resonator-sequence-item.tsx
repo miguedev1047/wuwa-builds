@@ -1,14 +1,14 @@
-import { Badge } from "@/components/ui/badge"
-import { Image } from "@/components/ui/image"
+import { Badge } from "@/components/panelui/badge"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
+import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
+import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { ResonatorSequencePreview } from "@build/presentation/editor/sections/resonator-section/components/resonator-sequence-preview"
 import type { CharacterDetail } from "@catalog/domain/character"
-import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 
 type ResonatorSequenceItemProps = {
   sequence: CharacterDetail["sequences"][number]

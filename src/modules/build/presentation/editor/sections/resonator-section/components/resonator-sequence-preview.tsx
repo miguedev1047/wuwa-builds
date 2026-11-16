@@ -1,5 +1,5 @@
-import { Badge } from "@/components/ui/badge"
-import { CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/panelui/badge"
+import { Card } from "@/components/panelui/card"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
 import type { CharacterDetail } from "@catalog/domain/character"
@@ -20,7 +20,7 @@ export function ResonatorSequencePreview({
         </Show>
 
         <div className="flex min-w-0 flex-col gap-1">
-          <CardTitle className="truncate">{sequence.name}</CardTitle>
+          <Card.Title className="truncate">{sequence.name}</Card.Title>
           <Badge>Secuencia {sequence.index}</Badge>
         </div>
       </div>

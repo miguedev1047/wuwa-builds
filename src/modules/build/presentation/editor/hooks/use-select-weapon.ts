@@ -1,13 +1,14 @@
+import { useToast } from "@/components/panelui/toast"
 import { buildEdits } from "@build/application/build-edits"
-import { useBuildIdentity } from "@build/presentation/editor/build-identity"
-import { useQueryClient } from "@tanstack/react-query"
-import { toast } from "sonner"
 import { updateBuild } from "@build/client/build-store"
+import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import type { WeaponSummary } from "@catalog/domain/weapon"
 import { weaponQueries } from "@catalog/queries/weapons"
+import { useQueryClient } from "@tanstack/react-query"
 
 /** Warms the weapon detail and applies the summary to the local build. */
 export function useSelectWeapon(buildId: string) {
+  const toast = useToast()
   const queryClient = useQueryClient()
   const identity = { buildId, sessionId: useBuildIdentity().sessionId }
 
@@ -19,7 +20,7 @@ export function useSelectWeapon(buildId: string) {
         buildEdits.selectWeapon(draft, weapon)
       )
     } catch {
-      toast.error("No se pudo cargar el arma")
+      toast.add({ title: "No se pudo cargar el arma", type: "error" })
       return false
     }
   }

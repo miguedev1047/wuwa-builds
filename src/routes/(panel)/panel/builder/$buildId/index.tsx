@@ -1,15 +1,15 @@
-import { Button } from "@/components/ui/button"
-import { Spinner } from "@/components/ui/spinner"
-import { useBuildCollection } from "@build/client/hooks/build-live-queries"
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router"
-import { BuildEditorWorkspace } from "@build/presentation/editor/components/workspace/build-editor-workspace"
+import { Button } from "@/components/panelui/button"
+import { Spinner } from "@/components/panelui/spinner"
 import { buildEdits } from "@build/application/build-edits"
-import { BuildIdentityProvider } from "@build/presentation/editor/build-identity"
 import {
   buildCollection,
   deleteBuild,
   updateBuild,
 } from "@build/client/build-store"
+import { useBuildCollection } from "@build/client/hooks/build-live-queries"
+import { BuildIdentityProvider } from "@build/presentation/editor/build-identity"
+import { BuildEditorWorkspace } from "@build/presentation/editor/components/workspace/build-editor-workspace"
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
   component: RouteComponent,

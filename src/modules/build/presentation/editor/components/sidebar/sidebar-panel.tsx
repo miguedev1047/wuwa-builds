@@ -18,7 +18,12 @@ import {
   UserIcon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
+import type { ReactElement } from "react"
 import { SidebarAppFooter } from "@build/presentation/editor/components/sidebar"
+
+interface SidebarPanelProps extends React.ComponentProps<typeof Sidebar> {
+  backLink: ReactElement
+}
 
 export const SECTIONS = [
   {
@@ -43,9 +48,7 @@ export const SECTIONS = [
   },
 ] as const
 
-export function SidebarPanel({
-  ...props
-}: React.ComponentProps<typeof Sidebar>) {
+export function SidebarPanel({ backLink, ...props }: SidebarPanelProps) {
   const { buildId, sessionId } = useBuildIdentity()
   const { data: build } = useBuildCollection({ buildId, sessionId })
 
@@ -75,7 +78,7 @@ export function SidebarPanel({
           ))}
         </SidebarMenu>
       </SidebarContent>
-      <SidebarAppFooter />
+      <SidebarAppFooter backLink={backLink} />
       <SidebarRail />
     </Sidebar>
   )

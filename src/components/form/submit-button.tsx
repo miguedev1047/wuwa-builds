@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { Spinner } from "@/components/ui/spinner"
 import { useFormContext } from "@/components/form/form-context"
+import { Button } from "@/components/panelui/button"
 import type { ComponentProps } from "react"
 
 type SubmitButtonProps = {
@@ -20,7 +19,7 @@ export function SubmitButton({
   formId,
   pendingLabel = "Guardando...",
   className,
-  size = "xl",
+  size = "lg",
   disabled = false,
 }: SubmitButtonProps) {
   const form = useFormContext()
@@ -31,11 +30,11 @@ export function SubmitButton({
         <Button
           size={size}
           type="submit"
+          loading={isSubmitting}
           form={formId}
-          disabled={isSubmitting || disabled}
+          disabled={disabled}
           className={className}
         >
-          {isSubmitting ? <Spinner /> : null}
           {isSubmitting ? pendingLabel : label}
         </Button>
       )}

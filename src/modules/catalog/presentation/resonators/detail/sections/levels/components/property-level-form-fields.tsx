@@ -1,10 +1,11 @@
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
+
+import { RESONATOR_PROPERTY_OPTIONS } from "@catalog/application/constants/resonator"
 import {
   resonatorPropertyLevelsSchema,
   type ResonatorPropertyLevelInput,
 } from "@catalog/application/schemas"
-import { RESONATOR_PROPERTY_OPTIONS } from "@catalog/application/constants/resonator"
 
 /** Empty values shared by every property level form. */
 export const propertyLevelFormDefaults: ResonatorPropertyLevelInput = {

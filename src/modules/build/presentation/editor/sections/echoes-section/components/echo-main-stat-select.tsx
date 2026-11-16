@@ -1,20 +1,14 @@
+import { Badge } from "@/components/panelui/badge"
+import { Select } from "@/components/panelui/select"
 import { GameIcon, gameIconName } from "@/components/ui/game-icon"
-import { Badge } from "@/components/ui/badge"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { Show } from "@/components/utility/show"
-import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import {
   echoMainStatOptions,
   echoPrimaryStat,
   type EchoMainStatOption,
 } from "@build/application/echo-main-stat"
 import type { EchoesDataProps } from "@build/domain/build-record"
+import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 
 type EchoMainStatSelectProps = {
   slot: EchoesDataProps
@@ -57,23 +51,23 @@ export function EchoMainStatSelect({
         disabled={statOptions.length === 0}
         onValueChange={handleStatChange}
       >
-        <SelectTrigger
+        <Select.Trigger
           className="w-full"
           aria-label="Estadística principal del eco"
         >
-          <SelectValue placeholder="Selecciona una estadística" />
-        </SelectTrigger>
+          <Select.Value placeholder="Selecciona una estadística" />
+        </Select.Trigger>
 
-        <SelectContent>
+        <Select.Content>
           {statOptions.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
+            <Select.Item key={option.value} value={option.value}>
               <div className="flex items-center gap-1">
                 <GameIcon name={gameIconName(option.value)} />
                 <p>{option.label}</p>
               </div>
-            </SelectItem>
+            </Select.Item>
           ))}
-        </SelectContent>
+        </Select.Content>
       </Select>
 
       <div className="flex flex-wrap items-center gap-1">

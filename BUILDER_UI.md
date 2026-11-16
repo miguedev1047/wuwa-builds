@@ -100,7 +100,7 @@ Las secciones del editor viven en `src/modules/build/presentation/editor/section
 dividen en raíz, cuerpo cargado, mutaciones y componentes de presentación. El
 lienzo de `components/build-canvas/` es una superficie de solo lectura: un grid
 de 10 columnas × 8 filas con áreas nombradas y filas de 90px (`.build-canvas` en
-`src/styles.css`) que pinta la build y nunca abre diálogos, pickers ni escribe en
+`src/styles/components.css`) que pinta la build y nunca abre diálogos, pickers ni escribe en
 la colección. La UI se monta en `components/workspace/`: un Canvas de PanelUI
 (`src/components/panelui/canvas.tsx`) con patrón de puntos y spotlight a la
 izquierda, y el rail de secciones a la derecha; por encima de `xl` cada panel

@@ -1,9 +1,9 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
-import { characterQueries } from "@catalog/queries/characters"
 import { ResonatorDeleteAction } from "@catalog/presentation/resonators/detail/sections/info/components/resonator-delete-action"
 import { ResonatorEditAction } from "@catalog/presentation/resonators/detail/sections/info/components/resonator-edit-action"
+import { characterQueries } from "@catalog/queries/characters"
+import { useSuspenseQuery } from "@tanstack/react-query"
 
 type ResonatorInfoContentProps = {
   resonatorId: number
@@ -24,10 +24,10 @@ export function ResonatorInfoContent({
           Resonador: {resonator.name}
         </EditableSection.Title>
 
-        <EditableSection.Action>
+        <EditableSection.Actions>
           <ResonatorEditAction resonator={resonator} />
           <ResonatorDeleteAction resonatorId={resonatorId} />
-        </EditableSection.Action>
+        </EditableSection.Actions>
       </EditableSection.Header>
 
       <EditableSection.Content className="flex w-full flex-col items-start gap-4 md:flex-row">

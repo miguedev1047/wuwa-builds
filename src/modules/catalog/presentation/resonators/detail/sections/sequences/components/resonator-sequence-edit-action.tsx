@@ -1,8 +1,11 @@
+import { Button } from "@/components/panelui/button"
+import { EditableSection } from "@catalog/presentation/components/editable-section"
+import { ResonatorSequenceFields } from "@catalog/presentation/resonators/detail/sections/sequences/components/resonator-sequence-form-fields"
+import { useResonatorSequenceEditForm } from "@catalog/presentation/resonators/detail/sections/sequences/hooks/resonator-sequence-edit-form"
+import type { ResonatorSequenceRow } from "@db/schema"
 import { PencilEdit01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import type { ResonatorSequenceRow } from "@db/schema"
-import { EditableSection } from "@catalog/presentation/components/editable-section"
-import { ResonatorSequenceEditForm } from "@catalog/presentation/resonators/detail/sections/sequences/components/resonator-sequence-edit-form"
+import { useState } from "react"
 
 type ResonatorSequenceEditActionProps = {
   sequence: ResonatorSequenceRow
@@ -12,26 +15,62 @@ type ResonatorSequenceEditActionProps = {
 export function ResonatorSequenceEditAction({
   sequence,
 }: ResonatorSequenceEditActionProps) {
+  const [open, setOpen] = useState(false)
+  const { formId, isPending, form, onCancel } = useResonatorSequenceEditForm({
+    sequence: sequence,
+    onSaved: () => setOpen(false),
+    onCancel: () => setOpen(false),
+  })
+  const onOpenChange = (next: boolean) => {
+    if (isPending) return
+    if (next) form.reset()
+    setOpen(next)
+  }
   return (
-    <EditableSection.EditAction
+    <EditableSection.Action
+      open={open}
+      onOpenChange={onOpenChange}
+      isPending={isPending}
+      footer={
+        <>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={onCancel}
+            disabled={isPending}
+          >
+            Cerrar
+          </Button>
+
+          <form.AppForm>
+            <form.SubmitButton label="Guardar" formId={formId} />
+          </form.AppForm>
+        </>
+      }
+      mode="edit"
       title="Editar secuencia"
       trigger={
-        <EditableSection.ButtonAction
+        <Button
           type="button"
-          variant="icon"
+          variant="ghost"
+          size="icon"
           aria-label="Editar secuencia"
         >
           <HugeiconsIcon icon={PencilEdit01Icon} />
-        </EditableSection.ButtonAction>
+        </Button>
       }
     >
-      {({ close }) => (
-        <ResonatorSequenceEditForm
-          sequence={sequence}
-          onSaved={close}
-          onCancel={close}
-        />
+      {() => (
+        <form
+          id={formId}
+          onSubmit={(event) => {
+            event.preventDefault()
+            void form.handleSubmit().catch(() => undefined)
+          }}
+        >
+          <ResonatorSequenceFields form={form} isPending={isPending} />
+        </form>
       )}
-    </EditableSection.EditAction>
+    </EditableSection.Action>
   )
 }

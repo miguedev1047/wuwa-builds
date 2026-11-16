@@ -3,6 +3,7 @@ import { statLabel } from "@catalog/application/stats/stats"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { WeaponRefinementStatDeleteAction } from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-stat-delete-action"
 import { WeaponRefinementStatEditAction } from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-stat-edit-action"
+import { formatPercentStat } from "@/modules/build/presentation/editor/hooks/stats-view-model"
 
 type WeaponRefinementStatsListProps = {
   stats: WeaponRefinementStatRow[]
@@ -16,7 +17,7 @@ export function WeaponRefinementStatsList({
 }: WeaponRefinementStatsListProps) {
   return (
     <EditableSection.List
-      className="grid md:grid-cols-2"
+      className="grid"
       items={stats}
       getItemKey={(stat) => stat.id}
       empty={
@@ -30,7 +31,9 @@ export function WeaponRefinementStatsList({
               {statLabel(stat.statName)}
             </EditableSection.ItemTitle>
             <EditableSection.ItemDescription>
-              <span className="tabular-nums">{stat.statNumber}</span>
+              <span className="tabular-nums">
+                {formatPercentStat(stat.statNumber)}
+              </span>
             </EditableSection.ItemDescription>
           </EditableSection.ItemContent>
 

@@ -1,15 +1,16 @@
-import { useBuildIdentity } from "@build/presentation/editor/build-identity"
-import { useQueryClient } from "@tanstack/react-query"
-import { toast } from "sonner"
+import { useToast } from "@/components/panelui/toast"
 import { selectLocalResonator } from "@build/client/select-local-resonator"
+import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import type { CharacterSummary } from "@catalog/domain/character"
 import { characterQueries } from "@catalog/queries/characters"
+import { useQueryClient } from "@tanstack/react-query"
 
 export type ResonatorSelectionResult =
   "selected" | "unchanged" | "discarded" | "error"
 
 /** Loads a resonator detail and applies it to an existing local build. */
 export function useSelectResonator(buildId: string) {
+  const toast = useToast()
   const queryClient = useQueryClient()
   const identity = { buildId, sessionId: useBuildIdentity().sessionId }
 
@@ -21,7 +22,7 @@ export function useSelectResonator(buildId: string) {
         queryClient.query(characterQueries.detail(character.id))
       )
     } catch {
-      toast.error("No se pudo cargar el resonador")
+      toast.add({ title: "No se pudo cargar el resonador", type: "error" })
       return "error"
     }
   }

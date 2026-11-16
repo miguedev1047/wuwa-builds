@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button"
-import { Spinner } from "@/components/ui/spinner"
+import { Button } from "@/components/panelui/button"
+import { Spinner } from "@/components/panelui/spinner"
 import { buildCollection } from "@build/client/build-store"
 import { MAX_LOCAL_BUILDS } from "@build/domain/build"
-import { useCreateBuild } from "@build/presentation/collection/hooks/use-create-build"
 import { LocalBuildList } from "@build/presentation/collection/components/local-build-list"
+import { useCreateBuild } from "@build/presentation/collection/hooks/use-create-build"
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router"
 import { Suspense } from "react"
 

@@ -1,47 +1,52 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { DeleteIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { toast } from "sonner"
-import type { SonataSetRow } from "@db/schema"
+import { Button } from "@/components/panelui/button"
+import { useToast } from "@/components/panelui/toast"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { deleteSonata } from "@catalog/server/echoes/sonatas"
+import type { SonataSetRow } from "@db/schema"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 type SonataDeleteActionProps = {
   sonata: SonataSetRow
 }
 
 export function SonataDeleteAction({ sonata }: SonataDeleteActionProps) {
+  const toast = useToast()
+
   const queryClient = useQueryClient()
 
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: () => deleteSonata({ data: { id: sonata.id } }),
     onSuccess: async () => {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.sonatas(),
       })
-      toast.success("Set de sonata eliminado")
+      toast.add({ title: "Set de sonata eliminado", type: "success" })
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.add({ title: error.message, type: "destructive" })
     },
   })
 
   return (
-    <EditableSection.DeleteAction
+    <EditableSection.Action
+      mode="destructive"
       title="Eliminar set de sonata"
       description={`Estas seguro que quieres eliminar ${sonata.name}`}
       isPending={isPending}
-      onConfirm={() => mutate()}
+      onConfirm={() => mutateAsync()}
       trigger={
-        <EditableSection.ButtonAction
+        <Button
           type="button"
           variant="destructive"
+          size="icon"
           aria-label="Eliminar set de sonata"
           disabled={isPending}
         >
           <HugeiconsIcon icon={DeleteIcon} />
-        </EditableSection.ButtonAction>
+        </Button>
       }
     />
   )

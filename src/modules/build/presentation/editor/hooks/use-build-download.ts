@@ -1,9 +1,9 @@
-import { useRef, useState } from "react"
-import { downloadBuildPng } from "./download-build-png"
+import { useToast } from "@/components/panelui/toast"
 import type { useBuildStats } from "@/modules/build/client/hooks/use-build-stats"
 import type { BuildProps } from "@/modules/build/domain/build-record"
+import { useRef, useState } from "react"
 import { flushSync } from "react-dom"
-import { toast } from "sonner"
+import { downloadBuildPng } from "./download-build-png"
 
 type PreviewBuildProps = ReturnType<typeof useBuildStats>
 
@@ -18,6 +18,7 @@ interface SnapshotDataProps {
 }
 
 export function useDownloadBuild({ preview, build }: useDownloadBuildProps) {
+  const toast = useToast()
   const [exportSnapshot, setExportSnapshot] =
     useState<SnapshotDataProps | null>(null)
 
@@ -37,7 +38,10 @@ export function useDownloadBuild({ preview, build }: useDownloadBuildProps) {
       if (!card) throw new Error("Export card did not mount")
       await downloadBuildPng(card, build.name)
     } catch (err) {
-      toast.error("No se pudo descargar la imagen de la build")
+      toast.add({
+        title: "No se pudo descargar la imagen de la build",
+        type: "error",
+      })
       console.log(err)
     } finally {
       setExportSnapshot(null)

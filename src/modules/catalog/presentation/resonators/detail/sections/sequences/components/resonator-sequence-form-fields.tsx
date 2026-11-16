@@ -1,10 +1,11 @@
 import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
+
+import { RESONATOR_SEQUENCE } from "@catalog/application/constants/resonator"
 import {
   resonatorSequenceUpdateInput,
   type ResonatorSequenceUpdateInput,
 } from "@catalog/application/schemas"
-import { RESONATOR_SEQUENCE } from "@catalog/application/constants/resonator"
 
 /** Empty values shared by every resonator sequence form. */
 export const resonatorSequenceFormDefaults: ResonatorSequenceUpdateInput = {
