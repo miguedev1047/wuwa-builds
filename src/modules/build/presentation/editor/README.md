@@ -1,5 +1,9 @@
 # Builder UI
 
+See the [builder UI guide](../../../../../docs/BUILDER_UI.md) for the feature contract and the
+[search integration guide](../../../../../docs/SEARCH_INTEGRATION.md) for source adapters and selection
+callbacks.
+
 The editor route supplies an explicit build/session identity and resolves the
 local draft for that session, then passes it
 to `BuildEditorWorkspace`. The workspace composes the header, preview stage and
@@ -72,7 +76,7 @@ row before applying an edit.
 ## Shared presentation
 
 `../components/` holds the surfaces both layers share: `build-card` (card surface),
-`build-card-section` (card, dialog and trigger), `build-catalog-picker`,
+`build-card-section` (card, dialog and trigger),
 `build-text-header` and `build-echo-card` (one read-only echo slot). Shared
 presentation takes everything it paints as props and never reads the build, so
 the canvas and the editor sections can reuse it.
@@ -87,18 +91,16 @@ the canvas and the editor sections can reuse it.
 | Canvas grid and areas          | `src/styles/components.css` (`.build-canvas`)                         |
 | Canvas panel card surface      | `components/build-canvas/build-canvas-card.tsx`                       |
 | Card surface                   | `../components/build-card/build-card.tsx`                             |
-| Picker grid and item state     | `../components/build-catalog-picker/build-catalog-picker-variants.ts` |
+| Search dialog and selection | `src/components/blocks/command-search/` |
 | Echo slot card                 | `../components/build-echo-card/build-echo-card.tsx`                   |
 
 ## Dialogs
 
 - `../components/build-card-section/build-card-section-dialog.tsx` hosts one editor. The
   header and footer stay pinned while the body scrolls inside the viewport.
-- `../components/build-catalog-picker/build-catalog-picker-dialog.tsx` hosts a picker in a
-  standalone dialog. The grid lives on a fixed 50vh area with `no-scrollbar`.
+- Resonator, weapon and echo selection use `CommandSearch` dialogs with local filters.
 - Echo pickers belong to `sections/echoes-section/`: an empty card opens the
-  picker directly and a filled card opens the editor, with a separate change
-  action (`echo-picker-dialog.tsx`) for the selected echo.
+  search directly, and the selected echo image opens its replacement search.
 - The weapon picker belongs to `sections/weapon-section/` and the resonator
   picker to `sections/resonator-section/`; neither is part of the canvas.
 
@@ -109,8 +111,26 @@ one level per skill with the PanelUI slider (`ResonatorSkillRow`); the passives
 tab toggles each passive with `ResonatorSkillNode`, which dims and grays the
 unchecked card. Both write through `useResonatorProgress`.
 
-## Shared catalog picker
+## Independent searches
 
-`BuildCatalogPicker<T>` only renders the grid and item shell. Each entity keeps
-its own adapter (`ResonatorPicker`, `WeaponPicker`, `EchoPicker`) with its queries,
-filtering and selection rules. Do not move build or catalog logic into `../components/`.
+The builder owns `ResonatorBuildSearch`, `WeaponBuildSearch` and `EchoBuildSearch`
+under `searches/`. Admin owns three separate components under catalog presentation.
+Each folder has an `index.tsx`, private controls/results, a nuqs filter hook and a
+results hook that queries and filters its own source. No generic entity-search
+component connects the two consumers.
+
+The only shared search factory is `src/hooks/create-search-filters.ts`. It creates
+a hook from nuqs parsers and a runtime scope; it does not render fields or filter
+lists. Search scopes keep admin, builder and echo slots separate in the URL.
+Closing a dialog clears only that instance's parameters.
+
+`CommandSearch` is a presentation primitive. Each builder search controls its
+open state, pending action and close behavior. Result items set
+`closeOnSelect={false}`; successful selections close explicitly, while failures
+or discarded selections leave the search open.
+
+Builder queries use the canonical catalog. Weapon compatibility stays in
+`useWeaponBuildResults`. Echo selection uses `echoQueries.selection()`, including
+only sonata ids, names and icons; those fields are used by search and are not added
+to the saved build snapshot. No data migrations or compatibility wrappers are
+needed for this UI organization.

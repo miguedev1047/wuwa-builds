@@ -84,6 +84,10 @@ Current modules:
 - `src/modules/build`: local TanStack DB build collection (LocalStorage) and
   the D1 saved-build backend reserved for the future cloud save.
 - `src/modules/build/presentation`: build editor, collection and shared UI.
+- `src/modules/catalog/presentation/searches`: three independent admin searches
+  using Encore, each with its own query, filtering, controls and selection.
+- `src/modules/build/presentation/editor/searches`: three independent builder
+  searches using the canonical catalog and build selection actions.
 - `src/modules/catalog/presentation`: catalog lists, details and forms, including
   Encore-assisted prefill. It must not import infrastructure directly.
 - `src/routes` and `src/routing`: route composition and shared navigation adapters.
@@ -97,7 +101,7 @@ Current modules:
 - Elements, weapon types and echo classes use stable English string ids.
   Rarity and echo cost remain numeric. Display labels are never persisted as ids.
 - Only the Encore infrastructure adapter converts external codes and localized
-  names. Catalog writes, saved snapshots and URL filters use canonical ids only.
+  names. Catalog writes, saved snapshots and search filters use canonical ids only.
 - Category corrections may break old data. Do not add compatibility aliases,
   snapshot migration or version markers for old category representations.
 - Weapon `type` and resonator `weaponType` share `WeaponTypeId`; weapon labels
@@ -123,6 +127,27 @@ Rules:
 - Builder screens read the canonical catalog from D1 through
   `src/modules/catalog`; Encore is only an admin prefill helper.
 
+## Search dialogs
+
+Integration examples and source-selection guidance live in
+[docs/SEARCH_INTEGRATION.md](docs/SEARCH_INTEGRATION.md).
+
+- Keep six independent search components: resonators, weapons and echoes for
+  admin, and the same three for builder. Repeated markup is acceptable.
+- Only `src/hooks/create-search-filters.ts` abstracts search state. Declare parsers
+  outside render, then call the generated hook with an explicit `scope`.
+- Filters use nuqs with namespaced URL keys, replace history and shallow updates.
+  Closing a dialog clears only its own parameters; echo scopes include the slot.
+- Each search owns its query/results hook, pure filtering helper, controls and
+  dialog lifecycle. Do not add shared entity-search props, render props or a
+  factory that accepts queries, arrays, predicates or UI controls.
+- `CommandSearch` supplies UI primitives only. Each search controls `open`, uses
+  `closeOnSelect={false}` on items and closes in its own selection handler.
+- Source restrictions belong to the query or its results hook. Different source
+  scopes require distinct query keys. User filters only narrow the source list.
+- Echo selection metadata uses `echoQueries.selection()`; invalidate it after
+  editing sonata associations. Do not fetch full details for every result.
+
 ## Caching
 
 - `src/providers/query-provider/query.tsx` uses `staleTime: "static"` for
@@ -138,7 +163,7 @@ Rules:
   LocalStorage collection itself is shared by origin, so never list or mutate a
   build without checking the session.
 - The builder UI contract and pending screens are documented in
-  `BUILDER_UI.md`.
+  [docs/BUILDER_UI.md](docs/BUILDER_UI.md).
 - If a query needs a different freshness (for example the builder), override
   `staleTime` in that query's options instead of changing the global default.
 - Any future persistence (TanStack DB, SQLite, IndexedDB) must namespace saved
@@ -221,6 +246,6 @@ Rules:
   (`src/db/schemas/builds.ts`, `src/modules/build`). Builds can start without a
   resonator; `/panel/builder/$buildId` loads one by ID and `/panel/my-builds`
   groups local builds by resonator. Cloud saves and cloud build listing are
-  still pending. See `BUILDER_UI.md`.
+  still pending. See [docs/BUILDER_UI.md](docs/BUILDER_UI.md).
 - Catalog weapon and echo queries are exposed; the builder editor that consumes
   them is still pending.
