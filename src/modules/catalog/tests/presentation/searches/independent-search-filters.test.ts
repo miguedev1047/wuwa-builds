@@ -211,19 +211,23 @@ describe("six independent result filters", () => {
     ).toBe(catalogEcho)
     expect(
       echoBuildSonataOptions([
-        { id: 9, name: "Solo catálogo", icon: "https://example.com/catalog-sonata.webp" },
+        {
+          id: 9,
+          name: "Solo catálogo",
+          icon: "https://example.com/catalog-sonata.webp",
+        },
         { id: 10, name: "Sin ecos", icon: "https://example.com/unlinked.webp" },
       ])
     ).toEqual([
       {
-        value: 9,
-        label: "Solo catálogo",
-        icon: "https://example.com/catalog-sonata.webp",
-      },
-      {
         value: 10,
         label: "Sin ecos",
         icon: "https://example.com/unlinked.webp",
+      },
+      {
+        value: 9,
+        label: "Solo catálogo",
+        icon: "https://example.com/catalog-sonata.webp",
       },
     ])
     expect(
