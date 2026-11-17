@@ -9,7 +9,22 @@ import {
 import { useBuildCollection } from "@build/client/hooks/build-live-queries"
 import { BuildIdentityProvider } from "@build/presentation/editor/build-identity"
 import { BuildEditorWorkspace } from "@build/presentation/editor/components/workspace/build-editor-workspace"
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router"
+import type { DockLinkItem } from "@/components/ui/dock"
+import { ChevronLeftIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import {
+  createFileRoute,
+  Link,
+  linkOptions,
+  useNavigate,
+} from "@tanstack/react-router"
+
+const backLink = {
+  type: "link",
+  label: "Volver",
+  icon: <HugeiconsIcon icon={ChevronLeftIcon} />,
+  linkOptions: linkOptions({ to: "/panel/my-builds" }),
+} satisfies DockLinkItem
 
 export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
   component: RouteComponent,
@@ -48,7 +63,7 @@ function RouteComponent() {
     <BuildIdentityProvider identity={identity}>
       <BuildEditorWorkspace
         build={build}
-        backLink={<Link to="/panel/my-builds" />}
+        backLink={backLink}
         onRename={(name) =>
           updateBuild(identity, (draft) => buildEdits.rename(draft, name))
         }

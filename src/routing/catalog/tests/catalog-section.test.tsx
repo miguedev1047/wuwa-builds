@@ -1,4 +1,4 @@
-import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { ActionDock } from "@/components/blocks/action-dock"
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
@@ -31,6 +31,7 @@ const dockItems: DockItemData[] = [
     icon: <svg />,
   },
   { label: "Agregar", icon: <svg />, onClick: () => {} },
+  { label: "No disponible", icon: <svg />, disabled: true },
 ]
 
 /** `<Link>` needs a router on the server, so the dock renders inside one. */
@@ -131,14 +132,15 @@ describe("CatalogSection", () => {
   })
 
   test("renders links with the router and actions with a button", async () => {
-    const html = await renderInRouter(
-      <CatalogSectionDockActions items={dockItems} />
-    )
+    const html = await renderInRouter(<ActionDock items={dockItems} />)
 
-    expect(html).toContain('aria-label="Acciones del catalogo"')
+    expect(html).toContain('aria-label="Acciones principales"')
     expect(html).toContain('role="toolbar"')
     expect(html).toContain('aria-label="Inicio"')
     expect(html).toContain('aria-label="Agregar"')
+    expect(html).toContain('aria-label="No disponible"')
+    expect(html).toContain('aria-disabled="true"')
+    expect(html).toContain('disabled=""')
     // Navigation items become router links, actions stay buttons.
     expect(html).toContain('href="/admin"')
     expect(html).toContain('<button type="button"')
@@ -146,6 +148,7 @@ describe("CatalogSection", () => {
     expect(html).toContain("--dock-accent:var(--primary)")
     // Fixed action bar pinned to the viewport.
     expect(html).toContain("fixed inset-x-0")
+    expect(html).toContain("h-[calc(96px+env(safe-area-inset-bottom))]")
   })
 
   test("renders the loading grid with the requested columns and aspect", () => {

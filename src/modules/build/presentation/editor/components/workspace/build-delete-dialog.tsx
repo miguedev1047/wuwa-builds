@@ -1,4 +1,6 @@
 import { AlertDialog } from "@/components/panelui/alert-dialog"
+import { DeleteIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 type BuildDeleteDialogProps = {
   open: boolean
@@ -14,13 +16,14 @@ export function BuildDeleteDialog({
 }: BuildDeleteDialogProps) {
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
-      <AlertDialog.Content size="sm">
-        <div>
-          <AlertDialog.Title>¿Eliminar build?</AlertDialog.Title>
-          <AlertDialog.Description>
-            La build se eliminará de este navegador de forma permanente.
-          </AlertDialog.Description>
-        </div>
+      <AlertDialog.Content tone="destructive" size="sm">
+        <AlertDialog.Media>
+          <HugeiconsIcon icon={DeleteIcon} />
+        </AlertDialog.Media>
+        <AlertDialog.Title>¿Eliminar build?</AlertDialog.Title>
+        <AlertDialog.Description>
+          La build se eliminará de este navegador de forma permanente.
+        </AlertDialog.Description>
         <AlertDialog.Footer>
           <AlertDialog.Cancel>Cancelar</AlertDialog.Cancel>
           <AlertDialog.Action tone="destructive" onClick={onDelete}>

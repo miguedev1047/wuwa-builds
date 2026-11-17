@@ -5,37 +5,78 @@ import { ResonatorEditorSection } from "@build/presentation/editor/sections/reso
 import { WeaponEditorSection } from "@build/presentation/editor/sections/weapon-section"
 import { EchoesEditorSection } from "@build/presentation/editor/sections/echoes-section"
 import { AppearanceSection } from "@build/presentation/editor/sections/appearance-section"
+import { Sheet } from "@/components/panelui/sheet"
+import type { BuildProps } from "@build/domain/build-record"
 
-export function SidebarEditorInspector() {
+type SidebarEditorInspectorProps = {
+  /** Whether to render the mobile Sheet behavior. */
+  isMobile: boolean
+  /** Whether the desktop panel or mobile Sheet is open. */
+  open: boolean
+  /** Updates the mobile Sheet open state. */
+  onOpenChange: (open: boolean) => void
+}
+
+/** Shows the active editor section as a desktop panel or mobile Sheet. */
+export function SidebarEditorInspector({
+  isMobile,
+  open,
+  onOpenChange,
+}: SidebarEditorInspectorProps) {
   const { buildId, sessionId } = useBuildIdentity()
   const { data } = useBuildCollection({ buildId, sessionId })
-
-  const selectedResonatorSection = data?.selectedEditorSection === "resonator"
-  const selectedWeaponSection = data?.selectedEditorSection === "weapon"
-  const selectedEchoSection = data?.selectedEditorSection === "echo"
-  const selectedAppearanceSection = data?.selectedEditorSection === "appareance"
 
   return (
     <Show when={data}>
       {(build) => (
-        <div
-          style={{ height: "100vh" }}
-          className="no-scrollbar flex w-90 scroll-fade-y flex-col overflow-y-scroll bg-sidebar p-4 text-sidebar-foreground"
+        <Show
+          when={isMobile}
+          fallback={
+            <Show when={open}>
+              <InspectorPanel build={build} />
+            </Show>
+          }
         >
-          <Show when={selectedResonatorSection}>
-            <ResonatorEditorSection build={build} />
-          </Show>
-          <Show when={selectedWeaponSection}>
-            <WeaponEditorSection build={build} />
-          </Show>
-          <Show when={selectedEchoSection}>
-            <EchoesEditorSection build={build} />
-          </Show>
-          <Show when={selectedAppearanceSection}>
-            <AppearanceSection build={build} />
-          </Show>
-        </div>
+          <Sheet side="bottom" open={open} onOpenChange={onOpenChange}>
+            <Sheet.Content
+              className="bg-sidebar p-0 text-sidebar-foreground"
+              detached={false}
+            >
+              <Sheet.Header title="Editor" />
+              <Sheet.Body className="min-h-0 flex-1 p-4">
+                <InspectorSections build={build} />
+              </Sheet.Body>
+            </Sheet.Content>
+          </Sheet>
+        </Show>
       )}
     </Show>
+  )
+}
+
+function InspectorPanel({ build }: { build: BuildProps }) {
+  return (
+    <aside className="no-scrollbar hidden h-full w-90 shrink-0 flex-col overflow-y-auto bg-sidebar p-4 text-sidebar-foreground md:flex">
+      <InspectorSections build={build} />
+    </aside>
+  )
+}
+
+function InspectorSections({ build }: { build: BuildProps }) {
+  return (
+    <>
+      <Show when={build.selectedEditorSection === "resonator"}>
+        <ResonatorEditorSection build={build} />
+      </Show>
+      <Show when={build.selectedEditorSection === "weapon"}>
+        <WeaponEditorSection build={build} />
+      </Show>
+      <Show when={build.selectedEditorSection === "echo"}>
+        <EchoesEditorSection build={build} />
+      </Show>
+      <Show when={build.selectedEditorSection === "appareance"}>
+        <AppearanceSection build={build} />
+      </Show>
+    </>
   )
 }

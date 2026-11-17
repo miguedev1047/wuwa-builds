@@ -6,8 +6,8 @@ callbacks.
 
 The editor route supplies an explicit build/session identity and resolves the
 local draft for that session, then passes it
-to `BuildEditorWorkspace`. The workspace composes the header, preview stage and
-sidebar inspector.
+to `BuildEditorWorkspace`. The workspace composes the header, preview stage,
+shared action Dock and editor inspector.
 
 ## Canvas
 
@@ -49,7 +49,10 @@ independent: the builder does not import the admin system.
 </BuildWorkspace.Root>
 ```
 
-The sidebar editor inspector owns the editing sections. The build card is a
+The editor inspector owns the editing sections. The shared action Dock provides
+the same floating action surface used by catalog screens. On desktop the
+inspector can collapse; on mobile the selected section opens in a left-side
+PanelUI Sheet. The build card is a
 single node of a PanelUI `Flow`; the stage fits it on mount
 and the Flow handles panning, zooming and dragging. The Flow also owns its
 controls, so they sit in the stage instead of needing a fixed parent.
@@ -83,16 +86,17 @@ the canvas and the editor sections can reuse it.
 
 ## Where to change the design
 
-| What                           | File                                                                  |
-| ------------------------------ | --------------------------------------------------------------------- |
-| Workspace shell                | `components/workspace/build-workspace.tsx`                            |
-| Workspace canvas (dots, light) | `src/components/panelui/canvas.tsx`                                   |
-| Canvas flow (card node)        | `components/workspace/build-workspace-stage.tsx`                      |
-| Canvas grid and areas          | `src/styles/components.css` (`.build-canvas`)                         |
-| Canvas panel card surface      | `components/build-canvas/build-canvas-card.tsx`                       |
-| Card surface                   | `../components/build-card/build-card.tsx`                             |
-| Search dialog and selection | `src/components/blocks/command-search/` |
-| Echo slot card                 | `../components/build-echo-card/build-echo-card.tsx`                   |
+| What                           | File                                                |
+| ------------------------------ | --------------------------------------------------- |
+| Workspace shell                | `components/workspace/build-workspace.tsx`          |
+| Workspace canvas (dots, light) | `src/components/panelui/canvas.tsx`                 |
+| Canvas flow (card node)        | `components/workspace/build-workspace-stage.tsx`    |
+| Floating action Dock           | `src/components/blocks/action-dock.tsx`             |
+| Canvas grid and areas          | `src/styles/components.css` (`.build-canvas`)       |
+| Canvas panel card surface      | `components/build-canvas/build-canvas-card.tsx`     |
+| Card surface                   | `../components/build-card/build-card.tsx`           |
+| Search dialog and selection    | `src/components/blocks/command-search/`             |
+| Echo slot card                 | `../components/build-echo-card/build-echo-card.tsx` |
 
 ## Dialogs
 

@@ -26,6 +26,7 @@ type DockItemBase = {
   label?: string
   className?: string
   active?: boolean
+  disabled?: boolean
   badge?: React.ReactNode
   menu?: DockMenuItem[]
   separator?: boolean
@@ -170,7 +171,7 @@ const ROOT_SIDES = {
 }
 
 const ITEM =
-  "group relative m-0 flex-none cursor-pointer select-none border-0 bg-transparent p-0 outline-none [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [font:inherit] w-[var(--dock-base)] h-[var(--dock-base)] text-[color:var(--dock-ink)] hover:z-[1] focus-visible:z-[1]"
+  "group relative m-0 flex-none cursor-pointer select-none border-0 bg-transparent p-0 outline-none [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [font:inherit] w-[var(--dock-base)] h-[var(--dock-base)] text-[color:var(--dock-ink)] hover:z-[1] focus-visible:z-[1] data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50"
 
 const TILE =
   "pointer-events-none absolute left-0 top-0 w-[var(--dock-base)] h-[var(--dock-base)] origin-top-left"
@@ -1394,10 +1395,13 @@ export function Dock({
           },
           className: `${ITEM}${item.className ? ` ${item.className}` : ""}`,
           "aria-label": item.label,
+          "aria-disabled": item.disabled || undefined,
+          "data-disabled": item.disabled ? "" : undefined,
           "aria-haspopup": item.menu?.length ? ("menu" as const) : undefined,
           "aria-expanded": item.menu?.length ? openIndex === index : undefined,
           "data-open": openIndex === index ? "" : undefined,
           onPointerDown: (event: React.PointerEvent<Element>) => {
+            if (item.disabled) return
             skipRef.current = -1
             const current = menuRef.current
             if (current && !current.closing) {
@@ -1416,6 +1420,10 @@ export function Dock({
             openMenu(index, "pointer")
           },
           onClick: (event: React.MouseEvent<Element>) => {
+            if (item.disabled) {
+              event.preventDefault()
+              return
+            }
             if (skipRef.current === index) {
               skipRef.current = -1
               return
@@ -1464,11 +1472,21 @@ export function Dock({
         )
 
         return item.type === "link" ? (
-          <Link key={index} {...item.linkOptions} {...shared}>
+          <Link
+            key={index}
+            {...item.linkOptions}
+            {...shared}
+            tabIndex={item.disabled ? -1 : undefined}
+          >
             {content}
           </Link>
         ) : (
-          <button key={index} type="button" {...shared}>
+          <button
+            key={index}
+            type="button"
+            disabled={item.disabled}
+            {...shared}
+          >
             {content}
           </button>
         )

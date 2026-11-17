@@ -37,7 +37,7 @@ export function BuildWorkspaceCanvas({
     <Canvas
       data-slot="build-workspace-canvas"
       className={cn(
-        "h-150 min-h-0 rounded-4xl border-8 border-card xl:h-full",
+        "h-full min-h-0 rounded-4xl border-8 border-card",
         className
       )}
       {...props}
@@ -245,7 +245,7 @@ function BuildWorkspaceEmpty({
       aria-disabled={!enabled}
       data-enabled={enabled}
       className={cn(
-        "group/empty h-32 border border-dashed transition ease-in-out",
+        "group/empty h-100 border border-dashed transition ease-in-out",
         "data-[enabled=true]:cursor-pointer data-[enabled=true]:hover:border-brand-accent",
         "data-[enabled=false]:cursor-not-allowed data-[enabled=false]:opacity-60",
         className

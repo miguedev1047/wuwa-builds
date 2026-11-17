@@ -1,4 +1,4 @@
-import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { ActionDock } from "@/components/blocks/action-dock"
 import { sonataDockActions } from "@/routing/catalog/echoes/sonatas/dock-actions"
 import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
 import { CatalogListRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/(panel)/admin/echoes/sonatas")({
   component: () => (
     <CatalogNavigation entity="echoes">
       <SonataListScreen />
-      <CatalogSectionDockActions items={sonataDockActions} />
+      <ActionDock items={sonataDockActions} />
     </CatalogNavigation>
   ),
   pendingComponent: () => (

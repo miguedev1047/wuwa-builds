@@ -1,5 +1,5 @@
 import { catalogResource } from "@/routing/catalog/catalog-resource"
-import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { ActionDock } from "@/components/blocks/action-dock"
 import { weaponDetailDockActions } from "@/routing/catalog/weapons/detail/dock-actions"
 import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
 import { CatalogDetailRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
@@ -38,7 +38,7 @@ function RouteComponent() {
   return (
     <CatalogNavigation entity="weapons">
       <WeaponDetail weaponId={Number(Route.useParams().id)} />
-      <CatalogSectionDockActions items={weaponDetailDockActions} />
+      <ActionDock items={weaponDetailDockActions} />
     </CatalogNavigation>
   )
 }

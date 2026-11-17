@@ -1,4 +1,4 @@
-import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { ActionDock } from "@/components/blocks/action-dock"
 import { echoListDockActions } from "@/routing/catalog/echoes/list/dock-actions"
 import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
 import { CatalogListRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/(panel)/admin/echoes/")({
   component: () => (
     <CatalogNavigation entity="echoes">
       <EchoListScreen />
-      <CatalogSectionDockActions items={echoListDockActions} />
+      <ActionDock items={echoListDockActions} />
     </CatalogNavigation>
   ),
   pendingComponent: () => (

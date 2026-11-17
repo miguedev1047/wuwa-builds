@@ -1,4 +1,3 @@
-import { type ReactElement } from "react"
 import { BuildExportCard } from "@build/presentation/editor/components/workspace/build-export-card"
 import { useBuildStats } from "@build/client/hooks/use-build-stats"
 import { Show } from "@/components/utility/show"
@@ -7,11 +6,12 @@ import { BuildWorkspace } from "@build/presentation/editor/components/workspace/
 import { BuildWorkspacePreview } from "@build/presentation/editor/components/workspace/build-workspace-preview"
 import { BuildWorkspaceStage } from "@build/presentation/editor/components/workspace/build-workspace-stage"
 import { useDownloadBuild } from "@/modules/build/presentation/editor/hooks/use-build-download"
+import type { DockLinkItem } from "@/components/ui/dock"
 import { SidebarContainer } from "../sidebar"
 
 type BuildEditorWorkspaceProps = {
   build: BuildProps
-  backLink: ReactElement
+  backLink: DockLinkItem
   onRename: (name: string) => void
   onDelete: () => void
 }
@@ -20,6 +20,7 @@ type BuildEditorWorkspaceProps = {
 export function BuildEditorWorkspace({
   build,
   backLink,
+  onRename,
   onDelete,
 }: BuildEditorWorkspaceProps) {
   const preview = useBuildStats(build)
@@ -29,6 +30,8 @@ export function BuildEditorWorkspace({
   return (
     <SidebarContainer
       backLink={backLink}
+      buildName={build.name}
+      onRename={onRename}
       canDownload={canDownload}
       isDownloading={exportSnapshot !== null}
       onDownload={handleDownload}

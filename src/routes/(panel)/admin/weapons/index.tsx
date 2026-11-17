@@ -1,4 +1,4 @@
-import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { ActionDock } from "@/components/blocks/action-dock"
 import { weaponListDockActions } from "@/routing/catalog/weapons/list/dock-actions"
 import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
 import { CatalogListRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/(panel)/admin/weapons/")({
   component: () => (
     <CatalogNavigation entity="weapons">
       <WeaponListScreen />
-      <CatalogSectionDockActions items={weaponListDockActions} />
+      <ActionDock items={weaponListDockActions} />
     </CatalogNavigation>
   ),
   pendingComponent: () => (

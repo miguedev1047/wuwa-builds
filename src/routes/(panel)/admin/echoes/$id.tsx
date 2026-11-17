@@ -1,5 +1,5 @@
 import { catalogResource } from "@/routing/catalog/catalog-resource"
-import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { ActionDock } from "@/components/blocks/action-dock"
 import { echoDetailDockActions } from "@/routing/catalog/echoes/detail/dock-actions"
 import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
 import { CatalogDetailRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
@@ -38,7 +38,7 @@ function RouteComponent() {
   return (
     <CatalogNavigation entity="echoes">
       <EchoDetail echoId={Number(Route.useParams().id)} />
-      <CatalogSectionDockActions items={echoDetailDockActions} />
+      <ActionDock items={echoDetailDockActions} />
     </CatalogNavigation>
   )
 }

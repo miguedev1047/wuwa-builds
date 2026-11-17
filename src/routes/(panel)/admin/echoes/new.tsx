@@ -1,4 +1,4 @@
-import { CatalogSectionDockActions } from "@/routing/catalog/catalog-dock"
+import { ActionDock } from "@/components/blocks/action-dock"
 import { echoNewDockActions } from "@/routing/catalog/echoes/new/dock-actions"
 import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
 import { EchoNew } from "@catalog/presentation/echoes/new/echo-new"
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/(panel)/admin/echoes/new")({
   component: () => (
     <CatalogNavigation entity="echoes">
       <EchoNew />
-      <CatalogSectionDockActions items={echoNewDockActions} />
+      <ActionDock items={echoNewDockActions} />
     </CatalogNavigation>
   ),
 })
