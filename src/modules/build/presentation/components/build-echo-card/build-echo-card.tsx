@@ -49,9 +49,10 @@ export function BuildEchoCard({
                   size="sm"
                   rounded="xl"
                   background="glass"
+                  className="shrink-0"
                 />
 
-                <div className="text-end">
+                <div className="w-full">
                   <Show when={setIcon}>
                     {(icon) => (
                       <Image
@@ -63,9 +64,7 @@ export function BuildEchoCard({
                       />
                     )}
                   </Show>
-
-                  <h2 className="line-clamp-1">{slot.mainStatLabel}</h2>
-
+                  <h2 className="text-end text-xs">{slot.mainStatLabel}</h2>
                   <div className="flex items-center justify-end gap-1 text-lg font-bold">
                     <GameIcon
                       name={statIconName(slot.mainStatStat)}

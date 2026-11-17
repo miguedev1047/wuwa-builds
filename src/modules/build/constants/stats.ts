@@ -60,7 +60,7 @@ export const SELECT_ECHO_MAIN_STATS = {
       },
       {
         stat: "healing_bonus",
-        label: "Bono de curacion",
+        label: "Bono Curación",
         values: [5.3, 9.5, 13.7, 18, 22.2, 26.4],
       },
     ],
@@ -116,7 +116,7 @@ export const SELECT_ECHO_MAIN_STATS = {
       },
       {
         stat: "energy_regen",
-        label: "Recarga de energia",
+        label: "Regen. energia",
         values: [6.4, 11.5, 16.6, 21.8, 26.9, 32],
       },
       {

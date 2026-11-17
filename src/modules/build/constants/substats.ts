@@ -12,27 +12,27 @@ export const SELECT_SUBSTATS_OPTIONS = {
     },
     {
       stat: "energy_regen",
-      label: "Regen. de Energía",
+      label: "Regen. Energía",
       values: [6.8, 7.6, 8.4, 9.2, 10, 10.8, 11.6, 12.4],
     },
     {
       stat: "basic_atk_bonus",
-      label: "Bono Ataque Básico",
+      label: "Ataque Básico",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
       stat: "heavy_atk_bonus",
-      label: "Bono Ataque Cargado",
+      label: "Ataque Cargado",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
       stat: "skill_bonus",
-      label: "Bono Habilidad",
+      label: "Habilidad Res.",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
       stat: "liberation_bonus",
-      label: "Bono Liberación",
+      label: "Liberación Res.",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
@@ -71,27 +71,27 @@ export const SELECT_SUBSTATS_OPTIONS = {
     },
     {
       stat: "energy_regen",
-      label: "Regen. de Energía",
+      label: "Regen. Energía",
       values: [6.8, 7.6, 8.4, 9.2, 10, 10.8, 11.6, 12.4],
     },
     {
       stat: "basic_atk_bonus",
-      label: "Bono Ataque Básico",
+      label: "Ataque Básico",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
       stat: "heavy_atk_bonus",
-      label: "Bono Ataque Cargado",
+      label: "Ataque Cargado",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
       stat: "skill_bonus",
-      label: "Bono Habilidad",
+      label: "Habilidad Res.",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
       stat: "liberation_bonus",
-      label: "Bono Liberación",
+      label: "Liberación Res.",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
@@ -130,27 +130,27 @@ export const SELECT_SUBSTATS_OPTIONS = {
     },
     {
       stat: "energy_regen",
-      label: "Regen. de Energía",
+      label: "Regen. Energía",
       values: [6.8, 7.6, 8.4, 9.2, 10, 10.8, 11.6, 12.4],
     },
     {
       stat: "skill_bonus",
-      label: "Bono Habilidad",
+      label: "Habilidad Res.",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
       stat: "liberation_bonus",
-      label: "Bono Liberación",
+      label: "Liberación Res.",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
       stat: "basic_atk_bonus",
-      label: "Bono Ataque Básico",
+      label: "Ataque Básico",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {
       stat: "heavy_atk_bonus",
-      label: "Bono Ataque Cargado",
+      label: "Ataque Cargado",
       values: [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6],
     },
     {

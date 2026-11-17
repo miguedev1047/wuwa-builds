@@ -25,7 +25,7 @@ export function EchoSetCard({ echoSet, echoId }: EchoSetCardProps) {
           {(icon) => (
             <HoverCardTrigger
               render={
-                <EditableSection.ItemMedia className="size-10 rounded-md">
+                <EditableSection.ItemMedia className="size-10">
                   <EditableSection.Image
                     src={icon}
                     alt={echoSet.name}
