@@ -1,3 +1,4 @@
+import { Card } from "@/components/panelui/card"
 import { cn } from "cn"
 import { type ComponentProps } from "react"
 
@@ -87,14 +88,11 @@ export function EditableSectionActions({
 export function EditableSectionContent({
   className,
   ...props
-}: ComponentProps<"div">) {
+}: ComponentProps<typeof Card>) {
   return (
-    <div
+    <Card
       data-slot="editable-section-content"
-      className={cn(
-        "rounded-lg bg-card p-4 ring-1 ring-foreground/10",
-        className
-      )}
+      className={cn("p-4", className)}
       {...props}
     />
   )

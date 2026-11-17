@@ -80,14 +80,13 @@ const SonataEffectFields = withForm({
           {title}
         </legend>
 
-        <FieldGroup className="grid gap-4 md:grid-cols-2">
+        <FieldGroup className="grid gap-4">
           <form.AppField name={`${slot}.pieces`}>
             {(field) => (
               <field.SelectField
                 label="Piezas"
                 options={SONATA_PIECES_OPTIONS}
                 placeholder="Seleccionar piezas"
-                className="md:col-span-2"
                 disabled={isPending}
               />
             )}
@@ -98,7 +97,6 @@ const SonataEffectFields = withForm({
               <field.SwitchField
                 label="Condicional"
                 description="Solo se activa en combate; el builder no lo suma."
-                className="md:col-span-2"
                 disabled={isPending}
               />
             )}
@@ -137,7 +135,6 @@ const SonataEffectFields = withForm({
                 label="Efecto"
                 placeholder="Daño Gelio +10%"
                 rows={3}
-                className="md:col-span-2"
                 disabled={isPending}
               />
             )}
@@ -157,14 +154,13 @@ export const SonataFields = withForm({
   render: function Render({ form, isPending }) {
     return (
       <FieldGroup className="gap-4">
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4">
           <form.AppField name="name">
             {(field) => (
               <field.TextField
                 label="Nombre"
                 placeholder="Escarcha helada"
                 disabled={isPending}
-                className="md:col-span-2"
               />
             )}
           </form.AppField>
@@ -175,7 +171,7 @@ export const SonataFields = withForm({
                 label="Icono"
                 placeholder="https://api-v2.encore.moe/resource/..."
                 inputMode="url"
-                className="md:col-span-2"
+
                 disabled={isPending}
               />
             )}
