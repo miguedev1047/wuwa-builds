@@ -28,6 +28,7 @@ export function SelectedEchoSlotPanel({
       fallback={
         <EchoBuildSearch
           slot={slot}
+          resonatorId={build.resonator.data?.id ?? 0}
           trigger={
             <BuildWorkspace.Empty className="h-90">
               <BuildWorkspace.EmptyTitle title="Selecciona un eco" />

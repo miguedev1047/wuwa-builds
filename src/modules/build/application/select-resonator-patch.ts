@@ -36,8 +36,15 @@ export function selectResonatorPatch({
 }: ResonatorSelectionInput): ResonatorSelectionPatch | null {
   if (current.data?.id === character.id) return null
 
+  const bestWeapon = detail.bestWeapons[0]?.weapon
+  const weapon = bestWeapon
+    ? { ...createEmptyWeapon(), data: bestWeapon }
+    : current.data
+      ? createEmptyWeapon()
+      : undefined
+
   return {
     resonator: createResonatorData({ character, detail }),
-    weapon: current.data ? createEmptyWeapon() : undefined,
+    weapon,
   }
 }

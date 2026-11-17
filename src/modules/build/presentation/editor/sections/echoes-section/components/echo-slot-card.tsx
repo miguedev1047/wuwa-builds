@@ -41,6 +41,7 @@ export function EchoSlotCard({
             setIcon={setIcon}
             slot={slot}
             echo={echo}
+            resonatorId={build.resonator.data?.id ?? 0}
           />
           <Separator />
           <EchoControls

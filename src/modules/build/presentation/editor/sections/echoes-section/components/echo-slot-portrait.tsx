@@ -18,6 +18,7 @@ interface EchoSlotPortraitProps {
   slot: EchoesDataProps
   isMain: boolean
   setIcon?: string
+  resonatorId: number
 }
 
 export function EchoSlotPortrait({
@@ -25,6 +26,7 @@ export function EchoSlotPortrait({
   slot,
   isMain,
   setIcon,
+  resonatorId,
 }: EchoSlotPortraitProps) {
   return (
     <div className="space-y-2">
@@ -47,6 +49,7 @@ export function EchoSlotPortrait({
       <div className="flex items-center gap-4">
         <EchoBuildSearch
           slot={slot}
+          resonatorId={resonatorId}
           trigger={
             <button
               type="button"

@@ -15,6 +15,7 @@ export function EchoBuildResults({
   onSelect: (item: EchoSelectionSummary) => void
 }) {
   const { items, sonataOptions } = useEchoBuildResults(filters.values)
+
   return (
     <>
       <CommandSearch.FilterContent

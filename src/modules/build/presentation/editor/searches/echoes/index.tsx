@@ -6,22 +6,34 @@ import { EchoBuildResults } from "@build/presentation/editor/searches/echoes/com
 import type { EchoesDataProps } from "@build/domain/build-record"
 import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import { useSelectEcho } from "@build/presentation/editor/hooks/use-select-echo"
+import { useRecommendedSonataFilter } from "@build/presentation/editor/searches/echoes/hooks/use-recommended-sonata-filter"
 
 /** Inputs owned by this build search, not a shared search contract. */
-type EchoBuildSearchProps = { slot: EchoesDataProps; trigger: ReactElement }
+type EchoBuildSearchProps = {
+  slot: EchoesDataProps
+  trigger: ReactElement
+  resonatorId: number
+}
 
 /** Owns the build echo dialog, URL scope and selection behavior. */
-export function EchoBuildSearch({ slot, trigger }: EchoBuildSearchProps) {
+export function EchoBuildSearch({
+  slot,
+  trigger,
+  resonatorId,
+}: EchoBuildSearchProps) {
   const filters = useEchoBuildFilters({ scope: `builder_echoes_${slot.index}` })
   const { reset } = filters
   const [open, setOpen] = useState(false)
   const openRef = useRef(false)
+
+  useRecommendedSonataFilter({ resonatorId, open, filters })
 
   const changeOpen = (next: boolean) => {
     openRef.current = next
     setOpen(next)
     if (!next) void reset()
   }
+
   useEffect(
     () => () => {
       if (openRef.current) void reset()

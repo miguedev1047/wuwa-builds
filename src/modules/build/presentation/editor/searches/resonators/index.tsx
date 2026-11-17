@@ -1,6 +1,6 @@
 import { CommandSearch } from "@/components/blocks/command-search"
 import { Button } from "@/components/panelui/button"
-import { Suspense, useEffect, useRef, useState } from "react"
+import { Suspense, useEffect, useRef, useState, useTransition } from "react"
 import type { CharacterSummary } from "@catalog/domain/character"
 import { useResonatorBuildFilters } from "@build/presentation/editor/searches/resonators/hooks/use-resonator-build-filters"
 import { ResonatorBuildResults } from "@build/presentation/editor/searches/resonators/components/resonator-build-results"
@@ -20,12 +20,14 @@ export function ResonatorBuildSearch({ build }: ResonatorBuildSearchProps) {
   const [open, setOpen] = useState(false)
   const openRef = useRef(false)
   const version = useRef(0)
+
   const changeOpen = (next: boolean) => {
     version.current += 1
     openRef.current = next
     setOpen(next)
     if (!next) void reset()
   }
+
   useEffect(
     () => () => {
       version.current += 1
@@ -35,25 +37,31 @@ export function ResonatorBuildSearch({ build }: ResonatorBuildSearchProps) {
     [reset]
   )
 
-  const { selectResonator } = useSelectResonator(build.buildId)
-  const [pending, setPending] = useState(false)
+  const { selectResonator } = useSelectResonator()
+  const [pending, startTransition] = useTransition()
   const busy = useRef(false)
-  const handleSelect = async (item: CharacterSummary) => {
-    if (busy.current) return
+
+  const handleSelect = (item: CharacterSummary): Promise<void> => {
+    if (busy.current) return Promise.resolve()
+
     busy.current = true
-    setPending(true)
     const selectedVersion = version.current
-    try {
-      const result = await selectResonator(item)
-      if (
-        (result === "selected" || result === "unchanged") &&
-        selectedVersion === version.current
-      )
-        changeOpen(false)
-    } finally {
-      busy.current = false
-      setPending(false)
-    }
+    const selection = (async () => {
+      try {
+        const result = await selectResonator(item)
+
+        if (
+          (result === "selected" || result === "unchanged") &&
+          selectedVersion === version.current
+        )
+          changeOpen(false)
+      } finally {
+        busy.current = false
+      }
+    })()
+    startTransition(() => selection)
+
+    return selection
   }
 
   let trigger = (
