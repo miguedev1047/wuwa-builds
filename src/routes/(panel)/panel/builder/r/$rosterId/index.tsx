@@ -21,13 +21,13 @@ export const Route = createFileRoute("/(panel)/panel/builder/r/$rosterId/")({
 })
 
 function RouteComponent() {
+  const context = Route.useRouteContext()
   const params = useParams({ from: "/(panel)/panel/builder/r/$rosterId/" })
-  const rosterId = parseInt(params.rosterId)
 
-  const { data: builds } = useRosterBuilds(
-    rosterId,
-    Route.useRouteContext().session.session.id
-  )
+  const rosterId = parseInt(params.rosterId)
+  const sessionId = context.session.session.id
+
+  const { data: builds } = useRosterBuilds(rosterId, sessionId)
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 py-20">

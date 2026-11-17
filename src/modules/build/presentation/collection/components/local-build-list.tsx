@@ -40,7 +40,7 @@ export function LocalBuildList({
           <ItemGroup>
             {rosters.map((roster) => (
               <RosterLink key={roster.resonatorId} id={roster.resonatorId}>
-                <Item variant="outline">
+                <Item variant="muted">
                   <ItemMedia variant="image">
                     <img
                       src={roster.icon}
