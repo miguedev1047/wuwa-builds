@@ -1,7 +1,6 @@
 import { Skeleton } from "@/components/ui/skeleton"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { ResonatorSequenceAddLoader } from "@catalog/presentation/resonators/detail/sections/sequences/components/resonator-sequence-add-loader"
-import { ResonatorSequenceSyncAction } from "@catalog/presentation/resonators/detail/sections/sequences/components/resonator-sequence-sync-action"
 import { ResonatorSequencesContent } from "@catalog/presentation/resonators/detail/sections/sequences/components/resonator-sequences-content"
 import { ResonatorSequencesSkeleton } from "@catalog/presentation/resonators/detail/sections/sequences/components/resonator-sequences-skeleton"
 import { Suspense } from "react"
@@ -21,8 +20,6 @@ export function ResonatorSequencesSection({
         </EditableSection.Description>
 
         <EditableSection.Actions>
-          <ResonatorSequenceSyncAction resonatorId={resonatorId} />
-
           <Suspense fallback={<Skeleton className="h-8 w-36" />}>
             <ResonatorSequenceAddLoader resonatorId={resonatorId} />
           </Suspense>
