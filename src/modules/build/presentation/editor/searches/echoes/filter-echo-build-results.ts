@@ -1,5 +1,6 @@
 import type { EchoSelectionSummary } from "@catalog/domain/echo"
 import type { EchoBuildFilters } from "@build/presentation/editor/searches/echoes/hooks/use-echo-build-filters"
+import type { SonataCatalogEntry } from "@catalog/domain/sonata"
 
 /** Narrows this source's list and preserves its original objects. */
 export function filterEchoBuildResults({
@@ -26,13 +27,11 @@ export function filterEchoBuildResults({
   })
 }
 
-/** Uses sonatas from this search's unfiltered source, not another catalog. */
-export function echoBuildSonataOptions(items: readonly EchoSelectionSummary[]) {
-  const options = new Map<number, { label: string; icon: string }>()
-  for (const item of items)
-    for (const set of item.sets)
-      options.set(set.setId, { label: set.name, icon: set.icon })
-  return Array.from(options, ([value, option]) => ({ value, ...option })).sort(
-    (a, b) => a.label.localeCompare(b.label)
-  )
+/** Uses every sonata set in the canonical catalog, including unlinked sets. */
+export function echoBuildSonataOptions(
+  sonatas: readonly Pick<SonataCatalogEntry, "id" | "name" | "icon">[]
+) {
+  return sonatas
+    .map(({ id, name, icon }) => ({ value: id, label: name, icon }))
+    .sort((a, b) => a.label.localeCompare(b.label))
 }

@@ -202,18 +202,28 @@ describe("six independent result filters", () => {
     ).toEqual([])
   })
 
-  test("builder echoes use catalog associations and preserve their selection rows", () => {
+  test("builder echoes use catalog associations and all catalog sonata options", () => {
     expect(
       filterEchoBuildResults({
         items: [catalogEcho],
         filters: { ...echoFilters, sonataId: 9 },
       })[0]
     ).toBe(catalogEcho)
-    expect(echoBuildSonataOptions([catalogEcho])).toEqual([
+    expect(
+      echoBuildSonataOptions([
+        { id: 9, name: "Solo catálogo", icon: "https://example.com/catalog-sonata.webp" },
+        { id: 10, name: "Sin ecos", icon: "https://example.com/unlinked.webp" },
+      ])
+    ).toEqual([
       {
         value: 9,
         label: "Solo catálogo",
         icon: "https://example.com/catalog-sonata.webp",
+      },
+      {
+        value: 10,
+        label: "Sin ecos",
+        icon: "https://example.com/unlinked.webp",
       },
     ])
     expect(
