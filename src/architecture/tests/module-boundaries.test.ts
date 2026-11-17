@@ -4,7 +4,7 @@ import ts from "typescript"
 /** Resolves imports structurally so comments and strings are not violations. */
 test("domain modules do not depend on application routing", async () => {
   const violations: string[] = []
-  const root = new URL("../modules/", import.meta.url).pathname
+  const root = new URL("../../modules/", import.meta.url).pathname
   for await (const path of new Bun.Glob("**/*.{ts,tsx}").scan(root)) {
     const source = await Bun.file(`${root}${path}`).text()
     const file = ts.createSourceFile(path, source, ts.ScriptTarget.Latest, true)

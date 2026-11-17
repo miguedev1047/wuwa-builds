@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { echoSlot } from "@build/__tests__/catalog-fixtures"
+import { echoSlot } from "@build/tests/fixtures/catalog-fixtures"
 import { resolveEchoBonuses } from "@build/application/calculation/echoes"
 
 describe("resolveEchoBonuses", () => {

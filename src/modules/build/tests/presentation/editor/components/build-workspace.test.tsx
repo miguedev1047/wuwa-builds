@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 
 import { BuildCanvas } from "@build/presentation/editor/components/build-canvas/build-canvas"
-import { characterDetail } from "@build/__tests__/catalog-fixtures"
+import { characterDetail } from "@build/tests/fixtures/catalog-fixtures"
 import { createBuildFromCharacter } from "@build/application/factories/build"
 
 describe("BuildCanvas", () => {

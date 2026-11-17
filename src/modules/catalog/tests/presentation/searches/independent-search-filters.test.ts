@@ -16,7 +16,7 @@ import {
   characterDetail,
   weaponDetail,
   echoSummary,
-} from "@build/__tests__/catalog-fixtures"
+} from "@build/tests/fixtures/catalog-fixtures"
 import type { EncoreCharacterSummary } from "@encore/domain/character"
 import type { EncoreWeaponSummary } from "@encore/domain/weapon"
 import type { EncoreEchoSummary } from "@encore/domain/echo"

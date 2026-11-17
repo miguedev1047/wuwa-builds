@@ -56,6 +56,25 @@ Modules follow a light DDD split under `src/modules/<domain>`:
 - `server/`: TanStack server functions; the only entry point for the UI.
 - `queries/`: shared query keys and TanStack Query options.
 
+## Tests
+
+- Keep tests for a domain in one `tests/` directory at the domain root, for
+  example `src/modules/build/tests/`. Do not colocate test files beside source
+  files or create `__tests__/` directories.
+- Inside `tests/`, mirror the source layer and capability so each test's subject
+  is easy to find: `domain/`, `application/`, `infrastructure/`,
+  `presentation/`, and, where useful, subfolders such as
+  `presentation/components/`, `presentation/hooks/` or
+  `presentation/helpers/`. Use the same descriptive filename as the unit under
+  test with a `.test.ts` or `.test.tsx` suffix.
+- Keep tests for shared code outside `src/modules/<domain>` in a `tests/`
+  directory owned by that code area (for example `src/hooks/tests/` or
+  `src/architecture/tests/`), following the same source-layer/capability
+  grouping. Do not create a repository-wide test dump.
+- When adding or moving tests, update imports and keep the test next to its
+  owning domain and responsibility. Do not leave duplicate tests in the old
+  location.
+
 Rules:
 
 - Anything touching `fs`, `child_process`, or the network lives in a

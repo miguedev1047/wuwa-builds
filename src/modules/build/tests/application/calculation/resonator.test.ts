@@ -6,7 +6,7 @@ import {
   characterDetail,
   resonatorProperty,
   resonatorSequence,
-} from "@build/__tests__/catalog-fixtures"
+} from "@build/tests/fixtures/catalog-fixtures"
 import { resolveResonatorStats } from "@build/application/calculation/resonator"
 
 const baseProperties = [

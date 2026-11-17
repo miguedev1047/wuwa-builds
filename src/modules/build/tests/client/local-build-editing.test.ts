@@ -1,7 +1,7 @@
 /// <reference types="bun" />
 
 import { describe, expect, test } from "bun:test"
-import { characterDetail } from "@build/__tests__/catalog-fixtures"
+import { characterDetail } from "@build/tests/fixtures/catalog-fixtures"
 import { createEmptyBuild } from "@build/application/factories/build"
 import {
   buildCollection,

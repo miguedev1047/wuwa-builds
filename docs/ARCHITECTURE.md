@@ -305,7 +305,7 @@ changes. Build-affecting changes also require `bun run build` and, when relevant
 and applied through the local or remote migration runner; application startup is
 not a database migration step.
 
-The architecture boundary test in `src/architecture/module-boundaries.test.ts`
+The architecture boundary test in `src/architecture/tests/module-boundaries.test.ts`
 checks that feature modules do not depend on router code.
 
 ## Further reading and entry points

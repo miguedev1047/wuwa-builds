@@ -63,7 +63,8 @@ character and weapon breaches are intentionally not stored: the D1 reader
 returns them as empty arrays (weapon breaches are no longer part of the domain
 type). Passive descriptions are converted to `value_number` and the D1 reader
 returns them as their numeric string. Writes delete and re-insert the entity, so
-a game patch never leaves stale child rows behind. `catalog-d1.test.ts` applies
+a game patch never leaves stale child rows behind. The catalog D1 adapter test
+(`src/modules/catalog/tests/infrastructure/catalog-d1.test.ts`) applies
 the generated migrations to an in-memory SQLite database and asserts the stored
 document round trip.
 
