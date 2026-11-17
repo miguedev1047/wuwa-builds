@@ -54,6 +54,14 @@ export const getCharacter = createServerFn({
       with: {
         media: { orderBy: { sortOrder: "asc" } },
         tags: { orderBy: { sortOrder: "asc" } },
+        bestWeapons: {
+          orderBy: { sortOrder: "asc" },
+          with: { weapon: true },
+        },
+        bestSets: {
+          orderBy: { sortOrder: "asc" },
+          with: { sonata: true },
+        },
         properties: {
           orderBy: { sortOrder: "asc" },
           with: { growth: { orderBy: { sortOrder: "asc" } } },

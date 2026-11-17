@@ -11,6 +11,8 @@ import type { AppDb } from "@db/create"
 import { relations } from "@db/relations"
 import {
   resonators,
+  resonatorBestWeapons,
+  resonatorBestSets,
   resonatorsMedia,
   sonataSetEffects,
   sonataSets,
@@ -40,7 +42,7 @@ import {
   saveWeapon,
 } from "@catalog/infrastructure/catalog-d1.server"
 
-const MIGRATIONS_DIR = join(import.meta.dir, "../../../../drizzle")
+const MIGRATIONS_DIR = join(import.meta.dir, "../../../../../drizzle")
 
 /**
  * Applies every generated migration to a throwaway in-memory SQLite database.
@@ -286,6 +288,82 @@ describe("encore catalog schema", () => {
     )
     expect(await readWeapon(db, weapon.id)).toEqual(weapon)
     expect(await readEcho(db, echo.id)).toEqual(echo)
+  })
+
+  test("loads recommended weapons with catalog data in priority order", async () => {
+    await db.insert(resonators).values({
+      id: 1409,
+      name: "Cartethyia",
+      rarity: 5,
+      element: "aero",
+      weaponType: "sword",
+    })
+    await db.insert(weapons).values([
+      {
+        id: 21050016,
+        name: "Arma principal",
+        rarity: 5,
+        type: "sword",
+      },
+      {
+        id: 21050017,
+        name: "Arma secundaria",
+        rarity: 4,
+        type: "sword",
+      },
+    ])
+    await db.insert(resonatorBestWeapons).values([
+      { resonatorId: 1409, weaponId: 21050017, sortOrder: 2 },
+      { resonatorId: 1409, weaponId: 21050016, sortOrder: 1 },
+    ])
+
+    const resonator = await db.query.resonators.findFirst({
+      where: { id: 1409 },
+      with: {
+        bestWeapons: {
+          orderBy: { sortOrder: "asc" },
+          with: { weapon: true },
+        },
+      },
+    })
+
+    expect(resonator?.bestWeapons.map(({ weapon }) => weapon?.name)).toEqual([
+      "Arma principal",
+      "Arma secundaria",
+    ])
+  })
+
+  test("loads recommended Sonata sets with catalog data in priority order", async () => {
+    await db.insert(resonators).values({
+      id: 1410,
+      name: "Cartethyia",
+      rarity: 5,
+      element: "aero",
+      weaponType: "sword",
+    })
+    await db.insert(sonataSets).values([
+      { id: 1, name: "Set principal", source: "encore" },
+      { id: 2, name: "Set secundario", source: "encore" },
+    ])
+    await db.insert(resonatorBestSets).values([
+      { resonatorId: 1410, setId: 2, sortOrder: 2 },
+      { resonatorId: 1410, setId: 1, sortOrder: 1 },
+    ])
+
+    const resonator = await db.query.resonators.findFirst({
+      where: { id: 1410 },
+      with: {
+        bestSets: {
+          orderBy: { sortOrder: "asc" },
+          with: { sonata: true },
+        },
+      },
+    })
+
+    expect(resonator?.bestSets.map(({ sonata }) => sonata?.name)).toEqual([
+      "Set principal",
+      "Set secundario",
+    ])
   })
 
   test("maps the Encore tier to the echo class and cost", () => {

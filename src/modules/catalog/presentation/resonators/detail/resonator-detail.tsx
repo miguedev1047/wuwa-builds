@@ -4,6 +4,8 @@ import { ResonatorSkillsSection } from "@catalog/presentation/resonators/detail/
 import { ResonatorSequencesSection } from "@catalog/presentation/resonators/detail/sections/sequences"
 import { ResonatorPassivesSection } from "@catalog/presentation/resonators/detail/sections/passives"
 import { ResonatorTagsSection } from "@catalog/presentation/resonators/detail/sections/tags"
+import { ResonatorBestWeaponsSection } from "@catalog/presentation/resonators/detail/sections/best-weapons"
+import { ResonatorBestSetsSection } from "@catalog/presentation/resonators/detail/sections/best-sets"
 import { ResonatorLevelsSection } from "@catalog/presentation/resonators/detail/sections/levels"
 
 export function ResonatorDetail({ resonatorId }: { resonatorId: number }) {
@@ -15,6 +17,8 @@ export function ResonatorDetail({ resonatorId }: { resonatorId: number }) {
       <ResonatorSequencesSection resonatorId={resonatorId} />
       <ResonatorPassivesSection resonatorId={resonatorId} />
       <ResonatorTagsSection resonatorId={resonatorId} />
+      <ResonatorBestWeaponsSection resonatorId={resonatorId} />
+      <ResonatorBestSetsSection resonatorId={resonatorId} />
       <ResonatorLevelsSection resonatorId={resonatorId} />
     </div>
   )

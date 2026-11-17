@@ -14,6 +14,8 @@ import {
   uniqueIndex,
 } from "drizzle-orm/sqlite-core"
 import { getDate } from "@db/helpers/gen-date"
+import { weapons } from "@db/schemas/weapons"
+import { sonataSets } from "@db/schemas/echoes"
 
 /**
  * Character endpoint mirror (`character?page=1` + `character/{id}`).
@@ -126,6 +128,62 @@ export const resonatorTags = sqliteTable(
   },
   (table) => [
     index("resonator_tags_resonator_idx").on(
+      table.resonatorId,
+      table.sortOrder
+    ),
+  ]
+)
+
+/** Ordered weapon recommendations for a resonator, best option first. */
+export const resonatorBestWeapons = sqliteTable(
+  "resonator_best_weapons",
+  {
+    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+    resonatorId: integer("resonator_id", { mode: "number" })
+      .notNull()
+      .references(() => resonators.id, { onDelete: "cascade" }),
+    weaponId: integer("weapon_id", { mode: "number" })
+      .notNull()
+      .references(() => weapons.id, { onDelete: "cascade" }),
+    /** Priority position; 1 is the best weapon. */
+    sortOrder: integer("sort_order", { mode: "number" }).notNull(),
+
+    ...getDate(),
+  },
+  (table) => [
+    uniqueIndex("resonator_best_weapons_resonator_weapon_idx").on(
+      table.resonatorId,
+      table.weaponId
+    ),
+    uniqueIndex("resonator_best_weapons_resonator_order_idx").on(
+      table.resonatorId,
+      table.sortOrder
+    ),
+  ]
+)
+
+/** Ordered Sonata set recommendations for a resonator, best option first. */
+export const resonatorBestSets = sqliteTable(
+  "resonator_best_sets",
+  {
+    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+    resonatorId: integer("resonator_id", { mode: "number" })
+      .notNull()
+      .references(() => resonators.id, { onDelete: "cascade" }),
+    setId: integer("set_id", { mode: "number" })
+      .notNull()
+      .references(() => sonataSets.id, { onDelete: "cascade" }),
+    /** Priority position; 1 is the best Sonata set. */
+    sortOrder: integer("sort_order", { mode: "number" }).notNull(),
+
+    ...getDate(),
+  },
+  (table) => [
+    uniqueIndex("resonator_best_sets_resonator_set_idx").on(
+      table.resonatorId,
+      table.setId
+    ),
+    uniqueIndex("resonator_best_sets_resonator_order_idx").on(
       table.resonatorId,
       table.sortOrder
     ),
@@ -294,6 +352,10 @@ export type ResonatorMediaRow = typeof resonatorsMedia.$inferSelect
 export type NewResonatorMediaRow = typeof resonatorsMedia.$inferInsert
 export type ResonatorTagRow = typeof resonatorTags.$inferSelect
 export type NewResonatorTagRow = typeof resonatorTags.$inferInsert
+export type ResonatorBestWeaponRow = typeof resonatorBestWeapons.$inferSelect
+export type NewResonatorBestWeaponRow = typeof resonatorBestWeapons.$inferInsert
+export type ResonatorBestSetRow = typeof resonatorBestSets.$inferSelect
+export type NewResonatorBestSetRow = typeof resonatorBestSets.$inferInsert
 export type ResonatorPropertyRow = typeof resonatorPropertyLevels.$inferSelect
 export type NewResonatorPropertyRow =
   typeof resonatorPropertyLevels.$inferInsert
@@ -313,6 +375,10 @@ export const resonatorRelations = defineRelationsPart(
     resonators,
     resonatorsMedia,
     resonatorTags,
+    resonatorBestWeapons,
+    resonatorBestSets,
+    weapons,
+    sonataSets,
     resonatorPropertyLevels,
     resonatorPropertyGrowth,
     resonatorSkills,
@@ -328,6 +394,14 @@ export const resonatorRelations = defineRelationsPart(
       tags: r.many.resonatorTags({
         from: r.resonators.id,
         to: r.resonatorTags.resonatorId,
+      }),
+      bestWeapons: r.many.resonatorBestWeapons({
+        from: r.resonators.id,
+        to: r.resonatorBestWeapons.resonatorId,
+      }),
+      bestSets: r.many.resonatorBestSets({
+        from: r.resonators.id,
+        to: r.resonatorBestSets.resonatorId,
       }),
       properties: r.many.resonatorPropertyLevels({
         from: r.resonators.id,
@@ -350,6 +424,26 @@ export const resonatorRelations = defineRelationsPart(
       resonator: r.one.resonators({
         from: r.resonatorTags.resonatorId,
         to: r.resonators.id,
+      }),
+    },
+    resonatorBestWeapons: {
+      resonator: r.one.resonators({
+        from: r.resonatorBestWeapons.resonatorId,
+        to: r.resonators.id,
+      }),
+      weapon: r.one.weapons({
+        from: r.resonatorBestWeapons.weaponId,
+        to: r.weapons.id,
+      }),
+    },
+    resonatorBestSets: {
+      resonator: r.one.resonators({
+        from: r.resonatorBestSets.resonatorId,
+        to: r.resonators.id,
+      }),
+      sonata: r.one.sonataSets({
+        from: r.resonatorBestSets.setId,
+        to: r.sonataSets.id,
       }),
     },
     resonatorsMedia: {

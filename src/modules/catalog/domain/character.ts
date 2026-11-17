@@ -1,5 +1,7 @@
 import type {
   ResonatorMediaRow,
+  ResonatorBestWeaponRow,
+  ResonatorBestSetRow,
   ResonatorPassiveRow,
   ResonatorPropertyGrowthRow,
   ResonatorPropertyRow,
@@ -7,6 +9,8 @@ import type {
   ResonatorSequenceRow,
   ResonatorSkillRow,
   ResonatorTagRow,
+  WeaponRow,
+  SonataSetRow,
 } from "@db/schema"
 
 /** List row: every scalar column of the canonical resonator table. */
@@ -22,6 +26,8 @@ export type CharacterSkill = Pick<
 export interface CharacterDetail extends ResonatorRow {
   media: ResonatorMediaRow[]
   tags: ResonatorTagRow[]
+  bestWeapons: (ResonatorBestWeaponRow & { weapon: WeaponRow | null })[]
+  bestSets: (ResonatorBestSetRow & { sonata: SonataSetRow | null })[]
   properties: (ResonatorPropertyRow & {
     growth: ResonatorPropertyGrowthRow[]
   })[]

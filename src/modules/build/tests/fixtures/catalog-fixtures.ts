@@ -127,6 +127,8 @@ export function characterDetail({
     portrait: "",
     media: [],
     tags: [],
+    bestWeapons: [],
+    bestSets: [],
     properties,
     skills: [],
     sequences,

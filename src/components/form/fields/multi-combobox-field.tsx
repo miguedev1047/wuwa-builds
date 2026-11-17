@@ -7,6 +7,7 @@ import type { ReactNode } from "react"
 export type MultiComboboxOption = {
   label: string
   value: string
+  icon?: string
 }
 
 type MultiComboboxFieldProps = {
@@ -59,6 +60,15 @@ export function MultiComboboxField({
             key={String(option.value)}
             value={String(option.value)}
             label={option.label}
+            start={
+              option.icon ? (
+                <img
+                  className="aspect-square size-full rounded-md bg-accent object-contain"
+                  src={option.icon}
+                  alt={option.label}
+                />
+              ) : null
+            }
           />
         ))}
       </Combobox>
