@@ -34,9 +34,14 @@ export function EchoSetAddAction({ echoId, options }: EchoSetAddActionProps) {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: (value: EchoSetInput) => createEchoSet({ data: value }),
     onSuccess: async () => {
-      await queryClient.invalidateQueries({
-        queryKey: wuwaBuildsKeys.echo(echoId),
-      })
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: wuwaBuildsKeys.echo(echoId),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: wuwaBuildsKeys.echoesSelection(),
+        }),
+      ])
       toast.add({ title: "Set agregado al eco", type: "success" })
       setOpen(false)
     },

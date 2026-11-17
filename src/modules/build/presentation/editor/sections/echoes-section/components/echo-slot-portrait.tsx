@@ -11,7 +11,7 @@ import {
 } from "@build/presentation/editor/hooks/stats-view-model"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { EchoPicker } from "./echo-picker"
+import { EchoBuildSearch } from "@build/presentation/editor/searches/echoes"
 
 interface EchoSlotPortraitProps {
   echo: EchoSummary
@@ -45,11 +45,14 @@ export function EchoSlotPortrait({
       </div>
 
       <div className="flex items-center gap-4">
-        <BuildWorkspace.Dialog
-          title="Cambia el eco"
-          description={`El eco elegido se asignará al slot ${slot.index + 1}.`}
-          triggerComponent={
-            <button className="group/image relative overflow-hidden rounded-lg">
+        <EchoBuildSearch
+          slot={slot}
+          trigger={
+            <button
+              type="button"
+              aria-label="Cambiar eco"
+              className="group/image relative overflow-hidden rounded-lg"
+            >
               <Image
                 src={echo.icon}
                 alt={echo.name}
@@ -62,11 +65,7 @@ export function EchoSlotPortrait({
               </div>
             </button>
           }
-        >
-          {({ close }) => (
-            <EchoPicker slot={slot} columns={4} onSelected={close} />
-          )}
-        </BuildWorkspace.Dialog>
+        />
 
         <div className="space-y-2">
           <Show when={isMain}>

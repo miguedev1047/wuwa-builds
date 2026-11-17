@@ -1,33 +1,10 @@
 import { Skeleton } from "@/components/ui/skeleton"
-import { cn } from "cn"
-import {
-  buildCatalogPickerVariants,
-  type BuildCatalogPickerColumns,
-} from "@build/presentation/components/build-catalog-picker"
 import { Separator } from "@/components/ui/separator"
 
-interface ResonatorSkeletonProps {
-  columns?: BuildCatalogPickerColumns
-}
-
-const PICKER_COLUMNS = 6
 const SKILLS = 5
 const PASSIVES = 10
 const BASE_STATS = 3
 const SEQUENCES = 6
-
-/** Square skeleton that mirrors the resonator picker grid. */
-export function ResonatorPickerLoading({
-  columns = PICKER_COLUMNS,
-}: ResonatorSkeletonProps = {}) {
-  return (
-    <div className={cn(buildCatalogPickerVariants({ columns }))}>
-      {Array.from({ length: columns * 2 }).map((_, index) => (
-        <Skeleton key={index} className="aspect-2/3" />
-      ))}
-    </div>
-  )
-}
 
 /** Placeholder that mirrors the layout of the resonator section. */
 export function ResonatorSectionLoading() {

@@ -7,7 +7,7 @@ import { WeaponPortrait } from "@build/presentation/editor/sections/weapon-secti
 import { WeaponRefinements } from "@build/presentation/editor/sections/weapon-section/components/weapon-refinements"
 import { weaponQueries } from "@catalog/queries/weapons"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
-import { WeaponPickerDialog } from "@build/presentation/editor/sections/weapon-section/components/weapon-picker-dialog"
+import { WeaponBuildSearch } from "@build/presentation/editor/searches/weapons"
 import { WeaponBaseStats } from "./weapon-base-stats"
 import { Separator } from "@/components/ui/separator"
 
@@ -30,7 +30,7 @@ export function WeaponSectionContent({
         <BuildWorkspace.Text family="bold" textColor="muted" size="xl">
           Arma
         </BuildWorkspace.Text>
-        <WeaponPickerDialog build={build} />
+        <WeaponBuildSearch build={build} />
       </div>
 
       <div className="flex h-full w-full flex-col justify-between gap-5">

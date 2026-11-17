@@ -14,9 +14,10 @@ export function useSelectEcho(buildId: string) {
     const updated = updateBuild(identity, (draft) =>
       buildEdits.selectEcho(draft, targetIndex, echo)
     )
-    if (!updated) return
+    if (!updated) return false
 
-    void queryClient.query(echoQueries.detail(echo.id))
+    void queryClient.query(echoQueries.detail(echo.id)).catch(() => undefined)
+    return true
   }
 
   return { selectEcho }

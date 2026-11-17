@@ -15,3 +15,8 @@ export interface EchoDetail extends EchoRow {
   skill: EchoSkillRow | null
   skillBonuses: EchoSkillBonusRow[]
 }
+
+/** Lightweight selection rows include only the sonata metadata needed by filters. */
+export interface EchoSelectionSummary extends EchoRow {
+  sets: Pick<EchoSetRow, "setId" | "name" | "icon">[]
+}

@@ -1,34 +1,12 @@
 import { Button } from "@/components/panelui/button"
-import { Command } from "@/components/panelui/command"
 import { PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Skeleton } from "@/components/ui/skeleton"
-import { useCommandSearch } from "@/components/blocks/command-search/command-search-context"
 import { cn } from "cn"
-import type { ComponentProps, ReactNode } from "react"
+import type { ReactNode } from "react"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { XIcon } from "@hugeicons/core-free-icons"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
-
-type CommandSearchItemProps = ComponentProps<typeof Command.Item>
-
-/** Selects a result and closes the search dialog. */
-export function CommandSearchItem({
-  onSelect,
-  ...props
-}: CommandSearchItemProps) {
-  const { close } = useCommandSearch()
-
-  return (
-    <Command.Item
-      {...props}
-      onSelect={() => {
-        onSelect?.()
-        close()
-      }}
-    />
-  )
-}
 
 type CommandSearchFilterTriggerProps = {
   children?: ReactNode
@@ -87,15 +65,19 @@ type CommandSearchLoadingProps = {
 }
 
 /** Placeholder rows for a Suspense fallback. */
-export function CommandSearchLoading({ count = 6 }: CommandSearchLoadingProps) {
+export function CommandSearchLoading({
+  count = 10,
+}: CommandSearchLoadingProps) {
   return (
     <div aria-hidden className="space-y-1 p-1">
+      <Skeleton className="my-6 h-7 w-full" />
+      <Separator />
       {Array.from({ length: count }, (_, index) => (
         <div
           key={index}
-          className="flex min-h-7 items-center gap-2 rounded-md px-2.5 py-1.5"
+          className="mt-2 flex min-h-7 items-center gap-2 px-2 py-1.5"
         >
-          <Skeleton className="size-7 rounded-lg" />
+          <Skeleton className="size-5.5" />
           <Skeleton className="h-3 w-9/20" />
         </div>
       ))}

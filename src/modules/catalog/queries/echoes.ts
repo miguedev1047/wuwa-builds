@@ -1,5 +1,6 @@
 import {
   getEcho,
+  getEchoSelection,
   getEchoes,
   getEchoesDetailed,
 } from "@catalog/server/echoes/echoes"
@@ -11,6 +12,13 @@ import {
 } from "@catalog/queries/cache"
 
 export const echoQueries = {
+  selection: () =>
+    queryOptions({
+      queryKey: wuwaBuildsKeys.echoesSelection(),
+      queryFn: () => getEchoSelection(),
+      staleTime: WUWA_BUILDS_STALE_TIME,
+      gcTime: WUWA_BUILDS_GC_TIME,
+    }),
   list: () =>
     queryOptions({
       queryKey: wuwaBuildsKeys.echoes(),

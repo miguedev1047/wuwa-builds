@@ -3,7 +3,6 @@ import { CommandSearchRoot } from "@/components/blocks/command-search/command-se
 import {
   CommandSearchFilterContent,
   CommandSearchFilterTrigger,
-  CommandSearchItem,
   CommandSearchLoading,
 } from "@/components/blocks/command-search/components/command-search-parts"
 
@@ -14,7 +13,7 @@ export const CommandSearch = {
   List: Command.List,
   Empty: Command.Empty,
   Group: Command.Group,
-  Item: CommandSearchItem,
+  Item: Command.Item,
   Separator: Command.Separator,
   FilterTrigger: CommandSearchFilterTrigger,
   FilterContent: CommandSearchFilterContent,

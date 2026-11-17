@@ -12,7 +12,7 @@ import {
   ResonatorFields,
   resonatorFormDefaults,
 } from "@catalog/presentation/resonators/shared/components/resonator-fields"
-import { ResonatorSearch } from "@catalog/presentation/resonators/shared/components/resonator-search"
+import { ResonatorAdminSearch } from "@catalog/presentation/searches/resonators"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { createResonator } from "@catalog/server/resonators/resonators"
 import type { EncoreCharacterSummary } from "@encore/domain/character"
@@ -79,7 +79,7 @@ export function ResonatorForm() {
       </form>
 
       <div className="grid w-full grid-cols-2 gap-2">
-        <ResonatorSearch
+        <ResonatorAdminSearch
           selectedId={selected?.id}
           onSelect={setSelected}
           disabled={isPending}

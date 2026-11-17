@@ -8,7 +8,7 @@ import {
   WeaponFields,
   weaponFormDefaults,
 } from "@catalog/presentation/weapons/shared/components/weapon-fields"
-import { WeaponSearch } from "@catalog/presentation/weapons/shared/components/weapon-search"
+import { WeaponAdminSearch } from "@catalog/presentation/searches/weapons"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { createWeapon } from "@catalog/server/weapons/weapons"
 import type { EncoreWeaponSummary } from "@encore/domain/weapon"
@@ -75,7 +75,7 @@ export function WeaponForm() {
       </form>
 
       <div className="grid w-full grid-cols-2 gap-2">
-        <WeaponSearch
+        <WeaponAdminSearch
           selectedId={selected?.id}
           onSelect={setSelected}
           disabled={isPending}

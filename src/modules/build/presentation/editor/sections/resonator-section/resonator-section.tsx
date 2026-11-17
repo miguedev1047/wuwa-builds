@@ -3,7 +3,7 @@ import { Show } from "@/components/utility/show"
 import { ResonatorSectionContent } from "@build/presentation/editor/sections/resonator-section/components/resonator-section-content"
 import { ResonatorSectionLoading } from "@build/presentation/editor/sections/resonator-section/ui-states"
 import { Suspense } from "react"
-import { ResonatorPickerDialog } from "@build/presentation/editor/sections/resonator-section/components/resonator-picker-dialog"
+import { ResonatorBuildSearch } from "@build/presentation/editor/searches/resonators"
 
 /** Editable resonator section of the builder. */
 export function ResonatorEditorSection({ build }: { build: BuildProps }) {
@@ -12,7 +12,7 @@ export function ResonatorEditorSection({ build }: { build: BuildProps }) {
       {(currentBuild) => (
         <Show
           when={currentBuild.resonator.data}
-          fallback={<ResonatorPickerDialog build={currentBuild} />}
+          fallback={<ResonatorBuildSearch build={currentBuild} />}
         >
           {(resonator) => (
             <Suspense fallback={<ResonatorSectionLoading />}>

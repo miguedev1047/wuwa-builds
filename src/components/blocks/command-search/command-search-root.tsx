@@ -2,26 +2,14 @@
 
 import { Command } from "@/components/panelui/command"
 import { Popover } from "@/components/ui/popover"
-import { CommandSearchContext } from "@/components/blocks/command-search/command-search-context"
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type ReactElement,
-  type ReactNode,
-} from "react"
+import type { ReactElement, ReactNode } from "react"
 
-/** Shared Command dialog with optional URL synchronized search and filters. */
+/** Generic command surface; each consumer controls its own dialog lifecycle. */
 export type CommandSearchRootProps = {
-  /** Element the dialog trigger merges into (usually a button). */
   trigger: ReactElement
-  /** Clears this search's URL state after the dialog closes. */
-  clearSearchParams: () => void
-  /** Controlled search text, commonly backed by nuqs. */
   search?: string
-  /** Receives search text changes. */
   onSearchChange?: (search: string) => void
+  filter?: boolean
   title?: string
   description?: string
   className?: string
@@ -31,60 +19,41 @@ export type CommandSearchRootProps = {
   onOpenChange?: (open: boolean) => void
 }
 
-/** Renders a reusable Command dialog and clears its URL state on close. */
+/** Renders a dialog without imposing selection, reset or persistence behavior. */
 export function CommandSearchRoot({
   trigger,
-  clearSearchParams,
   search,
-  title = "Buscar",
   onSearchChange,
+  filter = true,
+  title = "Buscar",
   description = "Busca y selecciona un elemento.",
   className,
   children,
-  open: controlledOpen,
-  defaultOpen = false,
+  open,
+  defaultOpen,
   onOpenChange,
 }: CommandSearchRootProps) {
-  const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen)
-  const open = controlledOpen ?? uncontrolledOpen
-  const wasOpen = useRef(open)
-
-  const setOpen = useCallback(
-    (next: boolean) => {
-      if (controlledOpen === undefined) setUncontrolledOpen(next)
-      onOpenChange?.(next)
-    },
-    [controlledOpen, onOpenChange]
-  )
-
-  const close = useCallback(() => setOpen(false), [setOpen])
-
-  useEffect(() => {
-    if (wasOpen.current && !open) clearSearchParams()
-    wasOpen.current = open
-  }, [clearSearchParams, open])
-
   return (
     <Popover>
-      <CommandSearchContext.Provider value={{ close }}>
-        <Command.Dialog
-          open={open}
-          onOpenChange={setOpen}
-          trigger={trigger}
-          label={title}
-          hotkey={null}
-          className={className}
+      <Command.Dialog
+        open={open}
+        defaultOpen={defaultOpen}
+        onOpenChange={onOpenChange}
+        trigger={trigger}
+        label={title}
+        hotkey={null}
+        className={className}
+      >
+        <Command
+          aria-label={title}
+          search={search}
+          onSearchChange={onSearchChange}
+          filter={filter}
         >
-          <Command
-            aria-label={title}
-            search={search}
-            onSearchChange={onSearchChange}
-          >
-            <p className="sr-only">{description}</p>
-            {children}
-          </Command>
-        </Command.Dialog>
-      </CommandSearchContext.Provider>
+          <p className="sr-only">{description}</p>
+          {children}
+        </Command>
+      </Command.Dialog>
     </Popover>
   )
 }

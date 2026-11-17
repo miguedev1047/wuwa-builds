@@ -1,29 +1,7 @@
-import {
-  buildCatalogPickerVariants,
-  type BuildCatalogPickerColumns,
-} from "@build/presentation/components/build-catalog-picker"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Separator } from "@/components/ui/separator"
 
-interface EchoPickerLoadingProps {
-  columns?: BuildCatalogPickerColumns
-}
-
-const PICKER_COLUMNS = 4
-
-/** Square skeleton that mirrors the echo picker grid. */
-export function EchoPickerLoading({
-  columns = PICKER_COLUMNS,
-}: EchoPickerLoadingProps = {}) {
-  return (
-    <div className={buildCatalogPickerVariants({ columns })}>
-      {Array.from({ length: columns * 2 }).map((_, index) => (
-        <Skeleton key={index} className="aspect-square" />
-      ))}
-    </div>
-  )
-}
-
+/** Placeholder for the selected echo editor. */
 export function EchoSlotLoading() {
   return (
     <div className="space-y-5">

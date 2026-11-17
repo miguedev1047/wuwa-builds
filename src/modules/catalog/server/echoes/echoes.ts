@@ -116,3 +116,12 @@ export const deleteEcho = createServerFn({ method: "POST" })
 
     return deleted[0].id
   })
+
+/** Echo summaries with source-owned sonata metadata for selection dialogs. */
+export const getEchoSelection = createServerFn({ method: "GET" })
+  .middleware([authMiddleware])
+  .handler(async () => {
+    const { readEchoSelection } =
+      await import("@catalog/infrastructure/echo-selection.server")
+    return await readEchoSelection(db)
+  })

@@ -8,7 +8,7 @@ import {
   EchoFields,
   echoFormDefaults,
 } from "@catalog/presentation/echoes/shared/components/echo-fields"
-import { EchoSearch } from "@catalog/presentation/echoes/shared/components/echo-search"
+import { EchoAdminSearch } from "@catalog/presentation/searches/echoes"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { createEcho } from "@catalog/server/echoes/echoes"
 import type { EncoreEchoSummary } from "@encore/domain/echo"
@@ -75,7 +75,7 @@ export function EchoForm() {
       </form>
 
       <div className="grid w-full grid-cols-2 gap-2">
-        <EchoSearch
+        <EchoAdminSearch
           selectedId={selected?.id}
           onSelect={setSelected}
           disabled={isPending}

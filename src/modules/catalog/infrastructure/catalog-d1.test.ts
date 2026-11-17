@@ -1,3 +1,4 @@
+import { readEchoSelection } from "@catalog/infrastructure/echo-selection.server"
 /// <reference types="bun" />
 
 import { Database } from "bun:sqlite"
@@ -543,4 +544,27 @@ describe("encore catalog schema", () => {
     expect(await readWeapon(db, weapon.id)).toBeNull()
     expect(await db.select().from(weaponRefinementStats)).toEqual([])
   })
+})
+
+test("echo selection reads summary and sonata metadata without detail payloads", async () => {
+  const db = createTestDb()
+  const echo = toEchoDetail(rawEcho)
+  await saveEcho(db, {
+    ...echo,
+    sets: echo.sets.map((set) => ({
+      ...set,
+      icon: "https://example.com/catalog-sonata.webp",
+    })),
+  })
+  const rows = await readEchoSelection(db)
+  expect(rows).toHaveLength(1)
+  expect(rows[0].sets).toEqual([
+    {
+      setId: 9,
+      name: "Melodías perdurables",
+      icon: "https://example.com/catalog-sonata.webp",
+    },
+  ])
+  expect(rows[0]).not.toHaveProperty("skill")
+  expect(rows[0]).not.toHaveProperty("skillBonuses")
 })

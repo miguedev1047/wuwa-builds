@@ -5,7 +5,7 @@ import type {
 import { EchoSlotCard } from "./echo-slot-card"
 import { Show } from "@/components/utility/show"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
-import { EchoPicker } from "./echo-picker"
+import { EchoBuildSearch } from "@build/presentation/editor/searches/echoes"
 import { echoQueries } from "@/modules/catalog/queries/echoes"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { Suspense } from "react"
@@ -26,19 +26,14 @@ export function SelectedEchoSlotPanel({
     <Show
       when={echoSlotId}
       fallback={
-        <BuildWorkspace.Dialog
-          title="Selecciona un eco"
-          description={`El eco elegido se asignará al slot ${slot.index + 1}.`}
-          triggerComponent={
+        <EchoBuildSearch
+          slot={slot}
+          trigger={
             <BuildWorkspace.Empty className="h-90">
               <BuildWorkspace.EmptyTitle title="Selecciona un eco" />
             </BuildWorkspace.Empty>
           }
-        >
-          {({ close }) => (
-            <EchoPicker slot={slot} columns={4} onSelected={close} />
-          )}
-        </BuildWorkspace.Dialog>
+        />
       }
     >
       {(echoId) => (
