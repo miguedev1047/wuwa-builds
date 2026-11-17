@@ -42,6 +42,9 @@ expect the user's server to keep running on `3000` for the whole session.
 
 ## Architecture
 
+The current runtime, modules and data flows are documented in
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
 Modules follow a light DDD split under `src/modules/<domain>`:
 
 - `domain/`: pure types and rules. No I/O.

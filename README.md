@@ -4,6 +4,7 @@ This is a template for a new TanStack Start project with React, TypeScript, and 
 
 ## Project documentation
 
+- [Application architecture](docs/ARCHITECTURE.md)
 - [Builder UI guide](docs/BUILDER_UI.md)
 - [Search integration guide](docs/SEARCH_INTEGRATION.md)
 
