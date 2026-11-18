@@ -1,6 +1,7 @@
 import { buildCollection } from "@build/client/build-store"
 import { MyBuildsPage } from "@build/presentation/collection/components/my-builds-page"
 import { createFileRoute, useNavigate } from "@tanstack/react-router"
+import { NavigationApp } from "@/components/blocks/navigation-app"
 
 export const Route = createFileRoute("/(panel)/panel/my-builds")({
   component: RouteComponent,
@@ -15,12 +16,15 @@ function RouteComponent() {
   const navigate = useNavigate()
 
   return (
-    <MyBuildsPage
-      sessionId={session.session.id}
-      userName={session.user.name}
-      onCreated={(buildId) => {
-        void navigate({ to: "/panel/builder/$buildId", params: { buildId } })
-      }}
-    />
+    <main className="space-y-10">
+      <NavigationApp user={session.user} />
+      <MyBuildsPage
+        sessionId={session.session.id}
+        user={session.user}
+        onCreated={(buildId) => {
+          void navigate({ to: "/panel/builder/$buildId", params: { buildId } })
+        }}
+      />
+    </main>
   )
 }

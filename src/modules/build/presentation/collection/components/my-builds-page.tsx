@@ -1,5 +1,6 @@
 import { Button } from "@/components/panelui/button"
 import { Show } from "@/components/utility/show"
+import type { SessionUser } from "@/lib/auth-client"
 import { MAX_LOCAL_BUILDS } from "@build/domain/build"
 import { BuildsEmpty } from "@build/presentation/collection/components/builds-empty"
 import { useCreateBuild } from "@build/presentation/collection/hooks/use-create-build"
@@ -11,8 +12,8 @@ import { HugeiconsIcon } from "@hugeicons/react"
 type MyBuildsPageProps = {
   /** Session that owns the local builds. */
   sessionId: string
-  /** Name shown in the page greeting. */
-  userName: string
+  /** Session user, shown in the page greeting and in the app navigation. */
+  user: SessionUser
   /** Opens the editor after a new build has been created. */
   onCreated: (buildId: string) => void
 }
@@ -20,16 +21,16 @@ type MyBuildsPageProps = {
 /** Local build library: header, creation action and both build sections. */
 export function MyBuildsPage({
   sessionId,
-  userName,
+  user,
   onCreated,
 }: MyBuildsPageProps) {
   const { buildCount, createBuild } = useCreateBuild(sessionId, onCreated)
 
   return (
-    <div className="mx-auto max-w-5xl space-y-6 py-20">
+    <div className="mx-auto max-w-5xl px-4 md:px-8">
       <header className="flex flex-wrap items-end justify-between gap-3">
         <div className="space-y-1">
-          <h2>Hola {userName}. Bienvenido al panel.</h2>
+          <h2>Hola {user.name}. Bienvenido al panel.</h2>
           <p className="text-xs text-muted-foreground">
             {buildCount}/{MAX_LOCAL_BUILDS} builds
           </p>

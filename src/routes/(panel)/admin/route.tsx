@@ -1,3 +1,4 @@
+import { NavigationApp } from "@/components/blocks/navigation-app"
 import { Button } from "@/components/panelui/button"
 import {
   Empty,
@@ -56,8 +57,11 @@ function RouteComponent() {
             </div>
           }
         >
-          <main className="mx-auto max-w-5xl px-4 py-20 md:px-8">
-            <Outlet />
+          <main className="space-y-10">
+            <NavigationApp user={session.user} />
+            <div className="mx-auto max-w-5xl px-4 md:px-8">
+              <Outlet />
+            </div>
           </main>
         </Show>
       )}
