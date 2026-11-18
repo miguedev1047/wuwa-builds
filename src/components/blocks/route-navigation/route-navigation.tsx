@@ -60,15 +60,33 @@ export function RouteNavigationHeader({
   )
 }
 
-/** Page headline. Screens with a visible title render it once, as the `h1`. */
+/** Heading level of a title; sections use `h2`. */
+export type RouteNavigationHeading = "h1" | "h2" | "h3"
+
+const TITLE_SIZE: Record<RouteNavigationHeading, string> = {
+  h1: "text-2xl font-bold",
+  h2: "text-lg font-bold",
+  h3: "text-base font-semibold",
+}
+
+type RouteNavigationTitleProps = ComponentProps<"h2"> & {
+  /** Rendered heading level. Defaults to `h1`, the page title. */
+  as?: RouteNavigationHeading
+}
+
+/**
+ * Headline of a page or section. A page renders one `h1`; nested sections use
+ * `as="h2"` and reuse the same header parts.
+ */
 export function RouteNavigationTitle({
+  as: Heading = "h1",
   className,
   ...props
-}: ComponentProps<"h1">) {
+}: RouteNavigationTitleProps) {
   return (
-    <h1
+    <Heading
       data-slot="route-navigation-title"
-      className={cn("font-heading text-2xl font-bold", className)}
+      className={cn("font-heading", TITLE_SIZE[Heading], className)}
       {...props}
     />
   )

@@ -134,6 +134,9 @@ Pages compose `RouteNavigation` (`src/components/blocks/route-navigation`):
 - `RouteNavigation.List` draws the responsive grid from the items it receives.
   It never reads data: the small component that suspends loads the items and puts
   the `Suspense` boundary around itself, never around the page.
+- A page with several sections gives each one its own `Header` with
+  `Title as="h2"`; nested headers use `variant="inline"` when the page column is
+  already applied.
 - `CatalogSection` and `EditableSection` are section-level APIs; they are not
   page chrome. Skeletons use `RouteNavigation` so the pending page has the same
   width as the loaded one.

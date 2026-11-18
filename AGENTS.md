@@ -135,6 +135,10 @@ Current modules:
 - `CatalogSection` and `EditableSection` are section-level APIs, not page chrome.
   `CatalogSection` keeps `Root/Header/Title/Description/Action` for read-only
   sections; today screens only use its `Content`, `Item`, `Image` and `Empty`.
+- A page with several sections does not need another API: each section renders
+  `RouteNavigation.Header` with `Title as="h2"` and its own `Description` and
+  `Actions`. A nested header inside a compact page passes `variant="inline"` so
+  it does not repeat the page column.
 
 ## Category contracts
 

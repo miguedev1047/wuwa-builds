@@ -55,6 +55,26 @@ describe("RouteNavigation", () => {
     expect(html).not.toContain("max-w-5xl")
   })
 
+  test("renders nested section headings as h2 without another container", () => {
+    const html = renderToStaticMarkup(
+      <RouteNavigation.Root variant="extended">
+        <RouteNavigation.Content variant="inline">
+          <RouteNavigation.Header variant="inline">
+            <RouteNavigation.Title as="h2">Por resonador</RouteNavigation.Title>
+            <RouteNavigation.Description>
+              Agrupadas.
+            </RouteNavigation.Description>
+          </RouteNavigation.Header>
+        </RouteNavigation.Content>
+      </RouteNavigation.Root>
+    )
+
+    expect(html).toContain("<h2")
+    expect(html).not.toContain("<h1")
+    expect(html).not.toContain("max-w-5xl")
+    expect(html).not.toContain("px-4")
+  })
+
   test("overrides the header container independently", () => {
     const html = renderToStaticMarkup(
       <RouteNavigation.Root variant="extended">

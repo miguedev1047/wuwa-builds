@@ -12,6 +12,7 @@ import {
 } from "@/components/blocks/route-navigation/components/route-navigation-list"
 export { routeNavigationAspectVariants } from "@/components/blocks/route-navigation/components/route-navigation-list"
 export type { RouteNavigationVariant } from "@/components/blocks/route-navigation/components/route-navigation-variant"
+export type { RouteNavigationHeading } from "@/components/blocks/route-navigation/route-navigation"
 export type { RouteNavigationAspect } from "@/components/blocks/route-navigation/components/route-navigation-list"
 
 /** Page shell of a route screen: header, body and the grid list. */

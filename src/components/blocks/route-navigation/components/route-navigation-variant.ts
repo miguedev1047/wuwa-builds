@@ -1,7 +1,11 @@
 import { createContext, useContext } from "react"
 
-/** Content width preset of a route page. */
-export type RouteNavigationVariant = "compact" | "extended"
+/**
+ * Width preset of a route region: `compact` keeps the `max-w-5xl` column,
+ * `extended` spans the viewport with an inset header, and `inline` adds no
+ * container, for nested sections already inside a page.
+ */
+export type RouteNavigationVariant = "compact" | "extended" | "inline"
 
 /** Variant declared by the closest `RouteNavigation.Root`. */
 export const RouteNavigationVariantContext =
@@ -15,11 +19,13 @@ export function useRouteNavigationVariant() {
 const HEADER_CONTAINER = {
   compact: "mx-auto w-full max-w-5xl px-4 md:px-8",
   extended: "w-full px-4 md:px-8",
+  inline: "w-full",
 } as const
 
 const CONTENT_CONTAINER = {
   compact: "mx-auto w-full max-w-5xl px-4 md:px-8",
   extended: "w-full",
+  inline: "w-full",
 } as const
 
 /** Horizontal container of the page header for the given variant. */
