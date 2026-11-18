@@ -25,6 +25,7 @@ export function RosterBuildsSectionContent({
   if (rosters.length === 0) {
     return (
       <BuildsEmpty
+        className="mx-4 md:mx-8"
         icon={<HugeiconsIcon icon={UserIcon} />}
         title="Todavía no tienes builds con resonador"
         description="Cuando asignes un resonador a una build, aparecerá aquí."

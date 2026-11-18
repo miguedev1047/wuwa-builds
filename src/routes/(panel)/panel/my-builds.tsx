@@ -16,7 +16,7 @@ function RouteComponent() {
   const navigate = useNavigate()
 
   return (
-    <main className="space-y-10">
+    <main>
       <NavigationApp user={session.user} />
       <MyBuildsPage
         user={session.user}

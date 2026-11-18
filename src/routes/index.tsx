@@ -11,7 +11,7 @@ function App() {
   const { session } = Route.useRouteContext()
 
   return (
-    <main className="space-y-10">
+    <main>
       <NavigationApp user={session?.user} />
     </main>
   )

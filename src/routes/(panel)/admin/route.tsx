@@ -57,7 +57,7 @@ function RouteComponent() {
             </div>
           }
         >
-          <main className="space-y-10">
+          <main>
             <NavigationApp user={session.user} />
             <Outlet />
           </main>
