@@ -2,6 +2,8 @@
 
 @theme inline {
   --height-build-editor: calc(100dvh - 4rem);
+  /* Admin landing menu: the viewport minus the app shell chrome. */
+  --height-admin-menu: calc(100svh - 10rem);
   /* Action dock: reserve its height and lift it above the device safe area. */
   --spacing-action-dock-clearance: calc(
     var(--spacing) * 24 + env(safe-area-inset-bottom)

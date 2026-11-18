@@ -1,43 +1,60 @@
-import { Button } from "@/components/panelui/button"
-import { createFileRoute, Link } from "@tanstack/react-router"
+import { FlowingMenu, type FlowingMenuItem } from "@/components/ui/flowing-menu"
+import { createFileRoute, linkOptions } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/(panel)/admin/")({
   component: RouteComponent,
 })
 
+const items: FlowingMenuItem[] = [
+  {
+    type: "link",
+    linkOptions: linkOptions({ to: "/admin/resonators" }),
+    text: "Resonadores",
+    image:
+      "https://wuwatracker.com/_next/image?url=%2Fapi%2Fcharacter-portraits%2Ffile%2Fcartethyia.webp&w=640&q=75",
+  },
+  {
+    type: "link",
+    linkOptions: linkOptions({ to: "/admin/weapons" }),
+    text: "Armas",
+    image:
+      "https://wuwatracker.com/_next/image?url=%2Fapi%2Fweapon-icons%2Ffile%2Fdefiers-thorn.webp&w=256&q=30",
+  },
+  {
+    type: "link",
+    linkOptions: linkOptions({ to: "/admin/echoes" }),
+    text: "Ecos",
+    image:
+      "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_34025_0_UI.webp",
+  },
+]
+
 function RouteComponent() {
-  const { session } = Route.useRouteContext()
-  const user = session.user
-
   return (
-    <div className="space-y-8">
-      <div className="space-y-4">
-        <h2>Hola {user.name}. Bienvenido a la pagina de administrador</h2>
-      </div>
-
-      <div className="grid gap-4">
-        <Button
-          className="flex h-40 w-full items-center justify-center text-4xl font-bold"
-          nativeButton={false}
-          render={<Link to="/admin/resonators" />}
-        >
-          Resonadores
-        </Button>
-        <Button
-          className="flex h-40 w-full items-center justify-center text-4xl font-bold"
-          nativeButton={false}
-          render={<Link to="/admin/weapons" />}
-        >
-          Armas
-        </Button>
-        <Button
-          className="flex h-40 w-full items-center justify-center text-4xl font-bold"
-          nativeButton={false}
-          render={<Link to="/admin/echoes" />}
-        >
-          Ecos
-        </Button>
-      </div>
+    <div className="h-admin-menu w-full">
+      <FlowingMenu
+        items={items}
+        speed={60}
+        stretch={0.6}
+        magnet={0.25}
+        followCursor={0.4}
+        textColor="var(--card-foreground)"
+        bgColor="var(--background)"
+        marqueeBgColor="var(--foreground)"
+        marqueeTextColor="var(--background)"
+        direction="right"
+        duration={0.5}
+        bandInset={0}
+        bandRadius={0}
+        carryContent={false}
+        dividers
+        dimInactive={false}
+        align="center"
+        showIndex={false}
+        showArrow
+        imageShape="circle"
+        intro
+      />
     </div>
   )
 }
