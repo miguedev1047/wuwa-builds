@@ -81,7 +81,11 @@ export function BuildEditorDock({
 
   return (
     <>
-      <ActionDock items={items} ariaLabel="Navegación y acciones de la build" />
+      <ActionDock
+        items={items}
+        ariaLabel="Navegación y acciones de la build"
+        mode="absolute"
+      />
       <BuildDelete
         open={deleteOpen}
         onOpenChange={setDeleteOpen}

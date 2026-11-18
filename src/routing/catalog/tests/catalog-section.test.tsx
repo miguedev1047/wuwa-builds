@@ -52,6 +52,11 @@ async function renderInRouter(node: ReactNode) {
   return renderToStaticMarkup(<RouterProvider router={router} />)
 }
 
+/** `cn` reorders the class list, so read the dock container as a whole. */
+function dockNavTag(html: string) {
+  return html.match(/<nav[^>]*>/)?.[0] ?? ""
+}
+
 describe("CatalogSection", () => {
   test("link items need linkOptions, action items need onClick", () => {
     // @ts-expect-error - a link item without linkOptions is not valid
@@ -146,9 +151,20 @@ describe("CatalogSection", () => {
     expect(html).toContain('<button type="button"')
     // Theme tokens instead of the dock's built-in palette.
     expect(html).toContain("--dock-accent:var(--primary)")
-    // Fixed action bar pinned to the viewport.
-    expect(html).toContain("fixed inset-x-0")
-    expect(html).toContain("h-[calc(96px+env(safe-area-inset-bottom))]")
+    // Pinned to the viewport unless a screen asks for container positioning.
+    expect(dockNavTag(html)).toContain("fixed")
+    expect(dockNavTag(html)).not.toContain("absolute")
+    expect(html).toContain("h-action-dock-clearance")
+    expect(html).toContain("bottom-action-dock-offset!")
+  })
+
+  test("anchors the dock to its container in absolute mode", async () => {
+    const html = await renderInRouter(
+      <ActionDock items={dockItems} mode="absolute" />
+    )
+
+    expect(dockNavTag(html)).toContain("absolute")
+    expect(dockNavTag(html)).not.toContain("fixed")
   })
 
   test("renders the loading grid with the requested columns and aspect", () => {

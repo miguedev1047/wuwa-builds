@@ -2,6 +2,14 @@
 
 @theme inline {
   --height-build-editor: calc(100dvh - 4rem);
+  /* Action dock: reserve its height and lift it above the device safe area. */
+  --spacing-action-dock-clearance: calc(
+    var(--spacing) * 24 + env(safe-area-inset-bottom)
+  );
+  --spacing-action-dock-offset: max(
+    calc(var(--spacing) * 3),
+    env(safe-area-inset-bottom)
+  );
   --font-heading: var(--font-mono);
   --font-mono: "Geist Mono Variable", monospace;
   --color-sidebar-ring: var(--sidebar-ring);
