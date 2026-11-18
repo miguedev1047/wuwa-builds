@@ -24,6 +24,7 @@
   "registries": {
     "@magicui": "https://magicui.design/r/{name}",
     "@coss": "https://coss.com/ui/r/{name}.json",
-    "@panelui": "https://panelui.dev/r/web/{name}.json"
+    "@panelui": "https://panelui.dev/r/web/{name}.json",
+    "@react-bits": "https://reactbits.dev/r/{name}.json"
   }
 }
