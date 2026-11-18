@@ -1,3 +1,4 @@
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { Button } from "@/components/panelui/button"
 import {
   Empty,
@@ -51,73 +52,85 @@ export function RouteError({
 }: RouteErrorProps) {
   if (isCatalogNotFound(error)) return <RouteNotFound />
   return (
-    <div className="grid min-h-100 place-content-center">
-      <Empty>
-        <EmptyMedia variant="icon">
-          <HugeiconsIcon icon={Alert02Icon} />
-        </EmptyMedia>
+    <RouteNavigation.Root>
+      <RouteNavigation.Content>
+        <div className="grid min-h-100 place-content-center">
+          <Empty>
+            <EmptyMedia variant="icon">
+              <HugeiconsIcon icon={Alert02Icon} />
+            </EmptyMedia>
 
-        <EmptyHeader>
-          <EmptyTitle>{title}</EmptyTitle>
-          <EmptyDescription>{errorText(error, description)}</EmptyDescription>
-        </EmptyHeader>
+            <EmptyHeader>
+              <EmptyTitle>{title}</EmptyTitle>
+              <EmptyDescription>
+                {errorText(error, description)}
+              </EmptyDescription>
+            </EmptyHeader>
 
-        <Show
-          when={
-            import.meta.env.DEV && error instanceof Error ? error.stack : null
-          }
-        >
-          {(stack) => (
-            <pre className="max-w-2xl overflow-x-auto rounded-xl border bg-muted/40 p-3 text-left text-xs whitespace-pre-wrap text-muted-foreground">
-              {stack}
-            </pre>
-          )}
-        </Show>
+            <Show
+              when={
+                import.meta.env.DEV && error instanceof Error
+                  ? error.stack
+                  : null
+              }
+            >
+              {(stack) => (
+                <pre className="max-w-2xl overflow-x-auto rounded-xl border bg-muted/40 p-3 text-left text-xs whitespace-pre-wrap text-muted-foreground">
+                  {stack}
+                </pre>
+              )}
+            </Show>
 
-        <EmptyContent className="flex-row justify-center">
-          <Button type="button" onClick={reset}>
-            Reintentar
-          </Button>
+            <EmptyContent className="flex-row justify-center">
+              <Button type="button" onClick={reset}>
+                Reintentar
+              </Button>
 
-          <Button
-            variant="outline"
-            nativeButton={false}
-            render={<Link to="/admin">Volver al panel</Link>}
-          />
-        </EmptyContent>
-      </Empty>
-    </div>
+              <Button
+                variant="outline"
+                nativeButton={false}
+                render={<Link to="/admin">Volver al panel</Link>}
+              />
+            </EmptyContent>
+          </Empty>
+        </div>
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }
 
 /** Full-page 404 state inherited by every admin catalog route. */
 export function RouteNotFound() {
   return (
-    <div className="grid min-h-100 place-content-center">
-      <Empty>
-        <EmptyMedia variant="icon">
-          <HugeiconsIcon icon={SearchRemoveIcon} />
-        </EmptyMedia>
+    <RouteNavigation.Root>
+      <RouteNavigation.Content>
+        <div className="grid min-h-100 place-content-center">
+          <Empty>
+            <EmptyMedia variant="icon">
+              <HugeiconsIcon icon={SearchRemoveIcon} />
+            </EmptyMedia>
 
-        <EmptyHeader>
-          <EmptyTitle>No encontrado</EmptyTitle>
-          <EmptyDescription>
-            El recurso que buscas no existe o fue eliminado.
-          </EmptyDescription>
-        </EmptyHeader>
+            <EmptyHeader>
+              <EmptyTitle>No encontrado</EmptyTitle>
+              <EmptyDescription>
+                El recurso que buscas no existe o fue eliminado.
+              </EmptyDescription>
+            </EmptyHeader>
 
-        <EmptyContent>
-          <Button
-            nativeButton={false}
-            render={
-              <Link to="/admin">
-                <HugeiconsIcon icon={ArrowLeft02Icon} />
-                Volver al panel
-              </Link>
-            }
-          />
-        </EmptyContent>
-      </Empty>
-    </div>
+            <EmptyContent>
+              <Button
+                nativeButton={false}
+                render={
+                  <Link to="/admin">
+                    <HugeiconsIcon icon={ArrowLeft02Icon} />
+                    Volver al panel
+                  </Link>
+                }
+              />
+            </EmptyContent>
+          </Empty>
+        </div>
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }

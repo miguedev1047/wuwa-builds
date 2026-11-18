@@ -2,6 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 import { Fragment, type ComponentProps, type Key, type ReactNode } from "react"
 import { Skeleton } from "@/components/ui/skeleton"
+
 const listVariants = cva("grid grid-cols-1 gap-4 md:grid-cols-2", {
   variants: {
     cols: {
@@ -17,7 +18,7 @@ const listVariants = cva("grid grid-cols-1 gap-4 md:grid-cols-2", {
 })
 
 /** Card shape shared by the items and their loading placeholders. */
-export const aspectVariants = cva("", {
+export const routeNavigationAspectVariants = cva("", {
   variants: {
     aspect: {
       portrait: "aspect-2/3",
@@ -29,41 +30,53 @@ export const aspectVariants = cva("", {
   },
 })
 
-export type CatalogSectionAspect = NonNullable<
-  VariantProps<typeof aspectVariants>["aspect"]
+export type RouteNavigationAspect = NonNullable<
+  VariantProps<typeof routeNavigationAspectVariants>["aspect"]
 >
 
-type CatalogSectionListProps<T> = Omit<ComponentProps<"ul">, "children"> &
+type RouteNavigationListProps<T> = Omit<ComponentProps<"ul">, "children"> &
   VariantProps<typeof listVariants> &
-  VariantProps<typeof aspectVariants> & {
+  VariantProps<typeof routeNavigationAspectVariants> & {
     items: readonly T[]
+    /** Stable identity of each entry; pass the entity id, never the index. */
+    getKey: (item: T, index: number) => Key
     /** Render prop for each item; it must return the `<li>` itself. */
     children: (item: T, index: number) => ReactNode
     /** Rendered instead of the list when `items` is empty. */
     empty?: ReactNode
-    /** Defaults to the item index, which is only safe for static lists. */
-    getItemKey?: (item: T, index: number) => Key
     /** Renders the built-in skeleton grid instead of the list. */
     loading?: boolean
     /** Placeholder cards while loading; defaults to two rows. */
     loadingCount?: number
+    /** Read out by assistive tech while the grid is loading. */
+    loadingLabel?: string
   }
 
-export function CatalogSectionList<T>({
+/**
+ * Responsive grid of entries. It never reads data: the component that
+ * suspends loads the items and passes them here.
+ */
+export function RouteNavigationList<T>({
   className,
   children,
   items,
+  getKey,
   empty = null,
-  getItemKey,
   cols,
   aspect,
   loading = false,
   loadingCount,
+  loadingLabel,
   ...props
-}: CatalogSectionListProps<T>) {
+}: RouteNavigationListProps<T>) {
   if (loading) {
     return (
-      <CatalogSectionLoading cols={cols} aspect={aspect} count={loadingCount} />
+      <RouteNavigationListLoading
+        cols={cols}
+        aspect={aspect}
+        count={loadingCount}
+        label={loadingLabel}
+      />
     )
   }
 
@@ -74,33 +87,29 @@ export function CatalogSectionList<T>({
   return (
     <ul className={cn(listVariants({ cols, className }))} {...props}>
       {items.map((item, index) => (
-        <Fragment key={getItemKey?.(item, index) ?? index}>
-          {children(item, index)}
-        </Fragment>
+        <Fragment key={getKey(item, index)}>{children(item, index)}</Fragment>
       ))}
     </ul>
   )
 }
 
-type CatalogSectionLoadingProps = VariantProps<typeof listVariants> &
-  VariantProps<typeof aspectVariants> & {
+type RouteNavigationListLoadingProps = VariantProps<typeof listVariants> &
+  VariantProps<typeof routeNavigationAspectVariants> & {
     /** Number of placeholder cards; defaults to two rows of `cols`. */
     count?: number
+    /** Read out by assistive tech while the grid is loading. */
     label?: string
     className?: string
   }
 
-/**
- * Loading state of the section: the same grid and card shape as the real list,
- * filled with skeleton placeholders.
- */
-export function CatalogSectionLoading({
+/** Skeleton grid with the same columns and card shape as the real list. */
+export function RouteNavigationListLoading({
   cols,
   aspect,
   count,
   label = "Cargando contenido",
   className,
-}: CatalogSectionLoadingProps) {
+}: RouteNavigationListLoadingProps) {
   const placeholders = count ?? Number(cols ?? 4) * 2
 
   return (
@@ -110,7 +119,10 @@ export function CatalogSectionLoading({
         {Array.from({ length: placeholders }, (_, index) => (
           <li
             key={index}
-            className={cn("overflow-hidden", aspectVariants({ aspect }))}
+            className={cn(
+              "overflow-hidden",
+              routeNavigationAspectVariants({ aspect })
+            )}
           >
             <Skeleton className="size-full" />
           </li>

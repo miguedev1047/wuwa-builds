@@ -1,3 +1,4 @@
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
@@ -9,11 +10,11 @@ export function EchoList() {
   const { data: echoes } = useSuspenseQuery(echoQueries.list())
 
   return (
-    <CatalogSection.List
+    <RouteNavigation.List
       items={echoes}
       cols={6}
       aspect="square"
-      getItemKey={(echo) => echo.id}
+      getKey={(echo) => echo.id}
       empty={
         <CatalogSection.Empty
           title="Sin datos"
@@ -23,6 +24,6 @@ export function EchoList() {
       }
     >
       {(echo) => <EchoItem echo={echo} />}
-    </CatalogSection.List>
+    </RouteNavigation.List>
   )
 }

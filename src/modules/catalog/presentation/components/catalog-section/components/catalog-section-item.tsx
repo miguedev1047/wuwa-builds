@@ -1,7 +1,7 @@
+import { routeNavigationAspectVariants as aspectVariants } from "@/components/blocks/route-navigation"
 import { Image } from "@/components/ui/image"
 import { cn } from "cn"
 import type { VariantProps } from "class-variance-authority"
-import { aspectVariants } from "@catalog/presentation/components/catalog-section/components/catalog-section-list"
 type CatalogSectionItemProps = React.ComponentProps<"li"> &
   VariantProps<typeof aspectVariants>
 

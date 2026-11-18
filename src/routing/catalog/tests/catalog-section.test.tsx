@@ -16,13 +16,6 @@ import {
 import type { ReactNode } from "react"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 
-type Item = { id: number; name: string }
-
-const items: Item[] = [
-  { id: 1, name: "Yangyang" },
-  { id: 2, name: "Rover" },
-]
-
 const dockItems: DockItemData[] = [
   {
     type: "link",
@@ -63,57 +56,6 @@ describe("CatalogSection", () => {
     const invalid: DockItemData = { type: "link", label: "Inicio" }
 
     expect(invalid).toBeDefined()
-  })
-
-  test("renders one li per item with the requested column count", () => {
-    const html = renderToStaticMarkup(
-      <CatalogSection.List
-        items={items}
-        cols={6}
-        getItemKey={(item) => item.id}
-      >
-        {(item) => <li>{item.name}</li>}
-      </CatalogSection.List>
-    )
-
-    expect(html).toContain("<ul")
-    expect(html).toContain("lg:grid-cols-6")
-    expect(html).toContain("<li>Yangyang</li>")
-    expect(html).toContain("<li>Rover</li>")
-  })
-
-  test("renders the empty slot instead of the list", () => {
-    const html = renderToStaticMarkup(
-      <CatalogSection.List
-        items={[] as Item[]}
-        empty={
-          <CatalogSection.Empty
-            title="Sin datos"
-            description="Sin resonadores disponibles"
-          />
-        }
-      >
-        {(item) => <li>{item.name}</li>}
-      </CatalogSection.List>
-    )
-
-    expect(html).toContain("Sin datos")
-    expect(html).toContain("Sin resonadores disponibles")
-    expect(html).not.toContain("<ul")
-  })
-
-  test("renders one li per item when only one item remains", () => {
-    const html = renderToStaticMarkup(
-      <CatalogSection.List
-        items={items.filter((item) => item.name === "Rover")}
-        empty={<CatalogSection.Empty title="Sin datos" description="Nada" />}
-      >
-        {(item) => <li>{item.name}</li>}
-      </CatalogSection.List>
-    )
-
-    expect(html).toContain("<li>Rover</li>")
-    expect(html).not.toContain("Sin datos")
   })
 
   test("renders a semantic section header", () => {
@@ -165,31 +107,6 @@ describe("CatalogSection", () => {
 
     expect(dockNavTag(html)).toContain("absolute")
     expect(dockNavTag(html)).not.toContain("fixed")
-  })
-
-  test("renders the loading grid with the requested columns and aspect", () => {
-    const html = renderToStaticMarkup(
-      <CatalogSection.Loading cols={6} aspect="square" count={4} />
-    )
-
-    expect(html).toContain('role="status"')
-    expect(html).toContain("Cargando contenido")
-    expect(html).toContain("lg:grid-cols-6")
-    expect(html.match(/aspect-square/g)).toHaveLength(4)
-    expect(html).not.toContain("aspect-2/3")
-  })
-
-  test("List loading replaces the items with the loading grid", () => {
-    const html = renderToStaticMarkup(
-      <CatalogSection.List items={items} cols={10} loading loadingCount={3}>
-        {(item) => <li>{item.name}</li>}
-      </CatalogSection.List>
-    )
-
-    expect(html).toContain('role="status"')
-    expect(html).toContain("lg:grid-cols-10")
-    expect(html.match(/aspect-2\/3/g)).toHaveLength(3)
-    expect(html).not.toContain("Yangyang")
   })
 
   test("items default to the portrait shape and accept a square one", () => {

@@ -1,8 +1,6 @@
+import { RouteNavigation } from "@/components/blocks/route-navigation"
+import type { RouteNavigationAspect } from "@/components/blocks/route-navigation"
 import { Skeleton } from "@/components/ui/skeleton"
-import {
-  CatalogSection,
-  type CatalogSectionAspect,
-} from "@catalog/presentation/components/catalog-section"
 import { Show } from "@/components/utility/show"
 
 type CatalogListRouteSkeletonProps = {
@@ -11,7 +9,7 @@ type CatalogListRouteSkeletonProps = {
   /** Real page description. */
   description: string
   cols: 4 | 6 | 10
-  aspect: CatalogSectionAspect
+  aspect: RouteNavigationAspect
   /** Number of placeholder cards. */
   count: number
   /** Number of header action placeholders; defaults to none. */
@@ -28,22 +26,24 @@ export function CatalogListRouteSkeleton({
   actionCount = 0,
 }: CatalogListRouteSkeletonProps) {
   return (
-    <CatalogSection.Root>
-      <CatalogSection.Header>
-        <CatalogSection.Title>{title}</CatalogSection.Title>
-        <CatalogSection.Description>{description}</CatalogSection.Description>
+    <RouteNavigation.Root>
+      <RouteNavigation.Header>
+        <RouteNavigation.Title>{title}</RouteNavigation.Title>
+        <RouteNavigation.Description>{description}</RouteNavigation.Description>
 
         <Show when={actionCount > 0}>
-          <CatalogSection.Action>
+          <RouteNavigation.Actions>
             {Array.from({ length: actionCount }, (_, index) => (
               <Skeleton key={index} className="h-8 w-24" />
             ))}
-          </CatalogSection.Action>
+          </RouteNavigation.Actions>
         </Show>
-      </CatalogSection.Header>
+      </RouteNavigation.Header>
 
-      <CatalogSection.Loading cols={cols} aspect={aspect} count={count} />
-    </CatalogSection.Root>
+      <RouteNavigation.Content>
+        <RouteNavigation.Loading cols={cols} aspect={aspect} count={count} />
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }
 
@@ -57,37 +57,39 @@ export function CatalogDetailRouteSkeleton({
   sections = 3,
 }: CatalogDetailRouteSkeletonProps) {
   return (
-    <div className="space-y-10">
-      <div className="space-y-4">
-        <div className="flex items-start justify-between gap-1">
-          <Skeleton className="h-8 w-48" />
+    <RouteNavigation.Root>
+      <RouteNavigation.Content className="space-y-10">
+        <div className="space-y-4">
+          <div className="flex items-start justify-between gap-1">
+            <Skeleton className="h-8 w-48" />
 
-          <div className="flex items-center gap-2">
-            <Skeleton className="h-7 w-18" />
-            <Skeleton className="size-7" />
+            <div className="flex items-center gap-2">
+              <Skeleton className="h-7 w-18" />
+              <Skeleton className="size-7" />
+            </div>
+          </div>
+
+          <div className="flex w-full flex-col items-start gap-4 md:flex-row">
+            <Skeleton className="h-60 w-40 rounded-lg" />
+
+            <div className="flex flex-1 flex-col gap-3">
+              <Skeleton className="h-8 w-2/5" />
+              <Skeleton className="h-3 w-full" />
+              <Skeleton className="h-3 w-9/10" />
+              <Skeleton className="h-3 w-7/10" />
+            </div>
           </div>
         </div>
 
-        <div className="flex w-full flex-col items-start gap-4 md:flex-row">
-          <Skeleton className="h-60 w-40 rounded-lg" />
-
-          <div className="flex flex-1 flex-col gap-3">
-            <Skeleton className="h-8 w-2/5" />
-            <Skeleton className="h-3 w-full" />
-            <Skeleton className="h-3 w-9/10" />
-            <Skeleton className="h-3 w-7/10" />
+        {Array.from({ length: sections }, (_, index) => (
+          <div key={index} className="space-y-4">
+            <Skeleton className="h-5 w-40" />
+            <Skeleton className="h-3 w-64" />
+            <Skeleton className="h-35 w-full rounded-lg" />
+            <Skeleton className="h-35 w-full rounded-lg" />
           </div>
-        </div>
-      </div>
-
-      {Array.from({ length: sections }, (_, index) => (
-        <div key={index} className="space-y-4">
-          <Skeleton className="h-5 w-40" />
-          <Skeleton className="h-3 w-64" />
-          <Skeleton className="h-35 w-full rounded-lg" />
-          <Skeleton className="h-35 w-full rounded-lg" />
-        </div>
-      ))}
-    </div>
+        ))}
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }

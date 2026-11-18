@@ -1,21 +1,21 @@
-import { Suspense } from "react"
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { ResonatorList } from "@catalog/presentation/resonators/list/components/resonator-list"
+import { Suspense } from "react"
 
 export function ResonatorListScreen() {
   return (
-    <CatalogSection.Root>
-      <CatalogSection.Header>
-        <CatalogSection.Title>Resonadores</CatalogSection.Title>
-        <CatalogSection.Description>
+    <RouteNavigation.Root>
+      <RouteNavigation.Header>
+        <RouteNavigation.Title>Resonadores</RouteNavigation.Title>
+        <RouteNavigation.Description>
           Lista de resonadores creados
-        </CatalogSection.Description>
-      </CatalogSection.Header>
+        </RouteNavigation.Description>
+      </RouteNavigation.Header>
 
-      <CatalogSection.Content>
+      <RouteNavigation.Content>
         <Suspense
           fallback={
-            <CatalogSection.Loading
+            <RouteNavigation.Loading
               cols={8}
               aspect="portrait"
               count={20}
@@ -25,7 +25,7 @@ export function ResonatorListScreen() {
         >
           <ResonatorList />
         </Suspense>
-      </CatalogSection.Content>
-    </CatalogSection.Root>
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }

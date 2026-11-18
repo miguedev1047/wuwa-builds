@@ -1,17 +1,19 @@
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { WeaponForm } from "@catalog/presentation/weapons/shared/components/weapon-form"
 
 export function WeaponNew() {
   return (
-    <CatalogSection.Root>
-      <CatalogSection.Header>
-        <CatalogSection.Title>Nueva arma</CatalogSection.Title>
-        <CatalogSection.Description>
+    <RouteNavigation.Root>
+      <RouteNavigation.Header>
+        <RouteNavigation.Title>Nueva arma</RouteNavigation.Title>
+        <RouteNavigation.Description>
           Crea un arma en el catálogo o préllenala desde Encore
-        </CatalogSection.Description>
-      </CatalogSection.Header>
+        </RouteNavigation.Description>
+      </RouteNavigation.Header>
 
-      <WeaponForm />
-    </CatalogSection.Root>
+      <RouteNavigation.Content>
+        <WeaponForm />
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }

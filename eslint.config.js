@@ -475,6 +475,7 @@ export default defineConfig([
       "src/components/utility/devtools/json-devtool.tsx",
       "src/modules/build/presentation/components/build-card-section/build-card-section-dialog.tsx",
       "src/modules/build/presentation/components/build-catalog-picker/build-catalog-picker-variants.ts",
+      "src/components/blocks/route-navigation/route-navigation.tsx",
       "src/modules/catalog/presentation/components/catalog-section/components/catalog-section-shell.tsx",
       "src/modules/catalog/presentation/components/editable-section/components/editable-section-layout.tsx",
       "src/modules/catalog/presentation/sonatas/components/sonata-add-action.tsx",

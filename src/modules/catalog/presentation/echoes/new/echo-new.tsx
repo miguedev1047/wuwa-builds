@@ -1,17 +1,19 @@
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { EchoForm } from "@catalog/presentation/echoes/shared/components/echo-form"
 
 export function EchoNew() {
   return (
-    <CatalogSection.Root>
-      <CatalogSection.Header>
-        <CatalogSection.Title>Nuevo eco</CatalogSection.Title>
-        <CatalogSection.Description>
+    <RouteNavigation.Root>
+      <RouteNavigation.Header>
+        <RouteNavigation.Title>Nuevo eco</RouteNavigation.Title>
+        <RouteNavigation.Description>
           Crea un eco en el catálogo o préllenalo desde Encore
-        </CatalogSection.Description>
-      </CatalogSection.Header>
+        </RouteNavigation.Description>
+      </RouteNavigation.Header>
 
-      <EchoForm />
-    </CatalogSection.Root>
+      <RouteNavigation.Content>
+        <EchoForm />
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }

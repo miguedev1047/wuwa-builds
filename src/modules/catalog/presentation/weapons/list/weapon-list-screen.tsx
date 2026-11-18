@@ -1,29 +1,31 @@
-import { Suspense } from "react"
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { WeaponList } from "@catalog/presentation/weapons/list/components/weapon-list"
+import { Suspense } from "react"
 
 export function WeaponListScreen() {
   return (
-    <CatalogSection.Root>
-      <CatalogSection.Header>
-        <CatalogSection.Title>Armas</CatalogSection.Title>
-        <CatalogSection.Description>
+    <RouteNavigation.Root>
+      <RouteNavigation.Header>
+        <RouteNavigation.Title>Armas</RouteNavigation.Title>
+        <RouteNavigation.Description>
           Lista de armas creadas
-        </CatalogSection.Description>
-      </CatalogSection.Header>
+        </RouteNavigation.Description>
+      </RouteNavigation.Header>
 
-      <Suspense
-        fallback={
-          <CatalogSection.Loading
-            cols={6}
-            aspect="square"
-            count={12}
-            label="Cargando armas"
-          />
-        }
-      >
-        <WeaponList />
-      </Suspense>
-    </CatalogSection.Root>
+      <RouteNavigation.Content>
+        <Suspense
+          fallback={
+            <RouteNavigation.Loading
+              cols={6}
+              aspect="square"
+              count={12}
+              label="Cargando armas"
+            />
+          }
+        >
+          <WeaponList />
+        </Suspense>
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }

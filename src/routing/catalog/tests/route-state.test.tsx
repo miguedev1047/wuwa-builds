@@ -52,7 +52,7 @@ describe("route states", () => {
     expect(html).toContain('role="status"')
     expect(html).toContain("lg:grid-cols-6")
     expect(html.match(/aspect-square/g)).toHaveLength(12)
-    expect(html).not.toContain('data-slot="catalog-section-action"')
+    expect(html).not.toContain('data-slot="route-navigation-actions"')
   })
 
   test("list skeleton reserves the header actions", () => {
@@ -67,7 +67,7 @@ describe("route states", () => {
       />
     )
 
-    expect(html).toContain('data-slot="catalog-section-action"')
+    expect(html).toContain('data-slot="route-navigation-actions"')
     expect(html.match(/aspect-2\/3/g)).toHaveLength(4)
   })
 

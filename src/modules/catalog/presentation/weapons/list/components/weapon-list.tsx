@@ -1,3 +1,4 @@
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
@@ -9,11 +10,11 @@ export function WeaponList() {
   const { data: weapons } = useSuspenseQuery(weaponQueries.list())
 
   return (
-    <CatalogSection.List
+    <RouteNavigation.List
       items={weapons}
       cols={6}
       aspect="square"
-      getItemKey={(weapon) => weapon.id}
+      getKey={(weapon) => weapon.id}
       empty={
         <CatalogSection.Empty
           title="Sin datos"
@@ -23,6 +24,6 @@ export function WeaponList() {
       }
     >
       {(weapon) => <WeaponItem weapon={weapon} />}
-    </CatalogSection.List>
+    </RouteNavigation.List>
   )
 }

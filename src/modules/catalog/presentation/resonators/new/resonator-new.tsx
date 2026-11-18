@@ -1,14 +1,16 @@
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { ResonatorForm } from "@catalog/presentation/resonators/shared/components/resonator-form"
 
 export function ResonatorNew() {
   return (
-    <CatalogSection.Root>
-      <CatalogSection.Header>
-        <CatalogSection.Title>Nuevo resonador</CatalogSection.Title>
-      </CatalogSection.Header>
+    <RouteNavigation.Root>
+      <RouteNavigation.Header>
+        <RouteNavigation.Title>Nuevo resonador</RouteNavigation.Title>
+      </RouteNavigation.Header>
 
-      <ResonatorForm />
-    </CatalogSection.Root>
+      <RouteNavigation.Content>
+        <ResonatorForm />
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }

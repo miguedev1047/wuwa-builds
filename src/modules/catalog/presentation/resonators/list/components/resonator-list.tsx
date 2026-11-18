@@ -1,3 +1,4 @@
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
@@ -9,11 +10,11 @@ export function ResonatorList() {
   const { data: characters } = useSuspenseQuery(characterQueries.list())
 
   return (
-    <CatalogSection.List
+    <RouteNavigation.List
       items={characters}
       cols={8}
       aspect="portrait"
-      getItemKey={(character) => character.id}
+      getKey={(character) => character.id}
       empty={
         <CatalogSection.Empty
           title="Sin datos"
@@ -23,6 +24,6 @@ export function ResonatorList() {
       }
     >
       {(character) => <ResonatorItem character={character} />}
-    </CatalogSection.List>
+    </RouteNavigation.List>
   )
 }

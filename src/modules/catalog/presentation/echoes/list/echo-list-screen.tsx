@@ -1,24 +1,31 @@
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
+import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { EchoList } from "@catalog/presentation/echoes/list/components/echo-list"
 import { Suspense } from "react"
 
 export function EchoListScreen() {
   return (
-    <CatalogSection.Root>
-      <CatalogSection.Header>
-        <CatalogSection.Title>Ecos</CatalogSection.Title>
-        <CatalogSection.Description>
+    <RouteNavigation.Root>
+      <RouteNavigation.Header>
+        <RouteNavigation.Title>Ecos</RouteNavigation.Title>
+        <RouteNavigation.Description>
           Lista de ecos creados
-        </CatalogSection.Description>
-      </CatalogSection.Header>
+        </RouteNavigation.Description>
+      </RouteNavigation.Header>
 
-      <Suspense
-        fallback={
-          <CatalogSection.Loading cols={6} aspect="square" count={12} />
-        }
-      >
-        <EchoList />
-      </Suspense>
-    </CatalogSection.Root>
+      <RouteNavigation.Content>
+        <Suspense
+          fallback={
+            <RouteNavigation.Loading
+              cols={6}
+              aspect="square"
+              count={12}
+              label="Cargando ecos"
+            />
+          }
+        >
+          <EchoList />
+        </Suspense>
+      </RouteNavigation.Content>
+    </RouteNavigation.Root>
   )
 }
