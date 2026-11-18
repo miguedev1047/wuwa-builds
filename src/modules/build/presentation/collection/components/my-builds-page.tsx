@@ -20,8 +20,8 @@ export function MyBuildsPage({ user, onCreated }: MyBuildsPageProps) {
   const { buildCount, createBuild } = useCreateBuild(user.id, onCreated)
 
   return (
-    <div className="mx-auto max-w-5xl space-y-4 px-4 md:px-8">
-      <header className="flex flex-wrap items-end justify-between gap-3">
+    <div className="w-full space-y-10 pb-10">
+      <header className="flex flex-wrap items-end justify-between gap-3 px-8">
         <div className="space-y-1">
           <h2 className="text-2xl font-bold">
             Tus <span className="text-primary">resonadores</span>

@@ -1,7 +1,7 @@
+import { FlowingMenu, type FlowingMenuItem } from "@/components/ui/flowing-menu"
 import { useUserRosters } from "@build/client/hooks/build-live-queries"
 import { BuildsEmpty } from "@build/presentation/collection/components/builds-empty"
 import { RosterBuildsSheet } from "@build/presentation/collection/sections/roster-builds/components/roster-builds-sheet"
-import { RosterList } from "@build/presentation/collection/sections/roster-builds/components/roster-list"
 import { UserIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { useState } from "react"
@@ -32,15 +32,38 @@ export function RosterBuildsSectionContent({
     )
   }
 
+  const items: FlowingMenuItem[] = rosters.map((roster) => {
+    const metaDesc = `${roster.totalBuilds} ${
+      roster.totalBuilds === 1 ? "build" : "builds"
+    }`
+
+    return {
+      type: "button",
+      text: roster.name,
+      meta: metaDesc,
+      className: "min-h-40 md:min-h-50",
+      image: roster.iconLarge,
+      onClick: () => {
+        setSelectedRosterId(roster.resonatorId)
+        setSheetOpen(true)
+      },
+    }
+  })
+
   return (
     <>
-      <RosterList
-        rosters={rosters}
-        onSelect={(resonatorId) => {
-          setSelectedRosterId(resonatorId)
-          setSheetOpen(true)
-        }}
+      <FlowingMenu
+        items={items}
+        ariaLabel="Tus resonadores"
+        align="left"
+        imageShape="circle"
+        textColor="var(--card-foreground)"
+        bgColor="var(--card)"
+        marqueeBgColor="var(--primary)"
+        marqueeTextColor="var(--primary-foreground)"
+        borderColor="var(--border)"
       />
+
       <RosterBuildsSheet
         roster={selectedRoster}
         userId={userId}
