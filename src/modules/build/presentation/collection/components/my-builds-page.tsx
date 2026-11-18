@@ -1,7 +1,6 @@
 import { Button } from "@/components/panelui/button"
 import { Show } from "@/components/utility/show"
 import type { SessionUser } from "@/lib/auth-client"
-import { MAX_LOCAL_BUILDS } from "@build/domain/build"
 import { BuildsEmpty } from "@build/presentation/collection/components/builds-empty"
 import { useCreateBuild } from "@build/presentation/collection/hooks/use-create-build"
 import { RosterBuildsSection } from "@build/presentation/collection/sections/roster-builds"
@@ -24,9 +23,11 @@ export function MyBuildsPage({ user, onCreated }: MyBuildsPageProps) {
     <div className="mx-auto max-w-5xl space-y-4 px-4 md:px-8">
       <header className="flex flex-wrap items-end justify-between gap-3">
         <div className="space-y-1">
-          <h2>Hola {user.name}. Bienvenido al panel.</h2>
+          <h2 className="text-2xl font-bold">
+            Tus <span className="text-primary">resonadores</span>
+          </h2>
           <p className="text-xs text-muted-foreground">
-            {buildCount}/{MAX_LOCAL_BUILDS} builds
+            Todos tus resonadores aparecen aquí
           </p>
         </div>
         <Button onClick={createBuild}>Nueva Build</Button>

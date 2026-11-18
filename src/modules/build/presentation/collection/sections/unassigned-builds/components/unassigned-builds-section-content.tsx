@@ -1,3 +1,4 @@
+import { Separator } from "@/components/ui/separator"
 import { useUnassignedBuilds } from "@build/client/hooks/build-live-queries"
 import { UnassignedBuildsList } from "@build/presentation/collection/sections/unassigned-builds/components/unassigned-builds-list"
 
@@ -15,9 +16,9 @@ export function UnassignedBuildsSectionContent({
   if (builds.length === 0) return null
 
   return (
-    <section className="space-y-2">
-      <h3 className="text-sm font-medium">Builds sin resonador</h3>
+    <>
+      <Separator />
       <UnassignedBuildsList builds={builds} />
-    </section>
+    </>
   )
 }

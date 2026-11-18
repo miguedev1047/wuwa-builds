@@ -39,7 +39,7 @@ export function RosterBuildsSheet({
               <Sheet.Header>
                 <Sheet.Title>Builds de {current.name}</Sheet.Title>
               </Sheet.Header>
-              <Sheet.Body>
+              <Sheet.Body className="py-2">
                 <Suspense fallback={<Spinner />}>
                   <RosterBuildsSheetContent
                     rosterId={current.resonatorId}

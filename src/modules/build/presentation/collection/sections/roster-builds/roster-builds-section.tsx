@@ -10,11 +10,8 @@ type RosterBuildsSectionProps = {
 /** Section with the builds grouped by their resonator. */
 export function RosterBuildsSection({ userId }: RosterBuildsSectionProps) {
   return (
-    <section className="space-y-2">
-      <h3 className="text-sm font-medium">Tus builds</h3>
-      <Suspense fallback={<Spinner />}>
-        <RosterBuildsSectionContent userId={userId} />
-      </Suspense>
-    </section>
+    <Suspense fallback={<Spinner />}>
+      <RosterBuildsSectionContent userId={userId} />
+    </Suspense>
   )
 }

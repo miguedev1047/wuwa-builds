@@ -17,7 +17,7 @@ export function NavigationApp({ user }: NavigationAppProps) {
     <NavigationMenu
       variant="bar"
       aria-label="wuwa-builds"
-      className="sticky inset-x-0 top-0 z-50 px-4 pt-4 opacity-80 backdrop-blur-2xl"
+      className="sticky inset-x-0 top-0 z-50 px-4 pt-4"
     >
       <NavigationMenu.Brand className="ps-2">
         <Link to="/">Wuwa Builds</Link>
@@ -25,7 +25,7 @@ export function NavigationApp({ user }: NavigationAppProps) {
       <NavigationMenu.List>
         <NavigationMenu.Item value="wiki">
           <NavigationMenu.Trigger>Wiki</NavigationMenu.Trigger>
-          <NavigationMenu.Content className="grid w-136 grid-cols-2 gap-1">
+          <NavigationMenu.Content className="grid w-full gap-1 md:grid-cols-2">
             <NavigationMenu.Link
               render={<Link to="/" />}
               description="Estadísticas, habilidades y elemento de cada resonador"
@@ -49,7 +49,7 @@ export function NavigationApp({ user }: NavigationAppProps) {
         <Show when={user?.role === "ADMIN"}>
           <NavigationMenu.Item value="admin">
             <NavigationMenu.Trigger>Admin</NavigationMenu.Trigger>
-            <NavigationMenu.Content className="grid w-136 grid-cols-2 gap-1">
+            <NavigationMenu.Content className="grid w-full gap-1 md:grid-cols-2">
               <NavigationMenu.Link
                 render={<Link to="/admin" />}
                 description="Accesos directos a resonadores, armas y ecos"

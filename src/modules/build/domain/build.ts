@@ -7,7 +7,7 @@ import { z } from "zod"
  */
 export const BUILD_DOCUMENT_VERSION = 1
 
-export const MAX_LOCAL_BUILDS = 15
+export const MAX_LOCAL_BUILDS = 50
 
 export const CHARACTER_LEVEL_MIN = 1
 export const CHARACTER_LEVEL_MAX = 90
