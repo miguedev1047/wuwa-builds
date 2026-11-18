@@ -118,6 +118,24 @@ Current modules:
 - `src/db`: Drizzle schema for auth, saved builds and the canonical catalog
   tables (D1).
 
+### Route pages
+
+- Every route renders a page component; the route file only declares the route
+  (`loader`, `pendingComponent`, `ssr`), binds params and, for catalog screens,
+  wraps the page in `CatalogNavigation` plus its `ActionDock`. Do not put layout
+  classes or screen JSX in `src/routes`.
+- Pages own their shell through `RouteNavigation` (in
+  `src/components/blocks/route-navigation`): `Root`, `Header` (`Title`,
+  `Description`, `Actions`) and `Content`.
+- Choose the variant by the content: `compact` (default) keeps the `max-w-5xl`
+  column for lists, forms and details; `extended` spans the viewport with an
+  inset header, for the admin menu and My Builds.
+- `RouteNavigation.List` renders the grid and never reads data; the small
+  component that suspends owns the query and passes the items down.
+- `CatalogSection` and `EditableSection` are section-level APIs, not page chrome.
+  `CatalogSection` keeps `Root/Header/Title/Description/Action` for read-only
+  sections; today screens only use its `Content`, `Item`, `Image` and `Empty`.
+
 ## Category contracts
 
 - `src/modules/game-data/domain/categories.ts` owns category ids, Spanish labels,
@@ -239,6 +257,32 @@ Integration examples and source-selection guidance live in
     {(selected) => <UserProfile user={selected} />}
   </Show>
   ```
+
+### Data loading and Suspense
+
+- **Suspend in the smallest component.** A `useSuspenseQuery` (or any
+  suspending read) belongs to the component that renders only the suspended
+  region. Put the `Suspense` boundary around that component, never around a
+  page, a header or a section that also draws chrome.
+  ```tsx
+  <section className="space-y-6">
+    <header>
+      <h1>Resonadores</h1>
+    </header>
+    <Suspense fallback={<ListSkeleton />}>
+      <ResonatorList />
+    </Suspense>
+  </section>
+  ```
+  `ResonatorList` is the only component that suspends: it loads the items and
+  renders the list. The title, description and actions render before the data
+  arrives, so the pending state never blanks the page.
+- **Page chrome never suspends.** A section header whose text comes from the
+  same read (`Eco: {name}`) may share its section's boundary, but the page
+  header, actions and the screen shell always render with the route.
+- **Lists receive their items as props.** The page never fetches just to feed a
+  grid; the small component that suspends owns the query, the empty state and
+  the list. Loading skeletons belong to the `fallback`, not to the page.
 
 ### Imports, icons and stat keys
 

@@ -118,6 +118,26 @@ vite.config.ts     Start, Cloudflare, React, Tailwind and compiler plugins
 in `routes/` and `routing/`; feature modules must not import those folders or
 TanStack Router.
 
+### Route pages
+
+A route file declares the route and renders one page component; the page owns the
+visual shell. Catalog routes keep `CatalogNavigation` and their `ActionDock` in the
+route file, so the page only describes content.
+
+Pages compose `RouteNavigation` (`src/components/blocks/route-navigation`):
+
+- `Root` sets the vertical rhythm and the variant; `Header` holds `Title`
+  (`h1`), `Description` and `Actions`; `Content` holds the body.
+- `variant="compact"` keeps the `max-w-5xl` column for lists, forms and details.
+  `variant="extended"` spans the viewport with an inset header, for the admin
+  menu and My Builds.
+- `RouteNavigation.List` draws the responsive grid from the items it receives.
+  It never reads data: the small component that suspends loads the items and puts
+  the `Suspense` boundary around itself, never around the page.
+- `CatalogSection` and `EditableSection` are section-level APIs; they are not
+  page chrome. Skeletons use `RouteNavigation` so the pending page has the same
+  width as the loaded one.
+
 ## Feature modules
 
 | Module      | Owns                                                                                                                                        | Main consumers                                                   |
