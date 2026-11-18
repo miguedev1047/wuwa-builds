@@ -105,8 +105,8 @@ const LINK =
 const INDEX =
   "justify-self-start text-[clamp(11px,12cqh,15px)] tabular-nums opacity-50"
 const LABEL =
-  "flex items-center gap-[0.28em] justify-self-center overflow-hidden py-[0.06em] text-[clamp(16px,min(40cqh,8cqw),140px)] leading-[1.1] font-medium tracking-[-0.035em] whitespace-nowrap group-data-[align=left]/fm:justify-self-start"
-const LABEL_TEXT = "block"
+  "flex max-w-full min-w-0 items-center gap-[0.28em] justify-self-center overflow-hidden py-[0.06em] text-[clamp(16px,min(40cqh,8cqw),140px)] leading-[1.1] font-medium tracking-[-0.035em] whitespace-nowrap group-data-[align=left]/fm:justify-self-start"
+const LABEL_TEXT = "block min-w-0 overflow-hidden text-ellipsis"
 const DOT = "block h-[0.2em] w-[0.2em] shrink-0 rounded-full bg-current"
 const END = "flex items-center gap-3.5 justify-self-end"
 const META = "text-[clamp(11px,12cqh,15px)] tabular-nums opacity-50"

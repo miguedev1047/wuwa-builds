@@ -22,18 +22,6 @@ export function MyBuildsPage({ user, onCreated }: MyBuildsPageProps) {
 
   return (
     <RouteNavigation.Root variant="extended">
-      <RouteNavigation.Header>
-        <RouteNavigation.Title>
-          Tus <span className="text-primary">resonadores</span>
-        </RouteNavigation.Title>
-        <RouteNavigation.Description>
-          Todos tus resonadores aparecen aquí
-        </RouteNavigation.Description>
-        <RouteNavigation.Actions>
-          <Button onClick={createBuild}>Nueva Build</Button>
-        </RouteNavigation.Actions>
-      </RouteNavigation.Header>
-
       <RouteNavigation.Content>
         <Show
           when={buildCount > 0}
@@ -43,11 +31,12 @@ export function MyBuildsPage({ user, onCreated }: MyBuildsPageProps) {
               icon={<HugeiconsIcon icon={UserIcon} />}
               title="Todavía no hay builds"
               description="Crea una build para empezar a configurar un resonador."
+              action={<Button onClick={createBuild}>Nueva Build</Button>}
             />
           }
         >
-          <div className="space-y-6">
-            <RosterBuildsSection userId={user.id} />
+          <div className="space-y-10">
+            <RosterBuildsSection userId={user.id} onCreateBuild={createBuild} />
             <UnassignedBuildsSection userId={user.id} />
           </div>
         </Show>
