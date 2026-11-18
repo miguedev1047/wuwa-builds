@@ -10,6 +10,14 @@ import {
 } from "@tanstack/react-db"
 import { buildCollection } from "@build/client/build-store"
 
+/** Resonator group with its live build count. */
+export type SessionRoster = {
+  resonatorId: number
+  name: string
+  iconLarge: string
+  totalBuilds: number
+}
+
 /** One local build filtered by session. */
 export function useBuildCollection({
   buildId,
@@ -52,13 +60,13 @@ export function useSessionRosters(sessionId: string) {
         groupKeys(({ build }) => [
           build.resonator.data!.id,
           build.resonator.data!.name,
-          build.resonator.data!.icon,
+          build.resonator.data!.iconLarge,
         ])
       )
       .select(({ build }) => ({
         resonatorId: build.resonator.data!.id,
         name: build.resonator.data!.name,
-        icon: build.resonator.data!.icon,
+        iconLarge: build.resonator.data!.iconLarge,
         totalBuilds: count(build.buildId),
       }))
   )

@@ -29,7 +29,6 @@ import { Route as panelAdminWeaponsIndexRouteImport } from './routes/(panel)/adm
 import { Route as panelAdminWeaponsIdRouteImport } from './routes/(panel)/admin/weapons/$id'
 import { Route as panelAdminWeaponsNewRouteImport } from './routes/(panel)/admin/weapons/new'
 import { Route as panelPanelBuilderBuildIdIndexRouteImport } from './routes/(panel)/panel/builder/$buildId/index'
-import { Route as panelPanelBuilderRRosterIdIndexRouteImport } from './routes/(panel)/panel/builder/r/$rosterId/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -133,12 +132,6 @@ const panelPanelBuilderBuildIdIndexRoute =
     path: '/$buildId/',
     getParentRoute: () => panelPanelBuilderRouteRoute,
   } as any)
-const panelPanelBuilderRRosterIdIndexRoute =
-  panelPanelBuilderRRosterIdIndexRouteImport.update({
-    id: '/r/$rosterId/',
-    path: '/r/$rosterId/',
-    getParentRoute: () => panelPanelBuilderRouteRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -161,7 +154,6 @@ export interface FileRoutesByFullPath {
   '/admin/resonators/': typeof panelAdminResonatorsIndexRoute
   '/admin/weapons/': typeof panelAdminWeaponsIndexRoute
   '/panel/builder/$buildId/': typeof panelPanelBuilderBuildIdIndexRoute
-  '/panel/builder/r/$rosterId/': typeof panelPanelBuilderRRosterIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -182,7 +174,6 @@ export interface FileRoutesByTo {
   '/admin/resonators': typeof panelAdminResonatorsIndexRoute
   '/admin/weapons': typeof panelAdminWeaponsIndexRoute
   '/panel/builder/$buildId': typeof panelPanelBuilderBuildIdIndexRoute
-  '/panel/builder/r/$rosterId': typeof panelPanelBuilderRRosterIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -206,7 +197,6 @@ export interface FileRoutesById {
   '/(panel)/admin/resonators/': typeof panelAdminResonatorsIndexRoute
   '/(panel)/admin/weapons/': typeof panelAdminWeaponsIndexRoute
   '/(panel)/panel/builder/$buildId/': typeof panelPanelBuilderBuildIdIndexRoute
-  '/(panel)/panel/builder/r/$rosterId/': typeof panelPanelBuilderRRosterIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -231,7 +221,6 @@ export interface FileRouteTypes {
     | '/admin/resonators/'
     | '/admin/weapons/'
     | '/panel/builder/$buildId/'
-    | '/panel/builder/r/$rosterId/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -252,7 +241,6 @@ export interface FileRouteTypes {
     | '/admin/resonators'
     | '/admin/weapons'
     | '/panel/builder/$buildId'
-    | '/panel/builder/r/$rosterId'
   id:
     | '__root__'
     | '/'
@@ -275,7 +263,6 @@ export interface FileRouteTypes {
     | '/(panel)/admin/resonators/'
     | '/(panel)/admin/weapons/'
     | '/(panel)/panel/builder/$buildId/'
-    | '/(panel)/panel/builder/r/$rosterId/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -428,13 +415,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof panelPanelBuilderBuildIdIndexRouteImport
       parentRoute: typeof panelPanelBuilderRouteRoute
     }
-    '/(panel)/panel/builder/r/$rosterId/': {
-      id: '/(panel)/panel/builder/r/$rosterId/'
-      path: '/r/$rosterId'
-      fullPath: '/panel/builder/r/$rosterId/'
-      preLoaderRoute: typeof panelPanelBuilderRRosterIdIndexRouteImport
-      parentRoute: typeof panelPanelBuilderRouteRoute
-    }
   }
 }
 
@@ -472,13 +452,11 @@ const panelAdminRouteRouteWithChildren = panelAdminRouteRoute._addFileChildren(
 
 interface panelPanelBuilderRouteRouteChildren {
   panelPanelBuilderBuildIdIndexRoute: typeof panelPanelBuilderBuildIdIndexRoute
-  panelPanelBuilderRRosterIdIndexRoute: typeof panelPanelBuilderRRosterIdIndexRoute
 }
 
 const panelPanelBuilderRouteRouteChildren: panelPanelBuilderRouteRouteChildren =
   {
     panelPanelBuilderBuildIdIndexRoute: panelPanelBuilderBuildIdIndexRoute,
-    panelPanelBuilderRRosterIdIndexRoute: panelPanelBuilderRRosterIdIndexRoute,
   }
 
 const panelPanelBuilderRouteRouteWithChildren =

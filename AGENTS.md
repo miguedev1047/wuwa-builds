@@ -82,9 +82,11 @@ Rules:
 - Server functions load their implementation with a dynamic `import()` inside
   the handler so Node-only code never reaches the client bundle.
 - Validate server function inputs with zod through `.validator(...)`.
-- Modules must not import TanStack Router, `src/routes` or `src/routing`.
-  Routes supply identifiers, session identity, navigation callbacks and link
-  slots. Shared router adapters belong in `src/routing`.
+- Domain, application, infrastructure and server modules must not import
+  TanStack Router, `src/routes` or `src/routing`. Presentation modules may use
+  `Link` and `linkOptions` for their own routes. Routes supply identifiers,
+  session identity and navigation callbacks; shared router adapters belong in
+  `src/routing`.
 - TanStack Start remains in module `server/` adapters. Query and DB integrations
   remain in `queries/` and `client/`.
 - Use `build` for the domain, `editor` and `collection` for its UI capabilities.

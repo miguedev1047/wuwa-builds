@@ -12,10 +12,11 @@ D1 sigue pendiente.
 3. Una build vacía muestra el selector de resonador. Al elegir o cambiar uno, se
    consulta `characterQueries.detail(id)`, se actualizan skills/pasivas y se
    reinicia el arma.
-4. `/panel/my-builds` agrupa las builds por resonador con live queries. Las
-   builds sin resonador aparecen en “Sin resonador”.
-5. `/panel/builder/r/$rosterId` lista las builds de un resonador y enlaza a la
-   ruta canónica por `buildId`.
+4. `/panel/my-builds` separa las builds con resonador (“Tus builds”) de las que
+   todavía no tienen uno (“Builds sin resonador”).
+5. Tocar un resonador abre un Sheet con sus builds. Las builds sin resonador se
+   listan directamente en la página. Cada card enlaza a la ruta canónica por
+   `buildId`; renombrar y eliminar pertenecen al editor.
 
 ## Contrato `BuildProps`
 
@@ -81,11 +82,10 @@ interface BuildProps {
 
 ## Rutas
 
-| Ruta                         | Uso                            |
-| ---------------------------- | ------------------------------ |
-| `/panel/builder/$buildId`    | Editor canónico                |
-| `/panel/builder/r/$rosterId` | Builds de un resonador         |
-| `/panel/my-builds`           | Rosters y builds sin resonador |
+| Ruta                      | Uso                                      |
+| ------------------------- | ---------------------------------------- |
+| `/panel/builder/$buildId` | Editor canónico                          |
+| `/panel/my-builds`        | Rosters con Sheet y builds sin resonador |
 
 ## Secciones del editor
 
