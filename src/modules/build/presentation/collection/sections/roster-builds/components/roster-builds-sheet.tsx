@@ -1,15 +1,15 @@
 import { Sheet } from "@/components/panelui/sheet"
 import { Spinner } from "@/components/panelui/spinner"
 import { Show } from "@/components/utility/show"
-import type { SessionRoster } from "@build/client/hooks/build-live-queries"
+import type { UserRoster } from "@build/client/hooks/build-live-queries"
 import { RosterBuildsSheetContent } from "@build/presentation/collection/sections/roster-builds/components/roster-builds-sheet-content"
 import { Suspense } from "react"
 
 type RosterBuildsSheetProps = {
   /** Roster selected in the section; null when nothing is selected. */
-  roster: SessionRoster | null
-  /** Session that owns the local builds. */
-  sessionId: string
+  roster: UserRoster | null
+  /** User that owns the local builds. */
+  userId: string
   /** Whether the Sheet is open. */
   open: boolean
   /** Updates the Sheet open state. */
@@ -21,7 +21,7 @@ type RosterBuildsSheetProps = {
 /** Sheet that lists the builds of the selected roster. */
 export function RosterBuildsSheet({
   roster,
-  sessionId,
+  userId,
   open,
   onOpenChange,
   onOpenChangeComplete,
@@ -43,7 +43,7 @@ export function RosterBuildsSheet({
                 <Suspense fallback={<Spinner />}>
                   <RosterBuildsSheetContent
                     rosterId={current.resonatorId}
-                    sessionId={sessionId}
+                    userId={userId}
                   />
                 </Suspense>
               </Sheet.Body>

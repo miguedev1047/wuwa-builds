@@ -4,7 +4,6 @@ import type { EchoSelectionSummary } from "@catalog/domain/echo"
 import { useEchoBuildFilters } from "@build/presentation/editor/searches/echoes/hooks/use-echo-build-filters"
 import { EchoBuildResults } from "@build/presentation/editor/searches/echoes/components/echo-build-results"
 import type { EchoesDataProps } from "@build/domain/build-record"
-import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import { useSelectEcho } from "@build/presentation/editor/hooks/use-select-echo"
 import { useRecommendedSonataFilter } from "@build/presentation/editor/searches/echoes/hooks/use-recommended-sonata-filter"
 
@@ -42,8 +41,7 @@ export function EchoBuildSearch({
     [reset]
   )
 
-  const { buildId } = useBuildIdentity()
-  const { selectEcho } = useSelectEcho(buildId)
+  const { selectEcho } = useSelectEcho()
   const handleSelect = (item: EchoSelectionSummary) => {
     const updated = selectEcho(slot.index, {
       id: item.id,

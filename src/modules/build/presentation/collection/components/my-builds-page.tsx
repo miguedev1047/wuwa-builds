@@ -10,24 +10,18 @@ import { UserIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
 type MyBuildsPageProps = {
-  /** Session that owns the local builds. */
-  sessionId: string
-  /** Session user, shown in the page greeting and in the app navigation. */
+  /** Signed-in user; owns the local builds and fills the greeting. */
   user: SessionUser
   /** Opens the editor after a new build has been created. */
   onCreated: (buildId: string) => void
 }
 
 /** Local build library: header, creation action and both build sections. */
-export function MyBuildsPage({
-  sessionId,
-  user,
-  onCreated,
-}: MyBuildsPageProps) {
-  const { buildCount, createBuild } = useCreateBuild(sessionId, onCreated)
+export function MyBuildsPage({ user, onCreated }: MyBuildsPageProps) {
+  const { buildCount, createBuild } = useCreateBuild(user.id, onCreated)
 
   return (
-    <div className="mx-auto max-w-5xl px-4 md:px-8">
+    <div className="mx-auto max-w-5xl space-y-4 px-4 md:px-8">
       <header className="flex flex-wrap items-end justify-between gap-3">
         <div className="space-y-1">
           <h2>Hola {user.name}. Bienvenido al panel.</h2>
@@ -49,8 +43,8 @@ export function MyBuildsPage({
         }
       >
         <div className="space-y-6">
-          <RosterBuildsSection sessionId={sessionId} />
-          <UnassignedBuildsSection sessionId={sessionId} />
+          <RosterBuildsSection userId={user.id} />
+          <UnassignedBuildsSection userId={user.id} />
         </div>
       </Show>
     </div>

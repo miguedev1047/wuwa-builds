@@ -11,8 +11,8 @@ export function BuildWorkspaceStage({
   children,
   ...props
 }: React.ComponentProps<"section">) {
-  const { buildId, sessionId } = useBuildIdentity()
-  const { data: build } = useBuildCollection({ buildId, sessionId })
+  const { buildId, userId } = useBuildIdentity()
+  const { data: build } = useBuildCollection({ buildId, userId })
 
   return (
     <section

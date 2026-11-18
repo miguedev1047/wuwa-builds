@@ -120,12 +120,12 @@ TanStack Router.
 
 ## Feature modules
 
-| Module      | Owns                                                                                                                                           | Main consumers                                                   |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `catalog`   | Canonical resonators, weapons, echoes and sonatas; zod inputs; D1 adapters; server functions; query options; admin screens and searches        | Admin panel and builder                                          |
-| `encore`    | Public API reads, caching and conversion from external codes/localized names to internal values                                                | Admin search and create-form prefill                             |
-| `build`     | Local build collection, session-scoped edits, editor and collection UI, stat calculations, and the saved-build backend reserved for cloud save | Builder and My Builds                                            |
-| `game-data` | Stable category IDs, labels, types, validation and select options                                                                              | Catalog, Encore adapters, build calculations and search controls |
+| Module      | Owns                                                                                                                                        | Main consumers                                                   |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `catalog`   | Canonical resonators, weapons, echoes and sonatas; zod inputs; D1 adapters; server functions; query options; admin screens and searches     | Admin panel and builder                                          |
+| `encore`    | Public API reads, caching and conversion from external codes/localized names to internal values                                             | Admin search and create-form prefill                             |
+| `build`     | Local build collection, user-scoped edits, editor and collection UI, stat calculations, and the saved-build backend reserved for cloud save | Builder and My Builds                                            |
+| `game-data` | Stable category IDs, labels, types, validation and select options                                                                           | Catalog, Encore adapters, build calculations and search controls |
 
 Encore is an external content source. It is not the builder's catalog and is not
 used as a fallback when D1 has no records. Admins decide which content to persist
@@ -203,7 +203,7 @@ The HTTP adapter currently requests the Spanish API locale.
 ### Local build editing
 
 1. A browser-only route preloads the `builds` collection.
-2. Live queries select builds belonging to the current `sessionId`.
+2. Live queries select builds belonging to the signed-in `userId`.
 3. Search results come from catalog queries. Resonator and weapon selection hooks
    resolve details through the shared Query client before applying edits. Echo
    selection applies its summary immediately and warms the detail query.
@@ -223,10 +223,11 @@ The repository, schemas and authenticated server functions for cloud builds
 already exist. They use the authenticated **user ID** and a versioned build
 payload.
 
-The active editor and My Builds screens still use the local **session ID** and
-`BuildProps` snapshots. They do not call the cloud-build endpoints for automatic
-save or listing. Cloud synchronization and the mapping between those two storage
-contracts remain future work.
+The active editor and My Builds screens still use the local **user ID** (never
+the session ID, which rotates on every sign-in) and `BuildProps` snapshots. They
+do not call the cloud-build endpoints for automatic save or listing. Cloud
+synchronization and the mapping between those two storage contracts remain
+future work.
 
 ## Authentication and ownership
 
@@ -238,8 +239,9 @@ password login and Discord OAuth are configured in `src/lib/auth.ts`.
 - `adminMiddleware` additionally requires `session.user.role === "ADMIN"`.
 - Roles are `USER | ADMIN`, default to `USER`, and cannot be set through client
   signup input.
-- Local build reads and mutations are scoped by `sessionId`; the LocalStorage
-  collection is shared by origin, so an ID alone is not ownership.
+- Local build reads and mutations are scoped by the Better Auth `userId`; the
+  LocalStorage collection is shared by origin, so an ID alone is not ownership.
+  The session id is never used: it rotates on every sign-in.
 - Saved-build repository calls use the authenticated user ID. Catalog freshness
   and build identity are separate concerns.
 
@@ -272,7 +274,7 @@ examples.
 | Encore queries                        | 6-hour stale time, 24-hour garbage collection                                  |
 | Encore HTTP reads in a Worker isolate | 5-minute in-memory deduplication                                               |
 | Encore HTTP subrequests               | 6-hour Cloudflare edge cache                                                   |
-| Local build collection                | LocalStorage persistence; session-scoped reads and writes                      |
+| Local build collection                | LocalStorage persistence; user-scoped reads and writes                         |
 | D1 saved-build payload                | User/build identity and `documentVersion`; not wired into local cloud save yet |
 
 The Query cache is a remote-data cache, not the local build document store.

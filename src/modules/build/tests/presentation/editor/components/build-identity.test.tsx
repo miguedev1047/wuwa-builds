@@ -5,25 +5,23 @@ import {
   useBuildIdentity,
 } from "@build/presentation/editor/build-identity"
 
-/** Displays the identity without reading any route or global session. */
+/** Displays the identity without reading any route context. */
 function Identity() {
-  const { buildId, sessionId } = useBuildIdentity()
+  const { buildId, userId } = useBuildIdentity()
   return (
     <span>
-      {sessionId}:{buildId}
+      {userId}:{buildId}
     </span>
   )
 }
 
 test("editor identity is supplied by the host without a router", () => {
   const html = renderToStaticMarkup(
-    <BuildIdentityProvider
-      identity={{ buildId: "build-a", sessionId: "session-a" }}
-    >
+    <BuildIdentityProvider identity={{ buildId: "build-a", userId: "user-a" }}>
       <Identity />
     </BuildIdentityProvider>
   )
-  expect(html).toContain("session-a:build-a")
+  expect(html).toContain("user-a:build-a")
 })
 
 test("editor controls fail closed without an explicit identity", () => {

@@ -11,37 +11,37 @@ import {
 import { buildCollection } from "@build/client/build-store"
 
 /** Resonator group with its live build count. */
-export type SessionRoster = {
+export type UserRoster = {
   resonatorId: number
   name: string
   iconLarge: string
   totalBuilds: number
 }
 
-/** One local build filtered by session. */
+/** One local build filtered by user. */
 export function useBuildCollection({
   buildId,
-  sessionId,
+  userId,
 }: {
   buildId: string
-  sessionId: string
+  userId: string
 }) {
   return useLiveSuspenseQuery((q) =>
     q
       .from({ build: buildCollection })
       .where(({ build }) =>
-        and(eq(build.buildId, buildId), eq(build.sessionId, sessionId))
+        and(eq(build.buildId, buildId), eq(build.userId, userId))
       )
       .findOne()
   )
 }
 
-/** Number of local builds that belong to the current session. */
-export function useSessionBuildCount(sessionId: string): number {
+/** Number of local builds that belong to the current user. */
+export function useUserBuildCount(userId: string): number {
   const { data } = useLiveQuery((q) =>
     q
       .from({ build: buildCollection })
-      .where(({ build }) => eq(build.sessionId, sessionId))
+      .where(({ build }) => eq(build.userId, userId))
       .select(({ build }) => ({ total: count(build.buildId) }))
   )
 
@@ -49,12 +49,12 @@ export function useSessionBuildCount(sessionId: string): number {
 }
 
 /** Builds grouped by resonator, with a reactive count per roster. */
-export function useSessionRosters(sessionId: string) {
+export function useUserRosters(userId: string) {
   return useLiveSuspenseQuery((q) =>
     q
       .from({ build: buildCollection })
       .where(({ build }) =>
-        and(eq(build.sessionId, sessionId), not(isNull(build.resonator.data)))
+        and(eq(build.userId, userId), not(isNull(build.resonator.data)))
       )
       .groupBy(
         groupKeys(({ build }) => [
@@ -73,27 +73,24 @@ export function useSessionRosters(sessionId: string) {
 }
 
 /** Builds that still do not have a resonator. */
-export function useUnassignedBuilds(sessionId: string) {
+export function useUnassignedBuilds(userId: string) {
   return useLiveSuspenseQuery((q) =>
     q
       .from({ build: buildCollection })
       .where(({ build }) =>
-        and(eq(build.sessionId, sessionId), isNull(build.resonator.data))
+        and(eq(build.userId, userId), isNull(build.resonator.data))
       )
       .orderBy(({ build }) => build.createdAt, "asc")
   )
 }
 
-/** Builds of one resonator for the current session. */
-export function useRosterBuilds(rosterId: number, sessionId: string) {
+/** Builds of one resonator for the current user. */
+export function useRosterBuilds(rosterId: number, userId: string) {
   return useLiveSuspenseQuery((q) =>
     q
       .from({ build: buildCollection })
       .where(({ build }) =>
-        and(
-          eq(build.resonator.data?.id, rosterId),
-          eq(build.sessionId, sessionId)
-        )
+        and(eq(build.resonator.data?.id, rosterId), eq(build.userId, userId))
       )
       .orderBy(({ build }) => build.createdAt, "asc")
   )

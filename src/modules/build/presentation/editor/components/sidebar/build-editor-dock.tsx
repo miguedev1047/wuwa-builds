@@ -46,8 +46,8 @@ export function BuildEditorDock({
   onDelete,
   onSectionSelect,
 }: BuildEditorDockProps) {
-  const { buildId, sessionId } = useBuildIdentity()
-  const { data: build } = useBuildCollection({ buildId, sessionId })
+  const { buildId, userId } = useBuildIdentity()
+  const { data: build } = useBuildCollection({ buildId, userId })
   const [deleteOpen, setDeleteOpen] = useState(false)
 
   const items: DockItemData[] = [
@@ -58,7 +58,7 @@ export function BuildEditorDock({
       icon: <HugeiconsIcon icon={section.icon} />,
       active: section.id === build?.selectedEditorSection,
       onClick: () => {
-        updateBuild({ buildId, sessionId }, (current) => {
+        updateBuild({ buildId, userId }, (current) => {
           current.selectedEditorSection = section.id
         })
         onSectionSelect()

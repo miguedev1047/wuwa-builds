@@ -7,16 +7,16 @@ import { HugeiconsIcon } from "@hugeicons/react"
 type RosterBuildsSheetContentProps = {
   /** Resonator whose builds are listed. */
   rosterId: number
-  /** Session that owns the local builds. */
-  sessionId: string
+  /** User that owns the local builds. */
+  userId: string
 }
 
 /** Loads the builds that belong to the selected roster. */
 export function RosterBuildsSheetContent({
   rosterId,
-  sessionId,
+  userId,
 }: RosterBuildsSheetContentProps) {
-  const { data: builds } = useRosterBuilds(rosterId, sessionId)
+  const { data: builds } = useRosterBuilds(rosterId, userId)
 
   if (builds.length === 0) {
     return (

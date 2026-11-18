@@ -10,10 +10,10 @@ export type ResonatorSelectionResult =
 
 /** Loads a resonator detail and applies it to an existing local build. */
 export function useSelectResonator() {
-  const { buildId, sessionId } = useBuildIdentity()
+  const { buildId, userId } = useBuildIdentity()
   const toast = useToast()
   const queryClient = useQueryClient()
-  const identity = { buildId, sessionId }
+  const identity = { buildId, userId }
 
   const selectResonator = async (
     character: CharacterSummary

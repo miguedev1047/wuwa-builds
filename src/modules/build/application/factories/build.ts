@@ -76,7 +76,7 @@ export const DEFAULT_BUILD_NAME = "Nueva build"
 
 export interface CreateEmptyBuildInput {
   buildId: string
-  sessionId: string
+  userId: string
   createdAt: string
   name?: string
 }
@@ -84,13 +84,13 @@ export interface CreateEmptyBuildInput {
 /** Build document with no resonator, weapon or echoes selected. */
 export function createEmptyBuild({
   buildId,
-  sessionId,
+  userId,
   createdAt,
   name = DEFAULT_BUILD_NAME,
 }: CreateEmptyBuildInput): BuildProps {
   return {
     buildId,
-    sessionId,
+    userId,
     selectedEditorSection: "resonator",
     backgroundIndex: randomBackgroundIndex(),
     name,

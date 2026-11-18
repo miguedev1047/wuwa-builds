@@ -1,4 +1,4 @@
-import { useSessionRosters } from "@build/client/hooks/build-live-queries"
+import { useUserRosters } from "@build/client/hooks/build-live-queries"
 import { BuildsEmpty } from "@build/presentation/collection/components/builds-empty"
 import { RosterBuildsSheet } from "@build/presentation/collection/sections/roster-builds/components/roster-builds-sheet"
 import { RosterList } from "@build/presentation/collection/sections/roster-builds/components/roster-list"
@@ -7,15 +7,15 @@ import { HugeiconsIcon } from "@hugeicons/react"
 import { useState } from "react"
 
 type RosterBuildsSectionContentProps = {
-  /** Session that owns the local builds. */
-  sessionId: string
+  /** User that owns the local builds. */
+  userId: string
 }
 
 /** Loads the rosters and owns the selected roster for the Sheet. */
 export function RosterBuildsSectionContent({
-  sessionId,
+  userId,
 }: RosterBuildsSectionContentProps) {
-  const { data: rosters } = useSessionRosters(sessionId)
+  const { data: rosters } = useUserRosters(userId)
   const [selectedRosterId, setSelectedRosterId] = useState<number | null>(null)
   const [sheetOpen, setSheetOpen] = useState(false)
 
@@ -43,7 +43,7 @@ export function RosterBuildsSectionContent({
       />
       <RosterBuildsSheet
         roster={selectedRoster}
-        sessionId={sessionId}
+        userId={userId}
         open={sheetOpen}
         onOpenChange={setSheetOpen}
         onOpenChangeComplete={(open) => {

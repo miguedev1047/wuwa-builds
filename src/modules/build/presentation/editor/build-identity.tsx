@@ -1,6 +1,6 @@
 import { createContext, useContext, type ReactNode } from "react"
 
-export type BuildIdentity = { buildId: string; sessionId: string }
+export type BuildIdentity = { buildId: string; userId: string }
 const IdentityContext = createContext<BuildIdentity | null>(null)
 
 /** Supplies the explicitly resolved identity to nested editor controls. */

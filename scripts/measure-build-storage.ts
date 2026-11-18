@@ -68,7 +68,7 @@ const echo: EchoSummary = {
 function representativeBuild() {
   const build = createBuildFromCharacter({
     buildId: "build",
-    sessionId: "session",
+    userId: "user",
     createdAt: new Date(0).toISOString(),
     character,
     detail,
@@ -94,7 +94,7 @@ function representativeBuild() {
 
 const emptyBuild = createEmptyBuild({
   buildId: "empty",
-  sessionId: "session",
+  userId: "user",
   createdAt: new Date(0).toISOString(),
 })
 

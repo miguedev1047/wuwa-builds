@@ -36,7 +36,7 @@ export function WeaponBuildSearch({ build }: WeaponBuildSearchProps) {
     [reset]
   )
 
-  const { selectWeapon } = useSelectWeapon(build.buildId)
+  const { selectWeapon } = useSelectWeapon()
   const [pending, setPending] = useState(false)
   const busy = useRef(false)
   const handleSelect = async (item: WeaponSummary) => {

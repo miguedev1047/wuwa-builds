@@ -13,7 +13,7 @@ describe("BuildCanvas", () => {
     const character = characterDetail({ id: 1, name: "Cartethyia" })
     const build = createBuildFromCharacter({
       buildId: "build",
-      sessionId: "session",
+      userId: "user",
       createdAt: "2026-01-01T00:00:00Z",
       character,
       detail: character,

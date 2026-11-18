@@ -14,7 +14,7 @@ type BuildBackgroundSelectorProps = {
 export function BuildBackgroundSelector({
   backgroundIndex,
 }: BuildBackgroundSelectorProps) {
-  const { buildId, sessionId } = useBuildIdentity()
+  const { buildId, userId } = useBuildIdentity()
 
   return (
     <div className="space-y-2">
@@ -27,7 +27,7 @@ export function BuildBackgroundSelector({
             aria-label={`Fondo ${index + 1}`}
             aria-pressed={backgroundIndex === index}
             onClick={() =>
-              updateBuild({ buildId, sessionId }, (current) => {
+              updateBuild({ buildId, userId }, (current) => {
                 current.backgroundIndex = index
               })
             }

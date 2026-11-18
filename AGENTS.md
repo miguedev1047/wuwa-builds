@@ -183,9 +183,10 @@ Integration examples and source-selection guidance live in
   deploy. Catalog queries use a 5-minute `staleTime` because admins edit D1.
 - Saved builds are scoped by user/build identity and payload `documentVersion`,
   never by catalog freshness.
-- TanStack DB builds are filtered by `sessionId` in every live query. The
-  LocalStorage collection itself is shared by origin, so never list or mutate a
-  build without checking the session.
+- TanStack DB builds are filtered by `userId` (the Better Auth user) in every
+  live query. The LocalStorage collection itself is shared by origin, so never
+  list or mutate a build without checking the user. Never scope builds by the
+  session id: it changes on every sign-in and would orphan them.
 - The builder UI contract and pending screens are documented in
   [docs/BUILDER_UI.md](docs/BUILDER_UI.md).
 - If a query needs a different freshness (for example the builder), override

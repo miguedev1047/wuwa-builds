@@ -339,7 +339,7 @@ export function buildRecord(overrides: Partial<BuildProps> = {}): BuildProps {
 
   return {
     buildId: "build-1",
-    sessionId: "session-1",
+    userId: "user-1",
     selectedEditorSection: "resonator",
     backgroundIndex: null,
     name: "Build",

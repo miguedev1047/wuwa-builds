@@ -56,7 +56,7 @@ export type BuildEditorSection = "resonator" | "weapon" | "echo" | "appareance"
 /** Local build document stored in the TanStack DB collection. */
 export interface BuildProps {
   buildId: string
-  sessionId: string
+  userId: string
 
   selectedEditorSection: BuildEditorSection
   backgroundIndex: number | null

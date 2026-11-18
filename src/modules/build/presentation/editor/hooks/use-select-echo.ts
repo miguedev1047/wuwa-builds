@@ -6,9 +6,10 @@ import type { EchoSummary } from "@catalog/domain/echo"
 import { echoQueries } from "@catalog/queries/echoes"
 
 /** Assigns an echo to a slot and warms its detail query. */
-export function useSelectEcho(buildId: string) {
+export function useSelectEcho() {
+  const { buildId, userId } = useBuildIdentity()
   const queryClient = useQueryClient()
-  const identity = { buildId, sessionId: useBuildIdentity().sessionId }
+  const identity = { buildId, userId }
 
   const selectEcho = (targetIndex: number, echo: EchoSummary) => {
     const updated = updateBuild(identity, (draft) =>

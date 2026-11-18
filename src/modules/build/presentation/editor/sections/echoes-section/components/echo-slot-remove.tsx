@@ -14,7 +14,7 @@ interface EchoSlotRemoveProps {
 }
 
 export function EchoSlotRemove({ build, slotIndex }: EchoSlotRemoveProps) {
-  const { buildId, sessionId } = useBuildIdentity()
+  const { buildId, userId } = useBuildIdentity()
 
   return (
     <Show when={build.echoes[slotIndex]?.data}>
@@ -25,7 +25,7 @@ export function EchoSlotRemove({ build, slotIndex }: EchoSlotRemoveProps) {
           className="w-full"
           disabled={!build.echoes[slotIndex]?.data}
           onClick={() =>
-            updateBuild({ buildId, sessionId }, (draft) =>
+            updateBuild({ buildId, userId }, (draft) =>
               buildEdits.removeEcho(draft, slotIndex)
             )
           }

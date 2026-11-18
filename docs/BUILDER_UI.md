@@ -8,7 +8,7 @@ D1 sigue pendiente.
 1. `/panel/my-builds` tiene “Nueva Build”, que crea una build vacía y abre
    `/panel/builder/$buildId`. La creación no consulta el catálogo.
 2. `/panel/builder/$buildId` es la ruta canónica del editor. Si la build no
-   existe o pertenece a otra sesión, muestra “Build no encontrada”.
+   existe o pertenece a otra cuenta, muestra “Build no encontrada”.
 3. Una build vacía muestra el selector de resonador. Al elegir o cambiar uno, se
    consulta `characterQueries.detail(id)`, se actualizan skills/pasivas y se
    reinicia el arma.
@@ -23,7 +23,7 @@ D1 sigue pendiente.
 ```ts
 interface BuildProps {
   buildId: string
-  sessionId: string
+  userId: string
   name: string
   resonator: {
     level: number // 1..90
@@ -76,7 +76,8 @@ interface BuildProps {
 - Las pantallas usan `src/modules/build/client/build-store` o el hook
   `useBuildCollection`, nunca la implementación de infraestructura.
 - Las rutas que leen la colección usan `ssr: false`.
-- Las live queries filtran por `sessionId`; nunca confíes solo en `buildId`.
+- Las live queries filtran por `userId` (el id de Better Auth); nunca confíes
+  solo en `buildId`. No uses el session id: cambia en cada inicio de sesión.
 - Los rosters usan `where`, `groupBy`, `groupKeys` y `count`; no agrupes arrays
   a mano.
 

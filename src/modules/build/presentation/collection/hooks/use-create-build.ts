@@ -1,19 +1,19 @@
 import { useToast } from "@/components/panelui/toast"
 import { createEmptyBuild } from "@build/application/factories/build"
-import { countSessionBuilds, insertBuild } from "@build/client/build-store"
-import { useSessionBuildCount } from "@build/client/hooks/build-live-queries"
+import { countUserBuilds, insertBuild } from "@build/client/build-store"
+import { useUserBuildCount } from "@build/client/hooks/build-live-queries"
 import { MAX_LOCAL_BUILDS } from "@build/domain/build"
 
 /** Creates an empty local build and opens its editor. */
 export function useCreateBuild(
-  sessionId: string,
+  userId: string,
   onCreated: (buildId: string) => void
 ) {
   const toast = useToast()
-  const buildCount = useSessionBuildCount(sessionId)
+  const buildCount = useUserBuildCount(userId)
 
   const createBuild = () => {
-    if (countSessionBuilds(sessionId) >= MAX_LOCAL_BUILDS) {
+    if (countUserBuilds(userId) >= MAX_LOCAL_BUILDS) {
       toast.add({ title: "Límite de builds alcanzado", type: "error" })
       return
     }
@@ -24,7 +24,7 @@ export function useCreateBuild(
     insertBuild(
       createEmptyBuild({
         buildId,
-        sessionId: sessionId,
+        userId: userId,
         createdAt: now,
       })
     )

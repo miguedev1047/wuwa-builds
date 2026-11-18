@@ -38,9 +38,9 @@ export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
 function RouteComponent() {
   const { buildId } = Route.useParams()
   const { session } = Route.useRouteContext()
-  const sessionId = session.session.id
+  const userId = session.user.id
   const navigate = useNavigate()
-  const { data: build } = useBuildCollection({ buildId, sessionId })
+  const { data: build } = useBuildCollection({ buildId, userId })
 
   if (!build) {
     return (
@@ -51,13 +51,13 @@ function RouteComponent() {
         />
         <h1 className="text-lg font-medium">Build no encontrada</h1>
         <p className="text-sm text-muted-foreground">
-          La build no existe o pertenece a otra sesión.
+          La build no existe o pertenece a otra cuenta.
         </p>
       </div>
     )
   }
 
-  const identity = { buildId, sessionId }
+  const identity = { buildId, userId }
 
   return (
     <BuildIdentityProvider identity={identity}>

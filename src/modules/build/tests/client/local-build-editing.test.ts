@@ -5,6 +5,7 @@ import { characterDetail } from "@build/tests/fixtures/catalog-fixtures"
 import { createEmptyBuild } from "@build/application/factories/build"
 import {
   buildCollection,
+  countUserBuilds,
   deleteBuild,
   insertBuild,
   updateBuild,
@@ -14,8 +15,8 @@ import { selectLocalResonator } from "@build/client/select-local-resonator"
 const first = characterDetail({ id: 1, name: "Cartethyia" })
 const second = characterDetail({ id: 2, name: "Jinhsi" })
 
-function insertDraft() {
-  const identity = { buildId: crypto.randomUUID(), sessionId: "owner" }
+function insertDraft(userId = "owner") {
+  const identity = { buildId: crypto.randomUUID(), userId }
   insertBuild(
     createEmptyBuild({ ...identity, createdAt: "2026-01-01T00:00:00Z" })
   )
@@ -23,10 +24,22 @@ function insertDraft() {
 }
 
 describe("local build editing", () => {
-  test("rejects updates and deletions from another session", async () => {
+  test("keeps a build when the same user signs in again", async () => {
+    await buildCollection.preload()
+    const identity = insertDraft("returning-user")
+
+    // A new sign-in rotates the session id, but ownership is the user id.
+    expect(countUserBuilds("returning-user")).toBe(1)
+    expect(countUserBuilds("other-user")).toBe(0)
+
+    deleteBuild(identity)
+    expect(countUserBuilds("returning-user")).toBe(0)
+  })
+
+  test("rejects updates and deletions from another user", async () => {
     await buildCollection.preload()
     const identity = insertDraft()
-    const outsider = { ...identity, sessionId: "other-session" }
+    const outsider = { ...identity, userId: "other-user" }
 
     expect(
       updateBuild(outsider, () => {

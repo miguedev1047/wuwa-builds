@@ -23,8 +23,8 @@ export function SidebarEditorInspector({
   open,
   onOpenChange,
 }: SidebarEditorInspectorProps) {
-  const { buildId, sessionId } = useBuildIdentity()
-  const { data } = useBuildCollection({ buildId, sessionId })
+  const { buildId, userId } = useBuildIdentity()
+  const { data } = useBuildCollection({ buildId, userId })
 
   return (
     <Show when={data}>

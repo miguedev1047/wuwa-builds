@@ -19,7 +19,6 @@ function RouteComponent() {
     <main className="space-y-10">
       <NavigationApp user={session.user} />
       <MyBuildsPage
-        sessionId={session.session.id}
         user={session.user}
         onCreated={(buildId) => {
           void navigate({ to: "/panel/builder/$buildId", params: { buildId } })

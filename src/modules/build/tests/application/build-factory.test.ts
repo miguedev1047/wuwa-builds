@@ -44,7 +44,7 @@ describe("createEmptyBuild", () => {
   test("creates a build without resonator, weapon or echoes", () => {
     const build = createEmptyBuild({
       buildId: "build-1",
-      sessionId: "session-1",
+      userId: "user-1",
       createdAt: "2026-01-01T00:00:00.000Z",
     })
 
@@ -70,7 +70,7 @@ describe("createEmptyBuild", () => {
   test("starts with a random background", () => {
     const build = createEmptyBuild({
       buildId: "build-1",
-      sessionId: "session-1",
+      userId: "user-1",
       createdAt: "2026-01-01T00:00:00.000Z",
     })
 
@@ -82,7 +82,7 @@ describe("createEmptyBuild", () => {
   test("gives each echo its own substat array", () => {
     const build = createEmptyBuild({
       buildId: "build-1",
-      sessionId: "session-1",
+      userId: "user-1",
       createdAt: "2026-01-01T00:00:00.000Z",
     })
 
@@ -94,7 +94,7 @@ describe("createBuildFromCharacter", () => {
   test("seeds resonator skills and passives from the detail", () => {
     const build = createBuildFromCharacter({
       buildId: "build-1",
-      sessionId: "session-1",
+      userId: "user-1",
       createdAt: "2026-01-01T00:00:00.000Z",
       character,
       detail,

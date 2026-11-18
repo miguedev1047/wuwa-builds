@@ -7,10 +7,11 @@ import { weaponQueries } from "@catalog/queries/weapons"
 import { useQueryClient } from "@tanstack/react-query"
 
 /** Warms the weapon detail and applies the summary to the local build. */
-export function useSelectWeapon(buildId: string) {
+export function useSelectWeapon() {
+  const { buildId, userId } = useBuildIdentity()
   const toast = useToast()
   const queryClient = useQueryClient()
-  const identity = { buildId, sessionId: useBuildIdentity().sessionId }
+  const identity = { buildId, userId }
 
   const selectWeapon = async (weapon: WeaponSummary): Promise<boolean> => {
     try {

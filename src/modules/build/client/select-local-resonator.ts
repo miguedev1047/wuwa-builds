@@ -13,7 +13,7 @@ export async function selectLocalResonator(
   character: CharacterSummary,
   loadDetail: () => Promise<CharacterDetail>
 ): Promise<"selected" | "unchanged" | "discarded"> {
-  const key = JSON.stringify([identity.sessionId, identity.buildId])
+  const key = JSON.stringify([identity.userId, identity.buildId])
   const selection = Symbol()
   pendingSelections.set(key, selection)
 

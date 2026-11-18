@@ -1,10 +1,10 @@
 import { Tooltip } from "@/components/panelui/tooltip"
-import type { SessionRoster } from "@build/client/hooks/build-live-queries"
+import type { UserRoster } from "@build/client/hooks/build-live-queries"
 import { RosterItem } from "@build/presentation/collection/sections/roster-builds/components/roster-item"
 
 type RosterListProps = {
   /** Resonator groups with at least one build. */
-  rosters: readonly SessionRoster[]
+  rosters: readonly UserRoster[]
   /** Selects the roster that opens the builds Sheet. */
   onSelect: (resonatorId: number) => void
 }

@@ -2,17 +2,17 @@ import { UnassignedBuildsSectionContent } from "@build/presentation/collection/s
 import { Suspense } from "react"
 
 type UnassignedBuildsSectionProps = {
-  /** Session that owns the local builds. */
-  sessionId: string
+  /** User that owns the local builds. */
+  userId: string
 }
 
 /** Section with the drafts that still have no resonator. */
 export function UnassignedBuildsSection({
-  sessionId,
+  userId,
 }: UnassignedBuildsSectionProps) {
   return (
     <Suspense fallback={null}>
-      <UnassignedBuildsSectionContent sessionId={sessionId} />
+      <UnassignedBuildsSectionContent userId={userId} />
     </Suspense>
   )
 }
