@@ -55,6 +55,7 @@
   --color-brand-yellow: var(--brand-yellow);
   --color-highlight: var(--highlight);
   --shadow-app-surface: var(--app-shadow-surface);
+  --shadow-app-filled: var(--app-shadow-filled);
   --shadow-app-floating: var(--app-shadow-floating);
   --shadow-app-overlay: var(--app-shadow-overlay);
   --shadow-app-badge: var(--app-shadow-badge);
@@ -135,6 +136,16 @@
     0 1px 2px oklch(0.2077 0.0398 265.75 / 0.08),
     0 1px 1px oklch(0.2077 0.0398 265.75 / 0.04),
     inset 0 1px 0 oklch(1 0 0 / 0.45);
+  /*
+   * A filled control swallows the hairline drop of a surface: its colour runs
+   * to its own edge, so only a deeper drop and a shade along the bottom give
+   * it any body. It keeps the surface's highlight on top.
+   */
+  --app-shadow-filled:
+    0 1px 2px oklch(0.2077 0.0398 265.75 / 0.1),
+    0 4px 8px -2px oklch(0.2077 0.0398 265.75 / 0.16),
+    inset 0 1px 0 oklch(1 0 0 / 0.42),
+    inset 0 -1px 0 oklch(0.2077 0.0398 265.75 / 0.12);
   --app-shadow-floating:
     0 2px 4px oklch(0.2077 0.0398 265.75 / 0.06),
     0 12px 24px -8px oklch(0.2077 0.0398 265.75 / 0.16),
@@ -198,6 +209,9 @@
   --app-shadow-surface:
     0 1px 2px oklch(0 0 0 / 0.5), 0 1px 1px oklch(0 0 0 / 0.3),
     inset 0 1px 0 oklch(1 0 0 / 0.06);
+  --app-shadow-filled:
+    0 1px 2px oklch(0 0 0 / 0.5), 0 4px 8px -2px oklch(0 0 0 / 0.45),
+    inset 0 1px 0 oklch(1 0 0 / 0.14), inset 0 -1px 0 oklch(0 0 0 / 0.35);
   --app-shadow-floating:
     0 2px 4px oklch(0 0 0 / 0.4), 0 12px 28px -8px oklch(0 0 0 / 0.5),
     inset 0 1px 0 oklch(1 0 0 / 0.07);

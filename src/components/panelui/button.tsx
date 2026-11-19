@@ -14,7 +14,7 @@ export const buttonVariants = tv({
   variants: {
     variant: {
       default:
-        "bg-primary text-primary-foreground shadow-app-surface hover:not-disabled:bg-primary/90",
+        "bg-primary text-primary-foreground shadow-app-filled hover:not-disabled:bg-primary/90",
       secondary:
         "bg-secondary text-secondary-foreground shadow-app-surface hover:not-disabled:bg-secondary/80",
       outline:
@@ -22,7 +22,7 @@ export const buttonVariants = tv({
       ghost:
         "text-foreground hover:not-disabled:bg-accent hover:not-disabled:text-accent-foreground",
       destructive:
-        "bg-destructive text-white shadow-app-surface hover:not-disabled:bg-destructive/90 focus-visible:ring-destructive/40",
+        "bg-destructive text-white shadow-app-filled hover:not-disabled:bg-destructive/90 focus-visible:ring-destructive/40",
       link: "text-foreground underline-offset-4 hover:underline",
     },
     size: {

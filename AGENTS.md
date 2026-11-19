@@ -263,11 +263,14 @@ Integration examples and source-selection guidance live in
   ```
 - **Depth uses the app elevation tokens.** `shadow-app-surface` is a control
   or card resting in the page (fields, buttons, chips, cards);
-  `shadow-app-floating` is a layer over it (menus, select and combobox lists,
-  popovers, tooltips, hover cards, toasts); `shadow-app-overlay` is a modal
-  (dialog, alert dialog, sheet, command). They are defined in
-  `src/styles/theme.css`; do not bring back `shadow-xs`/`sm`/`lg` on those
-  surfaces, so every raised surface keeps the same edge treatment.
+  `shadow-app-filled` is a button its own colour fills (the `default` and
+  `destructive` variants), where a deeper drop and a shade along the bottom
+  give the fill body; `shadow-app-floating` is a layer over it (menus, select
+  and combobox lists, popovers, tooltips, hover cards, toasts);
+  `shadow-app-overlay` is a modal (dialog, alert dialog, sheet, command). They
+  are defined in `src/styles/theme.css`; do not bring back
+  `shadow-xs`/`sm`/`lg` on those surfaces, so every raised surface keeps the
+  same edge treatment.
 - **Use `highlight` for the builder's emphasis.** Stat values read in
   `text-highlight`, and an active pick takes `border-highlight` with a
   highlight-tinted shadow. It is a semantic role of its own (`--highlight` in
