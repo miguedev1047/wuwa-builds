@@ -63,7 +63,7 @@ export function SelectedEchoSlotPanelContent({
 
   const sets = detail.sets ?? []
   const findEchoSet = sets.find((set) => set.setId === slot.echoSetId)
-  const setIcon = findEchoSet?.icon
+  const setIcon = findEchoSet?.sonata?.icon
 
   return (
     <EchoSlotCard

@@ -522,7 +522,6 @@ export async function saveEcho(
         sortOrder,
         setId: set.id,
         name: set.name,
-        icon: set.icon,
       }))
     )
   }
@@ -546,7 +545,10 @@ export async function readEcho(
     with: {
       sets: {
         orderBy: { sortOrder: "asc" },
-        with: { sonataEffects: { orderBy: { pieces: "asc" } } },
+        with: {
+          sonata: { columns: { icon: true } },
+          sonataEffects: { orderBy: { pieces: "asc" } },
+        },
       },
       skill: true,
     },
@@ -557,7 +559,7 @@ export async function readEcho(
   const sets: EncoreEchoSet[] = row.sets.map((set) => ({
     id: set.setId,
     name: set.name,
-    icon: set.icon,
+    icon: set.sonata?.icon ?? "",
     sonataEffects: set.sonataEffects.map((effect) => ({
       key: effect.pieces,
       description: effect.description,
@@ -587,7 +589,10 @@ export async function readEchoes(db: AppDb): Promise<EncoreEchoSummary[]> {
     with: {
       sets: {
         orderBy: { sortOrder: "asc" },
-        with: { sonataEffects: { orderBy: { pieces: "asc" } } },
+        with: {
+          sonata: { columns: { icon: true } },
+          sonataEffects: { orderBy: { pieces: "asc" } },
+        },
       },
     },
   })
@@ -601,7 +606,7 @@ export async function readEchoes(db: AppDb): Promise<EncoreEchoSummary[]> {
     sets: row.sets.map((set) => ({
       id: set.setId,
       name: set.name,
-      icon: set.icon,
+      icon: set.sonata?.icon ?? "",
       sonataEffects: set.sonataEffects.map((effect) => ({
         key: effect.pieces,
         description: effect.description,

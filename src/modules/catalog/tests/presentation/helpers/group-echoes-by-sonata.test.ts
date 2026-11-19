@@ -20,7 +20,7 @@ function echo(
     sets: sets.map(([setId, name]) => ({
       setId,
       name,
-      icon: `${setId}.webp`,
+      sonata: { icon: `${setId}.webp` },
     })),
   }
 }

@@ -1,10 +1,11 @@
 import { Badge } from "@/components/panelui/badge"
 import { Show } from "@/components/utility/show"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
-import type { EchoSetRow, SonataSetEffectRow } from "@db/schema"
+import type { EchoSetRow, SonataSetEffectRow, SonataSetRow } from "@db/schema"
 
 type SonataCardProps = {
   echoSet: EchoSetRow & {
+    sonata: SonataSetRow | null
     sonataEffects: SonataSetEffectRow[]
   }
 }
@@ -14,7 +15,7 @@ export function SonataCardContent({ echoSet }: SonataCardProps) {
     <EditableSection.Card>
       <EditableSection.CardHeader>
         <div className="flex items-center gap-2">
-          <Show when={echoSet.icon}>
+          <Show when={echoSet.sonata?.icon}>
             {(icon) => (
               <EditableSection.ItemMedia className="size-10 rounded-md">
                 <EditableSection.Image

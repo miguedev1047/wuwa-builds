@@ -76,7 +76,7 @@ export function groupEchoesBySonata(
     groups.push({
       setId,
       name: meta?.name || `Set ${setId}`,
-      icon: meta?.icon ?? "",
+      icon: meta?.sonata?.icon ?? "",
       color: "",
       effects: [],
       echoes: grouped,

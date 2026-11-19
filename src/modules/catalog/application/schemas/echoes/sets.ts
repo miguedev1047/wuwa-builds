@@ -5,8 +5,9 @@ import { echoSets } from "@db/schema"
 /**
  * Links a sonata set to an echo.
  *
- * `name` and `icon` are derived on the server from `sonata_sets`, and
- * `sortOrder` is the next position, so the client only picks the pair.
+ * `name` is copied from `sonata_sets` on the server and `sortOrder` is the
+ * next position; the icon is resolved through the `sonata` relation, so the
+ * client only picks the pair.
  */
 export const echoSetInput = createInsertSchema(echoSets, {
   echoId: (schema) => schema.int().min(1, "El eco es requerido"),
@@ -16,7 +17,6 @@ export const echoSetInput = createInsertSchema(echoSets, {
     id: true,
     sortOrder: true,
     name: true,
-    icon: true,
     createdAt: true,
     updatedAt: true,
   })

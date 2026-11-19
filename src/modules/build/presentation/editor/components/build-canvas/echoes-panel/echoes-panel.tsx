@@ -18,7 +18,7 @@ export function EchoesPanel({
       {(build.echoes ?? []).map((slot) => {
         const detail = details?.find((item) => item.id === slot.data?.id)
         const findIcon = detail?.sets.find((s) => s.setId === slot.echoSetId)
-        const seiIcon = findIcon?.icon
+        const seiIcon = findIcon?.sonata?.icon
 
         return (
           <BuildEchoCard

@@ -9,8 +9,9 @@ import { echoSets } from "@db/schema"
 /**
  * Links one of the echo's sonata sets.
  *
- * The name and the icon are copied from `sonata_sets` instead of trusting the
- * client, and the position is the end of the current list.
+ * The name is copied from `sonata_sets` instead of trusting the client, the
+ * icon is resolved through the `sonata` relation, and the position is the end
+ * of the current list.
  */
 export const createEchoSet = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])
@@ -46,7 +47,6 @@ export const createEchoSet = createServerFn({ method: "POST" })
         echoId: data.echoId,
         setId: data.setId,
         name: sonata.name,
-        icon: sonata.icon,
         sortOrder: last ? last.sortOrder + 1 : 0,
       })
       .returning()

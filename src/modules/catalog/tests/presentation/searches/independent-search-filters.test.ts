@@ -82,7 +82,7 @@ const catalogEcho: EchoSelectionSummary = {
     {
       setId: 9,
       name: "Solo catálogo",
-      icon: "https://example.com/catalog-sonata.webp",
+      sonata: { icon: "https://example.com/catalog-sonata.webp" },
     },
   ],
 }

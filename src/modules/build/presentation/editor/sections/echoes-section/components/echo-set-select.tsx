@@ -19,7 +19,7 @@ export function EchoSetSelect({
   const options = sets.map((set) => ({
     label: set.name,
     value: String(set.setId),
-    icon: set.icon,
+    icon: set.sonata?.icon,
   }))
 
   const selectedValue = selectedSetId ? String(selectedSetId) : null

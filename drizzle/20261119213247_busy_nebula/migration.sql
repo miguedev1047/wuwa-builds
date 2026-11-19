@@ -1,0 +1,1 @@
+ALTER TABLE `echo_sets` DROP COLUMN `icon`;

@@ -65,8 +65,6 @@ export const echoSets = sqliteTable(
     setId: integer("set_id", { mode: "number" }).notNull().default(0),
     /** `Name` (`Group.FetterGroupName` in the detail endpoint) */
     name: text("name").notNull().default(""),
-    /** `Icon` (only present in the list endpoint). */
-    icon: text("icon").notNull().default(""),
 
     ...getDate(),
   },
@@ -210,7 +208,14 @@ export type SonataSetEffectRow = typeof sonataSetEffects.$inferSelect
 export type NewSonataSetEffectRow = typeof sonataSetEffects.$inferInsert
 
 export const echoRelations = defineRelationsPart(
-  { echoes, echoSets, sonataSetEffects, echoSkills, echoSkillBonuses },
+  {
+    echoes,
+    echoSets,
+    sonataSets,
+    sonataSetEffects,
+    echoSkills,
+    echoSkillBonuses,
+  },
   (r) => ({
     echoes: {
       sets: r.many.echoSets({
@@ -234,6 +239,14 @@ export const echoRelations = defineRelationsPart(
       sonataEffects: r.many.sonataSetEffects({
         from: r.echoSets.setId,
         to: r.sonataSetEffects.setId,
+      }),
+      /**
+       * Canonical source of the set name and icon. `echo_sets` keeps only the
+       * link so the icon can never drift from `sonata_sets`.
+       */
+      sonata: r.one.sonataSets({
+        from: r.echoSets.setId,
+        to: r.sonataSets.id,
       }),
     },
     echoSkills: {

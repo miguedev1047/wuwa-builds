@@ -318,6 +318,10 @@ Encore conversion happens at its infrastructure boundary. New catalog writes
 validate canonical values; there is no runtime category compatibility layer for
 old local snapshots or translated IDs.
 
+Echo Sonata links (`echo_sets`) keep only the link — `echoId`, `setId`, `name`
+and `sortOrder`. The set icon is read through the `sonata` relation from
+`sonata_sets`, so it cannot drift from the canonical set the panel edits.
+
 Resonators carry three curation flags that are panel data, not Encore data:
 `isVisible`, `isNew` and `isCollab`. A re-import through `saveCharacter`
 captures them before the whole-document replace and re-applies them, so a

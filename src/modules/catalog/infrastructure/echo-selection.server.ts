@@ -9,8 +9,9 @@ export async function readEchoSelection(
     orderBy: { id: "asc" },
     with: {
       sets: {
-        columns: { setId: true, name: true, icon: true },
+        columns: { setId: true, name: true },
         orderBy: { sortOrder: "asc" },
+        with: { sonata: { columns: { icon: true } } },
       },
     },
   })

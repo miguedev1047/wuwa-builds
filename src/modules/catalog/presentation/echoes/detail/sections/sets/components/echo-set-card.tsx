@@ -4,7 +4,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { Show } from "@/components/utility/show"
-import type { EchoSetRow, SonataSetEffectRow } from "@db/schema"
+import type { EchoSetRow, SonataSetEffectRow, SonataSetRow } from "@db/schema"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { EchoSetDeleteAction } from "@catalog/presentation/echoes/detail/sections/sets/components/echo-set-delete-action"
 import { SonataCardContent } from "@catalog/presentation/echoes/detail/sections/sets/components/sonata-card-content"
@@ -12,6 +12,7 @@ import { SonataCardContent } from "@catalog/presentation/echoes/detail/sections/
 type EchoSetCardProps = {
   echoId: number
   echoSet: EchoSetRow & {
+    sonata: SonataSetRow | null
     sonataEffects: SonataSetEffectRow[]
   }
 }
@@ -21,7 +22,7 @@ export function EchoSetCard({ echoSet, echoId }: EchoSetCardProps) {
   return (
     <HoverCard>
       <EditableSection.Item>
-        <Show when={echoSet.icon}>
+        <Show when={echoSet.sonata?.icon}>
           {(icon) => (
             <HoverCardTrigger
               render={
