@@ -76,6 +76,16 @@ export async function saveCharacter(
   db: AppDb,
   character: EncoreCharacterDetail
 ): Promise<void> {
+  /**
+   * The curation flags (`isVisible`, `isNew`, `isCollab`) are panel data, not
+   * Encore data, so they are captured before the whole-document replace and
+   * re-applied after it. A re-sync never resets them to the column defaults.
+   */
+  const previous = await db.query.resonators.findFirst({
+    where: { id: character.id },
+    columns: { isVisible: true, isNew: true, isCollab: true },
+  })
+
   await db.delete(resonators).where(eq(resonators.id, character.id))
 
   await db.insert(resonators).values({
@@ -90,6 +100,11 @@ export async function saveCharacter(
     iconLarge: character.images.iconLarge,
     circle: character.images.circle,
     portrait: character.images.portrait,
+    ...(previous ?? {
+      isVisible: true,
+      isNew: false,
+      isCollab: false,
+    }),
   })
 
   await db.insert(resonatorsMedia).values(

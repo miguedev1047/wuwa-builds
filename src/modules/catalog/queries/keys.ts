@@ -8,6 +8,11 @@
 export const wuwaBuildsKeys = {
   all: ["wuwa-builds"] as const,
   characters: () => [...wuwaBuildsKeys.all, "characters"] as const,
+  /**
+   * Visible-only characters, a child of `characters()` so the existing
+   * character invalidations refresh the builder list too.
+   */
+  visibleCharacters: () => [...wuwaBuildsKeys.characters(), "visible"] as const,
   character: (id: number) => [...wuwaBuildsKeys.all, "character", id] as const,
   weapons: () => [...wuwaBuildsKeys.all, "weapons"] as const,
   weapon: (id: number) => [...wuwaBuildsKeys.all, "weapon", id] as const,

@@ -6,6 +6,7 @@ import {
 import { createInsertSchema } from "drizzle-orm/zod"
 import { z } from "zod"
 import { resonators } from "@db/schema"
+import { idInput } from "@catalog/application/id"
 
 /**
  * Fields the admin panel can set when creating a resonator.
@@ -39,4 +40,19 @@ export const resonatorFormInput = resonatorInput.extend({
   element: z.union([elementSchema, z.literal("")]).pipe(elementSchema),
   weaponType: z.union([weaponTypeSchema, z.literal("")]).pipe(weaponTypeSchema),
 })
+
+/**
+ * Curation flags of one resonator.
+ *
+ * They are panel metadata, not Encore data; `saveCharacter` preserves them
+ * across re-syncs and the builder only lists rows with `isVisible`.
+ */
+export const resonatorFlagsInput = z.object({
+  id: idInput.shape.id,
+  isVisible: z.boolean(),
+  isNew: z.boolean(),
+  isCollab: z.boolean(),
+})
+
+export type ResonatorFlagsInput = z.infer<typeof resonatorFlagsInput>
 export type ResonatorFormValues = z.input<typeof resonatorFormInput>

@@ -24,6 +24,9 @@ export function resonatorDraftFromEncore(
     circle: character.images.circle,
     portrait: character.images.portrait,
     iconLarge: character.images.iconLarge,
+    isVisible: true,
+    isNew: true,
+    isCollab: false,
   }
 }
 
@@ -41,5 +44,8 @@ export function resonatorDraftFromRow(resonator: ResonatorRow): ResonatorInput {
     circle: resonator.circle,
     portrait: resonator.portrait,
     iconLarge: resonator.iconLarge,
+    isVisible: resonator.isVisible,
+    isNew: resonator.isNew,
+    isCollab: resonator.isCollab,
   }
 }

@@ -7,6 +7,7 @@ import {
   echoSetInput,
   resonatorInput,
   resonatorFormInput,
+  resonatorFlagsInput,
   resonatorPassiveInput,
   resonatorPassivesInput,
   resonatorPropertyGrowthInput,
@@ -47,6 +48,49 @@ describe("resonatorInput", () => {
 
     expect(parsed.name).toBe("Cartethyia")
     expect(parsed.rarity).toBe(5)
+  })
+
+  test("accepts the curation flags and keeps them optional", () => {
+    const withFlags = resonatorInput.parse({
+      ...valid,
+      isVisible: false,
+      isNew: true,
+      isCollab: false,
+    })
+
+    expect(withFlags.isVisible).toBe(false)
+    expect(withFlags.isNew).toBe(true)
+
+    const withoutFlags = resonatorInput.parse(valid)
+
+    expect(withoutFlags.isVisible).toBeUndefined()
+  })
+
+  test("resonatorFlagsInput requires an id and the three booleans", () => {
+    const ok = resonatorFlagsInput.safeParse({
+      id: 1409,
+      isVisible: true,
+      isNew: false,
+      isCollab: false,
+    })
+
+    expect(ok.success).toBe(true)
+
+    const missingFlag = resonatorFlagsInput.safeParse({
+      id: 1409,
+      isVisible: true,
+    })
+
+    expect(missingFlag.success).toBe(false)
+
+    const badId = resonatorFlagsInput.safeParse({
+      id: 0,
+      isVisible: true,
+      isNew: false,
+      isCollab: false,
+    })
+
+    expect(badId.success).toBe(false)
   })
 
   test("rejects an empty name", () => {

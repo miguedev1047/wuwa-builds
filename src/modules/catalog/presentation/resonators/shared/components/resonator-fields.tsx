@@ -23,6 +23,9 @@ export const resonatorFormDefaults: ResonatorFormValues = {
   circle: "",
   portrait: "",
   iconLarge: "",
+  isVisible: true,
+  isNew: false,
+  isCollab: false,
 }
 
 export const ResonatorFields = withForm({
@@ -100,6 +103,36 @@ export const ResonatorFields = withForm({
               placeholder="Descripción del resonador"
               rows={4}
               className="md:col-span-2"
+              disabled={isPending}
+            />
+          )}
+        </form.AppField>
+
+        <form.AppField name="isVisible">
+          {(field) => (
+            <field.SwitchField
+              label="Visible en el builder"
+              description="Los resonadores ocultos solo se curan aquí."
+              disabled={isPending}
+            />
+          )}
+        </form.AppField>
+
+        <form.AppField name="isNew">
+          {(field) => (
+            <field.SwitchField
+              label="Nuevo"
+              description="Lanzamiento reciente de la versión actual."
+              disabled={isPending}
+            />
+          )}
+        </form.AppField>
+
+        <form.AppField name="isCollab">
+          {(field) => (
+            <field.SwitchField
+              label="Colab"
+              description="Resonador de una colaboración."
               disabled={isPending}
             />
           )}

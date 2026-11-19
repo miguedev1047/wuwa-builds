@@ -318,6 +318,14 @@ Encore conversion happens at its infrastructure boundary. New catalog writes
 validate canonical values; there is no runtime category compatibility layer for
 old local snapshots or translated IDs.
 
+Resonators carry three curation flags that are panel data, not Encore data:
+`isVisible`, `isNew` and `isCollab`. A re-import through `saveCharacter`
+captures them before the whole-document replace and re-applies them, so a
+game sync never resets them. The builder's resonator search only lists rows
+with `isVisible = true` (`getVisibleCharacters`, cached under the
+`characters()` query-key prefix so admin mutations refresh it); the admin
+list stays unfiltered because hidden rows still need curation.
+
 ## Development and validation
 
 Use Bun for scripts and package management. `bun run dev` serves the app with SSR

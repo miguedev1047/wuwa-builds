@@ -69,6 +69,23 @@ export const resonators = sqliteTable(
     /** `RolePortrait` (`images.portrait`) */
     portrait: text("portrait").notNull().default(""),
 
+    /**
+     * Curation flags, not Encore data. `isVisible` gates the builder-facing
+     * list and future public surfaces; `isNew` and `isCollab` are display
+     * metadata curated from the panel.
+     */
+    isVisible: integer("is_visible", { mode: "boolean" })
+      .notNull()
+      .default(sql`true`),
+    /** Freshly released resonator worth a badge. */
+    isNew: integer("is_new", { mode: "boolean" })
+      .notNull()
+      .default(sql`false`),
+    /** Part of a crossover collaboration. */
+    isCollab: integer("is_collab", { mode: "boolean" })
+      .notNull()
+      .default(sql`false`),
+
     ...getDate(),
   },
   (table) => [index("resonators_element_idx").on(table.element)]

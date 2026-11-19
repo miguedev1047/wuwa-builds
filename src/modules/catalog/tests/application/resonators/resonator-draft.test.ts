@@ -45,6 +45,9 @@ describe("resonatorDraftFromEncore", () => {
       circle: "https://api.encore.moe/resource/Data/circle.webp",
       portrait: "https://api.encore.moe/resource/Data/portrait.webp",
       iconLarge: "https://api.encore.moe/resource/Data/icon-large.webp",
+      isVisible: true,
+      isNew: true,
+      isCollab: false,
     })
   })
 
@@ -61,6 +64,9 @@ describe("resonatorDraftFromEncore", () => {
       circle: "https://api.encore.moe/resource/Data/circle.webp",
       portrait: "https://api.encore.moe/resource/Data/portrait.webp",
       iconLarge: "https://api.encore.moe/resource/Data/icon-large.webp",
+      isVisible: false,
+      isNew: true,
+      isCollab: true,
       createdAt: new Date(),
       updatedAt: new Date(),
     }
@@ -77,6 +83,9 @@ describe("resonatorDraftFromEncore", () => {
       circle: "https://api.encore.moe/resource/Data/circle.webp",
       portrait: "https://api.encore.moe/resource/Data/portrait.webp",
       iconLarge: "https://api.encore.moe/resource/Data/icon-large.webp",
+      isVisible: false,
+      isNew: true,
+      isCollab: true,
     })
   })
 

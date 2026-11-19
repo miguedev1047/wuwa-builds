@@ -1,6 +1,7 @@
 import {
   getCharacter,
   getCharacters,
+  getVisibleCharacters,
 } from "@catalog/server/resonators/resonators"
 import { queryOptions } from "@tanstack/react-query"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
@@ -14,6 +15,15 @@ export const characterQueries = {
     queryOptions({
       queryKey: wuwaBuildsKeys.characters(),
       queryFn: () => getCharacters(),
+      staleTime: WUWA_BUILDS_STALE_TIME,
+      gcTime: WUWA_BUILDS_GC_TIME,
+    }),
+
+  /** Visible-only list powering the builder's resonator search. */
+  visible: () =>
+    queryOptions({
+      queryKey: wuwaBuildsKeys.visibleCharacters(),
+      queryFn: () => getVisibleCharacters(),
       staleTime: WUWA_BUILDS_STALE_TIME,
       gcTime: WUWA_BUILDS_GC_TIME,
     }),

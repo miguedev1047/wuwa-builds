@@ -39,6 +39,21 @@ export const getCharacters = createServerFn({ method: "GET" })
   })
 
 /**
+ * Resonators the builder can pick: only rows the panel marked visible.
+ *
+ * `getCharacters` stays unfiltered because the admin list must reach hidden
+ * rows for curation.
+ */
+export const getVisibleCharacters = createServerFn({ method: "GET" })
+  .middleware([authMiddleware])
+  .handler(async () => {
+    return await db.query.resonators.findMany({
+      where: { isVisible: true },
+      orderBy: { id: "asc" },
+    })
+  })
+
+/**
  * Single query of the resonator detail screen: the row plus every relation the
  * panel can edit, so sections do not need their own `wuwa-builds` queries.
  */
