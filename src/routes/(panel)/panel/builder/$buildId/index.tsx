@@ -1,12 +1,8 @@
-import { buildEdits } from "@build/application/build-edits"
-import {
-  buildCollection,
-  deleteBuild,
-  updateBuild,
-} from "@build/client/build-store"
+import { buildCollection } from "@build/client/build-store"
 import { useBuildCollection } from "@build/client/hooks/build-live-queries"
 import { BuildIdentityProvider } from "@build/presentation/editor/build-identity"
 import { BuildEditorWorkspace } from "@build/presentation/editor/components/workspace/build-editor-workspace"
+import { useBuildActions } from "@build/presentation/editor/hooks/use-build-actions"
 import type { DockLinkItem } from "@/components/ui/dock"
 import {
   BuildRouteError,
@@ -39,12 +35,21 @@ export const Route = createFileRoute("/(panel)/panel/builder/$buildId/")({
   },
 })
 
+/** Editor route: binds the loaded build to the rename and delete actions. */
 function RouteComponent() {
+  const navigate = useNavigate()
+
   const { buildId } = Route.useParams()
   const { session } = Route.useRouteContext()
   const userId = session.user.id
-  const navigate = useNavigate()
-  const { data: build } = useBuildCollection({ buildId, userId })
+
+  const { data: liveBuild } = useBuildCollection({ buildId, userId })
+
+  const { build, rename, remove } = useBuildActions({
+    liveBuild,
+    buildId,
+    onDeleted: () => navigate({ to: "/panel/my-builds" }),
+  })
 
   if (!build) return <BuildRouteNotFound />
 
@@ -55,12 +60,8 @@ function RouteComponent() {
       <BuildEditorWorkspace
         build={build}
         backLink={backLink}
-        onRename={(name) =>
-          updateBuild(identity, (draft) => buildEdits.rename(draft, name))
-        }
-        onDelete={() => {
-          if (deleteBuild(identity)) void navigate({ to: "/panel/my-builds" })
-        }}
+        onRename={rename}
+        onDelete={remove}
       />
     </BuildIdentityProvider>
   )
