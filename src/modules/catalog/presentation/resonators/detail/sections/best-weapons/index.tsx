@@ -4,6 +4,7 @@ import { ResonatorBestWeaponsContent } from "@catalog/presentation/resonators/de
 import { ResonatorBestWeaponsEditLoader } from "@catalog/presentation/resonators/detail/sections/best-weapons/components/resonator-best-weapons-edit-loader"
 import { ResonatorBestWeaponsSkeleton } from "@catalog/presentation/resonators/detail/sections/best-weapons/components/resonator-best-weapons-skeleton"
 import { Suspense } from "react"
+import { AddWeaponLink } from "@catalog/presentation/resonators/detail/sections/best-weapons/components/add-weapon-link"
 
 /** Ordered recommended catalog weapons for a resonator. */
 export function ResonatorBestWeaponsSection({
@@ -19,6 +20,7 @@ export function ResonatorBestWeaponsSection({
           Armas recomendadas en orden de prioridad.
         </EditableSection.Description>
         <EditableSection.Actions>
+          <AddWeaponLink />
           <Suspense fallback={<Skeleton className="h-8 w-24" />}>
             <ResonatorBestWeaponsEditLoader resonatorId={resonatorId} />
           </Suspense>
