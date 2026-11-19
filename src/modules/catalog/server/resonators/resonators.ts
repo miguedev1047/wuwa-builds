@@ -41,17 +41,18 @@ export const getCharacters = createServerFn({ method: "GET" })
 /**
  * Resonators the builder can pick: only rows the panel marked visible.
  *
- * `getCharacters` stays unfiltered because the admin list must reach hidden
- * rows for curation.
+ * Public on purpose: the visible roster is not sensitive and anonymous
+ * sessions must be able to read it. `getCharacters` stays filtered by
+ * authentication because the admin list must reach hidden rows.
  */
-export const getVisibleCharacters = createServerFn({ method: "GET" })
-  .middleware([authMiddleware])
-  .handler(async () => {
+export const getVisibleCharacters = createServerFn({ method: "GET" }).handler(
+  async () => {
     return await db.query.resonators.findMany({
       where: { isVisible: true },
       orderBy: { id: "asc" },
     })
-  })
+  }
+)
 
 /**
  * Single query of the resonator detail screen: the row plus every relation the

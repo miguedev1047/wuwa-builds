@@ -322,9 +322,11 @@ Resonators carry three curation flags that are panel data, not Encore data:
 `isVisible`, `isNew` and `isCollab`. A re-import through `saveCharacter`
 captures them before the whole-document replace and re-applies them, so a
 game sync never resets them. The builder's resonator search only lists rows
-with `isVisible = true` (`getVisibleCharacters`, cached under the
-`characters()` query-key prefix so admin mutations refresh it); the admin
-list stays unfiltered because hidden rows still need curation.
+with `isVisible = true` through `getVisibleCharacters`, a public server
+function (the visible roster is not sensitive; anonymous sessions can read
+it) cached under the `characters()` query-key prefix so admin mutations
+refresh it. The admin list stays unfiltered and authenticated because
+hidden rows still need curation.
 
 ## Development and validation
 

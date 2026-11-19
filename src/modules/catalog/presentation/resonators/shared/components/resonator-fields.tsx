@@ -111,6 +111,7 @@ export const ResonatorFields = withForm({
         <form.AppField name="isVisible">
           {(field) => (
             <field.SwitchField
+              className="md:col-span-2"
               label="Visible en el builder"
               description="Los resonadores ocultos solo se curan aquí."
               disabled={isPending}
@@ -121,6 +122,7 @@ export const ResonatorFields = withForm({
         <form.AppField name="isNew">
           {(field) => (
             <field.SwitchField
+              className="md:col-span-2"
               label="Nuevo"
               description="Lanzamiento reciente de la versión actual."
               disabled={isPending}
@@ -131,6 +133,7 @@ export const ResonatorFields = withForm({
         <form.AppField name="isCollab">
           {(field) => (
             <field.SwitchField
+              className="md:col-span-2"
               label="Colab"
               description="Resonador de una colaboración."
               disabled={isPending}
