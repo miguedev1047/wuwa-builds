@@ -16,7 +16,7 @@ export function ResonatorListScreen() {
         <Suspense
           fallback={
             <RouteNavigation.Loading
-              cols={8}
+              cols={6}
               aspect="portrait"
               count={20}
               label="Cargando resonadores"

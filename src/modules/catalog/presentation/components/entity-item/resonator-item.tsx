@@ -1,5 +1,6 @@
 import { Badge } from "@/components/panelui/badge"
 import { Tooltip } from "@/components/panelui/tooltip"
+import { GameIcon, gameIconName } from "@/components/ui/game-icon"
 import { Show } from "@/components/utility/show"
 import { EntityItem } from "@catalog/presentation/components/entity-item/entity-item"
 import { cn } from "cn"
@@ -12,6 +13,7 @@ export type ResonatorItemData = {
   isVisible?: boolean
   isNew?: boolean
   isCollab?: boolean
+  element: "aero" | "electro" | "fusion" | "glacio" | "havoc" | "spectro"
 }
 
 type ResonatorItemProps = {
@@ -30,19 +32,24 @@ function ResonatorStatusBadges({
   character: ResonatorItemData
 }) {
   return (
-    <div className="pointer-events-none absolute top-1.5 left-1.5 z-10 flex flex-wrap gap-1">
-      <Show when={character.isVisible === false}>
-        <Badge variant="outline" className="bg-background/80">
-          Oculto
-        </Badge>
-      </Show>
-      <Show when={character.isNew === true}>
-        <Badge className="bg-primary text-primary-foreground">Nuevo</Badge>
-      </Show>
-      <Show when={character.isCollab === true}>
-        <Badge variant="outline" className="bg-background/80">
-          Colab
-        </Badge>
+    <div className="pointer-events-none absolute inset-0 z-0 flex flex-col justify-between gap-1 p-1">
+      <div>
+        <Show when={character.isVisible === false}>
+          <Badge variant="outline" className="bg-background/80">
+            Oculto
+          </Badge>
+        </Show>
+        <Show when={character.isNew === true}>
+          <Badge className="bg-primary text-primary-foreground">Nuevo</Badge>
+        </Show>
+        <Show when={character.isCollab === true}>
+          <Badge variant="outline" className="bg-background/80">
+            Colab
+          </Badge>
+        </Show>
+      </div>
+      <Show when={character.element}>
+        <GameIcon className="size-8" name={gameIconName(character.element)} />
       </Show>
     </div>
   )

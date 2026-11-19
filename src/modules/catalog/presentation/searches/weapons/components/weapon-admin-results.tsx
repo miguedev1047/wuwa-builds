@@ -37,7 +37,7 @@ export function WeaponAdminResults({
               closeOnSelect={false}
               onSelect={() => onSelect(item)}
               subtitle={selectedId === item.id ? "Actual" : ""}
-              icon={<WeaponItem weapon={item} />}
+              icon={<WeaponItem weapon={item} showStatus={false} />}
             >
               {item.name}
             </CommandSearch.Item>

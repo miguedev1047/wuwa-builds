@@ -12,7 +12,7 @@ export function ResonatorList() {
   return (
     <RouteNavigation.List
       items={characters}
-      cols={8}
+      cols={6}
       aspect="portrait"
       getKey={(character) => character.id}
       empty={
