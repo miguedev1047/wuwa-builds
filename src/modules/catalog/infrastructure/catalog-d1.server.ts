@@ -558,7 +558,7 @@ export async function readEcho(
     id: set.setId,
     name: set.name,
     icon: set.icon,
-    effects: set.sonataEffects.map((effect) => ({
+    sonataEffects: set.sonataEffects.map((effect) => ({
       key: effect.pieces,
       description: effect.description,
     })),
@@ -602,7 +602,7 @@ export async function readEchoes(db: AppDb): Promise<EncoreEchoSummary[]> {
       id: set.setId,
       name: set.name,
       icon: set.icon,
-      effects: set.sonataEffects.map((effect) => ({
+      sonataEffects: set.sonataEffects.map((effect) => ({
         key: effect.pieces,
         description: effect.description,
       })),

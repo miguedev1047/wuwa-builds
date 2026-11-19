@@ -460,7 +460,7 @@ describe("encore catalog schema", () => {
             id: 9,
             name: "Melodías perdurables",
             icon: "",
-            effects: [
+            sonataEffects: [
               { key: 2, description: "2 piezas" },
               { key: 5, description: "5 piezas" },
             ],

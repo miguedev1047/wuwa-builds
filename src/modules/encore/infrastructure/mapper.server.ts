@@ -455,7 +455,7 @@ export function toEchoSummary(raw: RawEchoSummary): EncoreEchoSummary {
       id: group.Id,
       name: group.Name ?? "",
       icon: encoreAssetUrl(group.Icon),
-      effects: (group.Fetters ?? []).map((fetter) => ({
+      sonataEffects: (group.Fetters ?? []).map((fetter) => ({
         key: fetter.Key,
         description: fetter.EffectDescription ?? "",
       })),
@@ -480,8 +480,8 @@ function toEchoDetailSets(raw: RawEchoDetail): EncoreEchoSet[] {
       return {
         id: entry.Group?.Id ?? 0,
         name,
-        icon: "",
-        effects: toEchoSetEffects(details[name]?.EffectDescriptions),
+        icon: encoreAssetUrl(entry.Group?.FetterElementPath),
+        sonataEffects: toEchoSetEffects(details[name]?.EffectDescriptions),
       }
     })
   }
@@ -490,7 +490,7 @@ function toEchoDetailSets(raw: RawEchoDetail): EncoreEchoSet[] {
     id: index,
     name,
     icon: "",
-    effects: toEchoSetEffects(detail.EffectDescriptions),
+    sonataEffects: toEchoSetEffects(detail.EffectDescriptions),
   }))
 }
 

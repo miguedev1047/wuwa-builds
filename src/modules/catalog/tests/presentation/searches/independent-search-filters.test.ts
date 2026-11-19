@@ -71,7 +71,7 @@ const encoreEcho: EncoreEchoSummary = {
       id: 99,
       name: "Solo Encore",
       icon: "https://example.com/sonata.webp",
-      effects: [],
+      sonataEffects: [],
     },
   ],
 }

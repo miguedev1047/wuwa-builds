@@ -8,6 +8,7 @@ import {
   toWeaponSummary,
   toWeaponDetail,
   toEchoSummary,
+  toEchoDetail,
 } from "@encore/infrastructure/mapper.server"
 
 const echo = {
@@ -89,5 +90,48 @@ describe("canonical categories at the Encore boundary", () => {
     expect(() =>
       toWeaponSummary({ Id: 1, Name: "Unknown", QualityId: 4, Type: 99 })
     ).toThrow()
+  })
+})
+
+describe("toEchoDetail", () => {
+  const rawDetail = {
+    MonsterId: 6000100,
+    MonsterName: "Sacerdos",
+    Rarity: 0,
+    Icon: "/Game/Aki/UI/Icon/T_IconMonsterHead_100.webp",
+    FetterGroupDetails: [
+      {
+        Group: {
+          Id: 16,
+          FetterGroupName: "Ráfagas de viento",
+          FetterElementPath:
+            "/Game/Aki/UI/UIResources/Common/Image/IconElementAttri/T_IconElementAttriWindError.T_IconElementAttriWindError",
+        },
+      },
+    ],
+    FetterDetails: {
+      "Ráfagas de viento": {
+        EffectDescriptions: ["Daño Aero +10%"],
+      },
+    },
+    Skill: { DescriptionEx: "Daño", SimplyDescription: "Daño" },
+  }
+
+  test("resolves the sonata icon from FetterElementPath", () => {
+    const detail = toEchoDetail(rawDetail)
+
+    expect(detail.sets).toHaveLength(1)
+    expect(detail.sets[0].icon).toContain("IconElementAttriWindError.webp")
+    expect(detail.sets[0].sonataEffects).toHaveLength(1)
+  })
+
+  test("uses the same sonataEffects name as the catalog contract", () => {
+    const detail = toEchoDetail(rawDetail)
+
+    expect("effects" in detail.sets[0]).toBe(false)
+    expect(detail.sets[0].sonataEffects[0]).toEqual({
+      key: 2,
+      description: "Daño Aero +10%",
+    })
   })
 })

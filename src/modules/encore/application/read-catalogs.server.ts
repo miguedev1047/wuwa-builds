@@ -67,7 +67,7 @@ export async function readEchoesWithSonataEffects(): Promise<
         ...set,
         name: resolvedSet.name || set.name,
         icon: resolvedSet.icon || set.icon,
-        effects: resolvedSet.effects.map(({ pieces, description }) => ({
+        sonataEffects: resolvedSet.effects.map(({ pieces, description }) => ({
           key: pieces,
           description,
         })),

@@ -11,7 +11,11 @@ export interface EncoreEchoSet {
   id: number
   name: string
   icon: string
-  effects: EncoreEchoSetEffect[]
+  /**
+   * Piece-threshold effects of the Sonata set. Named like the catalog relation
+   * (`echoSets.sonataEffects`) so both echo payloads use one vocabulary.
+   */
+  sonataEffects: EncoreEchoSetEffect[]
 }
 
 export interface EncoreEchoSummary {
