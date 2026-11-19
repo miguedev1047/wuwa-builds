@@ -6,6 +6,13 @@
  * catalog tables are replicated — auth, builds and bookkeeping tables are
  * never touched.
  *
+ * A full sync writes every catalog row (~11k after the growth compaction).
+ * The D1 free tier caps daily row writes; if Cloudflare reports the
+ * "exceeded D1's free tier daily row write limit" error, wait until midnight
+ * UTC and re-run — the script is idempotent and the remote is left intact
+ * when the budget is exhausted (the first statement is a delete that fails
+ * before any wipe).
+ *
  * Usage:
  *   bun scripts/ingest/sync-remote.ts [--dry-run]
  *

@@ -64,6 +64,34 @@ function growthValueColumns(value: number | string) {
     : { valueNumber: null, valueText: value }
 }
 
+/**
+ * Level milestones kept in the growth tables.
+ *
+ * Encore publishes one row per individual level (1..90) plus a repeated level
+ * after each ascension unlock (two `level: 20` entries: base and ascended).
+ * The panel and builder only offer the ten level nodes (1, 10, 20 ... 90) and
+ * `growthValueAtLevel` falls back to the closest lower milestone, so only one
+ * row per milestone is stored: the first Encore entry (the un-ascended base
+ * value). Everything else is dead weight in D1 — and paid for on every
+ * whole-document sync.
+ */
+const GROWTH_LEVEL_MILESTONES = new Set([1, 10, 20, 30, 40, 50, 60, 70, 80, 90])
+
+/** Encore growth entries filtered to one base row per milestone level. */
+export function growthMilestones<T extends { level: number }>(
+  growth: T[]
+): T[] {
+  const seen = new Set<number>()
+
+  return growth.filter((entry) => {
+    if (!GROWTH_LEVEL_MILESTONES.has(entry.level)) return false
+    if (seen.has(entry.level)) return false
+
+    seen.add(entry.level)
+    return true
+  })
+}
+
 function growthValueFromRow(row: {
   valueNumber: number | null
   valueText: string | null
@@ -147,12 +175,14 @@ export async function saveCharacter(
       })) as InsertedId[]
 
     const growth = inserted.flatMap((row) =>
-      character.properties[row.sortOrder].growth.map((entry, sortOrder) => ({
-        propertyId: row.id,
-        sortOrder,
-        level: entry.level,
-        ...growthValueColumns(entry.value),
-      }))
+      growthMilestones(character.properties[row.sortOrder].growth).map(
+        (entry, sortOrder) => ({
+          propertyId: row.id,
+          sortOrder,
+          level: entry.level,
+          ...growthValueColumns(entry.value),
+        })
+      )
     )
 
     if (growth.length > 0) {
@@ -357,12 +387,14 @@ export async function saveWeapon(
       })) as InsertedId[]
 
     const growth = inserted.flatMap((row) =>
-      weapon.properties[row.sortOrder].growth.map((entry, sortOrder) => ({
-        propertyId: row.id,
-        sortOrder,
-        level: entry.level,
-        ...growthValueColumns(entry.value),
-      }))
+      growthMilestones(weapon.properties[row.sortOrder].growth).map(
+        (entry, sortOrder) => ({
+          propertyId: row.id,
+          sortOrder,
+          level: entry.level,
+          ...growthValueColumns(entry.value),
+        })
+      )
     )
 
     if (growth.length > 0) {

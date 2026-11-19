@@ -37,6 +37,7 @@ import {
   readEchoes,
   readWeapon,
   readWeapons,
+  growthMilestones,
   saveCharacter,
   saveEcho,
   saveWeapon,
@@ -94,10 +95,15 @@ const rawCharacter: RawCharacterDetail = {
       Name: "PS",
       Icon: "hp.webp",
       BaseValue: 816,
+      // Only the ten level milestones are stored: non-milestone levels and
+      // the duplicated (ascended) row at the same level are dropped, keeping
+      // the first entry per level (the base value).
       GrowthValues: [
         { growthId: 1, level: 1, value: 816 },
-        { growthId: 2, level: 20, value: 884.7072 },
-        { growthId: 3, level: 20, value: 953.496 },
+        { growthId: 2, level: 9, value: 850 },
+        { growthId: 3, level: 10, value: 860 },
+        { growthId: 4, level: 20, value: 884.7072 },
+        { growthId: 5, level: 20, value: 953.496 },
       ],
     },
     {
@@ -175,12 +181,14 @@ const rawWeapon: RawWeaponDetail = {
   BgDescription: "Lore del arma",
   Properties: [
     {
+      // Non-milestone levels are dropped by the adapter, like on characters.
       Name: "ATQ",
       Icon: "atk.webp",
       BaseValue: 500,
       GrowthValues: [
         { Level: 1, Value: "500" },
         { Level: 2, Value: "513.6" },
+        { Level: 10, Value: "527.2" },
       ],
     },
   ],
@@ -221,6 +229,10 @@ function withoutDroppedDetails(
 ): EncoreCharacterDetail {
   return {
     ...character,
+    properties: character.properties.map((property) => ({
+      ...property,
+      growth: growthMilestones(property.growth),
+    })),
     skills: character.skills.map((skill) => ({
       ...skill,
       attributes: [],
@@ -286,7 +298,13 @@ describe("encore catalog schema", () => {
     expect(await readCharacter(db, character.id)).toEqual(
       withoutDroppedDetails(character)
     )
-    expect(await readWeapon(db, weapon.id)).toEqual(weapon)
+    expect(await readWeapon(db, weapon.id)).toEqual({
+      ...weapon,
+      properties: weapon.properties.map((property) => ({
+        ...property,
+        growth: growthMilestones(property.growth),
+      })),
+    })
     expect(await readEcho(db, echo.id)).toEqual(echo)
   })
 
@@ -492,7 +510,13 @@ describe("encore catalog schema", () => {
     const stored = await readCharacter(db, character.id)
     expect(stored?.skills).toHaveLength(1)
     expect(stored?.skills[0].attributes).toEqual([])
+    // Three milestone rows: levels 1, 10, 20 — the level 9 row and the
+    // duplicated level 20 (ascended) were filtered by the adapter.
     expect(stored?.properties[0].growth).toHaveLength(3)
+    expect(stored?.properties[0].growth.map((entry) => entry.level)).toEqual([
+      1, 10, 20,
+    ])
+    expect(stored?.properties[0].growth[2].value).toBe(884.7072)
     expect(stored?.passives[0].consume).toEqual([])
     expect(stored?.passives[0].description).toBe("1.8")
     expect(stored?.breaches).toEqual([])
