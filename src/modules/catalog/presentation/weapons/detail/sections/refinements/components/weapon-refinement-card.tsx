@@ -1,3 +1,4 @@
+import { Badge } from "@/components/panelui/badge"
 import { Button } from "@/components/panelui/button"
 import {
   Collapsible,
@@ -31,6 +32,11 @@ export function WeaponRefinementCard({
   const sortOrder =
     refinement.stats.reduce((max, stat) => Math.max(max, stat.sortOrder), 0) + 1
 
+  const statsCount = refinement.stats.length
+  const statsLabel = statsCount === 1 ? "1 stat" : `${statsCount} stats`
+  const statsSummary =
+    statsCount === 1 ? "1 agregada" : `${statsCount} agregadas`
+
   return (
     <EditableSection.Card>
       <EditableSection.CardHeader>
@@ -38,9 +44,14 @@ export function WeaponRefinementCard({
           <EditableSection.CardTitle className="truncate">
             {refinement.name}
           </EditableSection.CardTitle>
-          <EditableSection.CardDescription>
-            Refinamiento {refinement.sortOrder}
-          </EditableSection.CardDescription>
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
+            <EditableSection.CardDescription>
+              Refinamiento {refinement.sortOrder}
+            </EditableSection.CardDescription>
+            <Badge variant="outline" size="sm" className="shrink-0">
+              {statsLabel}
+            </Badge>
+          </div>
         </div>
 
         <EditableSection.CardAction className="flex items-center gap-1">
@@ -79,7 +90,7 @@ export function WeaponRefinementCard({
           <CollapsibleTrigger
             render={
               <Button variant="secondary" className="w-full">
-                Ver estadísticas
+                Ver estadísticas · {statsSummary}
                 <HugeiconsIcon icon={ChevronDownIcon} className="ml-auto" />
               </Button>
             }
