@@ -38,6 +38,7 @@ export function EchoBuildResults({
               value={String(item.id)}
               textValue={item.name}
               closeOnSelect={false}
+              kind={`Coste ${item.cost}`}
               onSelect={() => onSelect(item)}
               subtitle={selectedId === item.id ? "Actual" : ""}
               icon={
