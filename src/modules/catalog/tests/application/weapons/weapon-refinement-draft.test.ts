@@ -6,6 +6,8 @@ import type { EncoreWeaponRefinement } from "@encore/domain/weapon"
 import {
   weaponRefinementDraftFromEncore,
   weaponRefinementDraftFromRow,
+  weaponRefinementOptions,
+  weaponRefinementPayloads,
   weaponStatDraftFromRow,
   weaponStatPayloads,
 } from "@catalog/presentation/weapons/detail/application/weapon-refinement-draft"
@@ -91,6 +93,77 @@ describe("weaponStatPayloads", () => {
         sortOrder: 5,
         statName: "echo_skill_bonus",
         statNumber: 20,
+      },
+    ])
+  })
+})
+
+describe("weaponRefinementOptions", () => {
+  const refinements: EncoreWeaponRefinement[] = [
+    encoreRefinement,
+    { ...encoreRefinement, rank: 1, name: "Otra", effect: "Otro efecto." },
+  ]
+
+  test("offers only the rounds the weapon does not have yet", () => {
+    const options = weaponRefinementOptions(refinements, [3])
+
+    expect(options).toHaveLength(1)
+    expect(options[0].value).toBe("1")
+    expect(options[0].draft.name).toBe("Otra")
+  })
+})
+
+describe("weaponRefinementPayloads", () => {
+  const refinements: EncoreWeaponRefinement[] = [
+    encoreRefinement,
+    { ...encoreRefinement, rank: 1, name: "Otra", effect: "Otro efecto." },
+  ]
+
+  test("sends one payload per selected round", () => {
+    const options = weaponRefinementOptions(refinements, [])
+
+    expect(
+      weaponRefinementPayloads(
+        {
+          id: 0,
+          weaponId: 9,
+          sortOrder: 1,
+          name: "",
+          effect: "",
+          encoreRefinements: ["3", "1"],
+        },
+        options
+      )
+    ).toEqual([
+      {
+        weaponId: 9,
+        sortOrder: 3,
+        name: "Amplificación eléctrica",
+        effect: "Aumenta el ATQ un <span>18%</span>.",
+      },
+      { weaponId: 9, sortOrder: 1, name: "Otra", effect: "Otro efecto." },
+    ])
+  })
+
+  test("falls back to the manual entry", () => {
+    expect(
+      weaponRefinementPayloads(
+        {
+          id: 0,
+          weaponId: 9,
+          sortOrder: 5,
+          name: "Manual",
+          effect: "Efecto manual.",
+          encoreRefinements: [],
+        },
+        []
+      )
+    ).toEqual([
+      {
+        weaponId: 9,
+        sortOrder: 5,
+        name: "Manual",
+        effect: "Efecto manual.",
       },
     ])
   })

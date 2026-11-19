@@ -2,7 +2,7 @@ import { adminMiddleware } from "@/functions/middlewares"
 import { createServerFn } from "@tanstack/react-start"
 import { eq } from "drizzle-orm"
 import { idInput } from "@catalog/application/id"
-import { resonatorPropertyLevelsSchema } from "@catalog/application/schemas"
+import { resonatorPropertyLevelsInput } from "@catalog/application/schemas"
 import { db } from "@/db"
 import { resonatorPropertyLevels } from "@db/schema"
 
@@ -10,14 +10,9 @@ export const createResonatorPropertyLevels = createServerFn({
   method: "POST",
 })
   .middleware([adminMiddleware])
-  .validator(resonatorPropertyLevelsSchema)
+  .validator(resonatorPropertyLevelsInput)
   .handler(async ({ data }) => {
-    const [resonator] = await db
-      .insert(resonatorPropertyLevels)
-      .values(data)
-      .returning()
-
-    return resonator
+    return await db.insert(resonatorPropertyLevels).values(data).returning()
   })
 
 export const deleteResonatorPropertyLevel = createServerFn({

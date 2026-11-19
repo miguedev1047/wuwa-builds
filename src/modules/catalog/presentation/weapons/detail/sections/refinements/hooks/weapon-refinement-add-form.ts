@@ -1,16 +1,17 @@
 import { useAppForm } from "@/components/form"
 import { useToast } from "@/components/panelui/toast"
+import type { WeaponRefinementInput } from "@catalog/application/schemas"
 import {
-  weaponRefinementFormInput,
-  type WeaponRefinementInput,
-} from "@catalog/application/schemas"
-import { weaponRefinementDraftFromEncore } from "@catalog/presentation/weapons/detail/application/weapon-refinement-draft"
+  weaponRefinementOptions,
+  weaponRefinementPayloads,
+} from "@catalog/presentation/weapons/detail/application/weapon-refinement-draft"
 import { weaponRefinementFormDefaults } from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-form-fields"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
-import { createWeaponRefinement } from "@catalog/server/weapons/refinements"
+import { createWeaponRefinements } from "@catalog/server/weapons/refinements"
 import type { EncoreWeaponRefinement } from "@encore/domain/weapon"
+import { useSelector } from "@tanstack/react-form"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { useId, useState } from "react"
+import { useId } from "react"
 
 type WeaponRefinementAddFormProps = {
   weaponId: number
@@ -21,7 +22,7 @@ type WeaponRefinementAddFormProps = {
   onCancel: () => void
 }
 
-/** Create form of a weapon refinement, rendered inside the add dialog. */
+/** Create form of weapon refinements, rendered inside the add dialog. */
 export function useWeaponRefinementAddForm({
   weaponId,
   sortOrder,
@@ -34,19 +35,24 @@ export function useWeaponRefinementAddForm({
 
   const id = useId()
   const formId = `add-weapon-refinement-form-${id}`
-  const encoreFieldId = `add-weapon-refinement-encore-${id}`
 
-  const [encoreName, setEncoreName] = useState<string | null>(null)
   const queryClient = useQueryClient()
+  const encoreOptions = weaponRefinementOptions(encoreRefinements, savedRanks)
 
   const { mutateAsync, isPending } = useMutation({
-    mutationFn: (value: WeaponRefinementInput) =>
-      createWeaponRefinement({ data: value }),
-    onSuccess: async () => {
+    mutationFn: (payloads: WeaponRefinementInput[]) =>
+      createWeaponRefinements({ data: payloads }),
+    onSuccess: async (_created, payloads) => {
       await queryClient.invalidateQueries({
         queryKey: wuwaBuildsKeys.weapon(weaponId),
       })
-      toast.add({ title: "Refinamiento creado", type: "success" })
+      toast.add({
+        title:
+          payloads.length === 1
+            ? "Refinamiento creado"
+            : `${payloads.length} refinamientos creados`,
+        type: "success",
+      })
       onSaved()
     },
     onError: (error) => {
@@ -57,32 +63,24 @@ export function useWeaponRefinementAddForm({
   const form = useAppForm({
     formId,
     defaultValues: { ...weaponRefinementFormDefaults, weaponId, sortOrder },
-    validators: { onSubmit: weaponRefinementFormInput },
     onSubmit: async ({ value }) => {
-      await mutateAsync(value)
+      await mutateAsync(weaponRefinementPayloads(value, encoreOptions))
     },
   })
 
-  const encoreOptions = encoreRefinements.flatMap((refinement) => {
-    if (savedRanks.includes(refinement.rank)) return []
-
-    return [
-      {
-        label: `Refinamiento ${refinement.rank} — ${refinement.name}`,
-        value: String(refinement.rank),
-        draft: weaponRefinementDraftFromEncore(refinement),
-      },
-    ]
-  })
+  const selectedRefinements = useSelector(
+    form.store,
+    (state) => state.values.encoreRefinements ?? []
+  )
+  const hasSelection = selectedRefinements.length > 0
 
   return {
-    encoreFieldId,
-    encoreName,
-    setEncoreName,
-    encoreOptions,
     formId,
     isPending,
     form,
+    encoreOptions,
+    selectedRefinements,
+    hasSelection,
     onCancel,
   }
 }

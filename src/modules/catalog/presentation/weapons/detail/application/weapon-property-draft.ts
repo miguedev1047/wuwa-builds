@@ -3,6 +3,8 @@ import {
   WEAPON_PROPERTY_ALIASES,
   weaponPropertyStatId,
 } from "@catalog/application/constants/weapon"
+import { statLabel } from "@catalog/application/stats/stats"
+import type { WeaponPropertyInput } from "@catalog/application/schemas"
 
 /** Visible fields of the weapon property form. */
 export type WeaponPropertyDraft = {
@@ -92,4 +94,70 @@ export function findEncoreWeaponProperty(
   }
 
   return properties.find((property) => property.name === statId)
+}
+
+/** One Encore weapon stat offered by the property multi-select. */
+export type WeaponPropertyOption = {
+  label: string
+  value: string
+  draft: WeaponPropertyDraft
+}
+
+/** Values handled by the weapon property form, including the Encore selection. */
+export type WeaponPropertyFormValues = WeaponPropertyInput & {
+  /** Selected `WeaponPropertyOption` values. */
+  encoreProperties: string[]
+}
+
+/** Encore weapon stats the weapon does not have yet. */
+export function weaponPropertyOptions(
+  encoreProperties: EncoreProperty[],
+  savedNames: string[]
+): WeaponPropertyOption[] {
+  return encoreProperties.flatMap((property, index) => {
+    const draft = weaponPropertyDraftFromEncore(property)
+
+    if (savedNames.includes(draft.name)) {
+      return []
+    }
+
+    return [
+      {
+        label: statLabel(draft.name),
+        value: String(index),
+        draft,
+      },
+    ]
+  })
+}
+
+/**
+ * Payloads for the selected Encore stats, or the manual entry.
+ *
+ * When the multi-select has values, they are expanded in Encore order and each
+ * one gets the next `sortOrder`; otherwise the manual values are used.
+ */
+export function weaponPropertyPayloads(
+  values: WeaponPropertyFormValues,
+  options: WeaponPropertyOption[]
+): WeaponPropertyInput[] {
+  if (values.encoreProperties.length === 0) {
+    return [
+      {
+        weaponId: values.weaponId,
+        sortOrder: values.sortOrder,
+        name: values.name,
+        baseValue: values.baseValue,
+        icon: values.icon,
+      },
+    ]
+  }
+
+  return options
+    .filter((option) => values.encoreProperties.includes(option.value))
+    .map((option, index) => ({
+      weaponId: values.weaponId,
+      sortOrder: values.sortOrder + index,
+      ...option.draft,
+    }))
 }

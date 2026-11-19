@@ -2,18 +2,17 @@ import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
 
 import { WEAPON_REFINEMENT_RANKS } from "@catalog/application/constants/weapon"
-import {
-  weaponRefinementUpdateInput,
-  type WeaponRefinementUpdateInput,
-} from "@catalog/application/schemas"
+import { weaponRefinementUpdateInput } from "@catalog/application/schemas"
+import type { WeaponRefinementFormValues } from "@catalog/presentation/weapons/detail/application/weapon-refinement-draft"
 
 /** Empty values shared by every refinement form. */
-export const weaponRefinementFormDefaults: WeaponRefinementUpdateInput = {
+export const weaponRefinementFormDefaults: WeaponRefinementFormValues = {
   id: 0,
   weaponId: 0,
   sortOrder: 1,
   name: "",
   effect: "",
+  encoreRefinements: [],
 }
 
 /** Reusable fields of the weapon refinement form. */

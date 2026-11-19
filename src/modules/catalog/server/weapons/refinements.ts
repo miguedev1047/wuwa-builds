@@ -1,33 +1,49 @@
 import { db } from "@/db"
 import { createServerFn } from "@tanstack/react-start"
-import { eq } from "drizzle-orm"
+import { and, eq, inArray } from "drizzle-orm"
 import { weaponRefinements } from "@db/schema"
 import { adminMiddleware } from "@/functions/middlewares"
 import { idInput } from "@catalog/application/id"
 import {
-  weaponRefinementInput,
+  weaponRefinementsInput,
   weaponRefinementUpdateInput,
 } from "@catalog/application/schemas"
 
-export const createWeaponRefinement = createServerFn({ method: "POST" })
+export const createWeaponRefinements = createServerFn({ method: "POST" })
   .middleware([adminMiddleware])
-  .validator(weaponRefinementInput)
+  .validator(weaponRefinementsInput)
   .handler(async ({ data }) => {
-    const existing = await db.query.weaponRefinements.findFirst({
-      where: { weaponId: data.weaponId, sortOrder: data.sortOrder },
-      columns: { id: true },
-    })
+    const weaponId = data[0]?.weaponId
 
-    if (existing) {
+    if (weaponId === undefined) {
+      throw new Error("El ID del arma es requerido")
+    }
+
+    if (data.some((refinement) => refinement.weaponId !== weaponId)) {
+      throw new Error("Los refinamientos deben pertenecer al mismo arma")
+    }
+
+    const ranks = data.map((refinement) => refinement.sortOrder)
+
+    if (new Set(ranks).size !== ranks.length) {
       throw new Error("Ya existe un refinamiento con ese rango")
     }
 
-    const [refinement] = await db
-      .insert(weaponRefinements)
-      .values(data)
-      .returning()
+    const existing = await db
+      .select({ sortOrder: weaponRefinements.sortOrder })
+      .from(weaponRefinements)
+      .where(
+        and(
+          eq(weaponRefinements.weaponId, weaponId),
+          inArray(weaponRefinements.sortOrder, ranks)
+        )
+      )
 
-    return refinement
+    if (existing.length > 0) {
+      throw new Error("Ya existe un refinamiento con ese rango")
+    }
+
+    return await db.insert(weaponRefinements).values(data).returning()
   })
 
 export const updateWeaponRefinement = createServerFn({ method: "POST" })

@@ -4,20 +4,15 @@ import { eq } from "drizzle-orm"
 import { weaponProperties } from "@db/schema"
 import { adminMiddleware } from "@/functions/middlewares"
 import { idInput } from "@catalog/application/id"
-import { weaponPropertyInput } from "@catalog/application/schemas"
+import { weaponPropertiesInput } from "@catalog/application/schemas"
 
-export const createWeaponProperty = createServerFn({
+export const createWeaponProperties = createServerFn({
   method: "POST",
 })
   .middleware([adminMiddleware])
-  .validator(weaponPropertyInput)
+  .validator(weaponPropertiesInput)
   .handler(async ({ data }) => {
-    const [property] = await db
-      .insert(weaponProperties)
-      .values(data)
-      .returning()
-
-    return property
+    return await db.insert(weaponProperties).values(data).returning()
   })
 
 export const deleteWeaponProperty = createServerFn({

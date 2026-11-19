@@ -25,3 +25,12 @@ export const resonatorPropertyLevelsSchema = createInsertSchema(
 export type ResonatorPropertyLevelInput = z.infer<
   typeof resonatorPropertyLevelsSchema
 >
+
+/** One or more property levels stored in a single request. */
+export const resonatorPropertyLevelsInput = z
+  .array(resonatorPropertyLevelsSchema)
+  .min(1, "Agrega al menos una propiedad.")
+
+export type ResonatorPropertyLevelsInput = z.infer<
+  typeof resonatorPropertyLevelsInput
+>

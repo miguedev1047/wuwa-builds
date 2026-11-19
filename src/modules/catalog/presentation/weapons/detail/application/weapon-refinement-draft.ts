@@ -1,6 +1,7 @@
 import type { WeaponRefinementRow, WeaponRefinementStatRow } from "@db/schema"
 import type { EncoreWeaponRefinement } from "@encore/domain/weapon"
 import type {
+  WeaponRefinementInput,
   WeaponRefinementStatsFormValues,
   WeaponRefinementStatInput,
   WeaponRefinementUpdateInput,
@@ -73,4 +74,66 @@ export function weaponStatPayloads(
     statName: stat.statName,
     statNumber: stat.value,
   }))
+}
+
+/** One Encore refinement offered by the refinement multi-select. */
+export type WeaponRefinementOption = {
+  label: string
+  value: string
+  draft: WeaponRefinementDraft
+}
+
+/** Values handled by the refinement form, including the Encore selection. */
+export type WeaponRefinementFormValues = WeaponRefinementUpdateInput & {
+  /** Selected `WeaponRefinementOption` values, when the form offers them. */
+  encoreRefinements?: string[]
+}
+
+/** Encore refinements the weapon does not have yet, by rank. */
+export function weaponRefinementOptions(
+  encoreRefinements: EncoreWeaponRefinement[],
+  savedRanks: number[]
+): WeaponRefinementOption[] {
+  return encoreRefinements.flatMap((refinement) => {
+    if (savedRanks.includes(refinement.rank)) return []
+
+    return [
+      {
+        label: `Refinamiento ${refinement.rank} — ${refinement.name}`,
+        value: String(refinement.rank),
+        draft: weaponRefinementDraftFromEncore(refinement),
+      },
+    ]
+  })
+}
+
+/**
+ * Payloads for the selected Encore ranks, or the manual entry.
+ *
+ * A rank already carries its `sortOrder`, so the selected refinements are sent
+ * as they are; the manual values use the rank chosen in the form.
+ */
+export function weaponRefinementPayloads(
+  values: WeaponRefinementFormValues,
+  options: WeaponRefinementOption[]
+): WeaponRefinementInput[] {
+  const selected = values.encoreRefinements ?? []
+
+  if (selected.length === 0) {
+    return [
+      {
+        weaponId: values.weaponId,
+        sortOrder: values.sortOrder,
+        name: values.name,
+        effect: values.effect,
+      },
+    ]
+  }
+
+  return options
+    .filter((option) => selected.includes(option.value))
+    .map((option) => ({
+      weaponId: values.weaponId,
+      ...option.draft,
+    }))
 }

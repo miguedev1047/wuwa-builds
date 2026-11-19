@@ -43,7 +43,7 @@ export const WeaponRefinementStatFields = withForm({
                   }}
                 >
                   {(statField) => (
-                    <statField.SelectField
+                    <statField.ComboboxField
                       label="Seleccionar estadística"
                       options={WEAPON_REFINEMENT_STAT_OPTIONS}
                       placeholder="Seleccionar estadística"

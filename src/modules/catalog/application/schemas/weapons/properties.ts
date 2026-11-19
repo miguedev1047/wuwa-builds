@@ -1,5 +1,5 @@
 import { createInsertSchema } from "drizzle-orm/zod"
-import type z from "zod"
+import { z } from "zod"
 import { weaponProperties } from "@db/schema"
 import { isWeaponPropertyStatId } from "@catalog/application/constants/weapon"
 
@@ -22,3 +22,10 @@ export const weaponPropertyInput = createInsertSchema(weaponProperties, {
   .required()
 
 export type WeaponPropertyInput = z.infer<typeof weaponPropertyInput>
+
+/** One or more weapon properties stored in a single request. */
+export const weaponPropertiesInput = z
+  .array(weaponPropertyInput)
+  .min(1, "Agrega al menos una propiedad.")
+
+export type WeaponPropertiesInput = z.infer<typeof weaponPropertiesInput>

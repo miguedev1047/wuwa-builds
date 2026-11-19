@@ -1,13 +1,8 @@
 import { Button } from "@/components/panelui/button"
-import { Field } from "@/components/panelui/field"
-import { Select } from "@/components/panelui/select"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
-import {
-  WeaponRefinementFields,
-  weaponRefinementFormDefaults,
-} from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-form-fields"
+import { WeaponRefinementFields } from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-form-fields"
 import { useWeaponRefinementAddForm } from "@catalog/presentation/weapons/detail/sections/refinements/hooks/weapon-refinement-add-form"
 import type { EncoreWeaponRefinement } from "@encore/domain/weapon"
 import { PlusIcon } from "@hugeicons/core-free-icons"
@@ -32,13 +27,12 @@ export function WeaponRefinementAddAction({
 }: WeaponRefinementAddActionProps) {
   const [open, setOpen] = useState(false)
   const {
-    encoreFieldId,
-    encoreName,
-    setEncoreName,
-    encoreOptions,
     formId,
     isPending,
     form,
+    encoreOptions,
+    selectedRefinements,
+    hasSelection,
     onCancel,
   } = useWeaponRefinementAddForm({
     weaponId: weaponId,
@@ -53,6 +47,7 @@ export function WeaponRefinementAddAction({
     if (next) form.reset()
     setOpen(next)
   }
+
   return (
     <EditableSection.Action
       open={open}
@@ -70,14 +65,21 @@ export function WeaponRefinementAddAction({
           </Button>
 
           <form.AppForm>
-            <form.SubmitButton label="Agregar" formId={formId} />
+            <form.SubmitButton
+              label={
+                selectedRefinements.length > 1
+                  ? "Agregar refinamientos"
+                  : "Agregar"
+              }
+              formId={formId}
+            />
           </form.AppForm>
         </>
       }
       mode="default"
       disabled={isMaxRefinements}
       title="Agregar refinamiento"
-      description="Elige un rango de Encore o escribe su efecto."
+      description="Elige los rangos de Encore o escribe su efecto."
       trigger={
         <Button variant="default">
           <HugeiconsIcon icon={PlusIcon} />
@@ -88,52 +90,25 @@ export function WeaponRefinementAddAction({
       {() => (
         <>
           <Show when={encoreOptions.length > 0}>
-            <Field>
-              <Field.Label>Autocompletado inteligente</Field.Label>
-
-              <Select
-                items={encoreOptions}
-                value={encoreName}
-                disabled={isPending}
-                onValueChange={(value) => {
-                  if (value === null) return
-
-                  const option = encoreOptions.find(
-                    (item) => item.value === value
-                  )
-
-                  if (!option) return
-
-                  form.reset({
-                    ...weaponRefinementFormDefaults,
-                    weaponId,
-                    ...option.draft,
-                  })
-
-                  setEncoreName(null)
-                }}
-              >
-                <Select.Trigger id={encoreFieldId} className="w-full">
-                  <Select.Value placeholder="Elegir refinamiento de Encore" />
-                </Select.Trigger>
-
-                <Select.Content>
-                  {encoreOptions.map((option) => (
-                    <Select.Item key={option.value} value={option.value}>
-                      {option.label}
-                    </Select.Item>
-                  ))}
-                </Select.Content>
-              </Select>
-
-              <Field.Description>
-                Copia el nombre, el rango y el efecto del arma.
-              </Field.Description>
-            </Field>
+            <form.AppField name="encoreRefinements">
+              {(field) => (
+                <field.MultiComboboxField
+                  label="Autocompletado inteligente"
+                  description="Copia el nombre y el efecto de cada rango del arma."
+                  options={encoreOptions.map(({ label, value }) => ({
+                    label,
+                    value,
+                  }))}
+                  placeholder="Agregar refinamiento"
+                  emptyMessage="Sin refinamientos disponibles"
+                  disabled={isPending}
+                />
+              )}
+            </form.AppField>
           </Show>
-
-          <Separator />
-
+          <Show when={!hasSelection}>
+            <Separator />
+          </Show>
           <form
             id={formId}
             onSubmit={(event) => {
@@ -142,7 +117,9 @@ export function WeaponRefinementAddAction({
             }}
             className="space-y-4"
           >
-            <WeaponRefinementFields form={form} isPending={isPending} />
+            <Show when={!hasSelection}>
+              <WeaponRefinementFields form={form} isPending={isPending} />
+            </Show>
           </form>
         </>
       )}

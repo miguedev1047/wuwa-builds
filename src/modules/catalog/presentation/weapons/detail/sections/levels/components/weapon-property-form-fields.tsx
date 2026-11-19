@@ -2,18 +2,17 @@ import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
 
 import { WEAPON_PROPERTY_OPTIONS } from "@catalog/application/constants/weapon"
-import {
-  weaponPropertyInput,
-  type WeaponPropertyInput,
-} from "@catalog/application/schemas"
+import { weaponPropertyInput } from "@catalog/application/schemas"
+import type { WeaponPropertyFormValues } from "@catalog/presentation/weapons/detail/application/weapon-property-draft"
 
 /** Empty values shared by every weapon property form. */
-export const weaponPropertyFormDefaults: WeaponPropertyInput = {
+export const weaponPropertyFormDefaults: WeaponPropertyFormValues = {
   weaponId: 0,
   sortOrder: 1,
   name: "",
   baseValue: 0,
   icon: "",
+  encoreProperties: [],
 }
 
 /** Reusable fields of the weapon property form. */

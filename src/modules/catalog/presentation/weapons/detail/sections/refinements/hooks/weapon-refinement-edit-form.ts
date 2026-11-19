@@ -1,10 +1,10 @@
 import { useAppForm } from "@/components/form"
 import { useToast } from "@/components/panelui/toast"
+import type { WeaponRefinementUpdateInput } from "@catalog/application/schemas"
 import {
-  weaponRefinementUpdateInput,
-  type WeaponRefinementUpdateInput,
-} from "@catalog/application/schemas"
-import { weaponRefinementDraftFromRow } from "@catalog/presentation/weapons/detail/application/weapon-refinement-draft"
+  weaponRefinementDraftFromRow,
+  type WeaponRefinementFormValues,
+} from "@catalog/presentation/weapons/detail/application/weapon-refinement-draft"
 import { wuwaBuildsKeys } from "@catalog/queries/keys"
 import { updateWeaponRefinement } from "@catalog/server/weapons/refinements"
 import type { WeaponRefinementRow } from "@db/schema"
@@ -43,10 +43,14 @@ export function useWeaponRefinementEditForm({
     },
   })
 
+  const defaultValues: WeaponRefinementFormValues = {
+    ...weaponRefinementDraftFromRow(refinement),
+    encoreRefinements: [],
+  }
+
   const form = useAppForm({
     formId,
-    defaultValues: weaponRefinementDraftFromRow(refinement),
-    validators: { onSubmit: weaponRefinementUpdateInput },
+    defaultValues,
     onSubmit: async ({ value }) => {
       await mutateAsync(value)
     },

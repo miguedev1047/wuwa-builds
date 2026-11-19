@@ -21,6 +21,13 @@ export const weaponRefinementInput = createInsertSchema(weaponRefinements, {
 
 export type WeaponRefinementInput = z.infer<typeof weaponRefinementInput>
 
+/** One or more refinements of a weapon stored in a single request. */
+export const weaponRefinementsInput = z
+  .array(weaponRefinementInput)
+  .min(1, "Agrega al menos un refinamiento.")
+
+export type WeaponRefinementsInput = z.infer<typeof weaponRefinementsInput>
+
 export const weaponRefinementUpdateInput = weaponRefinementInput.extend({
   id: idInput.shape.id,
 })

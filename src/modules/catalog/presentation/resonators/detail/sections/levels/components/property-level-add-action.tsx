@@ -1,13 +1,8 @@
 import { Button } from "@/components/panelui/button"
-import { Field } from "@/components/panelui/field"
-import { Select } from "@/components/panelui/select"
 import { Separator } from "@/components/ui/separator"
 import { Show } from "@/components/utility/show"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
-import {
-  PropertyLevelFields,
-  propertyLevelFormDefaults,
-} from "@catalog/presentation/resonators/detail/sections/levels/components/property-level-form-fields"
+import { PropertyLevelFields } from "@catalog/presentation/resonators/detail/sections/levels/components/property-level-form-fields"
 import { usePropertyLevelAddForm } from "@catalog/presentation/resonators/detail/sections/levels/hooks/property-level-add-form"
 import type { EncoreProperty } from "@encore/domain/property"
 import { PlusIcon } from "@hugeicons/core-free-icons"
@@ -32,13 +27,12 @@ export function PropertyLevelAddAction({
 }: PropertyLevelAddActionProps) {
   const [open, setOpen] = useState(false)
   const {
-    encoreFieldId,
-    encoreName,
-    setEncoreName,
-    encoreOptions,
     formId,
     isPending,
     form,
+    encoreOptions,
+    selectedProperties,
+    hasSelection,
     onCancel,
   } = usePropertyLevelAddForm({
     resonatorId: resonatorId,
@@ -71,14 +65,21 @@ export function PropertyLevelAddAction({
           </Button>
 
           <form.AppForm>
-            <form.SubmitButton label="Agregar" formId={formId} />
+            <form.SubmitButton
+              label={
+                selectedProperties.length > 1
+                  ? "Agregar propiedades"
+                  : "Agregar"
+              }
+              formId={formId}
+            />
           </form.AppForm>
         </>
       }
       mode="default"
       disabled={isMaxProperties}
       title="Agregar propiedad"
-      description="Elige una propiedad o escribe sus datos."
+      description="Elige las propiedades de Encore o escribe sus datos."
       trigger={
         <Button variant="default">
           <HugeiconsIcon icon={PlusIcon} />
@@ -89,51 +90,25 @@ export function PropertyLevelAddAction({
       {() => (
         <>
           <Show when={encoreOptions.length > 0}>
-            <Field>
-              <Field.Label>Autocompletado inteligente</Field.Label>
-
-              <Select
-                items={encoreOptions}
-                value={encoreName}
-                disabled={isPending}
-                onValueChange={(value) => {
-                  if (value === null) return
-
-                  const option = encoreOptions.find(
-                    (item) => item.value === value
-                  )
-
-                  if (!option) return
-
-                  form.reset({
-                    ...propertyLevelFormDefaults,
-                    resonatorId,
-                    sortOrder,
-                    ...option.draft,
-                  })
-
-                  setEncoreName(null)
-                }}
-              >
-                <Select.Trigger id={encoreFieldId} className="w-full">
-                  <Select.Value placeholder="Elegir propiedad de Encore" />
-                </Select.Trigger>
-
-                <Select.Content>
-                  {encoreOptions.map((option) => (
-                    <Select.Item key={option.value} value={option.value}>
-                      {option.label}
-                    </Select.Item>
-                  ))}
-                </Select.Content>
-              </Select>
-
-              <Field.Description>
-                Copia el valor base y el icono del resonador.
-              </Field.Description>
-            </Field>
+            <form.AppField name="encoreProperties">
+              {(field) => (
+                <field.MultiComboboxField
+                  label="Autocompletado inteligente"
+                  description="Copia los valores base y los iconos del resonador en Encore."
+                  options={encoreOptions.map(({ label, value }) => ({
+                    label,
+                    value,
+                  }))}
+                  placeholder="Agregar propiedad"
+                  emptyMessage="Sin propiedades disponibles"
+                  disabled={isPending}
+                />
+              )}
+            </form.AppField>
           </Show>
-          <Separator />
+          <Show when={!hasSelection}>
+            <Separator />
+          </Show>
           <form
             id={formId}
             onSubmit={(event) => {
@@ -142,7 +117,9 @@ export function PropertyLevelAddAction({
             }}
             className="space-y-4"
           >
-            <PropertyLevelFields form={form} isPending={isPending} />
+            <Show when={!hasSelection}>
+              <PropertyLevelFields form={form} isPending={isPending} />
+            </Show>
           </form>
         </>
       )}

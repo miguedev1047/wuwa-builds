@@ -3,7 +3,10 @@ import type { EncoreProperty } from "@encore/domain/property"
 import {
   findEncoreProperty,
   propertyLevelDraftFromEncore,
+  propertyLevelOptions,
+  propertyLevelPayloads,
 } from "@catalog/presentation/resonators/detail/application/property-level-draft"
+import { statLabel } from "@catalog/application/stats/stats"
 
 function encoreProperty(
   name: string,
@@ -76,5 +79,89 @@ describe("findEncoreProperty", () => {
     expect(findEncoreProperty(properties, "atk")?.name).toBe("ATQ")
     expect(findEncoreProperty(properties, "hp")?.name).toBe("PS")
     expect(findEncoreProperty(properties, "crit_rate")?.name).toBe("Prob. CRIT")
+  })
+})
+
+describe("propertyLevelOptions", () => {
+  const properties = [
+    encoreProperty("ATQ", 35),
+    encoreProperty("PS", 824),
+    encoreProperty("Prob. CRIT", 500),
+  ]
+
+  test("offers the Encore stats the resonator does not have yet", () => {
+    const options = propertyLevelOptions(properties, ["hp"])
+
+    expect(options.map((option) => option.value)).toEqual(["0", "2"])
+    expect(options.map((option) => option.draft.name)).toEqual([
+      "atk",
+      "crit_rate",
+    ])
+    expect(options[0].label).toBe(statLabel("atk"))
+  })
+})
+
+describe("propertyLevelPayloads", () => {
+  const properties = [
+    encoreProperty("ATQ", 35),
+    encoreProperty("PS", 824),
+    encoreProperty("Prob. CRIT", 500),
+  ]
+
+  test("expands the selected stats with consecutive sort orders", () => {
+    const options = propertyLevelOptions(properties, [])
+
+    expect(
+      propertyLevelPayloads(
+        {
+          resonatorId: 7,
+          sortOrder: 3,
+          name: "",
+          baseValue: 0,
+          icon: "",
+          encoreProperties: ["2", "0"],
+        },
+        options
+      )
+    ).toEqual([
+      {
+        resonatorId: 7,
+        sortOrder: 3,
+        name: "atk",
+        baseValue: 35,
+        icon: "icon.webp",
+      },
+      {
+        resonatorId: 7,
+        sortOrder: 4,
+        name: "crit_rate",
+        baseValue: 5,
+        icon: "icon.webp",
+      },
+    ])
+  })
+
+  test("falls back to the manual entry", () => {
+    expect(
+      propertyLevelPayloads(
+        {
+          resonatorId: 7,
+          sortOrder: 5,
+          name: "atk",
+          baseValue: 1,
+          icon: "manual.webp",
+          encoreProperties: [],
+        },
+        []
+      )
+    ).toEqual([
+      {
+        resonatorId: 7,
+        sortOrder: 5,
+        name: "atk",
+        baseValue: 1,
+        icon: "manual.webp",
+      },
+    ])
   })
 })

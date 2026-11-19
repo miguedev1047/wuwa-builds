@@ -2,18 +2,17 @@ import { withForm } from "@/components/form"
 import { FieldGroup } from "@/components/ui/field"
 
 import { RESONATOR_PROPERTY_OPTIONS } from "@catalog/application/constants/resonator"
-import {
-  resonatorPropertyLevelsSchema,
-  type ResonatorPropertyLevelInput,
-} from "@catalog/application/schemas"
+import { resonatorPropertyLevelsSchema } from "@catalog/application/schemas"
+import type { PropertyLevelFormValues } from "@catalog/presentation/resonators/detail/application/property-level-draft"
 
 /** Empty values shared by every property level form. */
-export const propertyLevelFormDefaults: ResonatorPropertyLevelInput = {
+export const propertyLevelFormDefaults: PropertyLevelFormValues = {
   resonatorId: 0,
   sortOrder: 1,
   name: "",
   baseValue: 0,
   icon: "",
+  encoreProperties: [],
 }
 
 /** Reusable fields of the property level form. */
