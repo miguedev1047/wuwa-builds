@@ -57,7 +57,14 @@
  * needs an answer before the reader moves on belongs in an Alert Dialog.
  */
 import { Toast as BaseToast } from "@base-ui/react/toast"
-import { useEffect, useState, type CSSProperties, type ReactNode } from "react"
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from "react"
 import { tv } from "tailwind-variants"
 import {
   maskStyle,
@@ -78,6 +85,10 @@ export type ToastPosition =
 export type ToastType =
   "default" | "success" | "info" | "warning" | "destructive" | "loading"
 export type ToastEffect = "type" | "materialize" | "timer"
+
+type ToastManager = ReturnType<typeof BaseToast.createToastManager>
+
+const ToastManagerContext = createContext<ToastManager | null>(null)
 
 const toastVariants = tv({
   slots: {
@@ -482,19 +493,26 @@ function ToastProvider({
   position = "bottom-right",
   inline = false,
   effect = "type",
+  toastManager,
   children,
   ...props
 }: ToastProviderProps) {
+  const [manager] = useState(
+    () => toastManager ?? BaseToast.createToastManager()
+  )
+
   return (
-    <BaseToast.Provider {...props}>
-      {children}
-      <ToastList
-        position={position}
-        inline={inline}
-        effect={effect}
-        timeout={props.timeout ?? DEFAULT_TIMEOUT}
-      />
-    </BaseToast.Provider>
+    <ToastManagerContext value={manager}>
+      <BaseToast.Provider {...props} toastManager={manager}>
+        {children}
+        <ToastList
+          position={position}
+          inline={inline}
+          effect={effect}
+          timeout={props.timeout ?? DEFAULT_TIMEOUT}
+        />
+      </BaseToast.Provider>
+    </ToastManagerContext>
   )
 }
 ToastProvider.displayName = "Toast.Provider"
@@ -504,8 +522,17 @@ ToastProvider.displayName = "Toast.Provider"
  * actionProps })` returns an id; `update(id, …)` changes one in place, and its
  * title dissolves into the new one; `promise(p, { loading, success, error })`
  * follows a promise through the three; `close(id)` dismisses one, or all.
+ *
+ * The manager is stable: a component that only reports a toast does not
+ * re-render when toasts arrive or leave.
  */
-export const useToast = BaseToast.useToastManager
+export function useToast(): ToastManager {
+  const manager = useContext(ToastManagerContext)
+  if (!manager) {
+    throw new Error("useToast must be used inside <Toast.Provider>.")
+  }
+  return manager
+}
 
 /** A toast manager for code outside React. Pass it to `Toast.Provider` as `toastManager`. */
 export const createToaster = BaseToast.createToastManager

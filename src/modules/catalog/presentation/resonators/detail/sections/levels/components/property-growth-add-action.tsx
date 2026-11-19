@@ -36,14 +36,14 @@ export function PropertyGrowthAddAction({
     hasSelection,
     onCancel,
   } = usePropertyGrowthAddForm({
-      propertyId: propertyId,
-      resonatorId: resonatorId,
-      sortOrder: sortOrder,
-      encoreGrowth: encoreGrowth,
-      savedGrowth: savedGrowth,
-      onSaved: () => setOpen(false),
-      onCancel: () => setOpen(false),
-    })
+    propertyId: propertyId,
+    resonatorId: resonatorId,
+    sortOrder: sortOrder,
+    encoreGrowth: encoreGrowth,
+    savedGrowth: savedGrowth,
+    onSaved: () => setOpen(false),
+    onCancel: () => setOpen(false),
+  })
   const onOpenChange = (next: boolean) => {
     if (isPending) return
     if (next) form.reset()
@@ -117,9 +117,9 @@ export function PropertyGrowthAddAction({
           <Show when={!hasSelection}>
             <Separator />
           </Show>
-            <Show when={!hasSelection}>
-              <PropertyGrowthFields form={form} isPending={isPending} />
-            </Show>
+          <Show when={!hasSelection}>
+            <PropertyGrowthFields form={form} isPending={isPending} />
+          </Show>
         </form>
       )}
     </EditableSection.Action>

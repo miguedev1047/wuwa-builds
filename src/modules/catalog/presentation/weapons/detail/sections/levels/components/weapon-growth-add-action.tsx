@@ -36,14 +36,14 @@ export function WeaponGrowthAddAction({
     hasSelection,
     onCancel,
   } = useWeaponGrowthAddForm({
-      propertyId: propertyId,
-      weaponId: weaponId,
-      sortOrder: sortOrder,
-      encoreGrowth: encoreGrowth,
-      savedGrowth: savedGrowth,
-      onSaved: () => setOpen(false),
-      onCancel: () => setOpen(false),
-    })
+    propertyId: propertyId,
+    weaponId: weaponId,
+    sortOrder: sortOrder,
+    encoreGrowth: encoreGrowth,
+    savedGrowth: savedGrowth,
+    onSaved: () => setOpen(false),
+    onCancel: () => setOpen(false),
+  })
   const onOpenChange = (next: boolean) => {
     if (isPending) return
     if (next) form.reset()

@@ -15,9 +15,13 @@ export function EditableSectionAction(props: EditableSectionActionProps) {
   const open = "open" in props ? props.open : undefined
   const changeOpen = (next: boolean) => {
     if (props.isPending) return
+    // A press can ask for the state it is already in; reporting it again would
+    // reset a form the caller has open.
+    if ((open ?? internalOpen) === next) return
     setInternalOpen(next)
     if ("onOpenChange" in props) props.onOpenChange?.(next)
   }
+
   const close = () => changeOpen(false)
   const trigger = actionTrigger(props)
 
