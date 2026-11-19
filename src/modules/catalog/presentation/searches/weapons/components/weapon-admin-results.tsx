@@ -3,6 +3,7 @@ import { WeaponAdminFilterFields } from "@catalog/presentation/searches/weapons/
 import { useWeaponAdminResults } from "@catalog/presentation/searches/weapons/hooks/use-weapon-admin-results"
 import type { WeaponAdminFilterState } from "@catalog/presentation/searches/weapons/hooks/use-weapon-admin-filters"
 import type { EncoreWeaponSummary } from "@encore/domain/weapon"
+import { WeaponItem } from "@catalog/presentation/components/entity-item"
 
 /** Source-specific result rows and controls for the admin weapon search. */
 export function WeaponAdminResults({
@@ -36,13 +37,7 @@ export function WeaponAdminResults({
               closeOnSelect={false}
               onSelect={() => onSelect(item)}
               subtitle={selectedId === item.id ? "Actual" : ""}
-              icon={
-                <img
-                  src={item.icon}
-                  alt={item.name}
-                  className="size-full shrink-0 rounded-sm bg-accent object-contain"
-                />
-              }
+              icon={<WeaponItem weapon={item} />}
             >
               {item.name}
             </CommandSearch.Item>

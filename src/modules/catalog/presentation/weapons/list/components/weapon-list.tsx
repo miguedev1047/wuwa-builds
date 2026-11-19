@@ -3,7 +3,7 @@ import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { weaponQueries } from "@catalog/queries/weapons"
-import { WeaponItem } from "@catalog/presentation/weapons/list/components/weapon-item"
+import { WeaponListItem } from "@catalog/presentation/weapons/list/components/weapon-list-item"
 
 export function WeaponList() {
   const { createLink } = useCatalogActions()
@@ -23,7 +23,7 @@ export function WeaponList() {
         />
       }
     >
-      {(weapon) => <WeaponItem weapon={weapon} />}
+      {(weapon) => <WeaponListItem weapon={weapon} />}
     </RouteNavigation.List>
   )
 }

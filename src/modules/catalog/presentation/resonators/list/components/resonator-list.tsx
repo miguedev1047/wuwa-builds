@@ -3,7 +3,7 @@ import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { characterQueries } from "@catalog/queries/characters"
-import { ResonatorItem } from "@catalog/presentation/resonators/list/components/resonator-item"
+import { ResonatorListItem } from "@catalog/presentation/resonators/list/components/resonator-list-item"
 
 export function ResonatorList() {
   const { createLink } = useCatalogActions()
@@ -23,7 +23,7 @@ export function ResonatorList() {
         />
       }
     >
-      {(character) => <ResonatorItem character={character} />}
+      {(character) => <ResonatorListItem character={character} />}
     </RouteNavigation.List>
   )
 }

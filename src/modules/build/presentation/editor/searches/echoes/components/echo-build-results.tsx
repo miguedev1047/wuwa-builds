@@ -3,6 +3,7 @@ import { EchoBuildFilterFields } from "@build/presentation/editor/searches/echoe
 import { useEchoBuildResults } from "@build/presentation/editor/searches/echoes/hooks/use-echo-build-results"
 import type { EchoBuildFilterState } from "@build/presentation/editor/searches/echoes/hooks/use-echo-build-filters"
 import type { EchoSelectionSummary } from "@catalog/domain/echo"
+import { EchoItem } from "@catalog/presentation/components/entity-item"
 
 /** Source-specific result rows and controls for the build echo search. */
 export function EchoBuildResults({
@@ -41,13 +42,7 @@ export function EchoBuildResults({
               kind={`Coste ${item.cost}`}
               onSelect={() => onSelect(item)}
               subtitle={selectedId === item.id ? "Actual" : ""}
-              icon={
-                <img
-                  src={item.icon}
-                  alt={item.name}
-                  className="size-full shrink-0 rounded-sm bg-accent object-contain"
-                />
-              }
+              icon={<EchoItem echo={item} />}
             >
               {item.name}
             </CommandSearch.Item>

@@ -3,6 +3,7 @@ import { ResonatorAdminFilterFields } from "@catalog/presentation/searches/reson
 import { useResonatorAdminResults } from "@catalog/presentation/searches/resonators/hooks/use-resonator-admin-results"
 import type { ResonatorAdminFilterState } from "@catalog/presentation/searches/resonators/hooks/use-resonator-admin-filters"
 import type { EncoreCharacterSummary } from "@encore/domain/character"
+import { ResonatorItem } from "@catalog/presentation/components/entity-item"
 
 /** Source-specific result rows and controls for the admin resonator search. */
 export function ResonatorAdminResults({
@@ -37,11 +38,7 @@ export function ResonatorAdminResults({
               onSelect={() => onSelect(item)}
               subtitle={selectedId === item.id ? "Actual" : ""}
               icon={
-                <img
-                  src={item.icon}
-                  alt={item.name}
-                  className="size-full shrink-0 rounded-sm bg-accent object-contain"
-                />
+                <ResonatorItem character={item} showStatus={false} compact />
               }
             >
               {item.name}

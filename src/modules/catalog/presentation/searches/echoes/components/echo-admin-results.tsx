@@ -3,6 +3,7 @@ import { EchoAdminFilterFields } from "@catalog/presentation/searches/echoes/com
 import { useEchoAdminResults } from "@catalog/presentation/searches/echoes/hooks/use-echo-admin-results"
 import type { EchoAdminFilterState } from "@catalog/presentation/searches/echoes/hooks/use-echo-admin-filters"
 import type { EncoreEchoSummary } from "@encore/domain/echo"
+import { EchoItem } from "@catalog/presentation/components/entity-item"
 
 /** Source-specific result rows and controls for the admin echo search. */
 export function EchoAdminResults({
@@ -39,13 +40,7 @@ export function EchoAdminResults({
               closeOnSelect={false}
               onSelect={() => onSelect(item)}
               subtitle={selectedId === item.id ? "Actual" : ""}
-              icon={
-                <img
-                  src={item.icon}
-                  alt={item.name}
-                  className="size-full shrink-0 rounded-sm bg-accent object-contain"
-                />
-              }
+              icon={<EchoItem echo={item} />}
             >
               {item.name}
             </CommandSearch.Item>

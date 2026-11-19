@@ -4,6 +4,7 @@ import { useWeaponBuildResults } from "@build/presentation/editor/searches/weapo
 import type { WeaponBuildFilterState } from "@build/presentation/editor/searches/weapons/hooks/use-weapon-build-filters"
 import type { WeaponSummary } from "@catalog/domain/weapon"
 import type { WeaponTypeId } from "@/modules/game-data/domain/categories"
+import { WeaponItem } from "@catalog/presentation/components/entity-item"
 
 /** Source-specific result rows and controls for the build weapon search. */
 export function WeaponBuildResults({
@@ -45,13 +46,7 @@ export function WeaponBuildResults({
               closeOnSelect={false}
               onSelect={() => void onSelect(item)}
               subtitle={selectedId === item.id ? "Actual" : ""}
-              icon={
-                <img
-                  src={item.icon}
-                  alt={item.name}
-                  className="size-full shrink-0 rounded-sm bg-accent object-contain"
-                />
-              }
+              icon={<WeaponItem weapon={item} />}
             >
               {item.name}
             </CommandSearch.Item>

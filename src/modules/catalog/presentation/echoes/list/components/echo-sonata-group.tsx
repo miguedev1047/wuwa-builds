@@ -1,6 +1,6 @@
 import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { Show } from "@/components/utility/show"
-import { EchoItem } from "@catalog/presentation/echoes/list/components/echo-item"
+import { EchoListItem } from "@catalog/presentation/echoes/list/components/echo-list-item"
 import type { EchoSonataGroup } from "@catalog/presentation/echoes/list/application/group-echoes-by-sonata"
 
 type EchoSonataGroupSectionProps = {
@@ -41,7 +41,7 @@ export function EchoSonataGroupSection({ group }: EchoSonataGroupSectionProps) {
         aspect="square"
         getKey={(echo) => echo.id}
       >
-        {(echo) => <EchoItem echo={echo} />}
+        {(echo) => <EchoListItem echo={echo} />}
       </RouteNavigation.List>
     </section>
   )

@@ -3,6 +3,7 @@ import { ResonatorBuildFilterFields } from "@build/presentation/editor/searches/
 import { useResonatorBuildResults } from "@build/presentation/editor/searches/resonators/hooks/use-resonator-build-results"
 import type { ResonatorBuildFilterState } from "@build/presentation/editor/searches/resonators/hooks/use-resonator-build-filters"
 import type { CharacterSummary } from "@catalog/domain/character"
+import { ResonatorItem } from "@catalog/presentation/components/entity-item"
 
 /** Source-specific result rows and controls for the build resonator search. */
 export function ResonatorBuildResults({
@@ -40,11 +41,7 @@ export function ResonatorBuildResults({
               onSelect={() => void onSelect(item)}
               subtitle={selectedId === item.id ? "Actual" : ""}
               icon={
-                <img
-                  src={item.icon}
-                  alt={item.name}
-                  className="size-full shrink-0 rounded-sm bg-accent object-contain"
-                />
+                <ResonatorItem character={item} showStatus={false} compact />
               }
             >
               {item.name}
