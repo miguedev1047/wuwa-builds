@@ -61,7 +61,7 @@ const menuVariants = tv({
   slots: {
     positioner: "z-50 outline-none",
     popup: [
-      "min-w-48 origin-(--transform-origin) rounded-xl border bg-popover p-1 text-popover-foreground shadow-lg outline-none",
+      "min-w-48 origin-(--transform-origin) rounded-xl border bg-popover p-1 text-popover-foreground shadow-app-floating outline-none",
       "max-h-(--available-height) overflow-y-auto [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin]",
       "transition-[opacity,scale] duration-150 ease-out",
       "data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0",

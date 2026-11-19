@@ -137,7 +137,7 @@ const commandVariants = tv({
     viewport:
       "fixed inset-0 z-50 flex items-start justify-center px-3 pt-[12vh]",
     popup: [
-      "@container flex max-h-[min(34rem,78vh)] w-full flex-col overflow-hidden rounded-2xl border bg-popover shadow-2xl shadow-black/25 outline-none",
+      "@container flex max-h-[min(34rem,78vh)] w-full flex-col overflow-hidden rounded-2xl border bg-popover shadow-app-overlay outline-none",
       "data-[variant=spotlight]:rounded-[1.375rem]",
       "transition-[opacity,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]",
       "data-starting-style:scale-[0.98] data-starting-style:opacity-0 data-ending-style:scale-[0.98] data-ending-style:opacity-0",
@@ -172,12 +172,12 @@ const commandVariants = tv({
         footer: "pointer-events-none absolute inset-x-3 bottom-3 border-t-0",
         footerLead: "pointer-events-auto",
         footerBar:
-          "pointer-events-auto h-11 gap-0.5 rounded-full border bg-popover px-1.5 shadow-lg shadow-black/20",
+          "pointer-events-auto h-11 gap-0.5 rounded-full border bg-popover px-1.5 shadow-app-floating",
         // On a narrow launcher the pill keeps the labels and drops the key caps, so it fits.
         footerAction:
           "h-8 rounded-full ps-3.5 pe-1.5 text-[0.9375rem] @max-[30rem]:px-3 @max-[30rem]:[&>[data-slot=command-keys]]:hidden",
         footerButton:
-          "pointer-events-auto size-11 rounded-full border bg-popover shadow-lg shadow-black/20 [&_svg]:size-[1.125rem]",
+          "pointer-events-auto size-11 rounded-full border bg-popover shadow-app-floating [&_svg]:size-[1.125rem]",
         footerDivider: "mx-1.5 h-5",
       },
       compact: {
@@ -222,7 +222,7 @@ const commandVariants = tv({
         footer: "h-11 bg-muted/30 px-3",
       },
       inline: {
-        root: "rounded-2xl border bg-card shadow-xs",
+        root: "rounded-2xl border bg-card shadow-app-surface",
         inputRow: "h-12 px-4",
         inputIcon: "size-4",
         input: "text-sm",
@@ -418,7 +418,7 @@ function CommandRoot({
             // Outside a dialog it draws the panel itself, so it can sit in the page.
             className: [
               !dialog && variant !== "inline"
-                ? "border bg-popover shadow-xl shadow-black/10"
+                ? "border bg-popover shadow-app-floating"
                 : "",
               !dialog && variant !== "inline" && variant !== "spotlight"
                 ? "rounded-2xl"

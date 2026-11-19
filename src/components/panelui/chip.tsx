@@ -40,7 +40,7 @@ const chipVariants = tv({
   slots: {
     root: [
       'group/chip inline-flex shrink-0 items-center whitespace-nowrap rounded-full border font-medium outline-none select-none',
-      'border-border bg-background text-foreground shadow-xs dark:bg-input/30',
+      'border-border bg-background text-foreground shadow-app-surface dark:bg-input/30',
       'transition-[background-color,border-color,color,padding] duration-200',
       'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
       'data-disabled:pointer-events-none data-disabled:opacity-50',

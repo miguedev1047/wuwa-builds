@@ -23,7 +23,7 @@ export function EchoesTabs({
           role="button"
           cardColor="input"
           data-active={selectedEchoIndex === index}
-          className="grid aspect-square place-content-center overflow-hidden border p-0 shadow-brand-warning data-[active=true]:border-brand-warning data-[active=true]:shadow-lg/20"
+          className="grid aspect-square place-content-center overflow-hidden border p-0 data-[active=true]:border-highlight data-[active=true]:shadow-lg/20 data-[active=true]:shadow-highlight"
         >
           <Show when={slot.data} fallback={<HugeiconsIcon icon={PlusIcon} />}>
             {(echo) => (

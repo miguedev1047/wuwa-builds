@@ -53,7 +53,10 @@
   --color-brand-error: var(--brand-error);
   --color-brand-info: var(--brand-info);
   --color-brand-yellow: var(--brand-yellow);
+  --color-highlight: var(--highlight);
   --shadow-app-surface: var(--app-shadow-surface);
+  --shadow-app-floating: var(--app-shadow-floating);
+  --shadow-app-overlay: var(--app-shadow-overlay);
   --shadow-app-badge: var(--app-shadow-badge);
   --blur-app-backdrop: 2px;
   --radius-sm: calc(var(--radius) * 0.6);
@@ -115,10 +118,31 @@
   --brand-info: oklch(0.5781 0.083 210.18);
   --brand-yellow: oklch(0.6418 0.1224 83.55);
 
+  /*
+   * The builder's emphasis: stat values read in it, and the active pick takes
+   * it as its edge and glow. It is a role of its own, not a warning tone, so
+   * the decorative `brand-*` palette stays decorative.
+   */
+  --highlight: oklch(0.6999 0.1402 68.82);
+
+  /*
+   * Depth, in three steps: a surface resting in the page, a layer floating
+   * over it, and an overlay that takes the page's attention. Every step keeps
+   * the same tight drop and the hairline highlight along the top edge, so a
+   * field, a menu and a dialog read as one material at different heights.
+   */
   --app-shadow-surface:
     0 1px 2px oklch(0.2077 0.0398 265.75 / 0.08),
     0 1px 1px oklch(0.2077 0.0398 265.75 / 0.04),
     inset 0 1px 0 oklch(1 0 0 / 0.45);
+  --app-shadow-floating:
+    0 2px 4px oklch(0.2077 0.0398 265.75 / 0.06),
+    0 12px 24px -8px oklch(0.2077 0.0398 265.75 / 0.16),
+    inset 0 1px 0 oklch(1 0 0 / 0.5);
+  --app-shadow-overlay:
+    0 4px 10px -2px oklch(0.2077 0.0398 265.75 / 0.08),
+    0 28px 56px -16px oklch(0.2077 0.0398 265.75 / 0.22),
+    inset 0 1px 0 oklch(1 0 0 / 0.5);
   --app-shadow-badge:
     0 1px 1px oklch(0.2077 0.0398 265.75 / 0.08),
     inset 0 1px 0 oklch(1 0 0 / 0.35);
@@ -169,9 +193,17 @@
   --brand-info: oklch(0.7231 0.0916 206.31);
   --brand-yellow: oklch(0.8249 0.097 82.26);
 
+  --highlight: oklch(0.7874 0.1453 69.34);
+
   --app-shadow-surface:
     0 1px 2px oklch(0 0 0 / 0.5), 0 1px 1px oklch(0 0 0 / 0.3),
     inset 0 1px 0 oklch(1 0 0 / 0.06);
+  --app-shadow-floating:
+    0 2px 4px oklch(0 0 0 / 0.4), 0 12px 28px -8px oklch(0 0 0 / 0.5),
+    inset 0 1px 0 oklch(1 0 0 / 0.07);
+  --app-shadow-overlay:
+    0 4px 12px -2px oklch(0 0 0 / 0.45), 0 32px 64px -16px oklch(0 0 0 / 0.55),
+    inset 0 1px 0 oklch(1 0 0 / 0.08);
   --app-shadow-badge:
     0 1px 1px oklch(0 0 0 / 0.45), inset 0 1px 0 oklch(1 0 0 / 0.05);
 }

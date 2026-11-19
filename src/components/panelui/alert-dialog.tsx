@@ -87,10 +87,11 @@ const alertDialogVariants = tv({
      * one corner: the panel's radius is the band's less the 8px between them.
      */
     shell:
-      "relative flex w-full flex-col rounded-[38px] bg-[color-mix(in_oklab,var(--popover),black_5%)] p-2 text-popover-foreground shadow-xl outline-none ring-1 ring-foreground/[0.06] dark:bg-[color-mix(in_oklab,var(--popover),black_14%)]",
+      "relative flex w-full flex-col rounded-[38px] bg-[color-mix(in_oklab,var(--popover),black_5%)] p-2 text-popover-foreground shadow-app-overlay outline-none ring-1 ring-foreground/[0.06] dark:bg-[color-mix(in_oklab,var(--popover),black_14%)]",
     popup:
       "transition-[opacity,scale,translate] duration-200 ease-[cubic-bezier(0.2,0,0,1)] data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:translate-y-2 data-starting-style:scale-95 data-starting-style:opacity-0 motion-reduce:transition-none",
-    panel: "flex flex-col gap-2 rounded-[30px] bg-popover p-5 shadow-xs",
+    panel:
+      "flex flex-col gap-2 rounded-[30px] bg-popover p-5 shadow-app-surface",
     media: [
       "mb-2 flex size-12 shrink-0 items-center justify-center rounded-full",
       "bg-[color-mix(in_oklab,var(--pu-tone)_14%,transparent)] text-[var(--pu-tone)] [&_svg:not([class*=size-])]:size-6",

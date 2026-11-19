@@ -26,7 +26,7 @@ export function ResonatorSkillNode({
             role="button"
             cardColor="input"
             onClick={() => onToggle(!node.enabled)}
-            className="relative shrink-0 border p-2 shadow-brand-warning data-[active=true]:border-brand-warning data-[active=true]:shadow-lg/20"
+            className="relative shrink-0 border p-2 data-[active=true]:border-highlight data-[active=true]:shadow-lg/20 data-[active=true]:shadow-highlight"
           >
             <Image
               src={node.icon}

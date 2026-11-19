@@ -114,7 +114,7 @@ const avatarVariants = tv({
       'focus-visible:ring-2 focus-visible:ring-ring data-popup-open:bg-accent data-popup-open:text-foreground',
     ],
     popup: [
-      'z-50 min-w-52 origin-(--transform-origin) rounded-xl border bg-popover p-1 text-popover-foreground shadow-lg outline-none',
+      'z-50 min-w-52 origin-(--transform-origin) rounded-xl border bg-popover p-1 text-popover-foreground shadow-app-floating outline-none',
       'max-h-(--available-height) overflow-y-auto',
       'transition-[opacity,scale] duration-150 ease-out data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0',
       'motion-reduce:transition-none',

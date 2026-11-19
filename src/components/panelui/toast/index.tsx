@@ -92,7 +92,7 @@ const toastVariants = tv({
       "relative w-full max-w-[22.5rem] [--toast-inset:0px] h-(--toast-frontmost-height,5rem) min-h-16",
     root: [
       "group/toast absolute inset-x-0 z-[calc(100-var(--toast-index))] select-none",
-      "rounded-xl border bg-popover text-popover-foreground shadow-lg shadow-black/5 dark:shadow-black/30",
+      "rounded-xl border bg-popover text-popover-foreground shadow-app-floating",
       "[--gap:0.625rem] [--peek:0.5rem] [--shrink:calc(var(--toast-index)*0.05)]",
       // Collapsed, every toast is as tall as the front one, so the ones behind show only as edges.
       "h-(--toast-frontmost-height,var(--toast-height)) data-expanded:h-(--toast-height)",
@@ -136,7 +136,7 @@ const toastVariants = tv({
     title: "text-sm font-medium leading-5 text-foreground",
     description: "text-[0.8125rem] leading-5 text-muted-foreground",
     action: [
-      "inline-flex h-7 shrink-0 cursor-pointer items-center rounded-md border bg-background px-2.5 text-xs font-medium text-foreground shadow-xs outline-none",
+      "inline-flex h-7 shrink-0 cursor-pointer items-center rounded-md border bg-background px-2.5 text-xs font-medium text-foreground shadow-app-surface outline-none",
       "hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring dark:bg-input/30",
     ],
     close: [

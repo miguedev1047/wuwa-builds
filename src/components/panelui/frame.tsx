@@ -110,10 +110,10 @@ const frameVariants = tv({
       // A band holds one figure, not a list of rows, so nothing in it is ruled off.
       "group-data-[variant=band]/frame:divide-y-0",
       "group-data-[variant=default]/frame:rounded-t-2xl group-data-[variant=default]/frame:border-t",
-      "group-data-[variant=plain]/frame:rounded-3xl group-data-[variant=plain]/frame:border group-data-[variant=plain]/frame:shadow-xs",
-      "group-data-[variant=inset]/frame:rounded-[30px] group-data-[variant=inset]/frame:bg-popover group-data-[variant=inset]/frame:text-popover-foreground group-data-[variant=inset]/frame:shadow-xs",
+      "group-data-[variant=plain]/frame:rounded-3xl group-data-[variant=plain]/frame:border group-data-[variant=plain]/frame:shadow-app-surface",
+      "group-data-[variant=inset]/frame:rounded-[30px] group-data-[variant=inset]/frame:bg-popover group-data-[variant=inset]/frame:text-popover-foreground group-data-[variant=inset]/frame:shadow-app-surface",
       // 18px is the band's 24 less its 6px of padding: one corner, two curves.
-      "group-data-[variant=band]/frame:rounded-[1.125rem] group-data-[variant=band]/frame:border group-data-[variant=band]/frame:shadow-xs",
+      "group-data-[variant=band]/frame:rounded-[1.125rem] group-data-[variant=band]/frame:border group-data-[variant=band]/frame:shadow-app-surface",
     ],
     row: "flex w-full items-center gap-3 px-4 py-3 text-start",
     rowPressable: [

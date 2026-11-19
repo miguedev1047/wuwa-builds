@@ -20,7 +20,7 @@ export function StatsRowItem({ row }: StatsRowItemProps) {
       <dd
         className={cn(
           "shrink-0 font-semibold tabular-nums",
-          row.value === 0 ? "" : "text-brand-warning"
+          row.value === 0 ? "" : "text-highlight"
         )}
       >
         {formatStatValue(row)}

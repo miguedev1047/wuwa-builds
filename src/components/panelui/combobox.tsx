@@ -67,7 +67,7 @@ const comboboxVariants = tv({
   slots: {
     root: "w-full",
     field: [
-      "group/combobox flex w-full cursor-text flex-wrap items-center gap-2 rounded-lg border border-input bg-background px-3 py-1 text-sm shadow-xs",
+      "group/combobox flex w-full cursor-text flex-wrap items-center gap-2 rounded-lg border border-input bg-background px-3 py-1 text-sm shadow-app-surface",
       "transition-[border-color,box-shadow] duration-150",
       "focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/30",
       "has-disabled:cursor-not-allowed has-disabled:opacity-50 dark:bg-input/30",
@@ -100,13 +100,13 @@ const comboboxVariants = tv({
     chevron: "transition-transform duration-200 motion-reduce:transition-none",
     positioner: "z-50 outline-none",
     popup: [
-      "max-h-[min(20rem,var(--available-height))] overflow-hidden rounded-xl border bg-popover text-popover-foreground shadow-lg outline-none",
+      "max-h-[min(20rem,var(--available-height))] overflow-hidden rounded-xl border bg-popover text-popover-foreground shadow-app-floating outline-none",
       "origin-(--transform-origin) transition-[opacity,scale] duration-150 ease-out",
       "data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0",
       "motion-reduce:transition-none",
     ],
     inline:
-      "mt-2 max-h-80 overflow-hidden rounded-xl border bg-popover text-popover-foreground shadow-sm",
+      "mt-2 max-h-80 overflow-hidden rounded-xl border bg-popover text-popover-foreground shadow-app-surface",
     list: "max-h-80 scroll-py-1 overflow-y-auto overscroll-contain p-1.5 [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin]",
     item: [
       "flex min-h-10 cursor-default items-center gap-2.5 rounded-lg px-3 py-2 outline-none select-none",

@@ -88,14 +88,14 @@ const tooltipVariants = tv({
     variant: {
       solid: {
         popup:
-          "max-w-64 rounded-md bg-foreground px-2 py-1 text-xs leading-4 font-medium text-background",
+          "max-w-64 rounded-md bg-foreground px-2 py-1 text-xs leading-4 font-medium text-background shadow-app-floating",
         arrow: "before:bg-foreground",
         description: "opacity-70",
         key: "bg-background/15 text-background",
       },
       outline: {
         popup:
-          "max-w-64 rounded-lg border bg-popover px-2.5 py-1.5 text-xs leading-4 text-popover-foreground shadow-md shadow-black/5",
+          "max-w-64 rounded-lg border bg-popover px-2.5 py-1.5 text-xs leading-4 text-popover-foreground shadow-app-floating",
         arrow: "before:border before:bg-popover",
         description: "text-muted-foreground",
         key: "border bg-muted text-muted-foreground",
@@ -103,7 +103,7 @@ const tooltipVariants = tv({
       shortcut: {
         popup: [
           "flex max-w-72 items-center gap-1 rounded-lg border bg-popover/85 py-1 ps-2.5 pe-1 text-xs leading-5 text-popover-foreground",
-          "shadow-lg shadow-black/10 backdrop-blur-md backdrop-saturate-150",
+          "shadow-app-floating backdrop-blur-md backdrop-saturate-150",
         ],
         arrow: "hidden",
         description: "text-muted-foreground",
@@ -111,7 +111,7 @@ const tooltipVariants = tv({
       },
       rich: {
         popup:
-          "flex w-64 flex-col gap-1 rounded-xl border bg-popover p-3 text-[0.8125rem] leading-5 text-popover-foreground shadow-lg shadow-black/10",
+          "flex w-64 flex-col gap-1 rounded-xl border bg-popover p-3 text-[0.8125rem] leading-5 text-popover-foreground shadow-app-floating",
         arrow: "before:border before:bg-popover",
         title: "text-sm text-foreground",
         description: "text-muted-foreground",
@@ -122,7 +122,7 @@ const tooltipVariants = tv({
           "flex max-w-72 items-center gap-2 rounded-lg border px-2.5 py-1.5 text-xs leading-4 font-medium",
           "border-[color-mix(in_oklab,var(--tooltip-tone)_28%,var(--background))]",
           "bg-[color-mix(in_oklab,var(--tooltip-tone)_10%,var(--background))] dark:bg-[color-mix(in_oklab,var(--tooltip-tone)_18%,var(--background))]",
-          "text-[color-mix(in_oklab,var(--tooltip-tone),var(--foreground)_35%)] shadow-md shadow-black/5",
+          "text-[color-mix(in_oklab,var(--tooltip-tone),var(--foreground)_35%)] shadow-app-floating",
         ],
         arrow: [
           "before:border before:border-[color-mix(in_oklab,var(--tooltip-tone)_28%,var(--background))]",

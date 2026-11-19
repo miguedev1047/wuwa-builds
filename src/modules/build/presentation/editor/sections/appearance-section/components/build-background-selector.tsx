@@ -32,9 +32,9 @@ export function BuildBackgroundSelector({
               })
             }
             className={cn(
-              "overflow-hidden rounded-lg border-2 bg-accent shadow-brand-warning/20 transition-colors",
+              "overflow-hidden rounded-lg border-2 bg-accent transition-colors",
               backgroundIndex === index
-                ? "border-brand-warning shadow-2xl"
+                ? "border-highlight shadow-2xl shadow-highlight/20"
                 : "border-transparent hover:border-border"
             )}
           >

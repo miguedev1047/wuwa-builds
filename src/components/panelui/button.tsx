@@ -16,7 +16,7 @@ export const buttonVariants = tv({
       default:
         "bg-primary text-primary-foreground shadow-app-surface hover:not-disabled:bg-primary/90",
       secondary:
-        "bg-secondary text-secondary-foreground hover:not-disabled:bg-secondary/80",
+        "bg-secondary text-secondary-foreground shadow-app-surface hover:not-disabled:bg-secondary/80",
       outline:
         "border bg-background text-foreground shadow-app-surface hover:not-disabled:bg-accent hover:not-disabled:text-accent-foreground dark:bg-input/30",
       ghost:

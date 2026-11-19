@@ -95,7 +95,7 @@ export function BuildEchoCard({
                       )}
                     </Show>
 
-                    <p className="shrink-0 font-bold text-brand-warning tabular-nums">
+                    <p className="shrink-0 font-bold text-highlight tabular-nums">
                       {formatEchoStat(substat.valueStat, substat.valueNumber)}
                     </p>
                   </li>

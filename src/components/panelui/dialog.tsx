@@ -115,7 +115,7 @@ const dialogVariants = tv({
       // The footer sits on a tinted surface, and the secondary fill is a tint
       // too, so the button all but disappears into it. There it takes the
       // panel's own surface instead, which keeps it lighter than the band.
-      "*:data-[variant=secondary]:bg-popover *:data-[variant=secondary]:shadow-xs",
+      "*:data-[variant=secondary]:bg-popover *:data-[variant=secondary]:shadow-app-surface",
       "*:data-[variant=secondary]:hover:not-disabled:bg-[color-mix(in_oklab,var(--popover),var(--foreground)_5%)]",
     ],
     close: [
@@ -154,8 +154,8 @@ const dialogVariants = tv({
        */
       inset: {
         shell:
-          "rounded-[38px] bg-[color-mix(in_oklab,var(--popover),black_5%)] p-2 shadow-xl ring-1 ring-foreground/[0.06] dark:bg-[color-mix(in_oklab,var(--popover),black_14%)]",
-        panel: "overflow-hidden rounded-[30px] bg-popover shadow-xs",
+          "rounded-[38px] bg-[color-mix(in_oklab,var(--popover),black_5%)] p-2 shadow-app-overlay ring-1 ring-foreground/[0.06] dark:bg-[color-mix(in_oklab,var(--popover),black_14%)]",
+        panel: "overflow-hidden rounded-[30px] bg-popover shadow-app-surface",
         header: "px-5 pb-3 pt-5",
         body: "first:pt-5",
         bodyContent: "px-5 pb-5",
@@ -165,7 +165,8 @@ const dialogVariants = tv({
           "gap-3 px-[10px] pb-0.5 pt-2.5 *:h-11 *:min-w-0 *:flex-1 *:rounded-full",
       },
       plain: {
-        shell: "overflow-hidden rounded-[28px] border bg-popover shadow-xl",
+        shell:
+          "overflow-hidden rounded-[28px] border bg-popover shadow-app-overlay",
         header: "px-6 pb-4 pt-6",
         body: "first:pt-6",
         bodyContent: "px-6 pb-6",

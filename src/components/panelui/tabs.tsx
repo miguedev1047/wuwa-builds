@@ -102,7 +102,7 @@ const tabsVariants = tv({
         trigger: "h-8 rounded-lg px-3",
         indicator: [
           "top-(--active-tab-top) left-(--active-tab-left) h-(--active-tab-height) w-(--active-tab-width) rounded-lg",
-          "bg-background shadow-sm ring-1 ring-foreground/[0.06] dark:bg-input dark:ring-foreground/10",
+          "bg-background shadow-app-surface ring-1 ring-foreground/[0.06] dark:bg-input dark:ring-foreground/10",
           `transition-[left,top,width,height] duration-300 ${EASE} motion-reduce:transition-none`,
         ],
       },

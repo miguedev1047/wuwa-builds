@@ -128,7 +128,7 @@ const flowVariants = tv({
     underlay: "pointer-events-none absolute inset-0 text-muted-foreground/35",
     layer: "absolute left-0 top-0 origin-top-left will-change-transform",
     overlay: "pointer-events-none absolute inset-0 *:pointer-events-auto",
-    node: "absolute left-0 top-0 z-10 cursor-grab rounded-2xl border bg-card text-card-foreground shadow-sm outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-ring active:cursor-grabbing",
+    node: "absolute left-0 top-0 z-10 cursor-grab rounded-2xl border bg-card text-card-foreground shadow-app-surface outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-ring active:cursor-grabbing",
     group:
       "absolute left-0 top-0 cursor-grab rounded-3xl border border-dashed bg-muted/40 p-3 pt-8 outline-none focus-visible:ring-2 focus-visible:ring-ring active:cursor-grabbing",
     groupLabel:
@@ -149,11 +149,11 @@ const flowVariants = tv({
       "absolute z-20 size-3 -translate-x-1/2 -translate-y-1/2 cursor-crosshair rounded-full border-2 border-background bg-muted-foreground outline-none transition-[scale,background-color] hover:scale-150 hover:bg-foreground focus-visible:ring-2 focus-visible:ring-ring",
     edge: "pointer-events-none absolute left-0 top-0 size-px overflow-visible text-[var(--pu-color)]",
     controls:
-      "absolute flex flex-col divide-y divide-border overflow-hidden rounded-xl border bg-card text-card-foreground shadow-sm",
+      "absolute flex flex-col divide-y divide-border overflow-hidden rounded-xl border bg-card text-card-foreground shadow-app-surface",
     control:
       "flex size-9 cursor-pointer items-center justify-center text-muted-foreground outline-none transition-colors hover:bg-accent hover:text-foreground focus-visible:bg-accent focus-visible:text-foreground active:bg-muted [&_svg]:size-4",
     minimap:
-      "absolute overflow-hidden rounded-xl border bg-card/90 shadow-sm backdrop-blur-sm",
+      "absolute overflow-hidden rounded-xl border bg-card/90 shadow-app-surface backdrop-blur-sm",
   },
   variants: {
     color: {

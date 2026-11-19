@@ -68,7 +68,7 @@ const selectVariants = tv({
       "flex min-w-0 flex-1 items-center gap-2 truncate text-start data-placeholder:text-muted-foreground/80",
     positioner: "z-50 outline-none",
     popup: [
-      "min-w-(--anchor-width) origin-(--transform-origin) overflow-hidden rounded-xl border bg-popover text-popover-foreground shadow-lg outline-none",
+      "min-w-(--anchor-width) origin-(--transform-origin) overflow-hidden rounded-xl border bg-popover text-popover-foreground shadow-app-floating outline-none",
       "transition-[opacity,scale] duration-150 ease-out",
       "data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0",
       // Placed over the trigger, it only fades: growing from a point inside
@@ -100,7 +100,7 @@ const selectVariants = tv({
     variant: {
       default: {
         trigger:
-          "rounded-lg border border-input bg-background shadow-xs hover:bg-accent/40 data-popup-open:border-ring dark:bg-input/30",
+          "rounded-lg border border-input bg-background shadow-app-surface hover:bg-accent/40 data-popup-open:border-ring dark:bg-input/30",
       },
       ghost: {
         trigger:
@@ -108,7 +108,7 @@ const selectVariants = tv({
       },
       pill: {
         trigger:
-          "rounded-full border bg-background shadow-xs hover:bg-accent data-popup-open:bg-accent dark:bg-input/30",
+          "rounded-full border bg-background shadow-app-surface hover:bg-accent data-popup-open:bg-accent dark:bg-input/30",
       },
     },
     size: {

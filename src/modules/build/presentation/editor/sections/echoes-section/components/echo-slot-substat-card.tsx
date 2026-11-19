@@ -35,7 +35,7 @@ export function EchoSotSubstatCard({ substat }: EchoSotSubstatCardProps) {
         )}
       </Show>
 
-      <span className="shrink-0 font-bold text-brand-warning tabular-nums">
+      <span className="shrink-0 font-bold text-highlight tabular-nums">
         {percentValue}
       </span>
     </BuildWorkspace.Card>

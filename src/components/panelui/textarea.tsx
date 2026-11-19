@@ -49,7 +49,7 @@ const textareaVariants = tv({
   variants: {
     variant: {
       default: [
-        "rounded-lg border border-input bg-background shadow-xs transition-[border-color,box-shadow] dark:bg-input/30",
+        "rounded-lg border border-input bg-background shadow-app-surface transition-[border-color,box-shadow] dark:bg-input/30",
         "focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/30",
         "aria-invalid:border-destructive aria-invalid:ring-destructive/20",
       ],

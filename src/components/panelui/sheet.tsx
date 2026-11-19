@@ -122,7 +122,7 @@ const sheetVariants = tv({
       "pointer-events-none fixed inset-0 z-50 flex [--sheet-gap:0.5rem] sm:[--sheet-gap:0.75rem]",
     popup: [
       "group/sheet pointer-events-auto relative flex min-h-0 flex-col bg-popover text-popover-foreground outline-none",
-      "shadow-[0_24px_64px_-16px_rgb(0_0_0/0.3)] ring-1 ring-foreground/[0.06] dark:ring-foreground/10",
+      "shadow-app-overlay ring-1 ring-foreground/[0.06] dark:ring-foreground/10",
       MOVE,
       "data-swiping:select-none data-swiping:duration-0 data-nested-drawer-swiping:duration-0",
       "data-ending-style:duration-[calc(var(--drawer-swipe-strength,1)*400ms)]",
@@ -1342,7 +1342,7 @@ function SheetSlide({
         ? "h-[calc(100cqh-0.75rem)] snap-center"
         : // In a column a slide sits on the sheet's own colour, so it takes the
           // theme's border as a real edge, and a shadow to stand off the sheet.
-          "aspect-(--slide-aspect) rounded-[14px] shadow-xs ring-1 ring-border transition-shadow duration-150 after:hidden",
+          "aspect-(--slide-aspect) rounded-[14px] shadow-app-surface ring-1 ring-border transition-shadow duration-150 after:hidden",
       !slides.snap &&
         !selected &&
         slides.pressable &&

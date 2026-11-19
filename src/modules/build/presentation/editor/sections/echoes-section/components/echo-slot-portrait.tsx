@@ -86,7 +86,7 @@ export function EchoSlotPortrait({
                     {slot.mainStatLabel}
                   </h2>
                 </div>
-                <h2 className="shrink-0 text-2xl font-bold text-brand-warning tabular-nums">
+                <h2 className="shrink-0 text-2xl font-bold text-highlight tabular-nums">
                   {formatPercentStat(slot.mainStatValue)}
                 </h2>
               </>
