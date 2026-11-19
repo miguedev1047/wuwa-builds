@@ -1,4 +1,3 @@
-import { Tooltip } from "@/components/panelui/tooltip"
 import type { UserRoster } from "@build/client/hooks/build-live-queries"
 import { RosterItem } from "@build/presentation/collection/sections/roster-builds/components/roster-item"
 
@@ -12,16 +11,14 @@ type RosterListProps = {
 /** Grid of resonator portraits that open their build Sheet. */
 export function RosterList({ rosters, onSelect }: RosterListProps) {
   return (
-    <Tooltip.Provider>
-      <ul className="grid grid-cols-3 gap-4 sm:grid-cols-5 lg:grid-cols-8">
-        {rosters.map((roster) => (
-          <RosterItem
-            key={roster.resonatorId}
-            roster={roster}
-            onSelect={onSelect}
-          />
-        ))}
-      </ul>
-    </Tooltip.Provider>
+    <ul className="grid grid-cols-3 gap-4 sm:grid-cols-5 lg:grid-cols-8">
+      {rosters.map((roster) => (
+        <RosterItem
+          key={roster.resonatorId}
+          roster={roster}
+          onSelect={onSelect}
+        />
+      ))}
+    </ul>
   )
 }
