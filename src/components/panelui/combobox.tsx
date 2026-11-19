@@ -23,6 +23,8 @@
  * `mode="multiple"` draws the chosen options as removable chips in front of
  * the input and keeps the list open between picks. The value is an array in
  * that mode and a single string otherwise, so the type follows the mode.
+ * `maxVisibleChips` keeps a long selection from taking over the field: the
+ * first ones stay as chips and the rest fold into a small count.
  *
  * ## Filtering is yours to turn off
  *
@@ -90,6 +92,8 @@ const comboboxVariants = tv({
       // A target larger than the mark, without moving the chip.
       "after:absolute after:-inset-1.5 after:content-['']",
     ],
+    chipOverflow:
+      "inline-flex h-5 shrink-0 cursor-default items-center rounded-full bg-muted px-1.5 text-[0.6875rem] font-medium tabular-nums text-muted-foreground select-none",
     action: [
       "inline-flex size-6 shrink-0 cursor-pointer items-center justify-center rounded-full text-muted-foreground outline-none",
       "transition-[background-color,color,scale] duration-150 hover:bg-accent hover:text-foreground active:scale-90",
@@ -224,6 +228,11 @@ export interface ComboboxProps<
   disabled?: boolean
   /** Where the options appear. Default `overlay`. */
   presentation?: ComboboxPresentation
+  /**
+   * In `multiple` mode, how many chosen options are drawn as removable chips
+   * before the rest fold into a count. `Infinity` shows them all. Default `2`.
+   */
+  maxVisibleChips?: number
   /**
    * Narrow the options to the query here. `true` matches case-insensitively on
    * any part of an option's label; pass a function to match on something else.
@@ -437,6 +446,7 @@ function ComboboxRoot<Mode extends ComboboxMode = "single">(
     placeholder = "Search",
     disabled = false,
     presentation = "overlay",
+    maxVisibleChips = 2,
     filter = true,
     allowCustomValue = false,
     loading = false,
@@ -520,6 +530,12 @@ function ComboboxRoot<Mode extends ComboboxMode = "single">(
     if (selection == null) return []
     return Array.isArray(selection) ? selection : [selection]
   }, [selection])
+
+  // `Infinity` keeps every chip; any other limit is clamped to a whole count.
+  const visibleChips = Number.isFinite(maxVisibleChips)
+    ? values.slice(0, Math.max(0, Math.floor(maxVisibleChips)))
+    : values
+  const hiddenChips = values.slice(visibleChips.length)
 
   const query = inputValueControlled ? (inputValue ?? "") : internalQuery
 
@@ -821,6 +837,13 @@ function ComboboxRoot<Mode extends ComboboxMode = "single">(
     </>
   )
 
+  const selectionDescription =
+    multiple && values.length > 0
+      ? hiddenChips.length > 0
+        ? `${values.length} selected. ${hiddenChips.length} more are counted in the field; open the list to change them`
+        : `${values.length} selected. From the start of the input, press Left Arrow to focus the selected options`
+      : undefined
+
   const input = (
     <BaseCombobox.Input
       ref={inputRef}
@@ -830,11 +853,7 @@ function ComboboxRoot<Mode extends ComboboxMode = "single">(
       placeholder={multiple && values.length > 0 ? undefined : placeholder}
       aria-label={accessibilityLabel}
       aria-expanded={open}
-      aria-description={
-        multiple && values.length > 0
-          ? `${values.length} selected. From the start of the input, press Left Arrow to focus the selected options`
-          : undefined
-      }
+      aria-description={selectionDescription}
       disabled={disabled}
       autoComplete="off"
       autoCapitalize="none"
@@ -859,7 +878,7 @@ function ComboboxRoot<Mode extends ComboboxMode = "single">(
             className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5"
             aria-label={values.length ? "Selected options" : undefined}
           >
-            {values.map((entry) => (
+            {visibleChips.map((entry) => (
               <BaseCombobox.Chip
                 key={entry}
                 aria-description="Press Backspace or Delete to remove"
@@ -874,6 +893,18 @@ function ComboboxRoot<Mode extends ComboboxMode = "single">(
                 </BaseCombobox.ChipRemove>
               </BaseCombobox.Chip>
             ))}
+            {hiddenChips.length > 0 ? (
+              <span
+                data-slot="combobox-chip-overflow"
+                title={hiddenChips.map(labelOf).join(", ")}
+                className={slots.chipOverflow()}
+              >
+                <span aria-hidden="true">+{hiddenChips.length}</span>
+                <span className="sr-only">
+                  {hiddenChips.length} more selected
+                </span>
+              </span>
+            ) : null}
             {input}
           </BaseCombobox.Chips>
         ) : (

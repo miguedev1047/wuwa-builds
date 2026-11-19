@@ -16,6 +16,8 @@ type MultiComboboxFieldProps = {
   options: readonly MultiComboboxOption[]
   placeholder?: string
   emptyMessage?: string
+  /** How many chosen options show as chips before the rest fold into a count. Default `2`. */
+  maxVisibleChips?: number
   disabled?: boolean
   className?: string
 }
@@ -26,6 +28,7 @@ export function MultiComboboxField({
   options,
   placeholder,
   emptyMessage = "Sin opciones",
+  maxVisibleChips,
   disabled,
   className,
 }: MultiComboboxFieldProps) {
@@ -52,6 +55,7 @@ export function MultiComboboxField({
         aria-invalid={invalid}
         placeholder={placeholder}
         emptyMessage={emptyMessage}
+        maxVisibleChips={maxVisibleChips}
         disabled={disabled}
         clearable
       >
