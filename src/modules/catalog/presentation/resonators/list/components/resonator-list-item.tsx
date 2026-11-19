@@ -1,6 +1,4 @@
-import { Tooltip } from "@/components/panelui/tooltip"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { ResonatorItem } from "@catalog/presentation/components/entity-item"
 import type { ResonatorRow } from "@db/schema"
 
@@ -8,24 +6,22 @@ type ResonatorListItemProps = {
   character: ResonatorRow
 }
 
-/** Grid cell of the resonator catalog: link, tooltip and shared item. */
+/**
+ * Grid cell of the resonator catalog: the shared item inside its detail link.
+ *
+ * The cell only owns the aspect ratio; the item owns the frame, background and
+ * tooltip, so every list that renders it looks the same.
+ */
 export function ResonatorListItem({ character }: ResonatorListItemProps) {
   const { DetailLink } = useCatalogActions()
 
   return (
-    <CatalogSection.Item aspect="portrait" className="rounded-lg">
-      <Tooltip>
-        <Tooltip.Trigger
-          render={
-            <DetailLink id={character.id}>
-              <span className="block size-full">
-                <ResonatorItem character={character} />
-              </span>
-            </DetailLink>
-          }
-        />
-        <Tooltip.Content>{character.name}</Tooltip.Content>
-      </Tooltip>
-    </CatalogSection.Item>
+    <li className="aspect-2/3">
+      <DetailLink id={character.id}>
+        <div className="block size-full">
+          <ResonatorItem character={character} />
+        </div>
+      </DetailLink>
+    </li>
   )
 }

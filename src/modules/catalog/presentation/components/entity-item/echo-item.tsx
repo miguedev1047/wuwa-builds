@@ -1,3 +1,4 @@
+import { Tooltip } from "@/components/panelui/tooltip"
 import { EntityItem } from "@catalog/presentation/components/entity-item/entity-item"
 import { cn } from "cn"
 
@@ -15,6 +16,18 @@ type EchoItemProps = {
 /** Reusable echo thumbnail used by catalog lists and searches. */
 export function EchoItem({ echo, className }: EchoItemProps) {
   return (
-    <EntityItem src={echo.icon} alt={echo.name} className={cn(className)} />
+    <Tooltip>
+      <Tooltip.Trigger
+        render={
+          <EntityItem
+            src={echo.icon}
+            alt={echo.name}
+            aria-label={echo.name}
+            className={cn(className)}
+          />
+        }
+      />
+      <Tooltip.Content>{echo.name}</Tooltip.Content>
+    </Tooltip>
   )
 }

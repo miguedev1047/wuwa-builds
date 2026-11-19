@@ -1,8 +1,8 @@
 import { Image } from "@/components/ui/image"
 import { cn } from "cn"
-import type { ReactNode } from "react"
+import type { ComponentProps, ReactNode } from "react"
 
-type EntityItemProps = {
+type EntityItemProps = Omit<ComponentProps<"div">, "children"> & {
   src: string
   alt: string
   /** Extra classes for the frame; the parent owns the size. */
@@ -16,8 +16,15 @@ type EntityItemProps = {
  *
  * It fills whatever box the list, grid or command row gives it, so the same
  * item renders as a large card or a compact row icon without a size prop.
+ * Extra props (and the ref) reach the frame, so it can be a tooltip trigger.
  */
-export function EntityItem({ src, alt, className, children }: EntityItemProps) {
+export function EntityItem({
+  src,
+  alt,
+  className,
+  children,
+  ...props
+}: EntityItemProps) {
   return (
     <div
       data-slot="entity-item"
@@ -25,6 +32,7 @@ export function EntityItem({ src, alt, className, children }: EntityItemProps) {
         "relative size-full overflow-hidden rounded-lg bg-accent",
         className
       )}
+      {...props}
     >
       <Image
         src={src}
@@ -33,7 +41,7 @@ export function EntityItem({ src, alt, className, children }: EntityItemProps) {
         aspect="portrait"
         fit="cover"
         background="transparent"
-        hover="zoom"
+        hover="lift"
         className="size-full"
       />
       {children}

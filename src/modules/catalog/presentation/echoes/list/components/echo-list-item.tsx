@@ -1,6 +1,4 @@
-import { Tooltip } from "@/components/panelui/tooltip"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
-import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { EchoItem } from "@catalog/presentation/components/entity-item"
 import type { EchoRow } from "@db/schema"
 
@@ -8,24 +6,22 @@ type EchoListItemProps = {
   echo: EchoRow
 }
 
-/** Grid cell of the echo catalog: link, tooltip and shared item. */
+/**
+ * Grid cell of the echo catalog: the shared item inside its detail link.
+ *
+ * The cell only owns the aspect ratio; the item owns the frame, background and
+ * tooltip, so every list that renders it looks the same.
+ */
 export function EchoListItem({ echo }: EchoListItemProps) {
   const { DetailLink } = useCatalogActions()
 
   return (
-    <CatalogSection.Item aspect="square" className="rounded-lg bg-muted/40">
-      <Tooltip>
-        <Tooltip.Trigger
-          render={
-            <DetailLink id={echo.id}>
-              <span className="block size-full">
-                <EchoItem echo={echo} />
-              </span>
-            </DetailLink>
-          }
-        />
-        <Tooltip.Content>{echo.name}</Tooltip.Content>
-      </Tooltip>
-    </CatalogSection.Item>
+    <li className="aspect-square">
+      <DetailLink id={echo.id}>
+        <div className="block size-full">
+          <EchoItem echo={echo} />
+        </div>
+      </DetailLink>
+    </li>
   )
 }

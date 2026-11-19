@@ -1,4 +1,5 @@
 import { Badge } from "@/components/panelui/badge"
+import { Tooltip } from "@/components/panelui/tooltip"
 import { Show } from "@/components/utility/show"
 import { EntityItem } from "@catalog/presentation/components/entity-item/entity-item"
 import { cn } from "cn"
@@ -55,14 +56,24 @@ export function ResonatorItem({
   className,
 }: ResonatorItemProps) {
   return (
-    <EntityItem
-      src={compact ? character.icon : character.iconLarge || character.icon}
-      alt={character.name}
-      className={cn(className)}
-    >
-      <Show when={showStatus}>
-        <ResonatorStatusBadges character={character} />
-      </Show>
-    </EntityItem>
+    <Tooltip>
+      <Tooltip.Trigger
+        render={
+          <EntityItem
+            src={
+              compact ? character.icon : character.iconLarge || character.icon
+            }
+            alt={character.name}
+            aria-label={character.name}
+            className={cn(className)}
+          >
+            <Show when={showStatus}>
+              <ResonatorStatusBadges character={character} />
+            </Show>
+          </EntityItem>
+        }
+      />
+      <Tooltip.Content>{character.name}</Tooltip.Content>
+    </Tooltip>
   )
 }

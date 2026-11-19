@@ -1,3 +1,4 @@
+import { Tooltip } from "@/components/panelui/tooltip"
 import { EntityItem } from "@catalog/presentation/components/entity-item/entity-item"
 import { cn } from "cn"
 
@@ -15,6 +16,18 @@ type WeaponItemProps = {
 /** Reusable weapon thumbnail used by catalog lists and searches. */
 export function WeaponItem({ weapon, className }: WeaponItemProps) {
   return (
-    <EntityItem src={weapon.icon} alt={weapon.name} className={cn(className)} />
+    <Tooltip>
+      <Tooltip.Trigger
+        render={
+          <EntityItem
+            src={weapon.icon}
+            alt={weapon.name}
+            aria-label={weapon.name}
+            className={cn(className)}
+          />
+        }
+      />
+      <Tooltip.Content>{weapon.name}</Tooltip.Content>
+    </Tooltip>
   )
 }
