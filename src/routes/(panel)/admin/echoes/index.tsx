@@ -5,6 +5,7 @@ import { CatalogListRouteSkeleton } from "@catalog/presentation/components/route
 import { echoQueries } from "@catalog/queries/echoes"
 import { EchoListScreen } from "@catalog/presentation/echoes/list/echo-list-screen"
 import { createFileRoute } from "@tanstack/react-router"
+import { sonataQueries } from "@/modules/catalog/queries/sonatas"
 
 export const Route = createFileRoute("/(panel)/admin/echoes/")({
   component: () => (
@@ -23,6 +24,9 @@ export const Route = createFileRoute("/(panel)/admin/echoes/")({
     />
   ),
   loader: async ({ context }) => {
-    await context.queryClient.query(echoQueries.list())
+    await Promise.all([
+      context.queryClient.query(echoQueries.selection()),
+      context.queryClient.query(sonataQueries.list()),
+    ])
   },
 })

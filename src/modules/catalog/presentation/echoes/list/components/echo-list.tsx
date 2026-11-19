@@ -1,29 +1,36 @@
-import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { useCatalogActions } from "@catalog/presentation/catalog-actions"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { CatalogSection } from "@catalog/presentation/components/catalog-section"
 import { echoQueries } from "@catalog/queries/echoes"
-import { EchoItem } from "@catalog/presentation/echoes/list/components/echo-item"
+import { sonataQueries } from "@catalog/queries/sonatas"
+import { groupEchoesBySonata } from "@catalog/presentation/echoes/list/application/group-echoes-by-sonata"
+import { EchoSonataGroupSection } from "@catalog/presentation/echoes/list/components/echo-sonata-group"
 
+/** Admin echo list, grouped by the sonata set each echo can drop from. */
 export function EchoList() {
   const { createLink } = useCatalogActions()
-  const { data: echoes } = useSuspenseQuery(echoQueries.list())
+  const { data: echoes } = useSuspenseQuery(echoQueries.selection())
+  const { data: sonatas } = useSuspenseQuery(sonataQueries.list())
+  const groups = groupEchoesBySonata(echoes, sonatas)
+
+  if (groups.length === 0) {
+    return (
+      <CatalogSection.Empty
+        title="Sin datos"
+        description="Sin ecos disponibles en esta seccion"
+        action={createLink}
+      />
+    )
+  }
 
   return (
-    <RouteNavigation.List
-      items={echoes}
-      cols={6}
-      aspect="square"
-      getKey={(echo) => echo.id}
-      empty={
-        <CatalogSection.Empty
-          title="Sin datos"
-          description="Sin ecos disponibles en esta seccion"
-          action={createLink}
+    <div className="space-y-10">
+      {groups.map((group) => (
+        <EchoSonataGroupSection
+          key={group.setId ?? "sin-sonata"}
+          group={group}
         />
-      }
-    >
-      {(echo) => <EchoItem echo={echo} />}
-    </RouteNavigation.List>
+      ))}
+    </div>
   )
 }
