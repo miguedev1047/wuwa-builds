@@ -11,7 +11,7 @@ type RosterBuildsListProps = {
 export function RosterBuildsList({ builds }: RosterBuildsListProps) {
   return (
     <Tooltip.Provider>
-      <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <ul className="grid grid-cols-2 gap-4">
         {builds.map((build) => (
           <RosterBuildItem key={build.buildId} build={build} />
         ))}

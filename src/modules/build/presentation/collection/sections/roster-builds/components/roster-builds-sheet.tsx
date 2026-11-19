@@ -31,6 +31,7 @@ export function RosterBuildsSheet({
       open={open}
       onOpenChange={onOpenChange}
       onOpenChangeComplete={onOpenChangeComplete}
+      side="right"
     >
       <Sheet.Content>
         <Show when={roster}>

@@ -18,7 +18,7 @@ export function RosterBuildsSheetContent({
 }: RosterBuildsSheetContentProps) {
   const { data: builds } = useRosterBuilds(rosterId, userId)
 
-  if (builds.length === 0) {
+  if (builds.length <= 0) {
     return (
       <BuildsEmpty
         icon={<HugeiconsIcon icon={UserIcon} />}

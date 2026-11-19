@@ -16,20 +16,22 @@ export function RosterBuildsSectionContent({
   userId,
 }: RosterBuildsSectionContentProps) {
   const { data: rosters } = useUserRosters(userId)
-  const [selectedRosterId, setSelectedRosterId] = useState<number | null>(null)
+
   const [sheetOpen, setSheetOpen] = useState(false)
+  const [selectedRosterId, setSelectedRosterId] = useState<number | null>(null)
 
   const selectedRoster =
     rosters.find(({ resonatorId }) => resonatorId === selectedRosterId) ?? null
 
-  if (rosters.length === 0) {
+  if (rosters.length <= 0) {
     return (
-      <BuildsEmpty
-        className="mx-4 md:mx-8"
-        icon={<HugeiconsIcon icon={UserIcon} />}
-        title="Todavía no tienes builds con resonador"
-        description="Cuando asignes un resonador a una build, aparecerá aquí."
-      />
+      <div className="px-4 md:px-8">
+        <BuildsEmpty
+          icon={<HugeiconsIcon icon={UserIcon} />}
+          title="Todavía no tienes builds con resonador"
+          description="Cuando asignes un resonador a una build, aparecerá aquí."
+        />
+      </div>
     )
   }
 
@@ -37,7 +39,6 @@ export function RosterBuildsSectionContent({
     const metaDesc = `${roster.totalBuilds} ${
       roster.totalBuilds === 1 ? "build" : "builds"
     }`
-
     return {
       type: "button",
       text: roster.name,
@@ -64,7 +65,6 @@ export function RosterBuildsSectionContent({
         marqueeTextColor="var(--primary-foreground)"
         borderColor="var(--border)"
       />
-
       <RosterBuildsSheet
         roster={selectedRoster}
         userId={userId}
