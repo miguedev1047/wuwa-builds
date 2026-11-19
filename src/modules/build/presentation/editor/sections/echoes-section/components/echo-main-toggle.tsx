@@ -17,7 +17,7 @@ export function EchoMainToggle({ isMain, onToggle }: EchoMainToggleProps) {
     <Field>
       <Field.Label
         htmlFor={id}
-        className="flex items-center justify-between gap-4 overflow-hidden rounded-lg p-4"
+        className="flex items-center justify-between gap-4 overflow-hidden p-2"
       >
         <FieldContent>
           <FieldTitle>
