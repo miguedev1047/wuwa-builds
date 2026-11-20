@@ -56,7 +56,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <NuqsAdapter>
-          <ThemeProvider defaultTheme="system" storageKey="theme">
+          <ThemeProvider defaultTheme="dark" storageKey="theme">
             <Toast.Provider>
               <Tooltip.Provider>{children}</Tooltip.Provider>
             </Toast.Provider>
