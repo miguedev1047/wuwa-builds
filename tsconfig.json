@@ -17,6 +17,7 @@
       "@build/*": ["./src/modules/build/*"],
       "@catalog/*": ["./src/modules/catalog/*"],
       "@encore/*": ["./src/modules/encore/*"],
+      "@home/*": ["./src/modules/home/*"],
       "@db/*": ["./src/db/*"]
     },
 
