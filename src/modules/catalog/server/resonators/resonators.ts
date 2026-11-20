@@ -91,6 +91,7 @@ export const getCharacter = createServerFn({
     if (!resonator) {
       throw new Error(CATALOG_NOT_FOUND)
     }
+
     return resonator
   })
 
