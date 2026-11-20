@@ -89,7 +89,7 @@ Rules:
   `src/routing`.
 - TanStack Start remains in module `server/` adapters. Query and DB integrations
   remain in `queries/` and `client/`.
-- Use `build` for the domain, `editor` and `collection` for its UI capabilities.
+- Use `build` for the domain, `editor` and `my-builds` for its UI capabilities.
   Keep plural names for actual collections and preserve persistence keys.
 - `src/modules/encore` is the reference server adapter implementation.
 - `user.role` is `USER | ADMIN` (default `USER`, not client-settable). Any
@@ -107,14 +107,17 @@ Current modules:
   create prefill, never as the builder data source.
 - `src/modules/build`: local TanStack DB build collection (LocalStorage) and
   the D1 saved-build backend reserved for the future cloud save.
-- `src/modules/build/presentation`: build editor, collection and shared UI.
+- `src/modules/build/presentation`: build editor, my builds and shared UI.
+- `src/modules/home`: the landing presentation (animated hero and its dot-grid
+  background) consumed by the home route in `src/routing/home`.
 - `src/modules/catalog/presentation/searches`: three independent admin searches
   using Encore, each with its own query, filtering, controls and selection.
 - `src/modules/build/presentation/editor/searches`: three independent builder
   searches using the canonical catalog and build selection actions.
 - `src/modules/catalog/presentation`: catalog lists, details and forms, including
   Encore-assisted prefill. It must not import infrastructure directly.
-- `src/routes` and `src/routing`: route composition and shared navigation adapters.
+- `src/routes` and `src/routing`: route declarations, the `_navigation` shell and
+  route-level pages.
 - `src/db`: Drizzle schema for auth, saved builds and the canonical catalog
   tables (D1).
 
@@ -306,8 +309,8 @@ Integration examples and source-selection guidance live in
 ### Imports, icons and stat keys
 
 - **Use the domain aliases.** Import internal modules through `@/*` or a domain
-  alias: `@build/*`, `@catalog/*`, `@encore/*` and
-  `@db/*`. Do not add relative imports that climb directories (`../`).
+  alias: `@build/*`, `@catalog/*`, `@encore/*`, `@home/*` and `@db/*`. Do not
+  add relative imports that climb directories (`../`).
 - **Let icons inherit their size.** Do not pass a hardcoded `size` to an icon;
   size it from the parent container with CSS.
 - **Use canonical stat keys.** Stats use the `BuildStatKey` ids from

@@ -91,12 +91,13 @@ make Node-only APIs available in workerd.
 
 ```text
 src/
-  routes/          File routes, loaders, session identity and navigation
-  routing/         Shared router-specific adapters and route UI
+  routes/          File routes, loaders, the _navigation shell and session identity
+  routing/         Router adapters and route-level pages
   modules/
     catalog/       Canonical catalog, admin UI and admin searches
     encore/        External game-data reads and source mapping
-    build/         Local builds, editor, collection UI and calculations
+    build/         Local builds, editor, my builds UI and calculations
+    home/          Landing hero presentation and background
     game-data/     Shared canonical category definitions and validation
   components/      Reusable UI primitives, blocks and form controls
   hooks/           Cross-feature interaction hooks and filter factory
@@ -147,7 +148,8 @@ Pages compose `RouteNavigation` (`src/components/blocks/route-navigation`):
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
 | `catalog`   | Canonical resonators, weapons, echoes and sonatas; zod inputs; D1 adapters; server functions; query options; admin screens and searches     | Admin panel and builder                                          |
 | `encore`    | Public API reads, caching and conversion from external codes/localized names to internal values                                             | Admin search and create-form prefill                             |
-| `build`     | Local build collection, user-scoped edits, editor and collection UI, stat calculations, and the saved-build backend reserved for cloud save | Builder and My Builds                                            |
+| `build`     | Local build collection, user-scoped edits, editor and my builds UI, stat calculations, and the saved-build backend reserved for cloud save  | Builder and My Builds                                            |
+| `home`      | Landing hero, animated entrance and dot-grid background                                                                                      | Home route                                                       |
 | `game-data` | Stable category IDs, labels, types, validation and select options                                                                           | Catalog, Encore adapters, build calculations and search controls |
 
 Encore is an external content source. It is not the builder's catalog and is not
