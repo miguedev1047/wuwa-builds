@@ -1,4 +1,5 @@
 import appCss from "@/styles/index.css?url"
+import { RouteNotFound } from "@/routing/home/route-state"
 
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router"
 import { Toast } from "@/components/panelui/toast"
@@ -29,7 +30,7 @@ export const Route = createRootRouteWithContext<RouteContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Start Starter",
+        title: "Wuwa Builds",
       },
     ],
     links: [
@@ -37,20 +38,20 @@ export const Route = createRootRouteWithContext<RouteContext>()({
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/landing/mark.png",
+      },
     ],
   }),
-  notFoundComponent: () => (
-    <main className="container mx-auto p-4 pt-16">
-      <h1>404</h1>
-      <p>The requested page could not be found.</p>
-    </main>
-  ),
+  notFoundComponent: RouteNotFound,
   shellComponent: RootDocument,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

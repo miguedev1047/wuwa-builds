@@ -8,7 +8,6 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty"
-import { Show } from "@/components/utility/show"
 import { isCatalogNotFound } from "@catalog/domain/catalog-error"
 import {
   Alert02Icon,
@@ -54,33 +53,17 @@ export function RouteError({
   return (
     <RouteNavigation.Root>
       <RouteNavigation.Content>
-        <div className="grid min-h-100 place-content-center">
-          <Empty>
+        <div className="grid min-h-200 place-content-center">
+          <Empty className="border border-dashed">
             <EmptyMedia variant="icon">
               <HugeiconsIcon icon={Alert02Icon} />
             </EmptyMedia>
-
             <EmptyHeader>
               <EmptyTitle>{title}</EmptyTitle>
               <EmptyDescription>
                 {errorText(error, description)}
               </EmptyDescription>
             </EmptyHeader>
-
-            <Show
-              when={
-                import.meta.env.DEV && error instanceof Error
-                  ? error.stack
-                  : null
-              }
-            >
-              {(stack) => (
-                <pre className="max-w-2xl overflow-x-auto rounded-xl border bg-muted/40 p-3 text-left text-xs whitespace-pre-wrap text-muted-foreground">
-                  {stack}
-                </pre>
-              )}
-            </Show>
-
             <EmptyContent className="flex-row justify-center">
               <Button type="button" onClick={reset}>
                 Reintentar
@@ -104,19 +87,17 @@ export function RouteNotFound() {
   return (
     <RouteNavigation.Root>
       <RouteNavigation.Content>
-        <div className="grid min-h-100 place-content-center">
-          <Empty>
+        <div className="grid min-h-200 place-content-center">
+          <Empty className="border border-dashed">
             <EmptyMedia variant="icon">
               <HugeiconsIcon icon={SearchRemoveIcon} />
             </EmptyMedia>
-
             <EmptyHeader>
               <EmptyTitle>No encontrado</EmptyTitle>
               <EmptyDescription>
                 El recurso que buscas no existe o fue eliminado.
               </EmptyDescription>
             </EmptyHeader>
-
             <EmptyContent>
               <Button
                 nativeButton={false}

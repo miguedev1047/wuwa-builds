@@ -17,14 +17,16 @@ export function NavigationApp({ user }: NavigationAppProps) {
     <NavigationMenu
       variant="bar"
       aria-label="wuwa-builds"
-      className="sticky inset-x-0 top-0 z-50 px-4 pt-4"
+      className="sticky inset-x-0 top-0 z-50 px-3 pt-4 sm:px-4"
     >
-      <NavigationMenu.Brand className="ps-2">
+      <NavigationMenu.Brand className="max-sm:px-0 sm:ps-2">
         <Link to="/">Wuwa Builds</Link>
       </NavigationMenu.Brand>
       <NavigationMenu.List>
         <NavigationMenu.Item value="wiki">
-          <NavigationMenu.Trigger>Wiki</NavigationMenu.Trigger>
+          <NavigationMenu.Trigger className="max-sm:gap-1 max-sm:px-2">
+            Wiki
+          </NavigationMenu.Trigger>
           <NavigationMenu.Content className="grid w-full gap-1 md:grid-cols-2">
             <NavigationMenu.Link
               render={<Link to="/" />}
@@ -48,7 +50,9 @@ export function NavigationApp({ user }: NavigationAppProps) {
         </NavigationMenu.Item>
         <Show when={user?.role === "ADMIN"}>
           <NavigationMenu.Item value="admin">
-            <NavigationMenu.Trigger>Admin</NavigationMenu.Trigger>
+            <NavigationMenu.Trigger className="max-sm:gap-1 max-sm:px-2">
+              Admin
+            </NavigationMenu.Trigger>
             <NavigationMenu.Content className="grid w-full gap-1 md:grid-cols-2">
               <NavigationMenu.Link
                 render={<Link to="/admin" />}
@@ -84,14 +88,10 @@ export function NavigationApp({ user }: NavigationAppProps) {
           </NavigationMenu.Item>
         </Show>
         <NavigationMenu.Item value="builder">
-          <NavigationMenu.Trigger>Builder</NavigationMenu.Trigger>
+          <NavigationMenu.Trigger className="max-sm:gap-1 max-sm:px-2">
+            Builder
+          </NavigationMenu.Trigger>
           <NavigationMenu.Content>
-            <NavigationMenu.Link
-              render={<Link to="/" />}
-              description="Explora las builds compartidas por la comunidad"
-            >
-              Builds
-            </NavigationMenu.Link>
             <NavigationMenu.Link
               render={<Link to="/panel/my-builds" />}
               description="Crea y administra tus builds guardadas"
