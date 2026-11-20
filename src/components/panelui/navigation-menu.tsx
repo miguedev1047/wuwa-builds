@@ -106,7 +106,10 @@ const navigationMenuVariants = tv({
       `${EASE} motion-reduce:transition-none [&_svg]:size-3.5`,
     ],
     positioner: [
-      "z-0 h-(--positioner-height) w-(--positioner-width) max-w-(--available-width)",
+      // The bar variant portals this into the body, so the z-index has to live
+      // here: the positioner is the stacking context around the popup. Raising
+      // NavigationMenu.Content alone cannot escape it.
+      "z-50 h-(--positioner-height) w-(--positioner-width) max-w-(--available-width)",
     ],
     popup: [
       "group/popup relative h-(--popup-height) w-(--popup-width) origin-(--transform-origin) bg-popover text-popover-foreground outline-none",
