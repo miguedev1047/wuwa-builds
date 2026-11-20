@@ -8,7 +8,7 @@ type EchoSkillTextProps = {
 /** Read-only skill text, split on the `<br>` Encore uses. */
 export function EchoSkillText({ skill }: EchoSkillTextProps) {
   return (
-    <div className="space-y-4">
+    <div className="flex items-start gap-4">
       <Show when={skill.icon}>
         {(icon) => (
           <div className="size-16 shrink-0 overflow-hidden rounded-lg bg-muted/40">
