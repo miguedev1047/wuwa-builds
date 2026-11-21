@@ -6,6 +6,7 @@ import {
   echoBuildSonataOptions,
 } from "@build/presentation/editor/searches/echoes/filter-echo-build-results"
 import type { EchoBuildFilters } from "@build/presentation/editor/searches/echoes/hooks/use-echo-build-filters"
+import { groupEchoBuildResults } from "@build/presentation/editor/searches/echoes/group-echo-build-results"
 
 /** Loads and filters the build's own echoes source. */
 export function useEchoBuildResults(filters: EchoBuildFilters) {
@@ -13,7 +14,9 @@ export function useEchoBuildResults(filters: EchoBuildFilters) {
     queries: [echoQueries.selection(), sonataQueries.list()],
   })
   return {
-    items: filterEchoBuildResults({ items: data, filters }),
+    groups: groupEchoBuildResults(
+      filterEchoBuildResults({ items: data, filters })
+    ),
     sonataOptions: echoBuildSonataOptions(sonatas),
   }
 }

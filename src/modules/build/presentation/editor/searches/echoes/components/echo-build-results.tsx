@@ -15,7 +15,7 @@ export function EchoBuildResults({
   selectedId?: number | null
   onSelect: (item: EchoSelectionSummary) => void
 }) {
-  const { items, sonataOptions } = useEchoBuildResults(filters.values)
+  const { groups, sonataOptions } = useEchoBuildResults(filters.values)
 
   return (
     <>
@@ -32,22 +32,23 @@ export function EchoBuildResults({
         <CommandSearch.Empty>
           No hay ecos que coincidan con la búsqueda.
         </CommandSearch.Empty>
-        <CommandSearch.Group heading="Ecos">
-          {items.map((item) => (
-            <CommandSearch.Item
-              key={item.id}
-              value={String(item.id)}
-              textValue={item.name}
-              closeOnSelect={false}
-              kind={`Coste ${item.cost}`}
-              onSelect={() => onSelect(item)}
-              subtitle={selectedId === item.id ? "Actual" : ""}
-              icon={<EchoItem echo={item} />}
-            >
-              {item.name}
-            </CommandSearch.Item>
-          ))}
-        </CommandSearch.Group>
+        {groups.map(({ cost, label, items }) => (
+          <CommandSearch.Group key={cost} heading={label}>
+            {items.map((item) => (
+              <CommandSearch.Item
+                key={item.id}
+                value={String(item.id)}
+                textValue={item.name}
+                closeOnSelect={false}
+                onSelect={() => onSelect(item)}
+                subtitle={selectedId === item.id ? "Actual" : ""}
+                icon={<EchoItem echo={item} />}
+              >
+                {item.name}
+              </CommandSearch.Item>
+            ))}
+          </CommandSearch.Group>
+        ))}
       </CommandSearch.List>
     </>
   )

@@ -1,9 +1,9 @@
 import { QuerySelect } from "@/components/blocks/query-select"
 import {
-  ECHO_COST_OPTIONS,
   ECHO_CLASS_OPTIONS,
   echoClassSchema,
 } from "@/modules/game-data/domain/categories"
+import { echoBuildCostOptions } from "@build/presentation/editor/searches/echoes/group-echo-build-results"
 import type { EchoBuildFilterState } from "@build/presentation/editor/searches/echoes/hooks/use-echo-build-filters"
 
 /** Filter controls owned by this specific search. */
@@ -28,7 +28,7 @@ export function EchoBuildFilterFields({
       />
       <QuerySelect
         placeholder="Filtrar por coste"
-        items={ECHO_COST_OPTIONS}
+        items={echoBuildCostOptions}
         value={filters.values.cost}
         onValueChange={(value) =>
           void filters.setValues({
