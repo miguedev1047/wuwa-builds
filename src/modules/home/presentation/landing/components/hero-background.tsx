@@ -9,7 +9,7 @@ type HeroBackgroundProps = {
 export function HeroBackground({ background }: HeroBackgroundProps) {
   return (
     <picture
-      className="pointer-events-none absolute inset-x-0 top-0 z-0 block h-300 w-full mask-y-from-80% opacity-40"
+      className="pointer-events-none absolute inset-x-0 top-0 z-0 block h-150 w-full mask-y-from-80% opacity-40 md:h-300"
       aria-hidden="true"
     >
       <source media="(width < 40rem)" srcSet={background.mobile} />
