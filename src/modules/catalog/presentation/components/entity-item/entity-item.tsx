@@ -42,7 +42,6 @@ export function EntityItem({
         fit="cover"
         background="transparent"
         hover="lift"
-        className="size-full"
       />
       {children}
     </div>

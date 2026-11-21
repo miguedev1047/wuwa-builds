@@ -23,7 +23,7 @@ export function EchoItem({ echo, className }: EchoItemProps) {
             src={echo.icon}
             alt={echo.name}
             aria-label={echo.name}
-            className={cn(className)}
+            className={cn("size-full", className)}
           />
         }
       />
