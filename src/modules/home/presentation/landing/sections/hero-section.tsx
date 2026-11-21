@@ -1,14 +1,20 @@
 import "@home/presentation/landing/styles/hero-section.css"
-import { builderPreview } from "@/assets/landing"
+import { builderPreview, type LandingBackground } from "@/assets/landing"
 import { Button } from "@/components/panelui/button"
 import { Safari } from "@/components/ui/safari"
 import { Link } from "@tanstack/react-router"
-import { DotGridBackground } from "@home/presentation/landing/components/dot-grid-background"
+import { HeroBackground } from "@home/presentation/landing/components/hero-background"
 
-export function HeroSection() {
+type HeroSectionProps = {
+  /** Responsive dithered images for the selected hero background. */
+  background: LandingBackground
+}
+
+/** Introduces the builder and shows its preview. */
+export function HeroSection({ background }: HeroSectionProps) {
   return (
     <section id="hero-section" aria-labelledby="hero-title">
-      <DotGridBackground />
+      <HeroBackground background={background} />
       <div className="relative z-10 mx-auto max-w-7xl space-y-20 px-4 py-20 sm:px-8">
         <div className="mx-auto max-w-3xl space-y-5 text-center">
           <h1

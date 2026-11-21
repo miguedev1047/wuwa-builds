@@ -148,7 +148,7 @@ Pages compose `RouteNavigation` (`src/components/blocks/route-navigation`):
 | `catalog`   | Canonical resonators, weapons, echoes and sonatas; zod inputs; D1 adapters; server functions; query options; admin screens and searches    | Admin panel and builder                                          |
 | `encore`    | Public API reads, caching and conversion from external codes/localized names to internal values                                            | Admin search and create-form prefill                             |
 | `build`     | Local build collection, user-scoped edits, editor and my builds UI, stat calculations, and the saved-build backend reserved for cloud save | Builder and My Builds                                            |
-| `home`      | Landing hero, animated entrance and dot-grid background                                                                                    | Home route                                                       |
+| `home`      | Landing hero, animated entrance and responsive images with pre-rendered dithering                                                           | Home route                                                       |
 | `game-data` | Stable category IDs, labels, types, validation and select options                                                                          | Catalog, Encore adapters, build calculations and search controls |
 
 Encore is an external content source. It is not the builder's catalog and is not

@@ -1,3 +1,4 @@
+import { landingBackgrounds } from "@/assets/landing"
 import { LandingPage } from "@/routing/home/landing/landing-page"
 import { createFileRoute } from "@tanstack/react-router"
 
@@ -6,7 +7,11 @@ const description =
   "Crea builds de Wuthering Waves en español. Elige resonadores, configura armas y ecos, calcula sus estadísticas y guarda tus variantes."
 
 export const Route = createFileRoute("/_navigation/")({
-  component: LandingPage,
+  component: LandingRoute,
+  loader: () => ({
+    background:
+      landingBackgrounds[Math.floor(Math.random() * landingBackgrounds.length)],
+  }),
   head: () => ({
     meta: [
       { title },
@@ -24,3 +29,8 @@ export const Route = createFileRoute("/_navigation/")({
     ],
   }),
 })
+
+function LandingRoute() {
+  const { background } = Route.useLoaderData()
+  return <LandingPage background={background} />
+}

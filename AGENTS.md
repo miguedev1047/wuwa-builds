@@ -108,8 +108,8 @@ Current modules:
 - `src/modules/build`: builds backed by a per-user TanStack DB query collection
   over the D1 saved-build tables (`builds` row with a versioned JSON payload).
 - `src/modules/build/presentation`: build editor, my builds and shared UI.
-- `src/modules/home`: the landing presentation (animated hero and its dot-grid
-  background) consumed by the home route in `src/routing/home`.
+- `src/modules/home`: the landing presentation (animated hero and responsive
+  images with pre-rendered dithering) consumed by `src/routing/home`.
 - `src/modules/catalog/presentation/searches`: three independent admin searches
   using Encore, each with its own query, filtering, controls and selection.
 - `src/modules/build/presentation/editor/searches`: three independent builder
