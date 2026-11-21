@@ -59,9 +59,8 @@ export function SidebarContainer({
           onRename={onRename}
           onToggleInspector={handleToggleInspector}
         />
-        <div className="relative flex h-full w-full flex-col gap-6 p-3 md:p-6 xl:overflow-hidden">
+        <div className="relative flex h-full w-full flex-col gap-6 overflow-hidden p-3 md:p-6">
           {children}
-
           <BuildEditorDock
             backLink={backLink}
             canDownload={canDownload}
