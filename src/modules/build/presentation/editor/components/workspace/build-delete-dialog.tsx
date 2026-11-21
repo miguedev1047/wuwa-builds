@@ -22,7 +22,7 @@ export function BuildDeleteDialog({
         </AlertDialog.Media>
         <AlertDialog.Title>¿Eliminar build?</AlertDialog.Title>
         <AlertDialog.Description>
-          La build se eliminará de este navegador de forma permanente.
+          La build se eliminará de tu cuenta de forma permanente.
         </AlertDialog.Description>
         <AlertDialog.Footer>
           <AlertDialog.Cancel>Cancelar</AlertDialog.Cancel>

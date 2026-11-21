@@ -10,11 +10,14 @@ type RosterBuildsSectionProps = {
   /** User that owns the local builds. */
   userId: string
   onCreateBuild: () => void
+  /** Whether the create action is saving the build or opening the editor. */
+  isCreating: boolean
 }
 
 /** Builds grouped by their resonator, under their own section header. */
 export function RosterBuildsSection({
   userId,
+  isCreating,
   onCreateBuild,
 }: RosterBuildsSectionProps) {
   return (
@@ -22,10 +25,14 @@ export function RosterBuildsSection({
       <RouteNavigation.Header>
         <RouteNavigation.Title>Mis builds</RouteNavigation.Title>
         <RouteNavigation.Description>
-          Todas tus builds guardadas en este navegador.
+          Todas tus builds guardadas en tu cuenta.
         </RouteNavigation.Description>
         <RouteNavigation.Actions>
-          <Button onClick={onCreateBuild}>
+          <Button
+            loading={isCreating}
+            aria-label={isCreating ? "Creando build" : undefined}
+            onClick={onCreateBuild}
+          >
             <HugeiconsIcon icon={PlusIcon} />
             Nueva Build
           </Button>

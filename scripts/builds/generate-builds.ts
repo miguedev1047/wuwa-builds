@@ -285,6 +285,10 @@ function toPayload(build: BuildProps, notes: string): BuildPayload {
         skillId: skill.skillId,
         level: skill.level,
       })),
+      passives: build.resonator.passives.map((passive) => ({
+        passiveId: passive.passiveId,
+        enabled: passive.enabled,
+      })),
     },
     weapon: {
       weaponId: build.weapon.data?.id ?? null,
@@ -310,6 +314,7 @@ function toPayload(build: BuildProps, notes: string): BuildPayload {
         })),
     })) as BuildPayload["echoLoadout"],
     mainEchoSlot: build.mainEchoSlot as BuildPayload["mainEchoSlot"],
+    backgroundIndex: build.backgroundIndex,
     notes,
   }
 

@@ -11,7 +11,7 @@ if (import.meta.env.DEV) {
 
 export function getRouter() {
   const { queryClient } = getQuery()
-  const { dbClient } = getDb()
+  const { dbClient } = getDb(queryClient)
 
   const router = createTanStackRouter({
     routeTree,

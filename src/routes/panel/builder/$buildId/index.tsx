@@ -1,49 +1,25 @@
-import { buildCollection } from "@build/client/build-store"
-import { useBuildCollection } from "@build/client/hooks/build-live-queries"
-import { useBuildActions } from "@build/presentation/editor/hooks/use-build-actions"
+import { BuildEditorRoute } from "@/routing/build/editor/build-editor-route"
 import {
   BuildRouteError,
   BuildRouteNotFound,
   BuildRoutePending,
 } from "@/routing/build/route-state"
-import { createFileRoute, useNavigate } from "@tanstack/react-router"
-import { BuilderEditorPage } from "@/routing/build/editor/builder-editor-page"
+import { createFileRoute } from "@tanstack/react-router"
+import { buildsCollection } from "@build/client/builds-collection"
 
 export const Route = createFileRoute("/panel/builder/$buildId/")({
   component: RouteComponent,
   pendingComponent: BuildRoutePending,
   errorComponent: BuildRouteError,
   notFoundComponent: BuildRouteNotFound,
-  ssr: false,
-  loader: async () => {
-    await buildCollection.preload()
-  },
+  loader: ({ context: { dbClient, userId } }) =>
+    dbClient.collection(buildsCollection(userId)).preload(),
 })
 
-/** Editor route: binds the loaded build to the rename and delete actions. */
+/** Editor route: binds the build id and the signed-in user. */
 function RouteComponent() {
-  const navigate = useNavigate()
-
   const { buildId } = Route.useParams()
   const { userId } = Route.useRouteContext()
 
-  const { data: liveBuild } = useBuildCollection({ buildId, userId })
-
-  const { build, rename, remove } = useBuildActions({
-    liveBuild,
-    buildId,
-    onDeleted: () => navigate({ to: "/panel/my-builds" }),
-  })
-
-  if (!build) return <BuildRouteNotFound />
-
-  return (
-    <BuilderEditorPage
-      buildId={buildId}
-      build={build}
-      remove={remove}
-      rename={rename}
-      userId={userId}
-    />
-  )
+  return <BuildEditorRoute buildId={buildId} userId={userId} />
 }

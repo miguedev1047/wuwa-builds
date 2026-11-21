@@ -1,26 +1,25 @@
 import { resonatorProgress } from "@build/application/resonator-progress"
-import { updateBuild, type LocalBuildIdentity } from "@build/client/build-store"
+import type { LocalBuildIdentity } from "@build/client/build-store"
+import { useBuildStore } from "@build/client/hooks/use-build-store"
 
-/** Bind resonator progression to the current local build. */
+/** Bind resonator progression to the current build. */
 export function useResonatorProgress(identity: LocalBuildIdentity) {
+  const { update } = useBuildStore(identity.userId)
+
   return {
     setLevelStep: (step: number) => {
-      updateBuild(identity, (draft) =>
-        resonatorProgress.setLevelStep(draft, step)
-      )
+      update(identity, (draft) => resonatorProgress.setLevelStep(draft, step))
     },
     toggleSequence: (rank: number) => {
-      updateBuild(identity, (draft) =>
-        resonatorProgress.toggleSequence(draft, rank)
-      )
+      update(identity, (draft) => resonatorProgress.toggleSequence(draft, rank))
     },
     setSkillLevel: (skillId: number, level: number) => {
-      updateBuild(identity, (draft) =>
+      update(identity, (draft) =>
         resonatorProgress.setSkillLevel(draft, skillId, level)
       )
     },
     togglePassive: (id: number, enabled: boolean) => {
-      updateBuild(identity, (draft) =>
+      update(identity, (draft) =>
         resonatorProgress.togglePassive(draft, id, enabled)
       )
     },

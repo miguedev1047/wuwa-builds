@@ -1,9 +1,7 @@
 import { ActionDock } from "@/components/blocks/action-dock"
 import type { DockItemData, DockLinkItem } from "@/components/ui/dock"
 import { BuildDelete } from "@build/presentation/editor/components/sidebar/build-delete"
-import { useBuildCollection } from "@build/client/hooks/build-live-queries"
-import { updateBuild } from "@build/client/build-store"
-import { useBuildIdentity } from "@build/presentation/editor/build-identity"
+import { useEditorSection } from "@build/presentation/editor/state/editor-section-context"
 import {
   ColorsIcon,
   DeleteIcon,
@@ -46,9 +44,9 @@ export function BuildEditorDock({
   onDelete,
   onSectionSelect,
 }: BuildEditorDockProps) {
-  const { buildId, userId } = useBuildIdentity()
-  const { data: build } = useBuildCollection({ buildId, userId })
   const [deleteOpen, setDeleteOpen] = useState(false)
+
+  const { section: activeSection, setSection } = useEditorSection()
 
   const items: DockItemData[] = [
     backLink,
@@ -56,11 +54,9 @@ export function BuildEditorDock({
     ...sections.map((section) => ({
       label: section.title,
       icon: <HugeiconsIcon icon={section.icon} />,
-      active: section.id === build?.selectedEditorSection,
+      active: section.id === activeSection,
       onClick: () => {
-        updateBuild({ buildId, userId }, (current) => {
-          current.selectedEditorSection = section.id
-        })
+        setSection(section.id)
         onSectionSelect()
       },
     })),
@@ -75,7 +71,9 @@ export function BuildEditorDock({
       label: "Eliminar",
       icon: <HugeiconsIcon icon={DeleteIcon} />,
       className: "text-destructive",
-      onClick: () => setDeleteOpen(true),
+      onClick: () => {
+        setDeleteOpen(true)
+      },
     },
   ]
 

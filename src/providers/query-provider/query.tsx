@@ -2,12 +2,13 @@ import { DbClient } from "@tanstack/react-db"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { createIsomorphicFn } from "@tanstack/react-start"
 
-export function getDb() {
+export function getDb(queryClient: QueryClient) {
   const getRuntime = createIsomorphicFn()
     .server(() => `server` as const)
     .client(() => `browser` as const)
 
   const dbClient = new DbClient({
+    queryClient,
     runtime: getRuntime(),
   })
 

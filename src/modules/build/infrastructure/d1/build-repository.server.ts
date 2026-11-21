@@ -60,22 +60,36 @@ export function createD1BuildRepository(database: AppDb): BuildRepository {
       const [row] = await database
         .insert(builds)
         .values({
-          id: crypto.randomUUID(),
+          id: data.buildId,
           userId,
           characterId: data.characterId,
           name: data.name,
           payload: data.payload,
           documentVersion: BUILD_DOCUMENT_VERSION,
         })
+        .onConflictDoNothing({ target: builds.id })
         .returning()
 
-      return toRecord(row)
+      if (row) return toRecord(row)
+
+      const [existing] = await database
+        .select()
+        .from(builds)
+        .where(and(eq(builds.userId, userId), eq(builds.id, data.buildId)))
+        .limit(1)
+
+      if (!existing) throw new Error("Build id is already in use")
+
+      return toRecord(existing)
     },
 
     async update(userId, buildId, data: UpdateBuildData) {
       const [row] = await database
         .update(builds)
         .set({
+          ...(data.characterId !== undefined
+            ? { characterId: data.characterId }
+            : {}),
           ...(data.name !== undefined ? { name: data.name } : {}),
           ...(data.payload !== undefined
             ? {

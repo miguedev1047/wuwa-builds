@@ -1,39 +1,62 @@
-import { buildCollection } from "@build/infrastructure/local-storage/build-drafts"
 import type { BuildProps } from "@build/domain/build-record"
 
-export { buildCollection }
+/** Minimal settlement handle exposed by a collection mutation. */
+export interface BuildTransaction {
+  when: (state: "settled") => Promise<unknown>
+}
 
-/** Insert a new local build. */
-export function insertBuild(build: BuildProps): void {
-  buildCollection.insert(build)
+/**
+ * Reactive store the build actions write to. The query collection satisfies it
+ * structurally; tests use a small in-memory fake.
+ */
+export interface BuildDraftCollection {
+  get(key: string): BuildProps | undefined
+  values(): Iterable<BuildProps>
+  insert(build: BuildProps): BuildTransaction
+  update(key: string, updater: (draft: BuildProps) => void): unknown
+  delete(key: string): BuildTransaction
 }
 
 export type LocalBuildIdentity = Pick<BuildProps, "buildId" | "userId">
 
-/** Update one local build owned by the current user. */
+/** Insert a build owned by the current user. */
+export function insertBuild(
+  collection: BuildDraftCollection,
+  build: BuildProps
+): BuildTransaction {
+  return collection.insert(build)
+}
+
+/** Update one build only when it belongs to the current user. */
 export function updateBuild(
+  collection: BuildDraftCollection,
   { buildId, userId }: LocalBuildIdentity,
   updater: (draft: BuildProps) => void
 ): boolean {
-  if (buildCollection.get(buildId)?.userId !== userId) return false
+  if (collection.get(buildId)?.userId !== userId) return false
 
-  buildCollection.update(buildId, updater)
+  collection.update(buildId, updater)
   return true
 }
 
-/** Delete one local build. */
-export function deleteBuild({ buildId, userId }: LocalBuildIdentity): boolean {
-  if (buildCollection.get(buildId)?.userId !== userId) return false
+/** Delete one build only when it belongs to the current user. */
+export function deleteBuild(
+  collection: BuildDraftCollection,
+  { buildId, userId }: LocalBuildIdentity
+): BuildTransaction | false {
+  if (collection.get(buildId)?.userId !== userId) return false
 
-  buildCollection.delete(buildId)
-  return true
+  return collection.delete(buildId)
 }
 
 /** Synchronous count used by creation guards. */
-export function countUserBuilds(userId: string): number {
+export function countUserBuilds(
+  collection: BuildDraftCollection,
+  userId: string
+): number {
   let total = 0
 
-  for (const build of buildCollection.values()) {
+  for (const build of collection.values()) {
     if (build.userId === userId) total += 1
   }
 
