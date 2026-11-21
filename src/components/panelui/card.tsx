@@ -65,6 +65,12 @@ const cardVariants = tv({
     footer: "flex items-center gap-2",
   },
   variants: {
+    variant: {
+      default: {},
+      glass: {
+        root: "border-border/40 bg-card/50 backdrop-blur-xl",
+      },
+    },
     footer: {
       /** Part of the card: same surface, continuing the content's padding. */
       plain: {
@@ -87,6 +93,8 @@ const cardVariants = tv({
 export interface CardProps extends ComponentProps<"div"> {
   /** `sm` tightens the padding and the title, for a card in a dense grid. Default `default`. */
   size?: "default" | "sm"
+  /** `glass` lets the background show through a blurred surface. */
+  variant?: "default" | "glass"
   /**
    * The element to render. `article` for a card that stands on its own, `li`
    * for one in a list, `section` for one that groups a part of a page.
@@ -96,12 +104,13 @@ export interface CardProps extends ComponentProps<"div"> {
 
 function CardRoot({
   size = "default",
+  variant = "default",
   as = "div",
   render,
   className,
   ...props
 }: CardProps & RenderProp<"div">) {
-  const slots = cardVariants()
+  const slots = cardVariants({ variant })
   return useRender({
     defaultTagName: as,
     render,
@@ -109,6 +118,7 @@ function CardRoot({
       {
         "data-slot": "card",
         "data-size": size,
+        "data-variant": variant,
         className: slots.root({ className }),
       },
       props
@@ -139,7 +149,7 @@ CardHeader.displayName = "Card.Header"
 
 export interface CardTitleProps extends ComponentProps<"h3"> {
   /** The heading level, to fit the page around the card. Default `h3`. */
-  as?: "h2" | "h3" | "h4" | "div"
+  as?: "h1" | "h2" | "h3" | "h4" | "div"
 }
 
 /** What the card is about. A heading, so the page outline includes it. */
