@@ -980,6 +980,8 @@ export interface CommandDialogProps {
   defaultOpen?: boolean
   /** Called when it opens or closes. */
   onOpenChange?: (open: boolean) => void
+  /** Called after the opening or closing transition finishes. */
+  onOpenChangeComplete?: (open: boolean) => void
   /** Keys that open and close it from anywhere on the page. `mod` is ⌘ on a Mac and Ctrl elsewhere. Default `mod+k`; `null` for none. */
   hotkey?: string | null
   /** A button that opens it, such as a search field in a header. */
@@ -997,6 +999,7 @@ function CommandDialog({
   open: openProp,
   defaultOpen = false,
   onOpenChange,
+  onOpenChangeComplete,
   hotkey = "mod+k",
   trigger,
   label = "Command menu",
@@ -1038,6 +1041,7 @@ function CommandDialog({
     <DialogContext.Provider value={dialog}>
       <Dialog.Root
         open={open}
+        onOpenChangeComplete={onOpenChangeComplete}
         onOpenChange={(next, details) => {
           // Escape is a key too: a launcher closed from the keyboard goes at once.
           setInstant(details.reason === "escape-key")

@@ -5,20 +5,20 @@ import {
   type EchoSubstatOption,
 } from "@build/application/echo-substats"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
-import { EchoSubstatRow } from "@build/presentation/editor/sections/echoes-section/components/echo-substat-row"
+import { EchoSlotSubstatRow } from "@build/presentation/editor/sections/echoes-section/components/echo-slot-substat-row"
 
-type EchoSubstatsProps = {
+type EchoSlotSubstatEditorProps = {
   slot: EchoesDataProps
   onStatChange: (substatIndex: number, option: EchoSubstatOption) => void
   onValueChange: (substatIndex: number, value: number) => void
 }
 
 /** Five substat rows of one echo slot. */
-export function EchoSubstats({
+export function EchoSlotSubstatEditor({
   slot,
   onStatChange,
   onValueChange,
-}: EchoSubstatsProps) {
+}: EchoSlotSubstatEditorProps) {
   const cost = slot.cost || slot.data?.cost || 0
   const options = echoSubstatOptions(cost)
   const substats = slot.substats
@@ -56,7 +56,7 @@ export function EchoSubstats({
         )
 
         return (
-          <EchoSubstatRow
+          <EchoSlotSubstatRow
             key={substat.index}
             substat={substat}
             options={availableOptions}

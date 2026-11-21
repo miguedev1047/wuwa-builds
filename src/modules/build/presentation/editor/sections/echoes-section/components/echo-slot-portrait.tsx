@@ -2,98 +2,99 @@ import { Badge } from "@/components/panelui/badge"
 import { GameIcon } from "@/components/ui/game-icon"
 import { Image } from "@/components/ui/image"
 import { Show } from "@/components/utility/show"
-import type { EchoesDataProps } from "@/modules/build/domain/build-record"
-import type { EchoSummary } from "@/modules/catalog/domain/echo"
+import type { EchoesDataProps } from "@build/domain/build-record"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import {
   formatPercentStat,
   statIconName,
 } from "@build/presentation/editor/hooks/stats-view-model"
-import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { EchoBuildSearch } from "@build/presentation/editor/searches/echoes"
+import { echoQueries } from "@catalog/queries/echoes"
+import { useQuery } from "@tanstack/react-query"
+import { cn } from "cn"
+import type { ReactNode } from "react"
 
 interface EchoSlotPortraitProps {
-  echo: EchoSummary
   slot: EchoesDataProps
   isMain: boolean
-  setIcon?: string
-  resonatorId: number
+  /** Stable search dialog and trigger, rendered for both slot states. */
+  children: ReactNode
 }
 
+/** Shows the selected echo alongside its search trigger. */
 export function EchoSlotPortrait({
-  echo,
   slot,
   isMain,
-  setIcon,
-  resonatorId,
+  children,
 }: EchoSlotPortraitProps) {
   return (
     <div className="space-y-2">
-      <div className="flex items-center justify-between">
-        <BuildWorkspace.Text size="sm">{echo.name}</BuildWorkspace.Text>
+      <Show when={slot.data}>
+        {(echo) => (
+          <div className="flex items-center justify-between">
+            <BuildWorkspace.Text size="sm">{echo.name}</BuildWorkspace.Text>
+            <Show when={slot.echoSetId}>
+              {(setId) => <EchoSlotSonataIcon echoId={echo.id} setId={setId} />}
+            </Show>
+          </div>
+        )}
+      </Show>
 
-        <Show when={setIcon}>
-          {(icon) => (
-            <Image
-              src={icon}
-              alt=""
-              size="xs"
-              rounded="full"
-              className="size-5 shrink-0"
-            />
-          )}
+      <div className={cn(slot.data && "flex items-center gap-4")}>
+        {children}
+        <Show when={slot.data}>
+          <div className="space-y-2">
+            <Show when={isMain}>
+              <Badge variant="outline">Eco principal</Badge>
+            </Show>
+            <Show when={slot.mainStatStat}>
+              {(stat) => (
+                <>
+                  <div className="flex items-center gap-1">
+                    <GameIcon
+                      name={statIconName(stat)}
+                      className="size-5 shrink-0"
+                    />
+                    <h2 className="truncate text-sm font-bold">
+                      {slot.mainStatLabel}
+                    </h2>
+                  </div>
+                  <h2 className="shrink-0 text-2xl font-bold text-highlight tabular-nums">
+                    {formatPercentStat(slot.mainStatValue)}
+                  </h2>
+                </>
+              )}
+            </Show>
+          </div>
         </Show>
       </div>
-
-      <div className="flex items-center gap-4">
-        <EchoBuildSearch
-          slot={slot}
-          resonatorId={resonatorId}
-          trigger={
-            <button
-              type="button"
-              aria-label="Cambiar eco"
-              className="group/image relative overflow-hidden rounded-lg"
-            >
-              <Image
-                src={echo.icon}
-                alt={echo.name}
-                background="accent"
-                aspect="square"
-                size="md"
-              />
-              <div className="absolute inset-0 grid place-content-center opacity-0 transition duration-200 ease-in-out group-hover/image:bg-black/50 group-hover/image:opacity-100">
-                <HugeiconsIcon icon={ArrowDataTransferHorizontalIcon} />
-              </div>
-            </button>
-          }
-        />
-
-        <div className="space-y-2">
-          <Show when={isMain}>
-            <Badge variant="outline">Eco principal</Badge>
-          </Show>
-          <Show when={slot.mainStatStat}>
-            {(stat) => (
-              <>
-                <div className="flex items-center gap-1">
-                  <GameIcon
-                    name={statIconName(stat)}
-                    className="size-5 shrink-0"
-                  />
-                  <h2 className="truncate text-sm font-bold">
-                    {slot.mainStatLabel}
-                  </h2>
-                </div>
-                <h2 className="shrink-0 text-2xl font-bold text-highlight tabular-nums">
-                  {formatPercentStat(slot.mainStatValue)}
-                </h2>
-              </>
-            )}
-          </Show>
-        </div>
-      </div>
     </div>
+  )
+}
+
+function EchoSlotSonataIcon({
+  echoId,
+  setId,
+}: {
+  echoId: number
+  setId: number
+}) {
+  const { data: icon } = useQuery({
+    ...echoQueries.detail(echoId),
+    select: (echo) =>
+      echo.sets.find((set) => set.setId === setId)?.sonata?.icon,
+  })
+
+  return (
+    <Show when={icon}>
+      {(src) => (
+        <Image
+          src={src}
+          alt=""
+          size="xs"
+          rounded="full"
+          className="size-5 shrink-0"
+        />
+      )}
+    </Show>
   )
 }

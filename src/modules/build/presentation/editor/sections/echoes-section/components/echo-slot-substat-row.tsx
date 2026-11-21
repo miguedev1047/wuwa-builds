@@ -6,7 +6,7 @@ import {
 } from "@build/application/echo-substats"
 import type { EchoSubstatsDataProps } from "@build/domain/build-record"
 
-type EchoSubstatRowProps = {
+type EchoSlotSubstatRowProps = {
   substat: EchoSubstatsDataProps
   options: EchoSubstatOption[]
   onStatChange: (stat: string) => void
@@ -14,12 +14,12 @@ type EchoSubstatRowProps = {
 }
 
 /** One substat row: stat select plus its roll value select. */
-export function EchoSubstatRow({
+export function EchoSlotSubstatRow({
   substat,
   options,
   onStatChange,
   onValueChange,
-}: EchoSubstatRowProps) {
+}: EchoSlotSubstatRowProps) {
   const selectedStat =
     substat.valueStat ||
     options.find((option) => option.label === substat.valueLabel)?.stat ||

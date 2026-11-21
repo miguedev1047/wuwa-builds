@@ -7,13 +7,16 @@ import {
   echoStepFromLevel,
 } from "@build/domain/build"
 
-type EchoLevelControlProps = {
+type EchoSlotLevelControlProps = {
   slot: EchoesDataProps
   onChange: (step: number) => void
 }
 
 /** Level slider of one echo slot. */
-export function EchoLevelControl({ slot, onChange }: EchoLevelControlProps) {
+export function EchoSlotLevelControl({
+  slot,
+  onChange,
+}: EchoSlotLevelControlProps) {
   const step = echoStepFromLevel(slot.level)
 
   const handleLevelChange = (value: number | readonly number[]) => {

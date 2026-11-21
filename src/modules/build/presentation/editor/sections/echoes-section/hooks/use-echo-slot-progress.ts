@@ -5,7 +5,7 @@ import type { LocalBuildIdentity } from "@build/client/build-store"
 import { useBuildStore } from "@build/client/hooks/use-build-store"
 
 /** Mutations of the echoes section, addressed by slot index. */
-export interface EchoProgress {
+export interface EchoSlotProgress {
   setLevelStep: (slotIndex: number, step: number) => void
   setSet: (slotIndex: number, setId: number) => void
   setMainStat: (slotIndex: number, option: EchoMainStatOption) => void
@@ -22,8 +22,10 @@ export interface EchoProgress {
   toggleMain: (slotIndex: number) => void
 }
 
-/** Bind echo progression to the current local build. */
-export function useEchoProgress(identity: LocalBuildIdentity): EchoProgress {
+/** Bind echo progression to the current build. */
+export function useEchoSlotProgress(
+  identity: LocalBuildIdentity
+): EchoSlotProgress {
   const { update } = useBuildStore(identity.userId)
 
   return {
@@ -33,9 +35,7 @@ export function useEchoProgress(identity: LocalBuildIdentity): EchoProgress {
       )
     },
     setSet: (slotIndex: number, setId: number) => {
-      update(identity, (draft) =>
-        echoProgress.setSet(draft, slotIndex, setId)
-      )
+      update(identity, (draft) => echoProgress.setSet(draft, slotIndex, setId))
     },
     setMainStat: (slotIndex: number, option: EchoMainStatOption) => {
       update(identity, (draft) =>
@@ -61,9 +61,7 @@ export function useEchoProgress(identity: LocalBuildIdentity): EchoProgress {
       )
     },
     toggleMain: (slotIndex: number) => {
-      update(identity, (draft) =>
-        echoProgress.toggleMain(draft, slotIndex)
-      )
+      update(identity, (draft) => echoProgress.toggleMain(draft, slotIndex))
     },
   }
 }

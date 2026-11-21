@@ -8,12 +8,16 @@ import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import { DeleteIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
-interface EchoSlotRemoveProps {
+interface EchoSlotRemoveButtonProps {
   build: BuildProps
   slotIndex: number
 }
 
-export function EchoSlotRemove({ build, slotIndex }: EchoSlotRemoveProps) {
+/** Removes the equipped echo from the selected slot. */
+export function EchoSlotRemoveButton({
+  build,
+  slotIndex,
+}: EchoSlotRemoveButtonProps) {
   const { buildId, userId } = useBuildIdentity()
   const { update } = useBuildStore(userId)
 
