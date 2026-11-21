@@ -4,15 +4,11 @@ import { CatalogNavigation } from "@/routing/catalog/catalog-navigation"
 import { CatalogListRouteSkeleton } from "@catalog/presentation/components/route-skeleton"
 import { sonataQueries } from "@catalog/queries/sonatas"
 import { SonataListScreen } from "@catalog/presentation/sonatas/sonata-list-screen"
+import { sonataAnchorId } from "@catalog/presentation/sonatas/sonata-anchor"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/_navigation/admin/echoes/sonatas")({
-  component: () => (
-    <CatalogNavigation entity="echoes">
-      <SonataListScreen />
-      <ActionDock items={sonataDockActions} />
-    </CatalogNavigation>
-  ),
+  component: SonataListRoute,
   pendingComponent: () => (
     <CatalogListRouteSkeleton
       title="Efectos de sonata"
@@ -27,3 +23,19 @@ export const Route = createFileRoute("/_navigation/admin/echoes/sonatas")({
     await context.queryClient.query(sonataQueries.list())
   },
 })
+
+/** Binds sonata selection to fragment navigation on the list route. */
+function SonataListRoute() {
+  const navigate = Route.useNavigate()
+
+  return (
+    <CatalogNavigation entity="echoes">
+      <SonataListScreen
+        onSelectSonata={(id) =>
+          navigate({ to: ".", search: true, hash: sonataAnchorId(id) })
+        }
+      />
+      <ActionDock items={sonataDockActions} />
+    </CatalogNavigation>
+  )
+}

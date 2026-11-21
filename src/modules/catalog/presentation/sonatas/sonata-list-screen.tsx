@@ -1,13 +1,19 @@
 import { RouteNavigation } from "@/components/blocks/route-navigation"
 import { Skeleton } from "@/components/ui/skeleton"
-import { SonataAddAction } from "@catalog/presentation/sonatas/components/sonata-add-action"
 import { SonataList } from "@catalog/presentation/sonatas/components/sonata-list"
-import { SonataSyncAction } from "@catalog/presentation/sonatas/components/sonata-sync-action"
+import { SonataListActions } from "@catalog/presentation/sonatas/components/sonata-list-actions"
+import { SonataCatalogSearch } from "@catalog/presentation/sonatas/components/sonata-catalog-search"
 import { Suspense } from "react"
 
-export function SonataListScreen() {
+type SonataListScreenProps = {
+  /** Scrolls to the selected sonata on this page. */
+  onSelectSonata: (id: number) => void | Promise<void>
+}
+
+/** Admin list of sonatas and its search and management actions. */
+export function SonataListScreen({ onSelectSonata }: SonataListScreenProps) {
   return (
-    <RouteNavigation.Root>
+    <RouteNavigation.Root data-sonata-list="">
       <RouteNavigation.Header>
         <RouteNavigation.Title>Efectos de sonata</RouteNavigation.Title>
         <RouteNavigation.Description>
@@ -15,8 +21,8 @@ export function SonataListScreen() {
         </RouteNavigation.Description>
 
         <RouteNavigation.Actions>
-          <SonataSyncAction />
-          <SonataAddAction />
+          <SonataCatalogSearch onSelect={onSelectSonata} />
+          <SonataListActions />
         </RouteNavigation.Actions>
       </RouteNavigation.Header>
 

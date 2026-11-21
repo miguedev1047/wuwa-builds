@@ -3,6 +3,7 @@ import { Show } from "@/components/utility/show"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { SonataDeleteAction } from "@catalog/presentation/sonatas/components/sonata-delete-action"
 import { SonataEditAction } from "@catalog/presentation/sonatas/components/sonata-edit-action"
+import { sonataAnchorId } from "@catalog/presentation/sonatas/sonata-anchor"
 import type { SonataSetEffectRow, SonataSetRow } from "@db/schema"
 
 type SonataWithEffects = SonataSetRow & { effects: SonataSetEffectRow[] }
@@ -14,7 +15,10 @@ type SonataCardProps = {
 /** One sonata set with its piece thresholds and their curated stats. */
 export function SonataCard({ sonata }: SonataCardProps) {
   return (
-    <EditableSection.Card>
+    <EditableSection.Card
+      id={sonataAnchorId(sonata.id)}
+      className="scroll-mt-24"
+    >
       <EditableSection.CardHeader>
         <div className="flex items-center gap-2">
           <Show when={sonata.icon}>

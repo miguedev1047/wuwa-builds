@@ -12,4 +12,10 @@
   html {
     @apply font-mono;
   }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html:has([data-sonata-list]) {
+      scroll-behavior: smooth;
+    }
+  }
 }
