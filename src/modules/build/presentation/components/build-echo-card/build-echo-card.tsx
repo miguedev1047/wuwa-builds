@@ -8,6 +8,7 @@ import {
   statIconName,
 } from "@build/presentation/editor/hooks/stats-view-model"
 import type { EchoesDataProps } from "@build/domain/build-record"
+import { statLabel } from "@catalog/application/stats/stats"
 import { cn } from "cn"
 import { BuildWorkspaceCard } from "@build/presentation/editor/components/workspace/build-workspace"
 
@@ -90,7 +91,7 @@ export function BuildEchoCard({
                       {(stat) => (
                         <div className="flex min-w-0 items-center gap-2">
                           <GameIcon name={statIconName(stat)} />
-                          <p className="line-clamp-1">{substat.valueLabel}</p>
+                          <p className="line-clamp-1">{statLabel(stat)}</p>
                         </div>
                       )}
                     </Show>

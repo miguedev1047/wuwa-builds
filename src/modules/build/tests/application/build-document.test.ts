@@ -176,7 +176,7 @@ describe("build document mapping", () => {
     expect(hydrated.echoes[0].substats[0]).toMatchObject({
       valueStat: "crit_rate",
       valueNumber: 6.3,
-      valueLabel: "6.3%",
+      valueLabel: "Prob. Crit.",
     })
     expect(hydrated.echoes[1].data).toBeNull()
     expect(hydrated.createdAt).toBe("2026-01-01T00:00:00.000Z")

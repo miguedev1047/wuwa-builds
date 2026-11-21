@@ -5,7 +5,10 @@ import { renderToStaticMarkup } from "react-dom/server"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 
 import { BuildCanvas } from "@build/presentation/editor/components/build-canvas/build-canvas"
-import { characterDetail } from "@build/tests/fixtures/catalog-fixtures"
+import {
+  characterDetail,
+  echoSlot,
+} from "@build/tests/fixtures/catalog-fixtures"
 import { createBuildFromCharacter } from "@build/application/factories/build"
 
 describe("BuildCanvas", () => {
@@ -17,6 +20,16 @@ describe("BuildCanvas", () => {
       createdAt: "2026-01-01T00:00:00Z",
       character,
       detail: character,
+    })
+    build.echoes[0] = echoSlot({
+      substats: [
+        {
+          index: 0,
+          valueStat: "crit_rate",
+          valueNumber: 6.3,
+          valueLabel: "6.3%",
+        },
+      ],
     })
 
     const html = renderToStaticMarkup(
@@ -40,6 +53,8 @@ describe("BuildCanvas", () => {
       expect(html).toContain(`data-canvas-area="${area}"`)
     }
     expect(html).toContain("Cartethyia")
+    expect(html).toContain(">Prob. Crit.<")
+    expect(html.match(/>6\.3%</g)).toHaveLength(1)
   })
 })
 

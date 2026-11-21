@@ -13,10 +13,6 @@ import {
   echoMainStatOptions,
   echoMainStatValue,
 } from "@build/application/echo-main-stat"
-import {
-  echoSubstatOptions,
-  formatEchoSubstatValue,
-} from "@build/application/echo-substats"
 import type {
   BuildProps,
   EchoesDataProps,
@@ -28,6 +24,7 @@ import type {
   CharacterSummary,
 } from "@catalog/domain/character"
 import type { EchoSummary } from "@catalog/domain/echo"
+import { statLabel } from "@catalog/application/stats/stats"
 import type { WeaponSummary } from "@catalog/domain/weapon"
 
 /** Catalog rows needed to turn a saved payload back into an editor document. */
@@ -150,25 +147,18 @@ function hydratePassives(
 }
 
 function hydrateSubstats(
-  cost: number,
   substats: EchoesDataProps["substats"],
   payloadSubstats: EchoSlot["substats"]
 ): EchoesDataProps["substats"] {
-  const options = echoSubstatOptions(cost)
-
   return substats.map((empty, index) => {
     const saved = payloadSubstats[index]
     if (!saved) return empty
-
-    const option = options.find((entry) => entry.stat === saved.statId)
 
     return {
       index,
       valueStat: saved.statId,
       valueNumber: saved.value,
-      valueLabel: option
-        ? formatEchoSubstatValue(option.label, saved.value)
-        : String(saved.value),
+      valueLabel: statLabel(saved.statId),
     }
   })
 }
@@ -197,7 +187,7 @@ function hydrateEchoes(
         : 0,
       level: saved.level,
       cost,
-      substats: hydrateSubstats(cost, empty.substats, saved.substats),
+      substats: hydrateSubstats(empty.substats, saved.substats),
     }
   })
 }
