@@ -3,7 +3,7 @@ import { cn } from "cn"
 import { Fragment, type ComponentProps, type Key, type ReactNode } from "react"
 import { Skeleton } from "@/components/ui/skeleton"
 
-const listVariants = cva("grid grid-cols-1 gap-4 md:grid-cols-2", {
+const listVariants = cva("grid grid-cols-3 gap-2 md:gap-4", {
   variants: {
     cols: {
       4: "lg:grid-cols-4",
