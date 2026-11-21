@@ -7,8 +7,8 @@ import { WeaponPortrait } from "@build/presentation/editor/sections/weapon-secti
 import { WeaponRefinements } from "@build/presentation/editor/sections/weapon-section/components/weapon-refinements"
 import { weaponQueries } from "@catalog/queries/weapons"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
-import { WeaponBuildSearch } from "@build/presentation/editor/searches/weapons"
-import { WeaponBaseStats } from "./weapon-base-stats"
+import { WeaponActions } from "@build/presentation/editor/sections/weapon-section/components/weapon-actions"
+import { WeaponBaseStats } from "@build/presentation/editor/sections/weapon-section/components/weapon-base-stats"
 import { Separator } from "@/components/ui/separator"
 
 type WeaponSectionContentProps = {
@@ -30,7 +30,7 @@ export function WeaponSectionContent({
         <BuildWorkspace.Text family="bold" textColor="muted" size="xl">
           Arma
         </BuildWorkspace.Text>
-        <WeaponBuildSearch build={build} />
+        <WeaponActions build={build} />
       </div>
 
       <div className="flex h-full w-full flex-col justify-between gap-5">

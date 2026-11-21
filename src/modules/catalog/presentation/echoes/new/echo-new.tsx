@@ -1,5 +1,5 @@
 import { RouteNavigation } from "@/components/blocks/route-navigation"
-import { EchoForm } from "@catalog/presentation/echoes/shared/components/echo-form"
+import { EchoForm } from "@catalog/presentation/echoes/new/components/echo-form"
 
 export function EchoNew() {
   return (

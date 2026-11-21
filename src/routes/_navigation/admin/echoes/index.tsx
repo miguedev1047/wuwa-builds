@@ -21,6 +21,7 @@ export const Route = createFileRoute("/_navigation/admin/echoes/")({
       cols={6}
       aspect="square"
       count={12}
+      actionCount={1}
     />
   ),
   loader: async ({ context }) => {

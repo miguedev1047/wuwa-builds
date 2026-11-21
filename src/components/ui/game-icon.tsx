@@ -42,7 +42,8 @@ type GameIconProps = Omit<React.ComponentProps<"img">, "src" | "alt"> & {
   alt?: string
 }
 
-function gameIconSource(name: GameIconName | null | undefined) {
+/** Resolves a game icon key to its asset URL. */
+export function gameIconSource(name: GameIconName | null | undefined) {
   if (!name) return null
   if (name in STAT_ICON_SOURCES) {
     return STAT_ICON_SOURCES[name as BuildStatKey]

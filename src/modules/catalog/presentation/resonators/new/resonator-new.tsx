@@ -1,5 +1,5 @@
 import { RouteNavigation } from "@/components/blocks/route-navigation"
-import { ResonatorForm } from "@catalog/presentation/resonators/shared/components/resonator-form"
+import { ResonatorForm } from "@catalog/presentation/resonators/new/components/resonator-form"
 
 export function ResonatorNew() {
   return (

@@ -1,8 +1,12 @@
 import { RouteNavigation } from "@/components/blocks/route-navigation"
+import { useCatalogActions } from "@catalog/presentation/catalog-actions"
+import { WeaponCatalogSearch } from "@catalog/presentation/weapons/list/components/weapon-catalog-search"
 import { WeaponList } from "@catalog/presentation/weapons/list/components/weapon-list"
 import { Suspense } from "react"
 
 export function WeaponListScreen() {
+  const { onOpenDetail } = useCatalogActions()
+
   return (
     <RouteNavigation.Root>
       <RouteNavigation.Header>
@@ -10,6 +14,9 @@ export function WeaponListScreen() {
         <RouteNavigation.Description>
           Lista de armas creadas
         </RouteNavigation.Description>
+        <RouteNavigation.Actions>
+          <WeaponCatalogSearch onSelect={onOpenDetail} />
+        </RouteNavigation.Actions>
       </RouteNavigation.Header>
 
       <RouteNavigation.Content>

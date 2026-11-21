@@ -7,6 +7,7 @@ import {
 
 /** Navigation slots and outcomes supplied by the screen's host. */
 export type CatalogActions = {
+  onOpenDetail: (id: number) => void | Promise<void>
   onCreated: (id: number) => void | Promise<void>
   onDeleted: () => void | Promise<void>
   DetailLink: ComponentType<{ id: number; children: ReactNode }>

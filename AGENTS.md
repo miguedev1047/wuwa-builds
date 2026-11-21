@@ -110,8 +110,8 @@ Current modules:
 - `src/modules/build/presentation`: build editor, my builds and shared UI.
 - `src/modules/home`: the landing presentation (animated hero and responsive
   images with pre-rendered dithering) consumed by `src/routing/home`.
-- `src/modules/catalog/presentation/searches`: three independent admin searches
-  using Encore, each with its own query, filtering, controls and selection.
+- `src/modules/catalog/presentation/<entity>/new`: admin create forms and
+  their Encore searches in `search/`.
 - `src/modules/build/presentation/editor/searches`: three independent builder
   searches using the canonical catalog and build selection actions.
 - `src/modules/catalog/presentation`: catalog lists, details and forms, including
@@ -181,8 +181,9 @@ Rules:
 Integration examples and source-selection guidance live in
 [docs/SEARCH_INTEGRATION.md](docs/SEARCH_INTEGRATION.md).
 
-- Keep six independent search components: resonators, weapons and echoes for
-  admin, and the same three for builder. Repeated markup is acceptable.
+- Keep independent searches for resonators, weapons and echoes in each flow:
+  admin creation with Encore, admin list navigation with D1, and the builder
+  with eligible D1 entries. Repeated markup is acceptable.
 - Only `src/hooks/create-search-filters.ts` abstracts search state. Declare parsers
   outside render, then call the generated hook with an explicit `scope`.
 - Filters use nuqs with namespaced URL keys, replace history and shallow updates.
@@ -192,6 +193,8 @@ Integration examples and source-selection guidance live in
   factory that accepts queries, arrays, predicates or UI controls.
 - `CommandSearch` supplies UI primitives only. Each search controls `open`, uses
   `closeOnSelect={false}` on items and closes in its own selection handler.
+- Each search exposes a source-specific `onSelect`. The calling screen owns
+  prefilling a form, navigating to a detail page or updating a build.
 - Source restrictions belong to the query or its results hook. Different source
   scopes require distinct query keys. User filters only narrow the source list.
 - Echo selection metadata uses `echoQueries.selection()`; invalidate it after

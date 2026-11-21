@@ -4,17 +4,21 @@ import { Suspense, useEffect, useRef, useState, useTransition } from "react"
 import type { CharacterSummary } from "@catalog/domain/character"
 import { useResonatorBuildFilters } from "@build/presentation/editor/searches/resonators/hooks/use-resonator-build-filters"
 import { ResonatorBuildResults } from "@build/presentation/editor/searches/resonators/components/resonator-build-results"
-import type { BuildProps } from "@build/domain/build-record"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
-import { useSelectResonator } from "@build/presentation/editor/hooks/use-select-resonator"
 
-/** Inputs owned by this build search, not a shared search contract. */
-type ResonatorBuildSearchProps = { build: BuildProps }
+type ResonatorBuildSearchProps = {
+  selectedResonatorId?: number
+  /** Returns whether the host accepted this selection. */
+  onSelect: (item: CharacterSummary) => boolean | Promise<boolean>
+}
 
 /** Owns the build resonator dialog, URL scope and selection behavior. */
-export function ResonatorBuildSearch({ build }: ResonatorBuildSearchProps) {
+export function ResonatorBuildSearch({
+  selectedResonatorId,
+  onSelect,
+}: ResonatorBuildSearchProps) {
   const filters = useResonatorBuildFilters({ scope: "builder_resonators" })
   const { reset } = filters
   const [open, setOpen] = useState(false)
@@ -37,7 +41,6 @@ export function ResonatorBuildSearch({ build }: ResonatorBuildSearchProps) {
     [reset]
   )
 
-  const { selectResonator } = useSelectResonator()
   const [pending, startTransition] = useTransition()
   const busy = useRef(false)
 
@@ -48,13 +51,8 @@ export function ResonatorBuildSearch({ build }: ResonatorBuildSearchProps) {
     const selectedVersion = version.current
     const selection = (async () => {
       try {
-        const result = await selectResonator(item)
-
-        if (
-          (result === "selected" || result === "unchanged") &&
-          selectedVersion === version.current
-        )
-          changeOpen(false)
+        const accepted = await onSelect(item)
+        if (accepted && selectedVersion === version.current) changeOpen(false)
       } finally {
         busy.current = false
       }
@@ -69,7 +67,7 @@ export function ResonatorBuildSearch({ build }: ResonatorBuildSearchProps) {
       <BuildWorkspace.EmptyTitle title="Seleccionar resonador" />
     </BuildWorkspace.Empty>
   )
-  if (build.resonator.data)
+  if (selectedResonatorId !== undefined)
     trigger = (
       <Button
         type="button"
@@ -105,7 +103,7 @@ export function ResonatorBuildSearch({ build }: ResonatorBuildSearchProps) {
       >
         <ResonatorBuildResults
           filters={filters}
-          selectedId={build.resonator.data?.id}
+          selectedId={selectedResonatorId}
           onSelect={handleSelect}
           pending={pending}
         />

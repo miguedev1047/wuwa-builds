@@ -20,6 +20,7 @@ export const Route = createFileRoute("/_navigation/admin/resonators/")({
       cols={10}
       aspect="portrait"
       count={20}
+      actionCount={1}
     />
   ),
   loader: async ({ context }) => {

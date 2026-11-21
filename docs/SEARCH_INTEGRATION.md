@@ -1,34 +1,42 @@
 # Integrating a search
 
-There are six independent searches. Each owns its query, filters, controls,
+The admin create forms, admin lists, and builder each have three independent
+searches. Each owns its query, filters, controls,
 result rows, trigger and selection behavior. Repeating small UI sections keeps
 consumer-specific changes local.
 
-| Entity     | Admin                  | Builder                |
-| ---------- | ---------------------- | ---------------------- |
-| Resonators | `ResonatorAdminSearch` | `ResonatorBuildSearch` |
-| Weapons    | `WeaponAdminSearch`    | `WeaponBuildSearch`    |
-| Echoes     | `EchoAdminSearch`      | `EchoBuildSearch`      |
+| Entity     | Admin creation         | Admin list               | Builder                |
+| ---------- | ---------------------- | ------------------------ | ---------------------- |
+| Resonators | `ResonatorAdminSearch` | `ResonatorCatalogSearch` | `ResonatorBuildSearch` |
+| Weapons    | `WeaponAdminSearch`    | `WeaponCatalogSearch`    | `WeaponBuildSearch`    |
+| Echoes     | `EchoAdminSearch`      | `EchoCatalogSearch`      | `EchoBuildSearch`      |
 
-Admin folders live under `src/modules/catalog/presentation/searches/`. Builder
-folders live under `src/modules/build/presentation/editor/searches/`. Admin uses
-Encore; builder uses the canonical D1 catalog. See the [builder guide](BUILDER_UI.md)
+Encore prefill searches live under
+`src/modules/catalog/presentation/<entity>/new/search/`.
+Admin list searches live beside each entity's list components. Builder searches
+live under `src/modules/build/presentation/editor/searches/`. Admin lists and
+the builder read the canonical D1 catalog. See the [builder guide](BUILDER_UI.md)
 for build persistence rules.
 
 ## Folder structure
 
-Each entity folder has the same readable organization, using its own names:
+Each admin creation folder keeps its form and Encore search together:
 
 ```text
 resonators/
-  index.tsx
-  filter-resonator-admin-results.ts
-  hooks/
-    use-resonator-admin-filters.ts
-    use-resonator-admin-results.ts
-  components/
-    resonator-admin-filters.tsx
-    resonator-admin-results.tsx
+  new/
+    resonator-new.tsx
+    components/
+      resonator-form.tsx
+    search/
+      index.tsx
+      filter-resonator-admin-results.ts
+      hooks/
+        use-resonator-admin-filters.ts
+        use-resonator-admin-results.ts
+      components/
+        resonator-admin-filters.tsx
+        resonator-admin-results.tsx
 ```
 
 The builder equivalent uses `build` instead of `admin` in those names. Keep
@@ -105,7 +113,7 @@ Render controls explicitly and update their field through `setValues`:
 ```
 
 For category fields, validate the select value with the canonical schema before
-updating it. See the [admin resonator controls](../src/modules/catalog/presentation/searches/resonators/components/resonator-admin-filters.tsx).
+updating it. See the [admin resonator controls](../src/modules/catalog/presentation/resonators/new/search/components/resonator-admin-filters.tsx).
 A custom field belongs to that search and does not require changing the factory.
 
 ## Load and filter the source
@@ -116,8 +124,8 @@ passes the returned array plus filter values to a pure local helper:
 ```ts
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { encoreCharacterQueries } from "@encore/queries/characters"
-import { filterResonatorAdminResults } from "@catalog/presentation/searches/resonators/filter-resonator-admin-results"
-import type { ResonatorAdminFilters } from "@catalog/presentation/searches/resonators/hooks/use-resonator-admin-filters"
+import { filterResonatorAdminResults } from "@catalog/presentation/resonators/new/search/filter-resonator-admin-results"
+import type { ResonatorAdminFilters } from "@catalog/presentation/resonators/new/search/hooks/use-resonator-admin-filters"
 
 /** Loads and filters the admin's Encore source. */
 export function useResonatorAdminResults(filters: ResonatorAdminFilters) {
@@ -146,24 +154,25 @@ performs text filtering.
 
 `CommandSearch` supplies UI primitives and does not interpret selection results.
 Each search controls its own `open` state and calls `filters.reset()` when it
-closes. It also clears its scope if it unmounts while open.
+closes. The admin prefill and builder searches also clear their scope if they
+unmount while open.
 
 Every result item uses `closeOnSelect={false}`. The search handler decides when
-to close. Admin prefill selects the record and closes immediately. Builder waits
-for its action and closes only on success or an unchanged resonator. Failed or
-discarded actions leave the dialog open.
+to close and calls the caller's typed `onSelect`. Admin create forms receive the
+Encore summary for prefill. Admin list screens receive the D1 record ID and open
+its detail after the search clears its URL filters. Builder section components
+apply the selected entry and return whether the action was accepted, including
+an unchanged resonator. Failed or discarded actions leave the dialog open.
 
 Builder resonator and weapon searches own their pending state and prevent
 repeated selections. Their local request version prevents an older action from
 closing a search that was closed and reopened while the action was pending.
-These details are local implementation choices, not factory options or shared
-callback contracts.
 
 Current implementations:
 
-- [Admin resonators](../src/modules/catalog/presentation/searches/resonators/index.tsx)
-- [Admin weapons](../src/modules/catalog/presentation/searches/weapons/index.tsx)
-- [Admin echoes](../src/modules/catalog/presentation/searches/echoes/index.tsx)
+- [Admin resonators](../src/modules/catalog/presentation/resonators/new/search/index.tsx)
+- [Admin weapons](../src/modules/catalog/presentation/weapons/new/search/index.tsx)
+- [Admin echoes](../src/modules/catalog/presentation/echoes/new/search/index.tsx)
 - [Builder resonators](../src/modules/build/presentation/editor/searches/resonators/index.tsx)
 - [Builder weapons](../src/modules/build/presentation/editor/searches/weapons/index.tsx)
 - [Builder echoes](../src/modules/build/presentation/editor/searches/echoes/index.tsx)

@@ -4,18 +4,25 @@ import { Suspense, useEffect, useRef, useState } from "react"
 import type { WeaponSummary } from "@catalog/domain/weapon"
 import { useWeaponBuildFilters } from "@build/presentation/editor/searches/weapons/hooks/use-weapon-build-filters"
 import { WeaponBuildResults } from "@build/presentation/editor/searches/weapons/components/weapon-build-results"
-import type { BuildProps } from "@build/domain/build-record"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { ArrowDataTransferHorizontalIcon } from "@hugeicons/core-free-icons"
-import { useSelectWeapon } from "@build/presentation/editor/hooks/use-select-weapon"
 import { Show } from "@/components/utility/show"
+import type { WeaponTypeId } from "@/modules/game-data/domain/categories"
 
-/** Inputs owned by this build search, not a shared search contract. */
-type WeaponBuildSearchProps = { build: BuildProps }
+type WeaponBuildSearchProps = {
+  selectedWeaponId?: number
+  weaponType?: WeaponTypeId
+  /** Returns whether the host accepted this selection. */
+  onSelect: (item: WeaponSummary) => boolean | Promise<boolean>
+}
 
 /** Owns the build weapon dialog, URL scope and selection behavior. */
-export function WeaponBuildSearch({ build }: WeaponBuildSearchProps) {
+export function WeaponBuildSearch({
+  selectedWeaponId,
+  weaponType,
+  onSelect,
+}: WeaponBuildSearchProps) {
   const filters = useWeaponBuildFilters({ scope: "builder_weapons" })
   const { reset } = filters
   const [open, setOpen] = useState(false)
@@ -36,7 +43,6 @@ export function WeaponBuildSearch({ build }: WeaponBuildSearchProps) {
     [reset]
   )
 
-  const { selectWeapon } = useSelectWeapon()
   const [pending, setPending] = useState(false)
   const busy = useRef(false)
   const handleSelect = async (item: WeaponSummary) => {
@@ -45,8 +51,8 @@ export function WeaponBuildSearch({ build }: WeaponBuildSearchProps) {
     setPending(true)
     const selectedVersion = version.current
     try {
-      const result = await selectWeapon(item)
-      if (result && selectedVersion === version.current) changeOpen(false)
+      const accepted = await onSelect(item)
+      if (accepted && selectedVersion === version.current) changeOpen(false)
     } finally {
       busy.current = false
       setPending(false)
@@ -58,7 +64,7 @@ export function WeaponBuildSearch({ build }: WeaponBuildSearchProps) {
       <BuildWorkspace.EmptyTitle title="Seleccionar arma" />
     </BuildWorkspace.Empty>
   )
-  if (build.weapon.data)
+  if (selectedWeaponId !== undefined)
     trigger = (
       <Button
         type="button"
@@ -72,7 +78,7 @@ export function WeaponBuildSearch({ build }: WeaponBuildSearchProps) {
 
   return (
     <Show
-      when={build.resonator.data}
+      when={weaponType !== undefined}
       fallback={
         <BuildWorkspace.Empty enabled={false}>
           <BuildWorkspace.EmptyTitle title="Primero selecciona un resonador" />
@@ -102,10 +108,10 @@ export function WeaponBuildSearch({ build }: WeaponBuildSearchProps) {
         >
           <WeaponBuildResults
             filters={filters}
-            selectedId={build.weapon.data?.id}
+            selectedId={selectedWeaponId}
             onSelect={handleSelect}
             pending={pending}
-            weaponType={build.resonator.data?.weaponType}
+            weaponType={weaponType}
           />
         </Suspense>
       </CommandSearch.Root>

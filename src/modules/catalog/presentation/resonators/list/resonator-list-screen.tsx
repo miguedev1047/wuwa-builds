@@ -1,8 +1,12 @@
 import { RouteNavigation } from "@/components/blocks/route-navigation"
+import { useCatalogActions } from "@catalog/presentation/catalog-actions"
+import { ResonatorCatalogSearch } from "@catalog/presentation/resonators/list/components/resonator-catalog-search"
 import { ResonatorList } from "@catalog/presentation/resonators/list/components/resonator-list"
 import { Suspense } from "react"
 
 export function ResonatorListScreen() {
+  const { onOpenDetail } = useCatalogActions()
+
   return (
     <RouteNavigation.Root>
       <RouteNavigation.Header>
@@ -10,6 +14,9 @@ export function ResonatorListScreen() {
         <RouteNavigation.Description>
           Lista de resonadores creados
         </RouteNavigation.Description>
+        <RouteNavigation.Actions>
+          <ResonatorCatalogSearch onSelect={onOpenDetail} />
+        </RouteNavigation.Actions>
       </RouteNavigation.Header>
 
       <RouteNavigation.Content>

@@ -1,11 +1,13 @@
 import { QuerySelect } from "@/components/blocks/query-select"
 import {
   RARITY_OPTIONS,
-  ELEMENT_OPTIONS,
-  WEAPON_TYPE_OPTIONS,
   elementSchema,
   weaponTypeSchema,
 } from "@/modules/game-data/domain/categories"
+import {
+  ELEMENT_OPTIONS,
+  WEAPON_TYPE_OPTIONS,
+} from "@/modules/game-data/presentation/category-options"
 import type { ResonatorBuildFilterState } from "@build/presentation/editor/searches/resonators/hooks/use-resonator-build-filters"
 
 /** Filter controls owned by this specific search. */

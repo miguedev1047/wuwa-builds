@@ -1,8 +1,12 @@
 import { RouteNavigation } from "@/components/blocks/route-navigation"
+import { useCatalogActions } from "@catalog/presentation/catalog-actions"
+import { EchoCatalogSearch } from "@catalog/presentation/echoes/list/components/echo-catalog-search"
 import { EchoList } from "@catalog/presentation/echoes/list/components/echo-list"
 import { Suspense } from "react"
 
 export function EchoListScreen() {
+  const { onOpenDetail } = useCatalogActions()
+
   return (
     <RouteNavigation.Root>
       <RouteNavigation.Header>
@@ -10,6 +14,9 @@ export function EchoListScreen() {
         <RouteNavigation.Description>
           Lista de ecos creados
         </RouteNavigation.Description>
+        <RouteNavigation.Actions>
+          <EchoCatalogSearch onSelect={onOpenDetail} />
+        </RouteNavigation.Actions>
       </RouteNavigation.Header>
 
       <RouteNavigation.Content>

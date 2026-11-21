@@ -1,6 +1,6 @@
 import { WeaponBaseStatItem } from "@build/presentation/editor/sections/weapon-section/components/weapon-base-stat-item"
 import type { WeaponDetail } from "@catalog/domain/weapon"
-import { BuildWorkspace } from "../../../components/workspace"
+import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 
 type WeaponBaseStatsProps = {
   properties: WeaponDetail["properties"]

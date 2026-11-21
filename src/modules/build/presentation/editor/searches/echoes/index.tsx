@@ -10,7 +10,6 @@ import {
 import type { EchoSelectionSummary } from "@catalog/domain/echo"
 import { useEchoBuildFilters } from "@build/presentation/editor/searches/echoes/hooks/use-echo-build-filters"
 import { EchoBuildResults } from "@build/presentation/editor/searches/echoes/components/echo-build-results"
-import { useSelectEcho } from "@build/presentation/editor/hooks/use-select-echo"
 import { useRecommendedSonataFilter } from "@build/presentation/editor/searches/echoes/hooks/use-recommended-sonata-filter"
 
 /** Inputs owned by this build search, not a shared search contract. */
@@ -19,6 +18,8 @@ type EchoBuildSearchProps = {
   selectedEchoId?: number
   trigger: ReactElement
   resonatorId: number
+  /** Returns whether the host accepted this optimistic selection. */
+  onSelect: (item: EchoSelectionSummary) => boolean
 }
 
 /** Owns the build echo dialog, URL scope and selection behavior. */
@@ -27,6 +28,7 @@ export function EchoBuildSearch({
   selectedEchoId,
   trigger,
   resonatorId,
+  onSelect,
 }: EchoBuildSearchProps) {
   const filters = useEchoBuildFilters({ scope: `builder_echoes_${slotIndex}` })
   const { reset } = filters
@@ -49,20 +51,8 @@ export function EchoBuildSearch({
   const clearFiltersOnUnmount = useEffectEvent(clearFilters)
   useEffect(() => () => clearFiltersOnUnmount(), [])
 
-  const { selectEcho } = useSelectEcho()
   const handleSelect = (item: EchoSelectionSummary) => {
-    if (!open) return
-
-    const updated = selectEcho(slotIndex, {
-      id: item.id,
-      name: item.name,
-      class: item.class,
-      cost: item.cost,
-      icon: item.icon,
-      createdAt: item.createdAt,
-      updatedAt: item.updatedAt,
-    })
-    if (updated) changeOpen(false)
+    if (open && onSelect(item)) changeOpen(false)
   }
 
   return (

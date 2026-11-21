@@ -20,6 +20,7 @@ export const Route = createFileRoute("/_navigation/admin/weapons/")({
       cols={6}
       aspect="square"
       count={12}
+      actionCount={1}
     />
   ),
   loader: async ({ context }) => {

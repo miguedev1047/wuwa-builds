@@ -40,12 +40,15 @@ export function CatalogNavigation({
   children: ReactNode
 }) {
   const navigate = useNavigate()
+  const openDetail = (id: number) =>
+    navigate({ to: `/admin/${entity}/$id`, params: { id: String(id) } })
+
   return (
     <CatalogActionsProvider
       actions={{
         DetailLink: detailLinks[entity],
-        onCreated: (id) =>
-          navigate({ to: `/admin/${entity}/$id`, params: { id: String(id) } }),
+        onOpenDetail: openDetail,
+        onCreated: openDetail,
         onDeleted: () => navigate({ to: `/admin/${entity}` }),
         createLink: (
           <Button

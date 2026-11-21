@@ -1,5 +1,5 @@
 import { RouteNavigation } from "@/components/blocks/route-navigation"
-import { WeaponForm } from "@catalog/presentation/weapons/shared/components/weapon-form"
+import { WeaponForm } from "@catalog/presentation/weapons/new/components/weapon-form"
 
 export function WeaponNew() {
   return (

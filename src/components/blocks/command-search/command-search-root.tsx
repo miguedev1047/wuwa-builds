@@ -11,6 +11,7 @@ export type CommandSearchRootProps = {
   onSearchChange?: (search: string) => void
   filter?: boolean
   title?: string
+  hotkey?: string
   description?: string
   className?: string
   children: ReactNode
@@ -28,6 +29,7 @@ export function CommandSearchRoot({
   onSearchChange,
   filter = true,
   title = "Buscar",
+  hotkey,
   description = "Busca y selecciona un elemento.",
   className,
   children,
@@ -45,7 +47,7 @@ export function CommandSearchRoot({
         onOpenChangeComplete={onOpenChangeComplete}
         trigger={trigger}
         label={title}
-        hotkey={null}
+        hotkey={hotkey}
         className={className}
       >
         <Command

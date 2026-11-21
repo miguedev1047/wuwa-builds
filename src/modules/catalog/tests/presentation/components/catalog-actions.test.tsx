@@ -33,6 +33,7 @@ test("catalog navigation slots render without a router provider", () => {
       actions={{
         DetailLink,
         createLink: <a href="#new">Create weapon</a>,
+        onOpenDetail: () => {},
         onCreated: () => {},
         onDeleted: () => {},
       }}

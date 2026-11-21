@@ -1,11 +1,11 @@
 import type { WeaponSummary } from "@catalog/domain/weapon"
 import { describe, expect, test } from "bun:test"
-import { filterResonatorAdminResults } from "@catalog/presentation/searches/resonators/filter-resonator-admin-results"
-import { filterWeaponAdminResults } from "@catalog/presentation/searches/weapons/filter-weapon-admin-results"
+import { filterResonatorAdminResults } from "@catalog/presentation/resonators/new/search/filter-resonator-admin-results"
+import { filterWeaponAdminResults } from "@catalog/presentation/weapons/new/search/filter-weapon-admin-results"
 import {
   filterEchoAdminResults,
   echoAdminSonataOptions,
-} from "@catalog/presentation/searches/echoes/filter-echo-admin-results"
+} from "@catalog/presentation/echoes/new/search/filter-echo-admin-results"
 import { filterResonatorBuildResults } from "@build/presentation/editor/searches/resonators/filter-resonator-build-results"
 import { filterWeaponBuildResults } from "@build/presentation/editor/searches/weapons/filter-weapon-build-results"
 import {

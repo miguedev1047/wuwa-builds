@@ -277,11 +277,14 @@ password login and Discord OAuth are configured in `src/lib/auth.ts`.
 
 ## Search architecture
 
-There are six independent components: resonators, weapons and echoes for admin,
-and the same three for builder. Each owns its query/results hook, controls, pure
-filtering helper, trigger and selection behavior.
+Resonators, weapons and echoes each have independent searches for admin
+creation, admin list navigation and the builder. Each owns its query,
+filtering, controls, trigger and dialog lifecycle.
 
-- Admin searches live in `catalog/presentation/searches` and read Encore.
+- Admin prefill searches live in `catalog/presentation/<entity>/new/search`
+  and read Encore.
+- Admin list searches live in `catalog/presentation/<entity>/list/components`
+  and read D1.
 - Builder searches live in `build/presentation/editor/searches` and read D1.
 - `CommandSearch` provides presentation primitives. Each search controls `open`
   and decides when its selection handler closes the dialog.
