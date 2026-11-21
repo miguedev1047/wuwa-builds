@@ -1,9 +1,15 @@
 import { getSession } from "@/functions/auth"
-import { LoginCard } from "@/modules/login/components/login-card"
+import { LoginPage } from "@/routing/auth/login/login-page"
 import { createFileRoute, redirect } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/auth/login")({
-  component: RouteComponent,
+  component: LoginPage,
+  head: () => ({
+    meta: [
+      { title: "Iniciar sesión | Wuwa Builds" },
+      { name: "robots", content: "noindex" },
+    ],
+  }),
   beforeLoad: async () => {
     const session = await getSession()
 
@@ -12,7 +18,3 @@ export const Route = createFileRoute("/auth/login")({
     }
   },
 })
-
-function RouteComponent() {
-  return <LoginCard />
-}
