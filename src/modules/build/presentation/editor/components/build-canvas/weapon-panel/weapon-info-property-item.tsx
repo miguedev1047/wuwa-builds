@@ -17,10 +17,10 @@ export function WeaponInfoPropertyItem({
   const icon = isStatId(property.name) ? property.name : null
 
   return (
-    <div className="flex items-center justify-between gap-2 rounded-xl border bg-muted/40 px-2.5 py-2">
+    <div className="flex items-center justify-between gap-2 rounded-xl bg-muted/40 px-2.5 py-2 shadow-app-surface">
       <div className="flex min-w-0 items-center gap-1.5">
         <GameIcon name={icon} />
-        <span className="truncate text-xs font-medium tracking-wide text-muted-foreground uppercase">
+        <span className="truncate text-xs font-medium tracking-wide uppercase">
           {statLabel(property.name)}
         </span>
       </div>

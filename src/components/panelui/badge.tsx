@@ -46,6 +46,7 @@ export type BadgeVariant =
   | "info"
   | "warning"
   | "destructive"
+  | "muted-glass"
 export type BadgeSize = "sm" | "md" | "lg"
 
 const badgeVariants = tv({
@@ -74,6 +75,9 @@ const badgeVariants = tv({
       info: { root: "[--badge-color:var(--info)]" },
       warning: { root: "[--badge-color:var(--warning)]" },
       destructive: { root: "[--badge-color:var(--destructive)]" },
+      "muted-glass": {
+        root: "border-transparent border-0 bg-muted/40! shadow-app-surface text-secondary-foreground",
+      },
     },
     tinted: {
       true: {
@@ -100,6 +104,7 @@ const TINTED: ReadonlySet<BadgeVariant> = new Set([
   "info",
   "warning",
   "destructive",
+  "muted-glass",
 ])
 
 export interface BadgeProps extends ComponentProps<"span"> {

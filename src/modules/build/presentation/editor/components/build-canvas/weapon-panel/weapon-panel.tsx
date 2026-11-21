@@ -30,7 +30,7 @@ export function WeaponPanel({
               <div className="min-w-0 space-y-2 pl-4">
                 <h2 className="truncate font-extrabold">{weapon.name}</h2>
                 <p className="text-xs">Nv. {level}/90</p>
-                <Badge variant="outline">Refinamiento {refinament}</Badge>
+                <Badge variant="muted-glass">Refinamiento {refinament}</Badge>
               </div>
 
               <Image
