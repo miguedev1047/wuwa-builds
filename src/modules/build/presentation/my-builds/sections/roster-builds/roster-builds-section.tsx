@@ -1,10 +1,8 @@
 import { RouteNavigation } from "@/components/blocks/route-navigation"
-import { Button } from "@/components/panelui/button"
 import { Spinner } from "@/components/panelui/spinner"
 import { RosterBuildsSectionContent } from "@build/presentation/my-builds/sections/roster-builds/components/roster-builds-section-content"
-import { PlusIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
 import { Suspense } from "react"
+import { CreateBuildButton } from "@build/presentation/my-builds/sections/roster-builds/components/create-build-button"
 
 type RosterBuildsSectionProps = {
   /** User that owns the local builds. */
@@ -28,14 +26,10 @@ export function RosterBuildsSection({
           Todas tus builds guardadas en tu cuenta.
         </RouteNavigation.Description>
         <RouteNavigation.Actions>
-          <Button
-            loading={isCreating}
-            aria-label={isCreating ? "Creando build" : undefined}
-            onClick={onCreateBuild}
-          >
-            <HugeiconsIcon icon={PlusIcon} />
-            Nueva Build
-          </Button>
+          <CreateBuildButton
+            isCreating={isCreating}
+            onCreateBuild={onCreateBuild}
+          />
         </RouteNavigation.Actions>
       </RouteNavigation.Header>
       <Suspense fallback={<Spinner />}>
