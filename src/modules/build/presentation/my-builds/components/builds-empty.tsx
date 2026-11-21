@@ -6,6 +6,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty"
+import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { Show } from "@/components/utility/show"
 import { cn } from "cn"
 import type { ReactNode } from "react"
@@ -32,8 +33,10 @@ export function BuildsEmpty({
   className,
 }: BuildsEmptyProps) {
   return (
-    <Empty className={cn("border border-dashed", className)}>
-      <EmptyHeader>
+    <Empty
+      className={cn("relative overflow-hidden border border-dashed", className)}
+    >
+      <EmptyHeader className="z-10">
         <EmptyMedia variant="icon">{icon}</EmptyMedia>
         <EmptyTitle>{title}</EmptyTitle>
         <EmptyDescription>{description}</EmptyDescription>
@@ -42,6 +45,15 @@ export function BuildsEmpty({
       <Show when={action}>
         <EmptyContent>{action}</EmptyContent>
       </Show>
+
+      <FlickeringGrid
+        className="absolute inset-0 z-0"
+        squareSize={4}
+        gridGap={6}
+        color="#6B7280"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+      />
     </Empty>
   )
 }
