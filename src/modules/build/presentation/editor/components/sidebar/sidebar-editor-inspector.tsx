@@ -6,6 +6,7 @@ import { WeaponEditorSection } from "@build/presentation/editor/sections/weapon-
 import { EchoesEditorSection } from "@build/presentation/editor/sections/echoes-section"
 import { AppearanceSection } from "@build/presentation/editor/sections/appearance-section"
 import { Sheet } from "@/components/panelui/sheet"
+import { useEditorSection } from "@build/presentation/editor/state/editor-section-context"
 import type { BuildProps } from "@build/domain/build-record"
 
 type SidebarEditorInspectorProps = {
@@ -63,18 +64,20 @@ function InspectorPanel({ build }: { build: BuildProps }) {
 }
 
 function InspectorSections({ build }: { build: BuildProps }) {
+  const { section } = useEditorSection()
+
   return (
     <>
-      <Show when={build.selectedEditorSection === "resonator"}>
+      <Show when={section === "resonator"}>
         <ResonatorEditorSection build={build} />
       </Show>
-      <Show when={build.selectedEditorSection === "weapon"}>
+      <Show when={section === "weapon"}>
         <WeaponEditorSection build={build} />
       </Show>
-      <Show when={build.selectedEditorSection === "echo"}>
+      <Show when={section === "echo"}>
         <EchoesEditorSection build={build} />
       </Show>
-      <Show when={build.selectedEditorSection === "appareance"}>
+      <Show when={section === "appareance"}>
         <AppearanceSection build={build} />
       </Show>
     </>

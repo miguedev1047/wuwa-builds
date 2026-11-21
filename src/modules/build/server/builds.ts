@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start"
 import { authMiddleware } from "@/functions/middlewares"
 import {
   buildIdInputSchema,
+  buildsScopeInputSchema,
   characterGroupInputSchema,
   createBuildInputSchema,
   updateBuildInputSchema,
@@ -15,10 +16,15 @@ import {
  */
 export const getMyBuilds = createServerFn({ method: "GET" })
   .middleware([authMiddleware])
-  .handler(async ({ context }) => {
+  .validator(buildsScopeInputSchema)
+  .handler(async ({ context, data }) => {
+    const { id: userId } = context.session.user
+    if (data.userId !== userId)
+      throw new Error("Build collection session changed")
+
     const { d1BuildRepository } =
       await import("@build/infrastructure/d1/build-repository.server")
-    return d1BuildRepository.listByUser(context.session.user.id)
+    return d1BuildRepository.listByUser(userId)
   })
 
 export const getMyBuildsByCharacter = createServerFn({ method: "GET" })
@@ -46,9 +52,13 @@ export const createBuild = createServerFn({ method: "POST" })
   .middleware([authMiddleware])
   .validator(createBuildInputSchema)
   .handler(async ({ context, data }) => {
+    const { id: userId } = context.session.user
+    if (data.userId !== userId)
+      throw new Error("Build collection session changed")
+
     const { d1BuildRepository } =
       await import("@build/infrastructure/d1/build-repository.server")
-    return d1BuildRepository.create(context.session.user.id, data)
+    return d1BuildRepository.create(userId, data)
   })
 
 export const updateBuild = createServerFn({ method: "POST" })
@@ -59,6 +69,7 @@ export const updateBuild = createServerFn({ method: "POST" })
       await import("@build/infrastructure/d1/build-repository.server")
 
     return d1BuildRepository.update(context.session.user.id, data.buildId, {
+      characterId: data.characterId,
       name: data.name,
       payload: data.payload,
     })

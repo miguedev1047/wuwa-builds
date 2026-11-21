@@ -2,10 +2,9 @@ import type { BuildProps } from "@build/domain/build-record"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { Show } from "@/components/utility/show"
 import { useState } from "react"
-import { SelectedEchoSlotPanel } from "./selected-echo-slot-panel"
 import { Separator } from "@/components/ui/separator"
-import { EchoesTabs } from "./echoes-tabs"
-import { EchoSlotRemove } from "./echo-slot-remove"
+import { EchoSlotEditor } from "@build/presentation/editor/sections/echoes-section/components/echo-slot-editor"
+import { EchoSlotTabs } from "@build/presentation/editor/sections/echoes-section/components/echo-slot-tabs"
 
 type EchoesEditorContentProps = {
   build: BuildProps
@@ -13,15 +12,14 @@ type EchoesEditorContentProps = {
 
 /** Loaded echoes section: five editable slots. */
 export function EchoesEditorContent({ build }: EchoesEditorContentProps) {
-  const [selectedEchoIndex, setSelectedEchoIndex] = useState(0)
+  const [selectedSlotIndex, setSelectedSlotIndex] = useState(0)
 
   const echoSlotsCount = build.echoes.filter((e) => e.data !== null).length
   const echoSlotsMaxCount = build.echoes.length
-  const hasResonatorSeletecd = build.resonator.data
 
   return (
     <Show
-      when={hasResonatorSeletecd}
+      when={build.resonator.data}
       fallback={
         <BuildWorkspace.Empty enabled={false}>
           <BuildWorkspace.EmptyTitle title="Primero selecciona un resonador" />
@@ -39,17 +37,16 @@ export function EchoesEditorContent({ build }: EchoesEditorContentProps) {
         </div>
 
         <div className="w-full space-y-5">
-          <EchoesTabs
+          <EchoSlotTabs
             build={build}
-            selectedEchoIndex={selectedEchoIndex}
-            setSelectedEchoIndex={setSelectedEchoIndex}
+            selectedSlotIndex={selectedSlotIndex}
+            onSlotChange={setSelectedSlotIndex}
           />
           <Separator />
-          <SelectedEchoSlotPanel
+          <EchoSlotEditor
             build={build}
-            slot={build.echoes[selectedEchoIndex]}
+            slot={build.echoes[selectedSlotIndex]}
           />
-          <EchoSlotRemove build={build} slotIndex={selectedEchoIndex} />
         </div>
       </div>
     </Show>

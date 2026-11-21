@@ -3,8 +3,8 @@ import type { BuildPayload } from "@build/domain/build"
 export interface BuildRecord {
   id: string
   userId: string
-  /** Numeric Encore character ID. */
-  characterId: number
+  /** Numeric Encore character ID; null while the build has no resonator. */
+  characterId: number | null
   name: string
   payload: BuildPayload
   documentVersion: number
@@ -13,12 +13,15 @@ export interface BuildRecord {
 }
 
 export interface CreateBuildData {
-  characterId: number
+  /** Client-owned id so offline and retried creations stay idempotent. */
+  buildId: string
+  characterId: number | null
   name: string
   payload: BuildPayload
 }
 
 export interface UpdateBuildData {
+  characterId?: number | null
   name?: string
   payload?: BuildPayload
 }

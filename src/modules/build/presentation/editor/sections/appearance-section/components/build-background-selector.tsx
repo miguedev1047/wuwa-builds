@@ -1,5 +1,5 @@
 import { BACKGROUNDS } from "@build/application/backgrounds"
-import { updateBuild } from "@build/client/build-store"
+import { useBuildStore } from "@build/client/hooks/use-build-store"
 import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import { Image } from "@/components/ui/image"
@@ -15,6 +15,7 @@ export function BuildBackgroundSelector({
   backgroundIndex,
 }: BuildBackgroundSelectorProps) {
   const { buildId, userId } = useBuildIdentity()
+  const { update } = useBuildStore(userId)
 
   return (
     <div className="space-y-2">
@@ -27,7 +28,7 @@ export function BuildBackgroundSelector({
             aria-label={`Fondo ${index + 1}`}
             aria-pressed={backgroundIndex === index}
             onClick={() =>
-              updateBuild({ buildId, userId }, (current) => {
+              update({ buildId, userId }, (current) => {
                 current.backgroundIndex = index
               })
             }

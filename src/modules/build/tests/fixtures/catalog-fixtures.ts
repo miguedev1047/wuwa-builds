@@ -104,6 +104,7 @@ export function characterDetail({
   properties = [],
   sequences = [],
   passives = [],
+  skills = [],
 }: {
   id?: number
   name?: string
@@ -112,6 +113,7 @@ export function characterDetail({
   properties?: CharacterDetail["properties"]
   sequences?: ResonatorSequenceRow[]
   passives?: ResonatorPassiveRow[]
+  skills?: CharacterDetail["skills"]
 } = {}): CharacterDetail {
   return {
     id,
@@ -133,7 +135,7 @@ export function characterDetail({
     bestWeapons: [],
     bestSets: [],
     properties,
-    skills: [],
+    skills,
     sequences,
     passives,
     ...dates,
@@ -343,7 +345,6 @@ export function buildRecord(overrides: Partial<BuildProps> = {}): BuildProps {
   return {
     buildId: "build-1",
     userId: "user-1",
-    selectedEditorSection: "resonator",
     backgroundIndex: null,
     name: "Build",
     resonator: {

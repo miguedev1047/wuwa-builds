@@ -1,63 +1,131 @@
+import { useToast } from "@/components/panelui/toast"
 import { buildEdits } from "@build/application/build-edits"
-import { deleteBuild, updateBuild } from "@build/client/build-store"
+import { createEmptyBuild } from "@build/application/factories/build"
+import { useBuildStore } from "@build/client/hooks/use-build-store"
+import { MAX_BUILDS_PER_USER } from "@build/domain/build"
 import type { BuildProps } from "@build/domain/build-record"
 import { useState } from "react"
 
 type UseBuildActionsInput = {
-  /** Build read by the live query; `undefined` when it does not exist. */
-  liveBuild: BuildProps | undefined
-  /** Build id of the route, so a leftover snapshot never leaks to another one. */
-  buildId: string
-  /** Runs after the build is removed, usually the navigation back to the library. */
-  onDeleted: () => void | Promise<void>
+  /** User whose collection owns the build. */
+  userId: string
+  /** Build selected by the editor route. */
+  editor?: {
+    /** Route id used to scope the snapshot during navigation. */
+    buildId: string
+    /** Current build from the editor's live query. */
+    liveBuild: BuildProps | undefined
+  }
 }
 
 type BuildActions = {
+  /** Creates an empty build and passes its id to the caller after saving. */
+  createBlankBuild: (
+    onCreated: (buildId: string) => Promise<void>
+  ) => Promise<void>
+  /** Whether creation or its follow-up navigation is in progress. */
+  isCreating: boolean
   /** Build to render: the live one, or the removed one while the route leaves. */
   build: BuildProps | null
   /** Saves a new name on the current build. */
-  rename: (name: string) => void
-  /** Removes the build and keeps it on screen until `onDeleted` settles. */
-  remove: () => void
+  renameBuild: (name: string) => void
+  /** Starts the deletion and leaves the editor. */
+  deleteBuild: (onDeleteStarted: () => Promise<void>) => Promise<void>
 }
 
 /**
- * Rename and delete actions of the editor.
+ * Create, rename and delete actions for the signed-in user's builds.
  *
  * Deletion writes to the collection immediately, while the navigation away is
  * still in flight, so the removed document is held in state until the route
  * unmounts instead of rendering the not-found state for a frame.
  */
 export function useBuildActions({
-  liveBuild,
-  buildId,
-  onDeleted,
+  userId,
+  editor,
 }: UseBuildActionsInput): BuildActions {
+  const toast = useToast()
+  const {
+    count,
+    insert,
+    update,
+    remove: deleteStoredBuild,
+  } = useBuildStore(userId)
+  const [isCreating, setIsCreating] = useState(false)
   const [leavingBuild, setLeavingBuild] = useState<BuildProps | null>(null)
-  const build =
-    liveBuild ?? (leavingBuild?.buildId === buildId ? leavingBuild : null)
 
-  const rename = (name: string) => {
+  const build =
+    editor?.liveBuild ??
+    (leavingBuild?.buildId === editor?.buildId ? leavingBuild : null)
+
+  const createBlankBuild: BuildActions["createBlankBuild"] = async (
+    onCreated
+  ) => {
+    if (isCreating) return
+
+    if (count() >= MAX_BUILDS_PER_USER) {
+      toast.add({ title: "Límite de builds alcanzado", type: "error" })
+      return
+    }
+
+    setIsCreating(true)
+    let saved = false
+
+    try {
+      const buildId = crypto.randomUUID()
+      const transaction = insert(
+        createEmptyBuild({
+          buildId,
+          userId,
+          createdAt: new Date().toISOString(),
+        })
+      )
+
+      await transaction.when("settled")
+      saved = true
+      await onCreated(buildId)
+    } catch {
+      toast.add({
+        title: saved
+          ? "La build se guardó, pero el editor no pudo abrirse"
+          : "No se pudo crear la build",
+        type: "error",
+      })
+    } finally {
+      setIsCreating(false)
+    }
+  }
+
+  const renameBuild = (name: string) => {
     if (!build) return
 
-    updateBuild({ buildId: build.buildId, userId: build.userId }, (draft) =>
+    update({ buildId: build.buildId, userId: build.userId }, (draft) =>
       buildEdits.rename(draft, name)
     )
   }
 
-  const remove = () => {
-    if (!build) return
+  const deleteBuild: BuildActions["deleteBuild"] = async (onDeleteStarted) => {
+    if (!editor?.liveBuild || leavingBuild?.buildId === editor.buildId) return
 
-    const identity = { buildId: build.buildId, userId: build.userId }
-    setLeavingBuild(build)
+    const { buildId, liveBuild } = editor
+    setLeavingBuild(liveBuild)
 
-    if (!deleteBuild(identity)) {
+    try {
+      const transaction = deleteStoredBuild({ buildId, userId })
+      if (!transaction) throw new Error("Build not found")
+
+      void onDeleteStarted().catch(() => {
+        setLeavingBuild(null)
+        toast.add({ title: "No se pudo abrir Mis builds", type: "error" })
+      })
+
+      await transaction.when("settled")
+      toast.add({ title: "Build eliminada", type: "success" })
+    } catch {
       setLeavingBuild(null)
-      return
+      toast.add({ title: "No se pudo eliminar la build", type: "error" })
     }
-
-    void Promise.resolve(onDeleted()).catch(() => setLeavingBuild(null))
   }
 
-  return { build, rename, remove }
+  return { createBlankBuild, isCreating, build, renameBuild, deleteBuild }
 }

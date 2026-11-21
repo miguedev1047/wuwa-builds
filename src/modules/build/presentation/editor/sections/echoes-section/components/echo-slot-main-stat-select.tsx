@@ -10,16 +10,16 @@ import {
 import type { EchoesDataProps } from "@build/domain/build-record"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 
-type EchoMainStatSelectProps = {
+type EchoSlotMainStatSelectProps = {
   slot: EchoesDataProps
   onChange: (option: EchoMainStatOption) => void
 }
 
 /** Main stat selector and base value of one echo slot. */
-export function EchoMainStatSelect({
+export function EchoSlotMainStatSelect({
   slot,
   onChange,
-}: EchoMainStatSelectProps) {
+}: EchoSlotMainStatSelectProps) {
   const cost = slot.cost || slot.data?.cost || 0
   const options = echoMainStatOptions(cost)
   const primaryStat = echoPrimaryStat({ cost, level: slot.level })

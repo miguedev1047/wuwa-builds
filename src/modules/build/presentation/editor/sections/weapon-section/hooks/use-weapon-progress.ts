@@ -1,16 +1,17 @@
 import { weaponProgress } from "@build/application/weapon-progress"
-import { updateBuild, type LocalBuildIdentity } from "@build/client/build-store"
+import type { LocalBuildIdentity } from "@build/client/build-store"
+import { useBuildStore } from "@build/client/hooks/use-build-store"
 
-/** Bind weapon progression to the current local build. */
+/** Bind weapon progression to the current build. */
 export function useWeaponProgress(identity: LocalBuildIdentity) {
+  const { update } = useBuildStore(identity.userId)
+
   return {
     setLevelStep: (step: number) => {
-      updateBuild(identity, (draft) => weaponProgress.setLevelStep(draft, step))
+      update(identity, (draft) => weaponProgress.setLevelStep(draft, step))
     },
     stepRefinement: (delta: number) => {
-      updateBuild(identity, (draft) =>
-        weaponProgress.stepRefinement(draft, delta)
-      )
+      update(identity, (draft) => weaponProgress.stepRefinement(draft, delta))
     },
   }
 }

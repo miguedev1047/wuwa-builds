@@ -4,13 +4,16 @@ import { FieldContent, FieldTitle } from "@/components/ui/field"
 
 import { useId } from "react"
 
-type EchoMainToggleProps = {
+type EchoSlotMainToggleProps = {
   isMain: boolean
   onToggle: () => void
 }
 
 /** Marks or clears the main echo of the build. */
-export function EchoMainToggle({ isMain, onToggle }: EchoMainToggleProps) {
+export function EchoSlotMainToggle({
+  isMain,
+  onToggle,
+}: EchoSlotMainToggleProps) {
   const id = useId()
 
   return (

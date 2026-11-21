@@ -1,5 +1,9 @@
 import { buildEdits } from "@build/application/build-edits"
-import { updateBuild, type LocalBuildIdentity } from "@build/client/build-store"
+import {
+  updateBuild,
+  type BuildDraftCollection,
+  type LocalBuildIdentity,
+} from "@build/client/build-store"
 import type {
   CharacterDetail,
   CharacterSummary,
@@ -7,8 +11,9 @@ import type {
 
 const pendingSelections = new Map<string, symbol>()
 
-/** Resolve and apply the latest resonator selection for this local build. */
+/** Resolve and apply the latest resonator selection for this build. */
 export async function selectLocalResonator(
+  collection: BuildDraftCollection,
   identity: LocalBuildIdentity,
   character: CharacterSummary,
   loadDetail: () => Promise<CharacterDetail>
@@ -22,7 +27,7 @@ export async function selectLocalResonator(
     if (pendingSelections.get(key) !== selection) return "discarded"
 
     let selected = false
-    const updated = updateBuild(identity, (draft) => {
+    const updated = updateBuild(collection, identity, (draft) => {
       selected = buildEdits.selectResonator(draft, character, detail)
     })
 

@@ -17,6 +17,8 @@ export type CommandSearchRootProps = {
   open?: boolean
   defaultOpen?: boolean
   onOpenChange?: (open: boolean) => void
+  /** Called after the dialog finishes its transition. */
+  onOpenChangeComplete?: (open: boolean) => void
 }
 
 /** Renders a dialog without imposing selection, reset or persistence behavior. */
@@ -32,6 +34,7 @@ export function CommandSearchRoot({
   open,
   defaultOpen,
   onOpenChange,
+  onOpenChangeComplete,
 }: CommandSearchRootProps) {
   return (
     <Popover>
@@ -39,6 +42,7 @@ export function CommandSearchRoot({
         open={open}
         defaultOpen={defaultOpen}
         onOpenChange={onOpenChange}
+        onOpenChangeComplete={onOpenChangeComplete}
         trigger={trigger}
         label={title}
         hotkey={null}

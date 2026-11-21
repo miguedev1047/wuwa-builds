@@ -1,6 +1,7 @@
 import { Button } from "@/components/panelui/button"
 import { Input } from "@/components/panelui/input"
 import { Show } from "@/components/utility/show"
+import { BuildName } from "@build/presentation/editor/components/workspace/build-name"
 import { CheckIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { useState } from "react"
@@ -25,20 +26,15 @@ export function BuildHeaderActions({
           </h2>
         }
       >
-        <Input.Group className="h-6 max-w-48">
-          <Input
-            autoFocus
-            value={name}
-            onBlur={() => setIsEditing(false)}
-            onChange={(e) => onRename(e.target.value)}
-            placeholder="Nombre de la build"
-            onKeyDown={(e) => {
-              const key = e.key
-              if (key === "Escape" || key === "Enter") {
-                setIsEditing(false)
-              }
-            }}
-          />
+        <Input.Group
+          className="h-6 max-w-48"
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) {
+              setIsEditing(false)
+            }
+          }}
+        >
+          <BuildName name={name} onRename={onRename} autoFocus />
           <Input.Addon align="end">
             <Button
               variant="ghost"

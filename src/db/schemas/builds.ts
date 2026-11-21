@@ -14,8 +14,8 @@ export const builds = sqliteTable(
     userId: text("user_id")
       .notNull()
       .references(() => user.id, { onDelete: "cascade" }),
-    /** Numeric Encore character ID. */
-    characterId: integer("character_id").notNull(),
+    /** Numeric Encore character ID; null while the build has no resonator. */
+    characterId: integer("character_id"),
     name: text("name").notNull(),
     payload: text("payload", { mode: "json" }).$type<BuildPayload>().notNull(),
     documentVersion: integer("document_version").notNull(),

@@ -5,9 +5,10 @@ import { z } from "zod"
  * when the JSON document format changes so old rows can be migrated or
  * rejected explicitly.
  */
-export const BUILD_DOCUMENT_VERSION = 1
+export const BUILD_DOCUMENT_VERSION = 2
 
-export const MAX_LOCAL_BUILDS = 50
+export const MAX_BUILDS_PER_USER = 50
+export const MAX_BUILD_NAME_LENGTH = 80
 
 export const CHARACTER_LEVEL_MIN = 1
 export const CHARACTER_LEVEL_MAX = 90
@@ -110,12 +111,24 @@ export const echoSlotSchema = z.object({
 export type EchoSlot = z.infer<typeof echoSlotSchema>
 export type EchoSubstat = z.infer<typeof echoSubstatSchema>
 
+/**
+ * Enablement of one resonator passive. The catalog owns the title, icon and
+ * value; the saved document only records which passives the player counts.
+ */
+export const buildPassiveSchema = z.object({
+  passiveId: numericId,
+  enabled: z.boolean(),
+})
+
+export type BuildPassive = z.infer<typeof buildPassiveSchema>
+
 export const buildPayloadSchema = z.object({
   resonator: z.object({
     level: z.number().int().min(CHARACTER_LEVEL_MIN).max(CHARACTER_LEVEL_MAX),
     /** 0 = S0, 6 = S6. Sequences are linear, not independent toggles. */
     sequenceRank: z.number().int().min(0).max(SEQUENCE_RANK_MAX),
     skillLevels: z.array(skillLevelSchema).max(10),
+    passives: z.array(buildPassiveSchema).max(20).default([]),
   }),
   weapon: z.object({
     weaponId: numericId.nullable(),
@@ -143,6 +156,8 @@ export const buildPayloadSchema = z.object({
       z.literal(4),
     ])
     .nullable(),
+  /** Index into the shared background palette; null keeps the default. */
+  backgroundIndex: z.number().int().nonnegative().nullable().default(null),
   notes: z.string().max(2000),
 })
 
@@ -170,6 +185,7 @@ export function createEmptyBuildPayload(): BuildPayload {
       level: CHARACTER_LEVEL_MAX,
       sequenceRank: 0,
       skillLevels: [],
+      passives: [],
     },
     weapon: {
       weaponId: null,
@@ -184,6 +200,7 @@ export function createEmptyBuildPayload(): BuildPayload {
       createEmptyEchoSlot(),
     ],
     mainEchoSlot: null,
+    backgroundIndex: null,
     notes: "",
   }
 }

@@ -1,10 +1,11 @@
 import type { EchoMainStatOption } from "@build/application/echo-main-stat"
 import type { EchoSubstatOption } from "@build/application/echo-substats"
 import { echoProgress } from "@build/application/echo-progress"
-import { updateBuild, type LocalBuildIdentity } from "@build/client/build-store"
+import type { LocalBuildIdentity } from "@build/client/build-store"
+import { useBuildStore } from "@build/client/hooks/use-build-store"
 
 /** Mutations of the echoes section, addressed by slot index. */
-export interface EchoProgress {
+export interface EchoSlotProgress {
   setLevelStep: (slotIndex: number, step: number) => void
   setSet: (slotIndex: number, setId: number) => void
   setMainStat: (slotIndex: number, option: EchoMainStatOption) => void
@@ -21,21 +22,23 @@ export interface EchoProgress {
   toggleMain: (slotIndex: number) => void
 }
 
-/** Bind echo progression to the current local build. */
-export function useEchoProgress(identity: LocalBuildIdentity): EchoProgress {
+/** Bind echo progression to the current build. */
+export function useEchoSlotProgress(
+  identity: LocalBuildIdentity
+): EchoSlotProgress {
+  const { update } = useBuildStore(identity.userId)
+
   return {
     setLevelStep: (slotIndex: number, step: number) => {
-      updateBuild(identity, (draft) =>
+      update(identity, (draft) =>
         echoProgress.setLevelStep(draft, slotIndex, step)
       )
     },
     setSet: (slotIndex: number, setId: number) => {
-      updateBuild(identity, (draft) =>
-        echoProgress.setSet(draft, slotIndex, setId)
-      )
+      update(identity, (draft) => echoProgress.setSet(draft, slotIndex, setId))
     },
     setMainStat: (slotIndex: number, option: EchoMainStatOption) => {
-      updateBuild(identity, (draft) =>
+      update(identity, (draft) =>
         echoProgress.setMainStat(draft, slotIndex, option)
       )
     },
@@ -44,7 +47,7 @@ export function useEchoProgress(identity: LocalBuildIdentity): EchoProgress {
       substatIndex: number,
       option: EchoSubstatOption
     ) => {
-      updateBuild(identity, (draft) =>
+      update(identity, (draft) =>
         echoProgress.setSubstat(draft, slotIndex, substatIndex, option)
       )
     },
@@ -53,14 +56,12 @@ export function useEchoProgress(identity: LocalBuildIdentity): EchoProgress {
       substatIndex: number,
       value: number
     ) => {
-      updateBuild(identity, (draft) =>
+      update(identity, (draft) =>
         echoProgress.setSubstatValue(draft, slotIndex, substatIndex, value)
       )
     },
     toggleMain: (slotIndex: number) => {
-      updateBuild(identity, (draft) =>
-        echoProgress.toggleMain(draft, slotIndex)
-      )
+      update(identity, (draft) => echoProgress.toggleMain(draft, slotIndex))
     },
   }
 }

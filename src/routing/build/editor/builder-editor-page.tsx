@@ -1,4 +1,5 @@
 import { BuildIdentityProvider } from "@build/presentation/editor/build-identity"
+import { EditorSectionProvider } from "@build/presentation/editor/state/editor-section-context"
 import { BuildEditorWorkspace } from "@build/presentation/editor/components/workspace/build-editor-workspace"
 import type { DockLinkItem } from "@/components/ui/dock"
 import { ChevronLeftIcon } from "@hugeicons/core-free-icons"
@@ -31,13 +32,15 @@ export function BuilderEditorPage({
   const identity = { buildId, userId }
 
   return (
-    <BuildIdentityProvider identity={identity}>
-      <BuildEditorWorkspace
-        build={build}
-        backLink={backLink}
-        onRename={rename}
-        onDelete={remove}
-      />
-    </BuildIdentityProvider>
+    <EditorSectionProvider key={buildId}>
+      <BuildIdentityProvider identity={identity}>
+        <BuildEditorWorkspace
+          build={build}
+          backLink={backLink}
+          onRename={rename}
+          onDelete={remove}
+        />
+      </BuildIdentityProvider>
+    </EditorSectionProvider>
   )
 }

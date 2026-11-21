@@ -1,22 +1,24 @@
 import { Select } from "@/components/panelui/select"
 import { Show } from "@/components/utility/show"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
-import type { EchoDetail } from "@catalog/domain/echo"
+import { echoQueries } from "@catalog/queries/echoes"
+import { useSuspenseQuery } from "@tanstack/react-query"
 
-type EchoSetSelectProps = {
-  /** Sonata sets the selected echo can roll. */
-  sets: EchoDetail["sets"]
+type EchoSlotSetSelectProps = {
+  /** Echo whose detail supplies the available Sonata sets. */
+  echoId: number
   selectedSetId: number | null
   onChange: (setId: number) => void
 }
 
 /** Sonata set selector for one echo slot. */
-export function EchoSetSelect({
-  sets,
+export function EchoSlotSetSelect({
+  echoId,
   selectedSetId,
   onChange,
-}: EchoSetSelectProps) {
-  const options = sets.map((set) => ({
+}: EchoSlotSetSelectProps) {
+  const { data: echo } = useSuspenseQuery(echoQueries.detail(echoId))
+  const options = echo.sets.map((set) => ({
     label: set.name,
     value: String(set.setId),
     icon: set.sonata?.icon,
