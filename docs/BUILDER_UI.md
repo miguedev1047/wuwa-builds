@@ -1,7 +1,7 @@
 # Builder UI guide
 
-Guía del builder local. La persistencia actual es LocalStorage; el guardado en
-D1 sigue pendiente.
+Guía del builder. Las builds viven en D1 y se leen con una Query Collection de
+TanStack DB; el editor trabaja con el documento hidratado y guarda cada edición.
 
 ## Flujo actual
 
@@ -24,6 +24,7 @@ D1 sigue pendiente.
 interface BuildProps {
   buildId: string
   userId: string
+  backgroundIndex: number | null
   name: string
   resonator: {
     level: number // 1..90
@@ -48,13 +49,15 @@ interface BuildProps {
   echoes: {
     data: EchoSummary | null
     index: number
-    echoSet: string
+    echoSetId: number | null
+    mainStatStat: string
     mainStatLabel: string
     mainStatValue: number
     level: number // 0..25
     cost: number
     substats: {
       index: number
+      valueStat: string
       valueLabel: string
       valueNumber: number
     }[]
@@ -66,16 +69,28 @@ interface BuildProps {
 
 - `resonator.data` es el resumen del catálogo, no el detalle completo.
 - El detalle lo posee `game-data` y se pide con `characterQueries.detail(id)`.
+- `echoSetId`, `mainStatStat` y `valueStat` son ids canónicos; los labels se
+  derivan del catálogo y de `constants/stats.ts`.
+- `selectedEditorSection` no es parte del documento: vive en
+  `EditorSectionProvider` y se resetea al abrir otra build.
 - Siempre hay 5 slots de eco y 5 substats por eco.
 - `createdAt` / `updateAt` son strings ISO.
 
-## Colección local
+## Colección y guardado
 
-- `buildCollection` es una colección de TanStack DB respaldada por LocalStorage
-  (`src/modules/build/infrastructure/local-storage`).
-- Las pantallas usan `src/modules/build/client/build-store` o el hook
-  `useBuildCollection`, nunca la implementación de infraestructura.
-- Las rutas que leen la colección usan `ssr: false`.
+- `builds` es una Query Collection de TanStack DB
+  (`src/modules/build/client/builds-collection.ts`), creada por usuario con
+  `id: builds:<userId>` y `queryKey: ["builds", userId]`.
+- Los loaders de Mis builds y del editor precargan la colección mediante
+  el `DbClient` del router. Los hooks resuelven el mismo descriptor.
+- La lectura hidrata las filas de D1 con el catálogo en un solo lote
+  (`hydrate-builds.ts`) y recién después mapea al documento del editor.
+- Las escrituras son optimistas. Cada edición se guarda en orden mediante
+  `updateBuild`. Los tres handlers reconcilian con `refetch`.
+- El estado de UI de la sección activa vive en
+  `src/modules/build/presentation/editor/state/editor-section-context.tsx`, no
+  en la colección.
+- El router hidrata la colección precargada al renderizar en el servidor.
 - Las live queries filtran por `userId` (el id de Better Auth); nunca confíes
   solo en `buildId`. No uses el session id: cambia en cada inicio de sesión.
 - Los rosters usan `where`, `groupBy`, `groupKeys` y `count`; no agrupes arrays
@@ -121,11 +136,23 @@ presentación de `build/presentation/components/` (por ejemplo `build-echo-card`
 - Al cambiar de eco, limpia main stat y substats dependientes.
 - No uses Encore como fallback si el catálogo D1 está vacío.
 - No importes `src/modules/encore` desde el builder.
-- Los componentes no deben importar LocalStorage directamente.
+- Los componentes no deben importar la colección directamente: leen con
+  `useBuildCollection` y escriben con `useBuildStore`.
 
 ## Guardar en D1
 
-Pendiente. La UI local todavía no está conectada a los server functions de D1.
+- Una build es una fila de `builds`: `id` (UUID del cliente), `user_id`,
+  `character_id` nullable, `name`, `payload` JSON y `document_version` (hoy 2).
+- El payload guarda solo ids y valores: `weaponId`, `echoId`, `mainStatId`,
+  `sonataId`, `statId`, niveles, `backgroundIndex` y las pasivas habilitadas.
+  Los labels, `data` y `cost` se hidratan desde el catálogo al leer.
+- `src/modules/build/application/build-document.ts` es el único mapper en los
+  dos sentidos; no agregues conversiones en componentes.
+- `character_id` queda en `null` mientras la build no tiene resonador; la
+  columna se actualiza junto con el payload al elegir o cambiar de personaje.
+- Crear una build es idempotente: el cliente manda su `buildId` y un reintento
+  devuelve la fila existente en vez de duplicarla.
+- Cada edición ejecuta un único `UPDATE` de la fila de la build.
 
 ## Comandos
 

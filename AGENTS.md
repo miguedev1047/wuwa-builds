@@ -105,8 +105,8 @@ Current modules:
 - `src/modules/encore`: read-only game data from the public Encore API
   (characters, weapons and echoes). Used by the admin panel for search and
   create prefill, never as the builder data source.
-- `src/modules/build`: local TanStack DB build collection (LocalStorage) and
-  the D1 saved-build backend reserved for the future cloud save.
+- `src/modules/build`: builds backed by a per-user TanStack DB query collection
+  over the D1 saved-build tables (`builds` row with a versioned JSON payload).
 - `src/modules/build/presentation`: build editor, my builds and shared UI.
 - `src/modules/home`: the landing presentation (animated hero and its dot-grid
   background) consumed by the home route in `src/routing/home`.
@@ -208,10 +208,16 @@ Integration examples and source-selection guidance live in
   deploy. Catalog queries use a 5-minute `staleTime` because admins edit D1.
 - Saved builds are scoped by user/build identity and payload `documentVersion`,
   never by catalog freshness.
-- TanStack DB builds are filtered by `userId` (the Better Auth user) in every
-  live query. The LocalStorage collection itself is shared by origin, so never
-  list or mutate a build without checking the user. Never scope builds by the
+- Builds are filtered by `userId` (the Better Auth user) in every live query and
+  the collection itself is created per user (`id`/`queryKey` include the id), so
+  switching accounts never reuses another user's rows. Never scope builds by the
   session id: it changes on every sign-in and would orphan them.
+- Build route loaders preload the per-user collection through the router's
+  `dbClient`. The UI resolves the same descriptor through TanStack DB.
+- Build writes are optimistic and persist in order. The name input debounces
+  typing before committing a rename. All three mutation handlers reconcile with
+  `refetch`. Keep writes inside the collection handlers and `client/build-store`.
+- Let the router's `DbClient` own the collection lifecycle across route changes.
 - The builder UI contract and pending screens are documented in
   [docs/BUILDER_UI.md](docs/BUILDER_UI.md).
 - If a query needs a different freshness (for example the builder), override
@@ -333,10 +339,10 @@ Integration examples and source-selection guidance live in
   whole-document adapter (`src/modules/catalog/infrastructure/catalog-d1.server.ts`).
   The builder reads it through `src/modules/catalog`; rows still come from the
   admin panel, since there is no scheduled Encore sync yet.
-- The saved-builds backend and local build collection exist
-  (`src/db/schemas/builds.ts`, `src/modules/build`). Builds can start without a
-  resonator; `/panel/builder/$buildId` loads one by ID and `/panel/my-builds`
-  groups local builds by resonator. Cloud saves and cloud build listing are
-  still pending. See [docs/BUILDER_UI.md](docs/BUILDER_UI.md).
+- Saved builds live in D1 (`src/db/schemas/builds.ts`) and are read/written
+  through the per-user query collection in `src/modules/build/client`. Builds
+  can start without a resonator (`character_id` is nullable); the payload stores
+  canonical ids only and is hydrated with the catalog on read. `/panel/my-builds`
+  groups them by resonator.
 - Catalog weapon and echo queries are exposed; the builder editor that consumes
   them is still pending.

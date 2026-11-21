@@ -22,7 +22,7 @@ save.
 | UI                      | React 19, Tailwind CSS v4, shadcn/ui and PanelUI components |
 | Routing and SSR         | TanStack Start and TanStack Router                          |
 | Remote data cache       | TanStack Query                                              |
-| Local build state       | TanStack DB collection backed by LocalStorage               |
+| Local build state       | TanStack DB Query Collection over the D1 saved builds       |
 | Search filter state     | nuqs, through a small typed hook factory                    |
 | Server input validation | zod                                                         |
 | Database access         | Drizzle ORM with Cloudflare D1                              |
@@ -38,13 +38,13 @@ flowchart LR
     UI["React screens and route composition"]
     Query["TanStack Query"]
     BuildClient["Build client store and live queries"]
-    LocalDB["TanStack DB"]
-    Storage["LocalStorage: builds"]
+    LocalDB["TanStack DB query collection"]
     Filters["nuqs search filters"]
     URL["Namespaced URL parameters"]
 
     UI --> Query
-    UI --> BuildClient --> LocalDB --> Storage
+    UI --> BuildClient --> LocalDB
+    LocalDB -->|"server functions"| Start
     UI --> Filters --> URL
   end
 
@@ -74,13 +74,12 @@ flowchart LR
   Encore -->|"HTTP with edge caching"| API
 ```
 
-Most pages can use SSR. Routes that consume the browser-local build collection,
-such as the build editor, explicitly use `ssr: false` and preload the collection
-in their loader.
+The build editor and My Builds use SSR. Their loaders preload the per-user
+build collection, which the router hydrates for the browser.
 
 The browser does not access D1 directly. Catalog and Encore network reads enter
-through server functions. Local build edits use the client store and do not
-require a D1 write.
+through server functions. Build edits use the client store and persist to D1
+through collection mutation handlers.
 
 The Worker is not a general Node.js process. `nodejs_compat` is enabled, but
 runtime code must still avoid filesystem and child-process dependencies. A
@@ -144,13 +143,13 @@ Pages compose `RouteNavigation` (`src/components/blocks/route-navigation`):
 
 ## Feature modules
 
-| Module      | Owns                                                                                                                                        | Main consumers                                                   |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `catalog`   | Canonical resonators, weapons, echoes and sonatas; zod inputs; D1 adapters; server functions; query options; admin screens and searches     | Admin panel and builder                                          |
-| `encore`    | Public API reads, caching and conversion from external codes/localized names to internal values                                             | Admin search and create-form prefill                             |
-| `build`     | Local build collection, user-scoped edits, editor and my builds UI, stat calculations, and the saved-build backend reserved for cloud save  | Builder and My Builds                                            |
-| `home`      | Landing hero, animated entrance and dot-grid background                                                                                      | Home route                                                       |
-| `game-data` | Stable category IDs, labels, types, validation and select options                                                                           | Catalog, Encore adapters, build calculations and search controls |
+| Module      | Owns                                                                                                                                       | Main consumers                                                   |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| `catalog`   | Canonical resonators, weapons, echoes and sonatas; zod inputs; D1 adapters; server functions; query options; admin screens and searches    | Admin panel and builder                                          |
+| `encore`    | Public API reads, caching and conversion from external codes/localized names to internal values                                            | Admin search and create-form prefill                             |
+| `build`     | Local build collection, user-scoped edits, editor and my builds UI, stat calculations, and the saved-build backend reserved for cloud save | Builder and My Builds                                            |
+| `home`      | Landing hero, animated entrance and dot-grid background                                                                                    | Home route                                                       |
+| `game-data` | Stable category IDs, labels, types, validation and select options                                                                          | Catalog, Encore adapters, build calculations and search controls |
 
 Encore is an external content source. It is not the builder's catalog and is not
 used as a fallback when D1 has no records. Admins decide which content to persist
@@ -225,34 +224,39 @@ payloads for every result.
 Selecting an Encore result is a prefill action, not an automatic catalog sync.
 The HTTP adapter currently requests the Spanish API locale.
 
-### Local build editing
+### Build editing
 
-1. A browser-only route preloads the `builds` collection.
-2. Live queries select builds belonging to the signed-in `userId`.
-3. Search results come from catalog queries. Resonator and weapon selection hooks
+1. The My Builds and editor loaders preload the signed-in user's query collection
+   (`id: builds:<userId>`, `queryKey: ["builds", userId]`) through the router's
+   `DbClient`. The router hydrates it for the browser.
+2. The collection reads `getMyBuilds` and hydrates every row with the catalog
+   before materializing `BuildProps` (`client/hydrate-builds.ts`).
+3. Live queries select builds belonging to the signed-in `userId`.
+4. Search results come from catalog queries. Resonator and weapon selection hooks
    resolve details through the shared Query client before applying edits. Echo
    selection applies its summary immediately and warms the detail query.
-4. `build/client/build-store` verifies ownership before updates and deletions.
-5. TanStack DB propagates edits to the UI and persists them under the LocalStorage
-   key `builds`.
-6. Calculation hooks combine the local build with catalog details and run pure
-   stat calculation functions. Derived totals are not persisted.
+5. `client/build-store` verifies ownership before updates and deletions.
+6. Edits are optimistic and reactive. Updates are sent in order. Each mutation
+   handler reads back the saved builds with `refetch`.
+7. Calculation hooks combine the build with catalog details and run pure stat
+   calculation functions. Derived totals are not persisted.
 
 Changing a resonator resets its dependent skills, passives and weapon. Changing
 an echo resets dependent echo stats. Those rules live in build application/domain
-code rather than in generic search UI.
+code rather than in generic search UI. The active editor section is screen state
+in `EditorSectionProvider`, not part of the saved document.
 
 ### Saved builds in D1
 
-The repository, schemas and authenticated server functions for cloud builds
-already exist. They use the authenticated **user ID** and a versioned build
-payload.
+Saved builds use the authenticated **user ID** as the only owner and a versioned
+JSON payload (`documentVersion: 2`). A build is one row: the payload stores ids
+and values, and the editor hydrates labels and catalog rows on read. The mapper
+lives in `build/application/build-document.ts`.
 
-The active editor and My Builds screens still use the local **user ID** (never
-the session ID, which rotates on every sign-in) and `BuildProps` snapshots. They
-do not call the cloud-build endpoints for automatic save or listing. Cloud
-synchronization and the mapping between those two storage contracts remain
-future work.
+The editor and My Builds screens read and write through the query collection
+(`client/builds-collection.ts`), which calls the authenticated server functions.
+Creates are idempotent on the client-owned build ID. `character_id` stays
+nullable while the build has no resonator.
 
 ## Authentication and ownership
 
@@ -264,9 +268,10 @@ password login and Discord OAuth are configured in `src/lib/auth.ts`.
 - `adminMiddleware` additionally requires `session.user.role === "ADMIN"`.
 - Roles are `USER | ADMIN`, default to `USER`, and cannot be set through client
   signup input.
-- Local build reads and mutations are scoped by the Better Auth `userId`; the
-  LocalStorage collection is shared by origin, so an ID alone is not ownership.
-  The session id is never used: it rotates on every sign-in.
+- Build reads and mutations are scoped by the Better Auth `userId`: the
+  collection is created per user and the D1 repository filters by owner in every
+  statement, so an ID alone is not ownership. The session id is never used: it
+  rotates on every sign-in.
 - Saved-build repository calls use the authenticated user ID. Catalog freshness
   and build identity are separate concerns.
 
@@ -292,15 +297,15 @@ examples.
 
 ## Cache and persistence policies
 
-| Data                                  | Policy                                                                         |
-| ------------------------------------- | ------------------------------------------------------------------------------ |
-| Global Query defaults                 | `staleTime: "static"`, `gcTime: Infinity`; focus/reconnect refetch disabled    |
-| Canonical D1 catalog queries          | 5-minute stale time, 24-hour garbage collection                                |
-| Encore queries                        | 6-hour stale time, 24-hour garbage collection                                  |
-| Encore HTTP reads in a Worker isolate | 5-minute in-memory deduplication                                               |
-| Encore HTTP subrequests               | 6-hour Cloudflare edge cache                                                   |
-| Local build collection                | LocalStorage persistence; user-scoped reads and writes                         |
-| D1 saved-build payload                | User/build identity and `documentVersion`; not wired into local cloud save yet |
+| Data                                  | Policy                                                                      |
+| ------------------------------------- | --------------------------------------------------------------------------- |
+| Global Query defaults                 | `staleTime: "static"`, `gcTime: Infinity`; focus/reconnect refetch disabled |
+| Canonical D1 catalog queries          | 5-minute stale time, 24-hour garbage collection                             |
+| Encore queries                        | 6-hour stale time, 24-hour garbage collection                               |
+| Encore HTTP reads in a Worker isolate | 5-minute in-memory deduplication                                            |
+| Encore HTTP subrequests               | 6-hour Cloudflare edge cache                                                |
+| Build query collection                | Per-user scope; 30-second stale time; SSR preload                           |
+| D1 saved-build payload                | User/build identity, `documentVersion: 2`, nullable `character_id`          |
 
 The Query cache is a remote-data cache, not the local build document store.
 Deploying a new Worker does not itself invalidate the Encore TTL. Catalog
