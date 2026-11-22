@@ -38,14 +38,13 @@ export function UnassignedBuildsSectionContent({
           Borradores a los que todavía no les asignas un resonador.
         </RouteNavigation.Description>
       </RouteNavigation.Header>
-
       <FlowingMenu
         items={items}
         ariaLabel="Builds sin resonador"
         align="left"
         imageShape="circle"
-        textColor="var(--card-foreground)"
-        bgColor="var(--card)"
+        textColor="var(--foreground)"
+        bgColor="var(--background)"
         marqueeBgColor="var(--primary)"
         marqueeTextColor="var(--primary-foreground)"
         borderColor="var(--border)"
