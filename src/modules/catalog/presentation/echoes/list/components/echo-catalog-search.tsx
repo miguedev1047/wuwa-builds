@@ -1,6 +1,7 @@
 import { CommandSearch } from "@/components/blocks/command-search"
 import { Button } from "@/components/panelui/button"
 import { EchoItem } from "@catalog/presentation/components/entity-item"
+import { groupEchoesBySonata } from "@catalog/presentation/echoes/list/application/group-echoes-by-sonata"
 import {
   EchoCatalogSearchFilterFields,
   useEchoCatalogSearchFilters,
@@ -83,8 +84,10 @@ function EchoCatalogSearchResults({
   const items = data.filter(
     (item) =>
       (cost === null || item.cost === cost) &&
-      (echoClass === null || item.class === echoClass) &&
-      (sonataId === null || item.sets.some((set) => set.setId === sonataId))
+      (echoClass === null || item.class === echoClass)
+  )
+  const groups = groupEchoesBySonata(items, sonatas).filter(
+    (group) => sonataId === null || group.setId === sonataId
   )
 
   return (
@@ -100,22 +103,27 @@ function EchoCatalogSearchResults({
       </CommandSearch.FilterContent>
       <CommandSearch.List>
         <CommandSearch.Empty>No se encontraron ecos.</CommandSearch.Empty>
-        <CommandSearch.Group heading="Ecos">
-          {items.map((item) => (
-            <CommandSearch.Item
-              key={item.id}
-              value={String(item.id)}
-              textValue={item.name}
-              keywords={[String(item.id)]}
-              closeOnSelect={false}
-              onSelect={() => void onSelect(item.id)}
-              kind={`Coste ${item.cost}`}
-              icon={<EchoItem echo={item} />}
-            >
-              {item.name}
-            </CommandSearch.Item>
-          ))}
-        </CommandSearch.Group>
+        {groups.map((group) => (
+          <CommandSearch.Group
+            key={group.setId ?? "sin-sonata"}
+            heading={group.name}
+          >
+            {group.echoes.map((item) => (
+              <CommandSearch.Item
+                key={item.id}
+                value={`${group.setId ?? "sin-sonata"}:${item.id}`}
+                textValue={item.name}
+                keywords={[String(item.id)]}
+                closeOnSelect={false}
+                onSelect={() => void onSelect(item.id)}
+                kind={`Coste ${item.cost}`}
+                icon={<EchoItem echo={item} />}
+              >
+                {item.name}
+              </CommandSearch.Item>
+            ))}
+          </CommandSearch.Group>
+        ))}
       </CommandSearch.List>
     </>
   )
