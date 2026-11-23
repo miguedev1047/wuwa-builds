@@ -94,6 +94,7 @@ const toastVariants = tv({
   slots: {
     viewport: [
       "fixed z-[60] flex w-[calc(100%-2*var(--toast-inset))] max-w-[22.5rem] outline-none [--toast-inset:1rem] sm:[--toast-inset:1.5rem]",
+      "[[data-base-ui-inert]_&]:pointer-events-none",
       "data-[position^=top]:top-(--toast-inset) data-[position^=bottom]:bottom-(--toast-inset)",
       "data-[position$=left]:left-(--toast-inset) data-[position$=right]:right-(--toast-inset)",
       "data-[position$=center]:left-1/2 data-[position$=center]:-translate-x-1/2",

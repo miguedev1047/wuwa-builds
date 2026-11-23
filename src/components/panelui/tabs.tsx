@@ -16,13 +16,13 @@
  * </Tabs>
  * ```
  *
- * ## Three weights
+ * ## Variants
  *
  * `segmented` sets the tabs in a track with the chosen one raised out of it:
  * a control for switching what a panel shows. `underline` is lighter, a line
  * under the chosen tab, for the sections of a page. `pills` fills the chosen
  * tab with the primary colour, for a filter that should be seen from across
- * the screen.
+ * the screen. `tiles` uses square image tabs with an active border.
  *
  * ## It moves the way the hand did
  *
@@ -55,7 +55,7 @@ type RenderProp<Tag extends RenderElementType> = {
   render?: useRender.ComponentProps<Tag>["render"]
 }
 
-export type TabsVariant = "segmented" | "underline" | "pills"
+export type TabsVariant = "segmented" | "underline" | "pills" | "tiles"
 
 /** One curve for the marker and the panel, so they move as one thing. */
 const EASE = "ease-[cubic-bezier(0.3,0.7,0.1,1)]"
@@ -66,10 +66,7 @@ const tabsVariants = tv({
     list: [
       "relative z-0 flex shrink-0 items-center",
       "data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-stretch",
-      // Scrolls rather than wraps, with no bar of its own; the fade says there is more.
-      "data-[orientation=horizontal]:max-w-full data-[orientation=horizontal]:overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
-      "data-overflow-start:[--fade-start:3rem] data-overflow-end:[--fade-end:3rem]",
-      "[mask-image:linear-gradient(to_right,transparent,#000_var(--fade-start,0px),#000_calc(100%-var(--fade-end,0px)),transparent)]",
+      "data-[orientation=horizontal]:max-w-full data-[orientation=horizontal]:overflow-x-auto",
     ],
     trigger: [
       "relative z-10 inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap text-sm font-medium outline-none select-none",
@@ -142,6 +139,22 @@ const tabsVariants = tv({
           `transition-[left,top,width,height] duration-300 ${EASE} motion-reduce:transition-none`,
         ],
       },
+      tiles: {
+        list: "gap-2 p-2",
+        trigger:
+          "size-12 overflow-hidden rounded-lg border-2 border-transparent data-active:border-highlight",
+        indicator: "hidden",
+      },
+    },
+    showScrollbar: {
+      true: { list: "[scrollbar-width:auto]" },
+      false: {
+        list: [
+          "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+          "data-overflow-start:[--fade-start:3rem] data-overflow-end:[--fade-end:3rem]",
+          "[mask-image:linear-gradient(to_right,transparent,#000_var(--fade-start,0px),#000_calc(100%-var(--fade-end,0px)),transparent)]",
+        ],
+      },
     },
   },
   compoundVariants: [
@@ -155,7 +168,7 @@ const tabsVariants = tv({
       className: { list: "data-[orientation=vertical]:w-48" },
     },
   ],
-  defaultVariants: { variant: "segmented" },
+  defaultVariants: { variant: "segmented", showScrollbar: false },
 })
 
 export interface TabsProps extends Omit<BaseTabs.Root.Props, "className"> {
@@ -191,12 +204,14 @@ export interface TabsListProps extends Omit<BaseTabs.List.Props, "className"> {
 /** The row of tabs, with the marker under the chosen one. */
 function TabsList({ className, children, ...props }: TabsListProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const slots = tabsVariants({ variant: useContext(VariantContext) })
+  const variant = useContext(VariantContext)
+  const showScrollbar = variant === "tiles"
+  const slots = tabsVariants({ variant, showScrollbar })
 
   // Marks the ends that have more to scroll to, for the fade.
   useEffect(() => {
     const list = ref.current
-    if (!list) return
+    if (!list || showScrollbar) return
     const read = () => {
       const start = list.scrollLeft > 1
       const end = list.scrollLeft + list.clientWidth < list.scrollWidth - 1
@@ -211,7 +226,7 @@ function TabsList({ className, children, ...props }: TabsListProps) {
       list.removeEventListener("scroll", read)
       observer.disconnect()
     }
-  }, [])
+  }, [showScrollbar])
 
   return (
     <BaseTabs.List

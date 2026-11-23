@@ -69,7 +69,12 @@ export function NavigationAppAccount({ user }: NavigationAppAccountProps) {
             />
           </Menu.Trigger>
           <Menu.Content align="end">
-            <Menu.Item render={<Link to="/" />}>
+            <Menu.Item
+              disabled={isSigningOut}
+              render={
+                <Link to="/profile/$userId" params={{ userId: current.id }} />
+              }
+            >
               <HugeiconsIcon icon={UserIcon} />
               Mi perfil
             </Menu.Item>

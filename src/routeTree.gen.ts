@@ -29,6 +29,7 @@ import { Route as NavigationAdminResonatorsNewRouteImport } from './routes/_navi
 import { Route as NavigationAdminWeaponsIndexRouteImport } from './routes/_navigation/admin/weapons/index'
 import { Route as NavigationAdminWeaponsIdRouteImport } from './routes/_navigation/admin/weapons/$id'
 import { Route as NavigationAdminWeaponsNewRouteImport } from './routes/_navigation/admin/weapons/new'
+import { Route as NavigationProfileUserIdIndexRouteImport } from './routes/_navigation/profile/$userId/index'
 import { Route as PanelBuilderBuildIdIndexRouteImport } from './routes/panel/builder/$buildId/index'
 
 const NavigationRouteRoute = NavigationRouteRouteImport.update({
@@ -139,6 +140,12 @@ const NavigationAdminWeaponsNewRoute =
     path: '/weapons/new',
     getParentRoute: () => NavigationAdminRouteRoute,
   } as any)
+const NavigationProfileUserIdIndexRoute =
+  NavigationProfileUserIdIndexRouteImport.update({
+    id: '/profile/$userId/',
+    path: '/profile/$userId/',
+    getParentRoute: () => NavigationRouteRoute,
+  } as any)
 const PanelBuilderBuildIdIndexRoute =
   PanelBuilderBuildIdIndexRouteImport.update({
     id: '/builder/$buildId/',
@@ -165,6 +172,7 @@ export interface FileRoutesByFullPath {
   '/admin/echoes/': typeof NavigationAdminEchoesIndexRoute
   '/admin/resonators/': typeof NavigationAdminResonatorsIndexRoute
   '/admin/weapons/': typeof NavigationAdminWeaponsIndexRoute
+  '/profile/$userId/': typeof NavigationProfileUserIdIndexRoute
   '/panel/builder/$buildId/': typeof PanelBuilderBuildIdIndexRoute
 }
 export interface FileRoutesByTo {
@@ -184,6 +192,7 @@ export interface FileRoutesByTo {
   '/admin/echoes': typeof NavigationAdminEchoesIndexRoute
   '/admin/resonators': typeof NavigationAdminResonatorsIndexRoute
   '/admin/weapons': typeof NavigationAdminWeaponsIndexRoute
+  '/profile/$userId': typeof NavigationProfileUserIdIndexRoute
   '/panel/builder/$buildId': typeof PanelBuilderBuildIdIndexRoute
 }
 export interface FileRoutesById {
@@ -208,6 +217,7 @@ export interface FileRoutesById {
   '/_navigation/admin/echoes/': typeof NavigationAdminEchoesIndexRoute
   '/_navigation/admin/resonators/': typeof NavigationAdminResonatorsIndexRoute
   '/_navigation/admin/weapons/': typeof NavigationAdminWeaponsIndexRoute
+  '/_navigation/profile/$userId/': typeof NavigationProfileUserIdIndexRoute
   '/panel/builder/$buildId/': typeof PanelBuilderBuildIdIndexRoute
 }
 export interface FileRouteTypes {
@@ -231,6 +241,7 @@ export interface FileRouteTypes {
     | '/admin/echoes/'
     | '/admin/resonators/'
     | '/admin/weapons/'
+    | '/profile/$userId/'
     | '/panel/builder/$buildId/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -250,6 +261,7 @@ export interface FileRouteTypes {
     | '/admin/echoes'
     | '/admin/resonators'
     | '/admin/weapons'
+    | '/profile/$userId'
     | '/panel/builder/$buildId'
   id:
     | '__root__'
@@ -273,6 +285,7 @@ export interface FileRouteTypes {
     | '/_navigation/admin/echoes/'
     | '/_navigation/admin/resonators/'
     | '/_navigation/admin/weapons/'
+    | '/_navigation/profile/$userId/'
     | '/panel/builder/$buildId/'
   fileRoutesById: FileRoutesById
 }
@@ -425,6 +438,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NavigationAdminWeaponsNewRouteImport
       parentRoute: typeof NavigationAdminRouteRoute
     }
+    '/_navigation/profile/$userId/': {
+      id: '/_navigation/profile/$userId/'
+      path: '/profile/$userId'
+      fullPath: '/profile/$userId/'
+      preLoaderRoute: typeof NavigationProfileUserIdIndexRouteImport
+      parentRoute: typeof NavigationRouteRoute
+    }
     '/panel/builder/$buildId/': {
       id: '/panel/builder/$buildId/'
       path: '/builder/$buildId'
@@ -483,12 +503,14 @@ interface NavigationRouteRouteChildren {
   NavigationAdminRouteRoute: typeof NavigationAdminRouteRouteWithChildren
   NavigationPanelRouteRoute: typeof NavigationPanelRouteRouteWithChildren
   NavigationIndexRoute: typeof NavigationIndexRoute
+  NavigationProfileUserIdIndexRoute: typeof NavigationProfileUserIdIndexRoute
 }
 
 const NavigationRouteRouteChildren: NavigationRouteRouteChildren = {
   NavigationAdminRouteRoute: NavigationAdminRouteRouteWithChildren,
   NavigationPanelRouteRoute: NavigationPanelRouteRouteWithChildren,
   NavigationIndexRoute: NavigationIndexRoute,
+  NavigationProfileUserIdIndexRoute: NavigationProfileUserIdIndexRoute,
 }
 
 const NavigationRouteRouteWithChildren = NavigationRouteRoute._addFileChildren(
