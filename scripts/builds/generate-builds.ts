@@ -29,7 +29,7 @@ import {
 } from "@build/domain/character-stats"
 import { STAT_KINDS, STAT_LABELS } from "@build/domain/stats"
 import { builds } from "@db/schemas/builds"
-import { user } from "@db/schemas/auth-schema"
+import { user } from "@/db/schemas/auth"
 import { BUILD_SPECS, type BuildEchoSpec, type BuildSpec } from "./build-specs"
 
 const ECHO_LEVEL = 25

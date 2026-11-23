@@ -1,7 +1,7 @@
 import { defineRelationsPart, sql } from "drizzle-orm"
 import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core"
 import type { BuildPayload } from "@build/domain/build"
-import { user } from "@db/schemas/auth-schema"
+import { user } from "@/db/schemas/auth"
 
 /**
  * One row per saved build. Several rows may share (userId, characterId):

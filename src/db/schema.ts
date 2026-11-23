@@ -1,4 +1,5 @@
-export * from "@db/schemas/auth-schema"
+export * from "@/db/schemas/auth"
+export * from "@db/schemas/user-profiles"
 export * from "@db/schemas/builds"
 export * from "@db/schemas/echoes"
 export * from "@db/schemas/resonators"
