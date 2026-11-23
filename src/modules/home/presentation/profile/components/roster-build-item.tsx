@@ -1,3 +1,4 @@
+import { ScrollArea } from "@/components/panelui/scroll-area"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Show } from "@/components/utility/show"
 import { ReadOnlyBuildCard } from "@build/presentation/components/build-canvas/read-only-build-card"
@@ -57,14 +58,17 @@ export function RosterBuildItem({
         }
       >
         {({ build, preview }) => (
-          <div
-            role="region"
-            aria-label={`Tarjeta de ${name}`}
-            tabIndex={0}
-            className="max-w-full overflow-x-auto rounded-4xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-          >
-            <ReadOnlyBuildCard build={build} preview={preview} />
-          </div>
+          <ScrollArea.Root className="max-w-full rounded-4xl">
+            <ScrollArea.Viewport
+              role="region"
+              aria-label={`Tarjeta de ${name}`}
+            >
+              <ScrollArea.Content>
+                <ReadOnlyBuildCard build={build} preview={preview} />
+              </ScrollArea.Content>
+            </ScrollArea.Viewport>
+            <ScrollArea.Scrollbar orientation="horizontal" />
+          </ScrollArea.Root>
         )}
       </Show>
     </li>

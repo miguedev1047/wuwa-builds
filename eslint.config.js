@@ -129,6 +129,7 @@ export default defineConfig([
                 "w-*",
                 "h-*",
                 "size-*",
+                "bg-*",
                 "rounded-*",
                 "opacity-*",
                 "aspect-*",
