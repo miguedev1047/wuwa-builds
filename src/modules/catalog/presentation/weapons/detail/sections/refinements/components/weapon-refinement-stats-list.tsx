@@ -3,7 +3,7 @@ import { statLabel } from "@catalog/application/stats/stats"
 import { EditableSection } from "@catalog/presentation/components/editable-section"
 import { WeaponRefinementStatDeleteAction } from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-stat-delete-action"
 import { WeaponRefinementStatEditAction } from "@catalog/presentation/weapons/detail/sections/refinements/components/weapon-refinement-stat-edit-action"
-import { formatPercentStat } from "@/modules/build/presentation/editor/hooks/stats-view-model"
+import { formatPercentStat } from "@/modules/build/presentation/helpers/stats-view-model"
 
 type WeaponRefinementStatsListProps = {
   stats: WeaponRefinementStatRow[]

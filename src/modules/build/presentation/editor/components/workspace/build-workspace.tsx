@@ -3,7 +3,10 @@ import { Canvas } from "@/components/panelui/canvas"
 import { Dialog } from "@/components/panelui/dialog"
 import { Empty, EmptyTitle } from "@/components/ui/empty"
 import { Show } from "@/components/utility/show"
-import { cva, type VariantProps } from "class-variance-authority"
+import {
+  BuildCanvasSurface,
+  BuildCanvasText,
+} from "@build/presentation/components/build-canvas/build-canvas-primitives"
 import { cn } from "cn"
 import { useState, type ComponentProps, type ReactNode } from "react"
 
@@ -124,111 +127,6 @@ export function BuildWorkspaceDialog({
   )
 }
 
-/** Heading sizes available to the builder sections. */
-export const buildWorkspaceTextVariants = cva(
-  "line-clamp-1 font-bold text-muted-foreground",
-  {
-    variants: {
-      size: {
-        xs: "text-xs",
-        sm: "text-sm",
-        normal: "text-base",
-        lg: "text-lg",
-        xl: "text-xl",
-        "2xl": "text-2xl",
-        "3xl": "text-3xl",
-        "4xl": "text-4xl",
-        "5xl": "text-5xl",
-        "6xl": "text-6xl",
-      },
-      family: {
-        normal: "font-normal",
-        semibold: "font-semibold",
-        bold: "font-bold",
-      },
-      uppercase: {
-        true: "uppercase",
-        false: "",
-      },
-      textColor: {
-        normal: "text-foreground",
-        muted: "text-muted-foreground",
-      },
-    },
-    defaultVariants: {
-      size: "normal",
-      family: "semibold",
-      textColor: "normal",
-      uppercase: true,
-    },
-  }
-)
-
-export interface BuildWorkspaceTextProps
-  extends
-    React.ComponentProps<"h2">,
-    VariantProps<typeof buildWorkspaceTextVariants> {}
-
-/**
- * Section heading of the builder surfaces.
- *
- * It always renders an `h2`, so the screen keeps one `h1` per route and every
- * section title stays at the same level.
- */
-export function BuildWorkspaceText({
-  className,
-  textColor,
-  family,
-  uppercase,
-  size,
-  ...props
-}: BuildWorkspaceTextProps) {
-  return (
-    <h2
-      className={cn(
-        buildWorkspaceTextVariants({ size, textColor, uppercase, family }),
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
-export const buildWorkspaceCardVariants = cva(
-  "rounded-lg p-4 shadow-app-surface",
-  {
-    variants: {
-      cardColor: {
-        default: "bg-card",
-        glass: "bg-card/50 backdrop-blur-2xl",
-        input: "bg-input/50",
-        muted: "bg-muted",
-      },
-    },
-    defaultVariants: {
-      cardColor: "default",
-    },
-  }
-)
-
-export interface BuildWorkspaceCardProps
-  extends
-    React.ComponentProps<"div">,
-    VariantProps<typeof buildWorkspaceCardVariants> {}
-
-export function BuildWorkspaceCard({
-  className,
-  cardColor,
-  ...props
-}: BuildWorkspaceCardProps) {
-  return (
-    <div
-      className={cn(buildWorkspaceCardVariants({ cardColor }), className)}
-      {...props}
-    />
-  )
-}
-
 interface BuildWorkspaceEmptyProps extends React.ComponentProps<typeof Empty> {
   enabled?: boolean
 }
@@ -288,6 +186,6 @@ export const BuildWorkspace = {
   Dialog: BuildWorkspaceDialog,
   Empty: BuildWorkspaceEmpty,
   EmptyTitle: BuildWorkspaceEmptyTitle,
-  Text: BuildWorkspaceText,
-  Card: BuildWorkspaceCard,
+  Text: BuildCanvasText,
+  Card: BuildCanvasSurface,
 } as const

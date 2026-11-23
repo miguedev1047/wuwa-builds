@@ -1,7 +1,0 @@
-export * from "@build/presentation/editor/components/build-canvas/build-canvas"
-export * from "@build/presentation/editor/components/build-canvas/build-canvas-card"
-export * from "@build/presentation/editor/components/build-canvas/echoes-panel"
-export * from "@build/presentation/editor/components/build-canvas/resonator-panel"
-export * from "@build/presentation/editor/components/build-canvas/skills-panel"
-export * from "@build/presentation/editor/components/build-canvas/stats-panel"
-export * from "@build/presentation/editor/components/build-canvas/weapon-panel"

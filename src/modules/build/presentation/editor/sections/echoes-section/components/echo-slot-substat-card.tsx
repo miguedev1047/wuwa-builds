@@ -4,7 +4,7 @@ import { GameIcon } from "@/components/ui/game-icon"
 import {
   formatEchoStat,
   statIconName,
-} from "@build/presentation/editor/hooks/stats-view-model"
+} from "@build/presentation/helpers/stats-view-model"
 import type { EchoSubstatsDataProps } from "@/modules/build/domain/build-record"
 
 interface EchoSotSubstatCardProps {

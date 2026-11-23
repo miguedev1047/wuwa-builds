@@ -6,14 +6,14 @@ import {
   formatEchoStat,
   formatPercentStat,
   statIconName,
-} from "@build/presentation/editor/hooks/stats-view-model"
-import type { EchoesDataProps } from "@build/domain/build-record"
+} from "@build/presentation/helpers/stats-view-model"
+import type { BuildCanvasEcho } from "@build/domain/build-canvas"
 import { statLabel } from "@catalog/application/stats/stats"
 import { cn } from "cn"
-import { BuildWorkspaceCard } from "@build/presentation/editor/components/workspace/build-workspace"
+import { BuildCanvasSurface } from "@build/presentation/components/build-canvas/build-canvas-primitives"
 
 type BuildEchoCardProps = {
-  slot: EchoesDataProps
+  slot: BuildCanvasEcho
   /** True when the slot holds the main echo of the build. */
   isMain: boolean
   /** Icon of the selected sonata set, resolved by the caller. */
@@ -33,7 +33,7 @@ export function BuildEchoCard({
   className,
 }: BuildEchoCardProps) {
   return (
-    <BuildWorkspaceCard cardColor="glass" className={cn(className)}>
+    <BuildCanvasSurface cardColor="glass" className={cn(className)}>
       <div className="flex h-full flex-col gap-3">
         <Show
           when={slot.data}
@@ -106,6 +106,6 @@ export function BuildEchoCard({
           )}
         </Show>
       </div>
-    </BuildWorkspaceCard>
+    </BuildCanvasSurface>
   )
 }

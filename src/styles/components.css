@@ -36,10 +36,25 @@
 
   .build-canvas > [data-canvas-area="echoes"] {
     grid-area: echoes;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .build-canvas > [data-canvas-area="sequencies"] {
     grid-area: sequencies;
+  }
+
+  .build-canvas[data-compact] {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas:
+      "resonator resonator resonator resonator sequencies sequencies sequencies sequencies sequencies sequencies sequencies sequencies"
+      "stats stats stats stats stats stats skills skills skills skills skills skills"
+      "stats stats stats stats stats stats weapon weapon weapon weapon weapon weapon"
+      "echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes echoes";
+  }
+
+  .build-canvas[data-compact] > [data-canvas-area="echoes"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

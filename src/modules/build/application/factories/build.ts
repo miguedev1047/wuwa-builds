@@ -1,3 +1,4 @@
+import type { BuildCanvasSkills } from "@build/domain/build-canvas"
 import type {
   CharacterDetail,
   CharacterSummary,
@@ -115,7 +116,7 @@ export function createResonatorSkills(
 
 /** Configurable passives seeded from the catalog detail. */
 export function createResonatorPassives(
-  resonator: CharacterDetail
+  resonator: BuildCanvasSkills
 ): ResonatorPassivesDataProps[] {
   const rawPassives = [
     ...resonator.passives.map((passive) => ({

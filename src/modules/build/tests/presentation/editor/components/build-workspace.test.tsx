@@ -4,7 +4,7 @@ import { describe, expect, test } from "bun:test"
 import { renderToStaticMarkup } from "react-dom/server"
 import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 
-import { BuildCanvas } from "@build/presentation/editor/components/build-canvas/build-canvas"
+import { BuildCanvas } from "@build/presentation/components/build-canvas/build-canvas"
 import {
   characterDetail,
   echoSlot,

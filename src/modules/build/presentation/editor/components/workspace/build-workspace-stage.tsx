@@ -1,9 +1,9 @@
 import { useBuildIdentity } from "@build/presentation/editor/build-identity"
 import { Flow } from "@/components/panelui/flow"
-import { buildCardFrameClassName } from "@build/presentation/editor/components/build-canvas/build-card-frame"
+import { buildCardFrameClassName } from "@build/presentation/components/build-canvas/build-card-frame"
 import { cn } from "cn"
 import { useBuildCollection } from "@build/client/hooks/build-live-queries"
-import { BuildBackground } from "@build/presentation/editor/components/workspace/build-background"
+import { BuildBackground } from "@build/presentation/components/build-canvas/build-background"
 
 /** Interactive viewport of the builder canvas. */
 export function BuildWorkspaceStage({

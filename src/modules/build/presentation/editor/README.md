@@ -93,7 +93,7 @@ the canvas and the editor sections can reuse it.
 | Canvas flow (card node)        | `components/workspace/build-workspace-stage.tsx`    |
 | Floating action Dock           | `src/components/blocks/action-dock.tsx`             |
 | Canvas grid and areas          | `src/styles/components.css` (`.build-canvas`)       |
-| Canvas panel card surface      | `components/build-canvas/build-canvas-card.tsx`     |
+| Canvas panel card surface      | `@build/presentation/components/build-canvas/build-canvas-card.tsx`     |
 | Card surface                   | `../components/build-card/build-card.tsx`           |
 | Search dialog and selection    | `src/components/blocks/command-search/`             |
 | Echo slot card                 | `../components/build-echo-card/build-echo-card.tsx` |

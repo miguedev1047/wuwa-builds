@@ -7,7 +7,7 @@ import { BuildWorkspace } from "@build/presentation/editor/components/workspace"
 import {
   formatPercentStat,
   statIconName,
-} from "@build/presentation/editor/hooks/stats-view-model"
+} from "@build/presentation/helpers/stats-view-model"
 import { echoQueries } from "@catalog/queries/echoes"
 import { useQuery } from "@tanstack/react-query"
 import { cn } from "cn"
