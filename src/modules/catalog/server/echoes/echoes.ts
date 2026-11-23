@@ -22,17 +22,9 @@ export const getEchoesDetailed = createServerFn({
   .middleware([authMiddleware])
   .validator(idsInput)
   .handler(async ({ data }): Promise<EchoDetail[]> => {
-    return await db.query.echoes.findMany({
-      where: { id: { in: data.ids } },
-      with: {
-        sets: {
-          orderBy: { sortOrder: "asc" },
-          with: { sonata: true, sonataEffects: true },
-        },
-        skill: true,
-        skillBonuses: { orderBy: { sortOrder: "asc" } },
-      },
-    })
+    const { readCatalogEchoDetails } =
+      await import("@catalog/infrastructure/build-catalog-details.server")
+    return readCatalogEchoDetails(db, data.ids)
   })
 
 export const getEcho = createServerFn({
@@ -42,19 +34,9 @@ export const getEcho = createServerFn({
   .middleware([authMiddleware])
   .validator(idInput)
   .handler(async ({ data }) => {
-    const echo = await db.query.echoes.findFirst({
-      where: {
-        id: data.id,
-      },
-      with: {
-        sets: {
-          orderBy: { sortOrder: "asc" },
-          with: { sonata: true, sonataEffects: true },
-        },
-        skill: true,
-        skillBonuses: { orderBy: { sortOrder: "asc" } },
-      },
-    })
+    const { readCatalogEchoDetails } =
+      await import("@catalog/infrastructure/build-catalog-details.server")
+    const [echo] = await readCatalogEchoDetails(db, [data.id])
 
     if (!echo) {
       throw new Error(CATALOG_NOT_FOUND)

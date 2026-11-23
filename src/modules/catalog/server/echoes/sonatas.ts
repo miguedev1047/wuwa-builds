@@ -11,10 +11,9 @@ import { sonataSets, sonataSetEffects } from "@db/schema"
 export const getSonatas = createServerFn({ method: "GET" })
   .middleware([authMiddleware])
   .handler(async () => {
-    return await db.query.sonataSets.findMany({
-      orderBy: { id: "asc" },
-      with: { effects: { orderBy: { sortOrder: "asc" } } },
-    })
+    const { readCatalogSonataDetails } =
+      await import("@catalog/infrastructure/build-catalog-details.server")
+    return readCatalogSonataDetails(db)
   })
 
 /** Creates a hand-written set. Encore sets come from `syncSonatas`. */

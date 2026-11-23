@@ -24,19 +24,9 @@ export const getWeapon = createServerFn({
   .middleware([authMiddleware])
   .validator(idInput)
   .handler(async ({ data }) => {
-    const weapon = await db.query.weapons.findFirst({
-      where: { id: data.id },
-      with: {
-        properties: {
-          orderBy: { sortOrder: "asc" },
-          with: { growth: { orderBy: { sortOrder: "asc" } } },
-        },
-        refinements: {
-          orderBy: { sortOrder: "asc" },
-          with: { stats: { orderBy: { sortOrder: "asc" } } },
-        },
-      },
-    })
+    const { readCatalogWeaponDetails } =
+      await import("@catalog/infrastructure/build-catalog-details.server")
+    const [weapon] = await readCatalogWeaponDetails(db, [data.id])
 
     if (!weapon) {
       throw new Error(CATALOG_NOT_FOUND)

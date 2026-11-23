@@ -65,28 +65,9 @@ export const getCharacter = createServerFn({
   .middleware([authMiddleware])
   .validator(idInput)
   .handler(async ({ data }): Promise<CharacterDetail> => {
-    const resonator = await db.query.resonators.findFirst({
-      where: { id: data.id },
-      with: {
-        media: { orderBy: { sortOrder: "asc" } },
-        tags: { orderBy: { sortOrder: "asc" } },
-        bestWeapons: {
-          orderBy: { sortOrder: "asc" },
-          with: { weapon: true },
-        },
-        bestSets: {
-          orderBy: { sortOrder: "asc" },
-          with: { sonata: true },
-        },
-        properties: {
-          orderBy: { sortOrder: "asc" },
-          with: { growth: { orderBy: { sortOrder: "asc" } } },
-        },
-        skills: { orderBy: { sortOrder: "asc" } },
-        sequences: { orderBy: { sortOrder: "asc" } },
-        passives: { orderBy: { sortOrder: "asc" } },
-      },
-    })
+    const { readCatalogCharacterDetail } =
+      await import("@catalog/infrastructure/build-catalog-details.server")
+    const resonator = await readCatalogCharacterDetail(db, data.id)
 
     if (!resonator) {
       throw new Error(CATALOG_NOT_FOUND)
