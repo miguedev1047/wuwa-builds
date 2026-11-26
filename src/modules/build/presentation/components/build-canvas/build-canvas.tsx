@@ -32,7 +32,10 @@ export function BuildCanvas({
   weaponProperties,
 }: BuildCanvasProps) {
   return (
-    <div className="build-canvas relative" data-compact={compact || undefined}>
+    <div
+      className="build-canvas pointer-events-none relative select-none"
+      data-compact={compact || undefined}
+    >
       <SequencesPanel>{sequences}</SequencesPanel>
       <ResonatorPanel build={build} />
       <StatsPanel>{stats}</StatsPanel>
